@@ -1,0 +1,60 @@
+.esri-widget {
+    box-sizing: border-box;
+    color: #323232;
+    font-size: 12px;
+    font-family: "Avenir Next W00","Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 1.3em;
+    background-color: #fff;
+}
+
+.esri-layer-list__item-container {
+    border-left: 3px solid transparent;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 2px 7px 2px 5px;
+    transition: border-color 250ms ease-in-out;
+} 
+
+.esri-layer-list__item-action, .esri-layer-list__action-toggle {
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    cursor: pointer;
+    font-size: 10px;
+    width: 100%;
+    margin: 0;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    padding: 2px 15px 2px 15px;
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms, background-color 250ms ease-in-out;
+}
+
+a {
+	font-family: "Avenir Next W00","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #c00000 !important;
+    text-decoration: none;
+    outline: none;
+}
+
+   .esri-layer-list__child-toggle   + .esri-layer-list__item-label > .esri-layer-list__item-toggle {
+	 display:none;
+	}
+	
+.esri-bookmarks .esri-widget--panel .esri-widget {
+   width: 150px ! important;
+	
+  }
+  
+  .esri-bookmarks__bookmark-image-container {
+    max-width: 100px !important;
+}
+
+.esri-bookmarks__image {
+    max-width: 100px !important;
+}
+  

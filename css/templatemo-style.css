@@ -1,0 +1,224 @@
+/*
+Awesome Template
+http://www.templatemo.com/preview/templatemo_450_awesome
+*/
+
+body
+	{
+ 		
+		background: white;
+ 		color: #ffffff;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 300;
+		overflow-x: hidden; /* prevent horizontal scrollbar from appearing */
+	}
+	
+a {
+	color: #28a7e9;
+}
+	
+a:hover {
+	color: #28a7e9;
+}
+
+/* start h2 */
+h2
+	{
+		text-align: center;
+		font-size: 40px;
+		padding-bottom: 40px;
+	}	
+h2 span
+	{
+		color: #28a7e9;
+		font-weight: bold;
+	}
+/* end h2 */
+
+
+/* end about team service portfolio contact */
+
+/* start preloader */
+.preloader
+	{
+		position: fixed;
+  		top: 0;
+  		left: 0;
+  		width: 100%;
+  		height: 100%;
+  		z-index: 99999;
+  		display: -webkit-box;
+  		display: -webkit-flex;
+  		display: -ms-flexbox;
+  		display: flex;
+  		-webkit-flex-flow: row nowrap;
+  		    -ms-flex-flow: row nowrap;
+  		        flex-flow: row nowrap;
+  		-webkit-box-pack: center;
+  		-webkit-justify-content: center;
+  		    -ms-flex-pack: center;
+  		        justify-content: center;
+  		-webkit-box-align: center;
+  		-webkit-align-items: center;
+  		    -ms-flex-align: center;
+  		        align-items: center;
+  		background: none repeat scroll 0 0 #ffffff;
+	}
+.sk-spinner-wave.sk-spinner 
+	{
+  		width: 50px;
+  		height: 30px;
+  		text-align: center;
+  		font-size: 10px; 
+  	}
+.sk-spinner-wave div 
+	{
+  		background-color: #333;
+  		height: 100%;
+  		width: 6px;
+  		display: inline-block;
+         -webkit-animation: sk-waveStretchDelay 1.2s infinite ease-in-out;
+                 animation: sk-waveStretchDelay 1.2s infinite ease-in-out;
+         
+    }
+.sk-spinner-wave .sk-rect2 
+	{
+          -webkit-animation-delay: -1.1s;
+                  animation-delay: -1.1s; 
+      }
+.sk-spinner-wave .sk-rect3 
+	{
+          -webkit-animation-delay: -1s;
+                  animation-delay: -1s; 
+     }
+.sk-spinner-wave .sk-rect4 
+	{
+          -webkit-animation-delay: -0.9s;
+                  animation-delay: -0.9s;
+     }
+.sk-spinner-wave .sk-rect5 
+	{
+          -webkit-animation-delay: -0.8s;
+                  animation-delay: -0.8s; 
+     }
+
+@-webkit-keyframes sk-waveStretchDelay {
+  0%, 40%, 100% {
+            -webkit-transform: scaleY(0.4);
+                    transform: scaleY(0.4); }
+
+  20% {
+            -webkit-transform: scaleY(1);
+                    transform: scaleY(1); } }
+
+@keyframes sk-waveStretchDelay {
+  0%, 40%, 100% {
+            -webkit-transform: scaleY(0.4);
+                    transform: scaleY(0.4); }
+
+  20% {
+            -webkit-transform: scaleY(1);
+                    transform: scaleY(1); } }
+/* end preloader */
+
+/* start header */
+header
+	{
+		min-height: 20px;
+		padding-top: 18px;
+		padding-bottom: 10px;
+	}
+header .fa
+	{
+		color: #28a7e9;
+	}
+header span
+	{
+		font-weight: bold;
+		padding-right: 10px;
+		padding-left: 4px;
+	}
+header a
+	{
+		color: #999;
+		font-weight: 600;
+	}
+header .social-icon
+	{
+		text-align: right;
+	}
+header .social-icon li a
+	{
+		border: none;
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+		text-align: center;
+	}
+/* end header */
+
+/* start nagivation */
+.navbar-default
+	{
+		background: #fff;
+		border: none;
+		box-shadow: none;
+		margin: 0 !important;
+	}
+.navbar-default .navbar-brand
+	{
+		font-weight: 500;
+		font-size: 30px;
+		height: 80px;
+		line-height: 40px;
+		padding: 12px 0px 0px 12px;
+	}
+.navbar-default .navbar-nav li a
+	{
+		font-weight: bold;
+		font-size: 13px;
+		height: 70px;
+		line-height: 40px;
+	}
+
+.navbar-default .navbar-nav > li > a.current { 
+	color: #28A7E9; 
+}
+.templatemo-nav {
+	border-radius: 0;	
+	width: 100%;
+	z-index: 1000;
+}
+.sticky {	
+	position: fixed;
+	left: 0;
+	top: 0;	
+}
+/* end navigation */
+
+/* end home */
+
+
+
+
+/**canvis**/
+
+/* start about team service portfolio contact */
+#about, #team, #service,
+#contact
+	{
+		padding-top: 300px;
+		padding-bottom: 40px;
+	}
+
+p span
+{
+		color: #28a7e9;
+		font-weight: bold;
+	}
+
+p
+{
+	text-align : justify;
+	}	
+	
