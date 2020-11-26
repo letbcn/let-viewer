@@ -18,6 +18,8 @@ var tCapes;
 var gAmbits;
 //limits administratius
 var gLimits;
+var lcomarques;
+var lmunicipis;
 var lseccions;
 //cartografia de base
 var gCartob;
@@ -26,7 +28,6 @@ var gTopo25;
 var lsupurb;
 var lvies;
 var lalti;
-var lhidrotopo;
 var lveget;
 //Imatges aèries
 var gImg;
@@ -180,7 +181,9 @@ var laccesh;
 	gAmbits="Àmbits";
 	//limits administratius
 	gLimits= "Límits administratius";
-	lseccions ="Seccions Censals (RMB)"
+	lmunicipis= "Municipis";
+	lcomarques="Comarques";
+	lseccions ="Seccions Censals (RMB)";
 	//cartografia de base
 	gCartob= "Cartografia de base";
 	ltopo25="Topogràfic 1:25.000 (RMB)";
@@ -188,7 +191,6 @@ var laccesh;
 	lsupurb="Superfície urbanitzada 1:25.000 (RMB)",
 	lvies="Vies de comunicació 1:25.000 (RMB)",
 	lalti="Altimetria 1:25.000 (RMB)",
-	lhidrotopo="Hidrografia 1:25.000 (RMB)",
 	lveget="Vegetació 1:25.000 (RMB)",
 	//Imatges aèries
 	gImg= "Imatges aèries";
@@ -337,7 +339,9 @@ var laccesh;
 	gAmbits="Ámbitos";
 	//limits administratius
 	gLimits= "Límites administrativos";
-	lseccions ="Secciones Censales"
+	lmunicipis= "Municipios";
+	lcomarques="Comarcas";
+	lseccions ="Secciones Censales";
 	//cartografia de base
 	gCartob= "Cartografía de base";
 	ltopo25="Topográfico 1:25.000 (RMB)";
@@ -345,7 +349,6 @@ var laccesh;
 	lsupurb="Superficie urbanizada 1:25.000 (RMB)",
 	lvies="Vías de comunicación 1:25.000 (RMB)",
 	lalti="Altimetría 1:25.000 (RMB)",
-	lhidrotopo="Hidrografía 1:25.000 (RMB)",
 	lveget="Vegetación 1:25.000 (RMB)",
 	//Imatges aèries
 	gImg= "Imágenes aérias";
@@ -495,7 +498,9 @@ var laccesh;
 	gAmbits="Ámbitos";
 	//limits administratius
 	gLimits= "Administrative limits";
-	lseccions ="Census Sections"
+	lmunicipis= "Municipis";
+	lcomarques="Comarques";
+	lseccions ="Census Sections";
 	//cartografia de base
 	gCartob= "Cartographical base";
 	ltopo25="Topgraphic 1:25.000 (RMB)";
@@ -503,7 +508,6 @@ var laccesh;
 	lsupurb="Urbanized surface 1:25.000 (RMB)",
 	lvies="Communication channels 1:25.000 (RMB)",
 	lalti="Altimetry 1:25.000 (RMB)",
-	lhidrotopo="Hidrography 1:25.000 (RMB)",
 	lveget="Vegetation 1:25.000 (RMB)",
 	//Imatges aèries
 	gImg= "Aerial imagery";
