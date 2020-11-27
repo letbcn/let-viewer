@@ -80,7 +80,7 @@
 		
 		var AMBLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "e93415d1458d4b1f9130d18fe4c2e5cd"
+			id: "9e1f6c2e9df642eaaa743b370d8eebd3"
 		  },
 		  id:"AMB",
 		  visible: false,
@@ -90,7 +90,7 @@
 		
 		var RMBLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "966498221cc54ac2b0401a85f7df61f5"
+			id: "eb1713a7606b414084bd1497020a3173"
 		  },
 		  id:"RMB",
 		  visible: true,
@@ -101,7 +101,7 @@
 		
 		var B30Layer = new MapImageLayer({
 		  portalItem: { 
-			id: "84d34314a5b9410d9f34e4a198b2a417"
+			id: "2a492a6f71a544e2b994a1228423a4e2"
 		  },
 		  id:"B30",
 		  visible: false,
@@ -124,47 +124,32 @@
 		
 		//**********Limits Administratius ***********//
 		//capes limits
-		var provinciesLayer = new FeatureLayer({
-		  portalItem: { 
-			id: "f1c3b9405d96425bb23a7652467f6d9a"
-		  },
-		  id:"5a5c3a62a2a14009867bce8f59cd23bd",
-		  visible: false,
-		 title: "Províncies",
-		 layerId: 0
-		});
 		
-		var vegueriesLayer = new FeatureLayer({
+		var comarquesLayer = new MapImageLayer({
 		  portalItem: {  
-			id: "01c7874e3b9c428f9f8b8a38589020ca"
+			id: "6d904e9e07fb4134bccf646f6719696a"
 		  },
+		  id:"dff564bae81b4746a1b862a295261149",
 		  visible: false,
-		  title: "Vegueries",
-		  layerId: 1
+		  title: lcomarques,
+		  listMode: "hide-children"
 		});
-		
-		var comarquesLayer = new FeatureLayer({
+		capes.push(comarquesLayer);
+
+		var municipisLayer = new MapImageLayer({
 		  portalItem: {  
-			id: "1dfbd181db164614bb1b375fbd05aba7"
+			id: "60e888e3865942ee83bc79406257b771"
 		  },
-		  id:"6357a1acf2cc4c93a5ae72fbd75b39f5",
-		  visible: false,
-		  title: "Comarques",
-		  layerId: 2
-		});
-		var municipisLayer = new FeatureLayer({
-		  portalItem: {  
-			id: "d6f5dc12c12a424c81ae43b6e782213f"
-		  },
-		  id:"8ea5c9ccdd0f43b1b12ceb21f86aace7",
+		  id:"2b35430f24ca44f9806026d89a8c647c",
 		  visible: true,
-		  title: "Municipis",
-		  layerId: 3
+		  title: lmunicipis,
+		  listMode: "hide-children"
 		});
+		capes.push(municipisLayer);
 		
 		var seccionsLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "bd0e279350ac4e90a240643d1c6df70a"
+			id: "130f774aa0764a388ed60362fe3f4739"
 		  },
 		  id:"c709a8d74f61439c9cd7df90a82a4d72",
 		  visible: false,
@@ -178,7 +163,7 @@
           title: gLimits,
           visible: true,
           visibilityMode: "independent",
-          layers: [provinciesLayer, comarquesLayer, municipisLayer, seccionsLayer],
+          layers: [comarquesLayer, municipisLayer, seccionsLayer],
           opacity: 1
         });
 		
@@ -196,9 +181,9 @@
 		
 		var superficieUrbanitzadaLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "e718c905c5d94d268364428bc31a4cda"
+			id: "4072aaaa0aff474fbaa5b3fdc702f21a"
 		  },
-		  id:"bf10ee427c444b2b9f9e3ad3b1ede6b8",
+		  id:"c51ff4b3811949de8c931539a98436fb",
 		  visible: false,
 		  title: lsupurb,
 		  listMode: "hide-children"
@@ -207,7 +192,7 @@
 		
 		var viesComunicacioLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "6b5649f86ec0416dbac5997f6e41e208"
+			id: "871040da40c44e85b6c1e241ed79f9ca"
 		  },
 		  id:"f639c19547e94cba99e1840733bbe6cb",
 		  visible: false,
@@ -218,20 +203,9 @@
 		
 		//FALTA ALTIMETRIA
 		
-		var hidrografiaLayer = new MapImageLayer({
-		  portalItem: { 
-			id: "bc36fe9de0624011b2f11f3dc73d82e0"
-		  },
-		  id:"fa46d01524894a89bebcab7c0e37efc8",
-		  visible: false,
-		  title: lhidrotopo,
-		  listMode: "hide-children"
-		});
-		capes.push(hidrografiaLayer);
-		
 		var vegetacioLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "728daa2c9db1472286d44813074fe27a"
+			id: "8dafc8159a764b3bae7ede0a2618f7b3"
 		  },
 		  id:"5ff52f87df6d4ae6a7b7e7f8f7602566",
 		  visible: false,
@@ -245,7 +219,7 @@
           title: gTopo25,
           visible: true,
           visibilityMode: "independent",
-          layers: [vegetacioLayer,hidrografiaLayer,viesComunicacioLayer, superficieUrbanitzadaLayer],
+          layers: [vegetacioLayer,viesComunicacioLayer, superficieUrbanitzadaLayer],
           opacity: 1
         });
 		
@@ -530,9 +504,9 @@
 		//capes
 		var pendentsLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "1d3ae78e92024bc1b75a5cca4d5cb74d"
+			id: "7ead62999aed425c9f886d3121144f7d"
 		  },
-		  id:'ac0fabc8274c4789b41c8e3745ebd922',
+		  id:'661de9d03db9420bb0aed38d6016a4e1',
 		  visible: false,
 		  title: lpendent,
 		  listMode: "hide-children"
@@ -541,9 +515,9 @@
 		
 		var orientacionsLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "c18a3e9e8a194de28f0d20cc4a20ee73"
+			id: "2fd7029c9d224033b05c4f2017d5cdab"
 		  },
-		  id:"a3b4a3e65be643a0bbcc3639bb79ff6b",
+		  id:"45372a2b148f458ea41e6c876baef8ae",
 		  visible: false,
 		  title: lorient,
 		  listMode: "hide-children"
@@ -552,9 +526,9 @@
 		
 		var mdeLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "eb10731b84c94fb9b0fab5fe39f3e6d0"
+			id: "4d9191f1ab9a436c9b0c8aecbe36e52b"
 		  },
-		  id:"1a1e649538cc47fca055948b1f1e225b",
+		  id:"e92e7caf625742edbd6cf776a862b6b9",
 		  visible: false,
 		  title: lmde,
 		  listMode: "hide-children"
@@ -574,9 +548,9 @@
 		//capes
 		var edafologicLayer = new MapImageLayer({
           portalItem: { 
-			id: "7d759587a83e47b39a59aeddd0d21d3d"
+			id: "babf992566c04072a8b9bd54a457c409"
 		  },
-		  id: "b40b8c5bedaa443da1b0dcd3e7666e61", //aquí estic posant l'id del shapefile
+		  id: "d75d9a916c6b41f49674d56cab0f8ae0", 
 		  visible: false,
           title: ledafo,
 		  listMode: "hide-children"
@@ -585,9 +559,9 @@
 		
 		var edafoSTLayer = new MapImageLayer({
           portalItem: { 
-			id: "f581dea033da4bda84496767ae85a18d"
+			id: "3722f690aea540af8f2e087d0b0ef9c2"
 		  },
-		  id: "f99fd97d7531479ab895677617a63314", //aquí estic posant l'id del shapefile
+		  id: "f99fd97d7531479ab895677617a63314", 
 		  visible: false,
           title: lsoil,
 		  listMode: "hide-children"
@@ -597,7 +571,7 @@
 		//capes
 		var geologicLayer = new MapImageLayer({
           portalItem: { 
-			id: "7eabc6c62a1748ec84652ed5b48d083c"
+			id: "f683d4b403524639b832afc7d2efa2fa"
 		  },
 		  id:"178f367494c34a67b65d544fc4c92840",
 		  visible: false,
@@ -623,9 +597,9 @@
 		
 		var xarxariusLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "ebf24354f7d5475c8fa30ebd5f10ba0d"
+			id: "2118ce09472247939a2bb15658b8b169"
 		  },
-		  id:"0ad8d8a96f4744b39ba6d6e27c15efbd",
+		  id:"1fc6a40336624ab38c4cbf75b5c0ad9a",
 		  visible: false,
 		  title: lXarxa0,
 		  listMode: "hide-children"
@@ -634,9 +608,9 @@
 		
 		var xarxahidroLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "6870a52d1b8345aa9059ab9d59950c22"
+			id: "4baaa3d59eab4ab193ab3497e2c49652"
 		  },
-		  id:"6844aaa5c8c74a1695cc4b47344190d5",
+		  id:"1513f52c7bb842d6a15fb0641c43dee6",
 		  visible: false,
 		  title: lXarxahidro,
 		  listMode: "hide-children"
@@ -645,9 +619,9 @@
 		
 		var canalsLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "7236514d3d9e4430a14d08cb4da23fc6"
+			id: "e28e01f7543b4ee4879369d37609b694"
 		  },
-		  id:"b13492ca33444c5ba1074bc1bb5f10d2",
+		  id:"904b68db5a704b5697a6d81f9efa7c3f",
 		  visible: false,
 		  title: lCanals,
 		  listMode: "hide-children"
@@ -656,20 +630,20 @@
 		
 		var conquesLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "cee76645c9f6482794e5f0aecf11bd4b"
+			id: "f66903ef96744d2b803e499505825cd0"
 		  },
-		  id:"4851eabedaf24abca5d39de2fe06cdaa",
+		  id:"ab4823a27fa242659167e279f1061637",
 		  visible: false,
 		  title: lConques,
 		  listMode: "hide-children"
 		});
 		capes.push(conquesLayer);
 		
-		var embassamentsLayer = new MapImageLayer({
+		var embassamentsLayer = new MapImageLayer({   //
 		  portalItem: { 
-			id: "75363dd3652e414381a83df196c89ed9"
+			id: "4baaa3d59eab4ab193ab3497e2c49652"
 		  },
-		  id:"059a2edad60849048b9b79efdef739a9",
+		  id:"1fc6a40336624ab38c4cbf75b5c0ad9a",
 		  visible: false,
 		  title: lEmb ,
 		  listMode: "hide-children"
@@ -678,9 +652,9 @@
 		
 		var costaneresLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "1ff5d04dc4df4a43baca625b97357aea"
+			id: "4baaa3d59eab4ab193ab3497e2c49652"
 		  },
-		  id:"0e485394ede04518bfdaf0cc94878e13",
+		  id:"1fc6a40336624ab38c4cbf75b5c0ad9a",
 		  visible: false,
 		  title: lCost,
 		  listMode: "hide-children"
@@ -689,9 +663,9 @@
 		
 		var badiesLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "6f35e67ba59e4afe9a2ee548752f2516"
+			id: "4baaa3d59eab4ab193ab3497e2c49652"
 		  },
-		  id:"a5bfa1387f134a58a3954f1f58f01880",
+		  id:"1fc6a40336624ab38c4cbf75b5c0ad9a",
 		  visible: false,
 		  title: lBadies,
 		  listMode: "hide-children"
@@ -700,9 +674,9 @@
 		
 		var estanysLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "74677007f6ff4e53aa15427642ffc256"
+			id: "4baaa3d59eab4ab193ab3497e2c49652"
 		  },
-		  id:"2f251a58f6d849dbb0938ee635d10d0a",
+		  id:"1fc6a40336624ab38c4cbf75b5c0ad9a",
 		  visible: false,
 		  title: lEstanys,
 		  listMode: "hide-children"
@@ -711,9 +685,9 @@
 		
 		var estuarisLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "18c48c69d0f046e2b1ffe772b4561965"
+			id: "4baaa3d59eab4ab193ab3497e2c49652"
 		  },
-		  id:"9fc6dea2b100494785da21bf88c4806d",
+		  id:"1fc6a40336624ab38c4cbf75b5c0ad9a",
 		  visible: false,
 		  title: lEstuaris,
 		  listMode: "hide-children"
@@ -722,9 +696,9 @@
 		
 		var riusLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "343d9f191a4845fdb2f03240c5c393d4"
+			id: "4baaa3d59eab4ab193ab3497e2c49652"
 		  },
-		  id:"9e33423672784e2a892eaa2622d6848b",
+		  id:"1fc6a40336624ab38c4cbf75b5c0ad9a",
 		  visible: false,
 		  title: lRius,
 		  listMode: "hide-children"
@@ -733,9 +707,9 @@
 		
 		var subterraniesLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "0941d7ae34cd408fb18b22e731bf29cd"
+			id: "4baaa3d59eab4ab193ab3497e2c49652"
 		  },
-		  id:"c64a2cdd38134783930a567c443da690",
+		  id:"1fc6a40336624ab38c4cbf75b5c0ad9a",
 		  visible: false,
 		  title: lSub,
 		  listMode: "hide-children"
@@ -744,9 +718,9 @@
 		
 		var zoneshLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "ed1a4e7847364cb596603a287ec2b089"
+			id: "4baaa3d59eab4ab193ab3497e2c49652"
 		  },
-		  id:"eb7c101620a24304ae149be5acb11eed",
+		  id:"1fc6a40336624ab38c4cbf75b5c0ad9a",
 		  visible: false,
 		  title: lZonesh,
 		  listMode: "hide-children"
@@ -755,9 +729,9 @@
 		
 		var hidrogeologicLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "ded1bcc10941426497f8afabe2cdb0a9"
+			id: "2be8985a6a6441dcb46637c234b4d653"
 		  },
-		  id:"77193be0555b40b992b43ef2ac830ffc",
+		  id:"8d612012e9eb4449a9f16613ef71db21",
 		  visible: false,
 		  title: lHidrogeo,
 		  listMode: "hide-children"
@@ -766,9 +740,9 @@
 		
 		var aquifersprotLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "798e0eb660fe47a680b7ab4da9e253e1"
+			id: "8872c9b504904ca6b5d72b5c3e1f723f"
 		  },
-		  id:"c25d6810c82e439286827803f45004f9",
+		  id:"42cf57ea35c7499eb6bb8aa3ad454523",
 		  visible: false,
 		  title: lAqupro,
 		  listMode: "hide-children"
@@ -777,9 +751,9 @@
 		
 		var aquifersLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "b84553a9262845eb83d960b34f208aee"
+			id: "c5f4fc3af0e94aefb000e27b9ab27221"
 		  },
-		  id:"0b10b12040944d0ea464a6002a75afee",
+		  id:"7a7334a2004947a19f6788115cf5104e",
 		  visible: false,
 		  title: lAquifers,
 		  listMode: "hide-children"
@@ -818,9 +792,9 @@
 		//capes
 		var radiacioLayer = new MapImageLayer({
           portalItem: { 
-			id: "ec0d7b16f38b4048aead3d5b11a5c361"
+			id: "e7ae7d7478e34a84977affe549f6603d"
 		  },
-		  id:"1a45801b75274d57b854f15a5f4b2825",
+		  id:"c691c9c12070486fa5656ebbfdb3a0a3",
 		  visible: false,
           title: lRadiacio,
 		  listMode: "hide-children"
@@ -830,9 +804,9 @@
 		
 		var precipitacioLayer = new MapImageLayer({
           portalItem: { 
-			id: "36157416c1b446409bb8869ba3eaa7b1"
+			id: "1be04e50092740c0a909a0c0356c23d7"
 		  },
-		  id:"7ab085cad44342d081f3fedaa5214cb8",
+		  id:"16d1d07f495d4d6394639595f56ce3c6",
 		  visible: false,
           title: lPrecipitacio,
 		  listMode: "hide-children"
@@ -841,9 +815,9 @@
 		
 		var tempMitjMinLayer = new MapImageLayer({
           portalItem: { 
-			id: "dfc355ddd3df4f188dc29989d7695e86"
+			id: "0b3851cf1e73457db22d1ed818c8cb0c"
 		  },
-		  id:"411a834667784b3488505596edbad92b",
+		  id:"12257ee181324c70a07d3a05b9ca14c1",
 		  visible: false,
           title: lTempmin,
 		  listMode: "hide-children"
@@ -852,9 +826,9 @@
 		
 		var tempMitjLayer = new MapImageLayer({
           portalItem: { 
-			id: "ad7be0a298364c9183ff0125ec30a6a6"
+			id: "6fcbd69e764c40dab0036506f0360427"
 		  },
-		  id:"c796d5dab79e419abd65916acaee6840",
+		  id:"43c449f674ff42a6a6e1af5abd77893a",
 		  visible: false,
           title: lTempmit,
 		  listMode: "hide-children"
@@ -863,9 +837,9 @@
 		
 		var tempMitjMaxLayer = new MapImageLayer({
           portalItem: { 
-			id: "365872d743d74a1588618fa3b38fbc59"
+			id: "323af4f141064d9f96a30cc37d293920"
 		  },
-		  id:"6238690a16e64ee5997bfdbac3082756",
+		  id:"a8b993cf4c8843ac8aa0e0dbe2f3da68",
 		  visible: false,
           title: lTempmax,
 		  listMode: "hide-children"
@@ -885,9 +859,9 @@
 		//***************Cobertes del sòl*****************//
 		var cob56Layer = new MapImageLayer({
           portalItem: { 
-			id: "8e50e3da102d4e5d8f9d0be2b31bb8a0"
+			id: "040679a9fcee4e35a8808bea01cd71d9"
 		  },
-		  id:"faed851378194bfb8717465f80b3c275",
+		  id:"271503d302a24e3c92ef806e53925b98",
 		  visible: false,
           title: lcob56,
 		  listMode: "hide-children"
@@ -896,9 +870,9 @@
 		
 		var cob93Layer = new MapImageLayer({
           portalItem: { 
-			id: "de2e55db541c423098baee0e4e0ed616"
+			id: "f2f124803baa4d86bb779cef346fc33b"
 		  },
-		  id:"293ede34d6eb4391be703c6db81ae06b",
+		  id:"27b6d833c83f4ff5a76ce4fefcd3971a",
 		  visible: false,
           title: lcob93,
 		  listMode: "hide-children"
@@ -907,9 +881,9 @@
 		
 		var cob00Layer = new MapImageLayer({
           portalItem: { 
-			id: "8628c46836974e39911ee941f8a7099c"
+			id: "aea3bd0f2c8e4a1493699fdff988bac1"
 		  },
-		  id:"13f475a2ff134f5680ee040a2b415095",
+		  id:"9ddbf3ad865445929d37291afa9e0a5b",
 		  visible: false,
           title: lcob00,
 		  listMode: "hide-children"
@@ -918,9 +892,9 @@
 		
 		var cob05Layer = new MapImageLayer({
           portalItem: { 
-			id: "a2daf3c9183e40e0b3ba343b401c44dd"
+			id: "254f367be0684692a05a54b073ac121c"
 		  },
-		  id:"e38739117c0c4a8e8098cd07796bd180",
+		  id:"3549108ac10b4ab7b60c5623cd0f5cda",
 		  visible: false,
           title: lcob05,
 		  listMode: "hide-children"
@@ -929,9 +903,9 @@
 		
 		var cob09Layer = new MapImageLayer({
           portalItem: { 
-			id: "a7c3ea94869e4671b8fc84a31042e2f7"
+			id: "9f942705cbdc4561a21b1c802b7f798b"
 		  },
-		  id:"1ee0da9c24734a6bb16d74b1bfffc187",
+		  id:"c468a6a45ed84aafa7cb835565162d27",
 		  visible: false,
           title: lcob09,
 		  listMode: "hide-children"
@@ -940,9 +914,9 @@
 		
 		var cob15Layer = new MapImageLayer({
           portalItem: { 
-			id: "dfedd30f8e754277bce71b197b9881a4"
+			id: "57b1be06d3554ed6a2c4a7c0ed0cbe28"
 		  },
-		  id:"39cace6819d142fd9a71dbaada6eebbd",
+		  id:"d44522da5c584825b4b370d13053056a",
 		  visible: false,
           title: lcob15,
 		  listMode: "hide-children"
@@ -961,9 +935,9 @@
 		//capes d'usos
 		var usos87Layer = new MapImageLayer({
           portalItem: { 
-			id: "9b8057efc311411ea3430f6eaa08c062"
+			id: "78e5e782c3ac40e8a8afd5154f679290"
 		  },
-		  id:"fbbfd23b28ff461fb24b656f00776390",
+		  id:"8178cd3d700d409b98c16385dcc15133",
 		  visible: false,
           title: lusos87,
 		  listMode: "hide-children"
@@ -972,9 +946,9 @@
 		
 		var usos92Layer = new MapImageLayer({
           portalItem: { 
-			id: "ae63750dd32f4cadba3a19955ab991a8"
+			id: "65f076e16cb44d0397ff40cfef2d560b"
 		  },
-		  id:"e2558a6e838a41e9bf3cef6e69b8e7a4",
+		  id:"65f076e16cb44d0397ff40cfef2d560b",
 		  visible: false,
           title: lusos92,
 		  listMode: "hide-children"
@@ -983,9 +957,9 @@
 		
 		var usos97Layer = new MapImageLayer({
           portalItem: { 
-			id: "6fd57feba4bd461d9a908d3ffca8ac66"
+			id: "ae7010f00bdc4ba3a7179179a8f6812e"
 		  },
-		  id:"7924fe0c405d4823b9536d2323ac7ff9",
+		  id:"ee2c7d4e0724403fa13ada858344118f",
 		  visible: false,
           title: lusos97,
 		  listMode: "hide-children"
@@ -994,9 +968,9 @@
 		
 		var usos02Layer = new MapImageLayer({
           portalItem: { 
-			id: "ec305c83291647d09241866d59f40120"
+			id: "f069a959849a4b3281f16b5d8408a3b0"
 		  },
-		  id:"b0f5670b1e7b46758b4918e50aa4ecbf",
+		  id:"d8c7be6f3a2a4e37981d298e737b3b73",
 		  visible: false,
           title: lusos02,
 		  listMode: "hide-children"
@@ -1005,9 +979,9 @@
 		
 		var usos07Layer = new MapImageLayer({
           portalItem: { 
-			id: "ac35d75883c14996aca03646e819b147"
+			id: "3e1111f02b6643d98d875e542c18bb2a"
 		  },
-		  id:"51c92b260c1945b49aa3e4c99ab33dfe",
+		  id:"bb6de8743dae498bbdb8962e57df20b6",
 		  visible: false,
           title: lusos07,
 		  listMode: "hide-children"
@@ -1016,9 +990,9 @@
 		
 		var usos12Layer = new MapImageLayer({
           portalItem: { 
-			id: "5cbb66cd99f04922a7f82e4aa02b60b9"
+			id: "043ea7fcdb1f40ae938b0a9e412964e0"
 		  },
-		  id:"a8e350d331914ea8a144ea221ebbe323", 
+		  id:"33ce419d22de4ae1b938b87a3b856172", 
 		  visible: false,
           title: lusos12,
 		  listMode: "hide-children"
@@ -1027,9 +1001,9 @@
 		
 		var usos17Layer = new MapImageLayer({
           portalItem: { 
-			id: "c684f735ed2f4ab2b97ba28c7b6921f4"
+			id: "b84d225771574d3db930a808e893e134"
 		  },
-		  id:"0e94632486b0412698f908abda126e48",
+		  id:"1dc3aa4885dd40d287d3e6f1f0580b00",
 		  visible: false,
           title: lusos17,
 		  listMode: "hide-children"
@@ -1058,9 +1032,9 @@
 		
 		var peinLayer = new MapImageLayer({
           portalItem: { 
-			id: "dc0a0daede4842429b00c78f9201fc59"
+			id: "388d5989dda04adfb76e448418ccfee6"
 		  },
-		  id:"bf5b63926ff04167a519391fe2a5ac50",
+		  id:"50cde7b5dce14ec79b93c44cd1c6f303",
 		  visible: false,
           title: lpein,
 		  listMode: "hide-children"
@@ -1069,9 +1043,9 @@
 		
 		var xnaturaLayer = new MapImageLayer({
           portalItem: { 
-			id: "304c4dd3e2254efb94f4196acd062334"
+			id: "14d9d9210b094d819c58407117eef3e5"
 		  },
-		  id:"7cbf706173614f89b1d5dc0475dec8be",
+		  id:"aa66ecbfb48842f9bc9b29ffe5e3a6ae",
 		  visible: false,
           title: lxnatura,
 		  listMode: "hide-children"
@@ -1080,9 +1054,9 @@
 		
 		var enpeLayer = new MapImageLayer({
           portalItem: { 
-			id: "1bb0fbdc00924d6e9a1c9bde97825154"
+			id: "1193889d142f4fbfba681c2e59d95ff4"
 		  },
-		  id:"f32bd9b7a6ea460a80d43ad25eb080cc",
+		  id:"aaa4b25c28c64b8e909ae1ff976bc7b6",
 		  visible: false,
           title: lenpe,
 		  listMode: "hide-children"
@@ -1092,9 +1066,9 @@
 		
 		var hicLayer = new MapImageLayer({
           portalItem: { 
-			id: "a5ad546459a045d59b7ed509310037bf"
+			id: "c4c87cf147ec49a79a68f666a992e9a1"
 		  },
-		  id:"c42d6098d4c44fdfae1c71a9c3614133",
+		  id:"b02da268dddd4813a819a29768d5def2",
 		  visible: false,
           title: lhic,
 		  listMode: "hide-children"
@@ -1105,9 +1079,9 @@
 		
 		var habLayer = new MapImageLayer({
           portalItem: { 
-			id: "7fad83d76184431daa67e44996e525a3"
+			id: "337c648a16a54896a8c1c16d9258ddbb"
 		  },
-		  id:"fd56f41192ed41278dc53517146b351d",
+		  id:"740d56e180d14979afe60802f8fb32ef",
 		  visible: false,
           title: lhab,
 		  listMode: "hide-children"
@@ -1116,9 +1090,9 @@
 		
 		var ndvi17Layer = new MapImageLayer({
           portalItem: { 
-			id: "5336befedf4f4993bdf11646bd705f3e"
+			id: "ca635e57c4f04f12b2c2aa10098d97cb"
 		  },
-		  id:"71f03c59498e403f8295980b1b5b27fa",
+		  id:"d982a6fc5923429abff4831f7a8681f5",
 		  visible: false,
           title: lndvi17,
 		  listMode: "hide-children"
@@ -1127,9 +1101,9 @@
 		
 		var ndvi18Layer = new MapImageLayer({
           portalItem: { 
-			id: "38d8a9a98717444c9aab2a6d7b539149"
+			id: "b425b61ef3f04446bc5e4369cff4206b"
 		  },
-		  id:"f683b0ebf12c4932875115f4923993cf",
+		  id:"387fa0d8b85746919ea28f0e16280c35",
 		  visible: false,
           title: lndvi18,
 		  listMode: "hide-children"
@@ -1138,9 +1112,9 @@
 		
 		var ndvi19Layer = new MapImageLayer({
           portalItem: { 
-			id: "50921f6e6eb74c149ff50acee8d185f9"
+			id: "a8c82853a3044cdbac883617c7117d1a"
 		  },
-		  id:"e5cab1450c1b4027ab4bdfe813daaf7a",
+		  id:"c2a55bb4593b41ea9598be0f7786e11c",
 		  visible: false,
           title: lndvi19,
 		  listMode: "hide-children"
@@ -1157,9 +1131,9 @@
 		
 		var boscossLayer = new MapImageLayer({
           portalItem: { 
-			id: "ff9356f5b3894069aacfe9459cf86c83"
+			id: "03f03f052fb0467880e0eef07837c52f"
 		  },
-		  id:"afd44fc46629480a92f3bed85dd4a91a",
+		  id:"d7042464feb44823a22a6f0ec119a291",
 		  visible: false,
           title: lboscoss,
 		  listMode: "hide-children"
@@ -1179,9 +1153,9 @@
 		
 		var poligonsLayer = new MapImageLayer({
           portalItem: { 
-			id: "e78ace09acc84d7990ce48a435aa9c52"
+			id: "bf87263bae8f4463be88812065780ec3"
 		  },
-		  id:"c60b7b08e260416599d39050aa076c5b",
+		  id:"d36cd02e881c4f53a5b963e5bb2adc31",
 		  visible: false,
           title: lpoligons,
 		  listMode: "hide-children"
@@ -1190,9 +1164,9 @@
 		
 		var teixitLayer = new MapImageLayer({
           portalItem: { 
-			id: "68e5504d984542f09894374bd2c2abad"
+			id: "a0d62d94dfba4e17b12dd8616b9ce2b0"
 		  },
-		  id:"3cd8e924b62841b8863b30bf948a0f90",
+		  id:"91d47bc8f0514fc1a7486498ba4c8a6c",
 		  visible: false,
           title: lteixit,
 		  listMode: "hide-children"
@@ -1203,8 +1177,7 @@
           title: gUrba,
           visible: true,
           visibilityMode: "independent",
-          //layers: [teixitLayer,poligonsLayer],
-		  layers: [poligonsLayer],
+          layers: [teixitLayer,poligonsLayer],
           opacity: 1
         });
 		
@@ -1212,7 +1185,7 @@
 		//capes
 		var agriculturaLayer = new MapImageLayer({
           portalItem: { 
-			id: "34e902bf1f3d48f092ab723d942db39a"
+			id: "9f624cf745a048a5b1782d1c0bc88bf6"
 		  },
 		  id:"1db6162873da4fb99a58ff48c6dae996",
 		  visible: false,
@@ -1224,9 +1197,9 @@
 		
 		var hortsLayer = new MapImageLayer({
           portalItem: { 
-			id: "2a39799d72134ad29781ef87eb4b3dab"
+			id: "ec429664031b4057ae8ba8a0628197a8"
 		  },
-		  id:"957ce9eed7694191a3741f342d894c20",
+		  id:"b567a429af924404b2114332100737d7",
 		  visible: false,
           title: lhorts,
 		  listMode: "hide-children"
@@ -1246,11 +1219,11 @@
 		
 		//**********Vectors ambientals***********//
 		//capes
-		var estatBadiesLayer = new MapImageLayer({
+		var estatBadiesLayer = new MapImageLayer({ //
 		  portalItem: { 
-			id: "39cd5924a71e447ea0e0a3adaf125361"
+			id: "bb932379a79d4a2e9488a7ce919e16e2"
 		  },
-		  id:"c4a4dc5789774e3dbd5293e9c0c0d6f3",
+		  id:"4564a2cba6724442b48ae1fffce4686d",
 		  visible: false,
 		  title: lEsbadies,
 		  listMode: "hide-children"
@@ -1259,9 +1232,9 @@
 		
 		var estatCostaneresLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "458dd0747bed4b0087638c688ac77255"
+			id: "bb932379a79d4a2e9488a7ce919e16e2"
 		  },
-		  id:"336aff16c83f4159a09ee47237995b31",
+		  id:"4564a2cba6724442b48ae1fffce4686d",
 		  visible: false,
 		  title: lEscostaneres,
 		  listMode: "hide-children"
@@ -1270,31 +1243,31 @@
 		
 		var estatEmbassamentsLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "5c42ecb4bdd9479795929f94ea0634e4"
+			id: "e963bd24ab524fbaa1fc2bcfb3892315"
 		  },
-		  id:"b9404685e0be4bbdbd0ccc811b164e5c",
+		  id:"6acc2ab70906496dbb9bd2360ac12e4d",
 		  visible: false,
 		  title: lEsembass,
 		  listMode: "hide-children"
 		});
 		capes.push(estatEmbassamentsLayer);
 		
-		var estatEstanysLayer = new MapImageLayer({
+		var estatEstanysLayer = new MapImageLayer({ //
 		  portalItem: { 
-			id: "3c3a4ca8fbb546f3a780512b10eb68c7"
+			id: "e963bd24ab524fbaa1fc2bcfb3892315"
 		  },
-		  id:"dcf339c2a2ad4b038936d93b837233ac",
+		  id:"6acc2ab70906496dbb9bd2360ac12e4d",
 		  visible: false,
 		  title: lEsestanys,
 		  listMode: "hide-children"
 		});
 		capes.push(estatEstanysLayer);
 		
-		var estatEstuarisLayer = new MapImageLayer({
+		var estatEstuarisLayer = new MapImageLayer({ //
 		  portalItem: { 
-			id: "b5739f11c4c0450ca0f2b8aee7bd9553"
+			id: "e963bd24ab524fbaa1fc2bcfb3892315"
 		  },
-		  id:"6ea443b67d2f48ad95704e374bb06b16",
+		  id:"6acc2ab70906496dbb9bd2360ac12e4d",
 		  visible: false,
 		  title: lEsestuaris,
 		  listMode: "hide-children"
@@ -1303,9 +1276,9 @@
 		
 		var estatAiguaRiusLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "f23995dd53504047a48d216e6daa2545"
+			id: "9ee6a5209cdc467ca1804fefb4779ccf"
 		  },
-		  id:"61e261c21525427484a00ccc32e730fd",
+		  id:"b401db079cfd4ffd9be0554382544aec",
 		  visible: false,
 		  title: lEsrius,
 		  listMode: "hide-children"
@@ -1314,9 +1287,9 @@
 		
 		var estatSubterraniesLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "803f4c754e38440086e72f3a90e93e7a"
+			id: "4bf1730854fb4c94bacb7cff6232227d"
 		  },
-		  id:"3c295e7bfd254093ad01a108b78a37fc",
+		  id:"3be8d1197d934cd19c255895cb7932ce",
 		  visible: false,
 		  title: lEssubt,
 		  listMode: "hide-children"
@@ -1325,9 +1298,9 @@
 		
 		var estatZonesHumidesLayer = new MapImageLayer({
 		  portalItem: { 
-			id: "6adc1fa4d62b43fdbfe453fb4c57ebac"
+			id: "6b8123ae8ecd402596e95dacabf2f9cf"
 		  },
-		  id:"36a198334ee74e8aadc34bd0ae1c29fe",
+		  id:"59c43fa5e3964e3d9a600b67cf74f367",
 		  visible: false,
 		  title: lEshumides,
 		  listMode: "hide-children"
@@ -1367,7 +1340,7 @@
 		
 		var inundable10Layer = new MapImageLayer({
 		  portalItem: {  
-			id: "50d1dcf29e804bbf9a44d726b812fbee"
+			id: "475589b7528c402db168280205110097"
 		  },
 		  id:'9c1c3ca0a4844c55a858ab3467994b7d',
 		  visible: false,
@@ -1378,7 +1351,7 @@
 		
 		var inundable100Layer = new MapImageLayer({
 		  portalItem: {  
-			id: "d2dffbd485874d40bbcf3dc3f8dec21f"
+			id: "06d690a272ec4774aa7a9e7cd9bb1c11"
 		  },
 		  id:'cc3cfa3cff3b4550bdd15220ee819aa8',
 		  visible: false,
@@ -1389,7 +1362,7 @@
 		
 		var inundable500Layer = new MapImageLayer({
 		  portalItem: {  
-			id: "16fcea48e3684a5c8d39608713891ab4"
+			id: "33d39287a50c4085ba5e89d400de68af"
 		  },
 		  id:'81bc7d31a57e44ae8c987b9592066610',
 		  visible: false,
@@ -1412,7 +1385,7 @@
           title: gRiscos,
           visible: true,
           visibilityMode: "independent",
-          layers: [inundabilitatGroupLayer],//,riscogeologicsLayer],
+          layers: [inundabilitatGroupLayer,riscogeologicsLayer],
           opacity: 1
         });
 		
@@ -1424,7 +1397,7 @@
 		//capes
 		var envellLayer = new MapImageLayer({
 		  portalItem: {  
-			id: "1299f14a915e4d3d87dda50ba83d8d4a"
+			id: "e01f577d228b44e380ce73934aa1e560"
 		  },
 		  id:'7c906313a73143d69ed527a01354319f',
 		  visible: false,
@@ -1435,7 +1408,7 @@
 		
 		var immiLayer = new MapImageLayer({
 		  portalItem: {  
-			id: "2658b666db37430eb8014ea9d1399ed9"
+			id: "4e479ac7b2dc483fbcbcebeedaec423e"
 		  },
 		  id:'51c16fffc0914af1a5807216893b0d50',
 		  visible: false,
@@ -1446,7 +1419,7 @@
 		
 		var rendaLayer = new MapImageLayer({
 		  portalItem: {  
-			id: "040c623236b34b6f8bc46cc09f09847f"
+			id: "27e0349852b441ceb6c1275c44e6c57b"
 		  },
 		  id:'cad9baf21ebe4d16ae8a0e7e114595ac',
 		  visible: false,
@@ -1471,7 +1444,7 @@
 		
 		var formacioLayer = new MapImageLayer({
 		  portalItem: {  
-			id: "9e65d44433254da1839a420fbc918529"
+			id: "75315adceb2b489da4660a2c570adf33"
 		  },
 		  id:'918019553b994875bce87a7bdadacbbc',
 		  visible: false,
@@ -1482,7 +1455,7 @@
 		
 		var aturLayer = new MapImageLayer({
 		  portalItem: {  
-			id: "f50aff1393de4d83a358909f60eaa883"
+			id: "66f08ed261eb4c0ea27986126cfa464b"
 		  },
 		  id:'6c0dc5ec3c0b4293874b0b411ae37d22',
 		  visible: false,
@@ -1493,7 +1466,7 @@
 		
 		var estathLayer = new MapImageLayer({
 		  portalItem: {  
-			id: "49a427bddf9e45ef9e06fc1e19b9099e"
+			id: "1ad2b5a4fc4546e5a184f884550e1b49"
 		  },
 		  id:'07dc183814c04610a150345bcd18426e',
 		  visible: false,
@@ -1504,7 +1477,7 @@
 		
 		var acceshLayer = new MapImageLayer({
 		  portalItem: {  
-			id: "0bd0b15d77e046178e652a558da5d855"
+			id: "890f6ff1f45e478b949ff4fc7cfeba01"
 		  },
 		  id:'9bd3b7c6e6e84cbea2237fd9be8e34a3',
 		  visible: false,
