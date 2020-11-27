@@ -45,39 +45,6 @@
           }
         };
 		
-		/**
-		
-		var AMBLayer = new FeatureLayer({
-			url:
-			  "https://atlantis.uab.cat:6443/arcgis/rest/services/limits_administratius/limits_administratius/FeatureServer/3",
-			renderer: sym,
-			title: 'AMB',
-			id:"AMB",
-			visible:false,
-			definitionExpression: "amb = 0"
-			
-		  });
-		var RMBLayer = new FeatureLayer({
-			url:
-			  "https://atlantis.uab.cat:6443/arcgis/rest/services/limits_administratius/limits_administratius/FeatureServer/3",
-			renderer: sym,
-			title: 'RMB',
-			visible:true,
-			id:"RMB",
-			definitionExpression: "rmb = 0"
-		  });
-		  
-		  var B30Layer = new FeatureLayer({
-			url:
-			  "https://atlantis.uab.cat:6443/arcgis/rest/services/limits_administratius/limits_administratius/FeatureServer/3",
-			renderer: sym,
-			title: 'B30',
-			visible:false,
-			id:"B30",
-			definitionExpression: "b30 = 0"
-		  });
-		**/
-		
 		var AMBLayer = new MapImageLayer({
 		  portalItem: { 
 			id: "9e1f6c2e9df642eaaa743b370d8eebd3"
@@ -511,7 +478,7 @@
 		  title: lpendent,
 		  listMode: "hide-children"
 		});
-		//capes.push(pendentsLayer);
+		capes.push(pendentsLayer);
 		
 		var orientacionsLayer = new MapImageLayer({
 		  portalItem: { 
@@ -522,7 +489,7 @@
 		  title: lorient,
 		  listMode: "hide-children"
 		});
-		//capes.push(orientacionsLayer);
+		capes.push(orientacionsLayer);
 		
 		var mdeLayer = new MapImageLayer({
 		  portalItem: { 
@@ -533,7 +500,7 @@
 		  title: lmde,
 		  listMode: "hide-children"
 		});
-		//capes.push(mdeLayer);
+		capes.push(mdeLayer);
 		
 		//grup de capes
 		var topografiaGroupLayer = new GroupLayer({
@@ -799,7 +766,7 @@
           title: lRadiacio,
 		  listMode: "hide-children"
         });
-		//capes.push(radiacioLayer);
+		capes.push(radiacioLayer);
 		
 		
 		var precipitacioLayer = new MapImageLayer({
@@ -811,7 +778,7 @@
           title: lPrecipitacio,
 		  listMode: "hide-children"
         });
-		//capes.push(precipitacioLayer);
+		capes.push(precipitacioLayer);
 		
 		var tempMitjMinLayer = new MapImageLayer({
           portalItem: { 
@@ -822,7 +789,7 @@
           title: lTempmin,
 		  listMode: "hide-children"
         });
-		//capes.push(tempMitjMinLayer);
+		capes.push(tempMitjMinLayer);
 		
 		var tempMitjLayer = new MapImageLayer({
           portalItem: { 
@@ -833,7 +800,7 @@
           title: lTempmit,
 		  listMode: "hide-children"
         });
-		//capes.push(tempMitjLayer);
+		capes.push(tempMitjLayer);
 		
 		var tempMitjMaxLayer = new MapImageLayer({
           portalItem: { 
@@ -844,7 +811,7 @@
           title: lTempmax,
 		  listMode: "hide-children"
         });
-		//capes.push(tempMitjMaxLayer);
+		capes.push(tempMitjMaxLayer);
 		
 		//grup de capes
 		var climaGroupLayer = new GroupLayer({
@@ -1329,14 +1296,14 @@
 			//**********Riscos territorials ***********//
 		//capes
 		
-		var riscogeologicsLayer = new WMSLayer({
+		/*var riscogeologicsLayer = new WMSLayer({
 		  portalItem: {  
 			id: "02ba5c499d00419398279dfcbd2a26d0"
 		  },
 		  visible: false,
 		  title: lriscgeo,
 		  listMode: "hide-children"
-		});
+		});*/
 		
 		var inundable10Layer = new MapImageLayer({
 		  portalItem: {  
@@ -1385,7 +1352,7 @@
           title: gRiscos,
           visible: true,
           visibilityMode: "independent",
-          layers: [inundabilitatGroupLayer,riscogeologicsLayer],
+          layers: [inundabilitatGroupLayer],//riscogeologicsLayer],
           opacity: 1
         });
 		
