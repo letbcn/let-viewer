@@ -45,11 +45,11 @@
           }
         };
 		
-		/**
+		
 		
 		var AMBLayer = new FeatureLayer({
 			url:
-			  "https://atlantis.uab.cat:6443/arcgis/rest/services/limits_administratius/limits_administratius/FeatureServer/3",
+			  "https://openlab.uab.es:6443/arcgis/rest/services/limits_administratius/cat/FeatureServer/0",
 			renderer: sym,
 			title: 'AMB',
 			id:"AMB",
@@ -59,7 +59,7 @@
 		  });
 		var RMBLayer = new FeatureLayer({
 			url:
-			  "https://atlantis.uab.cat:6443/arcgis/rest/services/limits_administratius/limits_administratius/FeatureServer/3",
+			  "https://openlab.uab.es:6443/arcgis/rest/services/limits_administratius/cat/FeatureServer/0",
 			renderer: sym,
 			title: 'RMB',
 			visible:true,
@@ -69,16 +69,16 @@
 		  
 		  var B30Layer = new FeatureLayer({
 			url:
-			  "https://atlantis.uab.cat:6443/arcgis/rest/services/limits_administratius/limits_administratius/FeatureServer/3",
+			  "https://openlab.uab.es:6443/arcgis/rest/services/limits_administratius/cat/FeatureServer/0",
 			renderer: sym,
 			title: 'B30',
 			visible:false,
 			id:"B30",
 			definitionExpression: "b30 = 0"
 		  });
-		**/
 		
-		var AMBLayer = new MapImageLayer({
+		
+		/**var AMBLayer = new MapImageLayer({
 		  portalItem: { 
 			id: "9e1f6c2e9df642eaaa743b370d8eebd3"
 		  },
@@ -108,7 +108,7 @@
 		  title:'B30',
 		  listMode: "hide-children"
 		});
-	
+	**/
 		//Grup de capes limits
 		var regionsGroupLayer = new GroupLayer({
           visible: true,
