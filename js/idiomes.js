@@ -18,8 +18,6 @@ var tCapes;
 var gAmbits;
 //limits administratius
 var gLimits;
-var lcomarques;
-var lmunicipis;
 var lseccions;
 //cartografia de base
 var gCartob;
@@ -38,19 +36,17 @@ var lorto25c;
 var lorto10c;
 var lsat250m;
 var gHistoric;
+var lorto10m45;
 var lorto5m56;
 var lorto5m87;
-var lorto5m92;
 var lorto5m94;
-var lorto5m97;
 var lorto5m00;
-var lorto5m02;
-var lorto5m05;
-var lorto5m07;
+var lorto5m04;
+var lorto5m06;
 var lorto5m09;
 var lorto5m12;
 var lorto5m15;
-var lorto5m16;
+var lorto5m18;
 //Topografia
 var gTopo;
 var lmde;
@@ -62,15 +58,6 @@ var lgeolo;
 var ledafo;
 //Hidrologia
 var gHidro;
-var gMaigua;
-var lEmb;
-var lCost;
-var lBadies;
-var lEstanys;
-var lEstuaris;
-var lRius;
-var lSub;
-var lZonesh;
 var lHidrogeo;
 var lAquifers;
 var lAqupro;
@@ -105,16 +92,17 @@ var lusos12;
 var lusos17;
 //Espai Natural
 var gNatural;
+var gProtecc;
 var lpein;
 var lxnatura;
 var lenpe;
 var lhic;
 var lhab;
-var gNdvi= "NDVI"
+var gNdvi;
+var lboscoss;
 var lndvi17;
 var lndvi18;
 var lndvi19;
-var lboscoss;
 //Espai urbà
 var gUrba;
 var lpoligons;
@@ -122,26 +110,24 @@ var lteixit;
 //Espai agrari
 var gAgrari;
 var lAgricultura;
-var lhorts;
+var lhortsp09;
+var lhortsp15;
 // Vectors ambientals
 var gAmbientals;
 var gEstatAigua;
-var lEsbadies;
 var lEscostaneres;
 var lEsembass;
-var lEsestanys;
-var lEsestuaris;
 var lEsrius;
 var lEssubt;
 var lEshumides;
 //Riscos territorials
 var gRiscos;
+var lincend;
 var gInundabilitat;
 var lretorn10;
 var lretorn100;
 var lretorn500;
 var lriscgeo;
-var mapabase;
 //Dinàmiques Socioeconòmiques
 var gSocio;
 var lenvell;
@@ -181,17 +167,15 @@ var laccesh;
 	gAmbits="Àmbits";
 	//limits administratius
 	gLimits= "Límits administratius";
-	lmunicipis= "Municipis";
-	lcomarques="Comarques";
-	lseccions ="Seccions Censals (RMB)";
+	lseccions ="Seccions Censals"
 	//cartografia de base
 	gCartob= "Cartografia de base";
 	ltopo25="Topogràfic 1:25.000 (RMB)";
 	gTopo25="Topogràfic";
-	lsupurb="Superfície urbanitzada 1:25.000 (RMB)",
-	lvies="Vies de comunicació 1:25.000 (RMB)",
-	lalti="Altimetria 1:25.000 (RMB)",
-	lveget="Vegetació 1:25.000 (RMB)",
+	lsupurb="Superfície urbanitzada 1:25.000",
+	lvies="Vies de comunicació 1:25.000",
+	lalti="Altimetria 1:25.000",
+	lveget="Vegetació 1:25.000",
 	//Imatges aèries
 	gImg= "Imatges aèries";
 	gActuals="Actual";
@@ -201,19 +185,17 @@ var laccesh;
 	lorto10c="Ortofoto de Catalunya 1:1.000 (RMB)";
 	lsat250m="Imatge satèl·lit de Catalunya 1:250.000 (RMB)";
 	gHistoric="Històric";
-	lorto5m56="Ortofoto de Catalunya 1:5.000 1956 (RMB)";
-	lorto5m87="Ortofoto de Catalunya 1:5.000 1987 (RMB)";
-	lorto5m92="Ortofoto de Catalunya 1:5.000 1992 (RMB)";
+	lorto10m45="Ortofoto de Catalunya 1:10.000 1945";
+	lorto5m56="Ortofoto de Catalunya 1:5.000 1956";
+	lorto5m87="Ortofoto de Catalunya 1:5.000 1987";
 	lorto5m94="Ortofoto de Catalunya 1:5.000 1994 (RMB)";
-	lorto5m97="Ortofoto de Catalunya 1:5.000 1997 (RMB)";
 	lorto5m00="Ortofoto de Catalunya 1:5.000 2000 (RMB)";
-	lorto5m02="Ortofoto de Catalunya 1:5.000 2002 (RMB)";
-	lorto5m05="Ortofoto de Catalunya 1:5.000 2005 (RMB)";
-	lorto5m07="Ortofoto de Catalunya 1:5.000 2007 (RMB)";
+	lorto5m04="Ortofoto de Catalunya 1:5.000 2004";
+	lorto5m06="Ortofoto de Catalunya 1:5.000 2007 (RMB)";
 	lorto5m09="Ortofoto de Catalunya 1:5.000 2009 (RMB)";
 	lorto5m12="Ortofoto de Catalunya 1:5.000 2012 (RMB)";
 	lorto5m15="Ortofoto de Catalunya 1:5.000 2015 (RMB)";
-	lorto5m16="Ortofoto de Catalunya 1:5.000 2016 (RMB)";
+	lorto5m18="Ortofoto de Catalunya 1:5.000 2016 (RMB)";
 	//Topografia
 	gTopo= "Topografia";
 	lmde="Model Digital d'Elevacions (RMB)";
@@ -226,84 +208,75 @@ var laccesh;
 	lsoil="Edafològic (ST) 1:250.000 (RMB)";
 	//Hidrologia
 	gHidro= "Hidrologia";
-	gMaigua="Masses d'aigua";
-	lEmb ="Embassaments (RMB)";
-	lCost="Aigües costaneres (RMB)";
-	lBadies="Badies (RMB)";
-	lEstanys="Estanys (RMB)";
-	lEstuaris="Estuaris (RMB)";
-	lRius="Rius (RMB)";
-	lSub="Aigües subterrànies (RMB)";
-	lZonesh="Zones humides (RMB)";
-	lHidrogeo="Hidrogeològic 1:250.000 (RMB)";
-	lAquifers="Aqüífers (RMB)";
-	lAqupro="Aqüífers protegits (RMB)";
+	lHidrogeo="Hidrogeològic 1:250.000";
+	lAquifers="Aqüífers";
+	lAqupro="Aqüífers protegits";
 	gConques="Conques";
-	lXarxa0="Xarxa hidrogràfica principal 1:50.000 (RMB)";
+	lXarxa0="Xarxa hidrogràfica principal 1:50.000";
 	lXarxahidro="Xarxa hidrogràfica (RMB)";
 	lCanals="Xarxa de conduccions i canalitzacions (RMB)";
 	lConques="Conques elementals de Catalunya 1:50.000 (RMB)";
 	//Clima
 	gClima= "Clima";
-	lRadiacio="Radiació solar (RMB)";
-	lPrecipitacio="Precipitacions (RMB)";
-	lTempmin="Temeratura mitjana mínimes (RMB)";
-	lTempmit="Temperatura mitjana (RMB)";
-	lTempmax="Temperatura mitjana màximes (RMB)";
+	lRadiacio="Radiació solar potencial";
+	lPrecipitacio="Precipitacions";
+	lTempmin="Temperatures mínimes";
+	lTempmit="Temperatura mitjana";
+	lTempmax="Temperatures màximes";
 	//Cobertes del sol
 	gCobertesSol="Cobertes del sòl";
 	gCobertes="Cobertes del sòl";
-	lcob56="Cobertes del sòl 1956 (RMB)";
-	lcob93="Cobertes del sòl 1993 (RMB)";
-	lcob00="Cobertes del sòl 2000 (RMB)";
-	lcob05="Cobertes del sòl 2005 (RMB)";
-	lcob09="Cobertes del sòl 2009 (RMB)";
+	lcob56="Cobertes del sòl 1956";
+	lcob93="Cobertes del sòl 1993";
+	lcob00="Cobertes del sòl 2000";
+	lcob05="Cobertes del sòl 2005";
+	lcob09="Cobertes del sòl 2009";
 	lcob15="Cobertes del sòl 2015 (AMB)";
 	gUsos="Usos del sòl";
-	lusos87="Usos del sòl 1987 (RMB)";
-	lusos92="Usos del sòl 1992 (RMB)";
-	lusos97="Usos del sòl 1997 (RMB)";
-	lusos02="Usos del sòl 2002 (RMB)";
-	lusos07="Usos del sòl 2007 (RMB)";
-	lusos12="Usos del sòl 2012 (RMB)";
-	lusos17="Usos del sòl 2017 (RMB)";
+	lusos87="Usos del sòl 1987";
+	lusos92="Usos del sòl 1992";
+	lusos97="Usos del sòl 1997";
+	lusos02="Usos del sòl 2002";
+	lusos07="Usos del sòl 2007";
+	lusos12="Usos del sòl 2012";
+	lusos17="Usos del sòl 2017";
 	//Espai natural
 	gNatural="Espai natural";
-	lpein="Pla d'espais d'interès natural (PEIN) (RMB)";
-	lxnatura="Xarxa natura 2000 (RMB)";
-	lenpe="Espais naturals de protecció especial (ENPE) (RMB)";
-	lhic="Hàbitats d'interès comunitari (RMB)";
-	lhab="Hàbitats (RMB)";
+	lpein="Pla d'espais d'interès natural (PEIN)";
+	lxnatura="Xarxa natura 2000";
+	lenpe="Espais naturals de protecció especial (ENPE)";
+	lhic="Hàbitats d'interès comunitari";
+	lhab="Hàbitats";
+	lboscoss="Boscos singulars";
 	lndvi17="NDVI 2017 (RMB)";
 	lndvi18="NDVI 2018 (RMB)";
 	lndvi19 ="NDVI 2019 (RMB)";
-	lboscoss="Boscos singulars (RMB)";
+	
 	//Espai urbà
 	gUrba="Espai urbà";
 	lpoligons="Polígons industrials (RMB)";
 	lteixit="Teixits urbans (AMB)";
 	//Espai agrari
 	gAgrari= "Espai agrari";
-	lAgricultura="Agricultura (RMB)";
-	lhorts="Agricultura periurbana (AMB)";
+	lAgricultura="Agricultura (DAN 2019)";
+	lhortsp09= "Horts precaris 2009";
+	lhortsp15="Horts precaris 2015";
 	//Vectors ambientals
 	gAmbientals= "Vectors ambientals";
 	gEstatAigua="Estat de les masses d'aigua";
-	lEsbadies="Estat badies (RMB)";
 	lEscostaneres="Estat aigües costaneres (RMB)";
 	lEsembass="Estat embassaments (RMB)";
-	lEsestanys="Estat estanys (RMB)";
-	lEsestuaris="Estat estuaris (RMB)";
 	lEsrius="Estat rius (RMB)";
 	lEssubt="Estat aigües subterrànies (RMB)";
 	lEshumides="Estat zones humides (RMB)";
 	//Riscos territorials
 	gRiscos= "Riscos territorials";
-	lriscgeo="Mapa per a la Prevenció de Riscos Geològics 1:25.000 (RMB)";
+	lriscgeo="Mapa per a la Prevenció de Riscos Geològics 1:25.000";
+	lincend= "Vulnerabilitat Incendis";
 	gInundabilitat="Inundabilitat";
-	lretorn10="Zona inundable retorn 10 anys (RMB)";
-	lretorn100="Zona inundable retorn 100 anys (RMB)";
-	lretorn500="Zona inundable retorn 500 anys (RMB)";
+	lretorn10="Zona inundable retorn 10 anys";
+	lretorn100="Zona inundable retorn 100 anys";
+	lretorn500="Zona inundable retorn 500 anys";
 	//Dinàmiques Socioeconòmiques
 	gSocio="Dinàmiques socioeconòmiques";
 	lenvell="Envelliment vulnerable (AMB)";
@@ -339,9 +312,7 @@ var laccesh;
 	gAmbits="Ámbitos";
 	//limits administratius
 	gLimits= "Límites administrativos";
-	lmunicipis= "Municipios";
-	lcomarques="Comarcas";
-	lseccions ="Secciones Censales";
+	lseccions ="Secciones Censales"
 	//cartografia de base
 	gCartob= "Cartografía de base";
 	ltopo25="Topográfico 1:25.000 (RMB)";
@@ -359,19 +330,17 @@ var laccesh;
 	lorto10c="Ortofoto de Cataluña 1:1.000 (RMB)";
 	lsat250m="Imagen satélite de Cataluña 1:250.000 (RMB)";
 	gHistoric="Histórico";
+	lorto10m45="Ortofoto de Cataluña 1:10.000 1945";
 	lorto5m56="Ortofoto de Cataluña 1:5.000 1956 (RMB)";
 	lorto5m87="Ortofoto de Cataluña 1:5.000 1987 (RMB)";
-	lorto5m92="Ortofoto de Cataluña 1:5.000 1992 (RMB)";
 	lorto5m94="Ortofoto de Cataluña 1:5.000 1994 (RMB)";
-	lorto5m97="Ortofoto de Cataluña 1:5.000 1997 (RMB)";
 	lorto5m00="Ortofoto de Cataluña 1:5.000 2000 (RMB)";
-	lorto5m02="Ortofoto de Cataluña 1:5.000 2002 (RMB)";
-	lorto5m05="Ortofoto de Cataluña 1:5.000 2005 (RMB)";
-	lorto5m07="Ortofoto de Cataluña 1:5.000 2007 (RMB)";
+	lorto5m04="Ortofoto de Cataluña 1:5.000 2004";
+	lorto5m06="Ortofoto de Cataluña 1:5.000 2005 (RMB)";
 	lorto5m09="Ortofoto de Cataluña 1:5.000 2009 (RMB)";
 	lorto5m12="Ortofoto de Cataluña 1:5.000 2012 (RMB)";
 	lorto5m15="Ortofoto de Cataluña 1:5.000 2015 (RMB)";
-	lorto5m16="Ortofoto de Cataluña 1:5.000 2016 (RMB)";
+	lorto5m18="Ortofoto de Cataluña 1:5.000 2016 (RMB)";
 	//Topografia
 	gTopo= "Topografía";
 	lmde="Modelo Digital de Elevaciones (RMB)";
@@ -385,27 +354,19 @@ var laccesh;
 	//Hidrologia
 	gHidro= "Hidrología";
 	gMaigua="Hidrología";
-	lEmb ="Embalses (RMB)";
-	lCost="Aguas costeras (RMB)";
-	lBadies="Bahías (RMB)";
-	lEstanys="Estanques (RMB)";
-	lEstuaris="Estuarios (RMB)";
-	lRius="Ríos (RMB)";
-	lSub="Aguas subterráneas (RMB)";
-	lZonesh="Zonas húmedas (RMB)";
 	lHidrogeo="Hidrogeología 1:250.000 (RMB)";
 	lAquifers="Acuíferos (RMB)";
 	lAqupro="Acuíferos protegidos (RMB)";
 	gConques="Cuencas";
 	lXarxa0="Red hidrográfica principal 1:50.000 (RMB)";
-	lXarxahidro="Red hidrográfica (RMB)";
+	lXarxahidro="Red hidrográfica";
 	lCanals="Red de conducciones y canalizaciones (RMB)";
 	lConques="Cuencas elementales de Cataluña 1:50.000 (RMB)";
 	//Clima
 	gClima= "Clima";
 	lRadiacio="Radiación solar (RMB)";
 	lPrecipitacio="Precipitaciones (RMB)";
-	lTempmin="Temeratura media mínimas (RMB)";
+	lTempmin="Temperatura media mínimas (RMB)";
 	lTempmit="Temperatura media (RMB)";
 	lTempmax="Temperatura media máximas (RMB)";
 	//Cobertes del sol
@@ -443,21 +404,20 @@ var laccesh;
 	//Espai agrari
 	gAgrari= "Espacio agrario";
 	lAgricultura="Agricultura (RMB)";
-	lhorts="Agricultura periurbana (AMB)";
+	lhortsp09= "Huertos precarios 2009";
+	lhortsp15="Huertos precarios 2015";
 	//Vectors ambientals
 	gAmbientals= "Vectores ambientales";
 	gEstatAigua="Estado de los cuerpos de agua";
-	lEsbadies="Estado bahías (RMB)";
 	lEscostaneres="Estado aguas costeras (RMB)";
 	lEsembass="Estado embalses (RMB)";
-	lEsestanys="Estado estanques (RMB)";
-	lEsestuaris="Estadoestuarios (RMB)";
 	lEsrius="Estado ríos (RMB)";
 	lEssubt="Estado aguas subterráneas (RMB)";
 	lEshumides="Estado zonas húmedas (RMB)";
 	//Riscos territorials
 	gRiscos= "Riesgos territoriales";
 	lriscgeo="Mapa para la Prevención de Riesgos Geológicos 1: 25.000 (RMB)";
+	lincend= "Vulnerabilidad a incendios";
 	gInundabilitat="Inundabilidad";
 	lretorn10="Zona inundable periodo de retorno 10 años (RMB)(RMB)";
 	lretorn100="Zona inundable periodo de retorno 100 años(RMB)";
@@ -498,9 +458,7 @@ var laccesh;
 	gAmbits="Ámbitos";
 	//limits administratius
 	gLimits= "Administrative limits";
-	lmunicipis= "Municipis";
-	lcomarques="Comarques";
-	lseccions ="Census Sections";
+	lseccions ="Census Sections"
 	//cartografia de base
 	gCartob= "Cartographical base";
 	ltopo25="Topgraphic 1:25.000 (RMB)";
@@ -518,19 +476,17 @@ var laccesh;
 	lorto10c="Orthophoto of Catalonia 1:1.000 (RMB)";
 	lsat250m="Satellite image of Catalonia 1:250.000 (RMB)";
 	gHistoric="Historical";
-	lorto5m56="Orthophoto of Catalonia 1:5.000 1956 (RMB)";
-	lorto5m87="Orthophoto of Catalonia 1:5.000 1987 (RMB)";
-	lorto5m92="Orthophoto of Catalonia 1:5.000 1992 (RMB)";
+	lorto10m45="Orthophoto of Catalonia 1:10.000 1945";
+	lorto5m56="Orthophoto of Catalonia 1:5.000 1956";
+	lorto5m87="Orthophoto of Catalonia 1:5.000 1987";
 	lorto5m94="Orthophoto of Catalonia 1:5.000 1994 (RMB)";
-	lorto5m97="Orthophoto of Catalonia 1:5.000 1997 (RMB)";
 	lorto5m00="Orthophoto of Catalonia 1:5.000 2000 (RMB)";
-	lorto5m02="Orthophoto of Catalonia 1:5.000 2002 (RMB)";
-	lorto5m05="Orthophoto of Catalonia 1:5.000 2005 (RMB)";
-	lorto5m07="Orthophoto of Catalonia 1:5.000 2007 (RMB)";
+	lorto5m04="Orthophoto of Catalonia 1:5.000 2004";
+	lorto5m06="Orthophoto of Catalonia 1:5.000 2007 (RMB)";
 	lorto5m09="Orthophoto of Catalonia 1:5.000 2009 (RMB)";
 	lorto5m12="Orthophoto of Catalonia 1:5.000 2012 (RMB)";
 	lorto5m15="Orthophoto of Catalonia 1:5.000 2015 (RMB)";
-	lorto5m16="Orthophoto of Catalonia 1:5.000 2016 (RMB)";
+	lorto5m18="Orthophoto of Catalonia 1:5.000 2016 (RMB)";
 	//Topografia
 	gTopo= "Topography";
 	lmde="Digital Elevations Model (RMB)";
@@ -543,15 +499,6 @@ var laccesh;
 	lsoil="Soils (ST) 1:250.000 (RMB)";
 	//Hidrologia
 	gHidro= "Hidrology";
-	gMaigua="Hidrology";
-	lEmb ="Reservoirs (RMB)";
-	lCost="Coastal waters (RMB)";
-	lBadies="Bays (RMB)";
-	lEstanys="Ponds (RMB)";
-	lEstuaris="Estuaries (RMB)";
-	lRius="Rivers (RMB)";
-	lSub="Groundwater (RMB)";
-	lZonesh="Wetlands (RMB)";
 	lHidrogeo="Hydrogeology 1:250.000 (RMB)";
 	lAquifers="Aquifers (RMB)";
 	lAqupro="Protected aquifers (RMB)";
@@ -592,10 +539,11 @@ var laccesh;
 	lenpe="Espais Naturals de Proteccció Especial (ENPE) (RMB)";
 	lhic="Habitat of priority Community interest.  (RMB)";
 	lhab="Habitat (RMB)";
+	lboscoss="Singular forests";
 	lndvi17="NDVI 2017 (RMB)";
 	lndvi18="NDVI 2018 (RMB)";
 	lndvi19 ="NDVI 2019 (RMB)";
-	lboscoss="Singular forests (RMB)";
+	
 	//Espai urbà
 	gUrba="Urban spaces";
 	lpoligons="Industrial polygons (RMB)";
@@ -603,21 +551,20 @@ var laccesh;
 	//Espai agrari
 	gAgrari= "Agrarian Spaces";
 	lAgricultura="Agriculture (RMB)";
-	lhorts="Periurban agriculture (AMB)";
+	lhortsp09= "Precary Orchards 2009";
+	lhortsp15="Precary Orchards 2015";
 	//Vectors ambientals
 	gAmbientals= "Environmental vectors";
 	gEstatAigua="State of water bodies";
-	lEsbadies="State of bays (RMB)";
 	lEscostaneres="State of coastal waters (RMB)";
 	lEsembass="State of reservoirs (RMB)";
-	lEsestanys="State of ponds (RMB)";
-	lEsestuaris="State of estuaries (RMB)";
 	lEsrius="State of rivers (RMB)";
 	lEssubt="State of groundwater (RMB)";
 	lEshumides="State of wetlands (RMB)";
 	//Riscos territorials
 	gRiscos= "Territorial hazards";
 	lriscgeo="Map for the Prevention of Geological Hazards 1: 25,000 (RMB)";
+	lincend= "Fire vulnerability";
 	gInundabilitat="Flooding";
 	lretorn10="Flood zone return period 10 years (RMB)";
 	lretorn100="Flood zone return period 100 years(RMB)";
