@@ -12,13 +12,17 @@ var fCerca;
 var fObregaleria;
 var fTanca;
 var fObrebookmarks;
-
 //CAPES
 var tCapes;
 var gAmbits;
 //limits administratius
 var gLimits;
 var lseccions;
+//Limits protecció ambiental
+var gProtecc;
+var lpein;
+var lxnatura;
+var lenpe;
 //cartografia de base
 var gCartob;
 var ltopo25;
@@ -38,7 +42,7 @@ var lsat250m;
 var gHistoric;
 var lorto10m45;
 var lorto5m56;
-var lorto5m87;
+var lorto5m86;
 var lorto5m94;
 var lorto5m00;
 var lorto5m04;
@@ -73,6 +77,9 @@ var lPrecipitacio;
 var lTempmin;
 var lTempmit;
 var lTempmax;
+var gAnom;
+var lAnomp19;
+var lAnomt19;
 //Cobertes del sòl
 var gCobertesSol;
 var gCobertes;
@@ -92,10 +99,6 @@ var lusos12;
 var lusos17;
 //Espai Natural
 var gNatural;
-var gProtecc;
-var lpein;
-var lxnatura;
-var lenpe;
 var lhic;
 var lhab;
 var gNdvi;
@@ -122,7 +125,8 @@ var lEssubt;
 var lEshumides;
 //Riscos territorials
 var gRiscos;
-var lincend;
+var lvincend;
+var lpincend;
 var gInundabilitat;
 var lretorn10;
 var lretorn100;
@@ -168,6 +172,11 @@ var laccesh;
 	//limits administratius
 	gLimits= "Límits administratius";
 	lseccions ="Seccions Censals"
+	//límits protecció ambiental
+	gProtecc= "Límits protecció ambiental"
+	lpein="Pla d'espais d'interès natural (PEIN)";
+	lxnatura="Xarxa natura 2000";
+	lenpe="Espais naturals de protecció especial (ENPE)";
 	//cartografia de base
 	gCartob= "Cartografia de base";
 	ltopo25="Topogràfic 1:25.000 (RMB)";
@@ -187,15 +196,15 @@ var laccesh;
 	gHistoric="Històric";
 	lorto10m45="Ortofoto de Catalunya 1:10.000 1945";
 	lorto5m56="Ortofoto de Catalunya 1:5.000 1956";
-	lorto5m87="Ortofoto de Catalunya 1:5.000 1987";
-	lorto5m94="Ortofoto de Catalunya 1:5.000 1994 (RMB)";
-	lorto5m00="Ortofoto de Catalunya 1:5.000 2000 (RMB)";
+	lorto5m86="Ortofoto de Catalunya 1:5.000 1986";
+	lorto5m94="Ortofoto de Catalunya 1:5.000 1994";
+	lorto5m00="Ortofoto de Catalunya 1:5.000 2000";
 	lorto5m04="Ortofoto de Catalunya 1:5.000 2004";
-	lorto5m06="Ortofoto de Catalunya 1:5.000 2007 (RMB)";
-	lorto5m09="Ortofoto de Catalunya 1:5.000 2009 (RMB)";
-	lorto5m12="Ortofoto de Catalunya 1:5.000 2012 (RMB)";
-	lorto5m15="Ortofoto de Catalunya 1:5.000 2015 (RMB)";
-	lorto5m18="Ortofoto de Catalunya 1:5.000 2016 (RMB)";
+	lorto5m06="Ortofoto de Catalunya 1:5.000 2006";
+	lorto5m09="Ortofoto de Catalunya 1:5.000 2009";
+	lorto5m12="Ortofoto de Catalunya 1:5.000 2012";
+	lorto5m15="Ortofoto de Catalunya 1:5.000 2015";
+	lorto5m18="Ortofoto de Catalunya 1:5.000 2018";
 	//Topografia
 	gTopo= "Topografia";
 	lmde="Model Digital d'Elevacions (RMB)";
@@ -223,6 +232,9 @@ var laccesh;
 	lTempmin="Temperatures mínimes";
 	lTempmit="Temperatura mitjana";
 	lTempmax="Temperatures màximes";
+	gAnom= "Anomalies climàtiques";
+	lAnomp19= "Anomalia precipitació 2019";
+	lAnomt19= "Anomalia temperatura 2019";
 	//Cobertes del sol
 	gCobertesSol="Cobertes del sòl";
 	gCobertes="Cobertes del sòl";
@@ -242,16 +254,12 @@ var laccesh;
 	lusos17="Usos del sòl 2017";
 	//Espai natural
 	gNatural="Espai natural";
-	lpein="Pla d'espais d'interès natural (PEIN)";
-	lxnatura="Xarxa natura 2000";
-	lenpe="Espais naturals de protecció especial (ENPE)";
 	lhic="Hàbitats d'interès comunitari";
 	lhab="Hàbitats";
 	lboscoss="Boscos singulars";
-	lndvi17="NDVI 2017 (RMB)";
-	lndvi18="NDVI 2018 (RMB)";
-	lndvi19 ="NDVI 2019 (RMB)";
-	
+	lndvi17="NDVI 2017";
+	lndvi18="NDVI 2018";
+	lndvi19 ="NDVI 2019";
 	//Espai urbà
 	gUrba="Espai urbà";
 	lpoligons="Polígons industrials (RMB)";
@@ -270,13 +278,15 @@ var laccesh;
 	lEssubt="Estat aigües subterrànies (RMB)";
 	lEshumides="Estat zones humides (RMB)";
 	//Riscos territorials
-	gRiscos= "Riscos territorials";
+	gRiscos= "Riscos territorials";	
 	lriscgeo="Mapa per a la Prevenció de Riscos Geològics 1:25.000";
-	lincend= "Vulnerabilitat Incendis";
+	gIncendis="Risc d'incendis forestals"
+	lvincend= "Vulnerabilitat incendis";
+	lpincend= "Perill incendis"
 	gInundabilitat="Inundabilitat";
-	lretorn10="Zona inundable retorn 10 anys";
-	lretorn100="Zona inundable retorn 100 anys";
-	lretorn500="Zona inundable retorn 500 anys";
+	lretorn10="Zona inundable amb retorn 10 anys";
+	lretorn100="Zona inundable amb retorn 100 anys";
+	lretorn500="Zona inundable amb retorn 500 anys";
 	//Dinàmiques Socioeconòmiques
 	gSocio="Dinàmiques socioeconòmiques";
 	lenvell="Envelliment vulnerable (AMB)";
@@ -313,6 +323,11 @@ var laccesh;
 	//limits administratius
 	gLimits= "Límites administrativos";
 	lseccions ="Secciones Censales"
+	//límites protección ambiental
+	gProtecc= "Límites protección ambiental"
+	lpein="Plan de espacios de interés natural (PEIN)";
+	lxnatura="Red natura 2000";
+	lenpe="Espacios naturales de protección especial (ENPE)";
 	//cartografia de base
 	gCartob= "Cartografía de base";
 	ltopo25="Topográfico 1:25.000 (RMB)";
@@ -369,6 +384,9 @@ var laccesh;
 	lTempmin="Temperatura media mínimas (RMB)";
 	lTempmit="Temperatura media (RMB)";
 	lTempmax="Temperatura media máximas (RMB)";
+	gAnom= "Anomalias climáticas";
+	lAnomp19= "Anomalía precipitación 2019";
+	lAnomt19= "Anomalía temperatura 2019";
 	//Cobertes del sol
 	gCobertesSol="Cubiertas del suelo";
 	gCobertes="Cubiertas del suelo";
@@ -459,6 +477,11 @@ var laccesh;
 	//limits administratius
 	gLimits= "Administrative limits";
 	lseccions ="Census Sections"
+	//límites protección ambiental
+	gProtecc= "Environmental Protection Limits"
+	lpein="Natural Interest Spaces Plan(PEIN)";
+	lxnatura="Red Natura 2000";
+	lenpe="Natural Special Protection Spaces(ENPE)";
 	//cartografia de base
 	gCartob= "Cartographical base";
 	ltopo25="Topgraphic 1:25.000 (RMB)";
@@ -509,11 +532,14 @@ var laccesh;
 	lConques="Elemental basins of Catalonia 1:50.000 (RMB)";
 	//Clima
 	gClima= "Clima";
-	lRadiacio="Solar radiation (RMB)";
-	lPrecipitacio="Precipitations (RMB)";
-	lTempmin="Minimum average temperature (RMB)";
-	lTempmit="Average temperature (RMB)";
-	lTempmax="Maximum average temperature (RMB)";
+	lRadiacio="Solar radiation";
+	lPrecipitacio="Precipitations";
+	lTempmin="Minimum average temperature";
+	lTempmit="Average temperature";
+	lTempmax="Maximum average temperature";
+	gAnom= "Climate anomaly";
+	lAnomp19= "Rain anomaly 2019";
+	lAnomt19= "Temperature anomaly 2019";
 	//Cobertes del sol
 	gCobertesSol="Land cover";
 	gCobertes="Land cover";
@@ -534,16 +560,12 @@ var laccesh;
 	lusos17="Land uses 2017 (RMB)";
 	//Espai natural
 	gNatural="Natural spaces";
-	lpein="Pla d'espais d'interès natural (PEIN) (RMB)";
-	lxnatura="Natura 2000 (RMB)";
-	lenpe="Espais Naturals de Proteccció Especial (ENPE) (RMB)";
 	lhic="Habitat of priority Community interest.  (RMB)";
 	lhab="Habitat (RMB)";
 	lboscoss="Singular forests";
 	lndvi17="NDVI 2017 (RMB)";
 	lndvi18="NDVI 2018 (RMB)";
 	lndvi19 ="NDVI 2019 (RMB)";
-	
 	//Espai urbà
 	gUrba="Urban spaces";
 	lpoligons="Industrial polygons (RMB)";
