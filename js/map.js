@@ -125,27 +125,25 @@
 		//**********Limits Administratius ***********//
 		//capes limits
 			
-		var comarquesLayer = new MapImageLayer({
+		var comarquesLayer = new FeatureLayer({
 		  portalItem: {  
-			id: "6d904e9e07fb4134bccf646f6719696a"
+			id: "b1cb0e81815b4557b977d9772dc52289"
 		  },
 		  id:"dff564bae81b4746a1b862a295261149",
 		  visible: false,
 		  title: "Comarques",
-		  listMode: "hide-children"
+		  layerID: 0
 		});
-		capes.push(comarquesLayer);
 
-		var municipisLayer = new MapImageLayer({
+		var municipisLayer = new FeatureLayer({
 		  portalItem: {  
-			id: "60e888e3865942ee83bc79406257b771"
+			id: "3f51bf9674064661ace82a71da68de78"
 		  },
 		  id:"2b35430f24ca44f9806026d89a8c647c",
 		  visible: true,
 		  title: "Municipis",
-		  listMode: "hide-children"
+		  layerID: 0
 		});
-		capes.push(municipisLayer);
 
 		var seccionsLayer = new MapImageLayer({
 		  portalItem: { 
@@ -852,16 +850,15 @@
         });
 		capes.push(cob09Layer);
 		
-		var cob15Layer = new MapImageLayer({
+		var cob15Layer = new FeatureLayer({
           portalItem: { 
-			id: "57b1be06d3554ed6a2c4a7c0ed0cbe28"
+			id: "92a1c35df2a94f7baadcd8200524fb72"
 		  },
 		  id:"d44522da5c584825b4b370d13053056a",
 		  visible: false,
           title: lcob15,
-		  listMode: "hide-children"
+		  layerID: 0
         });
-		capes.push(cob15Layer);
 		
 		//grup de capes
 		var cobertesGroupLayer = new GroupLayer({
@@ -1621,9 +1618,19 @@
 		var searchWidget = new Search({
 		  view: view,
 		  container: document.createElement("div"),
-		  allPlaceholder: "Municipi",
+		  allPlaceholder: "Cerca aquí",
 		  includeDefaultSources: false,
 		  sources: [
+			/*{
+				layer: cob15Layer,
+				searchFields: ["cat_niv_3"],
+				displayField: "cat_niv_3",
+				exactMatch: false,
+				outFields: ["cat_niv_3"],
+				name: "Capes",
+				zoomScale:25000,
+				placeholder: "example: Cobertes 2015"
+			  },*/
 			{
 			  layer: municipisLayer,
 			  searchFields: ["nommuni"],
@@ -1654,7 +1661,6 @@
 		  collapseTooltip:fTanca
         });
 
-     
 
         // Add the expand instance to the ui
 
