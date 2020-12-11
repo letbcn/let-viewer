@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>Comparador mapes històrics</title>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.13/esri/themes/light/main.css" />
+	<link rel="stylesheet" href="css/templatemo-style.css">
+	<link rel="stylesheet" href="css/style_let.css">
+    <script src="https://js.arcgis.com/4.13/"></script>
+	
+
+    <style>
+      html,
+      body,
+      #viewDiv1,#viewDiv2,#viewDiv3,#viewDiv4{
+        padding: 0;
+        margin: 0;
+        height: 99%;
+        width: 99%;
+      }
+	  #infoDiv,#escenariDiv,#escenariDif{
+        padding: 8px;
+      }
+
+	  #div1,#div2, #div3,#div4 {
+        padding: 0;
+        margin: 0;
+        height: 45%;
+        width: 50%;
+		float:left;
+		border-color: coral;
+      }
+    </style>
+
+    <script>
+		
+      require([
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/layers/FeatureLayer",
+		"esri/layers/MapImageLayer",
+        "esri/widgets/Legend",
+       "esri/core/watchUtils",
+	   "esri/widgets/Expand",
+	   "esri/widgets/Home",
+	   "esri/renderers/smartMapping/creators/univariateColorSize",
+	   "esri/layers/WMSLayer",
+	   "esri/config",
+	   "esri/layers/support/Field"
+      ], function(Map, MapView, FeatureLayer, MapImageLayer, Legend,watchUtils,Expand,Home,colorAndSizeRendererCreator,WMSLayer,esriConfig,Field) {
+			
+			esriConfig.portalUrl = "https://uab.maps.arcgis.com"
+			esriConfig.request.proxyUrl = "proxy.jsp";
+			
+			orto1956 = new WMSLayer({
+			  url: 'http://geoserveis.icgc.cat/icc_ortohistorica/wms/service?', // url to the service,
+			  sublayers: [{
+				name: 'ovab5m'
+			  }]
+			});
+			orto1994 = new WMSLayer({
+			  url: 'http://geoserveis.icgc.cat/icc_ortohistorica/wms/service?', // url to the service,
+			  sublayers: [{
+				name: 'orto5m1994'
+			  }]
+			});
+			orto2000 = new WMSLayer({
+			  url: 'http://geoserveis.icgc.cat/icc_ortohistorica/wms/service?', // url to the service,
+			  sublayers: [{
+				name: 'orto5m2000'
+			  }]
+			});
+			orto2005 = new WMSLayer({
+			  url: 'http://geoserveis.icgc.cat/icc_ortohistorica/wms/service?', // url to the service,
+			  sublayers: [{
+				name: 'orto5m2005'
+			  }]
+			});
+			orto2009 = new WMSLayer({
+			  url: 'http://geoserveis.icgc.cat/icc_ortohistorica/wms/service?', // url to the service,
+			  sublayers: [{
+				name: 'orto5m2009'
+			  }]
+			});
+			orto2015 = new WMSLayer({
+			  url: 'http://geoserveis.icgc.cat/icc_ortohistorica/wms/service?', // url to the service,
+			  sublayers: [{
+				name: 'orto5m2015'
+			  }]
+			});
+
+	//capes cove
+		 cob56Layer = new MapImageLayer({
+          portalItem: { 
+			id: "040679a9fcee4e35a8808bea01cd71d9"
+		  },
+		  id:"271503d302a24e3c92ef806e53925b98",
+		  listMode: "hide-children"
+        });
+		
+		
+		 cob93Layer = new MapImageLayer({
+          portalItem: { 
+			id: "f2f124803baa4d86bb779cef346fc33b"
+		  },
+		  id:"27b6d833c83f4ff5a76ce4fefcd3971a",
+		  listMode: "hide-children"
+        });
+	
+		
+		 cob00Layer = new MapImageLayer({
+          portalItem: { 
+			id: "aea3bd0f2c8e4a1493699fdff988bac1"
+		  },
+		  id:"9ddbf3ad865445929d37291afa9e0a5b",
+		  listMode: "hide-children"
+        });
+		
+		
+		 cob05Layer = new MapImageLayer({
+          portalItem: { 
+			id: "254f367be0684692a05a54b073ac121c"
+		  },
+		  id:"3549108ac10b4ab7b60c5623cd0f5cda",
+		  listMode: "hide-children"
+        });
+		
+		
+		 cob09Layer = new MapImageLayer({
+          portalItem: { 
+			id: "9f942705cbdc4561a21b1c802b7f798b"
+		  },
+		  id:"c468a6a45ed84aafa7cb835565162d27",
+		  listMode: "hide-children"
+        });
+		
+		
+		 cob15Layer = new MapImageLayer({
+          portalItem: { 
+			id: "57b1be06d3554ed6a2c4a7c0ed0cbe28"
+		  },
+		  id:"d44522da5c584825b4b370d13053056a",
+		  listMode: "hide-children"
+        });
+		
+		
+		
+
+        map1 = new Map({
+          basemap: "gray",
+          layers: [orto1956]
+        });
+		
+		map2 = new Map({
+          basemap: "gray",
+          layers: [orto1994]
+        });
+		
+		map3 = new Map({
+          basemap: "gray",
+          layers: [orto2000]
+        });
+		
+		map4 = new Map({
+          basemap: "gray",
+          layers: [orto2009]
+        });
+		
+		view1 = new MapView({
+          container: "viewDiv1",
+          map: map1,
+          center: [2.13, 41.40],
+          zoom: 10
+        });
+		
+        view2 = new MapView({
+          container: "viewDiv2",
+          map: map2,
+          center: [2.13, 41.40],
+          zoom: 10
+        });
+
+		view3 = new MapView({
+          container: "viewDiv3",
+          map: map3,
+          center: [2.13, 41.40],
+          zoom: 10
+        });
+		
+		view4 = new MapView({
+          container: "viewDiv4",
+          map: map4,
+          center: [2.13, 41.40],
+          zoom: 10
+        });
+
+        /******************************************************************
+         *
+         * Add layers to layerInfos on the legend
+         *
+         ******************************************************************/
+
+        
+		
+		 var homeBtn = new Home({
+          view: view1
+        });
+
+ // view.ui.add(legend, "bottom-right");
+   view1.ui.add(homeBtn, "top-left");
+
+  view1.ui.add("infoDiv1", "top-right");
+  view1.ui.add("infoDiv1_1", "top-right");
+  view2.ui.add("infoDiv2", "top-right");
+  view2.ui.add("infoDiv2_1", "top-right");
+  view3.ui.add("infoDiv3","top-right");
+   view3.ui.add("infoDiv3_1", "top-right");
+  view4.ui.add("infoDiv4","top-right");
+   view4.ui.add("infoDiv4_1", "top-right");
+   
+   legend1 = new Legend({
+          view: view1,
+		  layerInfos: [{
+			layer: cob00Layer,
+			title: ""
+		  }],
+		  style: "classic"
+        });
+	legend2 = new Legend({
+	  view: view2,
+	  layerInfos: [{
+		layer: cob00Layer,
+		title: ""
+	  }],
+	  style: "classic"
+	});
+	legend3 = new Legend({
+	  view: view3,
+	  layerInfos: [{
+		layer: cob00Layer,
+		title: ""
+	  }],
+	  style: "classic"
+	});
+	legend4 = new Legend({
+	  view: view4,
+	  layerInfos: [{
+		layer: cob00Layer,
+		title: ""
+	  }],
+	  style: "classic"
+	});
+
+	 var bgExpand1 = new Expand({
+          view: view1,
+          content: legend1,
+		  expanded:false
+        });
+	var bgExpand2 = new Expand({
+	  view: view2,
+	  content: legend2,
+	  expanded:false
+	});
+	var bgExpand3 = new Expand({
+	  view: view3,
+	  content: legend3,
+	  expanded:false
+	});
+	var bgExpand4 = new Expand({
+	  view: view4,
+	  content: legend4,
+	  expanded:false
+	});
+	 view1.ui.add(bgExpand1, "bottom-right");
+	 view2.ui.add(bgExpand2, "bottom-right");
+	 view3.ui.add(bgExpand3, "bottom-right");
+	 view4.ui.add(bgExpand4, "bottom-right");
+	
+
+		
+	
+ /**
+         * utility method that synchronizes the viewpoint of a view to other views
+         */
+        var synchronizeView = function(view, others) {
+          others = Array.isArray(others) ? others : [others];
+
+          var viewpointWatchHandle;
+          var viewStationaryHandle;
+          var otherInteractHandlers;
+          var scheduleId;
+
+          var clear = function() {
+            if (otherInteractHandlers) {
+              otherInteractHandlers.forEach(function(handle) {
+                handle.remove();
+              });
+            }
+            viewpointWatchHandle && viewpointWatchHandle.remove();
+            viewStationaryHandle && viewStationaryHandle.remove();
+            scheduleId && clearTimeout(scheduleId);
+            otherInteractHandlers = viewpointWatchHandle = viewStationaryHandle = scheduleId = null;
+          };
+
+          var interactWatcher = view.watch("interacting,animation", function(
+            newValue
+          ) {
+            if (!newValue) {
+              return;
+            }
+            if (viewpointWatchHandle || scheduleId) {
+              return;
+            }
+
+            // start updating the other views at the next frame
+            scheduleId = setTimeout(function() {
+              scheduleId = null;
+              viewpointWatchHandle = view.watch("viewpoint", function(
+                newValue
+              ) {
+                others.forEach(function(otherView) {
+                  otherView.viewpoint = newValue;
+                });
+              });
+            }, 0);
+
+            // stop as soon as another view starts interacting, like if the user starts panning
+            otherInteractHandlers = others.map(function(otherView) {
+              return watchUtils.watch(
+                otherView,
+                "interacting,animation",
+                function(value) {
+                  if (value) {
+                    clear();
+                  }
+                }
+              );
+            });
+
+            // or stop when the view is stationary again
+            viewStationaryHandle = watchUtils.whenTrue(
+              view,
+              "stationary",
+              clear
+            );
+          });
+
+          return {
+            remove: function() {
+              this.remove = function() {};
+              clear();
+              interactWatcher.remove();
+            }
+          };
+        };
+
+        /**
+         * utility method that synchronizes the viewpoints of multiple views
+         */
+        var synchronizeViews = function(views) {
+          var handles = views.map(function(view, idx, views) {
+            var others = views.concat();
+            others.splice(idx, 1);
+            return synchronizeView(view, others);
+          });
+
+          return {
+            remove: function() {
+              this.remove = function() {};
+              handles.forEach(function(h) {
+                h.remove();
+              });
+              handles = null;
+            }
+          };
+        };
+
+        // bind the views
+        synchronizeViews([view1, view2, view3, view4]);
+});
+	  
+	 function canvi(anual,mapa,identificador) {
+	  switch(anual){
+		case "1956": mapa.removeAll();mapa.add(orto1956);break;
+		case "1994": mapa.removeAll();mapa.add(orto1994);break;
+		case "2000": mapa.removeAll();mapa.add(orto2000);break;
+		case "2005": mapa.removeAll();mapa.add(orto2005);break;
+		case "2009": mapa.removeAll();mapa.add(orto2009);break;
+		case "2015": mapa.removeAll();mapa.add(orto2015);break;		
+	  }
+	  document.getElementById(identificador).value = -1
+	 }
+	 function canviUs(anual,mapa,identificador,llegenda) {
+	  switch(anual){
+		case "1956": capa=cob56Layer;break;
+		case "1993": capa=cob93Layer;break;
+		case "2000": capa=cob00Layer;break;
+		case "2005": capa=cob05Layer;break;
+		case "2009": capa=cob09Layer;break;
+		case "2015": capa=cob15Layer;break;	
+	  }
+	  mapa.removeAll();
+	  mapa.add(capa);
+	  llegenda.layerInfos[0].layer =capa;
+	  document.getElementById(identificador).value = -1
+	 }
+    </script>
+  </head>
+
+  <body>
+   <div id="div1">		
+    <div id="viewDiv1"></div>
+		<div id="infoDiv1" class="esri-widget" style="padding: 3px;">
+			Ortofoto
+			  <select id="field-select-orto1" class="esri-widget" onchange="canvi(this.value,map1,'field-select-us1',legend1)">
+				<option value="-1" ></option>
+				<option value="1956" selected>1956</option>
+				<option value="1994" >1994</option>
+				<option value="2000">2000</option>
+				<option value="2005">2005</option>
+				<option value="2009">2009</option>
+				<option value="2015">2015</option>
+			</select>
+
+		</div>
+		<div id="infoDiv1_1" class="esri-widget" style="padding: 3px;">
+			Cobertes
+			  <select id="field-select-us1" class="esri-widget" onchange="canviUs(this.value,map1,'field-select-orto1',legend1)">
+				<option value="-1" ></option>
+				<option value="1956">1956</option>
+				<option value="1993" >1993</option>
+				<option value="2000">2000</option>
+				<option value="2005">2005</option>
+				<option value="2009">2009</option>
+				<option value="2015">2015</option>
+			</select>
+		</div>
+   </div>
+  <div id="div2">
+    <div id="viewDiv2"></div>
+		<div id="infoDiv2" class="esri-widget" style="padding: 3px;">
+			Ortofoto
+			  <select id="field-select-orto2" class="esri-widget" onchange="canvi(this.value,map2,'field-select-us2',legend2)">
+				<option value="-1" ></option>
+				<option value="1956" >1956</option>
+				<option value="1994" selected>1994</option>
+				<option value="2000">2000</option>
+				<option value="2005">2005</option>
+				<option value="2009">2009</option>
+				<option value="2015">2015</option>
+			</select>
+		</div>
+		<div id="infoDiv2_1" class="esri-widget" style="padding: 3px;">
+			Cobertes
+			  <select id="field-select-us2" class="esri-widget" onchange="canviUs(this.value,map2,'field-select-orto2',legend2)">
+				<option value="-1" ></option>
+				<option value="1956">1956</option>
+				<option value="1993" >1993</option>
+				<option value="2000">2000</option>
+				<option value="2005">2005</option>
+				<option value="2009">2009</option>
+				<option value="2015">2015</option>
+			</select>
+		</div>
+	</div>
+	<div id="div3">
+		<div id="viewDiv3"></div>
+			<div id="infoDiv3" class="esri-widget" style="padding: 3px;">
+				Ortofoto
+				  <select id="field-select-orto3" class="esri-widget" onchange="canvi(this.value,map3,'field-select-us3',legend3)">
+					<option value="-1" ></option>
+					<option value="1956" >1956</option>
+					<option value="1994" >1994</option>
+					<option value="2000" selected >2000</option>
+					<option value="2005">2005</option>
+					<option value="2009">2009</option>
+					<option value="2015">2015</option>
+				</select>
+			</div>
+			<div id="infoDiv3_1" class="esri-widget" style="padding: 3px;">
+				Cobertes
+			  <select id="field-select-us3" class="esri-widget" onchange="canviUs(this.value,map3,'field-select-orto3',legend3)">
+				<option value="-1" ></option>
+				<option value="1956">1956</option>
+				<option value="1993" >1993</option>
+				<option value="2000" >2000</option>
+				<option value="2005">2005</option>
+				<option value="2009">2009</option>
+				<option value="2015">2015</option>
+			</select>
+		</div>
+		</div>
+	</div>
+	<div id="div4">
+		<div id="viewDiv4"></div>
+			<div id="infoDiv4" class="esri-widget" style="padding: 3px;">
+				Ortofoto
+				  <select id="field-select-orto4" class="esri-widget" onchange="canvi(this.value,map4,'field-select-us4',legend4)">
+					<option value="-1" ></option>
+					<option value="1956" >1956</option>
+					<option value="1994" >1994</option>
+					<option value="2000" >2000</option>
+					<option value="2005" selected>2005</option>
+					<option value="2009">2009</option>
+					<option value="2015">2015</option>
+				</select>
+			</div>
+			<div id="infoDiv4_1" class="esri-widget" style="padding: 3px;">
+				Cobertes
+			  <select id="field-select-us4" class="esri-widget" onchange="canviUs(this.value,map4,'field-select-orto4',legend4)">
+				<option value="-1" ></option>
+				<option value="1956">1956</option>
+				<option value="1993" >1993</option>
+				<option value="2000">2000</option>
+				<option value="2005">2005</option>
+				<option value="2009">2009</option>
+				<option value="2015">2015</option>
+			</select>
+		</div>
+	</div>
+
+	
+  </body>
+</html>

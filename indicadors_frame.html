@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>Sistema de suport a la planificació</title>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.13/esri/themes/light/main.css" />
+	<link rel="stylesheet" href="css/templatemo-style.css">
+	<link rel="stylesheet" href="css/style_let.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css">
+	<script type="text/plain" id="arcadeB">
+		var fieldsA = [
+		  { value: $feature.a1_c_0, alias: "a1_c_0" },
+		  { value: $feature.a1_c_1, alias: "a1_c_1" },
+		  { value: $feature.a1_c_2, alias: "a1_c_2" },
+		  { value: $feature.a1_c_3, alias: "a1_c_3" },
+		  { value: $feature.a1_o_0, alias: "a1_o_0" },
+		  { value: $feature.a1_o_1, alias: "a1_o_1" },
+		  { value: $feature.a1_o_2, alias: "a1_o_2" },
+		  { value: $feature.a1_o_3, alias: "a1_o_3" }
+		];
+		var fieldsB = [
+		  { value: $feature.b1_c_0, alias: "b1_c_0" },
+		  { value: $feature.b1_c_1, alias: "b1_c_1" },
+		  { value: $feature.b1_c_2, alias: "b1_c_2" },
+		  { value: $feature.b1_c_3, alias: "b1_c_3" },
+		  { value: $feature.b1_o_0, alias: "b1_o_0" },
+		  { value: $feature.b1_o_1, alias: "b1_o_1" },
+		  { value: $feature.b1_o_2, alias: "b1_o_2" },
+		  { value: $feature.b1_o_3, alias: "b1_o_3" }
+		];
+		
+		var fieldsC = [
+		  { value: $feature.c1_c_0, alias: "c1_c_0" },
+		  { value: $feature.c1_c_1, alias: "c1_c_1" },
+		  { value: $feature.c1_c_2, alias: "c1_c_2" },
+		  { value: $feature.c1_c_3, alias: "c1_c_3" },
+		  { value: $feature.c1_o_0, alias: "c1_o_0" },
+		  { value: $feature.c1_o_1, alias: "c1_o_1" },
+		  { value: $feature.c1_o_2, alias: "c1_o_2" },
+		  { value: $feature.c1_o_3, alias: "c1_o_3" }
+		];
+		var fieldsD = [
+		  { value: $feature.d1_c_0, alias: "d1_c_0" },
+		  { value: $feature.d1_c_1, alias: "d1_c_1" },
+		  { value: $feature.d1_c_2, alias: "d1_c_2" },
+		  { value: $feature.d1_c_3, alias: "d1_c_3" },
+		  { value: $feature.d1_o_0, alias: "d1_o_0" },
+		  { value: $feature.d1_o_1, alias: "d1_o_1" },
+		  { value: $feature.d1_o_2, alias: "d1_o_2" },
+		  { value: $feature.d1_o_3, alias: "d1_o_3" }
+		];
+		var fieldsE1A = [
+		  { value: $feature.e1a_c_0, alias: "e1a_c_0" },
+		  { value: $feature.e1a_c_1, alias: "e1a_c_1" },
+		  { value: $feature.e1a_c_2, alias: "e1a_c_2" },
+		  { value: $feature.e1a_c_3, alias: "e1a_c_3" },
+		  { value: $feature.e1a_o_0, alias: "e1a_o_0" },
+		  { value: $feature.e1a_o_1, alias: "e1a_o_1" },
+		  { value: $feature.e1a_o_2, alias: "e1a_o_2" },
+		  { value: $feature.e1a_o_3, alias: "e1a_o_3" }
+		];
+		var fieldsE1B = [
+		  { value: $feature.e1b_c_0, alias: "e1b_c_0" },
+		  { value: $feature.e1b_c_1, alias: "e1b_c_1" },
+		  { value: $feature.e1b_c_2, alias: "e1b_c_2" },
+		  { value: $feature.e1b_c_3, alias: "e1b_c_3" },
+		  { value: $feature.e1b_o_0, alias: "e1b_o_0" },
+		  { value: $feature.e1b_o_1, alias: "e1b_o_1" },
+		  { value: $feature.e1b_o_2, alias: "e1b_o_2" },
+		  { value: $feature.e1b_o_3, alias: "e1b_o_3" }
+		];
+		var fieldsE1C = [
+		  { value: $feature.e1c_c_0, alias: "e1c_c_0" },
+		  { value: $feature.e1c_c_1, alias: "e1c_c_1" },
+		  { value: $feature.e1c_c_2, alias: "e1c_c_2" },
+		  { value: $feature.e1c_c_3, alias: "e1c_c_3" },
+		  { value: $feature.e1c_o_0, alias: "e1c_o_0" },
+		  { value: $feature.e1c_o_1, alias: "e1c_o_1" },
+		  { value: $feature.e1c_o_2, alias: "e1c_o_2" },
+		  { value: $feature.e1c_o_3, alias: "e1c_o_3" }
+		];
+
+		var fieldsF = [
+		  { value: $feature.f1_c_0, alias: "f1_c_0" },
+		  { value: $feature.f1_c_1, alias: "f1_c_1" },
+		  { value: $feature.f1_c_2, alias: "f1_c_2" },
+		  { value: $feature.f1_c_3, alias: "f1_c_3" },
+		  { value: $feature.f1_o_0, alias: "f1_o_0" },
+		  { value: $feature.f1_o_1, alias: "f1_o_1" },
+		  { value: $feature.f1_o_2, alias: "f1_o_2" },
+		  { value: $feature.f1_o_3, alias: "f1_o_3" }
+		];
+
+		function getPredominantCategory(fieldsArray,fieldsArray2){
+		  var maxValue = -Infinity;
+		  var maxValue2 = 0;
+		  var maxCategory = "";
+		  for(var k in fieldsArray){
+			if(fieldsArray[k].value > maxValue){
+			
+			  maxValue = fieldsArray[k].value;
+			  maxValue2= fieldsArray2[k].value;
+			} 
+		  }
+		  return IIF(maxValue2 <= 0, null, maxValue2);
+		}
+		
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://js.arcgis.com/4.13/"></script>
+
+    <style>
+      html,
+      body,
+      #viewDiv,#viewDivtend,#viewDivdif{
+        padding: 0;
+        margin: 0;
+        height: 99%;
+        width: 99%;
+		color:black;
+		font-family: "Avenir Next W00","Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+	  #infoDiv,#escenariDiv,#escenariDif{
+        padding: 8px;
+      }
+	  #divTop{
+		padding: 12px;
+		font-size: 12px;
+		color: #323232;
+	  }
+	  #divActual,#divTendencial, #divDiferencia,#divgrafics {
+        padding: 0;
+        margin: 0;
+        height: 41%;
+        width: 50%;
+		float:left;
+		border-color: coral;
+      }
+	  #descripcio {
+		width:100%;
+		border: none;
+		font-size: 12px;
+		font-family:"Arial";
+		margin:5px 0;
+	  }
+	.pane {
+		position: fixed;
+		top: 0; left: 0; bottom: 0; right: 0;
+		margin: auto;
+		width: 820px;
+		height: 400px;
+		z-indez: 9999 !important;
+		background: #f0f0fd;
+		background: rgba(240,240,253,0.90);
+		padding: 22px 32px;
+		-moz-border-radius: 8px;
+		-webkit-border-radius: 8px;
+		border-radius: 8px;
+		-moz-box-shadow: 0 0 18px rgba(0, 0, 0, 0.9);
+		-webkit-box-shadow: 0 0 18px rgba(0, 0, 0, 0.9);
+		-box-shadow: 0 0 18px rgba(0, 0, 0, 0.9);
+	}
+	
+	
+	.button {
+		box-shadow:inset 0px 1px 3px 0px #91b8b3;
+		background:linear-gradient(to bottom, #c00000 5%, #c43b3b 100%);
+		background-color:#c00000;
+		border-radius:5px;
+		display:inline-block;
+		cursor:pointer;
+		color: white !important;
+		text-align: center;
+		font-family: "Avenir Next W00","Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-size:12px;
+		margin: 7px 2px;
+		padding: 7px 5px ;
+		text-decoration:none;
+		text-shadow:0px -1px 0px #2b665e;
+		width: 90%;
+		border:0;
+			}
+	.button:hover {
+		background:linear-gradient(to bottom, #c43b3b 5%, #c00000 100%);
+		background-color:#c43b3b;
+	}
+	.button:active {
+		position:relative;
+		top:1px;
+	}
+	
+    </style>
+
+<script src="js/indicadors.js"></script>
+<script src="js/indica.js"></script>
+
+  </head>
+
+  <body style="font-family: 'Avenir Next W00','Helvetica Neue',Helvetica,Arial,sans-serif;">
+
+   <div id="divTop" style="">
+	<center><text id="titol" style="font-size:16px;font-weight:bold;"></text>&nbsp;&nbsp;&nbsp;  <button class="button" style="width:auto" onclick="document.getElementById('pane').style.visibility='visible'">Canvi dimensió</button></center>
+    <textarea id="descripcio" rows=3></textarea>
+   </div>
+  <div id="divActual">
+    <div id="viewDiv"></div>
+	 <div id="infoDiv" class="esri-widget">
+      Escenari <select class="esri-widget" id="escenari_id" onchange="canvi_escenari(this.value)" > 
+		<option value="0" selected >Actual</option>
+		 <option value="1" >Tendencial</option>
+		 </select>
+
+	  </div>
+	</div>
+	<div id="divTendencial">
+		<div id="viewDivtend"></div>
+		<div id="escenariDiv" class="esri-widget">
+			Escenari Optimitzat<br>
+			  <select id="field-select-ind" class="esri-widget" onchange="canvi(this.value,false)">
+				<option value="-1" selected>Visualitza l’impacte en altres dimensions</option>
+				<option value="A" selected>Eficiència metabòlica</option>
+				<option value="B" >Conservació de la biodiversitat</option>
+				<option value="C">Funcionament del paisatge</option>
+				<option value="D">Canvi global</option>
+				<option value="E1A">Serveis ecosistèmics de suport</option>
+				<option value="E1B">Serveis ecosistèmics de regulació</option>
+				<option value="E1C">Serveis ecosistèmics d’aprovisionament</option>
+				<option value="F">Cohesió social</option>
+			  </select>
+		</div>
+	</div>
+	<div id="divDiferencia">
+		<div id="viewDivdif"></div>
+		<div id="escenariDif" class="esri-widget">
+			Diferència
+		</div>
+	</div>
+	<div id="divgrafics">
+		<div id="marksChart"></div>
+		<!--<div id="diferencies">A<br>B<br>C</div>-->
+	<div>
+		<div id="pane" class="pane">
+		<center style="font-size:20px;font-family: 'Avenir Next W00','Helvetica Neue',Helvetica,Arial,sans-serif;">
+		<b style="color:#c00000">Sistema de suport a la planificació<hr style=" border-top: 1px solid #c00000"></b></center>
+		<textarea  style="background:rgba(240,240,253,0.90);resize: none;width:820px;border:0;font-size:14px;font-family: 'Avenir Next W00','Helvetica Neue',Helvetica,Arial,sans-serif;text-align:justify" rows="9">
+		El sistema permet identificar possibles configuracions dels espais oberts de l’àrea metropolitana per tal d’optimitzar la contribució que aquests fan al conjunt del sistema socioecològic, definint quina dimensió es vol prioritzar en la seva planificació. Es defineixen 8 dimensions principals de la contribució dels espais oberts: eficiència metabòlica, conservació de la biodiversitat, funcionament del paisatge, canvi global, serveis ecosistèmics (suport, regulació, aprovisionament) i cohesió social. A partir d’aquí s’obté una configuració per cel·les de 500 x 500 m	de la dimensió optimitzada, i es poden consultar totes les demés, partint de la informació d’estudis d’anàlisi d’escenaris que s’han realitzat 	anteriorment. A la vegada, es comparen els resultats bé amb la situació de partida (l’any de referència és 2015) o bé amb l’escenari tendencial si es complís tot el planejament urbanístic vigent.
+		</textarea>
+		
+		Seleccioneu quina és la dimensió que voleu optimitzar i si es vol maximitzar o minimitzar.<br><br>
+		  <select id="field-select" class="esri-widget" style="font-size:14px" onchange="canvi_text(this.value);" >
+			<option value="-1" selected>Dimensions</option>
+			<option value="A">Eficiència metabòlica</option>
+			<option value="B" >Conservació de la biodiversitat</option>
+			<option value="C">Funcionament del paisatge</option>
+			<option value="D">Canvi global</option>
+			<option value="E1A">Serveis ecosistèmics de suport</option>
+			<option value="E1B">Serveis ecosistèmics de regulació</option>
+			<option value="E1C">Serveis ecosistèmics d’aprovisionament</option>
+			<option value="F">Cohesió social</option>
+		  </select>&nbsp; 
+		  <select id="tipus" class="esri-widget" style="font-size:14px" onchange="" >
+			<option value="Max" selected>Maximitzar</option>
+			<option value="Min" >Minimitzar</option>
+		  </select><br><br>
+		  <textarea style="background:rgba(240,240,253,0.90);resize: none;width:820px;border:0;font-size:12px;text-align:justify" id="descripcio2" rows="5"></textarea>
+		  <text style="font-size:12px;color:#c00000">versió Beta</text>
+		  <button class="button" style="float: right;width:15%;" onclick="document.getElementById('pane').style.visibility='hidden';canvi(document.getElementById('field-select').value,true)">Aplicar</button>
+		</div>
+	
+  </body>
+</html>
