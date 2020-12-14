@@ -484,25 +484,25 @@
           defaultLabel: "sense dades",
           classBreakInfos: [
 			{
-              minValue: 1600.001,maxValue: 800,symbol: cat7,label: "> 1600"
-            },
-			{
-              minValue: 800.001,maxValue: 1600,symbol: cat6,label: "800 - 1600"
+              minValue: 0.60001,maxValue: 0.8,symbol: cat7,label: "> 0.60 "
             },
             {
-              minValue: 400.001, maxValue: 800,symbol: cat5,label: "400 - 800"
+              minValue: 0.5001, maxValue: 0.6,symbol: cat6,label: "0.5 - 0.6 "
             },
             {
-              minValue: 200.001, maxValue: 400,symbol: cat4,label: "200 - 400"
+              minValue: 0.40001, maxValue: 0.5,symbol: cat5,label: "0.4 - 0.5 "
             },
             {
-              minValue: 100.001, maxValue: 200,symbol: cat3, label: "100 - 200"
+              minValue: 0.30001,maxValue: 0.4, symbol: cat4,label: "0.3 - 0.4 "
             },
             {
-              minValue: 50.001, maxValue: 100, symbol: cat2, label: "50 - 100"
+              minValue: 0.20001, maxValue: 0.3,symbol: cat3, label: "0.2 - 0.3 "
             },
             {
-              minValue: 5, maxValue: 50, symbol: cat1, label: "0 - 50 "
+              minValue: 0.100001, maxValue: 0.2, symbol: cat2, label: "0.1 - 0.2 "
+            },
+            {
+              minValue: 0.05001, maxValue: 0.1, symbol: cat1, label: "0.05 - 0.1 "
             }
           ]
         };
@@ -742,25 +742,25 @@
           defaultLabel: "sense dades",
           classBreakInfos: [
             {
-              minValue: 300.001,maxValue: 1000,symbol: dif13,label: ">300"
+              minValue: 300.001,maxValue: 1000,symbol: dif12,label: ">300"
             },
           	{
-              minValue: 250.001,maxValue: 300,symbol: dif13,label: "250 - 300"
+              minValue: 250.001,maxValue: 300,symbol: dif11,label: "250 - 300"
             },
 			{
-              minValue: 200.001,maxValue: 250,symbol: dif12,label: "200 - 250"
+              minValue: 200.001,maxValue: 250,symbol: dif10,label: "200 - 250"
             },
 			{
-              minValue: 150.001,maxValue: 200,symbol: dif11,label: "150 - 200"
+              minValue: 150.001,maxValue: 200,symbol: dif9,label: "150 - 200"
             },
 			{
-              minValue: 100.001,maxValue: 150,symbol: dif10,label: "100 - 150"
+              minValue: 100.001,maxValue: 150,symbol: dif8,label: "100 - 150"
             },
 			{
-              minValue: 50.001,maxValue: 100,symbol: dif9,label: "50 - 100"
+              minValue: 50.001,maxValue: 100,symbol: dif7,label: "50 - 100"
             },
 			{
-              minValue: 0.00001,maxValue: 50,symbol: dif8,label: "0 - 50"
+              minValue: 0.00001,maxValue: 50,symbol: dif6,label: "0 - 50"
             }
    
           ]
@@ -2174,8 +2174,8 @@
 					for(var k in fieldsD){
 						
 						if(feature.attributes[fieldsD[k].value] >= valorMinD1){
-							valorMin = feature.attributes[fieldsD[k].value];
-							valorMinD1 = feature.attributes[fieldsD_agg[k].value];
+							valorMinD1 = feature.attributes[fieldsD[k].value];
+							//valorMinD1 = feature.attributes[fieldsD_agg[k].value];
 						}
 					}
 					
