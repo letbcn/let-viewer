@@ -2240,7 +2240,7 @@
 					//escenari optim
 					if (escenari == 0) {
 						indicador_A1 = (arrSum(valorsA1_actual) / arrSum(valorsA1_2_actual)) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
-						indicador_A2 = arrAvg(valorsA2_actual) / arrAvg(valorsMaxA2);
+						indicador_A2 = arrSum(valorsA2_actual) / 1000000;
 						indicador_A3 = arrAvg(valorsA3_actual) / arrAvg(valorsMaxA3);
 						indicador_B = arrAvg(valorsB_actual) / arrAvg(valorsMaxB);
 						indicador_C = arrAvg(valorsC_actual) / arrAvg(valorsMaxC);
@@ -2253,7 +2253,7 @@
 						aranya2(indicador_A1 , indicador_A2, indicador_A3,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,"rgba(200,0,0,0.6)","Escenari actual");
 					} else {
 						indicador_A1 = (arrSum(valorsA1_tend) / arrSum(valorsA1_2_tend)) / (arrSum(valorsOptA1)/ arrSum(valorsOptA1_2));
-						indicador_A2 = arrAvg(valorsA2_tend) / arrAvg(valorsMaxA2);
+						indicador_A2 = arrAvg(valorsA2_tend) / 1000000;
 						indicador_A3 = arrAvg(valorsA3_tend) / arrAvg(valorsMaxA3);
 						indicador_B = arrAvg(valorsB_tend) / arrAvg(valorsMaxB);
 						indicador_C = arrAvg(valorsC_tend) / arrAvg(valorsMaxC);
