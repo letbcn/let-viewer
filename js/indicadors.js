@@ -2055,13 +2055,13 @@
 					valorsOptA1.push(valorMaxA1);
 					valorsOptA1_2.push(valorMaxA1_2);
 					//Indicador A2
-					valorsA2_actual.push(feature.attributes[fieldsA2[0].value]*feature.attributes["amb_100"]);
-					valorsA2_tend.push(feature.attributes[fieldsA2[1].value]*feature.attributes["amb_100"]);
-					valorsOptA2.push(valorMaxA2*feature.attributes["amb_100"]);
+					valorsA2_actual.push(feature.attributes[fieldsA2[0].value]);
+					valorsA2_tend.push(feature.attributes[fieldsA2[1].value]);
+					valorsOptA2.push(valorMaxA2);
 					//Indicador A3
-					valorsA3_actual.push(feature.attributes[fieldsA3[0].value]*feature.attributes["amb_100"]);
-					valorsA3_tend.push(feature.attributes[fieldsA3[1].value]*feature.attributes["amb_100"]);
-					valorsOptA3.push(valorMaxA3*feature.attributes["amb_100"]);
+					valorsA3_actual.push(feature.attributes[fieldsA3[0].value]);
+					valorsA3_tend.push(feature.attributes[fieldsA3[1].value]);
+					valorsOptA3.push(valorMaxA3);
 					//Indicador B
 					valorsB_actual.push(feature.attributes[fieldsB[0].value]*feature.attributes["amb_100"]);
 					valorsB_tend.push(feature.attributes[fieldsB[1].value]*feature.attributes["amb_100"]);
@@ -2227,11 +2227,11 @@
 					
 					//Escenari maxim
 					indicador_A1_max = (arrSum(valorsOptA1) / arrSum(valorsOptA1_2)) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
-					indicador_A2_max = arrAvg(valorsOptA2) / arrAvg(valorsMaxA2);
-					indicador_A3_max = arrAvg(valorsOptA3) / arrAvg(valorsMaxA3);
+					indicador_A2_max = (arrAvg(valorsOptA2) / 1000000) / (arrAvg(valorsMaxA2) / 1000000);
+					indicador_A3_max = (arrAvg(valorsOptA3) / 1000000) / (arrAvg(valorsMaxA3) / 1000000);
 					indicador_B_max = arrAvg(valorsOptB) / arrAvg(valorsMaxB);
 					indicador_C_max = arrAvg(valorsOptC) / arrAvg(valorsMaxC);
-					indicador_D_max =  (arrSum(valorsMinD1) / Math.pow(10,6)) / (arrSum(valorsOptD1) / Math.pow(10,6)) ;
+					indicador_D_max =  (arrSum(valorsMinD1) / Math.pow(10.6)) / (arrSum(valorsOptD1) / Math.pow(10.6)) ;
 					indicador_E1A_max = ((arrSum(valorsOptE1A1) / arrSum(valorsOptE1A2)) * 100) / ((arrSum(valorsMaxE1A1) / arrSum(valorsMaxE1A2)) * 100);
 					indicador_E1B_max = (arrSum(valorsOptE1B) / 1000) / (arrSum(valorsMaxE1B) / 1000);
 					indicador_E1C_max = (arrSum(valorsOptE1C1) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
@@ -2240,11 +2240,11 @@
 					//escenari optim
 					if (escenari == 0) {
 						indicador_A1 = (arrSum(valorsA1_actual) / arrSum(valorsA1_2_actual)) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
-						indicador_A2 = arrSum(valorsA2_actual) / 1000000;
-						indicador_A3 = arrAvg(valorsA3_actual) / arrAvg(valorsMaxA3);
+						indicador_A2 = (arrSum(valorsA2_actual) / 1000000) /  (arrSum(valorsMaxA2) / 1000000);
+						indicador_A3 = (arrSum(valorsA3_actual) / 1000000) / (arrSum(valorsMaxA3) / 1000000);
 						indicador_B = arrAvg(valorsB_actual) / arrAvg(valorsMaxB);
 						indicador_C = arrAvg(valorsC_actual) / arrAvg(valorsMaxC);
-						indicador_D =  (arrSum(valorsD_actual) / Math.pow(10,6)) / (arrSum(valorsMinD1) / Math.pow(10,6))  ;
+						indicador_D =  (arrSum(valorsD_actual) / Math.pow(10.6)) / (arrSum(valorsMinD1) / Math.pow(10.6))  ;
 						indicador_E1A = ((arrSum(valorsE1A1_actual) / arrSum(valorsE1A2_actual)) * 100) / ((arrSum(valorsMaxE1A1) / arrSum(valorsMaxE1A2)) * 100);
 						indicador_E1B = (arrSum(valorsE1B_actual) / 1000) / (arrSum(valorsMaxE1B) / 1000);
 						indicador_E1C = (arrSum(valorsE1C1) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
@@ -2257,7 +2257,7 @@
 						indicador_A3 = arrAvg(valorsA3_tend) / arrAvg(valorsMaxA3);
 						indicador_B = arrAvg(valorsB_tend) / arrAvg(valorsMaxB);
 						indicador_C = arrAvg(valorsC_tend) / arrAvg(valorsMaxC);
-						indicador_D = (arrSum(valorsD_tend) / Math.pow(10,6))  / (arrSum(valorsMinD1) / Math.pow(10,6));
+						indicador_D = (arrSum(valorsD_tend) / Math.pow(10.6))  / (arrSum(valorsMinD1) / Math.pow(10.6));
 						indicador_E1A = ((arrSum(valorsE1A1_tend) / arrSum(valorsE1A2_tend)) * 100) / ((arrSum(valorsMaxE1A1) / arrSum(valorsMaxE1A2)) * 100);
 						indicador_E1B = (arrSum(valorsE1B_tend) / 1000) / (arrSum(valorsMaxE1B) / 1000);
 						indicador_E1C = (arrSum(valorsE1C1) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
