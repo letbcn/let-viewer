@@ -14,7 +14,7 @@
 
 	
         layerEscenari = new FeatureLayer({
-          url: "https://openlab.uab.es:6443/arcgis/rest/services/models/malla/FeatureServer/0",
+          url: "https://openlab.uab.es:6443/arcgis/rest/services/models/malla_v2/FeatureServer/0",
 		  renderer: {
 					  type: "class-breaks", // autocasts as new ClassBreaksRenderer()
 					  field: "a1_c_0",
@@ -31,15 +31,15 @@
 					 }
         });
 		
-		//layerEscenari.renderer = renderer_A;
-		renderer_max_A = {type: "class-breaks"};
-		renderer_max_A.classBreakInfos = renderer_A.classBreakInfos;
-		renderer_max_A.valueExpression = "Max($feature.a1_c_0,$feature.a1_c_1,$feature.a1_c_2,$feature.a1_c_3)";
+		//layerEscenari.renderer = renderer_A1;
+		renderer_max_A1 = {type: "class-breaks"};
+		renderer_max_A1.classBreakInfos = renderer_A1.classBreakInfos;
+		renderer_max_A1.valueExpression = "Max($feature.a1_c_0,$feature.a1_c_1,$feature.a1_c_2,$feature.a1_c_3)";
 		
 		
 		layer3 = new FeatureLayer({
 		  id:'optim',
-          url:"https://openlab.uab.cat:6443/arcgis/rest/services//models/malla/FeatureServer/0",
+          url:"https://openlab.uab.cat:6443/arcgis/rest/services//models/malla_v2/FeatureServer/0",
           renderer: {
 					  type: "class-breaks", // autocasts as new ClassBreaksRenderer()
 					  field: "a1_c_0",
@@ -57,7 +57,7 @@
         });
 		
 		layer4 = new FeatureLayer({
-          url:"https://openlab.uab.cat:6443/arcgis/rest/services//models/malla/FeatureServer/0",
+          url:"https://openlab.uab.cat:6443/arcgis/rest/services//models/malla_v2/FeatureServer/0",
           renderer: {
 					  type: "class-breaks", // autocasts as new ClassBreaksRenderer()
 					  field: "a1_c_0",
