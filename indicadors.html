@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="css/style_let.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css">
 	<script type="text/plain" id="arcadeB">
-		var fieldsA = [
+		var fieldsA1 = [
 		  { value: $feature.a1_c_0, alias: "a1_c_0" },
 		  { value: $feature.a1_c_1, alias: "a1_c_1" },
 		  { value: $feature.a1_c_2, alias: "a1_c_2" },
@@ -22,6 +22,26 @@
 		  { value: $feature.a1_o_1, alias: "a1_o_1" },
 		  { value: $feature.a1_o_2, alias: "a1_o_2" },
 		  { value: $feature.a1_o_3, alias: "a1_o_3" }
+		];
+		var fieldsA2 = [
+		  { value: $feature.a2_c_0, alias: "a2_c_0" },
+		  { value: $feature.a2_c_1, alias: "a2_c_1" },
+		  { value: $feature.a2_c_2, alias: "a2_c_2" },
+		  { value: $feature.a2_c_3, alias: "a2_c_3" },
+		  { value: $feature.a2_o_0, alias: "a2_o_0" },
+		  { value: $feature.a2_o_1, alias: "a2_o_1" },
+		  { value: $feature.a2_o_2, alias: "a2_o_2" },
+		  { value: $feature.a2_o_3, alias: "a2_o_3" }
+		];
+		var fieldsA3 = [
+		  { value: $feature.a3_c_0, alias: "a3_c_0" },
+		  { value: $feature.a3_c_1, alias: "a3_c_1" },
+		  { value: $feature.a3_c_2, alias: "a3_c_2" },
+		  { value: $feature.a3_c_3, alias: "a3_c_3" },
+		  { value: $feature.a3_o_0, alias: "a3_o_0" },
+		  { value: $feature.a3_o_1, alias: "a3_o_1" },
+		  { value: $feature.a3_o_2, alias: "a3_o_2" },
+		  { value: $feature.a3_o_3, alias: "a3_o_3" }
 		];
 		var fieldsB = [
 		  { value: $feature.b1_c_0, alias: "b1_c_0" },
@@ -256,13 +276,16 @@
 			Escenari Optimitzat<br>
 			  <select id="field-select-ind" class="esri-widget" onchange="canvi(this.value,false)">
 				<option value="-1" selected>Visualitza l’impacte en altres dimensions</option>
-				<option value="A" selected>Eficiència metabòlica</option>
+				<option value="A1" selected>Rendiment metabòlic d'energia</option>
+				<option value="A2" selected>Rendiment metabòlic d'aigua</option>
+				<option value="A3" selected>Rendiment metabòlic de materia</option>
 				<option value="B" >Conservació de la biodiversitat</option>
 				<option value="C">Funcionament del paisatge</option>
 				<option value="D">Canvi global</option>
 				<option value="E1A">Serveis ecosistèmics de suport</option>
 				<option value="E1B">Serveis ecosistèmics de regulació</option>
 				<option value="E1C">Serveis ecosistèmics d’aprovisionament</option>
+				<option value="E1C">Serveis ecosistèmics de cultura</option>
 				<option value="F">Cohesió social</option>
 			  </select>
 		</div>
@@ -287,13 +310,16 @@
 		Seleccioneu quina és la dimensió que voleu optimitzar i si es vol maximitzar o minimitzar.<br><br>
 		  <select id="field-select" class="esri-widget" style="font-size:14px" onchange="canvi_text(this.value);" >
 			<option value="-1" selected>Dimensions</option>
-			<option value="A">Eficiència metabòlica</option>
+			<option value="A1" selected>Rendiment metabòlic d'energia</option>
+			<option value="A2" selected>Rendiment metabòlic d'aigua</option>
+			<option value="A3" selected>Rendiment metabòlic de materia</option>
 			<option value="B" >Conservació de la biodiversitat</option>
 			<option value="C">Funcionament del paisatge</option>
 			<option value="D">Canvi global</option>
 			<option value="E1A">Serveis ecosistèmics de suport</option>
 			<option value="E1B">Serveis ecosistèmics de regulació</option>
 			<option value="E1C">Serveis ecosistèmics d’aprovisionament</option>
+			<option value="E1C">Serveis ecosistèmics de cultura</option>
 			<option value="F">Cohesió social</option>
 		  </select>&nbsp; 
 		  <select id="tipus" class="esri-widget" style="font-size:14px" onchange="" >
