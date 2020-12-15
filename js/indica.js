@@ -14,7 +14,7 @@
 
 	
         layerEscenari = new FeatureLayer({
-          url: "https://openlab.uab.cat:6443/arcgis/rest/services/models/malla_v2/FeatureServer/0",
+          url: "https://openlab.uab.cat:6443/arcgis/rest/services/models/malla_model_definitiu/FeatureServer/0",
 		  renderer: {
 					  type: "class-breaks", // autocasts as new ClassBreaksRenderer()
 					  field: "a1_c_0",
@@ -39,7 +39,7 @@
 		
 		layer3 = new FeatureLayer({
 		  id:'optim',
-          url:"https://openlab.uab.cat:6443/arcgis/rest/services//models/malla_v2/FeatureServer/0",
+          url:"https://openlab.uab.cat:6443/arcgis/rest/services/models/malla_model_definitiu/FeatureServer/0",
           renderer: {
 					  type: "class-breaks", // autocasts as new ClassBreaksRenderer()
 					  field: "a1_c_0",
@@ -57,7 +57,7 @@
         });
 		
 		layer4 = new FeatureLayer({
-          url:"https://openlab.uab.cat:6443/arcgis/rest/services//models/malla_v2/FeatureServer/0",
+          url:"https://openlab.uab.cat:6443/arcgis/rest/services/models/malla_model_definitiu/FeatureServer/0",
           renderer: {
 					  type: "class-breaks", // autocasts as new ClassBreaksRenderer()
 					  field: "a1_c_0",
