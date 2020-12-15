@@ -2231,7 +2231,7 @@
 					indicador_A3_max = (arrAvg(valorsOptA3) / 1000000) / (arrAvg(valorsMaxA3) / 1000000);
 					indicador_B_max = arrAvg(valorsOptB) / arrAvg(valorsMaxB);
 					indicador_C_max = arrAvg(valorsOptC) / arrAvg(valorsMaxC);
-					indicador_D_max =  (arrSum(valorsMinD1) / Math.pow(10.6)) / (arrSum(valorsOptD1) / Math.pow(10.6)) ;
+					indicador_D_max = 1; // (arrSum(valorsMinD1) / Math.pow(10.6)) / (arrSum(valorsOptD1) / Math.pow(10.6)) ;
 					indicador_E1A_max = ((arrSum(valorsOptE1A1) / arrSum(valorsOptE1A2)) * 100) / ((arrSum(valorsMaxE1A1) / arrSum(valorsMaxE1A2)) * 100);
 					indicador_E1B_max = (arrSum(valorsOptE1B) / 1000) / (arrSum(valorsMaxE1B) / 1000);
 					indicador_E1C_max = (arrSum(valorsOptE1C1) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
@@ -2244,7 +2244,7 @@
 						indicador_A3 = (arrSum(valorsA3_actual) / 1000000) / (arrSum(valorsMaxA3) / 1000000);
 						indicador_B = arrAvg(valorsB_actual) / arrAvg(valorsMaxB);
 						indicador_C = arrAvg(valorsC_actual) / arrAvg(valorsMaxC);
-						indicador_D =  (arrSum(valorsD_actual) / Math.pow(10.6)) / (arrSum(valorsMinD1) / Math.pow(10.6))  ;
+						indicador_D =  1; (arrSum(valorsD_actual) / Math.pow(10.6)) / (arrSum(valorsMinD1) / Math.pow(10.6))  ;
 						indicador_E1A = ((arrSum(valorsE1A1_actual) / arrSum(valorsE1A2_actual)) * 100) / ((arrSum(valorsMaxE1A1) / arrSum(valorsMaxE1A2)) * 100);
 						indicador_E1B = (arrSum(valorsE1B_actual) / 1000) / (arrSum(valorsMaxE1B) / 1000);
 						indicador_E1C = (arrSum(valorsE1C1) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
@@ -2257,7 +2257,7 @@
 						indicador_A3 = arrAvg(valorsA3_tend) / arrAvg(valorsMaxA3);
 						indicador_B = arrAvg(valorsB_tend) / arrAvg(valorsMaxB);
 						indicador_C = arrAvg(valorsC_tend) / arrAvg(valorsMaxC);
-						indicador_D = (arrSum(valorsD_tend) / Math.pow(10.6))  / (arrSum(valorsMinD1) / Math.pow(10.6));
+						indicador_D = 1; //(arrSum(valorsD_tend) / Math.pow(10.6))  / (arrSum(valorsMinD1) / Math.pow(10.6));
 						indicador_E1A = ((arrSum(valorsE1A1_tend) / arrSum(valorsE1A2_tend)) * 100) / ((arrSum(valorsMaxE1A1) / arrSum(valorsMaxE1A2)) * 100);
 						indicador_E1B = (arrSum(valorsE1B_tend) / 1000) / (arrSum(valorsMaxE1B) / 1000);
 						indicador_E1C = (arrSum(valorsE1C1) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
@@ -2327,7 +2327,7 @@
 					name: "Escenari optimitzat",
 					data: [indicador_A1_max ,indicador_A2_max ,indicador_A3_max ,indicador_B_max,indicador_C_max,indicador_D_max,indicador_E1A_max,indicador_E1B_max,indicador_E1C_max,indicador_F_max],
 				}],
-				labels:  ["Rendiment metabòlic d'energia (A1)", "Rendiment metabòlic d'aigua (A2)","Rendiment metabòlic de matèria (A3)"," Conservació de la biodiversitat (B1)", "Funcionament del paisatge (C1)", "Canvi global (D1)", "Serveis ecosistèmics de suport (E1A)", "Serveis ecosistèmics de regulació (E1B)","Serveis ecosistèmics d’aprovisionament (E1C)","Cohesió social (F1)"],
+				labels:  ["Rendiment metabòlic d'energia (A1A)", "Rendiment metabòlic d'aigua (A1B)","Rendiment metabòlic de matèria (A1C)"," Conservació de la biodiversitat (B1)", "Funcionament del paisatge (C1)", "Canvi global (D1)", "Serveis ecosistèmics de suport (E1A)", "Serveis ecosistèmics de regulació (E1B)","Serveis ecosistèmics d’aprovisionament (E1C)","Cohesió social (F1)"],
 				plotOptions: {
 					radar: {
 						size: 140,
