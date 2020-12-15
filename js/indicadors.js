@@ -2090,13 +2090,13 @@
 					valorsOptA3.push(valorMaxA3);
 					valorsOptA3_2.push(valorMaxA3_2);
 					//Indicador B
-					valorsB_actual.push(feature.attributes[fieldsB[0].value]*feature.attributes["amb_100"]);
-					valorsB_tend.push(feature.attributes[fieldsB[1].value]*feature.attributes["amb_100"]);
-					valorsOptB.push(valorMaxB*feature.attributes["amb_100"]);
+					valorsB_actual.push(feature.attributes[fieldsB[0].value]*feature.attributes["AMB_100"]);
+					valorsB_tend.push(feature.attributes[fieldsB[1].value]*feature.attributes["AMB_100"]);
+					valorsOptB.push(valorMaxB*feature.attributes["AMB_100"]);
 					//Indicador C
-					valorsC_actual.push(feature.attributes[fieldsC[0].value]*feature.attributes["amb_100"]);
-					valorsC_tend.push(feature.attributes[fieldsC[1].value]*feature.attributes["amb_100"]);
-					valorsOptC.push(valorMaxC*feature.attributes["amb_100"]);
+					valorsC_actual.push(feature.attributes[fieldsC[0].value]*feature.attributes["AMB_100"]);
+					valorsC_tend.push(feature.attributes[fieldsC[1].value]*feature.attributes["AMB_100"]);
+					valorsOptC.push(valorMaxC*feature.attributes["AMB_100"]);
 					//Indicador D
 					valorsD_actual.push(feature.attributes[fieldsD_agg[0].value]);
 					valorsD_tend.push(feature.attributes[fieldsD_agg[1].value]);
