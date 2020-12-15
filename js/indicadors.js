@@ -1,9 +1,9 @@
 ﻿/*****************************************************************
          * Define symbols for each class break.
          *****************************************************************/
-		 fields_A1 = "($feature.a1_c_0,$feature.a1_c_1,$feature.a1_c_2,$feature.a1_c_3)";
-		 fields_A2 = "($feature.a2_c_0,$feature.a2_c_1,$feature.a2_c_2,$feature.a2_c_3)";
-		 fields_A3 = "($feature.a3_c_0,$feature.a3_c_1,$feature.a3_c_2,$feature.a3_c_3)";
+		 fields_A1 = "($feature.a1a_c_0,$feature.a1a_c_1,$feature.a1a_c_2,$feature.a1a_c_3)";
+		 fields_A2 = "($feature.a1b_c_0,$feature.a1b_c_1,$feature.a1b_c_2,$feature.a1b_c_3)";
+		 fields_A3 = "($feature.a1c_c_0,$feature.a1c_c_1,$feature.a1c_c_2,$feature.a1c_c_3)";
 		 fields_B = "($feature.b1_c_0,$feature.b1_c_1,$feature.b1_c_2,$feature.b1_c_3)";
 		 fields_C = "($feature.c1_c_0,$feature.c1_c_1,$feature.c1_c_2,$feature.c1_c_3)";
 		 fields_D = "($feature.d1_c_0,$feature.d1_c_1,$feature.d1_c_2,$feature.d1_c_3)";
@@ -253,7 +253,7 @@
 
         renderer_A1= {
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
-          field: "a1_c_0",
+          field: "a1a_c_0",
           legendOptions: {
             title: "Eficiència energètica (EFEROI)"
           },
@@ -297,7 +297,7 @@
         
         renderer_A2= {
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
-          field: "a2_c_0",
+          field: "a1b_c_0",
           legendOptions: {
             title: "Consum d'aigua"
           },
@@ -312,28 +312,22 @@
           classBreakInfos: [
 		  
             {
-              minValue: 500, maxValue: 1000,symbol: cat8,label: ">500 "
+              minValue:250.0001, maxValue: 1000,symbol: cat8,label: ">250"
             },
             {
-              minValue: 450.0001,maxValue: 500,symbol: cat7,label: "450 - 500"
+              minValue: 200.0001, maxValue: 250,symbol: cat7,label: "200 - 250"
             },
             {
-              minValue:400.0001, maxValue: 450,symbol: cat6,label: "400 - 450"
+              minValue: 150.0001,maxValue: 200, symbol: cat4,label: "150 - 200"
             },
             {
-              minValue: 350.0001, maxValue: 400,symbol: cat5,label: "350 - 400"
+              minValue: 100.0001, maxValue: 150,symbol: cat3, label: "100 - 150"
             },
             {
-              minValue: 300.0001,maxValue: 350, symbol: cat4,label: "300 - 350"
+              minValue: 50.00001, maxValue: 100, symbol: cat2, label: "50 - 100"
             },
             {
-              minValue: 250.0001, maxValue: 300,symbol: cat3, label: "250 - 300"
-            },
-            {
-              minValue: 200.00001, maxValue: 250, symbol: cat2, label: "200 - 250"
-            },
-            {
-              minValue: 150.000001, maxValue: 200, symbol: cat1, label: "150 - 200 "
+              minValue: 0.000001, maxValue: 50, symbol: cat1, label: "0 - 50 "
             }
             
           ]
@@ -341,7 +335,7 @@
         
         renderer_A3= {
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
-          field: "a3_c_0",
+          field: "a1c_c_0",
           legendOptions: {
             title: "Apropiació de la producció primària neta"
           },
@@ -356,28 +350,28 @@
           classBreakInfos: [
 		  
             {
-              minValue: 7, maxValue: 15,symbol: cat8,label: ">7 "
+              minValue: 35, maxValue: 100,symbol: cat8,label: ">35 "
             },
             {
-              minValue: 6.0001,maxValue: 7,symbol: cat7,label: "6 - 7"
+              minValue: 30.0001,maxValue: 35,symbol: cat7,label: "30 - 35"
             },
             {
-              minValue:5.0001, maxValue: 6,symbol: cat6,label: "5 - 6"
+              minValue:25.0001, maxValue: 30,symbol: cat6,label: "25 - 30"
             },
             {
-              minValue: 4.0001, maxValue: 5,symbol: cat5,label: "4 - 5"
+              minValue: 20.0001, maxValue: 25,symbol: cat5,label: "20 - 25"
             },
             {
-              minValue: 3.0001,maxValue: 4, symbol: cat4,label: "3 - 4"
+              minValue: 15.0001,maxValue: 20, symbol: cat4,label: "15 - 20"
             },
             {
-              minValue: 2.0001, maxValue: 3,symbol: cat3, label: "2 - 3"
+              minValue: 10.0001, maxValue: 15,symbol: cat3, label: "10 - 15"
             },
             {
-              minValue: 1.00001, maxValue: 2, symbol: cat2, label: "1 - 2"
+              minValue: 5.00001, maxValue: 10, symbol: cat2, label: "5 - 10"
             },
             {
-              minValue: 1.000001, maxValue: 1, symbol: cat1, label: "0 - 1 "
+              minValue: 0.000001, maxValue: 5, symbol: cat1, label: "0 - 5 "
             }
             
           ]
@@ -675,7 +669,7 @@
 		
 		renderer_dif_A1 = {
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
-          valueExpression:  "Max"+fields_A1+" - $feature.a1_c_0",
+          valueExpression:  "Max"+fields_A1+" - $feature.a1a_c_0",
           legendOptions: {
             title: "Diferència"
           },
@@ -728,7 +722,7 @@
         };
 		renderer_dif_A2 = {
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
-          valueExpression:  "Max"+fields_A2+" - $feature.a2_c_0",
+          valueExpression:  "Max"+fields_A2+" - $feature.a1b_c_0",
           legendOptions: {
             title: "Diferència"
           },
@@ -742,32 +736,32 @@
           defaultLabel: "sense dades",
           classBreakInfos: [
             {
-              minValue: 300.001,maxValue: 1000,symbol: dif12,label: ">300"
+              minValue: 60.001,maxValue: 100,symbol: dif14,label: ">60"
             },
           	{
-              minValue: 250.001,maxValue: 300,symbol: dif11,label: "250 - 300"
+              minValue: 50.001,maxValue: 60,symbol: dif13,label: "50 - 60"
             },
 			{
-              minValue: 200.001,maxValue: 250,symbol: dif10,label: "200 - 250"
+              minValue: 40.001,maxValue: 50,symbol: dif12,label: "40 - 50"
             },
 			{
-              minValue: 150.001,maxValue: 200,symbol: dif9,label: "150 - 200"
+              minValue: 30.001,maxValue: 40,symbol: dif11,label: "30 - 40"
             },
 			{
-              minValue: 100.001,maxValue: 150,symbol: dif8,label: "100 - 150"
+              minValue: 20,maxValue: 30,symbol: dif10,label: "20 - 30"
             },
 			{
-              minValue: 50.001,maxValue: 100,symbol: dif7,label: "50 - 100"
+              minValue: 10.001,maxValue: 20,symbol: dif9,label: "10 - 20"
             },
 			{
-              minValue: 0.00001,maxValue: 50,symbol: dif6,label: "0 - 50"
+              minValue: 0.00001,maxValue: 10,symbol: dif8,label: "0 - 10"
             }
    
           ]
         };
         renderer_dif_A3 = {
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
-          valueExpression:  "Max"+fields_A3+" - $feature.a3_c_0",
+          valueExpression:  "Max"+fields_A3+" - $feature.a1c_c_0",
           legendOptions: {
             title: "Diferència"
           },
@@ -780,41 +774,29 @@
           },
           defaultLabel: "sense dades",
           classBreakInfos: [
-			{
-              minValue: 6.001,maxValue: 15,symbol: dif12,label: ">6"
+          	{
+              minValue: 40,maxValue:100,symbol: dif15,label: ">40"
+            },
+			 {
+              minValue: 30,maxValue: 40,symbol: dif14,label: "30 - 40"
+            },
+          	{
+              minValue: 25.001,maxValue: 30,symbol: dif13,label: "25 - 30"
             },
 			{
-              minValue: 4.001,maxValue: 6,symbol: dif11,label: "4 - 6"
+              minValue: 20.001,maxValue: 25,symbol: dif12,label: "20 - 25"
             },
 			{
-              minValue: 2.001,maxValue: 4,symbol: dif10,label: "2 - 4"
+              minValue: 15.001,maxValue: 20,symbol: dif11,label: "15 - 20"
             },
 			{
-              minValue: 1.001,maxValue: 2,symbol: dif9,label: "1 - 2"
+              minValue: 10,maxValue: 15,symbol: dif10,label: "10 - 15"
             },
 			{
-              minValue: 0.05001,maxValue: 1,symbol: dif8,label: "0 - 1"
+              minValue: 5.001,maxValue: 10,symbol: dif9,label: "5 - 10"
             },
-            {
-              minValue: -0.4999,maxValue: 0.05,symbol: dif7,label: "0 "
-            },
-            {
-              minValue: -0.999, maxValue: -0.05,symbol: dif6,label: "-1 - 0"
-            },
-            {
-              minValue: -1.999, maxValue: -1,symbol: dif5,label: "-2 - -1"
-            },
-            {
-              minValue: -3.999,maxValue: -2, symbol: dif4,label: "-4 -  -2"
-            },
-            {
-              minValue: -5.999, maxValue: -4,symbol: dif3, label: "-6 - -4"
-            },
-            {
-              minValue: -7.9999, maxValue: -6, symbol: dif2, label: "-8 - -6"
-            },
-            {
-              minValue: -10, maxValue: -8, symbol: dif1, label: "< -8 "
+			{
+              minValue: 0.00001,maxValue: 5,symbol: dif8,label: "0 - 5"
             }
           ]
         };
@@ -1241,12 +1223,12 @@
 				dif10.color = [122,171,0, 0.7];
 				dif11.color = [85,145,0, 0.7];
 				dif12.color = [48,120,0, 0.7];
-				renderer_A1.field ="a1_c_"+escenari;
+				renderer_A1.field ="a1a_c_"+escenari;
 				layerEscenari.renderer = renderer_A1;
 				renderer_max_A1 = {type: "class-breaks"};
 				renderer_max_A1.classBreakInfos = renderer_A1.classBreakInfos;
 				if (derivat == true){
-					renderer_dif_A1.valueExpression=tipus + fields_A1 + " - $feature.a1_c_"+escenari;
+					renderer_dif_A1.valueExpression=tipus + fields_A1 + " - $feature.a1a_c_"+escenari;
 					renderer_max_A1.valueExpression= tipus + fields_A1;
 				} else {
 					renderer_dif_A1.valueExpression=document.getElementById("arcadeB").text + " getPredominantCategory("+indicador_principal+",fieldsA1) - " + tipus + fields_A1;
@@ -1279,12 +1261,12 @@
 				dif10.color = [122,171,0, 0.7];
 				dif11.color = [85,145,0, 0.7];
 				dif12.color = [48,120,0, 0.7];
-				renderer_A2.field ="a2_c_"+escenari;
+				renderer_A2.field ="a1b_c_"+escenari;
 				layerEscenari.renderer = renderer_A2;
 				renderer_max_A2 = {type: "class-breaks"};
 				renderer_max_A2.classBreakInfos = renderer_A2.classBreakInfos;
 				if (derivat == true){
-					renderer_dif_A2.valueExpression=tipus + fields_A2 + " - $feature.a2_c_"+escenari;
+					renderer_dif_A2.valueExpression=tipus + fields_A2 + " - $feature.a1b_c_"+escenari;
 					renderer_max_A2.valueExpression= tipus + fields_A2;
 				} else {
 					renderer_dif_A2.valueExpression=document.getElementById("arcadeB").text + " getPredominantCategory("+indicador_principal+",fieldsA2) - " + tipus + fields_A2;
@@ -1317,12 +1299,12 @@
 				dif10.color = [122,171,0, 0.7];
 				dif11.color = [85,145,0, 0.7];
 				dif12.color = [48,120,0, 0.7];
-				renderer_A3.field ="a3_c_"+escenari;
+				renderer_A3.field ="a1c_c_"+escenari;
 				layerEscenari.renderer = renderer_A3;
 				renderer_max_A3 = {type: "class-breaks"};
 				renderer_max_A3.classBreakInfos = renderer_A3.classBreakInfos;
 				if (derivat == true){
-					renderer_dif_A3.valueExpression=tipus + fields_A3 + " - $feature.a3_c_"+escenari;
+					renderer_dif_A3.valueExpression=tipus + fields_A3 + " - $feature.a1c_c_"+escenari;
 					renderer_max_A3.valueExpression= tipus + fields_A3;
 				} else {
 					renderer_dif_A3.valueExpression=document.getElementById("arcadeB").text + " getPredominantCategory("+indicador_principal+",fieldsA3) - " + tipus + fields_A3;
@@ -1605,13 +1587,13 @@
 			case "A1": 
 				renderer_max_A1.valueExpression = tipus + fields_A1;
 				layer3.renderer = renderer_max_A1;
-				renderer_dif_A1.valueExpression=tipus + fields_A1 + " - $feature.a1_c_"+escenari;
+				renderer_dif_A1.valueExpression=tipus + fields_A1 + " - $feature.a1a_c_"+escenari;
 				layer4.renderer = renderer_dif_A1;
 				break;
 			case "A2": 
 				renderer_max_A2.valueExpression = tipus + fields_A2;
 				layer3.renderer = renderer_max_A2;
-				renderer_dif_A2.valueExpression=tipus + fields_A2 + " - $feature.a2_c_"+escenari;
+				renderer_dif_A2.valueExpression=tipus + fields_A2 + " - $feature.a1b_c_"+escenari;
 				layer4.renderer = renderer_dif_A2;
 				break;
 			case "B": 
@@ -1667,16 +1649,22 @@
 		document.getElementById("escenariDif").innerHTML = "Diferència escenari " + text_escenari + " i optimitzat";
 		switch (document.getElementById("field-select").value){
 			case "A1": 
-				renderer_A1.field ="a1_c_"+ valor;
+				renderer_A1.field ="a1a_c_"+ valor;
 				layerEscenari.renderer = renderer_A1;
-				renderer_dif_A1.valueExpression=tipus + fields_A1 + " - $feature.a1_c_"+valor;
+				renderer_dif_A1.valueExpression=tipus + fields_A1 + " - $feature.a1a_c_"+valor;
 				layer4.renderer = renderer_dif_A1;
 				break;
 			case "A2": 
-				renderer_A2.field ="a2_c_"+ valor;
+				renderer_A2.field ="a1b_c_"+ valor;
 				layerEscenari.renderer = renderer_A2;
-				renderer_dif_A2.valueExpression=tipus + fields_A2 + " - $feature.a2_c_"+valor;
+				renderer_dif_A2.valueExpression=tipus + fields_A2 + " - $feature.a1b_c_"+valor;
 				layer4.renderer = renderer_dif_A2;
+				break;
+			case "A3": 
+				renderer_A3.field ="a1c_c_"+ valor;
+				layerEscenari.renderer = renderer_A3;
+				renderer_dif_A3.valueExpression=tipus + fields_A3 + " - $feature.a1c_c_"+valor;
+				layer4.renderer = renderer_dif_A3;
 				break;
 			case "B": 
 				renderer_B.field ="b1_c_"+ valor;
@@ -1789,6 +1777,8 @@
 			valorsA2_tend = [];
 			valorsA3_actual = [];
 			valorsA3_tend = [];
+			valorsA3_2_actual = [];
+			valorsA3_2_tend = [];
 			valorsB_actual = [];
 			valorsB_tend = [];
 			valorsC_actual = [];
@@ -1812,6 +1802,7 @@
 			valorsOptA1_2 = [];
 			valorsOptA2 = [];
 			valorsOptA3 = [];
+			valorsOptA3_2 = [];
 			valorsOptB = [];
 			valorsOptC = [];
 			valorsOptD1 = [];
@@ -1824,6 +1815,7 @@
 			valorMaxA1_2 = 0;
 			valorMaxA2 = 0;
 			valorMaxA3 = 0;
+			valorMaxA3_2 = 0;
 			valorMaxB =0;
 			valorMaxC = 0;
 			valorMaxD = 0;
@@ -1834,55 +1826,86 @@
 			valorMaxF = 0;
 			capa.queryFeatures().then(function(response) {	
 				 var fieldsA1 = [
-				  { value: "a1_c_0"},
-				  { value: "a1_c_1"},
-				  { value: "a1_c_2"},
-				  { value: "a1_c_3"},
-				  { value: "a1_o_0"},
-				  { value: "a1_o_1"},
-				  { value: "a1_o_2"},
-				  { value: "a1_o_3"}
+				  { value: "a1a_c_0"},
+				  { value: "a1a_c_1"},
+				  { value: "a1a_c_2"},
+				  { value: "a1a_c_3"},
+				  { value: "a1a_o_0"},
+				  { value: "a1a_o_1"},
+				  { value: "a1a_o_2"},
+				  { value: "a1a_o_3"}
 				];
 				var fieldsA1_agg = [
-				  { value: "a1_c_0_1"},
-				  { value: "a1_c_1_1"},
-				  { value: "a1_c_2_1"},
-				  { value: "a1_c_3_1"},
-				  { value: "a1_o_0_1"},
-				  { value: "a1_o_1_1"},
-				  { value: "a1_o_2_1"},
-				  { value: "a1_o_3_1"}
+				  { value: "a1a_c_0_1"},
+				  { value: "a1a_c_1_1"},
+				  { value: "a1a_c_2_1"},
+				  { value: "a1a_c_3_1"},
+				  { value: "a1a_o_0_1"},
+				  { value: "a1a_o_1_1"},
+				  { value: "a1a_o_2_1"},
+				  { value: "a1a_o_3_1"}
 				];
 				var fieldsA1_2_agg = [
-				  { value: "a1_c_0_2"},
-				  { value: "a1_c_1_2"},
-				  { value: "a1_c_2_2"},
-				  { value: "a1_c_3_2"},
-				  { value: "a1_o_0_2"},
-				  { value: "a1_o_1_2"},
-				  { value: "a1_o_2_2"},
-				  { value: "a1_o_3_2"}
+				  { value: "a1a_c_0_2"},
+				  { value: "a1a_c_1_2"},
+				  { value: "a1a_c_2_2"},
+				  { value: "a1a_c_3_2"},
+				  { value: "a1a_o_0_2"},
+				  { value: "a1a_o_1_2"},
+				  { value: "a1a_o_2_2"},
+				  { value: "a1a_o_3_2"}
 				];
 				 var fieldsA2 = [
-				  { value: "a2_c_0"},
-				  { value: "a2_c_1"},
-				  { value: "a2_c_2"},
-				  { value: "a2_c_3"},
-				  { value: "a2_o_0"},
-				  { value: "a2_o_1"},
-				  { value: "a2_o_2"},
-				  { value: "a2_o_3"}
+				  { value: "a1b_c_0"},
+				  { value: "a1b_c_1"},
+				  { value: "a1b_c_2"},
+				  { value: "a1b_c_3"},
+				  { value: "a1b_o_0"},
+				  { value: "a1b_o_1"},
+				  { value: "a1b_o_2"},
+				  { value: "a1b_o_3"}
 				];
+				var fieldsA2_agg = [
+				  { value: "a1b_c_0_1"},
+				  { value: "a1b_c_1_1"},
+				  { value: "a1b_c_2_1"},
+				  { value: "a1b_c_3_1"},
+				  { value: "a1b_o_0_1"},
+				  { value: "a1b_o_1_1"},
+				  { value: "a1b_o_2_1"},
+				  { value: "a1b_o_3_1"}
+				];
+				
 				 var fieldsA3 = [
-				  { value: "a3_c_0"},
-				  { value: "a3_c_1"},
-				  { value: "a3_c_2"},
-				  { value: "a3_c_3"},
-				  { value: "a3_o_0"},
-				  { value: "a3_o_1"},
-				  { value: "a3_o_2"},
-				  { value: "a3_o_3"}
+				  { value: "a1c_c_0"},
+				  { value: "a1c_c_1"},
+				  { value: "a1c_c_2"},
+				  { value: "a1c_c_3"},
+				  { value: "a1c_o_0"},
+				  { value: "a1c_o_1"},
+				  { value: "a1c_o_2"},
+				  { value: "a1c_o_3"}
 				];
+				 var fieldsA3_agg = [
+				  { value: "a1c_c_0_1"},
+				  { value: "a1c_c_1_1"},
+				  { value: "a1c_c_2_1"},
+				  { value: "a1c_c_3_1"},
+				  { value: "a1c_o_0_1"},
+				  { value: "a1c_o_1_1"},
+				  { value: "a1c_o_2_1"},
+				  { value: "a1c_o_3_1"}
+				];
+				var fieldsA3_2_agg = [
+				  { value: "a1c_c_0_2"},
+				  { value: "a1c_c_1_2"},
+				  { value: "a1c_c_2_2"},
+				  { value: "a1c_c_3_2"},
+				  { value: "a1c_o_0_2"},
+				  { value: "a1c_o_1_2"},
+				  { value: "a1c_o_2_2"},
+				  { value: "a1c_o_3_2"}
+				 ];
 				var fieldsB = [
 				  { value: "b1_c_0" },
 				  { value: "b1_c_1" },
@@ -2037,6 +2060,7 @@
 							valorMaxA1_2 = feature.attributes[fieldsA1_2_agg[k].value];
 							valorMaxA2 = feature.attributes[fieldsA2[k].value];
 							valorMaxA3 = feature.attributes[fieldsA3[k].value];
+							valorMaxA3_2 = feature.attributes[fieldsA3_2_agg[k].value];
 							valorMaxB = feature.attributes[fieldsB[k].value];
 							valorMaxC = feature.attributes[fieldsC[k].value];
 							valorMaxD1 = feature.attributes[fieldsD_agg[k].value];
@@ -2055,13 +2079,16 @@
 					valorsOptA1.push(valorMaxA1);
 					valorsOptA1_2.push(valorMaxA1_2);
 					//Indicador A2
-					valorsA2_actual.push(feature.attributes[fieldsA2[0].value]);
-					valorsA2_tend.push(feature.attributes[fieldsA2[1].value]);
+					valorsA2_actual.push(feature.attributes[fieldsA2_agg[0].value]);
+					valorsA2_tend.push(feature.attributes[fieldsA2_agg[1].value]);
 					valorsOptA2.push(valorMaxA2);
 					//Indicador A3
-					valorsA3_actual.push(feature.attributes[fieldsA3[0].value]);
-					valorsA3_tend.push(feature.attributes[fieldsA3[1].value]);
+					valorsA3_actual.push(feature.attributes[fieldsA3_agg[0].value]);
+					valorsA3_tend.push(feature.attributes[fieldsA3_agg[1].value]);
+					valorsA3_2_actual.push(feature.attributes[fieldsA3_2_agg[0].value]);
+					valorsA3_2_tend.push(feature.attributes[fieldsA3_2_agg[1].value]);
 					valorsOptA3.push(valorMaxA3);
+					valorsOptA3_2.push(valorMaxA3_2);
 					//Indicador B
 					valorsB_actual.push(feature.attributes[fieldsB[0].value]*feature.attributes["amb_100"]);
 					valorsB_tend.push(feature.attributes[fieldsB[1].value]*feature.attributes["amb_100"]);
@@ -2104,6 +2131,7 @@
 				valorsMaxA2=[];
 				
 				valorsMaxA3=[];
+				valorsMaxA3_2=[];
 				
 				valorsMaxB=[];
 				
@@ -2123,10 +2151,10 @@
 				response.features.map(function(feature) {
 					//Calcul de maxims
 					//indicador A1
-					valorMaxA1=0;
+					valorMaxA1A=0;
 					for(var k in fieldsA1){
-						if(feature.attributes[fieldsA1[k].value] >= valorMaxA1){
-							valorMaxA = feature.attributes[fieldsA1[k].value];
+						if(feature.attributes[fieldsA1[k].value] >= valorMaxA1A){
+							valorMaxA1A = feature.attributes[fieldsA1[k].value];
 							valorMaxA1 = feature.attributes[fieldsA1_agg[k].value];
 							valorMaxA1_2 = feature.attributes[fieldsA1_2_agg[k].value];
 						}
@@ -2135,9 +2163,10 @@
 					valorsMaxA1_2.push(valorMaxA1_2);
 					
 					//indicador A2
-					valorMaxA2=0;
+					valorMaxA1B=0;
 					for(var k in fieldsA2){
-						if(feature.attributes[fieldsA2[k].value] >= valorMaxA2){
+						if(feature.attributes[fieldsA2[k].value] >= valorMaxA1B){
+							valorMaxA1B = feature.attributes[fieldsA2[k].value]
 							valorMaxA2 = feature.attributes[fieldsA2[k].value];
 						}
 					}
@@ -2145,14 +2174,16 @@
 					valorsMaxA2.push(valorMaxA2);
 					
 					//indicador A3
-					valorMaxA3=0;
+					valorMaxA1C=0;
 					for(var k in fieldsA3){
-						if(feature.attributes[fieldsA3[k].value] >= valorMaxA3){
-							valorMaxA3 = feature.attributes[fieldsA3[k].value];
+						if(feature.attributes[fieldsA3[k].value] >= valorMaxA1C){
+							valorMaxA1C = feature.attributes[fieldsA3[k].value];
+							valorMaxA3 = feature.attributes[fieldsA3_agg[k].value];
+							valorMaxA3_2 = feature.attributes[fieldsA3_2_agg[k].value];
 						}
 					}
 					valorsMaxA3.push(valorMaxA3);
-					
+					valorsMaxA3_2.push(valorMaxA3_2);
 					//indicador B
 					valorMaxB=0;
 					for(var k in fieldsB){
@@ -2169,17 +2200,19 @@
 						}
 					}
 					valorsMaxC.push(valorMaxC);
-					valorMinD1 = 0;
+					
 					//indicador D
+					valorMinD1 = 0;
 					for(var k in fieldsD){
 						
 						if(feature.attributes[fieldsD[k].value] >= valorMinD1){
-							valorMinD1 = feature.attributes[fieldsD[k].value];
-							//valorMinD1 = feature.attributes[fieldsD_agg[k].value];
+							valorMin = feature.attributes[fieldsD[k].value];
+							valorMinD1 = feature.attributes[fieldsD_agg[k].value];
 						}
 					}
 					
 					valorsMinD1.push(valorMinD1);
+					
 					//indicador E1A
 					valorMaxE1A=0;
 					for(var k in fieldsE1A){
@@ -2227,11 +2260,11 @@
 					
 					//Escenari maxim
 					indicador_A1_max = (arrSum(valorsOptA1) / arrSum(valorsOptA1_2)) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
-					indicador_A2_max = (arrAvg(valorsOptA2) / 1000000) / (arrAvg(valorsMaxA2) / 1000000);
-					indicador_A3_max = (arrAvg(valorsOptA3) / 1000000) / (arrAvg(valorsMaxA3) / 1000000);
+					indicador_A2_max = (arrSum(valorsOptA2)) / (arrSum(valorsMaxA2));
+					indicador_A3_max = (arrSum(valorsOptA3) / arrSum(valorsOptA3_2)) / (arrSum(valorsMaxA3)/ arrSum(valorsMaxA3_2));
 					indicador_B_max = arrAvg(valorsOptB) / arrAvg(valorsMaxB);
 					indicador_C_max = arrAvg(valorsOptC) / arrAvg(valorsMaxC);
-					indicador_D_max = 1; // (arrSum(valorsMinD1) / Math.pow(10.6)) / (arrSum(valorsOptD1) / Math.pow(10.6)) ;
+					indicador_D_max =  (arrSum(valorsMinD1) / Math.pow(10,6)) / (arrSum(valorsOptD1) / Math.pow(10,6)) ;
 					indicador_E1A_max = ((arrSum(valorsOptE1A1) / arrSum(valorsOptE1A2)) * 100) / ((arrSum(valorsMaxE1A1) / arrSum(valorsMaxE1A2)) * 100);
 					indicador_E1B_max = (arrSum(valorsOptE1B) / 1000) / (arrSum(valorsMaxE1B) / 1000);
 					indicador_E1C_max = (arrSum(valorsOptE1C1) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
@@ -2240,11 +2273,11 @@
 					//escenari optim
 					if (escenari == 0) {
 						indicador_A1 = (arrSum(valorsA1_actual) / arrSum(valorsA1_2_actual)) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
-						indicador_A2 = (arrSum(valorsA2_actual) / 1000000) /  (arrSum(valorsMaxA2) / 1000000);
-						indicador_A3 = (arrSum(valorsA3_actual) / 1000000) / (arrSum(valorsMaxA3) / 1000000);
+						indicador_A2 = (arrSum(valorsA2_actual) / 1000000) / (arrSum(valorsMaxA2)/ 1000000);
+						indicador_A3 = (arrSum(valorsA3_actual) / arrSum(valorsA3_2_actual)) / (arrSum(valorsMaxA3)/ arrSum(valorsMaxA3_2));
 						indicador_B = arrAvg(valorsB_actual) / arrAvg(valorsMaxB);
 						indicador_C = arrAvg(valorsC_actual) / arrAvg(valorsMaxC);
-						indicador_D =  1; (arrSum(valorsD_actual) / Math.pow(10.6)) / (arrSum(valorsMinD1) / Math.pow(10.6))  ;
+						indicador_D = (arrSum(valorsD_actual) / Math.pow(10,6)) / (arrSum(valorsMinD1) / Math.pow(10,6))  ;
 						indicador_E1A = ((arrSum(valorsE1A1_actual) / arrSum(valorsE1A2_actual)) * 100) / ((arrSum(valorsMaxE1A1) / arrSum(valorsMaxE1A2)) * 100);
 						indicador_E1B = (arrSum(valorsE1B_actual) / 1000) / (arrSum(valorsMaxE1B) / 1000);
 						indicador_E1C = (arrSum(valorsE1C1) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
@@ -2253,11 +2286,11 @@
 						aranya2(indicador_A1 , indicador_A2, indicador_A3,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,"rgba(200,0,0,0.6)","Escenari actual");
 					} else {
 						indicador_A1 = (arrSum(valorsA1_tend) / arrSum(valorsA1_2_tend)) / (arrSum(valorsOptA1)/ arrSum(valorsOptA1_2));
-						indicador_A2 = arrAvg(valorsA2_tend) / 1000000;
-						indicador_A3 = arrAvg(valorsA3_tend) / arrAvg(valorsMaxA3);
+						indicador_A2 = (arrSum(valorsA2_tend) / 1000000) / (arrSum(valorsOptA2)/ 1000000);
+						indicador_A3 = (arrSum(valorsA3_tend) / arrSum(valorsA3_2_tend)) / (arrSum(valorsOptA3)/ arrSum(valorsOptA3_2));
 						indicador_B = arrAvg(valorsB_tend) / arrAvg(valorsMaxB);
 						indicador_C = arrAvg(valorsC_tend) / arrAvg(valorsMaxC);
-						indicador_D = 1; //(arrSum(valorsD_tend) / Math.pow(10.6))  / (arrSum(valorsMinD1) / Math.pow(10.6));
+						indicador_D = (arrSum(valorsD_tend) / Math.pow(10,6))  / (arrSum(valorsMinD1) / Math.pow(10,6));
 						indicador_E1A = ((arrSum(valorsE1A1_tend) / arrSum(valorsE1A2_tend)) * 100) / ((arrSum(valorsMaxE1A1) / arrSum(valorsMaxE1A2)) * 100);
 						indicador_E1B = (arrSum(valorsE1B_tend) / 1000) / (arrSum(valorsMaxE1B) / 1000);
 						indicador_E1C = (arrSum(valorsE1C1) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
