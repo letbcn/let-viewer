@@ -174,8 +174,8 @@
 		top: 0; left: 0; bottom: 0; right: 0;
 		margin: auto;
 		width: 820px;
-		height: 400px;
-		z-indez: 9999 !important;
+		height: 450px;
+		z-index: 1 !important;
 		background: #f0f0fd;
 		background: rgba(240,240,253,0.90);
 		padding: 22px 32px;
@@ -213,6 +213,30 @@
 	.button:active {
 		position:relative;
 		top:1px;
+	}
+
+	.label {
+            width:40%;
+            display:inline;
+            float:left;
+        }
+
+		.formRange input {
+		width:50%
+	}
+
+	.resultRange {
+		padding-left:15px;
+		text-align:center;
+	}
+
+	.formRange {
+		padding:5px;
+	}
+
+	.formRangeTotal {
+		text-align: center;
+		font-weight: bold;
 	}
 	
     </style>
@@ -298,38 +322,76 @@
 	</div>
 	<div id="divgrafics">
 		<div id="marksChart"></div>
-		<!--<div id="diferencies">A<br>B<br>C</div>-->
 	<div>
 		<div id="pane" class="pane">
-		<center style="font-size:20px;font-family: 'Avenir Next W00','Helvetica Neue',Helvetica,Arial,sans-serif;">
-		<b style="color:#c00000">Sistema de suport a la planificació<hr style=" border-top: 1px solid #c00000"></b></center>
-		<textarea  style="background:rgba(240,240,253,0.90);resize: none;width:820px;border:0;font-size:14px;font-family: 'Avenir Next W00','Helvetica Neue',Helvetica,Arial,sans-serif;text-align:justify" rows="9">
-		El sistema permet identificar possibles configuracions dels espais oberts de l’àrea metropolitana per tal d’optimitzar la contribució que aquests fan al conjunt del sistema socioecològic, definint quina dimensió es vol prioritzar en la seva planificació. Es defineixen 8 dimensions principals de la contribució dels espais oberts: eficiència metabòlica, conservació de la biodiversitat, funcionament del paisatge, canvi global, serveis ecosistèmics (suport, regulació, aprovisionament) i cohesió social. A partir d’aquí s’obté una configuració per cel·les de 500 x 500 m	de la dimensió optimitzada, i es poden consultar totes les demés, partint de la informació d’estudis d’anàlisi d’escenaris que s’han realitzat 	anteriorment. A la vegada, es comparen els resultats bé amb la situació de partida (l’any de referència és 2015) o bé amb l’escenari tendencial si es complís tot el planejament urbanístic vigent.
-		</textarea>
-		
-		Seleccioneu quina és la dimensió que voleu optimitzar i si es vol maximitzar o minimitzar.<br><br>
-		  <select id="field-select" class="esri-widget" style="font-size:14px" onchange="canvi_text(this.value);" >
-			<option value="-1" selected>Dimensions</option>
-			<option value="A1">Rendiment metabòlic d'energia</option>
-			<option value="A2">Rendiment metabòlic d'aigua</option>
-			<option value="A3">Rendiment metabòlic de materia</option>
-			<option value="B">Conservació de la biodiversitat</option>
-			<option value="C">Funcionament del paisatge</option>
-			<option value="D">Canvi global</option>
-			<option value="E1A">Serveis ecosistèmics de suport</option>
-			<option value="E1B">Serveis ecosistèmics de regulació</option>
-			<option value="E1C">Serveis ecosistèmics d’aprovisionament</option>
-			<option value="E1C">Serveis ecosistèmics de cultura</option>
-			<option value="F">Cohesió social</option>
-		  </select>&nbsp; 
-		  <select id="tipus" class="esri-widget" style="font-size:14px" onchange="" >
-			<option value="Max" selected>Maximitzar</option>
-			<option value="Min" >Minimitzar</option>
-		  </select><br><br>
-		  <textarea style="background:rgba(240,240,253,0.90);resize: none;width:820px;border:0;font-size:12px;text-align:justify" id="descripcio2" rows="5"></textarea>
-		  <text style="font-size:12px;color:#c00000">versió Beta</text>
-		  <button class="button" style="float: right;width:15%;" onclick="document.getElementById('pane').style.visibility='hidden';canvi(document.getElementById('field-select').value,true)">Aplicar</button>
+			<center style="font-size:20px;font-family: 'Avenir Next W00','Helvetica Neue',Helvetica,Arial,sans-serif;">
+			<b style="color:#c00000">Sistema de suport a la planificació<hr style=" border-top: 1px solid #c00000"></b></center>
+			<div class="formRange"><div class="label"><label for="ARange">Rendiment metabòlic d'energia</label></div><input type="range" name="A1Range" id="A1Range" min="0" max="100" step="1" onchange="showVal('A1RangeValue', this.value)" oninput="showVal('A1RangeValue', this.value)"><span class="resultRange" id="A1RangeValue"></span></div>
+			<div class="formRange"><div class="label"><label for="ARange">Rendiment metabòlic d'aigua</label></div><input type="range" name="A2Range" id="A2Range" min="0" max="100" step="1" onchange="showVal('A2RangeValue', this.value)" oninput="showVal('A2RangeValue', this.value)"><span class="resultRange" id="A2RangeValue"></span></div>
+			<div class="formRange"><div class="label"><label for="ARange">Rendiment metabòlic de materia</label></div><input type="range" name="A3Range" id="A3Range" min="0" max="100" step="1" onchange="showVal('A3RangeValue', this.value)" oninput="showVal('A3RangeValue', this.value)"><span class="resultRange" id="A3RangeValue"></span></div>
+        	<div class="formRange"><div class="label"><label for="BRange">Conservació de la biodiversitat</label></div><input type="range" name="BRange" id="BRange" min="0" max="100" step="1" onchange="showVal('BRangeValue', this.value)" oninput="showVal('BRangeValue',this.value)"><span class="resultRange" id="BRangeValue"></span></div>
+        	<div class="formRange"><div class="label"><label for="CRange">Funcionament del paisatge</label></div><input type="range" name="CRange" id="CRange" min="0" max="100" step="1" onchange="showVal('CRangeValue', this.value)" oninput="showVal('CRangeValue', this.value)"><span class="resultRange" id="CRangeValue"></span></div>
+        	<div class="formRange"><div class="label"><label for="DRange">Canvi global</label></div><input type="range" name="DRange" id="DRange" min="0" max="100" step="1" onchange="showVal('DRangeValue', this.value)" oninput="showVal('DRangeValue', this.value)"><span class="resultRange" id="DRangeValue"></span></div>
+        	<div class="formRange"><div class="label"><label for="E1ARange">Serveis ecosistèmics de suport</label></div><input type="range" name="E1ARange" id="E1ARange" min="0" max="100" step="1" onchange="showVal('E1ARangeValue', this.value)" oninput="showVal('E1ARangeValue', this.value)"><span class="resultRange" id="E1ARangeValue"></span></div>
+        	<div class="formRange"><div class="label"><label for="E1BRange">Serveis ecosistèmics de regulació</label></div><input type="range" name="E1BRange" id="E1BRange" min="0" max="100" step="1" onchange="showVal('E1BRangeValue', this.value)" oninput="showVal('E1BRangeValue', this.value)"><span class="resultRange" id="E1BRangeValue"></span></div>
+        	<div class="formRange"><div class="label"><label for="E1CRange">Serveis ecosistèmics d’aprovisionament</label></div><input type="range" name="E1CRange" id="E1CRange" min="0" max="100" step="1" onchange="showVal('E1CRangeValue', this.value)" oninput="showVal('E1CRangeValue', this.value)"><span class="resultRange" id="E1CRangeValue"></span></div>
+        	<div class="formRange"><div class="label"><label for="FRange">Cohesió social</label></div><input type="range" name="FRange" id="FRange" min="0" max="100" step="1" onchange="showVal('FRangeValue', this.value)" oninput="showVal('FRangeValue', this.value)"><span class="resultRange" id="FRangeValue"></span></div>
+			<div class="formRange formRangeTotal">Total: <span id="TotalRanges"></span></div>  
+			<text style="font-size:12px;color:#c00000">versió Beta</text>
+		  	<button class="button" style="float: right;width:15%;" onclick="checkRanges();/*document.getElementById('pane').style.visibility='hidden';canvi(document.getElementById('field-select').value,true)*/">Aplicar</button>
 		</div>
 	
   </body>
+  <script>
+	function showVal(tag, newVal)
+    {
+          document.getElementById(tag).innerHTML=newVal;
+          updateTotalRanges();
+    }
+
+    function iniValues(ranges) 
+    {
+        ranges.forEach(iniVal);
+        updateTotalRanges();
+    }
+
+    function iniVal(range) 
+    {
+        document.getElementById(range + "Value").innerHTML = 10;
+        document.getElementById(range).value = 10;
+    }
+
+    function updateTotalRanges() 
+    {
+        var total = 0;
+        for (x in ranges) {
+            total += parseInt(document.getElementById(ranges[x]).value);
+        }
+        document.getElementById("TotalRanges").innerHTML = total;
+    }
+
+    function checkRanges()
+    {
+        var total = 0;
+        for (x in ranges) {
+            total += parseInt(document.getElementById(ranges[x]).value);
+        }
+        if (total != sumTotalRanges) {
+            alert("No compleix la condició de sumar 100");
+        } else {
+            alert("Correcte");
+            /*for (x in ranges) {
+                alert(ranges[x] + ": " + document.getElementById(ranges[x]).value);
+            }*/
+            document.getElementById("pane").style.display = "none";
+        }
+    }
+
+	var iniElemet = 10;
+    var sumTotalRanges = 100;
+
+    var ranges = ["A1Range", "A2Range", "A3Range", "BRange", "CRange", "DRange", "E1ARange", "E1BRange", "E1CRange", "FRange"];
+
+    iniValues(ranges);
+  </script>
 </html>

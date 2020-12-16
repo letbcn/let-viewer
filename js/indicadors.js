@@ -2240,10 +2240,7 @@
 					arrSum = arr => arr.reduce((a,b) => a + b, 0);
 					arrAvg = arr => arr.reduce((a,b) => a + b, 0) / arr.length;
 					
-					
-					
-					
-					//Escenari maxim
+					// Escenari optimitzat
 					indicador_A1_max = (arrSum(valorsOptA1) / arrSum(valorsOptA1_2)) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
 					indicador_A2_max = (arrSum(valorsOptA2)) / (arrSum(valorsMaxA2));
 					indicador_A3_max = (arrSum(valorsOptA3) / arrSum(valorsOptA3_2)) / (arrSum(valorsMaxA3)/ arrSum(valorsMaxA3_2));
@@ -2255,8 +2252,8 @@
 					indicador_E1C_max = (arrSum(valorsOptE1C1) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
 					indicador_F_max = arrSum(valorsOptF1) / arrSum(valorsMaxF1);
 					
-					//escenari optim
 					if (escenari == 0) {
+						// Escenari actual
 						indicador_A1 = (arrSum(valorsA1_actual) / arrSum(valorsA1_2_actual)) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
 						indicador_A2 = (arrSum(valorsA2_actual) / 1000000) / (arrSum(valorsMaxA2)/ 1000000);
 						indicador_A3 = (arrSum(valorsA3_actual) / arrSum(valorsA3_2_actual)) / (arrSum(valorsMaxA3)/ arrSum(valorsMaxA3_2));
@@ -2270,6 +2267,7 @@
 						
 						aranya2(indicador_A1 , indicador_A2, indicador_A3,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,"rgba(200,0,0,0.6)","Escenari actual");
 					} else {
+						// Escenari tendencial
 						indicador_A1 = (arrSum(valorsA1_tend) / arrSum(valorsA1_2_tend)) / (arrSum(valorsOptA1)/ arrSum(valorsOptA1_2));
 						indicador_A2 = (arrSum(valorsA2_tend) / 1000000) / (arrSum(valorsOptA2)/ 1000000);
 						indicador_A3 = (arrSum(valorsA3_tend) / arrSum(valorsA3_2_tend)) / (arrSum(valorsOptA3)/ arrSum(valorsOptA3_2));
