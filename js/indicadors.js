@@ -1174,17 +1174,18 @@
           ]
         };
 
-		 function canvi(indicador,derivat){
-			 var e1 = document.getElementById("field-select");
-			var text_indicador = e1.options[e1.selectedIndex].text;
-			 document.getElementById("titol").innerHTML = "Resultats optimitzant la dimensió: " +text_indicador;
-			 tipus = document.getElementById("tipus").value;
+		 function canvi(weightListIndicators, derivat){
+			//var e1 = document.getElementById("field-select");
+			//var text_indicador = e1.options[e1.selectedIndex].text;
+			//document.getElementById("titol").innerHTML = "Resultats optimitzant la dimensió: " + text_indicador;
+			//tipus = document.getElementById("tipus").value;
 			escenari = document.getElementById("escenari_id").value;
-			indicador_principal = "fields" + document.getElementById("field-select").value;
+			//indicador_principal = "fields" + document.getElementById("field-select").value;
 			var e = document.getElementById("escenari_id");
 			var text_escenari = e.options[e.selectedIndex].text;
 			document.getElementById("escenariDif").innerHTML = "Diferència escenari " + text_escenari + " i Optimitzat";
-			if (derivat) document.getElementById("field-select-ind").value = -1;
+			if (derivat) document.getElementById("field-select-ind").value = "A1";
+			indicator = document.getElementById("field-select-ind").value;
 			switch (indicador){
 			case "A1":
 				cat1.color = [252,233,106, 0.7];
@@ -1561,7 +1562,7 @@
 				break;
 		}
 		//document.getElementById('descripcio').value = text[indicador];
-		queryLayerViewStats(layer3,escenari,document.getElementById("field-select").value);
+		queryLayerViewStats(layer3,escenari,weightListIndicators);
 	  }
 	  
 	  
@@ -1945,7 +1946,7 @@
 				var fieldsE1A1_agg = [
 				  { value: "e1a_c_0_1" },
 				  { value: "e1a_c_1_1" },
-				  { value:  "e1a_c_2_1" },
+				  { value: "e1a_c_2_1" },
 				  { value: "e1a_c_3_1" },
 				  { value: "e1a_o_0_1" },
 				  { value: "e1a_o_1_1" },

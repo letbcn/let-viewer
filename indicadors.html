@@ -338,7 +338,7 @@
         	<div class="formRange"><div class="label"><label for="FRange">Cohesió social</label></div><input type="range" name="FRange" id="FRange" min="0" max="100" step="1" onchange="showVal('FRangeValue', this.value)" oninput="showVal('FRangeValue', this.value)"><span class="resultRange" id="FRangeValue"></span></div>
 			<div class="formRange formRangeTotal">Total: <span id="TotalRanges"></span></div>  
 			<text style="font-size:12px;color:#c00000">versió Beta</text>
-		  	<button class="button" style="float: right;width:15%;" onclick="checkRanges();/*document.getElementById('pane').style.visibility='hidden';canvi(document.getElementById('field-select').value,true)*/">Aplicar</button>
+		  	<button class="button" style="float: right;width:15%;" onclick="if(checkRanges()) { document.getElementById('pane').style.visibility='hidden'; canvi(valuesRangesList,true)} else { alert('Error'); }">Aplicar</button>
 		</div>
 	
   </body>
@@ -376,16 +376,23 @@
         for (x in ranges) {
             total += parseInt(document.getElementById(ranges[x]).value);
         }
-        if (total != sumTotalRanges) {
+        /*if (total != sumTotalRanges) {
             alert("No compleix la condició de sumar 100");
         } else {
             alert("Correcte");
-            /*for (x in ranges) {
-                alert(ranges[x] + ": " + document.getElementById(ranges[x]).value);
-            }*/
             document.getElementById("pane").style.display = "none";
-        }
-    }
+		}*/
+		return total == sumTotalRanges;
+	}
+	
+	function valuesRanges()
+	{
+		valesRangesList = [];
+		for (x in ranges) {
+			valuesRangesList.push(parseInt(document.getElementById(ranges[x]).value));
+		}
+		return valuesRangesList;
+	}
 
 	var iniElemet = 10;
     var sumTotalRanges = 100;
