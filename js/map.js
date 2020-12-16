@@ -851,16 +851,17 @@
         });
 		capes.push(cob09Layer);
 		
-		var cob15Layer = new FeatureLayer({
+		var cob15Layer = new MapImageLayer({
           portalItem: { 
-			id: "92a1c35df2a94f7baadcd8200524fb72"
+			id: "57b1be06d3554ed6a2c4a7c0ed0cbe28"
 		  },
 		  id:"d44522da5c584825b4b370d13053056a",
 		  visible: false,
           title: lcob15,
-		  layerID: 0
+		  listMode: "hide-children"
         });
-		
+		capes.push(cob15Layer);
+
 		//grup de capes
 		var cobertesGroupLayer = new GroupLayer({
           title: gCobertes,
