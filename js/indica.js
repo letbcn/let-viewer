@@ -75,7 +75,7 @@
         });
 		
 		
-		indicador_principal = "fields" + document.getElementById("field-select").value;
+		// indicador_principal = "fields" + document.getElementById("field-select").value;
 		
 
         map = new Map({
