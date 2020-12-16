@@ -6,7 +6,8 @@
         "esri/layers/MapImageLayer",
 		"esri/layers/FeatureLayer",
 		"esri/layers/WMSLayer",
-        "esri/widgets/LayerList",
+		"esri/widgets/LayerList",
+		"esri/widgets/Measurement",
 		"esri/widgets/Legend",
 		"esri/config",
 		"esri/widgets/Expand",
@@ -24,7 +25,7 @@
       "dojo/dom",
       "dojo/promise/all",
       "dojo/domReady!"
-      ], function(Map, MapView, SceneView, GroupLayer, MapImageLayer, FeatureLayer, WMSLayer, LayerList, Legend, esriConfig, 
+      ], function(Map, MapView, SceneView, GroupLayer, MapImageLayer, FeatureLayer, WMSLayer, LayerList, Measurement, Legend, esriConfig, 
 	  Expand, Search,BasemapGallery,GeometryService,ProjectParameters,Bookmarks, Portal,PortalBasemapsSource,IdentifyTask,IdentifyParameters, arrayUtils, on, dom, all) {
         
 		
@@ -215,7 +216,7 @@
 		
 		var topo25Layer = new WMSLayer({
 		  portalItem: {  
-			id: "8959282982a84af88bc34a07dc3e498c"
+			id: "dd8c8ca8336d405e824276b0097a1d01"
 		  },
 		  visible: false,
 		  title: ltopo25,
@@ -280,7 +281,7 @@
 		
 		var sat250mLayer = new WMSLayer({
 		  portalItem: {  
-			id: "483fe9a5d7ce49c593a302142547330b"
+			id: "e6d7098789934688be76822f066f7e4c"
 		  },
 		  visible: false,
 		  title: lsat250m,
@@ -293,7 +294,7 @@
 		
 		var orto25mLayer = new WMSLayer({
 		  portalItem: {  
-			id: "483fe9a5d7ce49c593a302142547330b"
+			id: "e6d7098789934688be76822f066f7e4c"
 		  },
 		  visible: false,
 		  title: lorto25m,
@@ -306,7 +307,7 @@
 		
 		var orto5mLayer = new WMSLayer({
 		  portalItem: {  
-			id: "483fe9a5d7ce49c593a302142547330b"
+			id: "e6d7098789934688be76822f066f7e4c"
 		  },
 		  visible: false,
 		  title: lorto5m,
@@ -319,7 +320,7 @@
 		
 		var orto25cLayer = new WMSLayer({
 		  portalItem: {  
-			id: "483fe9a5d7ce49c593a302142547330b"
+			id: "e6d7098789934688be76822f066f7e4c"
 		  },
 		  visible: false,
 		  title: lorto25c,
@@ -342,7 +343,7 @@
 		
 		var orto10m45Layer = new WMSLayer({
 			portalItem: {  
-			  id: "c3a4d9f792f1461eaa5f31595cd6d6ef"
+			  id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
 			},
 			visible: false,
 			title: lorto10m45,
@@ -355,7 +356,7 @@
 
 		var orto5m56Layer = new WMSLayer({
 		  portalItem: {  
-			id: "c3a4d9f792f1461eaa5f31595cd6d6ef"
+			id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
 		  },
 		  visible: false,
 		  title: lorto5m56,
@@ -368,7 +369,7 @@
 		
 		var orto5m86Layer = new WMSLayer({
 		  portalItem: {  
-			id: "c3a4d9f792f1461eaa5f31595cd6d6ef"
+			id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
 		  },
 		  visible: false,
 		  title: lorto5m86,
@@ -381,7 +382,7 @@
 		
 		var orto5m94Layer = new WMSLayer({
 		  portalItem: {  
-			id: "c3a4d9f792f1461eaa5f31595cd6d6ef"
+			id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
 		  },
 		  visible: false,
 		  title: lorto5m94,
@@ -394,7 +395,7 @@
 		
 		var orto5m00Layer = new WMSLayer({
 		  portalItem: {  
-			id: "c3a4d9f792f1461eaa5f31595cd6d6ef"
+			id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
 		  },
 		  visible: false,
 		  title: lorto5m00,
@@ -407,7 +408,7 @@
 		
 		var orto5m04Layer = new WMSLayer({  
 		  portalItem: {  
-			id: "c3a4d9f792f1461eaa5f31595cd6d6ef"
+			id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
 		  },
 		  visible: false,
 		  title: lorto5m04,
@@ -420,7 +421,7 @@
 		
 		var orto5m06Layer = new WMSLayer({
 		  portalItem: {  
-			id: "c3a4d9f792f1461eaa5f31595cd6d6ef"
+			id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
 		  },
 		  visible: false,
 		  title: lorto5m06,
@@ -433,7 +434,7 @@
 		
 		var orto5m09Layer = new WMSLayer({
 		  portalItem: {  
-			id: "c3a4d9f792f1461eaa5f31595cd6d6ef"
+			id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
 		  },
 		  visible: false,
 		  title: lorto5m09,
@@ -446,7 +447,7 @@
 		
 		var orto5m12Layer = new WMSLayer({
 		  portalItem: {  
-			id: "c3a4d9f792f1461eaa5f31595cd6d6ef"
+			id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
 		  },
 		  visible: false,
 		  title: lorto5m12,
@@ -459,7 +460,7 @@
 		
 		var orto5m15Layer = new WMSLayer({
 		  portalItem: {  
-			id: "c3a4d9f792f1461eaa5f31595cd6d6ef"
+			id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
 		  },
 		  visible: false,
 		  title: lorto5m15,
@@ -472,7 +473,7 @@
 		
 		var orto5m18Layer = new WMSLayer({
 		  portalItem: {  
-			id: "c3a4d9f792f1461eaa5f31595cd6d6ef"
+			id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
 		  },
 		  visible: false,
 		  title: lorto5m18,
@@ -1612,8 +1613,7 @@
             view: view,
           });
 
-		
-		//widget de cerca
+				  //widget de cerca
 		
 		var searchWidget = new Search({
 		  view: view,
@@ -1795,7 +1795,63 @@
 				B30Layer.visible = true;
 			}
 		});
-		
+
+		// cercador de capes
+
+	/*	var searchWidget1 = new Search({
+			view: view,
+			container: document.createElement("div"),
+			allPlaceholder: "Cerca per etiquetes",
+			includeDefaultSources: false,
+			sources: [
+
+				{
+					layer: municipisLayer,
+					searchFields: [""],
+					displayField: "",
+					exactMatch: false,
+					outFields: [""],
+					name: "Cobertes",
+					zoomScale:25000,
+					placeholder: ""
+				  },
+				  {
+					layer: comarquesLayer,
+					searchFields: ["nomcomar"],
+					displayField: "nomcomar",
+					exactMatch: false,
+					outFields: ["nomcomar"],
+					name: "Precipitació",
+					zoomScale:25000,
+					placeholder: "example: radiació"
+				  },
+				  {
+					layer: comarquesLayer,
+					searchFields: ["nomcomar"],
+					displayField: "nomcomar",
+					exactMatch: false,
+					outFields: ["nomcomar"],
+					name: "Incendis",
+					zoomScale:25000,
+					placeholder: "example: incendis"
+				  }
+				]
+
+			  });
+			  */
+			 
+			 /* var searchExpand = new Expand({
+				view: view,
+				content: searchWidget,
+				expandTooltip: fCerca,
+				collapseTooltip:fTanca
+			  });
+	  */
+	  
+			  // Add the expand instance to the ui
+	  
+			  view.ui.add(searchWidget1, "top-right");
+
 		//AFEGIR BOTÓ AJUDA
 		const instructionsExpand = new Expand({
           expandIconClass: "esri-icon-description",
