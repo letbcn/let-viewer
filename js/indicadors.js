@@ -22,6 +22,207 @@
 		 indicador_E1C = 0;
 		 indicador_F = 0;
 
+		var fieldsA1 = [
+			{ value: "a1a_c_0"},
+			{ value: "a1a_c_1"},
+			{ value: "a1a_c_2"},
+			{ value: "a1a_c_3"},
+			{ value: "a1a_o_0"},
+			{ value: "a1a_o_1"},
+			{ value: "a1a_o_2"},
+			{ value: "a1a_o_3"}
+		];
+		var fieldsA1_agg = [
+			{ value: "a1a_c_0_1"},
+			{ value: "a1a_c_1_1"},
+			{ value: "a1a_c_2_1"},
+			{ value: "a1a_c_3_1"},
+			{ value: "a1a_o_0_1"},
+			{ value: "a1a_o_1_1"},
+			{ value: "a1a_o_2_1"},
+			{ value: "a1a_o_3_1"}
+		];
+		var fieldsA1_2_agg = [
+			{ value: "a1a_c_0_2"},
+			{ value: "a1a_c_1_2"},
+			{ value: "a1a_c_2_2"},
+			{ value: "a1a_c_3_2"},
+			{ value: "a1a_o_0_2"},
+			{ value: "a1a_o_1_2"},
+			{ value: "a1a_o_2_2"},
+			{ value: "a1a_o_3_2"}
+		];
+		var fieldsA2 = [
+			{ value: "a1b_c_0"},
+			{ value: "a1b_c_1"},
+			{ value: "a1b_c_2"},
+			{ value: "a1b_c_3"},
+			{ value: "a1b_o_0"},
+			{ value: "a1b_o_1"},
+			{ value: "a1b_o_2"},
+			{ value: "a1b_o_3"}
+		];
+		var fieldsA2_agg = [
+			{ value: "a1b_c_0_1"},
+			{ value: "a1b_c_1_1"},
+			{ value: "a1b_c_2_1"},
+			{ value: "a1b_c_3_1"},
+			{ value: "a1b_o_0_1"},
+			{ value: "a1b_o_1_1"},
+			{ value: "a1b_o_2_1"},
+			{ value: "a1b_o_3_1"}
+		];
+		var fieldsA3 = [
+			{ value: "a1c_c_0"},
+			{ value: "a1c_c_1"},
+			{ value: "a1c_c_2"},
+			{ value: "a1c_c_3"},
+			{ value: "a1c_o_0"},
+			{ value: "a1c_o_1"},
+			{ value: "a1c_o_2"},
+			{ value: "a1c_o_3"}
+		];
+		var fieldsA3_agg = [
+			{ value: "a1c_c_0_1"},
+			{ value: "a1c_c_1_1"},
+			{ value: "a1c_c_2_1"},
+			{ value: "a1c_c_3_1"},
+			{ value: "a1c_o_0_1"},
+			{ value: "a1c_o_1_1"},
+			{ value: "a1c_o_2_1"},
+			{ value: "a1c_o_3_1"}
+		];
+		var fieldsA3_2_agg = [
+			{ value: "a1c_c_0_2"},
+			{ value: "a1c_c_1_2"},
+			{ value: "a1c_c_2_2"},
+			{ value: "a1c_c_3_2"},
+			{ value: "a1c_o_0_2"},
+			{ value: "a1c_o_1_2"},
+			{ value: "a1c_o_2_2"},
+			{ value: "a1c_o_3_2"}
+		];
+		var fieldsB = [
+			{ value: "b1_c_0" },
+			{ value: "b1_c_1" },
+			{ value: "b1_c_2" },
+			{ value: "b1_c_3" },
+			{ value: "b1_o_0" },
+			{ value: "b1_o_1" },
+			{ value: "b1_o_2" },
+			{ value: "b1_o_3" }
+		];
+		var fieldsC = [
+			{ value: "c1_c_0" },
+			{ value: "c1_c_1" },
+			{ value: "c1_c_2" },
+			{ value: "c1_c_3" },
+			{ value: "c1_o_0" },
+			{ value: "c1_o_1" },
+			{ value: "c1_o_2" },
+			{ value: "c1_o_3" }
+		];
+		var fieldsD = [
+			{ value: "d1_c_0" },
+			{ value: "d1_c_1" },
+			{ value: "d1_c_2" },
+			{ value: "d1_c_3" },
+			{ value: "d1_o_0" },
+			{ value: "d1_o_1" },
+			{ value: "d1_o_2" },
+			{ value: "d1_o_3" }
+		];
+		var fieldsD_agg = [
+			{ value: "d1_c_0_1" },
+			{ value: "d1_c_1_1" },
+			{ value: "d1_c_2_1" },
+			{ value: "d1_c_3_1" },
+			{ value: "d1_o_0_1" },
+			{ value: "d1_o_1_1" },
+			{ value: "d1_o_2_1" },
+			{ value: "d1_o_3_1" }
+		];
+		var fieldsE1A = [
+			{ value: "e1a_c_0" },
+			{ value: "e1a_c_1" },
+			{ value: "e1a_c_2" },
+			{ value: "e1a_c_3" },
+			{ value: "e1a_o_0" },
+			{ value: "e1a_o_1" },
+			{ value: "e1a_o_2" },
+			{ value: "e1a_o_3" }
+		];
+		var fieldsE1A1_agg = [
+			{ value: "e1a_c_0_1" },
+			{ value: "e1a_c_1_1" },
+			{ value: "e1a_c_2_1" },
+			{ value: "e1a_c_3_1" },
+			{ value: "e1a_o_0_1" },
+			{ value: "e1a_o_1_1" },
+			{ value: "e1a_o_2_1" },
+			{ value: "e1a_o_3_1" }
+		];
+		var fieldsE1A2_agg = [
+			{ value: "e1a_c_0_2" },
+			{ value: "e1a_c_1_2" },
+			{ value: "e1a_c_2_2" },
+			{ value: "e1a_c_3_2" },
+			{ value: "e1a_o_0_2" },
+			{ value: "e1a_o_1_2" },
+			{ value: "e1a_o_2_2" },
+			{ value: "e1a_o_3_2" }
+		];
+		var fieldsE1B = [
+			{ value: "e1b_c_0" },
+			{ value: "e1b_c_1" },
+			{ value: "e1b_c_2" },
+			{ value: "e1b_c_3" },
+			{ value: "e1b_o_0" },
+			{ value: "e1b_o_1" },
+			{ value: "e1b_o_2" },
+			{ value: "e1b_o_3" }
+		];
+		var fieldsE1C = [
+			{ value: "e1c_c_0" },
+			{ value: "e1c_c_1" },
+			{ value: "e1c_c_2" },
+			{ value: "e1c_c_3" },
+			{ value: "e1c_o_0" },
+			{ value: "e1c_o_1" },
+			{ value: "e1c_o_2" },
+			{ value: "e1c_o_3" }
+		];
+		var fieldsE1C_agg = [
+			{ value: "e1c_c_0_1" },
+			{ value: "e1c_c_1_1" },
+			{ value: "e1c_c_2_1" },
+			{ value: "e1c_c_3_1" },
+			{ value: "e1c_o_0_1" },
+			{ value: "e1c_o_1_1" },
+			{ value: "e1c_o_2_1" },
+			{ value: "e1c_o_3_1" }
+		];
+		var fieldsF = [
+			{ value: "f1_c_0" },
+			{ value: "f1_c_1" },
+			{ value: "f1_c_2" },
+			{ value: "f1_c_3" },
+			{ value: "f1_o_0" },
+			{ value: "f1_o_1" },
+			{ value: "f1_o_2" },
+			{ value: "f1_o_3" }
+		];
+		var fieldsF_agg = [
+			{ value: "f1_c_0_1" },
+			{ value: "f1_c_1_1" },
+			{ value: "f1_c_2_1" },
+			{ value: "f1_c_3_1" },
+			{ value: "f1_o_0_1" },
+			{ value: "f1_o_1_1" },
+			{ value: "f1_o_2_1" },
+			{ value: "f1_o_3_1" }
+		];
+
         cat1 = {
           type: "simple-fill", 
           color: [252,233,106, 0.7],
@@ -1172,7 +1373,7 @@
               minValue: -4.35, maxValue: -3.2, symbol: dif1, label: "<-3.2"
             }
           ]
-        };
+		};
 
 		 function canvi(weightListIndicators){
 			//var e1 = document.getElementById("field-select");
@@ -1213,8 +1414,8 @@
 				layerEscenari.renderer = renderer_A1;
 				renderer_max_A1 = {type: "class-breaks"};
 				renderer_max_A1.classBreakInfos = renderer_A1.classBreakInfos;
-				renderer_dif_A1.valueExpression= "(Max" + fields_A1 + ") * " + weightListIndicators[0] + " - $feature.a1a_c_" + escenari;
-				renderer_max_A1.valueExpression= "(Max" + fields_A1 + ") * " + weightListIndicators[0];
+				renderer_dif_A1.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsA1),[" + weightListIndicators + "]) - $feature.a1a_c_" + escenari;
+				renderer_max_A1.valueExpression = document.getElementById("arcadeB").text + " getValue(getMax(fieldsA1),[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_A1;
 				layer3.renderer = renderer_max_A1;
 				break;
@@ -1244,8 +1445,8 @@
 				layerEscenari.renderer = renderer_A2;
 				renderer_max_A2 = {type: "class-breaks"};
 				renderer_max_A2.classBreakInfos = renderer_A2.classBreakInfos;
-				renderer_dif_A2.valueExpression= "$feature.a1b_c_" + escenari + " - (Min" + fields_A2 + ") * " + weightListIndicators[1];
-				renderer_max_A2.valueExpression= "(Min" + fields_A2 + ") * " + weightListIndicators[1];
+				renderer_dif_A2.valueExpression= document.getElementById("arcadeB").text + " $feature.a1b_c_" + escenari + " - getValue(getMin(fieldsA2),[" + weightListIndicators + "]);";
+				renderer_max_A2.valueExpression= document.getElementById("arcadeB").text + " getValue(getMin(fieldsA2),[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_A2;
 				layer3.renderer = renderer_max_A2;
 				break;
@@ -1275,8 +1476,8 @@
 				layerEscenari.renderer = renderer_A3;
 				renderer_max_A3 = {type: "class-breaks"};
 				renderer_max_A3.classBreakInfos = renderer_A3.classBreakInfos;
-				renderer_dif_A3.valueExpression= "$feature.a1c_c_" + escenari + " - (Min" + fields_A3 + ") * " + weightListIndicators[2];
-				renderer_max_A3.valueExpression= "(Min" + fields_A3 + ") * " + weightListIndicators[2];
+				renderer_dif_A3.valueExpression= document.getElementById("arcadeB").text + " $feature.a1c_c_" + escenari + " - getValue(getMin(fieldsA3),[" + weightListIndicators + "]);";
+				renderer_max_A3.valueExpression= document.getElementById("arcadeB").text + " getValue(getMin(fieldsA3),[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_A3;
 				layer3.renderer = renderer_max_A3;
 				break;
@@ -1307,8 +1508,8 @@
 				layerEscenari.renderer = renderer_B;				
 				renderer_max_B = {type: "class-breaks"};
 				renderer_max_B.classBreakInfos = renderer_B.classBreakInfos;
-				renderer_dif_B.valueExpression= "(Max" + fields_B + ") * " + weightListIndicators[3] + "- $feature.b1_c_" + escenari;
-				renderer_max_B.valueExpression= "(Max" + fields_B + ") * " + weightListIndicators[3];
+				renderer_dif_B.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsB),[" + weightListIndicators + "]) - $feature.b1_c_" + escenari + ";";
+				renderer_max_B.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsB),[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_B;
 				layer3.renderer = renderer_max_B;
 				
@@ -1335,8 +1536,8 @@
 				layerEscenari.renderer = renderer_C;
 				renderer_max_C = {type: "class-breaks"};
 				renderer_max_C.classBreakInfos = renderer_C.classBreakInfos;				
-				renderer_dif_C.valueExpression= "(Max" + fields_C + ") * " + weightListIndicators[4] + " - $feature.c1_c_" + escenari;
-				renderer_max_C.valueExpression= "(Max" + fields_C + ") * " + weightListIndicators[4];
+				renderer_dif_C.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsC),[" + weightListIndicators + "]) - $feature.c1_c_" + escenari + ";";
+				renderer_max_C.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsC),[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_C;
 				layer3.renderer = renderer_max_C;				
 				break;
@@ -1364,8 +1565,8 @@
 				layerEscenari.renderer = renderer_D;
 				renderer_max_D = {type: "class-breaks"};
 				renderer_max_D.classBreakInfos = renderer_D.classBreakInfos;
-				renderer_dif_D.valueExpression= "$feature.d1_c_" + escenari - "(Min" + fields_D + ") * " + weightListIndicators[5];;
-				renderer_max_D.valueExpression= "(Min" + fields_D + ") * " + weightListIndicators[5];
+				renderer_dif_D.valueExpression= document.getElementById("arcadeB").text + "$feature.d1_c_" + escenari + " - getValue(getMin(fieldsD),[" + weightListIndicators + "]);";
+				renderer_max_D.valueExpression= document.getElementById("arcadeB").text + "getValue(getMin(fieldsD),[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_D;
 				layer3.renderer = renderer_max_D;
 				break;
@@ -1398,8 +1599,8 @@
 				layerEscenari.renderer = renderer_E1A;
 				renderer_max_E1A = {type: "class-breaks"};
 				renderer_max_E1A.classBreakInfos = renderer_E1A.classBreakInfos;
-				renderer_dif_E1A.valueExpression= "(Max" + fields_E1A + ") * " + weightListIndicators[6] + " - $feature.e1a_c_"+escenari;
-				renderer_max_E1A.valueExpression= "(Max" + fields_E1A + ") * " + weightListIndicators[6];
+				renderer_dif_E1A.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsE1A),[" + weightListIndicators + "]) - $feature.e1a_c_" + escenari + ";";
+				renderer_max_E1A.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsE1A),[" + weightListIndicators + "]) * " + weightListIndicators[6];
 				layer4.renderer = renderer_dif_E1A;
 				layer3.renderer = renderer_max_E1A;
 				break;
@@ -1425,8 +1626,8 @@
 				layerEscenari.renderer = renderer_E1B;
 				renderer_max_E1B = {type: "class-breaks"};
 				renderer_max_E1B.classBreakInfos = renderer_E1B.classBreakInfos;
-				renderer_dif_E1B.valueExpression= "(Max" + fields_E1B + ") * " + weightListIndicators[7] + " - $feature.e1b_c_"+escenari;
-				renderer_max_E1B.valueExpression= "(Max" + fields_E1B + ") * " + weightListIndicators[7];
+				renderer_dif_E1B.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsE1B),[" + weightListIndicators + "]) - $feature.e1b_c_" + escenari + ";";
+				renderer_max_E1B.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsE1B),[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_E1B;
 				layer3.renderer = renderer_max_E1B;
 				break;
@@ -1458,8 +1659,8 @@
 				layerEscenari.renderer = renderer_E1C;
 				renderer_max_E1C = {type: "class-breaks"};
 				renderer_max_E1C.classBreakInfos = renderer_E1C.classBreakInfos;
-				renderer_dif_E1C.valueExpression= "(Max" + fields_E1C + ") * " + weightListIndicators[8] + " - $feature.e1c_c_" + escenari;
-				renderer_max_E1C.valueExpression= "(Max" + fields_E1C + ") * " + weightListIndicators[8];
+				renderer_dif_E1C.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsE1C),[" + weightListIndicators + "]) - $feature.e1c_c_" + escenari + ";";
+				renderer_max_E1C.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsE1C),[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_E1C;
 				layer3.renderer = renderer_max_E1C;
 				break;
@@ -1492,85 +1693,14 @@
 				layerEscenari.renderer = renderer_F;
 				renderer_max_F = {type: "class-breaks"};
 				renderer_max_F.classBreakInfos = renderer_F.classBreakInfos;
-				renderer_dif_F.valueExpression= "(Max" + fields_F + ") * " + weightListIndicators[9] + " - $feature.f1_c_" + escenari;
-				renderer_max_F.valueExpression= "(Max" + fields_F + ") * " + weightListIndicators[9];
+				renderer_dif_F.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsF),[" + weightListIndicators + "]) - $feature.f1_c_" + escenari + ";";
+				renderer_max_F.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsF),[" + weightListIndicators + "])";
 				layer4.renderer = renderer_dif_F;
 				layer3.renderer = renderer_max_F;
 				break;
 		}
 		queryLayerViewStats(layer3,escenari,weightListIndicators);
 	  }
-	  
-	  /*
-	  function canvi_escenari(valor, weightListIndicators){
-		//tipus = document.getElementById("tipus").value;
-		var e = document.getElementById("escenari_id");
-		var text_escenari = e.options[e.selectedIndex].text;
-		document.getElementById("escenariDif").innerHTML = "Diferència escenari " + text_escenari + " i optimitzat";
-		switch (document.getElementById("field-select-ind").value){
-			case "A1": 
-				renderer_A1.field ="a1a_c_"+ valor;
-				layerEscenari.renderer = renderer_A1;
-				renderer_dif_A1.valueExpression="Max" + fields_A1 + " - $feature.a1a_c_"+valor;
-				layer4.renderer = renderer_dif_A1;
-				break;
-			case "A2": 
-				renderer_A2.field ="a1b_c_"+ valor;
-				layerEscenari.renderer = renderer_A2;
-				renderer_dif_A2.valueExpression="Max" + fields_A2 + " - $feature.a1b_c_"+valor;
-				layer4.renderer = renderer_dif_A2;
-				break;
-			case "A3": 
-				renderer_A3.field ="a1c_c_"+ valor;
-				layerEscenari.renderer = renderer_A3;
-				renderer_dif_A3.valueExpression="Max" + fields_A3 + " - $feature.a1c_c_"+valor;
-				layer4.renderer = renderer_dif_A3;
-				break;
-			case "B": 
-				renderer_B.field ="b1_c_"+ valor;
-				layerEscenari.renderer = renderer_B;
-				renderer_dif_B.valueExpression="Max" + fields_B + " - $feature.b1_c_"+valor;
-				layer4.renderer = renderer_dif_B;
-				break;
-			case "C": 
-				renderer_C.field ="c1_c_"+ valor;
-				layerEscenari.renderer = renderer_C;
-				renderer_dif_C.valueExpression="Max" + fields_C + " - $feature.c1_c_"+valor;
-				layer4.renderer = renderer_dif_C;
-				break;
-			case "D": 
-				renderer_D.field ="d1_c_"+ valor;
-				layerEscenari.renderer = renderer_D;
-				renderer_dif_D.valueExpression="Max" + fields_D + " - $feature.d1_c_"+valor;
-				layer4.renderer = renderer_dif_B;
-				break;
-			case "E1A": 
-				renderer_E1A.field ="e1a_c_"+ valor;
-				layerEscenari.renderer = renderer_E1A;
-				renderer_dif_E1A.valueExpression="Max" + fields_E1A + " - $feature.e1a_c_"+valor;
-				layer4.renderer = renderer_dif_E1A;
-				break;
-			case "E1B": 
-				renderer_E1B.field ="e1b_c_"+ valor;
-				layerEscenari.renderer = renderer_E1B;
-				renderer_dif_E1B.valueExpression= "Max" + fields_E1B + " - $feature.e1b_c_"+valor;
-				layer4.renderer = renderer_dif_E1B;
-				break;
-			case "E1C": 
-				renderer_E1C.field ="e1c_c_"+ valor;
-				layerEscenari.renderer = renderer_E1C;
-				renderer_dif_E1C.valueExpression= "Max" + fields_E1C + " - $feature.e1c_c_"+valor;
-				layer4.renderer = renderer_dif_E1C;
-				break;
-			case "F": 
-				renderer_F.field ="f1_c_"+ valor;
-				layerEscenari.renderer = renderer_F;
-				renderer_dif_F.valueExpression= "Max" + fields_F + " - $feature.f1_c_"+valor;
-				layer4.renderer = renderer_dif_F;
-				break;
-		}
-		queryLayerViewStats(layer3,valor,weightListIndicators);
-	  }*/
 				
 		function getIndexMaxFeatureFields(feature, fields) 
 		{
@@ -1656,208 +1786,7 @@
 			valorMaxE1C = 0;
 			valorMaxF = 0;
 			capa.queryFeatures().then(function(response) {	
-				 var fieldsA1 = [
-				  { value: "a1a_c_0"},
-				  { value: "a1a_c_1"},
-				  { value: "a1a_c_2"},
-				  { value: "a1a_c_3"},
-				  { value: "a1a_o_0"},
-				  { value: "a1a_o_1"},
-				  { value: "a1a_o_2"},
-				  { value: "a1a_o_3"}
-				];
-				var fieldsA1_agg = [
-				  { value: "a1a_c_0_1"},
-				  { value: "a1a_c_1_1"},
-				  { value: "a1a_c_2_1"},
-				  { value: "a1a_c_3_1"},
-				  { value: "a1a_o_0_1"},
-				  { value: "a1a_o_1_1"},
-				  { value: "a1a_o_2_1"},
-				  { value: "a1a_o_3_1"}
-				];
-				var fieldsA1_2_agg = [
-				  { value: "a1a_c_0_2"},
-				  { value: "a1a_c_1_2"},
-				  { value: "a1a_c_2_2"},
-				  { value: "a1a_c_3_2"},
-				  { value: "a1a_o_0_2"},
-				  { value: "a1a_o_1_2"},
-				  { value: "a1a_o_2_2"},
-				  { value: "a1a_o_3_2"}
-				];
-				 var fieldsA2 = [
-				  { value: "a1b_c_0"},
-				  { value: "a1b_c_1"},
-				  { value: "a1b_c_2"},
-				  { value: "a1b_c_3"},
-				  { value: "a1b_o_0"},
-				  { value: "a1b_o_1"},
-				  { value: "a1b_o_2"},
-				  { value: "a1b_o_3"}
-				];
-				var fieldsA2_agg = [
-				  { value: "a1b_c_0_1"},
-				  { value: "a1b_c_1_1"},
-				  { value: "a1b_c_2_1"},
-				  { value: "a1b_c_3_1"},
-				  { value: "a1b_o_0_1"},
-				  { value: "a1b_o_1_1"},
-				  { value: "a1b_o_2_1"},
-				  { value: "a1b_o_3_1"}
-				];
-				
-				 var fieldsA3 = [
-				  { value: "a1c_c_0"},
-				  { value: "a1c_c_1"},
-				  { value: "a1c_c_2"},
-				  { value: "a1c_c_3"},
-				  { value: "a1c_o_0"},
-				  { value: "a1c_o_1"},
-				  { value: "a1c_o_2"},
-				  { value: "a1c_o_3"}
-				];
-				 var fieldsA3_agg = [
-				  { value: "a1c_c_0_1"},
-				  { value: "a1c_c_1_1"},
-				  { value: "a1c_c_2_1"},
-				  { value: "a1c_c_3_1"},
-				  { value: "a1c_o_0_1"},
-				  { value: "a1c_o_1_1"},
-				  { value: "a1c_o_2_1"},
-				  { value: "a1c_o_3_1"}
-				];
-				var fieldsA3_2_agg = [
-				  { value: "a1c_c_0_2"},
-				  { value: "a1c_c_1_2"},
-				  { value: "a1c_c_2_2"},
-				  { value: "a1c_c_3_2"},
-				  { value: "a1c_o_0_2"},
-				  { value: "a1c_o_1_2"},
-				  { value: "a1c_o_2_2"},
-				  { value: "a1c_o_3_2"}
-				 ];
-				var fieldsB = [
-				  { value: "b1_c_0" },
-				  { value: "b1_c_1" },
-				  { value: "b1_c_2" },
-				  { value: "b1_c_3" },
-				  { value: "b1_o_0" },
-				  { value: "b1_o_1" },
-				  { value: "b1_o_2" },
-				  { value: "b1_o_3" }
-				];
-				
-				var fieldsC = [
-				  { value: "c1_c_0" },
-				  { value: "c1_c_1" },
-				  { value: "c1_c_2" },
-				  { value: "c1_c_3" },
-				  { value: "c1_o_0" },
-				  { value: "c1_o_1" },
-				  { value: "c1_o_2" },
-				  { value: "c1_o_3" }
-				];
-				var fieldsD = [
-				  { value: "d1_c_0" },
-				  { value: "d1_c_1" },
-				  { value: "d1_c_2" },
-				  { value: "d1_c_3" },
-				  { value: "d1_o_0" },
-				  { value: "d1_o_1" },
-				  { value: "d1_o_2" },
-				  { value: "d1_o_3" }
-				];
-				var fieldsD_agg = [
-				  { value: "d1_c_0_1" },
-				  { value: "d1_c_1_1" },
-				  { value: "d1_c_2_1" },
-				  { value: "d1_c_3_1" },
-				  { value: "d1_o_0_1" },
-				  { value: "d1_o_1_1" },
-				  { value: "d1_o_2_1" },
-				  { value: "d1_o_3_1" }
-				];
-				var fieldsE1A = [
-				  { value: "e1a_c_0" },
-				  { value: "e1a_c_1" },
-				  { value: "e1a_c_2" },
-				  { value: "e1a_c_3" },
-				  { value: "e1a_o_0" },
-				  { value: "e1a_o_1" },
-				  { value: "e1a_o_2" },
-				  { value: "e1a_o_3" }
-				];
-				var fieldsE1A1_agg = [
-				  { value: "e1a_c_0_1" },
-				  { value: "e1a_c_1_1" },
-				  { value: "e1a_c_2_1" },
-				  { value: "e1a_c_3_1" },
-				  { value: "e1a_o_0_1" },
-				  { value: "e1a_o_1_1" },
-				  { value: "e1a_o_2_1" },
-				  { value: "e1a_o_3_1" }
-				];
-				var fieldsE1A2_agg = [
-				  { value: "e1a_c_0_2" },
-				  { value: "e1a_c_1_2" },
-				  { value: "e1a_c_2_2" },
-				  { value: "e1a_c_3_2" },
-				  { value: "e1a_o_0_2" },
-				  { value: "e1a_o_1_2" },
-				  { value: "e1a_o_2_2" },
-				  { value: "e1a_o_3_2" }
-				];
-				var fieldsE1B = [
-				  { value: "e1b_c_0" },
-				  { value: "e1b_c_1" },
-				  { value: "e1b_c_2" },
-				  { value: "e1b_c_3" },
-				  { value: "e1b_o_0" },
-				  { value: "e1b_o_1" },
-				  { value: "e1b_o_2" },
-				  { value: "e1b_o_3" }
-				];
-				var fieldsE1C = [
-				  { value: "e1c_c_0" },
-				  { value: "e1c_c_1" },
-				  { value: "e1c_c_2" },
-				  { value: "e1c_c_3" },
-				  { value: "e1c_o_0" },
-				  { value: "e1c_o_1" },
-				  { value: "e1c_o_2" },
-				  { value: "e1c_o_3" }
-				];
-				var fieldsE1C_agg = [
-				  { value: "e1c_c_0_1" },
-				  { value: "e1c_c_1_1" },
-				  { value: "e1c_c_2_1" },
-				  { value: "e1c_c_3_1" },
-				  { value: "e1c_o_0_1" },
-				  { value: "e1c_o_1_1" },
-				  { value: "e1c_o_2_1" },
-				  { value: "e1c_o_3_1" }
-				];
-				var fieldsF = [
-				  { value: "f1_c_0" },
-				  { value: "f1_c_1" },
-				  { value: "f1_c_2" },
-				  { value: "f1_c_3" },
-				  { value: "f1_o_0" },
-				  { value: "f1_o_1" },
-				  { value: "f1_o_2" },
-				  { value: "f1_o_3" }
-				];
-				var fieldsF_agg = [
-				  { value: "f1_c_0_1" },
-				  { value: "f1_c_1_1" },
-				  { value: "f1_c_2_1" },
-				  { value: "f1_c_3_1" },
-				  { value: "f1_o_0_1" },
-				  { value: "f1_o_1_1" },
-				  { value: "f1_o_2_1" },
-				  { value: "f1_o_3_1" }
-				];
+				 
 
 				var indicatorsNames = ["A1", "A2", "A3", "B", "C", "D", "E1A", "E1B", "E1C", "F"];
 				var indicatorsFields = [fieldsA1, fieldsA2, fieldsA3, fieldsB, fieldsC, fieldsD, fieldsE1A, fieldsE1B, fieldsE1C, fieldsF ];

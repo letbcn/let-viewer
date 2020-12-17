@@ -130,16 +130,35 @@
 		  return IIF(maxValue2 <= 0, null, maxValue2);
 		}
 
-		function getMaxValue(fieldsArray) 
-		{
-			var max = -Infinity;
-			for (var i in fieldsArray) {
-				if (max < fieldsArray[i].value) {
-					max = fieldsArray[i].value;
+		function getMax(fields) {
+			var max = 0;
+			var index = -1;
+			for (var i in fields) {
+				if (fields[i].value >= max) {
+					max = fields[i].value;
+					index = i;
 				}
 			}
-			if (max < 0) return null;
-			return max;
+			return index;
+		}
+
+		function getMin(fields) {
+			var max = 0;
+			var index = -1;
+			for (var i in fields) {
+				if (fields[i].value >= max) {
+					max = fields[i].value;
+					index = i;
+				}
+			}
+			return index;
+		}
+
+		function getValue(scenario, weightListIndicators) {
+			return (fieldsA1[scenario].value * weightListIndicators[0]) + (fieldsA2[scenario].value * weightListIndicators[1]) + (fieldsA3[scenario].value * weightListIndicators[2]) + 
+			(fieldsB[scenario].value * weightListIndicators[3]) + (fieldsC[scenario].value * weightListIndicators[4]) + (fieldsD[scenario].value * weightListIndicators[5]) + 
+			(fieldsE1A[scenario].value * weightListIndicators[6]) + (fieldsE1B[scenario].value * weightListIndicators[7]) + (fieldsE1C[scenario].value * weightListIndicators[8]) + 
+			(fieldsF[scenario].value * weightListIndicators[9]);
 		}
 		
 	</script>
