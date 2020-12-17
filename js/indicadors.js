@@ -1501,6 +1501,7 @@
 		queryLayerViewStats(layer3,escenari,weightListIndicators);
 	  }
 	  
+	  /*
 	  function canvi_escenari(valor, weightListIndicators){
 		//tipus = document.getElementById("tipus").value;
 		var e = document.getElementById("escenari_id");
@@ -1569,7 +1570,7 @@
 				break;
 		}
 		queryLayerViewStats(layer3,valor,weightListIndicators);
-	  }
+	  }*/
 				
 		function getIndexMaxFeatureFields(feature, fields) 
 		{
@@ -1857,95 +1858,105 @@
 				  { value: "f1_o_2_1" },
 				  { value: "f1_o_3_1" }
 				];
+
+				var indicatorsNames = ["A1", "A2", "A3", "B", "C", "D", "E1A", "E1B", "E1C", "F"];
+				var indicatorsFields = [fieldsA1, fieldsA2, fieldsA3, fieldsB, fieldsC, fieldsD, fieldsE1A, fieldsE1B, fieldsE1C, fieldsF ];
+				var indicatorsType = [ "max", "min", "min", "max", "max", "min", "max", "max", "max", "max" ];
 				
 				response.features.map(function(feature) {
-					/*valorMax = 0;	
-					for(var k in camps){
-						if(feature.attributes[camps[k].value] >= valorMax){
-							switch (indicador){
-								case "A1": valorMax = feature.attributes[fieldsA1[k].value];break;
-								case "A2": valorMax = feature.attributes[fieldsA2[k].value];break;
-								case "A3": valorMax = feature.attributes[fieldsA3[k].value];break;
-								case "B": valorMax = feature.attributes[fieldsB[k].value];break;
-								case "C": valorMax = feature.attributes[fieldsC[k].value];break;
-								case "D": valorMax = feature.attributes[fieldsD[k].value];break;
-								case "E1A": valorMax = feature.attributes[fieldsE1A[k].value];break;
-								case "E1B": valorMax = feature.attributes[fieldsE1B[k].value];break;
-								case "E1C": valorMax = feature.attributes[fieldsE1C[k].value];break;
-								case "F": valorMax = feature.attributes[fieldsF[k].value];break;
-							}
-							valorMaxA1 = feature.attributes[fieldsA1_agg[k].value];
-							valorMaxA1_2 = feature.attributes[fieldsA1_2_agg[k].value];
-							valorMaxA2 = feature.attributes[fieldsA2[k].value];
-							valorMaxA3 = feature.attributes[fieldsA3[k].value];
-							valorMaxA3_2 = feature.attributes[fieldsA3_2_agg[k].value];
-							valorMaxB = feature.attributes[fieldsB[k].value];
-							valorMaxC = feature.attributes[fieldsC[k].value];
-							valorMaxD1 = feature.attributes[fieldsD_agg[k].value];
-							valorMaxE1A1 = feature.attributes[fieldsE1A1_agg[k].value];
-							valorMaxE1A2 = feature.attributes[fieldsE1A2_agg[k].value];
-							valorMaxE1B = feature.attributes[fieldsE1B[k].value];
-							valorMaxE1C1 = feature.attributes[fieldsE1C_agg[k].value];
-							valorMaxF1 = feature.attributes[fieldsF_agg[k].value];
-						} 
-					}*/
+					var valorA1 = 0;
+					var valorA1_2 = 0;
+					var valorA2 = 0;
+					var valorA3 = 0;
+					var valorA3_2 = 0;
+					var valorB = 0;
+					var valorC = 0;
+					var valorD1 = 0;
+					var valorE1A_1 = 0;
+					var valorE1A_2 = 0;
+					var valorE1B = 0;
+					var valorE1C = 0;
+					var valorF1 = 0;
+
+					for(var i in indicatorsNames) {
+						var k = 0;
+						if (indicatorsType[i] == "min") {
+							k = getIndexMinFeatureFields(feature, indicatorsFields[i]);
+						} else {
+							k = getIndexMaxFeatureFields(feature, indicatorsFields[i]);
+						}
+						
+						valorA1 += feature.attributes[fieldsA1_agg[k].value] * weightListIndicators[i];
+						valorA1_2 += feature.attributes[fieldsA1_2_agg[k].value] * weightListIndicators[i];
+						valorA2 += feature.attributes[fieldsA2[k].value] * weightListIndicators[i];
+						valorA3 += feature.attributes[fieldsA3_agg[k].value] * weightListIndicators[i];
+						valorA3_2 += feature.attributes[fieldsA3_2_agg[k].value] * weightListIndicators[i];
+						valorB += feature.attributes[fieldsB[k].value] * feature.attributes["AMB_100"] * weightListIndicators[i];
+						valorC += feature.attributes[fieldsC[k].value] * feature.attributes["AMB_100"] * weightListIndicators[i];
+						valorD1 += feature.attributes[fieldsD_agg[k].value] * weightListIndicators[i];
+						valorE1A_1 += feature.attributes[fieldsE1A1_agg[k].value] * weightListIndicators[i];
+						valorE1A_2 += feature.attributes[fieldsE1A2_agg[k].value] * weightListIndicators[i];
+						valorE1B += feature.attributes[fieldsE1B[k].value] * weightListIndicators[i];
+						valorE1C += feature.attributes[fieldsE1C_agg[k].value] * weightListIndicators[i];
+						valorF1 += feature.attributes[fieldsF_agg[k].value] * weightListIndicators[i];
+					}
+
 					//Indicador A1
 					valorsA1_actual.push(feature.attributes[fieldsA1_agg[0].value]);
 					valorsA1_tend.push(feature.attributes[fieldsA1_agg[1].value]);
 					valorsA1_2_actual.push(feature.attributes[fieldsA1_2_agg[0].value]);
 					valorsA1_2_tend.push(feature.attributes[fieldsA1_2_agg[1].value]); 
-					valorsOptA1.push(feature.attributes[fieldsA1_agg[getIndexMaxFeatureFields(feature, fieldsA1)].value]);
-					valorsOptA1_2.push(feature.attributes[fieldsA1_2_agg[getIndexMaxFeatureFields(feature, fieldsA1)].value]);
+					valorsOptA1.push(valorA1);
+					valorsOptA1_2.push(valorA1_2);
 					//Indicador A2
 					valorsA2_actual.push(feature.attributes[fieldsA2_agg[0].value]);
 					valorsA2_tend.push(feature.attributes[fieldsA2_agg[1].value]);
-					valorsOptA2.push(feature.attributes[fieldsA2[getIndexMinFeatureFields(feature, fieldsA2)].value]);
+					valorsOptA2.push(valorA2);
 					//Indicador A3
 					valorsA3_actual.push(feature.attributes[fieldsA3_agg[0].value]);
 					valorsA3_tend.push(feature.attributes[fieldsA3_agg[1].value]);
 					valorsA3_2_actual.push(feature.attributes[fieldsA3_2_agg[0].value]);
 					valorsA3_2_tend.push(feature.attributes[fieldsA3_2_agg[1].value]);
-					valorsOptA3.push(feature.attributes[fieldsA3_agg[getIndexMinFeatureFields(feature, fieldsA3)].value]);
-					valorsOptA3_2.push(feature.attributes[fieldsA3_2_agg[getIndexMinFeatureFields(feature, fieldsA3)].value]);
+					valorsOptA3.push(valorA3);
+					valorsOptA3_2.push(valorA3_2);
 					//Indicador B
 					valorsB_actual.push(feature.attributes[fieldsB[0].value]*feature.attributes["AMB_100"]);
 					valorsB_tend.push(feature.attributes[fieldsB[1].value]*feature.attributes["AMB_100"]);
-					valorsOptB.push(feature.attributes[fieldsB[getIndexMaxFeatureFields(feature, fieldsB)].value]*feature.attributes["AMB_100"]);
+					valorsOptB.push(valorB);
 					//Indicador C
 					valorsC_actual.push(feature.attributes[fieldsC[0].value]*feature.attributes["AMB_100"]);
 					valorsC_tend.push(feature.attributes[fieldsC[1].value]*feature.attributes["AMB_100"]);
-					valorsOptC.push(feature.attributes[fieldsC[getIndexMaxFeatureFields(feature, fieldsC)].value]*feature.attributes["AMB_100"]);
+					valorsOptC.push(valorC);
 					//Indicador D
 					valorsD_actual.push(feature.attributes[fieldsD_agg[0].value]);
 					valorsD_tend.push(feature.attributes[fieldsD_agg[1].value]);
 					valorsD1.push(feature.attributes[fieldsD_agg[1].value]);
-					valorsOptD1.push(feature.attributes[fieldsD_agg[getIndexMinFeatureFields(feature, fieldsD)].value]);
+					valorsOptD1.push(valorD1);
 					//Indicador E1A
 					valorsE1A1_actual.push(feature.attributes[fieldsE1A1_agg[0].value]);
 					valorsE1A2_actual.push(feature.attributes[fieldsE1A2_agg[0].value]);
 					valorsE1A1_tend.push(feature.attributes[fieldsE1A1_agg[1].value]);
 					valorsE1A2_tend.push(feature.attributes[fieldsE1A2_agg[1].value]);
-					valorsOptE1A1.push(feature.attributes[fieldsE1A1_agg[getIndexMaxFeatureFields(feature, fieldsE1A)].value]);
-					valorsOptE1A2.push(feature.attributes[fieldsE1A2_agg[getIndexMaxFeatureFields(feature, fieldsE1A)].value]);
+					valorsOptE1A1.push(valorE1A_1);
+					valorsOptE1A2.push(valorE1A_2);
 					//Indicador E1B	
 					valorsE1B_actual.push(feature.attributes[fieldsE1B[0].value]);
 					valorsE1B_tend.push(feature.attributes[fieldsE1B[1].value]);					
-					valorsOptE1B.push(feature.attributes[fieldsE1B[getIndexMaxFeatureFields(feature, fieldsE1B)].value]);
+					valorsOptE1B.push(valorE1B);
 					//Indicador E1C
 					valorsE1C_actual.push(feature.attributes[fieldsE1C[0].value]);
 					valorsE1C_tend.push(feature.attributes[fieldsE1C[1].value]);
 					valorsE1C1.push(feature.attributes[fieldsE1C_agg[0].value]);
-					valorsOptE1C1.push(feature.attributes[fieldsE1C_agg[getIndexMaxFeatureFields(feature, fieldsE1C)].value]);
+					valorsOptE1C1.push(valorE1C);
 					//Indicador F
 					valorsF_actual.push(feature.attributes[fieldsF_agg[0].value]);
 					valorsF_tend.push(feature.attributes[fieldsF_agg[1].value]);
-					valorsOptF1.push(feature.attributes[fieldsF_agg[getIndexMaxFeatureFields(feature, fieldsF)].value]);
+					valorsOptF1.push(valorF1);
 				});
-				//Indicador D
 				
 				valorsMaxA1=[];
 				valorsMaxA1_2=[];
-				
+
 				valorsMinA2=[];
 				
 				valorsMinA3=[];
@@ -1980,32 +1991,11 @@
 					valorsMaxA1.push(valorMaxA1);
 					valorsMaxA1_2.push(valorMaxA1_2);
 					
-					//indicador A2
-					/*
-					valorMaxA1B=0;
-					for(var k in fieldsA2){
-						if(feature.attributes[fieldsA2[k].value] >= valorMaxA1B){
-							valorMaxA1B = feature.attributes[fieldsA2[k].value]
-							valorMaxA2 = feature.attributes[fieldsA2[k].value];
-						}
-					}*/
-					
+					//indicador A2					
 					valorsMinA2.push(feature.attributes[fieldsA2[getIndexMinFeatureFields(feature, fieldsA2)].value]);
-					//valorsMaxA2.push(valorMaxA2);
+
 					
 					//indicador A3
-					/*
-					valorMaxA1C=0;
-					for(var k in fieldsA3){
-						if(feature.attributes[fieldsA3[k].value] >= valorMaxA1C){
-							valorMaxA1C = feature.attributes[fieldsA3[k].value];
-							valorMaxA3 = feature.attributes[fieldsA3_agg[k].value];
-							valorMaxA3_2 = feature.attributes[fieldsA3_2_agg[k].value];
-						}
-					}
-					valorsMaxA3.push(valorMaxA3);
-					valorsMaxA3_2.push(valorMaxA3_2);
-					*/
 					valorsMinA3.push(feature.attributes[fieldsA3_agg[getIndexMinFeatureFields(feature, fieldsA3)].value]);
 					valorsMinA3_2.push(feature.attributes[fieldsA3_2_agg[getIndexMinFeatureFields(feature, fieldsA3)].value]);
 
@@ -2081,16 +2071,16 @@
 				arrAvg = arr => arr.reduce((a,b) => a + b, 0) / arr.length;
 				
 				// Escenari optimitzat
-				indicador_A1_max = ((arrSum(valorsOptA1)  / arrSum(valorsOptA1_2)) * weightListIndicators[0]) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
-				indicador_A2_max = (arrSum(valorsMinA2)) / (arrSum(valorsOptA2) * weightListIndicators[1]);
-				indicador_A3_max = ((arrSum(valorsMinA3)/ arrSum(valorsMinA3_2))/ (arrSum(valorsOptA3) / arrSum(valorsOptA3_2)) * weightListIndicators[2]);
-				indicador_B_max = (arrAvg(valorsOptB) * weightListIndicators[3]) / arrAvg(valorsMaxB);
-				indicador_C_max = (arrAvg(valorsOptC) * weightListIndicators[4]) / arrAvg(valorsMaxC);
-				indicador_D_max =  (arrSum(valorsMinD1) / Math.pow(10,6)) / ((arrSum(valorsOptD1) / Math.pow(10,6)) * weightListIndicators[5]);
-				indicador_E1A_max = ((arrSum(valorsOptE1A1) / arrSum(valorsOptE1A2)) * 100 * weightListIndicators[6]) / ((arrSum(valorsMaxE1A1) / arrSum(valorsMaxE1A2)) * 100);
-				indicador_E1B_max = ((arrSum(valorsOptE1B) * weightListIndicators[7]) / 1000) / (arrSum(valorsMaxE1B) / 1000);
-				indicador_E1C_max = ((arrSum(valorsOptE1C1) * weightListIndicators[8]) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
-				indicador_F_max = (arrSum(valorsOptF1) * weightListIndicators[9]) / arrSum(valorsMaxF1);
+				indicador_A1_max = ((arrSum(valorsOptA1)  / arrSum(valorsOptA1_2))) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
+				indicador_A2_max = (arrSum(valorsMinA2)) / (arrSum(valorsOptA2));
+				indicador_A3_max = ((arrSum(valorsMinA3)/ arrSum(valorsMinA3_2))/ (arrSum(valorsOptA3) / arrSum(valorsOptA3_2)));
+				indicador_B_max = (arrAvg(valorsOptB)) / arrAvg(valorsMaxB);
+				indicador_C_max = (arrAvg(valorsOptC)) / arrAvg(valorsMaxC);
+				indicador_D_max =  (arrSum(valorsMinD1) / Math.pow(10,6)) / ((arrSum(valorsOptD1) / Math.pow(10,6)));
+				indicador_E1A_max = ((arrSum(valorsOptE1A1) / arrSum(valorsOptE1A2)) * 100) / ((arrSum(valorsMaxE1A1) / arrSum(valorsMaxE1A2)) * 100);
+				indicador_E1B_max = ((arrSum(valorsOptE1B)) / 1000) / (arrSum(valorsMaxE1B) / 1000);
+				indicador_E1C_max = ((arrSum(valorsOptE1C1)) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
+				indicador_F_max = (arrSum(valorsOptF1)) / arrSum(valorsMaxF1);
 				
 				if (escenari == 0) {
 					// Escenari actual
@@ -2119,17 +2109,6 @@
 					indicador_E1C = (arrSum(valorsE1C_tend) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
 					indicador_F = arrSum(valorsF_tend) / arrSum(valorsMaxF1);
 					
-					/*
-					indicador_A1 = (arrSum(valorsA1_tend) / arrSum(valorsA1_2_tend)) / (arrSum(valorsOptA1)/ arrSum(valorsOptA1_2));
-					indicador_A2 = (arrSum(valorsA2_tend) / 1000000) / (arrSum(valorsOptA2)/ 1000000);
-					indicador_A3 = (arrSum(valorsA3_tend) / arrSum(valorsA3_2_tend)) / (arrSum(valorsOptA3)/ arrSum(valorsOptA3_2));
-					indicador_B = arrAvg(valorsB_tend) / arrAvg(valorsMaxB);
-					indicador_C = arrAvg(valorsC_tend) / arrAvg(valorsMaxC);
-					indicador_D = (arrSum(valorsD_tend) / Math.pow(10,6))  / (arrSum(valorsMinD1) / Math.pow(10,6));
-					indicador_E1A = ((arrSum(valorsE1A1_tend) / arrSum(valorsE1A2_tend)) * 100) / ((arrSum(valorsMaxE1A1) / arrSum(valorsMaxE1A2)) * 100);
-					indicador_E1B = (arrSum(valorsE1B_tend) / 1000) / (arrSum(valorsMaxE1B) / 1000);
-					indicador_E1C = (arrSum(valorsE1C1) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
-					indicador_F = arrSum(valorsF_tend) / arrSum(valorsMaxF1);*/
 					aranya2(indicador_A1,indicador_A2,indicador_A3,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,"rgba(200,0,0,0.6)","Escenari tendencial");
 				}
 			});
@@ -2192,7 +2171,7 @@
 					name: "Escenari optimitzat",
 					data: [indicador_A1_max ,indicador_A2_max ,indicador_A3_max ,indicador_B_max,indicador_C_max,indicador_D_max,indicador_E1A_max,indicador_E1B_max,indicador_E1C_max,indicador_F_max],
 				}],
-				labels:  ["Rendiment metabòlic d'energia (A1A)", "Rendiment metabòlic d'aigua (A1B)","Rendiment metabòlic de matèria (A1C)"," Conservació de la biodiversitat (B1)", "Funcionament del paisatge (C1)", "Canvi global (D1)", "Serveis ecosistèmics de suport (E1A)", "Serveis ecosistèmics de regulació (E1B)","Serveis ecosistèmics d’aprovisionament (E1C)","Cohesió social (F1)"],
+				labels:  ["Eficiència energètica (A1A)", "Consum d’aigua (A1B)","Apropiació de biomassa (A1C)","Conservació de la biodiversitat (B1)", "Funcionament del paisatge (C1)", "Canvi climàtic (D1)", "Recirculació de nutrients (E1A)", "Estoc de carboni (E1B)","Producció agrícola (E1C)","Llocs de treball (F1)"],
 				plotOptions: {
 					radar: {
 						size: 140,
