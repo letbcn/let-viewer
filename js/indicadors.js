@@ -1873,8 +1873,8 @@
 					valorsE1B_tend.push(feature.attributes[fieldsE1B[1].value]);					
 					valorsOptE1B.push(valorE1B);
 					//Indicador E1C
-					valorsE1C_actual.push(feature.attributes[fieldsE1C[0].value]);
-					valorsE1C_tend.push(feature.attributes[fieldsE1C[1].value]);
+					valorsE1C_actual.push(feature.attributes[fieldsE1C_agg[0].value]);
+					valorsE1C_tend.push(feature.attributes[fieldsE1C_agg[1].value]);
 					valorsE1C1.push(feature.attributes[fieldsE1C_agg[0].value]);
 					valorsOptE1C1.push(valorE1C);
 					//Indicador F
@@ -2021,6 +2021,7 @@
 					indicador_D = (arrSum(valorsMinD1) / Math.pow(10,6)) / (arrSum(valorsD_actual) / Math.pow(10,6))  ;
 					indicador_E1A = ((arrSum(valorsE1A1_actual) / arrSum(valorsE1A2_actual)) * 100) / ((arrSum(valorsMaxE1A1) / arrSum(valorsMaxE1A2)) * 100);
 					indicador_E1B = (arrSum(valorsE1B_actual) / 1000) / (arrSum(valorsMaxE1B) / 1000);
+					//alert ("valors acuals: " + arrSum(valorsE1C_actual) + " - valor max: " + arrSum(valorsMaxE1C1))
 					indicador_E1C = (arrSum(valorsE1C_actual) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
 					indicador_F = arrSum(valorsF_actual) / arrSum(valorsMaxF1);
 					

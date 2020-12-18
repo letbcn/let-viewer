@@ -176,13 +176,16 @@
 			if (opt == "min") {
 				scenario = getMin(fields);
 			}
+			
 			var scenarios = getSameValues(fields, scenario);
+			/*
 			var value = 0;
 			for (var i in scenarios) {
 				value += fieldsSelected[scenarios[i]].value;
 			}
 
-			return (value / scenarios.length);
+			return (value / scenarios.length);*/
+			return fieldsSelected[scenario].value;
 		}
 
 		function getValueByDimention(fieldsSelected, fields, opt) {
@@ -200,7 +203,7 @@
 		function getValue(fieldsSelected, weightListIndicators) {
 			var value = 0;
 			for (var i in weightListIndicators) {
-				value += getValueByDimention(fieldsSelected, listFields[i], typeOpt[i]) * weightListIndicators[i];
+				value += getValueByDimention2(fieldsSelected, listFields[i], typeOpt[i]) * weightListIndicators[i];
 			}
 			return value;
 		}
