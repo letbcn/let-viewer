@@ -13,15 +13,35 @@
 	<link rel="stylesheet" href="css/style_let.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css">
 	<script type="text/plain" id="arcadeB">
-		var fieldsA = [
-		  { value: $feature.a1_c_0, alias: "a1_c_0" },
-		  { value: $feature.a1_c_1, alias: "a1_c_1" },
-		  { value: $feature.a1_c_2, alias: "a1_c_2" },
-		  { value: $feature.a1_c_3, alias: "a1_c_3" },
-		  { value: $feature.a1_o_0, alias: "a1_o_0" },
-		  { value: $feature.a1_o_1, alias: "a1_o_1" },
-		  { value: $feature.a1_o_2, alias: "a1_o_2" },
-		  { value: $feature.a1_o_3, alias: "a1_o_3" }
+		var fieldsA1 = [
+		  { value: $feature.a1a_c_0, alias: "a1a_c_0" },
+		  { value: $feature.a1a_c_1, alias: "a1a_c_1" },
+		  { value: $feature.a1a_c_2, alias: "a1a_c_2" },
+		  { value: $feature.a1a_c_3, alias: "a1a_c_3" },
+		  { value: $feature.a1a_o_0, alias: "a1a_o_0" },
+		  { value: $feature.a1a_o_1, alias: "a1a_o_1" },
+		  { value: $feature.a1a_o_2, alias: "a1a_o_2" },
+		  { value: $feature.a1a_o_3, alias: "a1a_o_3" }
+		];
+		var fieldsA2 = [
+		  { value: $feature.a1b_c_0, alias: "a1b_c_0" },
+		  { value: $feature.a1b_c_1, alias: "a1b_c_1" },
+		  { value: $feature.a1b_c_2, alias: "a1b_c_2" },
+		  { value: $feature.a1b_c_3, alias: "a1b_c_3" },
+		  { value: $feature.a1b_o_0, alias: "a1b_o_0" },
+		  { value: $feature.a1b_o_1, alias: "a1b_o_1" },
+		  { value: $feature.a1b_o_2, alias: "a1b_o_2" },
+		  { value: $feature.a1b_o_3, alias: "a1b_o_3" }
+		];
+		var fieldsA3 = [
+		  { value: $feature.a1c_c_0, alias: "a1c_c_0" },
+		  { value: $feature.a1c_c_1, alias: "a1c_c_1" },
+		  { value: $feature.a1c_c_2, alias: "a1c_c_2" },
+		  { value: $feature.a1c_c_3, alias: "a1c_c_3" },
+		  { value: $feature.a1c_c_0, alias: "a1c_c_0" },
+		  { value: $feature.a1c_c_1, alias: "a1c_c_1" },
+		  { value: $feature.a1c_c_2, alias: "a1c_c_2" },
+		  { value: $feature.a1c_c_3, alias: "a1c_c_3" }
 		];
 		var fieldsB = [
 		  { value: $feature.b1_c_0, alias: "b1_c_0" },
@@ -109,6 +129,96 @@
 		  }
 		  return IIF(maxValue2 <= 0, null, maxValue2);
 		}
+
+		function getMax(fields) {
+			var max = -Infinity;
+			var index = -1;
+			for (var i in fields) {
+				if (fields[i].value > max) {
+					max = fields[i].value;
+					index = i;
+				}
+			}
+			return index;
+		}
+
+		function getMin(fields) {
+			var min = Infinity;
+			var index = -1;
+			for (var i in fields) {
+				if (fields[i].value < min) {
+					min = fields[i].value;
+					index = i;
+				}
+			}
+			return index;
+		}
+
+		var listFields = [fieldsA1, fieldsA2, fieldsA3, fieldsB, fieldsC, fieldsD, fieldsE1A, fieldsE1B, fieldsE1C, fieldsF];
+		var typeOpt = ["max", "min", "min", "max", "max", "min", "max", "max", "max", "max"];
+
+		/*
+		function getSameValues(fields, index) {
+			var listFields = [];
+			for (var i in fields) {
+				if (fields[index].value == fields[i].value) {
+					listFields.push(i);
+				}
+			}
+			return listFields;
+		}
+
+		function getValueByDimention2(fieldsSelected, fields, opt) {
+			var scenario = 0;
+			if (opt == "max") {
+				scenario = getMax(fields);
+			}
+			if (opt == "min") {
+				scenario = getMin(fields);
+			}
+			var scenarios = getSameValues(fields, scenario);
+			var value = 0;
+			for (var i in scenarios) {
+				value += fieldsSelected[scenarios[i]].value;
+			}
+
+			return (value / scenarios.length);
+		}
+		*/
+
+		function getValueByDimention(fieldsSelected, fields, opt) {
+			var scenario = 0;
+			if (opt == "max") {
+				scenario = getMax(fields);
+			}
+			if (opt == "min") {
+				scenario = getMin(fields);
+			}
+
+			return fieldsSelected[scenario].value;
+		}
+
+		function getValue(fieldsSelected, weightListIndicators) {
+			var value = 0;
+			for (var i in weightListIndicators) {
+				value += getValueByDimention(fieldsSelected, listFields[i], typeOpt[i]) * weightListIndicators[i];
+			}
+			return value;
+		}
+
+		/*
+		function getValue(fields, weightListIndicators) {
+			return (fields[getMax(fieldsA1)].value * weightListIndicators[0])
+				+ (fields[getMin(fieldsA2)].value * weightListIndicators[1])
+				+ (fields[getMin(fieldsA3)].value * weightListIndicators[2]) 
+				+ (fields[getMax(fieldsB)].value * weightListIndicators[3]) 
+				+ (fields[getMax(fieldsC)].value * weightListIndicators[4]) 
+				+ (fields[getMin(fieldsD)].value * weightListIndicators[5]) 
+				+ (fields[getMax(fieldsE1A)].value * weightListIndicators[6]) 
+				+ (fields[getMax(fieldsE1B)].value * weightListIndicators[7]) 
+				+ (fields[getMax(fieldsE1C)].value * weightListIndicators[8]) 
+				+ (fields[getMax(fieldsF)].value * weightListIndicators[9]);
+		}*/
 		
 	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
@@ -154,8 +264,8 @@
 		top: 0; left: 0; bottom: 0; right: 0;
 		margin: auto;
 		width: 820px;
-		height: 400px;
-		z-indez: 9999 !important;
+		height: 450px;
+		z-index: 1 !important;
 		background: #f0f0fd;
 		background: rgba(240,240,253,0.90);
 		padding: 22px 32px;
@@ -194,6 +304,30 @@
 		position:relative;
 		top:1px;
 	}
+
+	.label {
+            width:40%;
+            display:inline;
+            float:left;
+        }
+
+		.formRange input {
+		width:50%
+	}
+
+	.resultRange {
+		padding-left:15px;
+		text-align:center;
+	}
+
+	.formRange {
+		padding:5px;
+	}
+
+	.formRangeTotal {
+		text-align: center;
+		font-weight: bold;
+	}
 	
     </style>
 
@@ -204,34 +338,33 @@
 
   <body style="font-family: 'Avenir Next W00','Helvetica Neue',Helvetica,Arial,sans-serif;">
 
-   <div id="divTop" style="">
-	<center><text id="titol" style="font-size:16px;font-weight:bold;"></text>&nbsp;&nbsp;&nbsp;  <button class="button" style="width:auto" onclick="document.getElementById('pane').style.visibility='visible'">Canvi dimensió</button></center>
-    <textarea id="descripcio" rows=3></textarea>
+   <div id="divTop" style="text-align: center;">
+	<button class="button" style="width:auto;" onclick="document.getElementById('pane').style.visibility='visible'">Canvi de criteris</button>
    </div>
   <div id="divActual">
     <div id="viewDiv"></div>
-	 <div id="infoDiv" class="esri-widget">
-      Escenari <select class="esri-widget" id="escenari_id" onchange="canvi_escenari(this.value)" > 
-		<option value="0" selected >Actual</option>
-		 <option value="1" >Tendencial</option>
-		 </select>
-
+	 	<div id="infoDiv" class="esri-widget">
+      	Escenari <select class="esri-widget" id="escenari_id" onchange="canvi(valuesRanges())" > 
+			<option value="0" selected >Actual</option>
+			<option value="1" >Tendencial</option>
+		</select>
 	  </div>
 	</div>
 	<div id="divTendencial">
 		<div id="viewDivtend"></div>
 		<div id="escenariDiv" class="esri-widget">
 			Escenari Optimitzat<br>
-			  <select id="field-select-ind" class="esri-widget" onchange="canvi(this.value,false)">
-				<option value="-1" selected>Visualitza l’impacte en altres dimensions</option>
-				<option value="A" selected>Eficiència metabòlica</option>
-				<option value="B" >Conservació de la biodiversitat</option>
+			  <select id="field-select-ind" class="esri-widget" onchange="canvi(valuesRanges())">
+				<option value="A1" selected>Eficiència energètica</option>
+				<option value="A2">Consum d’aigua</option>
+				<option value="A3">Apropiació de biomassa</option>
+				<option value="B">Conservació de la biodiversitat</option>
 				<option value="C">Funcionament del paisatge</option>
-				<option value="D">Canvi global</option>
-				<option value="E1A">Serveis ecosistèmics de suport</option>
-				<option value="E1B">Serveis ecosistèmics de regulació</option>
-				<option value="E1C">Serveis ecosistèmics d’aprovisionament</option>
-				<option value="F">Cohesió social</option>
+				<option value="D">Canvi climàtic</option>
+				<option value="E1A">Recirculació de nutrients</option>
+				<option value="E1B">Estoc de carboni</option>
+				<option value="E1C">Producció agrícola</option>
+				<option value="F">Llocs de treball</option>
 			  </select>
 		</div>
 	</div>
@@ -243,35 +376,83 @@
 	</div>
 	<div id="divgrafics">
 		<div id="marksChart"></div>
-		<!--<div id="diferencies">A<br>B<br>C</div>-->
 	<div>
 		<div id="pane" class="pane">
-		<center style="font-size:20px;font-family: 'Avenir Next W00','Helvetica Neue',Helvetica,Arial,sans-serif;">
-		<b style="color:#c00000">Sistema de suport a la planificació<hr style=" border-top: 1px solid #c00000"></b></center>
-		<textarea  style="background:rgba(240,240,253,0.90);resize: none;width:820px;border:0;font-size:14px;font-family: 'Avenir Next W00','Helvetica Neue',Helvetica,Arial,sans-serif;text-align:justify" rows="9">
-		El sistema permet identificar possibles configuracions dels espais oberts de l’àrea metropolitana per tal d’optimitzar la contribució que aquests fan al conjunt del sistema socioecològic, definint quina dimensió es vol prioritzar en la seva planificació. Es defineixen 8 dimensions principals de la contribució dels espais oberts: eficiència metabòlica, conservació de la biodiversitat, funcionament del paisatge, canvi global, serveis ecosistèmics (suport, regulació, aprovisionament) i cohesió social. A partir d’aquí s’obté una configuració per cel·les de 500 x 500 m	de la dimensió optimitzada, i es poden consultar totes les demés, partint de la informació d’estudis d’anàlisi d’escenaris que s’han realitzat 	anteriorment. A la vegada, es comparen els resultats bé amb la situació de partida (l’any de referència és 2015) o bé amb l’escenari tendencial si es complís tot el planejament urbanístic vigent.
-		</textarea>
-		
-		Seleccioneu quina és la dimensió que voleu optimitzar i si es vol maximitzar o minimitzar.<br><br>
-		  <select id="field-select" class="esri-widget" style="font-size:14px" onchange="canvi_text(this.value);" >
-			<option value="-1" selected>Dimensions</option>
-			<option value="A">Eficiència metabòlica</option>
-			<option value="B" >Conservació de la biodiversitat</option>
-			<option value="C">Funcionament del paisatge</option>
-			<option value="D">Canvi global</option>
-			<option value="E1A">Serveis ecosistèmics de suport</option>
-			<option value="E1B">Serveis ecosistèmics de regulació</option>
-			<option value="E1C">Serveis ecosistèmics d’aprovisionament</option>
-			<option value="F">Cohesió social</option>
-		  </select>&nbsp; 
-		  <select id="tipus" class="esri-widget" style="font-size:14px" onchange="" >
-			<option value="Max" selected>Maximitzar</option>
-			<option value="Min" >Minimitzar</option>
-		  </select><br><br>
-		  <textarea style="background:rgba(240,240,253,0.90);resize: none;width:820px;border:0;font-size:12px;text-align:justify" id="descripcio2" rows="5"></textarea>
-		  <text style="font-size:12px;color:#c00000">versió Beta</text>
-		  <button class="button" style="float: right;width:15%;" onclick="document.getElementById('pane').style.visibility='hidden';canvi(document.getElementById('field-select').value,true)">Aplicar</button>
+			<div style="font-size:20px;font-family: 'Avenir Next W00','Helvetica Neue',Helvetica,Arial,sans-serif;text-align: center;">
+			<b style="color:#c00000">Sistema de Suport a la Planificació (SSP)<hr style=" border-top: 1px solid #c00000"></b></div>
+			<div style="padding-bottom:10px;text-align:center;"><span style="color:#c00000">Anàlisi Multi-criterial</span> <span style="font-size:12px;">(prioritzeu les dimensions per a calcular els escenaris optimitzats)</span> </div>
+			<div class="formRange"><div class="label"><label for="ARange">Eficiència energètica</label></div><input type="range" name="A1Range" id="A1Range" min="0" max="100" step="1" onchange="showVal('A1RangeValue', this.value)" oninput="showVal('A1RangeValue', this.value)"><span class="resultRange" id="A1RangeValue"></span></div>
+			<div class="formRange"><div class="label"><label for="ARange">Consum d’aigua</label></div><input type="range" name="A2Range" id="A2Range" min="0" max="100" step="1" onchange="showVal('A2RangeValue', this.value)" oninput="showVal('A2RangeValue', this.value)"><span class="resultRange" id="A2RangeValue"></span></div>
+			<div class="formRange"><div class="label"><label for="ARange">Apropiació de biomassa</label></div><input type="range" name="A3Range" id="A3Range" min="0" max="100" step="1" onchange="showVal('A3RangeValue', this.value)" oninput="showVal('A3RangeValue', this.value)"><span class="resultRange" id="A3RangeValue"></span></div>
+        	<div class="formRange"><div class="label"><label for="BRange">Conservació de la biodiversitat</label></div><input type="range" name="BRange" id="BRange" min="0" max="100" step="1" onchange="showVal('BRangeValue', this.value)" oninput="showVal('BRangeValue',this.value)"><span class="resultRange" id="BRangeValue"></span></div>
+        	<div class="formRange"><div class="label"><label for="CRange">Funcionament del paisatge</label></div><input type="range" name="CRange" id="CRange" min="0" max="100" step="1" onchange="showVal('CRangeValue', this.value)" oninput="showVal('CRangeValue', this.value)"><span class="resultRange" id="CRangeValue"></span></div>
+        	<div class="formRange"><div class="label"><label for="DRange">Canvi climàtic</label></div><input type="range" name="DRange" id="DRange" min="0" max="100" step="1" onchange="showVal('DRangeValue', this.value)" oninput="showVal('DRangeValue', this.value)"><span class="resultRange" id="DRangeValue"></span></div>
+        	<div class="formRange"><div class="label"><label for="E1ARange">Recirculació de nutrients</label></div><input type="range" name="E1ARange" id="E1ARange" min="0" max="100" step="1" onchange="showVal('E1ARangeValue', this.value)" oninput="showVal('E1ARangeValue', this.value)"><span class="resultRange" id="E1ARangeValue"></span></div>
+        	<div class="formRange"><div class="label"><label for="E1BRange">Estoc de carboni</label></div><input type="range" name="E1BRange" id="E1BRange" min="0" max="100" step="1" onchange="showVal('E1BRangeValue', this.value)" oninput="showVal('E1BRangeValue', this.value)"><span class="resultRange" id="E1BRangeValue"></span></div>
+        	<div class="formRange"><div class="label"><label for="E1CRange">Producció agrícola</label></div><input type="range" name="E1CRange" id="E1CRange" min="0" max="100" step="1" onchange="showVal('E1CRangeValue', this.value)" oninput="showVal('E1CRangeValue', this.value)"><span class="resultRange" id="E1CRangeValue"></span></div>
+        	<div class="formRange"><div class="label"><label for="FRange">Llocs de treball</label></div><input type="range" name="FRange" id="FRange" min="0" max="100" step="1" onchange="showVal('FRangeValue', this.value)" oninput="showVal('FRangeValue', this.value)"><span class="resultRange" id="FRangeValue"></span></div>
+			<div class="formRange formRangeTotal">Total: <span id="TotalRanges"></span> / 100 </div>  
+			<text style="font-size:12px;color:#c00000">versió Beta</text>
+		  	<button class="button" id="buttonAplicar" style="float: right;width:15%;" onclick="if(checkRanges()) { document.getElementById('pane').style.visibility='hidden'; canvi(valuesRanges())} else { alert('La suma dels pesos ha de ser exactament 100'); }">Aplicar</button>
 		</div>
 	
   </body>
+  <script>
+	function showVal(tag, newVal)
+    {
+          document.getElementById(tag).innerHTML=newVal;
+          updateTotalRanges();
+    }
+
+    function iniValues(ranges) 
+    {
+        ranges.forEach(iniVal);
+        updateTotalRanges();
+    }
+
+    function iniVal(range) 
+    {
+        document.getElementById(range + "Value").innerHTML = 10;
+        document.getElementById(range).value = 10;
+    }
+
+    function updateTotalRanges() 
+    {
+        var total = 0;
+        for (x in ranges) {
+            total += parseInt(document.getElementById(ranges[x]).value);
+        }
+		document.getElementById("TotalRanges").innerHTML = total;
+		if (!checkRanges()) {
+			document.getElementById("TotalRanges").style.color = "#ff0000";
+		} else {
+			document.getElementById("TotalRanges").style.color = "#00ff00";
+		}
+    }
+
+    function checkRanges()
+    {
+        var total = 0;
+        for (x in ranges) {
+            total += parseInt(document.getElementById(ranges[x]).value);
+        }
+		return total == sumTotalRanges;
+	}
+	
+	function valuesRanges()
+	{
+		valuesRangesList = [];
+		for (x in ranges) {
+			valuesRangesList.push(parseFloat(document.getElementById(ranges[x]).value)/100);
+		}
+		return valuesRangesList;
+	}
+
+	var iniElemet = 10;
+    var sumTotalRanges = 100;
+
+    var ranges = ["A1Range", "A2Range", "A3Range", "BRange", "CRange", "DRange", "E1ARange", "E1BRange", "E1CRange", "FRange"];
+
+    iniValues(ranges);
+  </script>
 </html>
