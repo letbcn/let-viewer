@@ -1873,8 +1873,8 @@
 					valorsE1B_tend.push(feature.attributes[fieldsE1B[1].value]);					
 					valorsOptE1B.push(valorE1B);
 					//Indicador E1C
-					valorsE1C_actual.push(feature.attributes[fieldsE1C[0].value]);
-					valorsE1C_tend.push(feature.attributes[fieldsE1C[1].value]);
+					valorsE1C_actual.push(feature.attributes[fieldsE1C_agg[0].value]);
+					valorsE1C_tend.push(feature.attributes[fieldsE1C_agg[1].value]);
 					valorsE1C1.push(feature.attributes[fieldsE1C_agg[0].value]);
 					valorsOptE1C1.push(valorE1C);
 					//Indicador F
