@@ -131,7 +131,7 @@
 		}
 
 		function getMax(fields) {
-			var max = -1;
+			var max = -Infinity;
 			var index = -1;
 			for (var i in fields) {
 				if (fields[i].value > max) {
@@ -139,14 +139,11 @@
 					index = i;
 				}
 			}
-			if (max == 0) {
-				return null;
-			}
 			return index;
 		}
 
 		function getMin(fields) {
-			var min = 100000000000;
+			var min = Infinity;
 			var index = -1;
 			for (var i in fields) {
 				if (fields[i].value < min) {
@@ -154,27 +151,73 @@
 					index = i;
 				}
 			}
-			if (min == 0) {
-				return null;
-			}
 			return index;
 		}
 
-		function getValue(scenario, weightListIndicators) {
-			if (scenario == null) {
-				return null;
+		var listFields = [fieldsA1, fieldsA2, fieldsA3, fieldsB, fieldsC, fieldsD, fieldsE1A, fieldsE1B, fieldsE1C, fieldsF];
+		var typeOpt = ["max", "min", "min", "max", "max", "min", "max", "max", "max", "max"];
+
+		
+		function getSameValues(fields, index) {
+			var listFields = [];
+			for (var i in fields) {
+				if (fields[index].value == fields[i].value) {
+					listFields[listFields.length] = i;
+				}
 			}
-			return (fieldsA1[scenario].value * weightListIndicators[0])
-				+ (fieldsA2[scenario].value * weightListIndicators[1])
-				+ (fieldsA3[scenario].value * weightListIndicators[2]) 
-				+ (fieldsB[scenario].value * weightListIndicators[3]) 
-				+ (fieldsC[scenario].value * weightListIndicators[4]) 
-				+ (fieldsD[scenario].value * weightListIndicators[5]) 
-				+ (fieldsE1A[scenario].value * weightListIndicators[6]) 
-				+ (fieldsE1B[scenario].value * weightListIndicators[7]) 
-				+ (fieldsE1C[scenario].value * weightListIndicators[8]) 
-				+ (fieldsF[scenario].value * weightListIndicators[9]);
+			return listFields;
 		}
+
+		function getValueByDimention2(fieldsSelected, fields, opt) {
+			var scenario = 0;
+			if (opt == "max") {
+				scenario = getMax(fields);
+			}
+			if (opt == "min") {
+				scenario = getMin(fields);
+			}
+			var scenarios = getSameValues(fields, scenario);
+			var value = 0;
+			for (var i in scenarios) {
+				value += fieldsSelected[scenarios[i]].value;
+			}
+
+			return (value / scenarios.length);
+		}
+
+		function getValueByDimention(fieldsSelected, fields, opt) {
+			var scenario = 0;
+			if (opt == "max") {
+				scenario = getMax(fields);
+			}
+			if (opt == "min") {
+				scenario = getMin(fields);
+			}
+
+			return fieldsSelected[scenario].value;
+		}
+
+		function getValue(fieldsSelected, weightListIndicators) {
+			var value = 0;
+			for (var i in weightListIndicators) {
+				value += getValueByDimention(fieldsSelected, listFields[i], typeOpt[i]) * weightListIndicators[i];
+			}
+			return value;
+		}
+
+		/*
+		function getValue(fields, weightListIndicators) {
+			return (fields[getMax(fieldsA1)].value * weightListIndicators[0])
+				+ (fields[getMin(fieldsA2)].value * weightListIndicators[1])
+				+ (fields[getMin(fieldsA3)].value * weightListIndicators[2]) 
+				+ (fields[getMax(fieldsB)].value * weightListIndicators[3]) 
+				+ (fields[getMax(fieldsC)].value * weightListIndicators[4]) 
+				+ (fields[getMin(fieldsD)].value * weightListIndicators[5]) 
+				+ (fields[getMax(fieldsE1A)].value * weightListIndicators[6]) 
+				+ (fields[getMax(fieldsE1B)].value * weightListIndicators[7]) 
+				+ (fields[getMax(fieldsE1C)].value * weightListIndicators[8]) 
+				+ (fields[getMax(fieldsF)].value * weightListIndicators[9]);
+		}*/
 		
 	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>

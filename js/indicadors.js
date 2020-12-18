@@ -1414,8 +1414,8 @@
 				layerEscenari.renderer = renderer_A1;
 				renderer_max_A1 = {type: "class-breaks"};
 				renderer_max_A1.classBreakInfos = renderer_A1.classBreakInfos;
-				renderer_dif_A1.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsA1),[" + weightListIndicators + "]) - $feature.a1a_c_" + escenari;
-				renderer_max_A1.valueExpression = document.getElementById("arcadeB").text + " getValue(getMax(fieldsA1),[" + weightListIndicators + "]);";
+				renderer_dif_A1.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsA1,[" + weightListIndicators + "]) - $feature.a1a_c_" + escenari;
+				renderer_max_A1.valueExpression = document.getElementById("arcadeB").text + " getValue(fieldsA1,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_A1;
 				layer3.renderer = renderer_max_A1;
 				break;
@@ -1445,8 +1445,8 @@
 				layerEscenari.renderer = renderer_A2;
 				renderer_max_A2 = {type: "class-breaks"};
 				renderer_max_A2.classBreakInfos = renderer_A2.classBreakInfos;
-				renderer_dif_A2.valueExpression= document.getElementById("arcadeB").text + " $feature.a1b_c_" + escenari + " - getValue(getMin(fieldsA2),[" + weightListIndicators + "]);";
-				renderer_max_A2.valueExpression= document.getElementById("arcadeB").text + " getValue(getMin(fieldsA2),[" + weightListIndicators + "]);";
+				renderer_dif_A2.valueExpression= document.getElementById("arcadeB").text + " $feature.a1b_c_" + escenari + " - getValue(fieldsA2,[" + weightListIndicators + "]);";
+				renderer_max_A2.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsA2,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_A2;
 				layer3.renderer = renderer_max_A2;
 				break;
@@ -1476,8 +1476,8 @@
 				layerEscenari.renderer = renderer_A3;
 				renderer_max_A3 = {type: "class-breaks"};
 				renderer_max_A3.classBreakInfos = renderer_A3.classBreakInfos;
-				renderer_dif_A3.valueExpression= document.getElementById("arcadeB").text + " $feature.a1c_c_" + escenari + " - getValue(getMin(fieldsA3),[" + weightListIndicators + "]);";
-				renderer_max_A3.valueExpression= document.getElementById("arcadeB").text + " getValue(getMin(fieldsA3),[" + weightListIndicators + "]);";
+				renderer_dif_A3.valueExpression= document.getElementById("arcadeB").text + " $feature.a1c_c_" + escenari + " - getValue(fieldsA3,[" + weightListIndicators + "]);";
+				renderer_max_A3.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsA3,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_A3;
 				layer3.renderer = renderer_max_A3;
 				break;
@@ -1508,8 +1508,8 @@
 				layerEscenari.renderer = renderer_B;				
 				renderer_max_B = {type: "class-breaks"};
 				renderer_max_B.classBreakInfos = renderer_B.classBreakInfos;
-				renderer_dif_B.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsB),[" + weightListIndicators + "]) - $feature.b1_c_" + escenari + ";";
-				renderer_max_B.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsB),[" + weightListIndicators + "]);";
+				renderer_dif_B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsB,[" + weightListIndicators + "]) - $feature.b1_c_" + escenari + ";";
+				renderer_max_B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsB,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_B;
 				layer3.renderer = renderer_max_B;
 				
@@ -1536,8 +1536,8 @@
 				layerEscenari.renderer = renderer_C;
 				renderer_max_C = {type: "class-breaks"};
 				renderer_max_C.classBreakInfos = renderer_C.classBreakInfos;				
-				renderer_dif_C.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsC),[" + weightListIndicators + "]) - $feature.c1_c_" + escenari + ";";
-				renderer_max_C.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsC),[" + weightListIndicators + "]);";
+				renderer_dif_C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsC,[" + weightListIndicators + "]) - $feature.c1_c_" + escenari + ";";
+				renderer_max_C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsC,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_C;
 				layer3.renderer = renderer_max_C;				
 				break;
@@ -1565,8 +1565,8 @@
 				layerEscenari.renderer = renderer_D;
 				renderer_max_D = {type: "class-breaks"};
 				renderer_max_D.classBreakInfos = renderer_D.classBreakInfos;
-				renderer_dif_D.valueExpression= document.getElementById("arcadeB").text + "$feature.d1_c_" + escenari + " - getValue(getMin(fieldsD),[" + weightListIndicators + "]);";
-				renderer_max_D.valueExpression= document.getElementById("arcadeB").text + "getValue(getMin(fieldsD),[" + weightListIndicators + "]);";
+				renderer_dif_D.valueExpression= document.getElementById("arcadeB").text + "$feature.d1_c_" + escenari + " - getValue(fieldsD,[" + weightListIndicators + "]);";
+				renderer_max_D.valueExpression= document.getElementById("arcadeB").text + "getValue(fieldsD,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_D;
 				layer3.renderer = renderer_max_D;
 				break;
@@ -1599,8 +1599,8 @@
 				layerEscenari.renderer = renderer_E1A;
 				renderer_max_E1A = {type: "class-breaks"};
 				renderer_max_E1A.classBreakInfos = renderer_E1A.classBreakInfos;
-				renderer_dif_E1A.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsE1A),[" + weightListIndicators + "]) - $feature.e1a_c_" + escenari + ";";
-				renderer_max_E1A.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsE1A),[" + weightListIndicators + "]) * " + weightListIndicators[6];
+				renderer_dif_E1A.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1A,[" + weightListIndicators + "]) - $feature.e1a_c_" + escenari + ";";
+				renderer_max_E1A.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1A,[" + weightListIndicators + "]) * " + weightListIndicators[6];
 				layer4.renderer = renderer_dif_E1A;
 				layer3.renderer = renderer_max_E1A;
 				break;
@@ -1626,8 +1626,8 @@
 				layerEscenari.renderer = renderer_E1B;
 				renderer_max_E1B = {type: "class-breaks"};
 				renderer_max_E1B.classBreakInfos = renderer_E1B.classBreakInfos;
-				renderer_dif_E1B.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsE1B),[" + weightListIndicators + "]) - $feature.e1b_c_" + escenari + ";";
-				renderer_max_E1B.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsE1B),[" + weightListIndicators + "]);";
+				renderer_dif_E1B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1B,[" + weightListIndicators + "]) - $feature.e1b_c_" + escenari + ";";
+				renderer_max_E1B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1B,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_E1B;
 				layer3.renderer = renderer_max_E1B;
 				break;
@@ -1659,8 +1659,8 @@
 				layerEscenari.renderer = renderer_E1C;
 				renderer_max_E1C = {type: "class-breaks"};
 				renderer_max_E1C.classBreakInfos = renderer_E1C.classBreakInfos;
-				renderer_dif_E1C.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsE1C),[" + weightListIndicators + "]) - $feature.e1c_c_" + escenari + ";";
-				renderer_max_E1C.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsE1C),[" + weightListIndicators + "]);";
+				renderer_dif_E1C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1C,[" + weightListIndicators + "]) - $feature.e1c_c_" + escenari + ";";
+				renderer_max_E1C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1C,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_E1C;
 				layer3.renderer = renderer_max_E1C;
 				break;
@@ -1693,8 +1693,8 @@
 				layerEscenari.renderer = renderer_F;
 				renderer_max_F = {type: "class-breaks"};
 				renderer_max_F.classBreakInfos = renderer_F.classBreakInfos;
-				renderer_dif_F.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsF),[" + weightListIndicators + "]) - $feature.f1_c_" + escenari + ";";
-				renderer_max_F.valueExpression= document.getElementById("arcadeB").text + " getValue(getMax(fieldsF),[" + weightListIndicators + "])";
+				renderer_dif_F.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsF,[" + weightListIndicators + "]) - $feature.f1_c_" + escenari + ";";
+				renderer_max_F.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsF,[" + weightListIndicators + "])";
 				layer4.renderer = renderer_dif_F;
 				layer3.renderer = renderer_max_F;
 				break;
@@ -1704,7 +1704,7 @@
 				
 		function getIndexMaxFeatureFields(feature, fields) 
 		{
-			var valorMax = 0;
+			var valorMax = -Infinity;
 			var indexMax = -1;
 			for(var k in fields) {
 				if(feature.attributes[fields[k].value] >= valorMax) {
@@ -1717,7 +1717,7 @@
 		
 		function getIndexMinFeatureFields(feature, fields) 
 		{
-			var valorMin = 1000000000;
+			var valorMin = Infinity;
 			var indexMin = -1;
 			for(var k in fields) {
 				if(feature.attributes[fields[k].value] <= valorMin) {
