@@ -157,12 +157,12 @@
 		var listFields = [fieldsA1, fieldsA2, fieldsA3, fieldsB, fieldsC, fieldsD, fieldsE1A, fieldsE1B, fieldsE1C, fieldsF];
 		var typeOpt = ["max", "min", "min", "max", "max", "min", "max", "max", "max", "max"];
 
-		
+		/*
 		function getSameValues(fields, index) {
 			var listFields = [];
 			for (var i in fields) {
 				if (fields[index].value == fields[i].value) {
-					listFields[listFields.length] = i;
+					listFields.push(i);
 				}
 			}
 			return listFields;
@@ -176,17 +176,15 @@
 			if (opt == "min") {
 				scenario = getMin(fields);
 			}
-			
 			var scenarios = getSameValues(fields, scenario);
-			/*
 			var value = 0;
 			for (var i in scenarios) {
 				value += fieldsSelected[scenarios[i]].value;
 			}
 
-			return (value / scenarios.length);*/
-			return fieldsSelected[scenario].value;
+			return (value / scenarios.length);
 		}
+		*/
 
 		function getValueByDimention(fieldsSelected, fields, opt) {
 			var scenario = 0;
@@ -203,7 +201,7 @@
 		function getValue(fieldsSelected, weightListIndicators) {
 			var value = 0;
 			for (var i in weightListIndicators) {
-				value += getValueByDimention2(fieldsSelected, listFields[i], typeOpt[i]) * weightListIndicators[i];
+				value += getValueByDimention(fieldsSelected, listFields[i], typeOpt[i]) * weightListIndicators[i];
 			}
 			return value;
 		}
