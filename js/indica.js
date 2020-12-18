@@ -14,10 +14,10 @@
 
 	
         layerEscenari = new FeatureLayer({
-          url: "https://openlab.uab.cat:6443/arcgis/rest/services/models/malla/FeatureServer/0",
+          url: "https://openlab.uab.cat:6443/arcgis/rest/services/models/malla_model_15_12/FeatureServer/0",
 		  renderer: {
 					  type: "class-breaks", // autocasts as new ClassBreaksRenderer()
-					  field: "a1_c_0",
+					  field: "a1a_c_0",
 					  legendOptions: {
 						title: "Eficiència energètica (EFEROI)"
 					  },
@@ -31,18 +31,18 @@
 					 }
         });
 		
-		//layerEscenari.renderer = renderer_A;
-		renderer_max_A = {type: "class-breaks"};
-		renderer_max_A.classBreakInfos = renderer_A.classBreakInfos;
-		renderer_max_A.valueExpression = "Max($feature.a1_c_0,$feature.a1_c_1,$feature.a1_c_2,$feature.a1_c_3)";
+		//layerEscenari.renderer = renderer_A1;
+		renderer_max_A1 = {type: "class-breaks"};
+		renderer_max_A1.classBreakInfos = renderer_A1.classBreakInfos;
+		renderer_max_A1.valueExpression = "Max($feature.a1a_c_0,$feature.a1a_c_1,$feature.a1a_c_2,$feature.a1a_c_3)";
 		
 		
 		layer3 = new FeatureLayer({
 		  id:'optim',
-          url:"https://openlab.uab.cat:6443/arcgis/rest/services//models/malla/FeatureServer/0",
+          url:"https://openlab.uab.cat:6443/arcgis/rest/services/models/malla_model_15_12/FeatureServer/0",
           renderer: {
 					  type: "class-breaks", // autocasts as new ClassBreaksRenderer()
-					  field: "a1_c_0",
+					  field: "a1a_c_0",
 					  legendOptions: {
 						title: "Eficiència energètica (EFEROI)"
 					  },
@@ -57,10 +57,10 @@
         });
 		
 		layer4 = new FeatureLayer({
-          url:"https://openlab.uab.cat:6443/arcgis/rest/services//models/malla/FeatureServer/0",
+          url:"https://openlab.uab.cat:6443/arcgis/rest/services/models/malla_model_15_12/FeatureServer/0",
           renderer: {
 					  type: "class-breaks", // autocasts as new ClassBreaksRenderer()
-					  field: "a1_c_0",
+					  field: "a1a_c_0",
 					  legendOptions: {
 						title: "Eficiència energètica (EFEROI)"
 					  },
@@ -75,7 +75,7 @@
         });
 		
 		
-		indicador_principal = "fields" + document.getElementById("field-select").value;
+		// indicador_principal = "fields" + document.getElementById("field-select").value;
 		
 
         map = new Map({
