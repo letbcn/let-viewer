@@ -131,34 +131,49 @@
 		}
 
 		function getMax(fields) {
-			var max = 0;
+			var max = -1;
 			var index = -1;
 			for (var i in fields) {
-				if (fields[i].value >= max) {
+				if (fields[i].value > max) {
 					max = fields[i].value;
 					index = i;
 				}
+			}
+			if (max == 0) {
+				return null;
 			}
 			return index;
 		}
 
 		function getMin(fields) {
-			var max = 0;
+			var min = 100000000000;
 			var index = -1;
 			for (var i in fields) {
-				if (fields[i].value >= max) {
-					max = fields[i].value;
+				if (fields[i].value < min) {
+					min = fields[i].value;
 					index = i;
 				}
+			}
+			if (min == 0) {
+				return null;
 			}
 			return index;
 		}
 
 		function getValue(scenario, weightListIndicators) {
-			return (fieldsA1[scenario].value * weightListIndicators[0]) + (fieldsA2[scenario].value * weightListIndicators[1]) + (fieldsA3[scenario].value * weightListIndicators[2]) + 
-			(fieldsB[scenario].value * weightListIndicators[3]) + (fieldsC[scenario].value * weightListIndicators[4]) + (fieldsD[scenario].value * weightListIndicators[5]) + 
-			(fieldsE1A[scenario].value * weightListIndicators[6]) + (fieldsE1B[scenario].value * weightListIndicators[7]) + (fieldsE1C[scenario].value * weightListIndicators[8]) + 
-			(fieldsF[scenario].value * weightListIndicators[9]);
+			if (scenario == null) {
+				return null;
+			}
+			return (fieldsA1[scenario].value * weightListIndicators[0])
+				+ (fieldsA2[scenario].value * weightListIndicators[1])
+				+ (fieldsA3[scenario].value * weightListIndicators[2]) 
+				+ (fieldsB[scenario].value * weightListIndicators[3]) 
+				+ (fieldsC[scenario].value * weightListIndicators[4]) 
+				+ (fieldsD[scenario].value * weightListIndicators[5]) 
+				+ (fieldsE1A[scenario].value * weightListIndicators[6]) 
+				+ (fieldsE1B[scenario].value * weightListIndicators[7]) 
+				+ (fieldsE1C[scenario].value * weightListIndicators[8]) 
+				+ (fieldsF[scenario].value * weightListIndicators[9]);
 		}
 		
 	</script>
