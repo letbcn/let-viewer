@@ -264,7 +264,7 @@
 		top: 0; left: 0; bottom: 0; right: 0;
 		margin: auto;
 		width: 820px;
-		height: 450px;
+		height: 500px;
 		z-index: 1 !important;
 		background: #f0f0fd;
 		background: rgba(240,240,253,0.90);
@@ -311,7 +311,7 @@
             float:left;
         }
 
-		.formRange input {
+	.formRange input {
 		width:50%
 	}
 
@@ -327,6 +327,17 @@
 	.formRangeTotal {
 		text-align: center;
 		font-weight: bold;
+	}
+
+	.subtitle_dim {
+		color:#c00000;
+		width: 40%;
+		float:left;
+	}
+
+	.subtitle_range {
+		color:#c00000;
+		width: 50%;
 	}
 	
     </style>
@@ -380,7 +391,7 @@
 		<div id="pane" class="pane">
 			<div style="font-size:20px;font-family: 'Avenir Next W00','Helvetica Neue',Helvetica,Arial,sans-serif;text-align: center;">
 			<b style="color:#c00000">Sistema de Suport a la Planificació (SSP)<hr style=" border-top: 1px solid #c00000"></b></div>
-			<div style="padding-bottom:10px;text-align:center;"><span style="color:#c00000">Anàlisi Multi-criterial</span> <span style="font-size:12px;">(prioritzeu les dimensions per a calcular els escenaris optimitzats)</span> </div>
+			<div style="padding-bottom:10px;"><span class="subtitle_dim">Dimensions de l’Anàlisi Socioecològica Integrada (SIA)</span><span class="subtitle_range">Anàlisi Multi-criterial</span> <span style="font-size:12px;">(prioritzeu les dimensions per a calcular els escenaris optimitzats)</span> </div>
 			<div class="formRange"><div class="label"><label for="ARange">Eficiència energètica</label></div><input type="range" name="A1Range" id="A1Range" min="0" max="100" step="1" onchange="showVal('A1RangeValue', this.value)" oninput="showVal('A1RangeValue', this.value)"><span class="resultRange" id="A1RangeValue"></span></div>
 			<div class="formRange"><div class="label"><label for="ARange">Consum d’aigua</label></div><input type="range" name="A2Range" id="A2Range" min="0" max="100" step="1" onchange="showVal('A2RangeValue', this.value)" oninput="showVal('A2RangeValue', this.value)"><span class="resultRange" id="A2RangeValue"></span></div>
 			<div class="formRange"><div class="label"><label for="ARange">Apropiació de biomassa</label></div><input type="range" name="A3Range" id="A3Range" min="0" max="100" step="1" onchange="showVal('A3RangeValue', this.value)" oninput="showVal('A3RangeValue', this.value)"><span class="resultRange" id="A3RangeValue"></span></div>
