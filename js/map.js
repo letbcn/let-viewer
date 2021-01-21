@@ -757,13 +757,63 @@
         });
 		//capes.push(tempMitjMaxLayer);
 
+		var anompp17Layer = new MapImageLayer({
+			portalItem: { 
+			  id: "fc8676ebbd8d4e84b6b1a7baf38f9a3a" 
+			},
+			id:"", //modificar
+			visible: false,
+			title: lAnomp17,
+			listMode: "hide-children"
+		  });
+		
+		var anompp18Layer = new MapImageLayer({
+			portalItem: { 
+			  id: "fd3b66281d8440939af2f294cea5a991" 
+			},
+			id:"", //modificar
+			visible: false,
+			title: lAnomp18,
+			listMode: "hide-children"
+		  });
+		
 		var anompp19Layer = new MapImageLayer({
 			portalItem: { 
 			  id: "ef969e48f1d9490289df93d7ec012db9" 
 			},
-			id:"c691c9c12070486fa5656ebbfdb3a0a3", //modificar
+			id:"", //modificar
 			visible: false,
 			title: lAnomp19,
+			listMode: "hide-children"
+		  });
+
+		  var anomtmp16Layer = new MapImageLayer({
+			portalItem: { 
+			  id: "ca88fbf252f04c4ebd960565bb08ce37"
+			},
+			id:"", //modificar
+			visible: false,
+			title: lAnomt16,
+			listMode: "hide-children"
+		  });
+		  
+		  var anomtmp17Layer = new MapImageLayer({
+			portalItem: { 
+			  id: "3f9fd56c17b94f29bc615936ab77609c"
+			},
+			id:"", //modificar
+			visible: false,
+			title: lAnomt17,
+			listMode: "hide-children"
+		  });
+
+		  var anomtmp18Layer = new MapImageLayer({
+			portalItem: { 
+			  id: "e2723367c3d64836ab4825f32bb5b3fd"
+			},
+			id:"34b0da19e3e74aa88fc1f26f1bf763f3", 
+			visible: false,
+			title: lAnomt18,
 			listMode: "hide-children"
 		  });
 
@@ -771,7 +821,7 @@
 			portalItem: { 
 			  id: "02f5aebf03b843d2a1f4e68bab29c3bb"
 			},
-			id:"c691c9c12070486fa5656ebbfdb3a0a3",
+			id:"78cca7bd8cb84eb887d20ed9ed3f3092",
 			visible: false,
 			title: lAnomt19,
 			listMode: "hide-children"
@@ -781,7 +831,7 @@
 			title: gAnom,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [anomtmp19Layer, anompp19Layer],
+			layers: [anomtmp19Layer, anomtmp18Layer, anomtmp17Layer, anomtmp16Layer, anompp19Layer, anompp18Layer, anompp17Layer],
 			opacity: 1
 		  });
 
@@ -1211,20 +1261,12 @@
 			//**********Riscos territorials ***********//
 		//capes
 		
-		/*var riscogeologicsLayer = new WMSLayer({
-		  portalItem: {  
-			id: "7fd5d3502bad46aeabc689d2994e240c"
-		  },
-		  visible: false,
-		  title: lriscgeo,
-		  listMode: "hide-children"
-		});*/
 		
 		var vulnincendisLayer = new MapImageLayer({
 			portalItem: {  
-			  id: "11f8001bfb09460ebce1655b6cd74732"
+			  id: "26ed8bfd4ba34567bd21d0319b143487"
 			},
-			id:"29baedf71bff4b35ad49e3076d1d9ccf", //modificar
+			id:"45f54873e3a3451c9f282667d3630ca7f", 
 			visible: false,
 			title: lvincend,
 			listMode: "hide-children"
@@ -1241,6 +1283,28 @@
 			listMode: "hide-children"
 		  });
 		  capes.push(perillincendisLayer);
+
+		  var inflamabilitatLayer = new MapImageLayer({
+			portalItem: {  
+			  id: "e1e8330db6bc4b81a9c1655e0a2ab6f9"
+			},
+			id:"939df2b8d76b4dbfac86a22e81a9c750", 
+			visible: false,
+			title: linfla,
+			listMode: "hide-children"
+		  });
+		  capes.push(inflamabilitatLayer);
+
+		  var perimetresLayer = new MapImageLayer({
+			portalItem: {  
+			  id: "0f08c9232808457fa2bc3e0c385fd9b6"
+			},
+			id:"", 
+			visible: false,
+			title: lperim,
+			listMode: "hide-children"
+		  });
+		  capes.push(perimetresLayer);
 
 		var inundable10Layer = new MapImageLayer({
 		  portalItem: {  
@@ -1281,7 +1345,7 @@
 			title: gIncendis,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [perillincendisLayer ,vulnincendisLayer],
+			layers: [inflamabilitatLayer,perillincendisLayer ,vulnincendisLayer, perimetresLayer],
 			opacity: 1
 		  });
 
