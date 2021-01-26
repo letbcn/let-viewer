@@ -793,7 +793,7 @@
 			},
 			id:"", //modificar
 			visible: false,
-			title: lAnomt16,
+			title: 'Anomalies de temperatura 2016', //lAnomt16,
 			listMode: "hide-children"
 		  });
 		  
