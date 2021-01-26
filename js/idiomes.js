@@ -78,7 +78,11 @@ var lTempmin;
 var lTempmit;
 var lTempmax;
 var gAnom;
+var lAnomp17;
+var lAnomp18;
 var lAnomp19;
+var lAnomt17;
+var lAnomt18;
 var lAnomt19;
 //Cobertes del sòl
 var gCobertesSol;
@@ -125,8 +129,10 @@ var lEssubt;
 var lEshumides;
 //Riscos territorials
 var gRiscos;
+var lperim;
 var lvincend;
 var lpincend;
+var linfla;
 var gInundabilitat;
 var lretorn10;
 var lretorn100;
@@ -233,7 +239,11 @@ var laccesh;
 	lTempmit="Temperatura mitjana";
 	lTempmax="Temperatures màximes";
 	gAnom= "Anomalies climàtiques";
+	lAnomp17= "Anomalia precipitació 2017";
+	lAnomp18= "Anomalia precipitació 2018";
 	lAnomp19= "Anomalia precipitació 2019";
+	lAnomt17= "Anomalia temperatura 2017";
+	lAnomt18= "Anomalia temperatura 2018";
 	lAnomt19= "Anomalia temperatura 2019";
 	//Cobertes del sol
 	gCobertesSol="Cobertes del sòl";
@@ -280,9 +290,11 @@ var laccesh;
 	//Riscos territorials
 	gRiscos= "Riscos territorials";	
 	lriscgeo="Mapa per a la Prevenció de Riscos Geològics 1:25.000";
+	lperim= "Incendis forestals 1986-2019"
 	gIncendis="Risc d'incendis forestals"
 	lvincend= "Vulnerabilitat incendis";
-	lpincend= "Perill incendis"
+	lpincend= "Perill bàsic d'incendi"
+	linfla= "Model d'inflamabilitat";
 	gInundabilitat="Inundabilitat";
 	lretorn10="Zona inundable amb retorn 10 anys";
 	lretorn100="Zona inundable amb retorn 100 anys";
@@ -385,7 +397,11 @@ var laccesh;
 	lTempmit="Temperatura media (RMB)";
 	lTempmax="Temperatura media máximas (RMB)";
 	gAnom= "Anomalias climáticas";
+	lAnomp17= "Anomalía precipitación 2017";
+	lAnomp18= "Anomalía precipitación 2018";
 	lAnomp19= "Anomalía precipitación 2019";
+	lAnomt17= "Anomalía temperatura 2017";
+	lAnomt18= "Anomalía temperatura 2018";
 	lAnomt19= "Anomalía temperatura 2019";
 	//Cobertes del sol
 	gCobertesSol="Cubiertas del suelo";
@@ -435,7 +451,9 @@ var laccesh;
 	//Riscos territorials
 	gRiscos= "Riesgos territoriales";
 	lriscgeo="Mapa para la Prevención de Riesgos Geológicos 1: 25.000 (RMB)";
+	lperim= "Incendios forestales 1986-2019";
 	lincend= "Vulnerabilidad a incendios";
+	linfla= "Modelo de inflamabilidad";
 	gInundabilitat="Inundabilidad";
 	lretorn10="Zona inundable periodo de retorno 10 años (RMB)(RMB)";
 	lretorn100="Zona inundable periodo de retorno 100 años(RMB)";
@@ -538,7 +556,11 @@ var laccesh;
 	lTempmit="Average temperature";
 	lTempmax="Maximum average temperature";
 	gAnom= "Climate anomaly";
+	lAnomp17= "Rain anomaly 2017";
+	lAnomp18= "Rain anomaly 2018";
 	lAnomp19= "Rain anomaly 2019";
+	lAnomt17= "Temperature anomaly 2017";
+	lAnomt18= "Temperature anomaly 2018";
 	lAnomt19= "Temperature anomaly 2019";
 	//Cobertes del sol
 	gCobertesSol="Land cover";
@@ -586,7 +608,9 @@ var laccesh;
 	//Riscos territorials
 	gRiscos= "Territorial hazards";
 	lriscgeo="Map for the Prevention of Geological Hazards 1: 25,000 (RMB)";
+	lperim="Forest Fires 1986-2019"
 	lincend= "Fire vulnerability";
+	linfla= "Flammability model";
 	gInundabilitat="Flooding";
 	lretorn10="Flood zone return period 10 years (RMB)";
 	lretorn100="Flood zone return period 100 years(RMB)";
