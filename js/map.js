@@ -22,12 +22,13 @@
 	  "esri/tasks/IdentifyTask",
        "esri/tasks/support/IdentifyParameters",
 	   "dojo/_base/array",
+	   "dojo/dom-construct",
       "dojo/on",
       "dojo/dom",
       "dojo/promise/all",
       "dojo/domReady!"
       ], function(Map, MapView, SceneView, GroupLayer, MapImageLayer, FeatureLayer, WMSLayer, LayerList, Measurement, Legend, esriConfig, 
-	  Expand, Search,Home,BasemapGallery,GeometryService,ProjectParameters,Bookmarks, Portal,PortalBasemapsSource,IdentifyTask,IdentifyParameters, arrayUtils, on, dom, all) {
+	  Expand, Search,Home,BasemapGallery,GeometryService,ProjectParameters,Bookmarks, Portal,PortalBasemapsSource,IdentifyTask,IdentifyParameters, arrayUtils, domConstruct,on, dom, all) {
         
 		
 		
@@ -1721,29 +1722,27 @@
 		  ]
 		});
 		
+		// Home button
+        // Add the expand instance to the ui//Botó home
+		var homeBtn = new Home({
+          view: view
+        });
+        view.ui.add(homeBtn, "top-left");
+   
+   		
+		//cerca
 		var searchExpand = new Expand({
           view: view,
           content: searchWidget,
 		  expandTooltip: fCerca,
 		  collapseTooltip:fTanca
         });
-
-
-        // Add the expand instance to the ui//Botó home
-		var homeBtn = new Home({
-          view: view
-        });
-
-        // Add the home button to the top left corner of the view
-        view.ui.add(homeBtn, "top-left");
-   
-
         view.ui.add(searchExpand, "top-left");
-		 // Add the search widget to the top left corner of the view
-        //view.ui.add(searchWidget, {
-        //  position: "top-left"
-       // });
-	   
+		
+
+		
+   		
+   		
 	   let portalEsri = new Portal({
 		  url: "https://www.arcgis.com" // First instance
 		});
@@ -1784,6 +1783,33 @@
 
 		view.ui.add(bgExpand, "top-left");
 		
+	
+	//Mesures
+
+        var node = domConstruct.create("div", {
+     		 innerHTML:  "<div id='toolbarDiv' class='esri-component esri-widget'>"+
+	      				"<button  id='distanceButton' class='esri-widget--button esri-interactive esri-icon-measure-line'" +
+	       				" title='Distance Measurement Tool' onclick='distanceMeasurement()'></button>" +
+	       				"<button id='areaButton' class='esri-widget--button esri-interactive esri-icon-measure-area'"+
+					    "    title='Area Measurement Tool' onclick='areaMeasurement()'></button>"+
+					    "<button id='clearButton' class='esri-widget--button esri-interactive esri-icon-trash'" +
+					     "   title='Clear Measurements' onclick='clearMeasurements()'></button>"
+		});
+   		
+		const measureExpand = new Expand({
+          view: view,
+          expandIconClass: "esri-icon-measure-line",
+          expanded: false,
+          expandTooltip: "Mesures",
+          content: node
+         });
+        
+        view.ui.add(measureExpand, "top-left");
+	    measurement = new Measurement();
+        
+        measurement.view = view;
+
+   		view.ui.add(measurement, "bottom-right");
 	
 
 		//ZOOM A ÀREES PREDEFINIDES
@@ -2105,3 +2131,26 @@
 		
         });
       });
+
+      
+      function distanceMeasurement() {
+          const type = view.type;
+          measurement.activeTool =
+            type.toUpperCase() === "2D" ? "distance" : "direct-line";
+          distanceButton.classList.add("active");
+          areaButton.classList.remove("active");
+        }
+
+        // Call the appropriate AreaMeasurement2D or AreaMeasurement3D
+        function areaMeasurement() {
+          measurement.activeTool = "area";
+          distanceButton.classList.remove("active");
+          areaButton.classList.add("active");
+        }
+
+        // Clears all measurements
+        function clearMeasurements() {
+          distanceButton.classList.remove("active");
+          areaButton.classList.remove("active");
+          measurement.clear();
+   		}
