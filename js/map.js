@@ -12,6 +12,7 @@
 		"esri/config",
 		"esri/widgets/Expand",
 		"esri/widgets/Search",
+		"esri/widgets/Home",
 		 "esri/widgets/BasemapGallery",
 		 "esri/tasks/GeometryService",
       "esri/tasks/support/ProjectParameters",
@@ -26,7 +27,7 @@
       "dojo/promise/all",
       "dojo/domReady!"
       ], function(Map, MapView, SceneView, GroupLayer, MapImageLayer, FeatureLayer, WMSLayer, LayerList, Measurement, Legend, esriConfig, 
-	  Expand, Search,BasemapGallery,GeometryService,ProjectParameters,Bookmarks, Portal,PortalBasemapsSource,IdentifyTask,IdentifyParameters, arrayUtils, on, dom, all) {
+	  Expand, Search,Home,BasemapGallery,GeometryService,ProjectParameters,Bookmarks, Portal,PortalBasemapsSource,IdentifyTask,IdentifyParameters, arrayUtils, on, dom, all) {
         
 		
 		
@@ -1493,7 +1494,8 @@
           container: "viewDiv",
           map: map
         });
-		
+        
+        
 		//view.popup.defaultPopupTemplateEnabled = true;
 
 		
@@ -1727,7 +1729,14 @@
         });
 
 
-        // Add the expand instance to the ui
+        // Add the expand instance to the ui//Botó home
+		var homeBtn = new Home({
+          view: view
+        });
+
+        // Add the home button to the top left corner of the view
+        view.ui.add(homeBtn, "top-left");
+   
 
         view.ui.add(searchExpand, "top-left");
 		 // Add the search widget to the top left corner of the view
