@@ -172,6 +172,7 @@ var laccesh;
 	fObregaleria="Galeria de mapes base";
 	fTanca="Tanca";
 	fObrebookmarks="Obre selector d'Ambits";
+	fMesures="Mesures";
 	//CAPES
 	capes= "Capes";
 	gAmbits="Àmbits";
@@ -329,6 +330,7 @@ var laccesh;
 	fObregaleria="Galería de mapas base";
 	fTanca="Cierra";
 	fObrebookmarks="Selector de Ámbitos";
+	fMesures="Mediciones";
 	//CAPES
 	capes= "Capas";
 	gAmbits="Ámbitos";
@@ -452,6 +454,7 @@ var laccesh;
 	gRiscos= "Riesgos territoriales";
 	lriscgeo="Mapa para la Prevención de Riesgos Geológicos 1: 25.000 (RMB)";
 	lperim= "Incendios forestales 1986-2019";
+	gIncendis="Risc d'incendis forestals"
 	lincend= "Vulnerabilidad a incendios";
 	linfla= "Modelo de inflamabilidad";
 	gInundabilitat="Inundabilidad";
@@ -489,6 +492,7 @@ var laccesh;
 	fObregaleria="Basemap Gallery";
 	fTanca="Close";
 	fObrebookmarks="Bookmark selector";
+	fMesures="Measure";
 	//CAPES
 	capes= "Capas";
 	gAmbits="Ámbitos";
@@ -609,6 +613,7 @@ var laccesh;
 	gRiscos= "Territorial hazards";
 	lriscgeo="Map for the Prevention of Geological Hazards 1: 25,000 (RMB)";
 	lperim="Forest Fires 1986-2019"
+	gIncendis="Forest fire risk"
 	lincend= "Fire vulnerability";
 	linfla= "Flammability model";
 	gInundabilitat="Flooding";
