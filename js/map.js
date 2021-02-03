@@ -1725,7 +1725,8 @@
 		// Home button
         // Add the expand instance to the ui//Botó home
 		var homeBtn = new Home({
-          view: view
+          view: view,
+          tooltip: fMesures
         });
         view.ui.add(homeBtn, "top-left");
    
@@ -1800,7 +1801,7 @@
           view: view,
           expandIconClass: "esri-icon-measure-line",
           expanded: false,
-          expandTooltip: "Mesures",
+          expandTooltip: fMesures,
           content: node
          });
         
