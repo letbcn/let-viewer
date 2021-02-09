@@ -236,6 +236,7 @@
 		color:black;
 		font-family: "Avenir Next W00","Helvetica Neue",Helvetica,Arial,sans-serif;
       }
+
 	  #infoDiv,#escenariDiv,#escenariDif{
         padding: 8px;
       }
@@ -244,7 +245,24 @@
 		font-size: 12px;
 		color: #323232;
 	  }
-	  #divActual,#divTendencial, #divDiferencia,#divgrafics {
+	  #divActual {
+		padding: 0;
+        margin: 0;
+        height: 60%;
+        width: 75%;
+		float:left;
+		border-color: coral;
+	  }
+	  #control-panel {
+		padding: 0;
+        margin: 0;
+        height: 60%;
+        width: 25%;
+		float:left;
+		border-color: coral;
+		flex-direction: column;
+	  }
+	  #divTendencial, #divDiferencia, .divgrafics {
         padding: 0;
         margin: 0;
         height: 41%;
@@ -312,7 +330,7 @@
         }
 
 	.formRange input {
-		width:50%
+		width:50%;
 	}
 
 	.resultRange {
@@ -322,6 +340,7 @@
 
 	.formRange {
 		padding:5px;
+		display:flex;
 	}
 
 	.formRangeTotal {
@@ -347,37 +366,53 @@
 
   </head>
 
-  <body style="font-family: 'Avenir Next W00','Helvetica Neue',Helvetica,Arial,sans-serif;">
-
-   <div id="divTop" style="text-align: center;">
-	<button class="button" style="width:auto;" onclick="document.getElementById('pane').style.visibility='visible'">Canvi de criteris</button>
-   </div>
-  <div id="divActual">
-    <div id="viewDiv"></div>
-	 	<div id="infoDiv" class="esri-widget">
-      	Escenari <select class="esri-widget" id="escenari_id" onchange="canvi(valuesRanges())" > 
-			<option value="0" selected >Actual</option>
-			<option value="1" >Tendencial</option>
-		</select>
-	  </div>
+  <body style="font-family: 'Avenir Next W00','Helvetica Neue',Helvetica,Arial,sans-serif;" onload="canvi(valuesRanges());">
+   	<div id="divActual">
+    	<div id="viewDiv"></div>
+	</div>
+	<div id="control-panel">
+		<h3>Configuració</h3>
+		<div>
+			Escenari 
+			<select class="esri-widget" id="escenari_id" onchange="canvi(valuesRanges())" > 
+				<option value="0" selected >Actual</option>
+				<option value="1" >Tendencial</option>
+			</select>
+		</div>
+		<div>
+			<div class="formRange"><div class="label"><label for="ARange">Eficiència energètica</label></div><input type="range" name="A1Range" id="A1Range" min="0" max="100" step="1" onchange="showVal('A1RangeValue', this.value)" oninput="showVal('A1RangeValue', this.value)"><span class="resultRange" id="A1RangeValue"></span></div>
+			<div class="formRange"><div class="label"><label for="ARange">Consum d’aigua</label></div><input type="range" name="A2Range" id="A2Range" min="0" max="100" step="1" onchange="showVal('A2RangeValue', this.value)" oninput="showVal('A2RangeValue', this.value)"><span class="resultRange" id="A2RangeValue"></span></div>
+			<div class="formRange"><div class="label"><label for="ARange">Apropiació de biomassa</label></div><input type="range" name="A3Range" id="A3Range" min="0" max="100" step="1" onchange="showVal('A3RangeValue', this.value)" oninput="showVal('A3RangeValue', this.value)"><span class="resultRange" id="A3RangeValue"></span></div>
+			<div class="formRange"><div class="label"><label for="BRange">Conservació de la biodiversitat</label></div><input type="range" name="BRange" id="BRange" min="0" max="100" step="1" onchange="showVal('BRangeValue', this.value)" oninput="showVal('BRangeValue',this.value)"><span class="resultRange" id="BRangeValue"></span></div>
+			<div class="formRange"><div class="label"><label for="CRange">Funcionament del paisatge</label></div><input type="range" name="CRange" id="CRange" min="0" max="100" step="1" onchange="showVal('CRangeValue', this.value)" oninput="showVal('CRangeValue', this.value)"><span class="resultRange" id="CRangeValue"></span></div>
+			<div class="formRange"><div class="label"><label for="DRange">Canvi climàtic</label></div><input type="range" name="DRange" id="DRange" min="0" max="100" step="1" onchange="showVal('DRangeValue', this.value)" oninput="showVal('DRangeValue', this.value)"><span class="resultRange" id="DRangeValue"></span></div>
+			<div class="formRange"><div class="label"><label for="E1ARange">Recirculació de nutrients</label></div><input type="range" name="E1ARange" id="E1ARange" min="0" max="100" step="1" onchange="showVal('E1ARangeValue', this.value)" oninput="showVal('E1ARangeValue', this.value)"><span class="resultRange" id="E1ARangeValue"></span></div>
+			<div class="formRange"><div class="label"><label for="E1BRange">Estoc de carboni</label></div><input type="range" name="E1BRange" id="E1BRange" min="0" max="100" step="1" onchange="showVal('E1BRangeValue', this.value)" oninput="showVal('E1BRangeValue', this.value)"><span class="resultRange" id="E1BRangeValue"></span></div>
+			<div class="formRange"><div class="label"><label for="E1CRange">Producció agrícola</label></div><input type="range" name="E1CRange" id="E1CRange" min="0" max="100" step="1" onchange="showVal('E1CRangeValue', this.value)" oninput="showVal('E1CRangeValue', this.value)"><span class="resultRange" id="E1CRangeValue"></span></div>
+			<div class="formRange"><div class="label"><label for="FRange">Llocs de treball</label></div><input type="range" name="FRange" id="FRange" min="0" max="100" step="1" onchange="showVal('FRangeValue', this.value)" oninput="showVal('FRangeValue', this.value)"><span class="resultRange" id="FRangeValue"></span></div>
+			<div class="formRange formRangeTotal">Total: <span id="TotalRanges"></span> / 100 </div>  
+			<button class="button" id="buttonAplicar" style="float: right;width:15%;" onclick="if(checkRanges()) { canvi(valuesRanges())} else { alert('La suma dels pesos ha de ser exactament 100'); }">Aplicar</button>
+		</div>
+		<div>
+			<div id="escenariDiv" class="esri-widget">
+				Escenari Optimitzat<br>
+				<select id="field-select-ind" class="esri-widget" onchange="canvi(valuesRanges())">
+					<option value="A1" selected>Eficiència energètica</option>
+					<option value="A2">Consum d’aigua</option>
+					<option value="A3">Apropiació de biomassa</option>
+					<option value="B">Conservació de la biodiversitat</option>
+					<option value="C">Funcionament del paisatge</option>
+					<option value="D">Canvi climàtic</option>
+					<option value="E1A">Recirculació de nutrients</option>
+					<option value="E1B">Estoc de carboni</option>
+					<option value="E1C">Producció agrícola</option>
+					<option value="F">Llocs de treball</option>
+				</select>
+			</div>
+		</div>
 	</div>
 	<div id="divTendencial">
 		<div id="viewDivtend"></div>
-		<div id="escenariDiv" class="esri-widget">
-			Escenari Optimitzat<br>
-			  <select id="field-select-ind" class="esri-widget" onchange="canvi(valuesRanges())">
-				<option value="A1" selected>Eficiència energètica</option>
-				<option value="A2">Consum d’aigua</option>
-				<option value="A3">Apropiació de biomassa</option>
-				<option value="B">Conservació de la biodiversitat</option>
-				<option value="C">Funcionament del paisatge</option>
-				<option value="D">Canvi climàtic</option>
-				<option value="E1A">Recirculació de nutrients</option>
-				<option value="E1B">Estoc de carboni</option>
-				<option value="E1C">Producció agrícola</option>
-				<option value="F">Llocs de treball</option>
-			  </select>
-		</div>
 	</div>
 	<div id="divDiferencia">
 		<div id="viewDivdif"></div>
@@ -385,28 +420,12 @@
 			Diferència
 		</div>
 	</div>
-	<div id="divgrafics">
+	<div class="divgrafics" id="divgrafics">
 		<div id="marksChart"></div>
-	<div>
-		<div id="pane" class="pane">
-			<div style="font-size:20px;font-family: 'Avenir Next W00','Helvetica Neue',Helvetica,Arial,sans-serif;text-align: center;">
-			<b style="color:#c00000">Sistema de Suport a la Planificació (SSP)<hr style=" border-top: 1px solid #c00000"></b></div>
-			<div style="padding-bottom:10px;"><span class="subtitle_dim">Dimensions de l’Anàlisi Socioecològica Integrada (SIA)</span><span class="subtitle_range">Anàlisi Multi-criterial</span> <span style="font-size:12px;">(prioritzeu les dimensions per a calcular els escenaris optimitzats)</span> </div>
-			<div class="formRange"><div class="label"><label for="ARange">Eficiència energètica</label></div><input type="range" name="A1Range" id="A1Range" min="0" max="100" step="1" onchange="showVal('A1RangeValue', this.value)" oninput="showVal('A1RangeValue', this.value)"><span class="resultRange" id="A1RangeValue"></span></div>
-			<div class="formRange"><div class="label"><label for="ARange">Consum d’aigua</label></div><input type="range" name="A2Range" id="A2Range" min="0" max="100" step="1" onchange="showVal('A2RangeValue', this.value)" oninput="showVal('A2RangeValue', this.value)"><span class="resultRange" id="A2RangeValue"></span></div>
-			<div class="formRange"><div class="label"><label for="ARange">Apropiació de biomassa</label></div><input type="range" name="A3Range" id="A3Range" min="0" max="100" step="1" onchange="showVal('A3RangeValue', this.value)" oninput="showVal('A3RangeValue', this.value)"><span class="resultRange" id="A3RangeValue"></span></div>
-        	<div class="formRange"><div class="label"><label for="BRange">Conservació de la biodiversitat</label></div><input type="range" name="BRange" id="BRange" min="0" max="100" step="1" onchange="showVal('BRangeValue', this.value)" oninput="showVal('BRangeValue',this.value)"><span class="resultRange" id="BRangeValue"></span></div>
-        	<div class="formRange"><div class="label"><label for="CRange">Funcionament del paisatge</label></div><input type="range" name="CRange" id="CRange" min="0" max="100" step="1" onchange="showVal('CRangeValue', this.value)" oninput="showVal('CRangeValue', this.value)"><span class="resultRange" id="CRangeValue"></span></div>
-        	<div class="formRange"><div class="label"><label for="DRange">Canvi climàtic</label></div><input type="range" name="DRange" id="DRange" min="0" max="100" step="1" onchange="showVal('DRangeValue', this.value)" oninput="showVal('DRangeValue', this.value)"><span class="resultRange" id="DRangeValue"></span></div>
-        	<div class="formRange"><div class="label"><label for="E1ARange">Recirculació de nutrients</label></div><input type="range" name="E1ARange" id="E1ARange" min="0" max="100" step="1" onchange="showVal('E1ARangeValue', this.value)" oninput="showVal('E1ARangeValue', this.value)"><span class="resultRange" id="E1ARangeValue"></span></div>
-        	<div class="formRange"><div class="label"><label for="E1BRange">Estoc de carboni</label></div><input type="range" name="E1BRange" id="E1BRange" min="0" max="100" step="1" onchange="showVal('E1BRangeValue', this.value)" oninput="showVal('E1BRangeValue', this.value)"><span class="resultRange" id="E1BRangeValue"></span></div>
-        	<div class="formRange"><div class="label"><label for="E1CRange">Producció agrícola</label></div><input type="range" name="E1CRange" id="E1CRange" min="0" max="100" step="1" onchange="showVal('E1CRangeValue', this.value)" oninput="showVal('E1CRangeValue', this.value)"><span class="resultRange" id="E1CRangeValue"></span></div>
-        	<div class="formRange"><div class="label"><label for="FRange">Llocs de treball</label></div><input type="range" name="FRange" id="FRange" min="0" max="100" step="1" onchange="showVal('FRangeValue', this.value)" oninput="showVal('FRangeValue', this.value)"><span class="resultRange" id="FRangeValue"></span></div>
-			<div class="formRange formRangeTotal">Total: <span id="TotalRanges"></span> / 100 </div>  
-			<text style="font-size:12px;color:#c00000">versió Beta</text>
-		  	<button class="button" id="buttonAplicar" style="float: right;width:15%;" onclick="if(checkRanges()) { document.getElementById('pane').style.visibility='hidden'; canvi(valuesRanges())} else { alert('La suma dels pesos ha de ser exactament 100'); }">Aplicar</button>
-		</div>
-	
+	</div>	
+	<div class="divgrafics" id="histogramGrafic">
+		<canvas class="divgrafics" id="histoChart"></canvas>
+	</div>
   </body>
   <script>
 	function showVal(tag, newVal)

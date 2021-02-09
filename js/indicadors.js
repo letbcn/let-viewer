@@ -1998,6 +1998,7 @@
 				arrMin = arr => Math.min(...arr);
 				arrSum = arr => arr.reduce((a,b) => a + b, 0);
 				arrAvg = arr => arr.reduce((a,b) => a + b, 0) / arr.length;
+
 				
 				// Escenari optimitzat
 				indicador_A1_max = ((arrSum(valorsOptA1)  / arrSum(valorsOptA1_2))) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
@@ -2025,6 +2026,7 @@
 					indicador_F = arrSum(valorsF_actual) / arrSum(valorsMaxF1);
 					
 					aranya2(indicador_A1 , indicador_A2, indicador_A3,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,"rgba(200,0,0,0.6)","Escenari actual");
+					
 				} else {
 					// Escenari tendencial
 					indicador_A1 = (arrSum(valorsA1_tend) / arrSum(valorsA1_2_tend)) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
@@ -2039,7 +2041,11 @@
 					indicador_F = arrSum(valorsF_tend) / arrSum(valorsMaxF1);
 					
 					aranya2(indicador_A1,indicador_A2,indicador_A3,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,"rgba(200,0,0,0.6)","Escenari tendencial");
+					histogramChart(categories);
 				}
+				var categories = ["Eficiència energètica (A1A)", "Consum d’aigua (A1B)","Apropiació de biomassa (A1C)","Conservació de la biodiversitat (B1)", "Funcionament del paisatge (C1)", "Canvi climàtic (D1)", "Recirculació de nutrients (E1A)", "Estoc de carboni (E1B)","Producció agrícola (E1C)","Llocs de treball (F1)"];
+				var data = [arrSum(valorsA1_actual), arrSum(valorsMinA2)/ 1000000, arrSum(valorsMinA3), arrAvg(valorsB_actual), arrAvg(valorsC_actual), arrSum(valorsMinD1) / Math.pow(10,6), arrSum(valorsE1A1_actual), arrSum(valorsE1B_actual)/ 1000, arrSum(valorsE1C_actual) / 1000, arrSum(valorsF_actual)];
+				histogramChart(categories, data);
 			});
 		}
 		
@@ -2151,13 +2157,44 @@
 					}
 				}
 			}
-		document.getElementById("marksChart").innerHTML = "<div id='marksChart'></div>";
-        chart = new ApexCharts(
-            document.querySelector("#marksChart"),
-            options
-        );
+			document.getElementById("marksChart").innerHTML = "<div id='marksChart'></div>";
+			chart = new ApexCharts(
+				document.querySelector("#marksChart"),
+				options
+			);
 
-        chart.render();
+			chart.render();
+		}
+
+		function histogramChart(categories, data) {
+			var ctx = document.getElementById("histoChart");
+			var chart = new Chart(ctx, {
+				type: 'bar',
+				data: {
+					labels: categories,
+					datasets: [{
+						data: data,
+						backgroundColor: [
+							'rgba(255, 99, 132, 0.2)',
+							'rgba(54, 162, 235, 0.2)',
+							'rgba(255, 206, 86, 0.2)',
+							'rgba(75, 192, 192, 0.2)',
+							'rgba(153, 102	, 255, 0.2)',
+							'rgba(255, 159, 64, 0.2)'
+						],
+						borderColor: [
+							'rgba(255, 99, 132, 1)',
+							'rgba(54, 162, 235, 1)',
+							'rgba(255, 206, 86, 1)',
+							'rgba(75, 192, 192, 1)',
+							'rgba(153, 102, 255, 1)',
+							'rgba(255, 159, 64, 1)'
+						],
+						borderWidth: 1
+					}]
+				}
+			});
+			chart.update();
 		}
 
 			

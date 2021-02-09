@@ -169,8 +169,8 @@
 	  view1.ui.add(bgExpand1, "bottom-right");
 	  view2.ui.add(bgExpand2, "bottom-right");
 	  viewDif.ui.add(bgExpandDif, "bottom-right");
-	  view1.ui.add("infoDiv", "top-right");
-	  view2.ui.add("escenariDiv", "top-right");
+	  //view1.ui.add("infoDiv", "top-right");
+	  //view2.ui.add("escenariDiv", "top-right");
 	  viewDif.ui.add("escenariDif","top-right");
 	  view1.ui._removeComponents(["attribution"]);
 	  view2.ui._removeComponents(["attribution"]);
