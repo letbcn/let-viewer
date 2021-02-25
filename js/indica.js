@@ -1,3 +1,4 @@
+      
       require([
         "esri/Map",
         "esri/views/MapView",
@@ -73,43 +74,101 @@
 					  }
 					 }
         });
-		
-		
-		// indicador_principal = "fields" + document.getElementById("field-select").value;
-		
 
-        map = new Map({
-          basemap: "gray",
-          layers: [layerEscenari]
+
+      layerEscenariTendencial = new FeatureLayer({
+          url: "https://openlab.uab.cat:6443/arcgis/rest/services/models/malla_model_15_12/FeatureServer/0",
+          renderer: {
+                type: "class-breaks", // autocasts as new ClassBreaksRenderer()
+                field: "a1a_c_1",
+                legendOptions: {
+                title: "Eficiència energètica (EFEROI)"
+                },
+                defaultSymbol: {
+                type: "simple-fill", 
+                style: "none",
+                outline: {
+                  width: 0
+                }
+                }
+              }
+        });
+
+        layerDiferenciaEscenariTendencial = new FeatureLayer({
+          url:"https://openlab.uab.cat:6443/arcgis/rest/services/models/malla_model_15_12/FeatureServer/0",
+          renderer: {
+					  type: "class-breaks", // autocasts as new ClassBreaksRenderer()
+					  field: "a1a_c_0",
+					  legendOptions: {
+						title: "Eficiència energètica (EFEROI)"
+					  },
+					  defaultSymbol: {
+						type: "simple-fill", 
+						style: "none",
+						outline: {
+						  width: 0
+						}
+					  }
+					 }
         });
 		
-        view1 = new MapView({
-          container: "viewDiv",
-          map: map,
-          center: [2.13, 41.40],
-          zoom: 10
-        });
-		
-		const map2 = new Map({
+		const mapOptimitzation = new Map({
           basemap: "gray",
           layers: [layer3]
         });
 		
-		mapDif = new Map({
+    const viewOptimitzation = new MapView({
+          container: "viewDiv",
+          map: mapOptimitzation,
+          center: [2.13, 41.40],
+          zoom: 10
+        });
+		
+		const mapActual = new Map({
+          basemap: "gray",
+          layers: [layerEscenari]
+        });
+		
+		const mapDifActual = new Map({
           basemap: "gray",
           layers: [layer4]
         });
 		
-        view2 = new MapView({
-          container: "viewDivtend",
-          map: map2,
+    const viewActual = new MapView({
+          container: "viewDivActual",
+          map: mapActual,
           center: [2.13, 41.40],
           zoom: 10
         });
 
-		const viewDif = new MapView({
-          container: "viewDivdif",
-          map: mapDif,
+		const viewDifActual = new MapView({
+          container: "viewDivDifActual",
+          map: mapDifActual,
+          center: [2.13, 41.40],
+          zoom: 10
+        });
+
+
+    const mapTendencial = new Map({
+          basemap: "gray",
+          layers: [layerEscenariTendencial]
+        });
+		
+		const mapDifTendencial = new Map({
+          basemap: "gray",
+          layers: [layerDiferenciaEscenariTendencial]
+        });
+		
+    const viewTendencial = new MapView({
+          container: "viewDivTendencial",
+          map: mapTendencial,
+          center: [2.13, 41.40],
+          zoom: 10
+        });
+
+		const viewDifTendencial = new MapView({
+          container: "viewDivDifTendencial",
+          map: mapDifTendencial,
           center: [2.13, 41.40],
           zoom: 10
         });
@@ -121,7 +180,7 @@
          ******************************************************************/
 
         legend1 = new Legend({
-          view: view1,
+          view: viewOptimitzation,
 		  layerInfos: [{
 			layer: layerEscenari,
 			title: ""
@@ -129,52 +188,80 @@
 		  style: "classic"
         });
 		legend2 = new Legend({
-          view: view2,
+          view: viewActual,
 		  layerInfos: [{
 			layer: layer3,
 			title: ""
 		  }],
 		  style: "classic"
         });
+    legend2Tendencial = new Legend({
+          view: viewTendencial,
+		  layerInfos: [{
+			layer: layerEscenariTendencial,
+			title: ""
+		  }],
+		  style: "classic"
+        });
 		legendDif = new Legend({
-          view: viewDif,
+          view: viewDifActual,
 		  layerInfos: [{
 			layer: layer4,
 			title: ""
 		  }],
 		  style: "classic"
         });
+    legendDifTendencial = new Legend({
+          view: viewDifTendencial,
+		  layerInfos: [{
+			layer: layerDiferenciaEscenariTendencial,
+			title: ""
+		  }],
+		  style: "classic"
+        });
 		var bgExpand1 = new Expand({
-          view: view1,
+          view: viewOptimitzation,
           content: legend1,
 		  expanded:false
         });
 		var bgExpand2 = new Expand({
-          view: view2,
+          view: viewActual,
           content: legend2,
 		  expanded:false
         });
+    var bgExpand2Tendencial = new Expand({
+          view: viewActual,
+          content: legend2Tendencial,
+		  expanded:false
+        });
 		var bgExpandDif = new Expand({
-          view: viewDif,
+          view: viewDifActual,
           content: legendDif,
+		  expanded:false
+        });
+    var bgExpandDifTendencial = new Expand({
+          view: viewDifTendencial,
+          content: legendDifTendencial,
 		  expanded:false
         });
 		
 		 var homeBtn = new Home({
-          view: view1
+          view: viewOptimitzation
         });
 
-	 // view.ui.add(legend, "bottom-right");
-	   view1.ui.add(homeBtn, "top-left");
-	  view1.ui.add(bgExpand1, "bottom-right");
-	  view2.ui.add(bgExpand2, "bottom-right");
-	  viewDif.ui.add(bgExpandDif, "bottom-right");
-	  //view1.ui.add("infoDiv", "top-right");
-	  //view2.ui.add("escenariDiv", "top-right");
-	  viewDif.ui.add("escenariDif","top-right");
-	  view1.ui._removeComponents(["attribution"]);
-	  view2.ui._removeComponents(["attribution"]);
-	  viewDif.ui._removeComponents(["attribution"]);
+	  viewOptimitzation.ui.add(homeBtn, "top-left");
+	  viewOptimitzation.ui.add(bgExpand1, "bottom-right");
+	  viewActual.ui.add(bgExpand2, "bottom-right");
+    viewTendencial.ui.add(bgExpand2Tendencial, "bottom-right");
+	  viewDifActual.ui.add(bgExpandDif, "bottom-right");
+    viewDifTendencial.ui.add(bgExpandDifTendencial, "bottom-right");
+	  viewDifActual.ui.add("escenariDif","top-right");
+    viewDifTendencial.ui.add("escenariDifTendencial","top-right");
+	  viewOptimitzation.ui._removeComponents(["attribution"]);
+	  viewActual.ui._removeComponents(["attribution"]);
+    viewTendencial.ui._removeComponents(["attribution"]);
+	  viewDifActual.ui._removeComponents(["attribution"]);
+    viewDifTendencial.ui._removeComponents(["attribution"]);
 	  
 
 			
@@ -278,7 +365,7 @@
         };
 
         // bind the views
-        synchronizeViews([view1, view2, viewDif]);
+        synchronizeViews([viewOptimitzation, viewActual, viewDifActual, viewTendencial, viewDifTendencial]);
 });
 	  
 	 

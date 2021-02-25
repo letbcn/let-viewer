@@ -228,7 +228,7 @@
     <style>
       html,
       body,
-      #viewDiv,#viewDivtend,#viewDivdif{
+      .viewMap {
         padding: 0;
         margin: 0;
         height: 99%;
@@ -237,7 +237,7 @@
 		font-family: "Avenir Next W00","Helvetica Neue",Helvetica,Arial,sans-serif;
       }
 
-	  #infoDiv,#escenariDiv,#escenariDif{
+	  #infoDiv,#escenariDiv, .title-map-dif {
         padding: 8px;
       }
 	  #divTop{
@@ -245,7 +245,7 @@
 		font-size: 12px;
 		color: #323232;
 	  }
-	  #divActual {
+	  #divMainMap {
 		padding: 0;
         margin: 0;
         height: 60%;
@@ -260,9 +260,8 @@
         width: 25%;
 		float:left;
 		border-color: coral;
-		flex-direction: column;
 	  }
-	  #divTendencial, #divDiferencia, .divgrafics {
+	  .divgrafics, .mapSmallBox{
         padding: 0;
         margin: 0;
         height: 41%;
@@ -361,24 +360,22 @@
 	
     </style>
 
+<script src="js/indicators/MaxSumMultipleIndicator.js"></script>
+<script src="js/indicators/MinSumIndicator.js"></script>
+<script src="js/indicators/MinSumMultipleIndicator.js"></script>
+<script src="js/indicators/MaxAvgIndicator.js"></script>
+<script src="js/indicators/MaxSumIndicator.js"></script>
 <script src="js/indicadors.js"></script>
 <script src="js/indica.js"></script>
 
   </head>
 
   <body style="font-family: 'Avenir Next W00','Helvetica Neue',Helvetica,Arial,sans-serif;" onload="canvi(valuesRanges());">
-   	<div id="divActual">
-    	<div id="viewDiv"></div>
+   	<div id="divMainMap">
+    	<div id="viewDiv" class="viewMap"></div>
 	</div>
 	<div id="control-panel">
 		<h3>Configuració</h3>
-		<div>
-			Escenari 
-			<select class="esri-widget" id="escenari_id" onchange="canvi(valuesRanges())" > 
-				<option value="0" selected >Actual</option>
-				<option value="1" >Tendencial</option>
-			</select>
-		</div>
 		<div>
 			<div class="formRange"><div class="label"><label for="ARange">Eficiència energètica</label></div><input type="range" name="A1Range" id="A1Range" min="0" max="100" step="1" onchange="showVal('A1RangeValue', this.value)" oninput="showVal('A1RangeValue', this.value)"><span class="resultRange" id="A1RangeValue"></span></div>
 			<div class="formRange"><div class="label"><label for="ARange">Consum d’aigua</label></div><input type="range" name="A2Range" id="A2Range" min="0" max="100" step="1" onchange="showVal('A2RangeValue', this.value)" oninput="showVal('A2RangeValue', this.value)"><span class="resultRange" id="A2RangeValue"></span></div>
@@ -411,17 +408,26 @@
 			</div>
 		</div>
 	</div>
-	<div id="divTendencial">
-		<div id="viewDivtend"></div>
+	<div id="divMapActual" class="mapSmallBox">
+		<div id="viewDivActual"  class="viewMap"></div>
 	</div>
-	<div id="divDiferencia">
-		<div id="viewDivdif"></div>
-		<div id="escenariDif" class="esri-widget">
-			Diferència
+	<div id="divMapDifActual" class="mapSmallBox">
+		<div id="viewDivDifActual"  class="viewMap"></div>
+		<div id="escenariDif" class="esri-widget title-map-dif">
+			Diferència actual
 		</div>
 	</div>
-	<div class="divgrafics" id="divgrafics">
-		<div id="marksChart"></div>
+	<div id="divMapTendencial" class="mapSmallBox">
+		<div id="viewDivTendencial"  class="viewMap"></div>
+	</div>
+	<div id="divMapDiftendencial" class="mapSmallBox">
+		<div id="viewDivDifTendencial"  class="viewMap"></div>
+		<div id="escenariDifTendencial" class="esri-widget title-map-dif">
+			Diferència tendencial
+		</div>
+	</div>
+	<div class="divgrafics" id="radarGrafic">
+		<canvas class="divgrafics" id="marksChart"></canvas>
 	</div>	
 	<div class="divgrafics" id="histogramGrafic">
 		<canvas class="divgrafics" id="histoChart"></canvas>
@@ -430,8 +436,16 @@
   <script>
 	function showVal(tag, newVal)
     {
-          document.getElementById(tag).innerHTML=newVal;
-          updateTotalRanges();
+		var range = tag.substr(0, tag.length - 5);
+		let maxPuntuation = 100;
+		var total = getTotalValues();
+		if (total > maxPuntuation) {
+			alert("La puntuació no pot ser més gran de 100.");
+			document.getElementById(range).value = maxPuntuation - (total - document.getElementById(range).value)
+		} else {
+			document.getElementById(tag).innerHTML=newVal;
+        	updateTotalRanges();
+		}
     }
 
     function iniValues(ranges) 
@@ -453,12 +467,21 @@
             total += parseInt(document.getElementById(ranges[x]).value);
         }
 		document.getElementById("TotalRanges").innerHTML = total;
-		if (!checkRanges()) {
+		/*if (!checkRanges()) {
 			document.getElementById("TotalRanges").style.color = "#ff0000";
 		} else {
 			document.getElementById("TotalRanges").style.color = "#00ff00";
-		}
+		}*/
     }
+
+	function getTotalValues()
+    {
+        var total = 0;
+        for (x in ranges) {
+            total += parseInt(document.getElementById(ranges[x]).value);
+        }
+		return total;
+	}
 
     function checkRanges()
     {
