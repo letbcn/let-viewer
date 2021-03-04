@@ -2050,6 +2050,7 @@
 				let indicatorE1CObj = new MaxSumIndicator(valorsMaxE1C1, valorsE1C_actual, valorsE1C_tend, valorsOptE1C1);
 				let indicatorFObj = new MaxSumIndicator(valorsMaxF1, valorsF_actual, valorsF_tend, valorsOptF1);
 
+				/*
 				// Escenari optimitzat
 				indicador_A1_max = ((arrSum(valorsOptA1)  / arrSum(valorsOptA1_2))) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
 				indicador_A2_max = (arrSum(valorsMinA2)) / (arrSum(valorsOptA2));
@@ -2061,7 +2062,7 @@
 				indicador_E1B_max = ((arrSum(valorsOptE1B)) / 1000) / (arrSum(valorsMaxE1B) / 1000);
 				indicador_E1C_max = ((arrSum(valorsOptE1C1)) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
 				indicador_F_max = (arrSum(valorsOptF1)) / arrSum(valorsMaxF1);
-				/*
+				
 				if (escenari == 0) {
 					// Escenari actual
 					indicador_A1 = (arrSum(valorsA1_actual) / arrSum(valorsA1_2_actual)) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
@@ -2094,7 +2095,8 @@
 				}*/
 				var categories = ["Eficiència energètica (A1A)", "Consum d’aigua (A1B)","Apropiació de biomassa (A1C)","Conservació de la biodiversitat (B1)", "Funcionament del paisatge (C1)", "Canvi climàtic (D1)", "Recirculació de nutrients (E1A)", "Estoc de carboni (E1B)","Producció agrícola (E1C)","Llocs de treball (F1)"];
 				var data = [indicatorA1Obj, indicatorA2Obj, indicatorA3Obj, indicatorBObj, indicatorCObj, indicatorDObj, indicatorE1AObj, indicatorE1BObj, indicatorE1CObj, indicatorFObj];
-				histogramChart(categories, data);
+				var units = ["", "hm3", "% de HANPP", "", "", "milers de tones de CO2 eq", "% de recirculació de fòsfor", "milers de tones de carboni", "milers de tones de matèria seca", "UTAs"];
+				histogramChart(categories, data, units);
 				aranya(categories, data);
 			});
 		}
@@ -2226,7 +2228,7 @@
 			chart.render();
 		}
 
-		function histogramChart(categories, data) {
+		function histogramChart(categories, data, units) {
 			var ctx = document.getElementById("histoChart");
 			var chart = new Chart(ctx, {
 				type: 'bar',
@@ -2236,7 +2238,7 @@
 						data: data.map(function (indicator) {
 							return indicator.optimitzationHistogramValue();
 						}),
-						label: "Optimitzat",
+						label: "Escenari optimitzat",
 						borderWidth: 1,
 						backgroundColor: '#00FF00',
 						indicatorsValues: data.map(function (indicator) {
@@ -2247,7 +2249,7 @@
 						data: data.map(function (indicator) {
 							return indicator.actualHistogramValue();
 						}),
-						label: "Actual",
+						label: "Escenari actual",
 						borderWidth: 1,
 						backgroundColor: '#AAAAAA',
 						indicatorsValues: data.map(function (indicator) {
@@ -2258,7 +2260,7 @@
 						data: data.map(function (indicator) {
 							return indicator.tendencialHistogramValue();
 						}),
-						label: "Tendencial",
+						label: "Escenari tendencial",
 						borderWidth: 1,
 						backgroundColor: '#3377FF',
 						indicatorsValues: data.map(function (indicator) {
@@ -2268,12 +2270,13 @@
 				},
 				options: {
 					tooltips: {
+						position: 'nearest',
 						callbacks: {
 							title: function(tooltipItems, data) {
 								return data.datasets[tooltipItems[0].datasetIndex].label;
 							},
 							label: function(tooltipItem, data) {
-								return data.datasets[tooltipItem.datasetIndex].indicatorsValues[tooltipItem.index].toFixed(2);
+								return categories[tooltipItem.index] + ": " + data.datasets[tooltipItem.datasetIndex].indicatorsValues[tooltipItem.index].toFixed(2) + " " + units[tooltipItem.index];
 							}
 						}
 					},
