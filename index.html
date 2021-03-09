@@ -61,6 +61,13 @@
         padding: 1em;
 		position:  absolute;
       }
+      
+      #toolbarDiv {
+        cursor: default;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
 
 		.button {
 		box-shadow:inset 0px 1px 3px 0px #91b8b3;
@@ -166,7 +173,10 @@
 				</div>
 			
 		</div>
-    <div id="viewDiv"></div>
+    <div id="viewDiv">
+
+    
+    </div>
 	
 	<div id="mapabaseDiv" class="esri-widget">
       <label>Mapa base: <input id="mapabaseInput" type="checkbox" checked="yes" /></label>
