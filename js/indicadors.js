@@ -1375,7 +1375,7 @@
           ]
 		};
 
-		 function canvi(weightListIndicators){
+		 function canvi(weightListIndicators, value){
 			//var e1 = document.getElementById("field-select");
 			//var text_indicador = e1.options[e1.selectedIndex].text;
 			//document.getElementById("titol").innerHTML = "Resultats optimitzant la dimensió: " + text_indicador;
@@ -1386,7 +1386,18 @@
 			//var text_escenari = e.options[e.selectedIndex].text;
 			//document.getElementById("escenariDif").innerHTML = "Diferència escenari " + text_escenari + " i Optimitzat";
 			//if (derivat) document.getElementById("field-select-ind").value = "A1";
-			var indicador = document.getElementById("field-select-ind").value;
+			var cbs = document.getElementsByClassName("cbs");
+			for(var i = 0; i<cbs.length; i++){
+				cbs[i].checked = false;
+			}
+			
+			if(value == null){
+				value = "A1";
+				document.getElementById("A1").checked = true;
+			}else{
+				document.getElementById(value).checked = true;
+			}
+			var indicador = value;
 			switch (indicador){
 			case "A1":
 				cat1.color = [252,233,106, 0.7];
@@ -2288,4 +2299,13 @@
 			chart.update();
 		}
 
-			
+			function popup(id){
+				var div = document.getElementById(id);
+				div.classList.add("popup");
+
+			}
+			function closePopup(id){
+				var div = document.getElementById(id);
+				div.classList.remove("popup");
+				
+			}
