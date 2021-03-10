@@ -123,7 +123,18 @@
           center: [2.13, 41.40],
           zoom: 10
         });
-		
+		// Add the expand instance to the ui
+		var element = document.createElement('div');
+        element.className = "esri-icon-left-arrow esri-widget--button esri-widget esri-interactive";
+        element.addEventListener('click', function(evt){
+          var cajaLateral = document.getElementById("control-panel") ;
+		  cajaLateral.classList.toggle("slided");
+		  var cajaviewDiv = document.getElementById("divMainMap") ;
+		  cajaviewDiv.classList.toggle("slided");
+		  this.classList.toggle("esri-icon-left-arrow");
+		  this.classList.toggle("esri-icon-right-arrow");
+        })
+        viewOptimitzation.ui.add(element, "top-left");
 		const mapActual = new Map({
           basemap: "gray",
           layers: [layerEscenari]

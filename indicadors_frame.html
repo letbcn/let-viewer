@@ -251,7 +251,10 @@
         height: 80%;
         width: 75%;
 		float:left;
-		border-color: coral;
+		border-color: black;
+	  }
+	  #divMainMap.slided {
+        width: 100%;
 	  }
 	  #control-panel {
 		padding: 0;
@@ -262,6 +265,9 @@
 		background-color: #B0DBBF;
 		border: 1px solid black;
 		box-sizing: border-box;
+	  }
+	  #control-panel.slided {
+		display: none;
 	  }
 	  .divgrafics, .mapSmallBox{
         padding: 0;
@@ -468,6 +474,14 @@ background-color: rgba(0,0,0,0.2);
 .opened{
 	float: right;
 	padding-left: 5px;
+}
+
+.esri-widget, .esri-widget--button{
+  
+  background-color: #B0DBBF !important;
+}
+.esri-attribution{
+	display: none;
 }
     </style>
 
