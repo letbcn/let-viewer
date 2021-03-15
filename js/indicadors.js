@@ -1394,8 +1394,19 @@
 			if(value == null){
 				value = "A1";
 				document.getElementById("A1").checked = true;
+				var text_selected = document.getElementById("labelA1").textContent;
 			}else{
 				document.getElementById(value).checked = true;
+				var text_selected = document.getElementById("label"+value).textContent;
+
+			}
+
+			var count_selectef = document.getElementsByClassName("map--selected");
+
+			for(var i = 0; i<count_selectef.length; i++){
+				
+				var text = document.createTextNode(text_selected)
+				count_selectef.item(i).innerHTML = text_selected;
 			}
 			var indicador = value;
 			switch (indicador){

@@ -276,6 +276,7 @@
         width: 50%;
 		float:left;
 		border-color: coral;
+		background-color: white;
       }
 	  #descripcio {
 		width:100%;
@@ -484,6 +485,12 @@ background-color: rgba(0,0,0,0.2);
 .esri-attribution{
 	display: none;
 }
+
+.map--selected{
+	float: right;
+font-size: 12px;
+line-height: 2;
+}
     </style>
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -518,7 +525,7 @@ background-color: rgba(0,0,0,0.2);
 				<div id="myBar" class="w3-green" style="height:500px;width:20px; background-color: #F8E8A0 !important; transform: rotate(180deg);"></div> </div>  0% 
 			
 		</div>
-		<p style="width:100%; float: left; text-decoration: underline; padding-left: 15px;" onclick="restaurar()">RESTAURA</p>
+		<p style="width:100%; padding-bottom: 26px; text-decoration: underline; padding-left: 15px;" onclick="restaurar()">RESTAURA</p>
 		<button class="button" id="buttonAplicar" onclick="if(checkRanges()) { canvi(valuesRanges())} else { alert('La suma dels pesos ha de ser exactament 100'); }">Aplicar</button>
 		
 	</div>
@@ -529,57 +536,63 @@ background-color: rgba(0,0,0,0.2);
 	</div>
 	<div style="width: 100%; height: 20%; float: left; background: linear-gradient(302.95deg, #FFFFFF 29.23%, #F6EEE8 50.8%, rgba(252, 240, 188, 0.3) 64.96%, #B0DBBF 87.51%);">
 		<div id="escenariDiv" class="esri-widget" style="background-color: transparent !important;">
-			<h3>Visualitza una de les dimensions optimitzades</h3>
+			<h3>Visualitza l'efecte de la teva priorització en cada dimensió</h3>
 			<div class="cbsdiv">
-			<label for="A1"><input type="checkbox" class="cbs" name="A1" id="A1" value="A1" onclick="canvi(valuesRanges(),this.value)" checked>Eficiència energètica</label>
-			<label for="A2"><input type="checkbox" class="cbs" name="A2" id="A2" value="A2" onclick="canvi(valuesRanges(),this.value)">Consum d’aigua</label>
-			<label for="A3"><input type="checkbox" class="cbs" name="A3" id="A3" value="A3" onclick="canvi(valuesRanges(),this.value)">Apropiació de biomassa</label>
-			<label for="B"><input type="checkbox" class="cbs" name="B" id="B" value="B" onclick="canvi(valuesRanges(),this.value)">Conservació de la biodiversitat</label>
-			<label for="C"><input type="checkbox" class="cbs" name="C" id="C" value="C" onclick="canvi(valuesRanges(),this.value)">Funcionament del paisatge</label>
-			<label for="D"><input type="checkbox" class="cbs" name="D" id="D" value="D" onclick="canvi(valuesRanges(),this.value)">Canvi climàtic</label>
-			<label for="E1A"><input type="checkbox" class="cbs" name="E1A" id="E1A" value="E1A" onclick="canvi(valuesRanges(),this.value)">Recirculació de nutrients</label>
-			<label for="E1B"><input type="checkbox" class="cbs" name="E1B" id="E1B" value="E1B" onclick="canvi(valuesRanges(),this.value)">Estoc de carboni</label>
-			<label for="E1C"><input type="checkbox" class="cbs" name="E1C" id="E1C" value="E1C" onclick="canvi(valuesRanges(),this.value)">Producció agrícola</label>
-			<label for="F"><input type="checkbox" class="cbs" name="F" id="F" value="F" onclick="canvi(valuesRanges(),this.value)">Llocs de treball</label>
+			<label id="labelA1" for="A1"><input type="checkbox" class="cbs" name="A1" id="A1" value="A1" onclick="canvi(valuesRanges(),this.value)" checked>Eficiència energètica</label>
+			<label id="labelA2" for="A2"><input type="checkbox" class="cbs" name="A2" id="A2" value="A2" onclick="canvi(valuesRanges(),this.value)">Consum d’aigua</label>
+			<label id="labelA3" for="A3"><input type="checkbox" class="cbs" name="A3" id="A3" value="A3" onclick="canvi(valuesRanges(),this.value)">Apropiació de biomassa</label>
+			<label id="labelB" for="B"><input type="checkbox" class="cbs" name="B" id="B" value="B" onclick="canvi(valuesRanges(),this.value)">Conservació de la biodiversitat</label>
+			<label id="labelC" for="C"><input type="checkbox" class="cbs" name="C" id="C" value="C" onclick="canvi(valuesRanges(),this.value)">Funcionament del paisatge</label>
+			<label id="labelD" for="D"><input type="checkbox" class="cbs" name="D" id="D" value="D" onclick="canvi(valuesRanges(),this.value)">Canvi climàtic</label>
+			<label id="labelE1A" for="E1A"><input type="checkbox" class="cbs" name="E1A" id="E1A" value="E1A" onclick="canvi(valuesRanges(),this.value)">Recirculació de nutrients</label>
+			<label id="labelE1B" for="E1B"><input type="checkbox" class="cbs" name="E1B" id="E1B" value="E1B" onclick="canvi(valuesRanges(),this.value)">Estoc de carboni</label>
+			<label id="labelE1C" for="E1C"><input type="checkbox" class="cbs" name="E1C" id="E1C" value="E1C" onclick="canvi(valuesRanges(),this.value)">Producció agrícola</label>
+			<label id="labelF" for="F"><input type="checkbox" class="cbs" name="F" id="F" value="F" onclick="canvi(valuesRanges(),this.value)">Llocs de treball</label>
 		</div>
 		</div>
 	</div>
-	<div style="width: 100%; height: 30%; float: left;">
+	<div style="width: 100%; height: 30%; float: left;border-top: 1px solid black;">
 		<h3 style="width: 70%; text-align: center; margin: 50px auto;">El Sistema de Suport a la Planificació (LET’s SSP) mostra l’estat socioecològic actual dels espais oberts de l’àrea metropolitana de Barcelona, i permet generar escenaris futurs en canviar tant les cobertes del sòl com el tipus de metabolisme que caracteritzen la infraestructura verda metropolitana. Us presentem una prova pilot en que pots optimitzar els possibles escenaris futurs segons les prioritzacions que li donaries a les polítiques públiques. </h3>
 	</div>
 	
 	<div id="divMapActual" class="mapSmallBox">
 		<div  class="esri-widget title-map-dif" style="height: 10%;">
-		<span>Escenari actual</span><span data-value="divMapActual" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img src="imatges/Group 92.png" alt=""></span><span data-value="divMapActual" class="opened" onclick="popup(this.getAttribute('data-value'))"><img src="imatges/Rectangle 138.png" alt=""></span>
+		<span>Escenari actual</span></span><span data-value="divMapActual" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img src="imatges/Group 92.png" alt=""></span><span data-value="divMapActual" class="opened" onclick="popup(this.getAttribute('data-value'))"><img src="imatges/Rectangle 138.png" alt=""></span><span class="map--selected"></span>
 		</div>
 		<div id="viewDivActual"  class="viewMap" style="height: 90%; width: 100%;"></div>
 		
 	</div>
 	<div id="divMapDifActual" class="mapSmallBox">
 		<div  class="esri-widget title-map-dif" style="height: 10%;">
-			<span id="divMapDifActual">Diferència entre escenari actual i optimitzat</span><span data-value="divMapDifActual" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img src="imatges/Group 92.png" alt=""></span><span data-value="divMapDifActual" class="opened" onclick="popup(this.getAttribute('data-value'))"><img src="imatges/Rectangle 138.png" alt=""></span>
+			<span id="divMapDifActual">Diferència entre escenari actual i optimitzat</span></span><span data-value="divMapDifActual" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img src="imatges/Group 92.png" alt=""></span><span data-value="divMapDifActual" class="opened" onclick="popup(this.getAttribute('data-value'))"><img src="imatges/Rectangle 138.png" alt=""></span><span class="map--selected"></span>
 		</div>
 		<div id="viewDivDifActual"  class="viewMap" style="height: 90%; width: 100%;"></div>
 		
 	</div>
 	<div id="divMapTendencial" class="mapSmallBox">
 		<div  class="esri-widget title-map-dif" style="height: 10%;">
-			<span id="divMapTendencial">Escenari tendencial</span><span data-value="divMapTendencial" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img src="imatges/Group 92.png" alt=""></span><span data-value="divMapTendencial" class="opened" onclick="popup(this.getAttribute('data-value'))"><img src="imatges/Rectangle 138.png" alt=""></span>
+			<span id="divMapTendencial">Escenari tendencial</span></span><span data-value="divMapTendencial" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img src="imatges/Group 92.png" alt=""></span><span data-value="divMapTendencial" class="opened" onclick="popup(this.getAttribute('data-value'))"><img src="imatges/Rectangle 138.png" alt=""></span><span class="map--selected"></span>
 		</div>
 		<div id="viewDivTendencial"  class="viewMap" style="height: 90%; width: 100%;"></div>
 		
 	</div>
 	<div id="divMapDiftendencial" class="mapSmallBox">
 		<div class="esri-widget title-map-dif" style="height: 10%;">
-			<span id="divMapDiftendencial">Diferència entre escenari tendencial i optimitzat</span><span data-value="divMapDiftendencial" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img src="imatges/Group 92.png" alt=""></span><span data-value="divMapDiftendencial" class="opened" onclick="popup(this.getAttribute('data-value'))"><img src="imatges/Rectangle 138.png" alt=""></span>
+			<span id="divMapDiftendencial">Diferència entre escenari tendencial i optimitzat</span></span><span data-value="divMapDiftendencial" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img src="imatges/Group 92.png" alt=""></span><span data-value="divMapDiftendencial" class="opened" onclick="popup(this.getAttribute('data-value'))"><img src="imatges/Rectangle 138.png" alt=""></span><span class="map--selected"></span>
 		</div>
 		<div id="viewDivDifTendencial"  class="viewMap" style="height: 90%; width: 100%;"></div>
 		
 	</div>
 	<div class="divgrafics" id="radarGrafic">
+		<div class="esri-widget title-map-dif" style="height: 10%;">
+			<span id="radarGrafic">Analisi Multicriteri</span></span><span data-value="radarGrafic" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img src="imatges/Group 92.png" alt=""></span><span data-value="radarGrafic" class="opened" onclick="popup(this.getAttribute('data-value'))"><img src="imatges/Rectangle 138.png" alt=""></span><span class="map--selected"></span>
+		</div>
 		<canvas class="divgrafics" id="marksChart"></canvas>
 	</div>	
 	<div class="divgrafics" id="histogramGrafic">
+		<div class="esri-widget title-map-dif" style="height: 10%;">
+			<span id="histogramGrafic">Valors de les dimensions</span></span><span data-value="histogramGrafic" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img src="imatges/Group 92.png" alt=""></span><span data-value="histogramGrafic" class="opened" onclick="popup(this.getAttribute('data-value'))"><img src="imatges/Rectangle 138.png" alt=""></span><span class="map--selected"></span>
+		</div>
 		<canvas class="divgrafics" id="histoChart"></canvas>
 	</div>
   </body>
