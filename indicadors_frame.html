@@ -248,7 +248,7 @@
 	  #divMainMap {
 		padding: 0;
         margin: 0;
-        height: 80%;
+        height: 85%;
         width: 75%;
 		float:left;
 		border-color: black;
@@ -259,7 +259,7 @@
 	  #control-panel {
 		padding: 0;
         margin: 0;
-        height: 80%;
+        height: 85%;
         width: 25%;
 		float:left;
 		background-color: #B0DBBF;
@@ -350,6 +350,7 @@ height: 1px;
 
 	.formRange {
 		padding:4px;
+		padding-left: 15px !important;
 	}
 
 	.formRangeTotal {
@@ -501,7 +502,7 @@ background-color: rgba(0,0,0,0.2);
 		<h3 style="text-align: center;padding: 20px;border-bottom: 1px solid black;margin: 0;font-size: 18px; height: 10%;">PRIORITZA LES DIMENSIONS 
 			QUE VOLS OPTIMITZAR</h3>
 		<div style="padding-top: 10px; height: 90%;">
-			<div class="formRanges" style="height: 89%;">
+			<div class="formRanges" style="height: 81.5%;">
 			<div class="formRange"><div class="label"><label for="ARange">Eficiència energètica</label></div><div class="rangediv"><span class="resultRange" id="A1RangeValue"></span><input type="range" name="A1Range" id="A1Range" min="0" max="100" step="1" onchange="showVal('A1RangeValue', this.value)" oninput="showVal('A1RangeValue', this.value)"></div></div>
 			<div class="formRange"><div class="label"><label for="ARange">Consum d’aigua</label></div><div class="rangediv"><span class="resultRange" id="A2RangeValue"></span><input type="range" name="A2Range" id="A2Range" min="0" max="100" step="1" onchange="showVal('A2RangeValue', this.value)" oninput="showVal('A2RangeValue', this.value)"></div></div>
 			<div class="formRange"><div class="label"><label for="ARange">Apropiació de biomassa</label></div><div class="rangediv"><span class="resultRange" id="A3RangeValue"></span><input type="range" name="A3Range" id="A3Range" min="0" max="100" step="1" onchange="showVal('A3RangeValue', this.value)" oninput="showVal('A3RangeValue', this.value)"></div></div>
@@ -517,6 +518,7 @@ background-color: rgba(0,0,0,0.2);
 				<div id="myBar" class="w3-green" style="height:500px;width:20px; background-color: #F8E8A0 !important; transform: rotate(180deg);"></div> </div>  0% 
 			
 		</div>
+		<p style="width:100%; float: left; text-decoration: underline; padding-left: 15px;" onclick="restaurar()">RESTAURA</p>
 		<button class="button" id="buttonAplicar" onclick="if(checkRanges()) { canvi(valuesRanges())} else { alert('La suma dels pesos ha de ser exactament 100'); }">Aplicar</button>
 		
 	</div>

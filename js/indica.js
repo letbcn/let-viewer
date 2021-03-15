@@ -380,3 +380,19 @@
 });
 	  
 	 
+function restaurar(){
+  var inputs = document.getElementsByTagName("input");
+  var resultrange = document.getElementsByClassName("resultRange");
+
+  for( var i = 0; i<inputs.length; i++){
+
+      if(inputs[i].type.toLowerCase() == "range"){
+        inputs[i].value = 10;
+        resultrange[i].textContent = "10";
+      }
+
+  }
+
+  document.getElementById("myBar").style.height = 500+"px";
+  document.getElementById("TotalRanges").textContent = "100";
+}
