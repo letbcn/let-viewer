@@ -199,22 +199,22 @@
 		content: createPopup4
 	};
 	featureLayer1 = new FeatureLayer({
-		url: "https://openlab.uab.es:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
+		url: "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
 		outFields: ["*"],
 		popupTemplate: template1
 	});
   featureLayer2 = new FeatureLayer({
-		url: "https://openlab.uab.es:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
+		url: "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
 		outFields: ["*"],
 		popupTemplate: template2
 	});
   featureLayer3 = new FeatureLayer({
-		url: "https://openlab.uab.es:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
+		url: "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
 		outFields: ["*"],
 		popupTemplate: template3
 	});
   featureLayer4 = new FeatureLayer({
-		url: "https://openlab.uab.es:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
+		url: "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
 		outFields: ["*"],
 		popupTemplate: template4
 	});
@@ -401,7 +401,7 @@
         var canvas = document.createElement('canvas');
         canvas.width=350;
         const queryUsosTask = new QueryTask({
-                url: "https://openlab.uab.es:6443/arcgis/rest/services/dinamiques_query/cobertes_v_"+any+"_mun/FeatureServer/0"
+                url: "https://openlab.uab.cat:6443/arcgis/rest/services/dinamiques_query/cobertes_v_"+any+"_mun/FeatureServer/0"
                 });
             // Generage stats for the count and types of private schools that intersect the state with average enrollment
             const areaCount = new StatisticDefinition({
@@ -435,7 +435,7 @@
                     total = total + parseFloat(valor.area);
                 });
               featureAttributes.forEach( function(valor, indice, array) {
-                    dades.push(valor.area.toFixed(3));
+                    dades.push(Math.round(valor.area));
                     dades_per.push(( (parseFloat(valor.area) / total)  * 100).toFixed(2));
                     etiquetes.push(valor.cat_niv_2);
                 });
