@@ -2114,7 +2114,7 @@
 						}),
 						label: "Escenari actual",
 						borderWidth: 1,
-						borderColor: '#00FF00',
+						borderColor: '#3377FF',
 						fill: false
 					},
 					{
@@ -2123,7 +2123,7 @@
 						}),
 						label: "Escenari tendencial",
 						borderWidth: 1,
-						borderColor: '#AAAAAA',
+						borderColor: '#FF3333',
 						fill: false
 					},
 					{
@@ -2132,7 +2132,7 @@
 						}),
 						label: "Escenari optimitzat",
 						borderWidth: 1,
-						borderColor: '#3377FF',
+						borderColor: '#00FF00',
 						fill: false
 					}]
 				},
@@ -2154,7 +2154,7 @@
 			});
 			chart.update();
 		}
-		
+		/*
 		function aranya2(indicador_A1 ,indicador_A2 ,indicador_A3 ,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,color,titol){
 			var options = {
 				chart: {
@@ -2226,7 +2226,7 @@
 			);
 
 			chart.render();
-		}
+		}*/
 
 		function histogramChart(categories, data, units) {
 			var ctx = document.getElementById("histoChart");
@@ -2236,22 +2236,11 @@
 					labels: categories,
 					datasets: [{
 						data: data.map(function (indicator) {
-							return indicator.optimitzationHistogramValue();
-						}),
-						label: "Escenari optimitzat",
-						borderWidth: 1,
-						backgroundColor: '#00FF00',
-						indicatorsValues: data.map(function (indicator) {
-							return indicator.optimitzationAbsoluteValue();
-						}) 
-					},
-					{
-						data: data.map(function (indicator) {
 							return indicator.actualHistogramValue();
 						}),
 						label: "Escenari actual",
 						borderWidth: 1,
-						backgroundColor: '#AAAAAA',
+						backgroundColor: '#3377FF',
 						indicatorsValues: data.map(function (indicator) {
 							return indicator.actualAbsoluteValue();
 						})
@@ -2262,10 +2251,21 @@
 						}),
 						label: "Escenari tendencial",
 						borderWidth: 1,
-						backgroundColor: '#3377FF',
+						backgroundColor: '#FF3333',
 						indicatorsValues: data.map(function (indicator) {
 							return indicator.tendencialAbsoluteValue();
 						})
+					},
+					{
+						data: data.map(function (indicator) {
+							return indicator.optimitzationHistogramValue();
+						}),
+						label: "Escenari optimitzat",
+						borderWidth: 1,
+						backgroundColor: '#00FF00',
+						indicatorsValues: data.map(function (indicator) {
+							return indicator.optimitzationAbsoluteValue();
+						}) 
 					}]
 				},
 				options: {

@@ -9,8 +9,12 @@
 	   "esri/widgets/Expand",
 	   "esri/widgets/Home",
 	   "esri/renderers/smartMapping/creators/univariateColorSize",
-	   "esri/layers/support/Field"
-      ], function(Map, MapView, FeatureLayer, MapImageLayer, Legend,watchUtils,Expand,Home,colorAndSizeRendererCreator,Field) {
+	   "esri/layers/support/Field",
+     "esri/widgets/ScaleBar",
+     "esri/widgets/BasemapGallery/support/PortalBasemapsSource",
+     "esri/widgets/BasemapGallery",
+     "esri/portal/Portal"
+      ], function(Map, MapView, FeatureLayer, MapImageLayer, Legend,watchUtils,Expand,Home,colorAndSizeRendererCreator,Field, ScaleBar, PortalBasemapsSource, BasemapGallery, Portal) {
       
 
 	
@@ -111,6 +115,11 @@
 					  }
 					 }
         });
+
+    const defaultPosition = [2.13, 41.40];
+    const defaultZoom = 10;
+    const minZoom = 10;
+    const maxZoom = 14;
 		
 		const mapOptimitzation = new Map({
           basemap: "gray",
@@ -120,8 +129,12 @@
     const viewOptimitzation = new MapView({
           container: "viewDiv",
           map: mapOptimitzation,
-          center: [2.13, 41.40],
-          zoom: 10
+          center: defaultPosition,
+          zoom: defaultZoom,
+          constraints: {
+            minZoom: minZoom,
+            maxZoom: maxZoom
+          }
         });
 		
 		const mapActual = new Map({
@@ -137,15 +150,23 @@
     const viewActual = new MapView({
           container: "viewDivActual",
           map: mapActual,
-          center: [2.13, 41.40],
-          zoom: 10
+          center: defaultPosition,
+          zoom: defaultZoom,
+          constraints: {
+            minZoom: minZoom,
+            maxZoom: maxZoom
+          }
         });
 
 		const viewDifActual = new MapView({
           container: "viewDivDifActual",
           map: mapDifActual,
-          center: [2.13, 41.40],
-          zoom: 10
+          center: defaultPosition,
+          zoom: defaultZoom,
+          constraints: {
+            minZoom: minZoom,
+            maxZoom: maxZoom
+          }
         });
 
 
@@ -162,15 +183,23 @@
     const viewTendencial = new MapView({
           container: "viewDivTendencial",
           map: mapTendencial,
-          center: [2.13, 41.40],
-          zoom: 10
+          center: defaultPosition,
+          zoom: defaultZoom,
+          constraints: {
+            minZoom: minZoom,
+            maxZoom: maxZoom
+          }
         });
 
 		const viewDifTendencial = new MapView({
           container: "viewDivDifTendencial",
           map: mapDifTendencial,
-          center: [2.13, 41.40],
-          zoom: 10
+          center: defaultPosition,
+          zoom: defaultZoom,
+          constraints: {
+            minZoom: minZoom,
+            maxZoom: maxZoom
+          }
         });
 
         /******************************************************************
@@ -182,7 +211,7 @@
         legend1 = new Legend({
           view: viewOptimitzation,
 		  layerInfos: [{
-			layer: layerEscenari,
+			layer: layer3,
 			title: ""
 		  }],
 		  style: "classic"
@@ -190,7 +219,7 @@
 		legend2 = new Legend({
           view: viewActual,
 		  layerInfos: [{
-			layer: layer3,
+			layer: layerEscenari,
 			title: ""
 		  }],
 		  style: "classic"
@@ -230,7 +259,7 @@
 		  expanded:false
         });
     var bgExpand2Tendencial = new Expand({
-          view: viewActual,
+          view: viewTendencial,
           content: legend2Tendencial,
 		  expanded:false
         });
@@ -245,11 +274,112 @@
 		  expanded:false
         });
 		
-		 var homeBtn = new Home({
-          view: viewOptimitzation
-        });
+    var homeBtnOptimitzation = new Home({
+      view: viewOptimitzation
+    });
+    var homeBtnActual = new Home({
+      view: viewActual
+    });
+    var homeBtnDifActual = new Home({
+      view: viewDifActual
+    });
+    var homeBtnTendencial = new Home({
+      view: viewTendencial
+    });
+    var homeBtnDifTendencial = new Home({
+      view: viewDifTendencial
+    });
 
-	  viewOptimitzation.ui.add(homeBtn, "top-left");
+
+    var scaleBarOptimitzation = new ScaleBar({
+      view: viewOptimitzation,
+      unit: "metric"
+    });
+    var scaleBarActual = new ScaleBar({
+      view: viewActual,
+      unit: "metric"
+    });
+    var scaleBarDifActual = new ScaleBar({
+      view: viewDifActual,
+      unit: "metric"
+    });
+    var scaleBarTendencial = new ScaleBar({
+      view: viewTendencial,
+      unit: "metric"
+    });
+    var scaleBarDifTendencial = new ScaleBar({
+      view: viewDifTendencial,
+      unit: "metric"
+    });
+
+    let portalEsri = new Portal({
+		  url: "https://www.arcgis.com"
+		});
+
+    var sourceMap = new PortalBasemapsSource({
+			portal: portalEsri
+			});
+
+    basemapGalleryOptimitzation = new BasemapGallery({
+		  view: viewOptimitzation,
+		  source: sourceMap,
+		  container: document.createElement("div")
+		});
+
+    var bgExpandBaseMapOptimitzation = new Expand({
+		  view: viewOptimitzation,
+		  content: basemapGalleryOptimitzation
+		});
+
+    basemapGalleryActual = new BasemapGallery({
+		  view: viewActual,
+		  source: sourceMap,
+		  container: document.createElement("div")
+		});
+
+    var bgExpandBaseMapActual = new Expand({
+		  view: viewActual,
+		  content: basemapGalleryActual
+		});
+
+    basemapGalleryDifActual = new BasemapGallery({
+		  view: viewDifActual,
+		  source: sourceMap,
+		  container: document.createElement("div")
+		});
+
+    var bgExpandBaseMapDifActual = new Expand({
+		  view: viewDifActual,
+		  content: basemapGalleryDifActual
+		});
+
+    basemapGalleryTendencial = new BasemapGallery({
+		  view: viewTendencial,
+		  source: sourceMap,
+		  container: document.createElement("div")
+		});
+
+    var bgExpandBaseMapTendencial = new Expand({
+		  view: viewTendencial,
+		  content: basemapGalleryTendencial
+		});
+
+    basemapGalleryDifTendencial = new BasemapGallery({
+		  view: viewDifTendencial,
+		  source: sourceMap,
+		  container: document.createElement("div")
+		});
+
+    var bgExpandBaseMapDifTendencial = new Expand({
+		  view: viewDifTendencial,
+		  content: basemapGalleryDifTendencial
+		});
+
+	  viewOptimitzation.ui.add(homeBtnOptimitzation, "top-left");
+    viewActual.ui.add(homeBtnActual, "top-left");
+    viewDifActual.ui.add(homeBtnDifActual, "top-left");
+    viewTendencial.ui.add(homeBtnTendencial, "top-left");
+    viewDifTendencial.ui.add(homeBtnDifTendencial, "top-left");
 	  viewOptimitzation.ui.add(bgExpand1, "bottom-right");
 	  viewActual.ui.add(bgExpand2, "bottom-right");
     viewTendencial.ui.add(bgExpand2Tendencial, "bottom-right");
@@ -257,16 +387,39 @@
     viewDifTendencial.ui.add(bgExpandDifTendencial, "bottom-right");
 	  viewDifActual.ui.add("escenariDif","top-right");
     viewDifTendencial.ui.add("escenariDifTendencial","top-right");
+    viewOptimitzation.ui.add(scaleBarOptimitzation, {position: "bottom-left"});
+    viewActual.ui.add(scaleBarActual, {position: "bottom-left"});
+    viewDifActual.ui.add(scaleBarDifActual, {position: "bottom-left"});
+    viewTendencial.ui.add(scaleBarTendencial, {position: "bottom-left"});
+    viewDifTendencial.ui.add(scaleBarDifTendencial, {position: "bottom-left"});
+    viewOptimitzation.ui.add(bgExpandBaseMapOptimitzation, "top-left");
+    viewActual.ui.add(bgExpandBaseMapActual, "top-left");
+    viewDifActual.ui.add(bgExpandBaseMapDifActual, "top-left");
+    viewTendencial.ui.add(bgExpandBaseMapTendencial, "top-left");
+    viewDifTendencial.ui.add(bgExpandBaseMapDifTendencial, "top-left");
 	  viewOptimitzation.ui._removeComponents(["attribution"]);
 	  viewActual.ui._removeComponents(["attribution"]);
     viewTendencial.ui._removeComponents(["attribution"]);
 	  viewDifActual.ui._removeComponents(["attribution"]);
     viewDifTendencial.ui._removeComponents(["attribution"]);
-	  
 
-			
-		//queryLayerViewStats(layer3,0,"A");
-		
+    viewOptimitzation.on("mouse-wheel", function(event) {
+      event.stopPropagation();
+    });
+
+    viewActual.on("mouse-wheel", function(event) {
+      event.stopPropagation();
+    });
+    viewDifActual.on("mouse-wheel", function(event) {
+      event.stopPropagation();
+    });
+    viewTendencial.on("mouse-wheel", function(event) {
+      event.stopPropagation();
+    });
+    viewDifTendencial.on("mouse-wheel", function(event) {
+      event.stopPropagation();
+    });
+					
 	
  /**
          * utility method that synchronizes the viewpoint of a view to other views
