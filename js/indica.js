@@ -122,7 +122,7 @@
     const maxZoom = 14;
 		
 		const mapOptimitzation = new Map({
-          basemap: "gray",
+          basemap: "topo",
           layers: [layer3]
         });
 		
@@ -138,12 +138,12 @@
         });
 		
 		const mapActual = new Map({
-          basemap: "gray",
+          basemap: "topo",
           layers: [layerEscenari]
         });
 		
 		const mapDifActual = new Map({
-          basemap: "gray",
+          basemap: "topo",
           layers: [layer4]
         });
 		
@@ -171,12 +171,12 @@
 
 
     const mapTendencial = new Map({
-          basemap: "gray",
+          basemap: "topo",
           layers: [layerEscenariTendencial]
         });
 		
 		const mapDifTendencial = new Map({
-          basemap: "gray",
+          basemap: "topo",
           layers: [layerDiferenciaEscenariTendencial]
         });
 		
@@ -403,22 +403,22 @@
 	  viewDifActual.ui._removeComponents(["attribution"]);
     viewDifTendencial.ui._removeComponents(["attribution"]);
 
-    viewOptimitzation.on("mouse-wheel", function(event) {
-      event.stopPropagation();
-    });
+    viewOptimitzation.surface.addEventListener("wheel", function(event) {   
+        event.stopImmediatePropagation();  
+    }, true);
 
-    viewActual.on("mouse-wheel", function(event) {
-      event.stopPropagation();
-    });
-    viewDifActual.on("mouse-wheel", function(event) {
-      event.stopPropagation();
-    });
-    viewTendencial.on("mouse-wheel", function(event) {
-      event.stopPropagation();
-    });
-    viewDifTendencial.on("mouse-wheel", function(event) {
-      event.stopPropagation();
-    });
+    viewActual.surface.addEventListener("wheel", function(event) {   
+      event.stopImmediatePropagation();  
+  }, true);
+    viewDifActual.surface.addEventListener("wheel", function(event) {   
+      event.stopImmediatePropagation();  
+  }, true);
+    viewTendencial.surface.addEventListener("wheel", function(event) {   
+      event.stopImmediatePropagation();  
+  }, true);
+    viewDifTendencial.surface.addEventListener("wheel", function(event) {   
+      event.stopImmediatePropagation();  
+  }, true);
 					
 	
  /**
