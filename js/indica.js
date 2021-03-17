@@ -396,8 +396,8 @@
     viewTendencial.ui.add(bgExpand2Tendencial, "bottom-right");
 	  viewDifActual.ui.add(bgExpandDif, "bottom-right");
     viewDifTendencial.ui.add(bgExpandDifTendencial, "bottom-right");
-	  viewDifActual.ui.add("escenariDif","top-right");
-    viewDifTendencial.ui.add("escenariDifTendencial","top-right");
+	  //viewDifActual.ui.add("escenariDif","top-right");
+    //viewDifTendencial.ui.add("escenariDifTendencial","top-right");
     viewOptimitzation.ui.add(scaleBarOptimitzation, {position: "bottom-left"});
     viewActual.ui.add(scaleBarActual, {position: "bottom-left"});
     viewDifActual.ui.add(scaleBarDifActual, {position: "bottom-left"});
@@ -435,7 +435,7 @@
  /**
          * utility method that synchronizes the viewpoint of a view to other views
          */
-        var synchronizeView = function(view, others) {
+    var synchronizeView = function(view, others) {
           others = Array.isArray(others) ? others : [others];
 
           var viewpointWatchHandle;

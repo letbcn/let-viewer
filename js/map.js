@@ -1729,17 +1729,6 @@
           tooltip: fMesures
         });
         view.ui.add(homeBtn, "top-left");
-   
-   		
-		//cerca
-		var searchExpand = new Expand({
-          view: view,
-          content: searchWidget,
-		  expandTooltip: fCerca,
-		  collapseTooltip:fTanca
-        });
-
-
 
         // Add the expand instance to the ui
 		var element = document.createElement('div');
@@ -1754,11 +1743,15 @@
         })
         view.ui.add(element, "top-left");
 
-        view.ui.add(searchExpand, "top-left");
-		
+		//cerca
+		var searchExpand = new Expand({
+			view: view,
+			content: searchWidget,
+			expandTooltip: fCerca,
+			collapseTooltip:fTanca
+		  });
 
-		
-   		
+        view.ui.add(searchExpand, "top-left");
    		
 	   let portalEsri = new Portal({
 		  url: "https://www.arcgis.com" // First instance
@@ -1775,7 +1768,7 @@
 		  source: source,
 		  container: document.createElement("div")
 		});
-
+		/*
 		var handle = map.watch('basemap.title', function(newValue, oldValue, property, object) {
 				if (newValue != undefined) {
 				 document.getElementById("mapabaseInput").checked=true;
@@ -1785,7 +1778,7 @@
 						  "<br>Watched property: ", property,  // In this example this value will always be "basemap.title"
 						  "<br>Watched object: ", object);     // In this example this value will always be the map object
 			});
-			
+			*/
 		// Create an Expand instance and set the content
 		// property to the DOM node of the basemap gallery widget
 
