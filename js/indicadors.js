@@ -1375,18 +1375,40 @@
           ]
 		};
 
-		 function canvi(weightListIndicators){
+		 function canvi(weightListIndicators, value){
 			//var e1 = document.getElementById("field-select");
 			//var text_indicador = e1.options[e1.selectedIndex].text;
 			//document.getElementById("titol").innerHTML = "Resultats optimitzant la dimensió: " + text_indicador;
 			//tipus = document.getElementById("tipus").value;
-			escenari = document.getElementById("escenari_id").value;
+			//escenari = document.getElementById("escenari_id").value;
 			//indicador_principal = "fields" + document.getElementById("field-select").value;
-			var e = document.getElementById("escenari_id");
-			var text_escenari = e.options[e.selectedIndex].text;
-			document.getElementById("escenariDif").innerHTML = "Diferència escenari " + text_escenari + " i Optimitzat";
+			//var e = document.getElementById("escenari_id");
+			//var text_escenari = e.options[e.selectedIndex].text;
+			//document.getElementById("escenariDif").innerHTML = "Diferència escenari " + text_escenari + " i Optimitzat";
 			//if (derivat) document.getElementById("field-select-ind").value = "A1";
-			var indicador = document.getElementById("field-select-ind").value;
+			var cbs = document.getElementsByClassName("cbs");
+			for(var i = 0; i<cbs.length; i++){
+				cbs[i].checked = false;
+			}
+			
+			if(value == null){
+				value = "A1";
+				document.getElementById("A1").checked = true;
+				var text_selected = document.getElementById("labelA1").textContent;
+			}else{
+				document.getElementById(value).checked = true;
+				var text_selected = document.getElementById("label"+value).textContent;
+
+			}
+
+			var count_selectef = document.getElementsByClassName("map--selected");
+
+			for(var i = 0; i<count_selectef.length; i++){
+				
+				var text = document.createTextNode(text_selected)
+				count_selectef.item(i).innerHTML = text_selected;
+			}
+			var indicador = value;
 			switch (indicador){
 			case "A1":
 				cat1.color = [252,233,106, 0.7];
@@ -1410,14 +1432,18 @@
 				dif10.color = [122,171,0, 0.7];
 				dif11.color = [85,145,0, 0.7];
 				dif12.color = [48,120,0, 0.7];
-				renderer_A1.field ="a1a_c_"+escenari;
+				renderer_A1.field ="a1a_c_0";
 				layerEscenari.renderer = renderer_A1;
+				renderer_A1.field ="a1a_c_1";
+				layerEscenariTendencial.renderer = renderer_A1;
 				renderer_max_A1 = {type: "class-breaks"};
 				renderer_max_A1.classBreakInfos = renderer_A1.classBreakInfos;
-				renderer_dif_A1.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsA1,[" + weightListIndicators + "]) - $feature.a1a_c_" + escenari;
+				renderer_dif_A1.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsA1,[" + weightListIndicators + "]) - $feature.a1a_c_0";
 				renderer_max_A1.valueExpression = document.getElementById("arcadeB").text + " getValue(fieldsA1,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_A1;
 				layer3.renderer = renderer_max_A1;
+				renderer_dif_A1.valueExpression = document.getElementById("arcadeB").text + " getValue(fieldsA1,[" + weightListIndicators + "]) - $feature.a1a_c_1";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_A1;
 				break;
 			case "A2":
 				cat1.color = [252,233,106, 0.7];
@@ -1441,14 +1467,18 @@
 				dif10.color = [122,171,0, 0.7];
 				dif11.color = [85,145,0, 0.7];
 				dif12.color = [48,120,0, 0.7];
-				renderer_A2.field ="a1b_c_"+escenari;
+				renderer_A2.field = "a1b_c_0";
 				layerEscenari.renderer = renderer_A2;
+				renderer_A2.field = "a1b_c_1";
+				layerEscenariTendencial.renderer = renderer_A2;
 				renderer_max_A2 = {type: "class-breaks"};
 				renderer_max_A2.classBreakInfos = renderer_A2.classBreakInfos;
-				renderer_dif_A2.valueExpression= document.getElementById("arcadeB").text + " $feature.a1b_c_" + escenari + " - getValue(fieldsA2,[" + weightListIndicators + "]);";
+				renderer_dif_A2.valueExpression= document.getElementById("arcadeB").text + " $feature.a1b_c_0" + " - getValue(fieldsA2,[" + weightListIndicators + "]);";
 				renderer_max_A2.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsA2,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_A2;
 				layer3.renderer = renderer_max_A2;
+				renderer_dif_A2.valueExpression= document.getElementById("arcadeB").text + " $feature.a1b_c_1" + " - getValue(fieldsA2,[" + weightListIndicators + "]);";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_A2;
 				break;
 			case "A3":
 				cat1.color = [252,233,106, 0.7];
@@ -1472,14 +1502,18 @@
 				dif10.color = [122,171,0, 0.7];
 				dif11.color = [85,145,0, 0.7];
 				dif12.color = [48,120,0, 0.7];
-				renderer_A3.field ="a1c_c_"+escenari;
+				renderer_A3.field ="a1c_c_0";
 				layerEscenari.renderer = renderer_A3;
+				renderer_A3.field ="a1c_c_1";
+				layerEscenariTendencial.renderer = renderer_A3;
 				renderer_max_A3 = {type: "class-breaks"};
 				renderer_max_A3.classBreakInfos = renderer_A3.classBreakInfos;
-				renderer_dif_A3.valueExpression= document.getElementById("arcadeB").text + " $feature.a1c_c_" + escenari + " - getValue(fieldsA3,[" + weightListIndicators + "]);";
+				renderer_dif_A3.valueExpression= document.getElementById("arcadeB").text + " $feature.a1c_c_0" + " - getValue(fieldsA3,[" + weightListIndicators + "]);";
 				renderer_max_A3.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsA3,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_A3;
 				layer3.renderer = renderer_max_A3;
+				renderer_dif_A3.valueExpression= document.getElementById("arcadeB").text + " $feature.a1c_c_1" + " - getValue(fieldsA3,[" + weightListIndicators + "]);";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_A3;
 				break;
 			case "B": 
 				cat1.color = [204,237,217, 0.7];
@@ -1504,15 +1538,18 @@
 				dif11.color = [85,145,0, 0.7];
 				dif12.color = [48,120,0, 0.7];
 				dif13.color = [0,97,0, 0.7];
-				renderer_B.field ="b1_c_"+escenari;
-				layerEscenari.renderer = renderer_B;				
+				renderer_B.field ="b1_c_0";
+				layerEscenari.renderer = renderer_B;	
+				renderer_B.field ="b1_c_1";
+				layerEscenariTendencial.renderer = renderer_B;			
 				renderer_max_B = {type: "class-breaks"};
 				renderer_max_B.classBreakInfos = renderer_B.classBreakInfos;
-				renderer_dif_B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsB,[" + weightListIndicators + "]) - $feature.b1_c_" + escenari + ";";
+				renderer_dif_B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsB,[" + weightListIndicators + "]) - $feature.b1_c_0;";
 				renderer_max_B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsB,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_B;
 				layer3.renderer = renderer_max_B;
-				
+				renderer_dif_B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsB,[" + weightListIndicators + "]) - $feature.b1_c_1;";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_B;
 				break;
 			case "C": 
 				cat1.color = [252,228,104, 0.7];
@@ -1532,14 +1569,18 @@
 				dif9.color = [164,196,0, 0.7];
 				dif11.color = [85,145,0, 0.7];
 				dif13.color = [0,97,0, 0.7];
-				renderer_C.field ="c1_c_"+escenari;
+				renderer_C.field ="c1_c_0";
 				layerEscenari.renderer = renderer_C;
+				renderer_C.field ="c1_c_1";
+				layerEscenariTendencial.renderer = renderer_C;
 				renderer_max_C = {type: "class-breaks"};
 				renderer_max_C.classBreakInfos = renderer_C.classBreakInfos;				
-				renderer_dif_C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsC,[" + weightListIndicators + "]) - $feature.c1_c_" + escenari + ";";
+				renderer_dif_C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsC,[" + weightListIndicators + "]) - $feature.c1_c_0;";
 				renderer_max_C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsC,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_C;
-				layer3.renderer = renderer_max_C;				
+				layer3.renderer = renderer_max_C;	
+				renderer_dif_C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsC,[" + weightListIndicators + "]) - $feature.c1_c_1;";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_C;			
 				break;
 			case "D": 
 				cat1.color = [242,207,182, 0.7];
@@ -1561,14 +1602,18 @@
 				dif13.color = [255,111,0,0.7];
 				dif14.color = [255,77,0,0.7];
 				dif15.color = [255,38,0,0.7];
-				renderer_D.field ="d1_c_"+escenari;
+				renderer_D.field ="d1_c_0";
 				layerEscenari.renderer = renderer_D;
+				renderer_D.field ="d1_c_1";
+				layerEscenariTendencial.renderer = renderer_D;
 				renderer_max_D = {type: "class-breaks"};
 				renderer_max_D.classBreakInfos = renderer_D.classBreakInfos;
-				renderer_dif_D.valueExpression= document.getElementById("arcadeB").text + "$feature.d1_c_" + escenari + " - getValue(fieldsD,[" + weightListIndicators + "]);";
+				renderer_dif_D.valueExpression= document.getElementById("arcadeB").text + "$feature.d1_c_0 - getValue(fieldsD,[" + weightListIndicators + "]);";
 				renderer_max_D.valueExpression= document.getElementById("arcadeB").text + "getValue(fieldsD,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_D;
 				layer3.renderer = renderer_max_D;
+				renderer_dif_D.valueExpression= document.getElementById("arcadeB").text + "$feature.d1_c_1 - getValue(fieldsD,[" + weightListIndicators + "]);";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_D;
 				break;
 			case "E1A": 
 				cat1.color = [149,209,237, 0.7];
@@ -1595,14 +1640,18 @@
 				dif13.color = [61,138,0, 0.7];
 				dif14.color = [31,117,0, 0.7];
 				dif15.color = [0,97,0, 0.7];
-				renderer_E1A.field ="e1a_c_"+escenari;
+				renderer_E1A.field ="e1a_c_0";
 				layerEscenari.renderer = renderer_E1A;
+				renderer_E1A.field ="e1a_c_1";
+				layerEscenariTendencial.renderer = renderer_E1A;
 				renderer_max_E1A = {type: "class-breaks"};
 				renderer_max_E1A.classBreakInfos = renderer_E1A.classBreakInfos;
-				renderer_dif_E1A.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1A,[" + weightListIndicators + "]) - $feature.e1a_c_" + escenari + ";";
+				renderer_dif_E1A.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1A,[" + weightListIndicators + "]) - $feature.e1a_c_0;";
 				renderer_max_E1A.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1A,[" + weightListIndicators + "]) * " + weightListIndicators[6];
 				layer4.renderer = renderer_dif_E1A;
 				layer3.renderer = renderer_max_E1A;
+				renderer_dif_E1A.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1A,[" + weightListIndicators + "]) - $feature.e1a_c_1;";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_E1A;
 				break;
 			case "E1B": 
 				cat1.color = [147,207,237, 0.7];
@@ -1622,14 +1671,18 @@
 				dif7.color = [164,196,0,0.7];
 				dif8.color = [107,161,0,0.7];
 				dif9.color = [60,128,0,0.7];
-				renderer_E1B.field ="e1b_c_"+escenari;
+				renderer_E1B.field ="e1b_c_0";
 				layerEscenari.renderer = renderer_E1B;
+				renderer_E1B.field ="e1b_c_1";
+				layerEscenariTendencial.renderer = renderer_E1B;
 				renderer_max_E1B = {type: "class-breaks"};
 				renderer_max_E1B.classBreakInfos = renderer_E1B.classBreakInfos;
-				renderer_dif_E1B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1B,[" + weightListIndicators + "]) - $feature.e1b_c_" + escenari + ";";
+				renderer_dif_E1B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1B,[" + weightListIndicators + "]) - $feature.e1b_c_0;";
 				renderer_max_E1B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1B,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_E1B;
 				layer3.renderer = renderer_max_E1B;
+				renderer_dif_E1B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1B,[" + weightListIndicators + "]) - $feature.e1b_c_1;";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_E1B;
 				break;
 			case "E1C": 
 				cat1.color = [145,205,237, 0.7];
@@ -1655,14 +1708,18 @@
 				dif13.color = [255,111,0,0.7];
 				dif14.color = [255,77,0,0.7];
 				dif15.color = [255,38,0,0.7];
-				renderer_E1C.field ="e1c_c_"+escenari;
+				renderer_E1C.field ="e1c_c_0";
 				layerEscenari.renderer = renderer_E1C;
+				renderer_E1C.field ="e1c_c_1";
+				layerEscenariTendencial.renderer = renderer_E1C;
 				renderer_max_E1C = {type: "class-breaks"};
 				renderer_max_E1C.classBreakInfos = renderer_E1C.classBreakInfos;
-				renderer_dif_E1C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1C,[" + weightListIndicators + "]) - $feature.e1c_c_" + escenari + ";";
+				renderer_dif_E1C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1C,[" + weightListIndicators + "]) - $feature.e1c_c_0;";
 				renderer_max_E1C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1C,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_E1C;
 				layer3.renderer = renderer_max_E1C;
+				renderer_dif_E1C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1C,[" + weightListIndicators + "]) - $feature.e1c_c_1;";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_E1C;
 				break;
 			case "F": 
 				cat1.color = [237,185,214, 0.7];
@@ -1689,17 +1746,21 @@
 				dif13.color = [73,138,0,0.7];
 				dif14.color = [26,115,0,0.7];
 				dif15.color = [0,97,0,0.7];
-				renderer_F.field ="f1_c_"+escenari;
+				renderer_F.field ="f1_c_0";
 				layerEscenari.renderer = renderer_F;
+				renderer_F.field ="f1_c_1";
+				layerEscenariTendencial.renderer = renderer_F;
 				renderer_max_F = {type: "class-breaks"};
 				renderer_max_F.classBreakInfos = renderer_F.classBreakInfos;
-				renderer_dif_F.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsF,[" + weightListIndicators + "]) - $feature.f1_c_" + escenari + ";";
+				renderer_dif_F.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsF,[" + weightListIndicators + "]) - $feature.f1_c_0;";
 				renderer_max_F.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsF,[" + weightListIndicators + "])";
 				layer4.renderer = renderer_dif_F;
 				layer3.renderer = renderer_max_F;
+				renderer_dif_F.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsF,[" + weightListIndicators + "]) - $feature.f1_c_1;";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_F;
 				break;
 		}
-		queryLayerViewStats(layer3,escenari,weightListIndicators);
+		queryLayerViewStats(layer3,weightListIndicators);
 	  }
 				
 		function getIndexMaxFeatureFields(feature, fields) 
@@ -1728,7 +1789,7 @@
 			return indexMin;
 		}
 
-		function queryLayerViewStats(capa,escenari,weightListIndicators) 
+		function queryLayerViewStats(capa,weightListIndicators) 
 		{
 			valorsA1_actual = [];
 			valorsA1_tend = [];
@@ -1998,7 +2059,20 @@
 				arrMin = arr => Math.min(...arr);
 				arrSum = arr => arr.reduce((a,b) => a + b, 0);
 				arrAvg = arr => arr.reduce((a,b) => a + b, 0) / arr.length;
+
 				
+				let indicatorA1Obj = new MaxSumMultipleIndicator(valorsMaxA1, valorsMaxA1_2, valorsA1_actual, valorsA1_2_actual, valorsA1_tend, valorsA1_2_tend, valorsOptA1, valorsOptA1_2);
+				let indicatorA2Obj = new MinSumIndicator(valorsMinA2, valorsA2_actual, valorsA2_tend, valorsOptA2);
+				let indicatorA3Obj = new MinSumMultipleIndicator(valorsMinA3, valorsMinA3_2, valorsA3_actual, valorsA3_2_actual, valorsA3_tend, valorsA3_2_tend, valorsOptA3, valorsOptA3_2);
+				let indicatorBObj = new MaxAvgIndicator(valorsMaxB, valorsB_actual, valorsB_tend, valorsOptB);
+				let indicatorCObj = new MaxAvgIndicator(valorsMaxC, valorsC_actual, valorsC_tend, valorsOptC);
+				let indicatorDObj = new MinSumIndicator(valorsMinD1, valorsD_actual, valorsD_tend, valorsOptD1);
+				let indicatorE1AObj = new MaxSumMultipleIndicator(valorsMaxE1A1, valorsMaxE1A2, valorsE1A1_actual, valorsE1A2_actual, valorsE1A1_tend, valorsE1A2_tend, valorsOptE1A1, valorsOptE1A2);
+				let indicatorE1BObj = new MaxSumIndicator(valorsMaxE1B, valorsE1B_actual, valorsE1B_tend, valorsOptE1B);
+				let indicatorE1CObj = new MaxSumIndicator(valorsMaxE1C1, valorsE1C_actual, valorsE1C_tend, valorsOptE1C1);
+				let indicatorFObj = new MaxSumIndicator(valorsMaxF1, valorsF_actual, valorsF_tend, valorsOptF1);
+
+				/*
 				// Escenari optimitzat
 				indicador_A1_max = ((arrSum(valorsOptA1)  / arrSum(valorsOptA1_2))) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
 				indicador_A2_max = (arrSum(valorsMinA2)) / (arrSum(valorsOptA2));
@@ -2025,6 +2099,7 @@
 					indicador_F = arrSum(valorsF_actual) / arrSum(valorsMaxF1);
 					
 					aranya2(indicador_A1 , indicador_A2, indicador_A3,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,"rgba(200,0,0,0.6)","Escenari actual");
+					
 				} else {
 					// Escenari tendencial
 					indicador_A1 = (arrSum(valorsA1_tend) / arrSum(valorsA1_2_tend)) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
@@ -2039,52 +2114,67 @@
 					indicador_F = arrSum(valorsF_tend) / arrSum(valorsMaxF1);
 					
 					aranya2(indicador_A1,indicador_A2,indicador_A3,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,"rgba(200,0,0,0.6)","Escenari tendencial");
-				}
+				}*/
+				var categories = ["Eficiència energètica (A1A)", "Consum d’aigua (A1B)","Apropiació de biomassa (A1C)","Conservació de la biodiversitat (B1)", "Funcionament del paisatge (C1)", "Canvi climàtic (D1)", "Recirculació de nutrients (E1A)", "Estoc de carboni (E1B)","Producció agrícola (E1C)","Llocs de treball (F1)"];
+				var data = [indicatorA1Obj, indicatorA2Obj, indicatorA3Obj, indicatorBObj, indicatorCObj, indicatorDObj, indicatorE1AObj, indicatorE1BObj, indicatorE1CObj, indicatorFObj];
+				var units = ["", "hm3", "% de HANPP", "", "", "milers de tones de CO2 eq", "% de recirculació de fòsfor", "milers de tones de carboni", "milers de tones de matèria seca", "UTAs"];
+				histogramChart(categories, data, units);
+				aranya(categories, data);
 			});
 		}
 		
-		function aranya(indicador_A1 ,indicador_A2 ,indicador_A3 ,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,color,titol){
-			//console.log(indicador_A_max  + "//" + indicador_B_max + "//" + indicador_C_max + "//" + indicador_D_max + "//" + indicador_E1A_max + "//" + indicador_E1B_max + "//" + indicador_E1C_max + "//" + indicador_F_max);
-			  var marksData = {
-			  labels: ["A1", "A2","A3", "B", "C", "D", "E1A", "E1B","E1C","F"],
-			  datasets: [{
-				label: titol,
-				backgroundColor: "transparent",
-				borderColor: color,
-				fill: false,
-				data: [indicador_A1 ,indicador_A2 ,indicador_A3 ,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F]
-			  },
-			  {
-				  label: "Escenari optimitzat",
-				backgroundColor: "transparent",
-				borderColor: "rgba(200,200,0,0.6)",
-				 fill: false,
-				data: [indicador_A1_max ,indicador_A2_max ,indicador_A3_max ,indicador_B_max,indicador_C_max,indicador_D_max,indicador_E1A_max,indicador_E1B_max,indicador_E1C_max,indicador_F_max]
-			  }]
-			};
-			
-			if(radarChart) radarChart.destroy();
-			radarChart = new Chart(marksChart, {
-			  type: 'radar',
-			  data: marksData,
-			  width:100,
-			  height:100,
-			  options: {
-					scale: {
-						angleLines: {
-							display: false
-						},
-						ticks: {
-							suggestedMin: 0,
-							suggestedMax: 1
+		function aranya(categories, data)
+		{
+			var ctx = document.getElementById("marksChart");
+			var chart = new Chart(ctx, {
+				type: 'radar',
+				data: {
+					labels: categories,
+					datasets: [{
+						data: data.map(function (indicator) {
+							return indicator.actualRelativeValue();
+						}),
+						label: "Escenari actual",
+						borderWidth: 1,
+						borderColor: '#00FF00',
+						fill: false
+					},
+					{
+						data: data.map(function (indicator) {
+							return indicator.tendentialRelativeValue();
+						}),
+						label: "Escenari tendencial",
+						borderWidth: 1,
+						borderColor: '#AAAAAA',
+						fill: false
+					},
+					{
+						data: data.map(function (indicator) {
+							return indicator.optimitzationRelativeValue();
+						}),
+						label: "Escenari optimitzat",
+						borderWidth: 1,
+						borderColor: '#3377FF',
+						fill: false
+					}]
+				},
+				options: {
+					legend: {
+						position: 'bottom'
+					},
+					tooltips: {
+						callbacks: {
+							title: function(tooltipItems, data) {
+								return data.datasets[tooltipItems[0].datasetIndex].label;
+							},
+							label: function(tooltipItem, data) {
+								return tooltipItem.yLabel.toFixed(2);
+							}
 						}
 					}
 				}
 			});
-			
-			//radarChart.data=marksData;
-			//radarChart.update();
-			//radarChart.resize(50,50);
+			chart.update();
 		}
 		
 		function aranya2(indicador_A1 ,indicador_A2 ,indicador_A3 ,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,color,titol){
@@ -2151,13 +2241,82 @@
 					}
 				}
 			}
-		document.getElementById("marksChart").innerHTML = "<div id='marksChart'></div>";
-        chart = new ApexCharts(
-            document.querySelector("#marksChart"),
-            options
-        );
+			document.getElementById("marksChart").innerHTML = "<div id='marksChart'></div>";
+			chart = new ApexCharts(
+				document.querySelector("#marksChart"),
+				options
+			);
 
-        chart.render();
+			chart.render();
 		}
 
-			
+		function histogramChart(categories, data, units) {
+			var ctx = document.getElementById("histoChart");
+			var chart = new Chart(ctx, {
+				type: 'bar',
+				data: {
+					labels: categories,
+					datasets: [{
+						data: data.map(function (indicator) {
+							return indicator.optimitzationHistogramValue();
+						}),
+						label: "Escenari optimitzat",
+						borderWidth: 1,
+						backgroundColor: '#00FF00',
+						indicatorsValues: data.map(function (indicator) {
+							return indicator.optimitzationAbsoluteValue();
+						}) 
+					},
+					{
+						data: data.map(function (indicator) {
+							return indicator.actualHistogramValue();
+						}),
+						label: "Escenari actual",
+						borderWidth: 1,
+						backgroundColor: '#AAAAAA',
+						indicatorsValues: data.map(function (indicator) {
+							return indicator.actualAbsoluteValue();
+						})
+					},
+					{
+						data: data.map(function (indicator) {
+							return indicator.tendencialHistogramValue();
+						}),
+						label: "Escenari tendencial",
+						borderWidth: 1,
+						backgroundColor: '#3377FF',
+						indicatorsValues: data.map(function (indicator) {
+							return indicator.tendencialAbsoluteValue();
+						})
+					}]
+				},
+				options: {
+					tooltips: {
+						position: 'nearest',
+						callbacks: {
+							title: function(tooltipItems, data) {
+								return data.datasets[tooltipItems[0].datasetIndex].label;
+							},
+							label: function(tooltipItem, data) {
+								return categories[tooltipItem.index] + ": " + data.datasets[tooltipItem.datasetIndex].indicatorsValues[tooltipItem.index].toFixed(2) + " " + units[tooltipItem.index];
+							}
+						}
+					},
+					legend: {
+						position: 'bottom'
+					}
+				}
+			});
+			chart.update();
+		}
+
+			function popup(id){
+				var div = document.getElementById(id);
+				div.classList.add("popup");
+
+			}
+			function closePopup(id){
+				var div = document.getElementById(id);
+				div.classList.remove("popup");
+				
+			}

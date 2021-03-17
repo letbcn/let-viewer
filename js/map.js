@@ -1499,7 +1499,7 @@
         
 		//view.popup.defaultPopupTemplateEnabled = true;
 
-		
+
         // Creates actions in the LayerList.
 
         function defineActions(event) {
@@ -1738,6 +1738,22 @@
 		  expandTooltip: fCerca,
 		  collapseTooltip:fTanca
         });
+
+
+
+        // Add the expand instance to the ui
+		var element = document.createElement('div');
+        element.className = "esri-icon-left-arrow esri-widget--button esri-widget esri-interactive";
+        element.addEventListener('click', function(evt){
+          var cajaLateral = document.getElementById("lateral") ;
+		  cajaLateral.classList.toggle("slided");
+		  var cajaviewDiv = document.getElementById("viewDiv") ;
+		  cajaviewDiv.classList.toggle("slided");
+		  this.classList.toggle("esri-icon-left-arrow");
+		  this.classList.toggle("esri-icon-right-arrow");
+        })
+        view.ui.add(element, "top-left");
+
         view.ui.add(searchExpand, "top-left");
 		
 
