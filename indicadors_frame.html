@@ -606,9 +606,10 @@ line-height: 2;
 		var total_progress = total*5;
 		document.getElementById("myBar").style.height = total_progress+"px";
 		if (total > maxPuntuation) {
-			alert("La puntuació no pot ser més gran de 100.");
+			//alert("La puntuació no pot ser més gran de 100.");
 			document.getElementById("myBar").style.height = 500+"px";
 			document.getElementById(range).value = maxPuntuation - (total - document.getElementById(range).value)
+			canvi(valuesRanges());
 		} else {
 			document.getElementById(tag).innerHTML=newVal;
         	updateTotalRanges();
