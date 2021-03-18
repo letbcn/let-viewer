@@ -456,7 +456,7 @@
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
           field: "a1a_c_0",
           legendOptions: {
-            title: "Eficiència energètica (EFEROI)"
+            title: "Eficiència energètica (ràtio entre l’energia produïda pels cultius i l’energia que consumeixen)"
           },
           defaultSymbol: {
             type: "simple-fill", 
@@ -500,7 +500,7 @@
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
           field: "a1b_c_0",
           legendOptions: {
-            title: "Consum d'aigua"
+            title: "Consum d'aigua (hm3)"
           },
           defaultSymbol: {
             type: "simple-fill", 
@@ -538,7 +538,7 @@
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
           field: "a1c_c_0",
           legendOptions: {
-            title: "Apropiació de la producció primària neta"
+            title: "Apropiació de biomassa (% de HANPP)"
           },
           defaultSymbol: {
             type: "simple-fill", 
@@ -582,7 +582,7 @@
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
           field: "b1_c_0",
           legendOptions: {
-            title: "Integració energia-paisatge (ELIA)"
+            title: "Conservació de la biodiversitat"
           },
           defaultSymbol: {
             type: "simple-fill", 
@@ -626,7 +626,7 @@
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
           field: "c1_c_0",
           legendOptions: {
-            title: "Complexitat paisatgística (Le)"
+            title: "Funcionament del paisatge"
           },
           defaultSymbol: {
             type: "simple-fill", 
@@ -667,7 +667,7 @@
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
           field: "d1_c_0",
           legendOptions: {
-            title: "Emissions de gasos d'efecte hivernacle (MJ)"
+            title: "Canvi climàtic (milers de tones de CO2 eq"
           },
           defaultSymbol: {
             type: "simple-fill", 
@@ -706,7 +706,7 @@
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
           field: "e1a_c_0",
           legendOptions: {
-            title: "Recirculació de nutrients (% rP)"
+            title: "Recirculació de nutrients (% de recirculació de fòsfor)"
           },
           defaultSymbol: {
             type: "simple-fill", 
@@ -749,7 +749,7 @@
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
           field: "e1b_c_0",
           legendOptions: {
-            title: "Embornal de carboni (t C)"
+            title: "Estoc de carboni (milions de tones de carboni)"
           },
           defaultSymbol: {
             type: "simple-fill", 
@@ -788,7 +788,7 @@
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
           field: "e1c_c_0",
           legendOptions: {
-            title: "Producció d'aliments (kg ms)"
+            title: "Producció agrícola (milions de tones de carboni)"
           },
           defaultSymbol: {
             type: "simple-fill", 
@@ -827,7 +827,7 @@
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
           field: "f1_c_0",
           legendOptions: {
-            title: "Llocs de treball (UTA)"
+            title: "Llocs de treball (UTAs)"
           },
           defaultSymbol: {
             type: "simple-fill", 
