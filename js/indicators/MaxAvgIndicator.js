@@ -1,6 +1,7 @@
-class MaxAvgIndicator {
-    constructor(maxValues, actualValues, tendencialValues, optimitzationValues) 
+class MaxAvgIndicator extends Indicator {
+    constructor(name, units, decimals, maxValues, actualValues, tendencialValues, optimitzationValues) 
     {
+        super(name, units, decimals);
         var arrAvg = arr => arr.reduce((a,b) => a + b, 0) / arr.length;
         this.maxValue = arrAvg(maxValues);
         this.actualValue = arrAvg(actualValues);
@@ -57,6 +58,6 @@ class MaxAvgIndicator {
 
     tendencialAbsoluteValue()
     {
-        return this.tendencialValue * this.factor; 
+        return this.tendencialValue * this.factor;
     }
 }

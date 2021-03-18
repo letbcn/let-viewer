@@ -2060,18 +2060,6 @@
 				arrSum = arr => arr.reduce((a,b) => a + b, 0);
 				arrAvg = arr => arr.reduce((a,b) => a + b, 0) / arr.length;
 
-				
-				let indicatorA1Obj = new MaxSumMultipleIndicator(valorsMaxA1, valorsMaxA1_2, valorsA1_actual, valorsA1_2_actual, valorsA1_tend, valorsA1_2_tend, valorsOptA1, valorsOptA1_2);
-				let indicatorA2Obj = new MinSumIndicator(valorsMinA2, valorsA2_actual, valorsA2_tend, valorsOptA2);
-				let indicatorA3Obj = new MinSumMultipleIndicator(valorsMinA3, valorsMinA3_2, valorsA3_actual, valorsA3_2_actual, valorsA3_tend, valorsA3_2_tend, valorsOptA3, valorsOptA3_2);
-				let indicatorBObj = new MaxAvgIndicator(valorsMaxB, valorsB_actual, valorsB_tend, valorsOptB);
-				let indicatorCObj = new MaxAvgIndicator(valorsMaxC, valorsC_actual, valorsC_tend, valorsOptC);
-				let indicatorDObj = new MinSumIndicator(valorsMinD1, valorsD_actual, valorsD_tend, valorsOptD1);
-				let indicatorE1AObj = new MaxSumMultipleIndicator(valorsMaxE1A1, valorsMaxE1A2, valorsE1A1_actual, valorsE1A2_actual, valorsE1A1_tend, valorsE1A2_tend, valorsOptE1A1, valorsOptE1A2);
-				let indicatorE1BObj = new MaxSumIndicator(valorsMaxE1B, valorsE1B_actual, valorsE1B_tend, valorsOptE1B);
-				let indicatorE1CObj = new MaxSumIndicator(valorsMaxE1C1, valorsE1C_actual, valorsE1C_tend, valorsOptE1C1);
-				let indicatorFObj = new MaxSumIndicator(valorsMaxF1, valorsF_actual, valorsF_tend, valorsOptF1);
-
 				/*
 				// Escenari optimitzat
 				indicador_A1_max = ((arrSum(valorsOptA1)  / arrSum(valorsOptA1_2))) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
@@ -2115,21 +2103,41 @@
 					
 					aranya2(indicador_A1,indicador_A2,indicador_A3,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,"rgba(200,0,0,0.6)","Escenari tendencial");
 				}*/
-				var categories = ["Eficiència energètica (A1A)", "Consum d’aigua (A1B)","Apropiació de biomassa (A1C)","Conservació de la biodiversitat (B1)", "Funcionament del paisatge (C1)", "Canvi climàtic (D1)", "Recirculació de nutrients (E1A)", "Estoc de carboni (E1B)","Producció agrícola (E1C)","Llocs de treball (F1)"];
+
+				let indicatorA1Obj = new MaxSumMultipleIndicator("Eficiència energètica (A1A)", "ràtio entre l’energia produïda pels cultius i l’energia que consumeixen", 2, valorsMaxA1, valorsMaxA1_2, valorsA1_actual, valorsA1_2_actual, valorsA1_tend, valorsA1_2_tend, valorsOptA1, valorsOptA1_2);
+				let indicatorA2Obj = new MinSumIndicator("Consum d’aigua (A1B)", "hm3", 0, valorsMinA2, valorsA2_actual, valorsA2_tend, valorsOptA2);
+				indicatorA2Obj.setFactor(0.001);
+				let indicatorA3Obj = new MinSumMultipleIndicator("Apropiació de biomassa (A1C)", "% de HANPP", 0, valorsMinA3, valorsMinA3_2, valorsA3_actual, valorsA3_2_actual, valorsA3_tend, valorsA3_2_tend, valorsOptA3, valorsOptA3_2);
+				indicatorA3Obj.setFactor(100);
+				let indicatorBObj = new MaxAvgIndicator("Conservació de la biodiversitat (B1)", "", 2, valorsMaxB, valorsB_actual, valorsB_tend, valorsOptB);
+				let indicatorCObj = new MaxAvgIndicator("Funcionament del paisatge (C1)", "", 2, valorsMaxC, valorsC_actual, valorsC_tend, valorsOptC);
+				let indicatorDObj = new MinSumIndicator("Canvi climàtic (D1)", "milers de tones de CO2 eq", 2, valorsMinD1, valorsD_actual, valorsD_tend, valorsOptD1);
+				indicatorDObj.setFactor(0.001);
+				let indicatorE1AObj = new MaxSumMultipleIndicator("Recirculació de nutrients (E1A)", "% de recirculació de fòsfor", 0, valorsMaxE1A1, valorsMaxE1A2, valorsE1A1_actual, valorsE1A2_actual, valorsE1A1_tend, valorsE1A2_tend, valorsOptE1A1, valorsOptE1A2);
+				indicatorE1AObj.setFactor(100);
+				let indicatorE1BObj = new MaxSumIndicator("Estoc de carboni (E1B)", "milions de tones de carboni", 3, valorsMaxE1B, valorsE1B_actual, valorsE1B_tend, valorsOptE1B);
+				indicatorE1BObj.setFactor(0.000001);
+				let indicatorE1CObj = new MaxSumIndicator("Producció agrícola (E1C)", "milions de tones de carboni", 0, valorsMaxE1C1, valorsE1C_actual, valorsE1C_tend, valorsOptE1C1);
+				indicatorE1CObj.setFactor(0.000000001);
+				let indicatorFObj = new MaxSumIndicator("Llocs de treball (F1)", "UTAs", 0, valorsMaxF1, valorsF_actual, valorsF_tend, valorsOptF1);
+
+				//var categories = ["Eficiència energètica (A1A)", "Consum d’aigua (A1B)","Apropiació de biomassa (A1C)","Conservació de la biodiversitat (B1)", "Funcionament del paisatge (C1)", "Canvi climàtic (D1)", "Recirculació de nutrients (E1A)", "Estoc de carboni (E1B)","Producció agrícola (E1C)","Llocs de treball (F1)"];
 				var data = [indicatorA1Obj, indicatorA2Obj, indicatorA3Obj, indicatorBObj, indicatorCObj, indicatorDObj, indicatorE1AObj, indicatorE1BObj, indicatorE1CObj, indicatorFObj];
-				var units = ["", "hm3", "% de HANPP", "", "", "milers de tones de CO2 eq", "% de recirculació de fòsfor", "milers de tones de carboni", "milers de tones de matèria seca", "UTAs"];
-				histogramChart(categories, data, units);
-				aranya(categories, data);
+				//var units = ["ràtio entre l’energia produïda pels cultius i l’energia que consumeixen", "hm3", "% de HANPP", "", "", "milers de tones de CO2 eq", "% de recirculació de fòsfor", "milions de tones de carboni", "milers de tones de matèria seca", "UTAs"];
+				histogramChart(data);
+				aranya(data);
 			});
 		}
 		
-		function aranya(categories, data)
+		function aranya(data)
 		{
 			var ctx = document.getElementById("marksChart");
 			var chart = new Chart(ctx, {
 				type: 'radar',
 				data: {
-					labels: categories,
+					labels: data.map(function (indicator) {
+						return indicator.getName();
+					}),
 					datasets: [{
 						data: data.map(function (indicator) {
 							return indicator.actualRelativeValue();
@@ -2250,42 +2258,44 @@
 			chart.render();
 		}*/
 
-		function histogramChart(categories, data, units) {
+		function histogramChart(indicators) {
 			var ctx = document.getElementById("histoChart");
 			var chart = new Chart(ctx, {
 				type: 'bar',
 				data: {
-					labels: categories,
+					labels: indicators.map(function (indicator) {
+						return indicator.getName();
+					}),
 					datasets: [{
-						data: data.map(function (indicator) {
+						data: indicators.map(function (indicator) {
 							return indicator.actualHistogramValue();
 						}),
 						label: "Escenari actual",
 						borderWidth: 1,
 						backgroundColor: '#3377FF',
-						indicatorsValues: data.map(function (indicator) {
+						indicatorsValues: indicators.map(function (indicator) {
 							return indicator.actualAbsoluteValue();
 						})
 					},
 					{
-						data: data.map(function (indicator) {
+						data: indicators.map(function (indicator) {
 							return indicator.tendencialHistogramValue();
 						}),
 						label: "Escenari tendencial",
 						borderWidth: 1,
 						backgroundColor: '#FF3333',
-						indicatorsValues: data.map(function (indicator) {
+						indicatorsValues: indicators.map(function (indicator) {
 							return indicator.tendencialAbsoluteValue();
 						})
 					},
 					{
-						data: data.map(function (indicator) {
+						data: indicators.map(function (indicator) {
 							return indicator.optimitzationHistogramValue();
 						}),
 						label: "Escenari optimitzat",
 						borderWidth: 1,
 						backgroundColor: '#00FF00',
-						indicatorsValues: data.map(function (indicator) {
+						indicatorsValues: indicators.map(function (indicator) {
 							return indicator.optimitzationAbsoluteValue();
 						}) 
 					}]
@@ -2298,7 +2308,7 @@
 								return data.datasets[tooltipItems[0].datasetIndex].label;
 							},
 							label: function(tooltipItem, data) {
-								return categories[tooltipItem.index] + ": " + data.datasets[tooltipItem.datasetIndex].indicatorsValues[tooltipItem.index].toFixed(2) + " " + units[tooltipItem.index];
+								return indicators[tooltipItem.index].getName() + ": " + data.datasets[tooltipItem.datasetIndex].indicatorsValues[tooltipItem.index].toFixed(indicators[tooltipItem.index].getDecimals()) + " " + indicators[tooltipItem.index].getUnits();
 							}
 						}
 					},
