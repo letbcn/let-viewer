@@ -1879,7 +1879,7 @@
         const bkExpand = new Expand({
           view: view,
           content: bookmarks,
-          expanded: false,
+          expanded: true,
 		  expandTooltip:fObrebookmarks,
 		  collapseTooltip:fTanca
         });

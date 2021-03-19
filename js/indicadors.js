@@ -2196,79 +2196,6 @@
 			});
 			chart.render();
 		}
-		/*
-		function aranya2(indicador_A1 ,indicador_A2 ,indicador_A3 ,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,color,titol){
-			var options = {
-				chart: {
-					height: 350,
-					type: 'radar',
-				},
-				series: [{
-					name: titol,
-					data: [indicador_A1 ,indicador_A2 ,indicador_A3 ,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F],
-				},{
-					name: "Escenari optimitzat",
-					data: [indicador_A1_max ,indicador_A2_max ,indicador_A3_max ,indicador_B_max,indicador_C_max,indicador_D_max,indicador_E1A_max,indicador_E1B_max,indicador_E1C_max,indicador_F_max],
-				}],
-				labels:  ["Eficiència energètica (A1A)", "Consum d’aigua (A1B)","Apropiació de biomassa (A1C)","Conservació de la biodiversitat (B1)", "Funcionament del paisatge (C1)", "Canvi climàtic (D1)", "Recirculació de nutrients (E1A)", "Estoc de carboni (E1B)","Producció agrícola (E1C)","Llocs de treball (F1)"],
-				plotOptions: {
-					radar: {
-						size: 140,
-						polygons: {
-							strokeColor: '#e9e9e9',
-							fill: {
-								colors: []
-							}
-						}
-					}
-				},
-				
-				colors: ['#AAAAAA','#00FF00'],
-				fill:{type: 'gsolid',opacity:0 },
-				stroke: {
-					  show: true,
-					  width: 2,
-					  colors: ['#AAAAAA','#00FF00'],
-					  dashArray: 0
-					}
-				  ,
-				markers: {
-					size: 2,
-					strokeColors: ['#AAAAAA','#00FF00'],
-					strokeWidth: 2,
-				},
-				tooltip: {
-					y: {
-						formatter: function(val) {
-							return val.toFixed(2);
-						}   
-					}
-				},
-				yaxis: {
-					tickAmount: 10,
-					min:0,
-					max:1,
-					decimalsInFloat: 3,
-					forceNiceScale: false,
-					labels: {
-						formatter: function(val, i) {
-							if(i % 2 === 0) {
-								return val.toFixed(1);
-							} else {
-								return ''
-							}
-						}
-					}
-				}
-			}
-			document.getElementById("marksChart").innerHTML = "<div id='marksChart'></div>";
-			chart = new ApexCharts(
-				document.querySelector("#marksChart"),
-				options
-			);
-
-			chart.render();
-		}*/
 
 		function histogramChart(indicators) {
 			document.getElementById("histoGraficContainer").innerHTML = '&nbsp;';
@@ -2334,13 +2261,13 @@
 			chart.update();
 		}
 
-			function popup(id){
-				var div = document.getElementById(id);
-				div.classList.add("popup");
+		function popup(id){
+			var div = document.getElementById(id);
+			div.classList.add("popup");
 
-			}
-			function closePopup(id){
-				var div = document.getElementById(id);
-				div.classList.remove("popup");
-				
-			}
+		}
+		function closePopup(id){
+			var div = document.getElementById(id);
+			div.classList.remove("popup");
+			
+		}
