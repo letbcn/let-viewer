@@ -2156,7 +2156,7 @@
 						}),
 						label: "Escenari actual",
 						borderWidth: 1,
-						borderColor: '#3377FF',
+						borderColor: '#93D4EB',
 						fill: false
 					},
 					{
@@ -2165,7 +2165,7 @@
 						}),
 						label: "Escenari tendencial",
 						borderWidth: 1,
-						borderColor: '#FF3333',
+						borderColor: '#F8E8A0',
 						fill: false
 					},
 					{
@@ -2174,7 +2174,7 @@
 						}),
 						label: "Escenari optimitzat",
 						borderWidth: 1,
-						borderColor: '#00FF00',
+						borderColor: '#F1BFBE',
 						fill: false
 					}]
 				},
@@ -2213,7 +2213,7 @@
 						}),
 						label: "Escenari actual",
 						borderWidth: 1,
-						backgroundColor: '#3377FF',
+						backgroundColor: '#93D4EB',
 						indicatorsValues: indicators.map(function (indicator) {
 							return indicator.actualAbsoluteValue();
 						})
@@ -2224,7 +2224,7 @@
 						}),
 						label: "Escenari tendencial",
 						borderWidth: 1,
-						backgroundColor: '#FF3333',
+						backgroundColor: '#F8E8A0',
 						indicatorsValues: indicators.map(function (indicator) {
 							return indicator.tendencialAbsoluteValue();
 						})
@@ -2235,7 +2235,7 @@
 						}),
 						label: "Escenari optimitzat",
 						borderWidth: 1,
-						backgroundColor: '#00FF00',
+						backgroundColor: '#F1BFBE',
 						indicatorsValues: indicators.map(function (indicator) {
 							return indicator.optimitzationAbsoluteValue();
 						}) 
