@@ -101,7 +101,7 @@
 		}
 		
 		.esri-popup .esri-popup-header .esri-title {
-        font-size: 18px;
+        font-size: 17px;
         font-weight: bolder;
       }
 
@@ -111,9 +111,9 @@
 
       .esri-layer-list__item{
         background-color: transparent !important;
-        padding: 10px !important;
+        padding: 5px !important;
         border-bottom: none !important;
-
+        margin:0px !important;
         margin-left: 15px !important; 
       }
 	
@@ -147,7 +147,7 @@ li[aria-selected="true"] .esri-icon-right-triangle-arrow::before{
     word-break: break-word;
     overflow-wrap: break-word;
     transition: color 125ms ease-in-out;
-    font-size: 19px;
+    font-size: 17px;
 
 }
 
@@ -160,6 +160,63 @@ li[aria-selected="true"] .esri-icon-right-triangle-arrow::before{
 }
 .esri-layer-list__child-toggle [class*="esri-icon"] {
     line-height: 1.2em !important;
+}
+
+@media screen and (max-width:1024px){
+  #lateral {
+    float: left;
+    width: 30%;
+    height: 100%;
+    background-color: #B0DBBF;
+    position: relative;
+    transition: 1s;
+}
+  #viewDiv {
+      float: left;
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 70%;
+      transition: 1s;
+  }
+}
+
+@media screen and (max-width:700px){
+  #lateral {
+    float: left;
+    width: 40%;
+    height: 100%;
+    background-color: #B0DBBF;
+    position: relative;
+    transition: 1s;
+}
+  #viewDiv {
+      float: left;
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 60%;
+      transition: 1s;
+  }
+}
+
+@media screen and (max-width:500px){
+  #lateral {
+    float: left;
+    width: 60%;
+    height: 100%;
+    background-color: #B0DBBF;
+    position: relative;
+    transition: 1s;
+}
+  #viewDiv {
+      float: left;
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 40%;
+      transition: 1s;
+  }
 }
     </style>
 
