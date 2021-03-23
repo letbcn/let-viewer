@@ -61,6 +61,13 @@
         padding: 1em;
 		position:  absolute;
       }
+      
+      #toolbarDiv {
+        cursor: default;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
 
 		.button {
 		box-shadow:inset 0px 1px 3px 0px #91b8b3;
@@ -158,9 +165,8 @@
 		<div id="lateral" class="esri-widget">
 			<div id="divCapes" class="esri-widget" ><b style="color:#c00000">Capes<hr style=" border-top: 1px solid #c00000"></b></div>
 			<div id="divEnllaços">Eines del Let's GIS: <br>
-				<a href="indicadors.html" target="_blank" class="button">Sistema de suport a la planificació</a>
-		
 				<a href="historics.html" target="_blank" class="button">Visualització de mapes històrics</a>
+				<a href="dinamiques.html" target="_blank" class="button">Dinàmiques territorials</a>
 			</div>
 			<div id="divImatges">Projecte cofinançat per:<br>
 					 <img src="imatges/FEDER_senselema.jpg" alt="Logo" style="width:200px;float:bottom;padding:10px 0px 10px 10px !important;">
@@ -168,7 +174,10 @@
 				</div>
 			
 		</div>
-    <div id="viewDiv"></div>
+    <div id="viewDiv">
+
+    
+    </div>
 	
 	<div id="mapabaseDiv" class="esri-widget">
       <label>Mapa base: <input id="mapabaseInput" type="checkbox" checked="yes" /></label>
