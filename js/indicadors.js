@@ -1,7 +1,9 @@
 ﻿/*****************************************************************
          * Define symbols for each class break.
          *****************************************************************/
-		 fields_A = "($feature.a1_c_0,$feature.a1_c_1,$feature.a1_c_2,$feature.a1_c_3)";
+		 fields_A1 = "($feature.a1a_c_0,$feature.a1a_c_1,$feature.a1a_c_2,$feature.a1a_c_3)";
+		 fields_A2 = "($feature.a1b_c_0,$feature.a1b_c_1,$feature.a1b_c_2,$feature.a1b_c_3)";
+		 fields_A3 = "($feature.a1c_c_0,$feature.a1c_c_1,$feature.a1c_c_2,$feature.a1c_c_3)";
 		 fields_B = "($feature.b1_c_0,$feature.b1_c_1,$feature.b1_c_2,$feature.b1_c_3)";
 		 fields_C = "($feature.c1_c_0,$feature.c1_c_1,$feature.c1_c_2,$feature.c1_c_3)";
 		 fields_D = "($feature.d1_c_0,$feature.d1_c_1,$feature.d1_c_2,$feature.d1_c_3)";
@@ -9,7 +11,9 @@
 		 fields_E1B = "($feature.e1b_c_0,$feature.e1b_c_1,$feature.e1b_c_2,$feature.e1b_c_3)";
 		 fields_E1C = "($feature.e1c_c_0,$feature.e1c_c_1,$feature.e1c_c_2,$feature.e1c_c_3)";
 		 fields_F = "($feature.f1_c_0,$feature.f1_c_1,$feature.f1_c_2,$feature.f1_c_3)";
-		 indicador_A =0;
+		 indicador_A1 =0;
+		 indicador_A2 =0;
+		 indicador_A3 =0;
 		 indicador_B = 0;
 		 indicador_C = 0;
 		 indicador_D = 0
@@ -17,6 +21,207 @@
 		 indicador_E1B = 0;
 		 indicador_E1C = 0;
 		 indicador_F = 0;
+
+		var fieldsA1 = [
+			{ value: "a1a_c_0"},
+			{ value: "a1a_c_1"},
+			{ value: "a1a_c_2"},
+			{ value: "a1a_c_3"},
+			{ value: "a1a_o_0"},
+			{ value: "a1a_o_1"},
+			{ value: "a1a_o_2"},
+			{ value: "a1a_o_3"}
+		];
+		var fieldsA1_agg = [
+			{ value: "a1a_c_0_1"},
+			{ value: "a1a_c_1_1"},
+			{ value: "a1a_c_2_1"},
+			{ value: "a1a_c_3_1"},
+			{ value: "a1a_o_0_1"},
+			{ value: "a1a_o_1_1"},
+			{ value: "a1a_o_2_1"},
+			{ value: "a1a_o_3_1"}
+		];
+		var fieldsA1_2_agg = [
+			{ value: "a1a_c_0_2"},
+			{ value: "a1a_c_1_2"},
+			{ value: "a1a_c_2_2"},
+			{ value: "a1a_c_3_2"},
+			{ value: "a1a_o_0_2"},
+			{ value: "a1a_o_1_2"},
+			{ value: "a1a_o_2_2"},
+			{ value: "a1a_o_3_2"}
+		];
+		var fieldsA2 = [
+			{ value: "a1b_c_0"},
+			{ value: "a1b_c_1"},
+			{ value: "a1b_c_2"},
+			{ value: "a1b_c_3"},
+			{ value: "a1b_o_0"},
+			{ value: "a1b_o_1"},
+			{ value: "a1b_o_2"},
+			{ value: "a1b_o_3"}
+		];
+		var fieldsA2_agg = [
+			{ value: "a1b_c_0_1"},
+			{ value: "a1b_c_1_1"},
+			{ value: "a1b_c_2_1"},
+			{ value: "a1b_c_3_1"},
+			{ value: "a1b_o_0_1"},
+			{ value: "a1b_o_1_1"},
+			{ value: "a1b_o_2_1"},
+			{ value: "a1b_o_3_1"}
+		];
+		var fieldsA3 = [
+			{ value: "a1c_c_0"},
+			{ value: "a1c_c_1"},
+			{ value: "a1c_c_2"},
+			{ value: "a1c_c_3"},
+			{ value: "a1c_o_0"},
+			{ value: "a1c_o_1"},
+			{ value: "a1c_o_2"},
+			{ value: "a1c_o_3"}
+		];
+		var fieldsA3_agg = [
+			{ value: "a1c_c_0_1"},
+			{ value: "a1c_c_1_1"},
+			{ value: "a1c_c_2_1"},
+			{ value: "a1c_c_3_1"},
+			{ value: "a1c_o_0_1"},
+			{ value: "a1c_o_1_1"},
+			{ value: "a1c_o_2_1"},
+			{ value: "a1c_o_3_1"}
+		];
+		var fieldsA3_2_agg = [
+			{ value: "a1c_c_0_2"},
+			{ value: "a1c_c_1_2"},
+			{ value: "a1c_c_2_2"},
+			{ value: "a1c_c_3_2"},
+			{ value: "a1c_o_0_2"},
+			{ value: "a1c_o_1_2"},
+			{ value: "a1c_o_2_2"},
+			{ value: "a1c_o_3_2"}
+		];
+		var fieldsB = [
+			{ value: "b1_c_0" },
+			{ value: "b1_c_1" },
+			{ value: "b1_c_2" },
+			{ value: "b1_c_3" },
+			{ value: "b1_o_0" },
+			{ value: "b1_o_1" },
+			{ value: "b1_o_2" },
+			{ value: "b1_o_3" }
+		];
+		var fieldsC = [
+			{ value: "c1_c_0" },
+			{ value: "c1_c_1" },
+			{ value: "c1_c_2" },
+			{ value: "c1_c_3" },
+			{ value: "c1_o_0" },
+			{ value: "c1_o_1" },
+			{ value: "c1_o_2" },
+			{ value: "c1_o_3" }
+		];
+		var fieldsD = [
+			{ value: "d1_c_0" },
+			{ value: "d1_c_1" },
+			{ value: "d1_c_2" },
+			{ value: "d1_c_3" },
+			{ value: "d1_o_0" },
+			{ value: "d1_o_1" },
+			{ value: "d1_o_2" },
+			{ value: "d1_o_3" }
+		];
+		var fieldsD_agg = [
+			{ value: "d1_c_0_1" },
+			{ value: "d1_c_1_1" },
+			{ value: "d1_c_2_1" },
+			{ value: "d1_c_3_1" },
+			{ value: "d1_o_0_1" },
+			{ value: "d1_o_1_1" },
+			{ value: "d1_o_2_1" },
+			{ value: "d1_o_3_1" }
+		];
+		var fieldsE1A = [
+			{ value: "e1a_c_0" },
+			{ value: "e1a_c_1" },
+			{ value: "e1a_c_2" },
+			{ value: "e1a_c_3" },
+			{ value: "e1a_o_0" },
+			{ value: "e1a_o_1" },
+			{ value: "e1a_o_2" },
+			{ value: "e1a_o_3" }
+		];
+		var fieldsE1A1_agg = [
+			{ value: "e1a_c_0_1" },
+			{ value: "e1a_c_1_1" },
+			{ value: "e1a_c_2_1" },
+			{ value: "e1a_c_3_1" },
+			{ value: "e1a_o_0_1" },
+			{ value: "e1a_o_1_1" },
+			{ value: "e1a_o_2_1" },
+			{ value: "e1a_o_3_1" }
+		];
+		var fieldsE1A2_agg = [
+			{ value: "e1a_c_0_2" },
+			{ value: "e1a_c_1_2" },
+			{ value: "e1a_c_2_2" },
+			{ value: "e1a_c_3_2" },
+			{ value: "e1a_o_0_2" },
+			{ value: "e1a_o_1_2" },
+			{ value: "e1a_o_2_2" },
+			{ value: "e1a_o_3_2" }
+		];
+		var fieldsE1B = [
+			{ value: "e1b_c_0" },
+			{ value: "e1b_c_1" },
+			{ value: "e1b_c_2" },
+			{ value: "e1b_c_3" },
+			{ value: "e1b_o_0" },
+			{ value: "e1b_o_1" },
+			{ value: "e1b_o_2" },
+			{ value: "e1b_o_3" }
+		];
+		var fieldsE1C = [
+			{ value: "e1c_c_0" },
+			{ value: "e1c_c_1" },
+			{ value: "e1c_c_2" },
+			{ value: "e1c_c_3" },
+			{ value: "e1c_o_0" },
+			{ value: "e1c_o_1" },
+			{ value: "e1c_o_2" },
+			{ value: "e1c_o_3" }
+		];
+		var fieldsE1C_agg = [
+			{ value: "e1c_c_0_1" },
+			{ value: "e1c_c_1_1" },
+			{ value: "e1c_c_2_1" },
+			{ value: "e1c_c_3_1" },
+			{ value: "e1c_o_0_1" },
+			{ value: "e1c_o_1_1" },
+			{ value: "e1c_o_2_1" },
+			{ value: "e1c_o_3_1" }
+		];
+		var fieldsF = [
+			{ value: "f1_c_0" },
+			{ value: "f1_c_1" },
+			{ value: "f1_c_2" },
+			{ value: "f1_c_3" },
+			{ value: "f1_o_0" },
+			{ value: "f1_o_1" },
+			{ value: "f1_o_2" },
+			{ value: "f1_o_3" }
+		];
+		var fieldsF_agg = [
+			{ value: "f1_c_0_1" },
+			{ value: "f1_c_1_1" },
+			{ value: "f1_c_2_1" },
+			{ value: "f1_c_3_1" },
+			{ value: "f1_o_0_1" },
+			{ value: "f1_o_1_1" },
+			{ value: "f1_o_2_1" },
+			{ value: "f1_o_3_1" }
+		];
 
         cat1 = {
           type: "simple-fill", 
@@ -247,9 +452,9 @@
           }
         }; 
 
-        renderer_A = {
+        renderer_A1= {
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
-          field: "a1_c_0",
+          field: "a1a_c_0",
           legendOptions: {
             title: "Eficiència energètica (EFEROI)"
           },
@@ -286,6 +491,88 @@
             },
             {
               minValue: 0.000001, maxValue: 1, symbol: cat1, label: "0 - 1 "
+            }
+            
+          ]
+        };
+        
+        renderer_A2= {
+          type: "class-breaks", // autocasts as new ClassBreaksRenderer()
+          field: "a1b_c_0",
+          legendOptions: {
+            title: "Consum d'aigua"
+          },
+          defaultSymbol: {
+            type: "simple-fill", 
+            style: "none",
+            outline: {
+              width: 0
+            }
+          },
+          defaultLabel: "sense dades",
+          classBreakInfos: [
+		  
+            {
+              minValue:250.0001, maxValue: 1000,symbol: cat8,label: ">250"
+            },
+            {
+              minValue: 200.0001, maxValue: 250,symbol: cat7,label: "200 - 250"
+            },
+            {
+              minValue: 150.0001,maxValue: 200, symbol: cat4,label: "150 - 200"
+            },
+            {
+              minValue: 100.0001, maxValue: 150,symbol: cat3, label: "100 - 150"
+            },
+            {
+              minValue: 50.00001, maxValue: 100, symbol: cat2, label: "50 - 100"
+            },
+            {
+              minValue: 0.000001, maxValue: 50, symbol: cat1, label: "0 - 50 "
+            }
+            
+          ]
+        };
+        
+        renderer_A3= {
+          type: "class-breaks", // autocasts as new ClassBreaksRenderer()
+          field: "a1c_c_0",
+          legendOptions: {
+            title: "Apropiació de la producció primària neta"
+          },
+          defaultSymbol: {
+            type: "simple-fill", 
+            style: "none",
+            outline: {
+              width: 0
+            }
+          },
+          defaultLabel: "sense dades",
+          classBreakInfos: [
+		  
+            {
+              minValue: 35, maxValue: 100,symbol: cat8,label: ">35 "
+            },
+            {
+              minValue: 30.0001,maxValue: 35,symbol: cat7,label: "30 - 35"
+            },
+            {
+              minValue:25.0001, maxValue: 30,symbol: cat6,label: "25 - 30"
+            },
+            {
+              minValue: 20.0001, maxValue: 25,symbol: cat5,label: "20 - 25"
+            },
+            {
+              minValue: 15.0001,maxValue: 20, symbol: cat4,label: "15 - 20"
+            },
+            {
+              minValue: 10.0001, maxValue: 15,symbol: cat3, label: "10 - 15"
+            },
+            {
+              minValue: 5.00001, maxValue: 10, symbol: cat2, label: "5 - 10"
+            },
+            {
+              minValue: 0.000001, maxValue: 5, symbol: cat1, label: "0 - 5 "
             }
             
           ]
@@ -392,25 +679,25 @@
           defaultLabel: "sense dades",
           classBreakInfos: [
 			{
-              minValue: 1600.001,maxValue: 800,symbol: cat7,label: "> 1600"
-            },
-			{
-              minValue: 800.001,maxValue: 1600,symbol: cat6,label: "800 - 1600"
+              minValue: 38.40001,maxValue: 55,symbol: cat7,label: "> 38 "
             },
             {
-              minValue: 400.001, maxValue: 800,symbol: cat5,label: "400 - 800"
+              minValue: 27.0001, maxValue: 38,symbol: cat6,label: "27 - 38 "
             },
             {
-              minValue: 200.001, maxValue: 400,symbol: cat4,label: "200 - 400"
+              minValue: 17.80001, maxValue: 27,symbol: cat5,label: "17.8 - 27 "
             },
             {
-              minValue: 100.001, maxValue: 200,symbol: cat3, label: "100 - 200"
+              minValue: 10.30001,maxValue: 17.8, symbol: cat4,label: "10.3 - 17.8 "
             },
             {
-              minValue: 50.001, maxValue: 100, symbol: cat2, label: "50 - 100"
+              minValue: 5.20001, maxValue: 10.3,symbol: cat3, label: "5.2 - 10.3 "
             },
             {
-              minValue: 5, maxValue: 50, symbol: cat1, label: "0 - 50 "
+              minValue: 1.600001, maxValue: 5.2, symbol: cat2, label: "1.6 - 5.2 "
+            },
+            {
+              minValue: 0.00001, maxValue: 1.6, symbol: cat1, label: "0 - 1.6 "
             }
           ]
         };
@@ -581,9 +868,9 @@
         };
 
 		
-		renderer_dif_A = {
+		renderer_dif_A1 = {
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
-          valueExpression:  "Max"+fields_A+" - $feature.a1_c_0",
+          valueExpression:  "Max"+fields_A1+" - $feature.a1a_c_0",
           legendOptions: {
             title: "Diferència"
           },
@@ -634,7 +921,83 @@
             }
           ]
         };
-		
+		renderer_dif_A2 = {
+          type: "class-breaks", // autocasts as new ClassBreaksRenderer()
+          valueExpression:  "Max"+fields_A2+" - $feature.a1b_c_0",
+          legendOptions: {
+            title: "Diferència"
+          },
+          defaultSymbol: {
+            type: "simple-fill", 
+            style: "none",
+            outline: {
+              width: 0
+            }
+          },
+          defaultLabel: "sense dades",
+          classBreakInfos: [
+            {
+              minValue: 60.001,maxValue: 100,symbol: dif14,label: ">60"
+            },
+          	{
+              minValue: 50.001,maxValue: 60,symbol: dif13,label: "50 - 60"
+            },
+			{
+              minValue: 40.001,maxValue: 50,symbol: dif12,label: "40 - 50"
+            },
+			{
+              minValue: 30.001,maxValue: 40,symbol: dif11,label: "30 - 40"
+            },
+			{
+              minValue: 20,maxValue: 30,symbol: dif10,label: "20 - 30"
+            },
+			{
+              minValue: 10.001,maxValue: 20,symbol: dif9,label: "10 - 20"
+            },
+			{
+              minValue: 0.00001,maxValue: 10,symbol: dif8,label: "0 - 10"
+            }
+   
+          ]
+        };
+        renderer_dif_A3 = {
+          type: "class-breaks", // autocasts as new ClassBreaksRenderer()
+          valueExpression:  "Max"+fields_A3+" - $feature.a1c_c_0",
+          legendOptions: {
+            title: "Diferència"
+          },
+          defaultSymbol: {
+            type: "simple-fill", 
+            style: "none",
+            outline: {
+              width: 0
+            }
+          },
+          defaultLabel: "sense dades",
+          classBreakInfos: [
+			 {
+              minValue: 72,maxValue: 100,symbol: dif14,label: "> 72"
+            },
+          	{
+              minValue: 54.001,maxValue: 72,symbol: dif13,label: "54 - 72"
+            },
+			{
+              minValue: 38.901,maxValue: 54,symbol: dif12,label: "38.9 - 54"
+            },
+			{
+              minValue: 25.901,maxValue: 38.9,symbol: dif11,label: "25.9 - 38.9"
+            },
+			{
+              minValue: 14.001,maxValue: 25.9,symbol: dif10,label: "14 - 25.9"
+            },
+			{
+              minValue: 4.501,maxValue: 14,symbol: dif9,label: "4.5 - 14"
+            },
+			{
+              minValue: 0.00001,maxValue: 4.5,symbol: dif8,label: "0 - 4.5"
+            }
+          ]
+        };
 		renderer_dif_B = {
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
           valueExpression: "Max"+fields_B+" - $feature.b1_c_0",
@@ -754,37 +1117,25 @@
           defaultLabel: "sense dades",
           classBreakInfos: [
 			{
-              minValue: 2400.001,maxValue: 8000,symbol: dif15,label: ">2.400"
+              minValue: 37.001,maxValue: 100,symbol: dif15,label: ">37"
             },
 			{
-              minValue: 2000.001,maxValue: 2400,symbol: dif14,label: "2.000 - 2.400"
+              minValue: 24,maxValue: 37,symbol: dif14,label: "24 - 37"
             },
 			{
-              minValue: 1600.001,maxValue: 2000,symbol: dif13,label: "1.600 - 2.000 "
+              minValue: 15.001,maxValue: 24,symbol: dif13,label: "15 - 24 "
             },
 			{
-              minValue: 1200.001,maxValue: 1600,symbol: dif12,label: "1.200 - 1.600"
+              minValue: 10.001,maxValue: 15,symbol: dif12,label: "10 - 15"
             },
 			{
-              minValue: 800.001,maxValue: 1200,symbol: dif11,label: "800 - 1.200"
+              minValue: 6.001,maxValue: 10,symbol: dif11,label: "6 - 10"
             },
 			{
-              minValue: 400.001,maxValue: 800,symbol: dif10,label: "400 - 800"
+              minValue: 2.001,maxValue: 6,symbol: dif10,label: "2 - 6"
             },
 			{
-              minValue: 10.001,maxValue: 400,symbol: dif9,label: "0 - 400"
-            },
-			{
-              minValue:-9.99,maxValue: 10,symbol: null,label: "0"
-            },
-            {
-              minValue: -9.999,maxValue: 10, symbol: dif4,label: "-400 - 0"
-            },
-            {
-              minValue: -799.99, maxValue: -400,symbol: dif2, label: "-800 - -400"
-            },
-            {
-              minValue: -5000, maxValue: -800, symbol: dif1, label: "<-800"
+              minValue: 0.001,maxValue: 1.9,symbol: dif9,label: "0 - 2"
             }
           ]
         };
@@ -1022,21 +1373,49 @@
               minValue: -4.35, maxValue: -3.2, symbol: dif1, label: "<-3.2"
             }
           ]
-        };
+		};
 
-		 function canvi(indicador,derivat){
-			 var e1 = document.getElementById("field-select");
-			var text_indicador = e1.options[e1.selectedIndex].text;
-			 document.getElementById("titol").innerHTML = "Resultats optimitzant la dimensió: " +text_indicador;
-			 tipus = document.getElementById("tipus").value;
-			escenari = document.getElementById("escenari_id").value;
-			indicador_principal = "fields" + document.getElementById("field-select").value;
-			var e = document.getElementById("escenari_id");
-			var text_escenari = e.options[e.selectedIndex].text;
-			document.getElementById("escenariDif").innerHTML = "Diferència escenari " + text_escenari + " i Optimitzat";
-			if (derivat) document.getElementById("field-select-ind").value = -1;
+		 function canvi(weightListIndicators, value){
+			//var e1 = document.getElementById("field-select");
+			//var text_indicador = e1.options[e1.selectedIndex].text;
+			//document.getElementById("titol").innerHTML = "Resultats optimitzant la dimensió: " + text_indicador;
+			//tipus = document.getElementById("tipus").value;
+			//escenari = document.getElementById("escenari_id").value;
+			//indicador_principal = "fields" + document.getElementById("field-select").value;
+			//var e = document.getElementById("escenari_id");
+			//var text_escenari = e.options[e.selectedIndex].text;
+			//document.getElementById("escenariDif").innerHTML = "Diferència escenari " + text_escenari + " i Optimitzat";
+			//if (derivat) document.getElementById("field-select-ind").value = "A1";
+			var cbs = document.getElementsByClassName("cbs");
+			for(var i = 0; i<cbs.length; i++){
+				cbs[i].checked = false;
+			}
+
+			var cajaLateral = document.getElementById("control-panel") ;
+			cajaLateral.classList.toggle("slided");
+			var cajaviewDiv = document.getElementById("divMainMap") ;
+			cajaviewDiv.classList.toggle("slided");
+			
+			if(value == null){
+				value = "A1";
+				document.getElementById("A1").checked = true;
+				var text_selected = document.getElementById("labelA1").textContent;
+			}else{
+				document.getElementById(value).checked = true;
+				var text_selected = document.getElementById("label"+value).textContent;
+
+			}
+
+			var count_selectef = document.getElementsByClassName("map--selected");
+
+			for(var i = 0; i<count_selectef.length; i++){
+				
+				var text = document.createTextNode(text_selected)
+				count_selectef.item(i).innerHTML = text_selected;
+			}
+			var indicador = value;
 			switch (indicador){
-			case "A":
+			case "A1":
 				cat1.color = [252,233,106, 0.7];
 				cat2.color = [250,209,85, 0.7];
 				cat3.color = [247,190,67, 0.7];
@@ -1058,21 +1437,88 @@
 				dif10.color = [122,171,0, 0.7];
 				dif11.color = [85,145,0, 0.7];
 				dif12.color = [48,120,0, 0.7];
-				renderer_A.field ="a1_c_"+escenari;
-				layerEscenari.renderer = renderer_A;
-				renderer_max_A = {type: "class-breaks"};
-				renderer_max_A.classBreakInfos = renderer_A.classBreakInfos;
-				if (derivat == true){
-					renderer_dif_A.valueExpression=tipus + fields_A + " - $feature.a1_c_"+escenari;
-					renderer_max_A.valueExpression= tipus + fields_A;
-				} else {
-					renderer_dif_A.valueExpression=document.getElementById("arcadeB").text + " getPredominantCategory("+indicador_principal+",fieldsA) - " + tipus + fields_A;
-					renderer_max_A.valueExpression = document.getElementById("arcadeB").text + " getPredominantCategory("+indicador_principal+",fieldsA)";
-					layer3.renderer = renderer_max_A;
-				}
-				layer4.renderer = renderer_dif_A;
-				layer3.renderer = renderer_max_A;
-				document.getElementById("descripcio").value = textA;
+				renderer_A1.field ="a1a_c_0";
+				layerEscenari.renderer = renderer_A1;
+				renderer_A1.field ="a1a_c_1";
+				layerEscenariTendencial.renderer = renderer_A1;
+				renderer_max_A1 = {type: "class-breaks"};
+				renderer_max_A1.classBreakInfos = renderer_A1.classBreakInfos;
+				renderer_dif_A1.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsA1,[" + weightListIndicators + "]) - $feature.a1a_c_0";
+				renderer_max_A1.valueExpression = document.getElementById("arcadeB").text + " getValue(fieldsA1,[" + weightListIndicators + "]);";
+				layer4.renderer = renderer_dif_A1;
+				layer3.renderer = renderer_max_A1;
+				renderer_dif_A1.valueExpression = document.getElementById("arcadeB").text + " getValue(fieldsA1,[" + weightListIndicators + "]) - $feature.a1a_c_1";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_A1;
+				break;
+			case "A2":
+				cat1.color = [252,233,106, 0.7];
+				cat2.color = [250,209,85, 0.7];
+				cat3.color = [247,190,67, 0.7];
+				cat4.color = [242,167,46, 0.7];
+				cat5.color = [207,122,31, 0.7];
+				cat6.color = [173,83,19, 0.7];
+				cat7.color = [138,46,10, 0.7];
+				cat8.color = [107,0,0, 0.7];
+				dif1.color = [255,34,0, 0.7];
+				dif2.color = [255,85,0, 0.7];
+				dif3.color = [255,128,0, 0.7];
+				dif4.color = [255,162,0, 0.7];
+				dif5.color = [255,200,0, 0.7];
+				dif6.color = [255,238,0, 0.7];
+				dif7.color = [255,255,255, 0];
+				dif7.outline.width=0;
+				dif8.color = [183,219,0, 0.7];
+				dif9.color = [164,196,0, 0.7];
+				dif10.color = [122,171,0, 0.7];
+				dif11.color = [85,145,0, 0.7];
+				dif12.color = [48,120,0, 0.7];
+				renderer_A2.field = "a1b_c_0";
+				layerEscenari.renderer = renderer_A2;
+				renderer_A2.field = "a1b_c_1";
+				layerEscenariTendencial.renderer = renderer_A2;
+				renderer_max_A2 = {type: "class-breaks"};
+				renderer_max_A2.classBreakInfos = renderer_A2.classBreakInfos;
+				renderer_dif_A2.valueExpression= document.getElementById("arcadeB").text + " $feature.a1b_c_0" + " - getValue(fieldsA2,[" + weightListIndicators + "]);";
+				renderer_max_A2.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsA2,[" + weightListIndicators + "]);";
+				layer4.renderer = renderer_dif_A2;
+				layer3.renderer = renderer_max_A2;
+				renderer_dif_A2.valueExpression= document.getElementById("arcadeB").text + " $feature.a1b_c_1" + " - getValue(fieldsA2,[" + weightListIndicators + "]);";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_A2;
+				break;
+			case "A3":
+				cat1.color = [252,233,106, 0.7];
+				cat2.color = [250,209,85, 0.7];
+				cat3.color = [247,190,67, 0.7];
+				cat4.color = [242,167,46, 0.7];
+				cat5.color = [207,122,31, 0.7];
+				cat6.color = [173,83,19, 0.7];
+				cat7.color = [138,46,10, 0.7];
+				cat8.color = [107,0,0, 0.7];
+				dif1.color = [255,34,0, 0.7];
+				dif2.color = [255,85,0, 0.7];
+				dif3.color = [255,128,0, 0.7];
+				dif4.color = [255,162,0, 0.7];
+				dif5.color = [255,200,0, 0.7];
+				dif6.color = [255,238,0, 0.7];
+				dif7.color = [255,255,255, 0];
+				dif7.outline.width=0;
+				dif8.color = [183,219,0, 0.7];
+				dif9.color = [164,196,0, 0.7];
+				dif10.color = [122,171,0, 0.7];
+				dif11.color = [85,145,0, 0.7];
+				dif12.color = [48,120,0, 0.7];
+				renderer_A3.field ="a1c_c_0";
+				layerEscenari.renderer = renderer_A3;
+				renderer_A3.field ="a1c_c_1";
+				layerEscenariTendencial.renderer = renderer_A3;
+				renderer_max_A3 = {type: "class-breaks"};
+				renderer_max_A3.classBreakInfos = renderer_A3.classBreakInfos;
+				renderer_dif_A3.valueExpression= document.getElementById("arcadeB").text + " $feature.a1c_c_0" + " - getValue(fieldsA3,[" + weightListIndicators + "]);";
+				renderer_max_A3.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsA3,[" + weightListIndicators + "]);";
+				layer4.renderer = renderer_dif_A3;
+				layer3.renderer = renderer_max_A3;
+				renderer_dif_A3.valueExpression= document.getElementById("arcadeB").text + " $feature.a1c_c_1" + " - getValue(fieldsA3,[" + weightListIndicators + "]);";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_A3;
 				break;
 			case "B": 
 				cat1.color = [204,237,217, 0.7];
@@ -1097,21 +1543,18 @@
 				dif11.color = [85,145,0, 0.7];
 				dif12.color = [48,120,0, 0.7];
 				dif13.color = [0,97,0, 0.7];
-				renderer_B.field ="b1_c_"+escenari;
-				layerEscenari.renderer = renderer_B;				
+				renderer_B.field ="b1_c_0";
+				layerEscenari.renderer = renderer_B;	
+				renderer_B.field ="b1_c_1";
+				layerEscenariTendencial.renderer = renderer_B;			
 				renderer_max_B = {type: "class-breaks"};
 				renderer_max_B.classBreakInfos = renderer_B.classBreakInfos;
-				if (derivat == true){
-					renderer_dif_B.valueExpression= tipus + fields_B + "- $feature.b1_c_"+escenari;
-					renderer_max_B.valueExpression= tipus +fields_B;
-				} else {
-					renderer_dif_B.valueExpression= document.getElementById("arcadeB").text + " getPredominantCategory("+indicador_principal+",fieldsB) - " + tipus + fields_B;
-					renderer_max_B.valueExpression = document.getElementById("arcadeB").text + " getPredominantCategory("+indicador_principal+",fieldsB)";
-				}
+				renderer_dif_B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsB,[" + weightListIndicators + "]) - $feature.b1_c_0;";
+				renderer_max_B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsB,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_B;
 				layer3.renderer = renderer_max_B;
-				
-				document.getElementById("descripcio").value = textB;
+				renderer_dif_B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsB,[" + weightListIndicators + "]) - $feature.b1_c_1;";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_B;
 				break;
 			case "C": 
 				cat1.color = [252,228,104, 0.7];
@@ -1131,20 +1574,18 @@
 				dif9.color = [164,196,0, 0.7];
 				dif11.color = [85,145,0, 0.7];
 				dif13.color = [0,97,0, 0.7];
-				renderer_C.field ="c1_c_"+escenari;
+				renderer_C.field ="c1_c_0";
 				layerEscenari.renderer = renderer_C;
+				renderer_C.field ="c1_c_1";
+				layerEscenariTendencial.renderer = renderer_C;
 				renderer_max_C = {type: "class-breaks"};
 				renderer_max_C.classBreakInfos = renderer_C.classBreakInfos;				
-				if (derivat == true){
-					renderer_dif_C.valueExpression= tipus + fields_C + " - $feature.c1_c_"+escenari;
-					renderer_max_C.valueExpression= tipus +fields_C;
-				} else {
-					renderer_dif_C.valueExpression=document.getElementById("arcadeB").text + " getPredominantCategory("+indicador_principal+",fieldsC) - " + tipus + fields_C;
-					renderer_max_C.valueExpression = document.getElementById("arcadeB").text + " getPredominantCategory("+indicador_principal+",fieldsC)";
-				}
+				renderer_dif_C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsC,[" + weightListIndicators + "]) - $feature.c1_c_0;";
+				renderer_max_C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsC,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_C;
-				layer3.renderer = renderer_max_C;				
-				document.getElementById("descripcio").value = textC;
+				layer3.renderer = renderer_max_C;	
+				renderer_dif_C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsC,[" + weightListIndicators + "]) - $feature.c1_c_1;";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_C;			
 				break;
 			case "D": 
 				cat1.color = [242,207,182, 0.7];
@@ -1166,20 +1607,18 @@
 				dif13.color = [255,111,0,0.7];
 				dif14.color = [255,77,0,0.7];
 				dif15.color = [255,38,0,0.7];
-				renderer_D.field ="d1_c_"+escenari;
+				renderer_D.field ="d1_c_0";
 				layerEscenari.renderer = renderer_D;
+				renderer_D.field ="d1_c_1";
+				layerEscenariTendencial.renderer = renderer_D;
 				renderer_max_D = {type: "class-breaks"};
 				renderer_max_D.classBreakInfos = renderer_D.classBreakInfos;
-				if (derivat == true){
-					renderer_dif_D.valueExpression= tipus + fields_D + " - $feature.d1_c_"+escenari;
-					renderer_max_D.valueExpression= tipus + fields_D;
-				} else {
-					renderer_dif_D.valueExpression=document.getElementById("arcadeB").text + " getPredominantCategory("+indicador_principal+",fieldsD) -" + tipus + fields_D;
-					renderer_max_D.valueExpression = document.getElementById("arcadeB").text + " getPredominantCategory("+indicador_principal+",fieldsD)";
-				}
-				layer4.renderer = renderer_dif_B;
+				renderer_dif_D.valueExpression= document.getElementById("arcadeB").text + "$feature.d1_c_0 - getValue(fieldsD,[" + weightListIndicators + "]);";
+				renderer_max_D.valueExpression= document.getElementById("arcadeB").text + "getValue(fieldsD,[" + weightListIndicators + "]);";
+				layer4.renderer = renderer_dif_D;
 				layer3.renderer = renderer_max_D;
-				document.getElementById("descripcio").value = textD;
+				renderer_dif_D.valueExpression= document.getElementById("arcadeB").text + "$feature.d1_c_1 - getValue(fieldsD,[" + weightListIndicators + "]);";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_D;
 				break;
 			case "E1A": 
 				cat1.color = [149,209,237, 0.7];
@@ -1206,20 +1645,18 @@
 				dif13.color = [61,138,0, 0.7];
 				dif14.color = [31,117,0, 0.7];
 				dif15.color = [0,97,0, 0.7];
-				renderer_E1A.field ="e1a_c_"+escenari;
+				renderer_E1A.field ="e1a_c_0";
 				layerEscenari.renderer = renderer_E1A;
+				renderer_E1A.field ="e1a_c_1";
+				layerEscenariTendencial.renderer = renderer_E1A;
 				renderer_max_E1A = {type: "class-breaks"};
 				renderer_max_E1A.classBreakInfos = renderer_E1A.classBreakInfos;
-				if (derivat == true){
-					renderer_dif_E1A.valueExpression=tipus + fields_E1A + " - $feature.e1a_c_"+escenari;
-					renderer_max_E1A.valueExpression= tipus +  fields_E1A;
-				} else {
-					renderer_dif_E1A.valueExpression=document.getElementById("arcadeB").text + " getPredominantCategory("+indicador_principal+",fieldsE1A) - " + tipus + fields_E1A;
-					renderer_max_E1A.valueExpression = document.getElementById("arcadeB").text + " getPredominantCategory("+indicador_principal+",fieldsE1A)";
-				}
+				renderer_dif_E1A.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1A,[" + weightListIndicators + "]) - $feature.e1a_c_0;";
+				renderer_max_E1A.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1A,[" + weightListIndicators + "]) * " + weightListIndicators[6];
 				layer4.renderer = renderer_dif_E1A;
 				layer3.renderer = renderer_max_E1A;
-				document.getElementById("descripcio").value = textE1A;
+				renderer_dif_E1A.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1A,[" + weightListIndicators + "]) - $feature.e1a_c_1;";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_E1A;
 				break;
 			case "E1B": 
 				cat1.color = [147,207,237, 0.7];
@@ -1239,20 +1676,18 @@
 				dif7.color = [164,196,0,0.7];
 				dif8.color = [107,161,0,0.7];
 				dif9.color = [60,128,0,0.7];
-				renderer_E1B.field ="e1b_c_"+escenari;
+				renderer_E1B.field ="e1b_c_0";
 				layerEscenari.renderer = renderer_E1B;
+				renderer_E1B.field ="e1b_c_1";
+				layerEscenariTendencial.renderer = renderer_E1B;
 				renderer_max_E1B = {type: "class-breaks"};
 				renderer_max_E1B.classBreakInfos = renderer_E1B.classBreakInfos;
-				if (derivat == true){
-					renderer_dif_E1B.valueExpression= tipus + fields_E1B + " - $feature.e1b_c_"+escenari;
-					renderer_max_E1B.valueExpression= tipus + fields_E1B;
-				} else {
-					renderer_dif_E1B.valueExpression=document.getElementById("arcadeB").text + " getPredominantCategory("+indicador_principal+",fieldsE1B) -" + tipus + fields_E1B;
-					renderer_max_E1B.valueExpression = document.getElementById("arcadeB").text + " getPredominantCategory("+indicador_principal+",fieldsE1B)";
-				}
+				renderer_dif_E1B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1B,[" + weightListIndicators + "]) - $feature.e1b_c_0;";
+				renderer_max_E1B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1B,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_E1B;
 				layer3.renderer = renderer_max_E1B;
-				document.getElementById("descripcio").value = textE1B;
+				renderer_dif_E1B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1B,[" + weightListIndicators + "]) - $feature.e1b_c_1;";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_E1B;
 				break;
 			case "E1C": 
 				cat1.color = [145,205,237, 0.7];
@@ -1278,20 +1713,18 @@
 				dif13.color = [255,111,0,0.7];
 				dif14.color = [255,77,0,0.7];
 				dif15.color = [255,38,0,0.7];
-				renderer_E1C.field ="e1c_c_"+escenari;
+				renderer_E1C.field ="e1c_c_0";
 				layerEscenari.renderer = renderer_E1C;
+				renderer_E1C.field ="e1c_c_1";
+				layerEscenariTendencial.renderer = renderer_E1C;
 				renderer_max_E1C = {type: "class-breaks"};
 				renderer_max_E1C.classBreakInfos = renderer_E1C.classBreakInfos;
-				if (derivat == true){
-					renderer_dif_E1C.valueExpression= tipus + fields_E1C + " - $feature.e1c_c_"+escenari;
-					renderer_max_E1C.valueExpression= tipus + fields_E1C;
-				} else {
-					renderer_dif_E1C.valueExpression= document.getElementById("arcadeB").text + " getPredominantCategory("+indicador_principal+",fieldsE1C) - " +tipus + fields_E1C  ;
-					renderer_max_E1C.valueExpression = document.getElementById("arcadeB").text + " getPredominantCategory("+indicador_principal+",fieldsE1C)";
-				}
+				renderer_dif_E1C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1C,[" + weightListIndicators + "]) - $feature.e1c_c_0;";
+				renderer_max_E1C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1C,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_E1C;
 				layer3.renderer = renderer_max_E1C;
-				document.getElementById("descripcio").value = textE1C;
+				renderer_dif_E1C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1C,[" + weightListIndicators + "]) - $feature.e1c_c_1;";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_E1C;
 				break;
 			case "F": 
 				cat1.color = [237,185,214, 0.7];
@@ -1318,201 +1751,61 @@
 				dif13.color = [73,138,0,0.7];
 				dif14.color = [26,115,0,0.7];
 				dif15.color = [0,97,0,0.7];
-				renderer_F.field ="f1_c_"+escenari;
+				renderer_F.field ="f1_c_0";
 				layerEscenari.renderer = renderer_F;
+				renderer_F.field ="f1_c_1";
+				layerEscenariTendencial.renderer = renderer_F;
 				renderer_max_F = {type: "class-breaks"};
 				renderer_max_F.classBreakInfos = renderer_F.classBreakInfos;
-				if (derivat == true){
-					renderer_dif_F.valueExpression= tipus + fields_F + " - $feature.f1_c_"+escenari;
-					renderer_max_F.valueExpression= tipus + fields_F;
-				} else {
-					renderer_dif_F.valueExpression= document.getElementById("arcadeB").text + " getPredominantCategory("+indicador_principal+",fieldsF) -  $feature.f1_c_"+escenari;
-					renderer_max_F.valueExpression = document.getElementById("arcadeB").text + " getPredominantCategory("+indicador_principal+",fieldsF)";
-				}
+				renderer_dif_F.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsF,[" + weightListIndicators + "]) - $feature.f1_c_0;";
+				renderer_max_F.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsF,[" + weightListIndicators + "])";
 				layer4.renderer = renderer_dif_F;
 				layer3.renderer = renderer_max_F;
-				document.getElementById("descripcio").value = textF;
+				renderer_dif_F.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsF,[" + weightListIndicators + "]) - $feature.f1_c_1;";
+				layerDiferenciaEscenariTendencial.renderer = renderer_dif_F;
 				break;
 		}
-		//document.getElementById('descripcio').value = text[indicador];
-		queryLayerViewStats(layer3,escenari,document.getElementById("field-select").value);
+		queryLayerViewStats(layer3,weightListIndicators);
 	  }
-	  
-	  
-	   function canvi_tipus(){
-			 tipus = document.getElementById("tipus").value;
-			escenari = document.getElementById("escenari_id").value;
-		switch (document.getElementById("field-select").value){
-			case "A": 
-				renderer_max_A.valueExpression = tipus + fields_A;
-				layer3.renderer = renderer_max_A;
-				renderer_dif_A.valueExpression=tipus + fields_A + " - $feature.a1_c_"+escenari;
-				layer4.renderer = renderer_dif_A;
-				break;
-			case "B": 
-				renderer_max_B.valueExpression= tipus + fields_B;
-				layer3.renderer = renderer_max_B;
-				renderer_dif_B.valueExpression=tipus + fields_B + " - $feature.b1_c_"+escenari;
-				layer4.renderer = renderer_dif_B;
-				break;
-			case "C": 
-				renderer_max_C.valueExpression= tipus + fields_C;
-				layer3.renderer = renderer_max_C;
-				renderer_dif_C.valueExpression=tipus + fields_C + " - $feature.c1_c_"+escenari;
-				layer4.renderer = renderer_dif_C;
-				break;
-			case "D": 
-				renderer_max_D.valueExpression=tipus + fields_D;
-				layer3.renderer = renderer_max_D;
-				renderer_dif_D.valueExpression=tipus + fields_D + " - $feature.d1_c_"+escenari;
-				layer4.renderer = renderer_dif_B;
-				break;
-			case "E1A": 
-				renderer_max_E1A.valueExpression=tipus + fields_E1A;
-				layer3.renderer = renderer_max_E1A;
-				renderer_dif_E1A.valueExpression=tipus + fields_E1A + " - $feature.e1a_c_"+escenari;
-				layer4.renderer = renderer_dif_E1A;
-				break;
-			case "E1B": 
-				renderer_max_E1B.valueExpression=tipus + fields_E1B;
-				layer3.renderer = renderer_max_E1B;
-				renderer_dif_E1B.valueExpression= tipus + fields_E1B + " - $feature.e1b_c_"+escenari;
-				layer4.renderer = renderer_dif_E1B;
-				break;
-			case "E1C": 
-				renderer_max_E1C.valueExpression=tipus + fields_E1C ;
-				layer3.renderer = renderer_max_E1C;
-				renderer_dif_E1C.valueExpression= tipus + fields_E1C + " - $feature.e1c_c_"+escenari;
-				layer4.renderer = renderer_dif_E1C;
-				break;
-			case "F": 
-				renderer_max_F.valueExpression=tipus + fields_F;
-				layer3.renderer = renderer_max_F;
-				renderer_dif_F.valueExpression= tipus + fields_F + " - $feature.f1_c_"+escenari;
-				layer4.renderer = renderer_dif_F;
-				break;
-		}
-		
-	  }
-	  
-	  function canvi_escenari(valor){
-		tipus = document.getElementById("tipus").value;
-		var e = document.getElementById("escenari_id");
-		var text_escenari = e.options[e.selectedIndex].text;
-		document.getElementById("escenariDif").innerHTML = "Diferència escenari " + text_escenari + " i optimitzat";
-		switch (document.getElementById("field-select").value){
-			case "A": 
-				renderer_A.field ="a1_c_"+ valor;
-				layerEscenari.renderer = renderer_A;
-				renderer_dif_A.valueExpression=tipus + fields_A + " - $feature.a1_c_"+valor;
-				layer4.renderer = renderer_dif_A;
-				break;
-			case "B": 
-				renderer_B.field ="b1_c_"+ valor;
-				layerEscenari.renderer = renderer_B;
-				renderer_dif_B.valueExpression=tipus + fields_B + " - $feature.b1_c_"+valor;
-				layer4.renderer = renderer_dif_B;
-				break;
-			case "C": 
-				renderer_C.field ="c1_c_"+ valor;
-				layerEscenari.renderer = renderer_C;
-				renderer_dif_C.valueExpression=tipus + fields_C + " - $feature.c1_c_"+valor;
-				layer4.renderer = renderer_dif_C;
-				break;
-			case "D": 
-				renderer_D.field ="d1_c_"+ valor;
-				layerEscenari.renderer = renderer_D;
-				renderer_dif_D.valueExpression=tipus + fields_D + " - $feature.d1_c_"+valor;
-				layer4.renderer = renderer_dif_B;
-				break;
-			case "E1A": 
-				renderer_E1A.field ="e1a_c_"+ valor;
-				layerEscenari.renderer = renderer_E1A;
-				renderer_dif_E1A.valueExpression=tipus + fields_E1A + " - $feature.e1a_c_"+valor;
-				layer4.renderer = renderer_dif_E1A;
-				break;
-			case "E1B": 
-				renderer_E1B.field ="e1b_c_"+ valor;
-				layerEscenari.renderer = renderer_E1B;
-				renderer_dif_E1B.valueExpression= tipus + fields_E1B + " - $feature.e1b_c_"+valor;
-				layer4.renderer = renderer_dif_E1B;
-				break;
-			case "E1C": 
-				renderer_E1C.field ="e1c_c_"+ valor;
-				layerEscenari.renderer = renderer_E1C;
-				renderer_dif_E1C.valueExpression= tipus + fields_E1C + " - $feature.e1c_c_"+valor;
-				layer4.renderer = renderer_dif_E1C;
-				break;
-			case "F": 
-				renderer_F.field ="f1_c_"+ valor;
-				layerEscenari.renderer = renderer_F;
-				renderer_dif_F.valueExpression= tipus + fields_F + " - $feature.f1_c_"+valor;
-				layer4.renderer = renderer_dif_F;
-				break;
-		}
-		queryLayerViewStats(layer3,valor,document.getElementById("field-select").value);
-	  }
-	  
-		function canvi_text(indica){
-		 switch (indica) {
-			case "A": document.getElementById("descripcio2").value = textA;break;
-			case "B": document.getElementById("descripcio2").value = textB;break;
-			case "C": document.getElementById("descripcio2").value = textC;break;
-			case "D": document.getElementById("descripcio2").value = textD;break;
-			case "E1A": document.getElementById("descripcio2").value = textE1A;break;
-			case "E1B": document.getElementById("descripcio2").value = textE1B;break;
-			case "E1C": document.getElementById("descripcio2").value = textE1C;break;
-			case "F": document.getElementById("descripcio2").value = textF;break;
-		 }
-		}
-	  
-	 // Descripcions
-	 textA = "La dimensió eficiència metabòlica es representa amb l’indicador principal A1 que mesura l’eficiència energètica de" +
-		   " l’agricultura metropolitana. Aquest indicador, que és l’External Final Energy Return On Investment (EFEROI)1 determina " +
-			" quina és la quantitat d’energia obtinguda en els espais agrícoles segons la quantitat d’energia externa invertida. Així, els " +
-			" valors més elevats indiquen cultius que tenen un major retorn per unitat d’inversió.";
-			
-	textB = "La dimensió conservació de la biodiversitat es representa amb l’indicador principal B1 que correspon al valor de l’Energy-" +
-			"Landscape Integrated Analysis. Aquest avalua les condicions sòcio-ecològiques per a l’establiment de la biodiversitat" +
-			" associada a partir dels patrons i processos del paisatge (complexitat paisatgística) i els fluxos de metabolisme agrari (energia"+
-			" redistribuïda i energia acumulada). Valors elevats indiquen doncs condicions adequades per a la biodiversitat associada.";
-	
-	textC = "La dimensió de funcionament del paisatge es representa amb l’indicador principal C1 que és la complexitat paisatgística." +
-			"Aquesta, valora l’estructura funcional del paisatge (patrons i processos) a partir de la conjunció entre la connectivitat" +
-			" ecològica i l’heterogeneïtat de les cobertes. Valors alts d’aquest indicador impliquen una major complexitat del paisatge.";
-	
-	textD = "La dimensió de canvi global es representa amb l’indicador principal D1 que són les emissions de gasos d’efecte hivernacle." +
-			"En aquest cas es fa una primera aproximació calculant la quantitat d’entrades externes totals no renovables per a mantenir " +
-			"la silvicultura, la ramaderia i l’agricultura a partir del seu valor energètic, que prové del balanç metabòlic1 calculat per l’AMB." +
-			"Un valor més elevat d’aquest indicador doncs, s’associaria a processos més intensius i dependents d’importacions i per tant a una probable major intensitat d’emissions totals.";
-			
-	textE1A = "La dimensió de serveis ecosistèmics de suport es caracteritza amb l’indicador principal E1A de recirculació de nutrients. Així," +
-			"E1A avalua la quantitat de fòsfor que recircula dins del propi sistema agrícola entenent-lo en interacció amb la resta d’usos i " +
-			"la ramaderia. Per tant, valors elevats en l’indicador es refereixen a una alta capacitat del sistema metropolità per fer front de "+
-			"forma autosuficient al tancament de cicles de nutrients. ";
-			
-	textE1B = "La dimensió dels serveis ecosistèmics de regulació es representa amb l’indicador E1B que és l’embornal de carboni i " +
-			"identifica quina és la quantitat total de carboni emmagatzemat al sistema d’espais oberts. Així només pren valor per a aquelles " +
-			"superfícies agràries a on existeixi un sòl mínimament desenvolupat (en termes edàfics), considerant tant el carboni al sòl " +
-			"com el carboni aeri. En aquest cas, el grau de detall de l’indicador permet una identificació molt més localitzada dels valors gràcies a la informació geo-referenciada disponible.";
-			
-	textE1C = "La dimensió dels serveis ecosistèmics d’aprovisionament es representa amb l’indicador principal E1C que és la producció " +
-			"agrícola. Es calcula doncs aquest valor donada la seva predominança respecte a la resta de produccions (silvícola, ramadera) " +
-			"i el seu efecte territorial. Valors elevats mostraran aquelles zones més productives en termes agrícoles d’aprovisionament de tota l’àrea.";
-			
-	textF = "La dimensió de cohesió social es representa amb l’indicador principal F1 que són els llocs de treball. Caracteritza el potencial " +
-			"d’Unitats de Treball Agrari (UTA) completes que es requeririen als espais oberts de l’àrea metropolitana, el qual es pot " +
-			"aproximar a una mesura dels llocs de treball potencials en aquests. Així, els cultius i activitats agràries més intensives en " + 
-			"llocs de treball s’identifiquen amb valors majors d’F1 mentre que aquelles activitats més extensives en treball (o més mecanitzades) tindran valors més baixos.";
-			
 				
-			
-		function queryLayerViewStats(capa,escenari,indicador) {
+		function getIndexMaxFeatureFields(feature, fields) 
+		{
+			var valorMax = -Infinity;
+			var indexMax = -1;
+			for(var k in fields) {
+				if(feature.attributes[fields[k].value] >= valorMax) {
+					valorMax = feature.attributes[fields[k].value];
+					indexMax = k;
+				}
+			}
+			return indexMax;
+		}
 		
+		function getIndexMinFeatureFields(feature, fields) 
+		{
+			var valorMin = Infinity;
+			var indexMin = -1;
+			for(var k in fields) {
+				if(feature.attributes[fields[k].value] <= valorMin) {
+					valorMin = feature.attributes[fields[k].value];
+					indexMin = k;
+				}
+			}
+			return indexMin;
+		}
+
+		function queryLayerViewStats(capa,weightListIndicators) 
+		{
 			valorsA1_actual = [];
 			valorsA1_tend = [];
+			valorsA1_2_actual = [];
+			valorsA1_2_tend = [];
 			valorsA2_actual = [];
 			valorsA2_tend = [];
+			valorsA3_actual = [];
+			valorsA3_tend = [];
+			valorsA3_2_actual = [];
+			valorsA3_2_tend = [];
 			valorsB_actual = [];
 			valorsB_tend = [];
 			valorsC_actual = [];
@@ -1533,7 +1826,10 @@
 			valorsF_tend = [];
 			valorsF1 = [];
 			valorsOptA1 = [];
+			valorsOptA1_2 = [];
 			valorsOptA2 = [];
+			valorsOptA3 = [];
+			valorsOptA3_2 = [];
 			valorsOptB = [];
 			valorsOptC = [];
 			valorsOptD1 = [];
@@ -1543,7 +1839,10 @@
 			valorsOptE1C1 = [];
 			valorsOptF1 = [];
 			valorMaxA1 = 0;
+			valorMaxA1_2 = 0;
 			valorMaxA2 = 0;
+			valorMaxA3 = 0;
+			valorMaxA3_2 = 0;
 			valorMaxB =0;
 			valorMaxC = 0;
 			valorMaxD = 0;
@@ -1553,239 +1852,110 @@
 			valorMaxE1C = 0;
 			valorMaxF = 0;
 			capa.queryFeatures().then(function(response) {	
-				 var fieldsA = [
-				  { value: "a1_c_0"},
-				  { value: "a1_c_1"},
-				  { value: "a1_c_2"},
-				  { value: "a1_c_3"},
-				  { value: "a1_o_0"},
-				  { value: "a1_o_1"},
-				  { value: "a1_o_2"},
-				  { value: "a1_o_3"}
-				];
-				var fieldsA1_agg = [
-				  { value: "a1_c_0_1"},
-				  { value: "a1_c_1_1"},
-				  { value: "a1_c_2_1"},
-				  { value: "a1_c_3_1"},
-				  { value: "a1_o_0_1"},
-				  { value: "a1_o_1_1"},
-				  { value: "a1_o_2_1"},
-				  { value: "a1_o_3_1"}
-				];
-				var fieldsA2_agg = [
-				  { value: "a1_c_0_2"},
-				  { value: "a1_c_1_2"},
-				  { value: "a1_c_2_2"},
-				  { value: "a1_c_3_2"},
-				  { value: "a1_o_0_2"},
-				  { value: "a1_o_1_2"},
-				  { value: "a1_o_2_2"},
-				  { value: "a1_o_3_2"}
-				];
-				var fieldsB = [
-				  { value: "b1_c_0" },
-				  { value: "b1_c_1" },
-				  { value: "b1_c_2" },
-				  { value: "b1_c_3" },
-				  { value: "b1_o_0" },
-				  { value: "b1_o_1" },
-				  { value: "b1_o_2" },
-				  { value: "b1_o_3" }
-				];
-				
-				var fieldsC = [
-				  { value: "c1_c_0" },
-				  { value: "c1_c_1" },
-				  { value: "c1_c_2" },
-				  { value: "c1_c_3" },
-				  { value: "c1_o_0" },
-				  { value: "c1_o_1" },
-				  { value: "c1_o_2" },
-				  { value: "c1_o_3" }
-				];
-				var fieldsD = [
-				  { value: "d1_c_0" },
-				  { value: "d1_c_1" },
-				  { value: "d1_c_2" },
-				  { value: "d1_c_3" },
-				  { value: "d1_o_0" },
-				  { value: "d1_o_1" },
-				  { value: "d1_o_2" },
-				  { value: "d1_o_3" }
-				];
-				var fieldsD_agg = [
-				  { value: "d1_c_0_1" },
-				  { value: "d1_c_1_1" },
-				  { value: "d1_c_2_1" },
-				  { value: "d1_c_3_1" },
-				  { value: "d1_o_0_1" },
-				  { value: "d1_o_1_1" },
-				  { value: "d1_o_2_1" },
-				  { value: "d1_o_3_1" }
-				];
-				var fieldsE1A = [
-				  { value: "e1a_c_0" },
-				  { value: "e1a_c_1" },
-				  { value: "e1a_c_2" },
-				  { value: "e1a_c_3" },
-				  { value: "e1a_o_0" },
-				  { value: "e1a_o_1" },
-				  { value: "e1a_o_2" },
-				  { value: "e1a_o_3" }
-				];
-				var fieldsE1A1_agg = [
-				  { value: "e1a_c_0_1" },
-				  { value: "e1a_c_1_1" },
-				  { value:  "e1a_c_2_1" },
-				  { value: "e1a_c_3_1" },
-				  { value: "e1a_o_0_1" },
-				  { value: "e1a_o_1_1" },
-				  { value: "e1a_o_2_1" },
-				  { value: "e1a_o_3_1" }
-				];
-				var fieldsE1A2_agg = [
-				  { value: "e1a_c_0_2" },
-				  { value: "e1a_c_1_2" },
-				  { value: "e1a_c_2_2" },
-				  { value: "e1a_c_3_2" },
-				  { value: "e1a_o_0_2" },
-				  { value: "e1a_o_1_2" },
-				  { value: "e1a_o_2_2" },
-				  { value: "e1a_o_3_2" }
-				];
-				var fieldsE1B = [
-				  { value: "e1b_c_0" },
-				  { value: "e1b_c_1" },
-				  { value: "e1b_c_2" },
-				  { value: "e1b_c_3" },
-				  { value: "e1b_o_0" },
-				  { value: "e1b_o_1" },
-				  { value: "e1b_o_2" },
-				  { value: "e1b_o_3" }
-				];
-				var fieldsE1C = [
-				  { value: "e1c_c_0" },
-				  { value: "e1c_c_1" },
-				  { value: "e1c_c_2" },
-				  { value: "e1c_c_3" },
-				  { value: "e1c_o_0" },
-				  { value: "e1c_o_1" },
-				  { value: "e1c_o_2" },
-				  { value: "e1c_o_3" }
-				];
-				var fieldsE1C_agg = [
-				  { value: "e1c_c_0_1" },
-				  { value: "e1c_c_1_1" },
-				  { value: "e1c_c_2_1" },
-				  { value: "e1c_c_3_1" },
-				  { value: "e1c_o_0_1" },
-				  { value: "e1c_o_1_1" },
-				  { value: "e1c_o_2_1" },
-				  { value: "e1c_o_3_1" }
-				];
-				var fieldsF = [
-				  { value: "f1_c_0" },
-				  { value: "f1_c_1" },
-				  { value: "f1_c_2" },
-				  { value: "f1_c_3" },
-				  { value: "f1_o_0" },
-				  { value: "f1_o_1" },
-				  { value: "f1_o_2" },
-				  { value: "f1_o_3" }
-				];
-				var fieldsF_agg = [
-				  { value: "f1_c_0_1" },
-				  { value: "f1_c_1_1" },
-				  { value: "f1_c_2_1" },
-				  { value: "f1_c_3_1" },
-				  { value: "f1_o_0_1" },
-				  { value: "f1_o_1_1" },
-				  { value: "f1_o_2_1" },
-				  { value: "f1_o_3_1" }
-				];
-				switch (indicador){
-					case "A": camps = fieldsA;break;
-					case "B": camps = fieldsB;break;
-					case "C": camps = fieldsC;break;
-					case "D": camps = fieldsD;break;
-					case "E1A": camps = fieldsE1A;break;
-					case "E1B": camps = fieldsE1B;break;
-					case "E1C": camps = fieldsE1C;break;
-					case "F": camps = fieldsF;break;
-				}
+				 
+
+				var indicatorsNames = ["A1", "A2", "A3", "B", "C", "D", "E1A", "E1B", "E1C", "F"];
+				var indicatorsFields = [fieldsA1, fieldsA2, fieldsA3, fieldsB, fieldsC, fieldsD, fieldsE1A, fieldsE1B, fieldsE1C, fieldsF ];
+				var indicatorsType = [ "max", "min", "min", "max", "max", "min", "max", "max", "max", "max" ];
 				
 				response.features.map(function(feature) {
-					valorMax = 0;	
-					for(var k in camps){
-						if(feature.attributes[camps[k].value] >= valorMax){
-							switch (indicador){
-								case "A": valorMax = feature.attributes[fieldsA[k].value];break;
-								case "B": valorMax = feature.attributes[fieldsB[k].value];break;
-								case "C": valorMax = feature.attributes[fieldsC[k].value];break;
-								case "D": valorMax = feature.attributes[fieldsD[k].value];break;
-								case "E1A": valorMax = feature.attributes[fieldsE1A[k].value];break;
-								case "E1B": valorMax = feature.attributes[fieldsE1B[k].value];break;
-								case "E1C": valorMax = feature.attributes[fieldsE1C[k].value];break;
-								case "F": valorMax = feature.attributes[fieldsF[k].value];break;
-							}
-							valorMaxA1 = feature.attributes[fieldsA1_agg[k].value];
-							valorMaxA2 = feature.attributes[fieldsA2_agg[k].value];
-							valorMaxB = feature.attributes[fieldsB[k].value];
-							valorMaxC = feature.attributes[fieldsC[k].value];
-							valorMaxD1 = feature.attributes[fieldsD_agg[k].value];
-							valorMaxE1A1 = feature.attributes[fieldsE1A1_agg[k].value];
-							valorMaxE1A2 = feature.attributes[fieldsE1A2_agg[k].value];
-							valorMaxE1B = feature.attributes[fieldsE1B[k].value];
-							valorMaxE1C1 = feature.attributes[fieldsE1C_agg[k].value];
-							valorMaxF1 = feature.attributes[fieldsF_agg[k].value];
-						} 
+					var valorA1 = 0;
+					var valorA1_2 = 0;
+					var valorA2 = 0;
+					var valorA3 = 0;
+					var valorA3_2 = 0;
+					var valorB = 0;
+					var valorC = 0;
+					var valorD1 = 0;
+					var valorE1A_1 = 0;
+					var valorE1A_2 = 0;
+					var valorE1B = 0;
+					var valorE1C = 0;
+					var valorF1 = 0;
+
+					for(var i in indicatorsNames) {
+						var k = 0;
+						if (indicatorsType[i] == "min") {
+							k = getIndexMinFeatureFields(feature, indicatorsFields[i]);
+						} else {
+							k = getIndexMaxFeatureFields(feature, indicatorsFields[i]);
+						}
+						
+						valorA1 += feature.attributes[fieldsA1_agg[k].value] * weightListIndicators[i];
+						valorA1_2 += feature.attributes[fieldsA1_2_agg[k].value] * weightListIndicators[i];
+						valorA2 += feature.attributes[fieldsA2[k].value] * weightListIndicators[i];
+						valorA3 += feature.attributes[fieldsA3_agg[k].value] * weightListIndicators[i];
+						valorA3_2 += feature.attributes[fieldsA3_2_agg[k].value] * weightListIndicators[i];
+						valorB += feature.attributes[fieldsB[k].value] * feature.attributes["AMB_100"] * weightListIndicators[i];
+						valorC += feature.attributes[fieldsC[k].value] * feature.attributes["AMB_100"] * weightListIndicators[i];
+						valorD1 += feature.attributes[fieldsD_agg[k].value] * weightListIndicators[i];
+						valorE1A_1 += feature.attributes[fieldsE1A1_agg[k].value] * weightListIndicators[i];
+						valorE1A_2 += feature.attributes[fieldsE1A2_agg[k].value] * weightListIndicators[i];
+						valorE1B += feature.attributes[fieldsE1B[k].value] * weightListIndicators[i];
+						valorE1C += feature.attributes[fieldsE1C_agg[k].value] * weightListIndicators[i];
+						valorF1 += feature.attributes[fieldsF_agg[k].value] * weightListIndicators[i];
 					}
-					//Indicador A
+
+					//Indicador A1
 					valorsA1_actual.push(feature.attributes[fieldsA1_agg[0].value]);
 					valorsA1_tend.push(feature.attributes[fieldsA1_agg[1].value]);
+					valorsA1_2_actual.push(feature.attributes[fieldsA1_2_agg[0].value]);
+					valorsA1_2_tend.push(feature.attributes[fieldsA1_2_agg[1].value]); 
+					valorsOptA1.push(valorA1);
+					valorsOptA1_2.push(valorA1_2);
+					//Indicador A2
 					valorsA2_actual.push(feature.attributes[fieldsA2_agg[0].value]);
 					valorsA2_tend.push(feature.attributes[fieldsA2_agg[1].value]);
-					valorsOptA1.push(valorMaxA1);
-					valorsOptA2.push(valorMaxA2);
+					valorsOptA2.push(valorA2);
+					//Indicador A3
+					valorsA3_actual.push(feature.attributes[fieldsA3_agg[0].value]);
+					valorsA3_tend.push(feature.attributes[fieldsA3_agg[1].value]);
+					valorsA3_2_actual.push(feature.attributes[fieldsA3_2_agg[0].value]);
+					valorsA3_2_tend.push(feature.attributes[fieldsA3_2_agg[1].value]);
+					valorsOptA3.push(valorA3);
+					valorsOptA3_2.push(valorA3_2);
 					//Indicador B
-					valorsB_actual.push(feature.attributes[fieldsB[0].value]*feature.attributes["amb_100"]);
-					valorsB_tend.push(feature.attributes[fieldsB[1].value]*feature.attributes["amb_100"]);
-					valorsOptB.push(valorMaxB*feature.attributes["amb_100"]);
+					valorsB_actual.push(feature.attributes[fieldsB[0].value]*feature.attributes["AMB_100"]);
+					valorsB_tend.push(feature.attributes[fieldsB[1].value]*feature.attributes["AMB_100"]);
+					valorsOptB.push(valorB);
 					//Indicador C
-					valorsC_actual.push(feature.attributes[fieldsC[0].value]*feature.attributes["amb_100"]);
-					valorsC_tend.push(feature.attributes[fieldsC[1].value]*feature.attributes["amb_100"]);
-					valorsOptC.push(valorMaxC*feature.attributes["amb_100"]);
+					valorsC_actual.push(feature.attributes[fieldsC[0].value]*feature.attributes["AMB_100"]);
+					valorsC_tend.push(feature.attributes[fieldsC[1].value]*feature.attributes["AMB_100"]);
+					valorsOptC.push(valorC);
 					//Indicador D
 					valorsD_actual.push(feature.attributes[fieldsD_agg[0].value]);
 					valorsD_tend.push(feature.attributes[fieldsD_agg[1].value]);
 					valorsD1.push(feature.attributes[fieldsD_agg[1].value]);
-					valorsOptD1.push(valorMaxD1);
+					valorsOptD1.push(valorD1);
 					//Indicador E1A
 					valorsE1A1_actual.push(feature.attributes[fieldsE1A1_agg[0].value]);
 					valorsE1A2_actual.push(feature.attributes[fieldsE1A2_agg[0].value]);
 					valorsE1A1_tend.push(feature.attributes[fieldsE1A1_agg[1].value]);
 					valorsE1A2_tend.push(feature.attributes[fieldsE1A2_agg[1].value]);
-					valorsOptE1A1.push(valorMaxE1A1);
-					valorsOptE1A2.push(valorMaxE1A2);
+					valorsOptE1A1.push(valorE1A_1);
+					valorsOptE1A2.push(valorE1A_2);
 					//Indicador E1B	
 					valorsE1B_actual.push(feature.attributes[fieldsE1B[0].value]);
 					valorsE1B_tend.push(feature.attributes[fieldsE1B[1].value]);					
-					valorsOptE1B.push(valorMaxE1B);
+					valorsOptE1B.push(valorE1B);
 					//Indicador E1C
-					valorsE1C_actual.push(feature.attributes[fieldsE1C[0].value]);
-					valorsE1C_tend.push(feature.attributes[fieldsE1C[1].value]);
+					valorsE1C_actual.push(feature.attributes[fieldsE1C_agg[0].value]);
+					valorsE1C_tend.push(feature.attributes[fieldsE1C_agg[1].value]);
 					valorsE1C1.push(feature.attributes[fieldsE1C_agg[0].value]);
-					valorsOptE1C1.push(valorMaxE1C1);
+					valorsOptE1C1.push(valorE1C);
 					//Indicador F
 					valorsF_actual.push(feature.attributes[fieldsF_agg[0].value]);
 					valorsF_tend.push(feature.attributes[fieldsF_agg[1].value]);
-					valorsOptF1.push(valorMaxF1);
+					valorsOptF1.push(valorF1);
 				});
-				//Indicador D
 				
 				valorsMaxA1=[];
-				valorsMaxA2=[];
+				valorsMaxA1_2=[];
+
+				valorsMinA2=[];
+				
+				valorsMinA3=[];
+				valorsMinA3_2=[];
 				
 				valorsMaxB=[];
 				
@@ -1804,17 +1974,26 @@
 				
 				response.features.map(function(feature) {
 					//Calcul de maxims
-					//indicador A
-					valorMaxA=0;
-					for(var k in fieldsA){
-						if(feature.attributes[fieldsA[k].value] >= valorMaxA){
-							valorMaxA = feature.attributes[fieldsA[k].value];
+					//indicador A1
+					valorMaxA1A=0;
+					for(var k in fieldsA1){
+						if(feature.attributes[fieldsA1[k].value] >= valorMaxA1A){
+							valorMaxA1A = feature.attributes[fieldsA1[k].value];
 							valorMaxA1 = feature.attributes[fieldsA1_agg[k].value];
-							valorMaxA2 = feature.attributes[fieldsA2_agg[k].value];
+							valorMaxA1_2 = feature.attributes[fieldsA1_2_agg[k].value];
 						}
 					}
 					valorsMaxA1.push(valorMaxA1);
-					valorsMaxA2.push(valorMaxA2);
+					valorsMaxA1_2.push(valorMaxA1_2);
+					
+					//indicador A2					
+					valorsMinA2.push(feature.attributes[fieldsA2[getIndexMinFeatureFields(feature, fieldsA2)].value]);
+
+					
+					//indicador A3
+					valorsMinA3.push(feature.attributes[fieldsA3_agg[getIndexMinFeatureFields(feature, fieldsA3)].value]);
+					valorsMinA3_2.push(feature.attributes[fieldsA3_2_agg[getIndexMinFeatureFields(feature, fieldsA3)].value]);
+
 					//indicador B
 					valorMaxB=0;
 					for(var k in fieldsB){
@@ -1831,17 +2010,19 @@
 						}
 					}
 					valorsMaxC.push(valorMaxC);
-					valorMinD1 = 0;
+					
 					//indicador D
+					valorMinD1 = 1000000;
 					for(var k in fieldsD){
 						
-						if(feature.attributes[fieldsD[k].value] >= valorMinD1){
+						if(feature.attributes[fieldsD[k].value] <= valorMinD1){
 							valorMin = feature.attributes[fieldsD[k].value];
 							valorMinD1 = feature.attributes[fieldsD_agg[k].value];
 						}
 					}
 					
 					valorsMinD1.push(valorMinD1);
+					
 					//indicador E1A
 					valorMaxE1A=0;
 					for(var k in fieldsE1A){
@@ -1879,111 +2060,142 @@
 					}
 					valorsMaxF1.push(valorMaxF1);
 				});
-					arrMax = arr => Math.max(...arr);
-					arrMin = arr => Math.min(...arr);
-					arrSum = arr => arr.reduce((a,b) => a + b, 0);
-					arrAvg = arr => arr.reduce((a,b) => a + b, 0) / arr.length;
-					
-					
-					
-					
-					//Escenari maxim
-					indicador_A_max = (arrSum(valorsOptA1) / arrSum(valorsOptA2)) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA2));
-					indicador_B_max = arrAvg(valorsOptB) / arrAvg(valorsMaxB);
-					indicador_C_max = arrAvg(valorsOptC) / arrAvg(valorsMaxC);
-					indicador_D_max =  (arrSum(valorsMinD1) / Math.pow(10,6)) / (arrSum(valorsOptD1) / Math.pow(10,6)) ;
-					indicador_E1A_max = ((arrSum(valorsOptE1A1) / arrSum(valorsOptE1A2)) * 100) / ((arrSum(valorsMaxE1A1) / arrSum(valorsMaxE1A2)) * 100);
-					indicador_E1B_max = (arrSum(valorsOptE1B) / 1000) / (arrSum(valorsMaxE1B) / 1000);
-					indicador_E1C_max = (arrSum(valorsOptE1C1) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
-					indicador_F_max = arrSum(valorsOptF1) / arrSum(valorsMaxF1);
-					
-					//escenari optim
-					if (escenari == 0) {
-						indicador_A = (arrSum(valorsA1_actual) / arrSum(valorsA2_actual)) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA2));
-						indicador_B = arrAvg(valorsB_actual) / arrAvg(valorsMaxB);
-						indicador_C = arrAvg(valorsC_actual) / arrAvg(valorsMaxC);
-						indicador_D =  (arrSum(valorsD_actual) / Math.pow(10,6)) / (arrSum(valorsMinD1) / Math.pow(10,6))  ;
-						indicador_E1A = ((arrSum(valorsE1A1_actual) / arrSum(valorsE1A2_actual)) * 100) / ((arrSum(valorsMaxE1A1) / arrSum(valorsMaxE1A2)) * 100);
-						indicador_E1B = (arrSum(valorsE1B_actual) / 1000) / (arrSum(valorsMaxE1B) / 1000);
-						indicador_E1C = (arrSum(valorsE1C1) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
-						indicador_F = arrSum(valorsF_actual) / arrSum(valorsMaxF1);
-						
-						aranya2(indicador_A ,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,"rgba(200,0,0,0.6)","Escenari actual");
-					} else {
-						indicador_A = (arrSum(valorsA1_tend) / arrSum(valorsA2_tend)) / (arrSum(valorsOptA1)/ arrSum(valorsOptA2));
-						indicador_B = arrAvg(valorsB_tend) / arrAvg(valorsMaxB);
-						indicador_C = arrAvg(valorsC_tend) / arrAvg(valorsMaxC);
-						indicador_D = (arrSum(valorsD_tend) / Math.pow(10,6))  / (arrSum(valorsMinD1) / Math.pow(10,6));
-						indicador_E1A = ((arrSum(valorsE1A1_tend) / arrSum(valorsE1A2_tend)) * 100) / ((arrSum(valorsMaxE1A1) / arrSum(valorsMaxE1A2)) * 100);
-						indicador_E1B = (arrSum(valorsE1B_tend) / 1000) / (arrSum(valorsMaxE1B) / 1000);
-						indicador_E1C = (arrSum(valorsE1C1) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
-						indicador_F = arrSum(valorsF_tend) / arrSum(valorsMaxF1);
-						aranya2(indicador_A ,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,"rgba(200,0,0,0.6)","Escenari tendencial");
-					}
+				arrMax = arr => Math.max(...arr);
+				arrMin = arr => Math.min(...arr);
+				arrSum = arr => arr.reduce((a,b) => a + b, 0);
+				arrAvg = arr => arr.reduce((a,b) => a + b, 0) / arr.length;
 
 				
-				});
-			
+				let indicatorA1Obj = new MaxSumMultipleIndicator(valorsMaxA1, valorsMaxA1_2, valorsA1_actual, valorsA1_2_actual, valorsA1_tend, valorsA1_2_tend, valorsOptA1, valorsOptA1_2);
+				let indicatorA2Obj = new MinSumIndicator(valorsMinA2, valorsA2_actual, valorsA2_tend, valorsOptA2);
+				let indicatorA3Obj = new MinSumMultipleIndicator(valorsMinA3, valorsMinA3_2, valorsA3_actual, valorsA3_2_actual, valorsA3_tend, valorsA3_2_tend, valorsOptA3, valorsOptA3_2);
+				let indicatorBObj = new MaxAvgIndicator(valorsMaxB, valorsB_actual, valorsB_tend, valorsOptB);
+				let indicatorCObj = new MaxAvgIndicator(valorsMaxC, valorsC_actual, valorsC_tend, valorsOptC);
+				let indicatorDObj = new MinSumIndicator(valorsMinD1, valorsD_actual, valorsD_tend, valorsOptD1);
+				let indicatorE1AObj = new MaxSumMultipleIndicator(valorsMaxE1A1, valorsMaxE1A2, valorsE1A1_actual, valorsE1A2_actual, valorsE1A1_tend, valorsE1A2_tend, valorsOptE1A1, valorsOptE1A2);
+				let indicatorE1BObj = new MaxSumIndicator(valorsMaxE1B, valorsE1B_actual, valorsE1B_tend, valorsOptE1B);
+				let indicatorE1CObj = new MaxSumIndicator(valorsMaxE1C1, valorsE1C_actual, valorsE1C_tend, valorsOptE1C1);
+				let indicatorFObj = new MaxSumIndicator(valorsMaxF1, valorsF_actual, valorsF_tend, valorsOptF1);
+
+				/*
+				// Escenari optimitzat
+				indicador_A1_max = ((arrSum(valorsOptA1)  / arrSum(valorsOptA1_2))) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
+				indicador_A2_max = (arrSum(valorsMinA2)) / (arrSum(valorsOptA2));
+				indicador_A3_max = ((arrSum(valorsMinA3)/ arrSum(valorsMinA3_2))/ (arrSum(valorsOptA3) / arrSum(valorsOptA3_2)));
+				indicador_B_max = (arrAvg(valorsOptB)) / arrAvg(valorsMaxB);
+				indicador_C_max = (arrAvg(valorsOptC)) / arrAvg(valorsMaxC);
+				indicador_D_max =  (arrSum(valorsMinD1) / Math.pow(10,6)) / ((arrSum(valorsOptD1) / Math.pow(10,6)));
+				indicador_E1A_max = ((arrSum(valorsOptE1A1) / arrSum(valorsOptE1A2)) * 100) / ((arrSum(valorsMaxE1A1) / arrSum(valorsMaxE1A2)) * 100);
+				indicador_E1B_max = ((arrSum(valorsOptE1B)) / 1000) / (arrSum(valorsMaxE1B) / 1000);
+				indicador_E1C_max = ((arrSum(valorsOptE1C1)) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
+				indicador_F_max = (arrSum(valorsOptF1)) / arrSum(valorsMaxF1);
+				
+				if (escenari == 0) {
+					// Escenari actual
+					indicador_A1 = (arrSum(valorsA1_actual) / arrSum(valorsA1_2_actual)) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
+					indicador_A2 = (arrSum(valorsMinA2)/ 1000000) / (arrSum(valorsA2_actual) / 1000000);
+					indicador_A3 = (arrSum(valorsMinA3)/ arrSum(valorsMinA3_2))/ (arrSum(valorsA3_actual) / arrSum(valorsA3_2_actual));
+					indicador_B = arrAvg(valorsB_actual) / arrAvg(valorsMaxB);
+					indicador_C = arrAvg(valorsC_actual) / arrAvg(valorsMaxC);
+					indicador_D = (arrSum(valorsMinD1) / Math.pow(10,6)) / (arrSum(valorsD_actual) / Math.pow(10,6))  ;
+					indicador_E1A = ((arrSum(valorsE1A1_actual) / arrSum(valorsE1A2_actual)) * 100) / ((arrSum(valorsMaxE1A1) / arrSum(valorsMaxE1A2)) * 100);
+					indicador_E1B = (arrSum(valorsE1B_actual) / 1000) / (arrSum(valorsMaxE1B) / 1000);
+					indicador_E1C = (arrSum(valorsE1C_actual) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
+					indicador_F = arrSum(valorsF_actual) / arrSum(valorsMaxF1);
+					
+					aranya2(indicador_A1 , indicador_A2, indicador_A3,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,"rgba(200,0,0,0.6)","Escenari actual");
+					
+				} else {
+					// Escenari tendencial
+					indicador_A1 = (arrSum(valorsA1_tend) / arrSum(valorsA1_2_tend)) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
+					indicador_A2 = (arrSum(valorsMinA2)/ 1000000) / (arrSum(valorsA2_tend) / 1000000);
+					indicador_A3 = (arrSum(valorsMinA3)/ arrSum(valorsMinA3_2))/ (arrSum(valorsA3_tend) / arrSum(valorsA3_2_tend));
+					indicador_B = arrAvg(valorsB_tend) / arrAvg(valorsMaxB);
+					indicador_C = arrAvg(valorsC_tend) / arrAvg(valorsMaxC);
+					indicador_D = (arrSum(valorsMinD1) / Math.pow(10,6)) / (arrSum(valorsD_tend) / Math.pow(10,6));
+					indicador_E1A = ((arrSum(valorsE1A1_tend) / arrSum(valorsE1A2_tend)) * 100) / ((arrSum(valorsMaxE1A1) / arrSum(valorsMaxE1A2)) * 100);
+					indicador_E1B = (arrSum(valorsE1B_tend) / 1000) / (arrSum(valorsMaxE1B) / 1000);
+					indicador_E1C = (arrSum(valorsE1C_tend) / 1000) / (arrSum(valorsMaxE1C1) / 1000);
+					indicador_F = arrSum(valorsF_tend) / arrSum(valorsMaxF1);
+					
+					aranya2(indicador_A1,indicador_A2,indicador_A3,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,"rgba(200,0,0,0.6)","Escenari tendencial");
+				}*/
+				var categories = ["Eficiència energètica (A1A)", "Consum d’aigua (A1B)","Apropiació de biomassa (A1C)","Conservació de la biodiversitat (B1)", "Funcionament del paisatge (C1)", "Canvi climàtic (D1)", "Recirculació de nutrients (E1A)", "Estoc de carboni (E1B)","Producció agrícola (E1C)","Llocs de treball (F1)"];
+				var data = [indicatorA1Obj, indicatorA2Obj, indicatorA3Obj, indicatorBObj, indicatorCObj, indicatorDObj, indicatorE1AObj, indicatorE1BObj, indicatorE1CObj, indicatorFObj];
+				var units = ["", "hm3", "% de HANPP", "", "", "milers de tones de CO2 eq", "% de recirculació de fòsfor", "milers de tones de carboni", "milers de tones de matèria seca", "UTAs"];
+				histogramChart(categories, data, units);
+				aranya(categories, data);
+			});
 		}
 		
-		function aranya(indicador_A ,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,color,titol){
-			//console.log(indicador_A_max  + "//" + indicador_B_max + "//" + indicador_C_max + "//" + indicador_D_max + "//" + indicador_E1A_max + "//" + indicador_E1B_max + "//" + indicador_E1C_max + "//" + indicador_F_max);
-			  var marksData = {
-			  labels: ["A", "B", "C", "D", "E1A", "E1B","E1C","F"],
-			  datasets: [{
-				label: titol,
-				backgroundColor: "transparent",
-				borderColor: color,
-				fill: false,
-				data: [indicador_A ,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F]
-			  },
-			  {
-				  label: "Escenari optimitzat",
-				backgroundColor: "transparent",
-				borderColor: "rgba(200,200,0,0.6)",
-				 fill: false,
-				data: [indicador_A_max ,indicador_B_max,indicador_C_max,indicador_D_max,indicador_E1A_max,indicador_E1B_max,indicador_E1C_max,indicador_F_max]
-			  }]
-			};
-			
-			if(radarChart) radarChart.destroy();
-			radarChart = new Chart(marksChart, {
-			  type: 'radar',
-			  data: marksData,
-			  width:100,
-			  height:100,
-			  options: {
-					scale: {
-						angleLines: {
-							display: false
-						},
-						ticks: {
-							suggestedMin: 0,
-							suggestedMax: 1
+		function aranya(categories, data)
+		{
+			var ctx = document.getElementById("marksChart");
+			var chart = new Chart(ctx, {
+				type: 'radar',
+				data: {
+					labels: categories,
+					datasets: [{
+						data: data.map(function (indicator) {
+							return indicator.actualRelativeValue();
+						}),
+						label: "Escenari actual",
+						borderWidth: 1,
+						borderColor: '#3377FF',
+						fill: false
+					},
+					{
+						data: data.map(function (indicator) {
+							return indicator.tendentialRelativeValue();
+						}),
+						label: "Escenari tendencial",
+						borderWidth: 1,
+						borderColor: '#FF3333',
+						fill: false
+					},
+					{
+						data: data.map(function (indicator) {
+							return indicator.optimitzationRelativeValue();
+						}),
+						label: "Escenari optimitzat",
+						borderWidth: 1,
+						borderColor: '#00FF00',
+						fill: false
+					}]
+				},
+				options: {
+					legend: {
+						position: 'bottom'
+					},
+					tooltips: {
+						callbacks: {
+							title: function(tooltipItems, data) {
+								return data.datasets[tooltipItems[0].datasetIndex].label;
+							},
+							label: function(tooltipItem, data) {
+								return tooltipItem.yLabel.toFixed(2);
+							}
 						}
 					}
 				}
 			});
-			
-			//radarChart.data=marksData;
-			//radarChart.update();
-			//radarChart.resize(50,50);
+			chart.update();
 		}
-		
-		function aranya2(indicador_A ,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,color,titol){
-		    var options = {
+		/*
+		function aranya2(indicador_A1 ,indicador_A2 ,indicador_A3 ,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,color,titol){
+			var options = {
 				chart: {
 					height: 350,
 					type: 'radar',
 				},
 				series: [{
 					name: titol,
-					data: [indicador_A ,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F],
+					data: [indicador_A1 ,indicador_A2 ,indicador_A3 ,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F],
 				},{
 					name: "Escenari optimitzat",
-					data: [indicador_A_max ,indicador_B_max,indicador_C_max,indicador_D_max,indicador_E1A_max,indicador_E1B_max,indicador_E1C_max,indicador_F_max],
+					data: [indicador_A1_max ,indicador_A2_max ,indicador_A3_max ,indicador_B_max,indicador_C_max,indicador_D_max,indicador_E1A_max,indicador_E1B_max,indicador_E1C_max,indicador_F_max],
 				}],
-				labels:  ["Eficiència metabòlica (A1)", " Conservació de la biodiversitat (B1)", "Funcionament del paisatge (C1)", "Canvi global (D1)", "Serveis ecosistèmics de suport (E1A)", "Serveis ecosistèmics de regulació (E1B)","Serveis ecosistèmics d’aprovisionament (E1C)","Cohesió social (F1)"],
+				labels:  ["Eficiència energètica (A1A)", "Consum d’aigua (A1B)","Apropiació de biomassa (A1C)","Conservació de la biodiversitat (B1)", "Funcionament del paisatge (C1)", "Canvi climàtic (D1)", "Recirculació de nutrients (E1A)", "Estoc de carboni (E1B)","Producció agrícola (E1C)","Llocs de treball (F1)"],
 				plotOptions: {
 					radar: {
 						size: 140,
@@ -2034,13 +2246,82 @@
 					}
 				}
 			}
-		document.getElementById("marksChart").innerHTML = "<div id='marksChart'></div>";
-        chart = new ApexCharts(
-            document.querySelector("#marksChart"),
-            options
-        );
+			document.getElementById("marksChart").innerHTML = "<div id='marksChart'></div>";
+			chart = new ApexCharts(
+				document.querySelector("#marksChart"),
+				options
+			);
 
-        chart.render();
+			chart.render();
+		}*/
+
+		function histogramChart(categories, data, units) {
+			var ctx = document.getElementById("histoChart");
+			var chart = new Chart(ctx, {
+				type: 'bar',
+				data: {
+					labels: categories,
+					datasets: [{
+						data: data.map(function (indicator) {
+							return indicator.actualHistogramValue();
+						}),
+						label: "Escenari actual",
+						borderWidth: 1,
+						backgroundColor: '#3377FF',
+						indicatorsValues: data.map(function (indicator) {
+							return indicator.actualAbsoluteValue();
+						})
+					},
+					{
+						data: data.map(function (indicator) {
+							return indicator.tendencialHistogramValue();
+						}),
+						label: "Escenari tendencial",
+						borderWidth: 1,
+						backgroundColor: '#FF3333',
+						indicatorsValues: data.map(function (indicator) {
+							return indicator.tendencialAbsoluteValue();
+						})
+					},
+					{
+						data: data.map(function (indicator) {
+							return indicator.optimitzationHistogramValue();
+						}),
+						label: "Escenari optimitzat",
+						borderWidth: 1,
+						backgroundColor: '#00FF00',
+						indicatorsValues: data.map(function (indicator) {
+							return indicator.optimitzationAbsoluteValue();
+						}) 
+					}]
+				},
+				options: {
+					tooltips: {
+						position: 'nearest',
+						callbacks: {
+							title: function(tooltipItems, data) {
+								return data.datasets[tooltipItems[0].datasetIndex].label;
+							},
+							label: function(tooltipItem, data) {
+								return categories[tooltipItem.index] + ": " + data.datasets[tooltipItem.datasetIndex].indicatorsValues[tooltipItem.index].toFixed(2) + " " + units[tooltipItem.index];
+							}
+						}
+					},
+					legend: {
+						position: 'bottom'
+					}
+				}
+			});
+			chart.update();
 		}
 
-			
+			function popup(id){
+				var div = document.getElementById(id);
+				div.classList.add("popup");
+
+			}
+			function closePopup(id){
+				var div = document.getElementById(id);
+				div.classList.remove("popup");
+				
+			}
