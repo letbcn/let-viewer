@@ -130,7 +130,7 @@
           container: "viewDiv",
           map: mapOptimitzation,
           center: defaultPosition,
-          zoom: defaultZoom,
+          zoom: 11,
           constraints: {
             minZoom: minZoom,
             maxZoom: maxZoom

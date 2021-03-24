@@ -1,6 +1,7 @@
-class MaxSumMultipleIndicator {
-    constructor(maxValues1, maxValues2, actualValues1, actualValues2, tendencialValues1, tendencialValues2, optimitzationValues1, optimitzationValues2) 
+class MaxSumMultipleIndicator extends Indicator {
+    constructor(name, units, decimals, maxValues1, maxValues2, actualValues1, actualValues2, tendencialValues1, tendencialValues2, optimitzationValues1, optimitzationValues2) 
     {
+        super(name, units, decimals);
         this.arrSum = arr => arr.reduce((a,b) => a + b, 0);
         this.maxValue1 = this.arrSum(maxValues1);
         this.maxValue2 = this.arrSum(maxValues2);

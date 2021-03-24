@@ -221,7 +221,7 @@
 		}*/
 		
 	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="https://js.arcgis.com/4.13/"></script>
 
@@ -644,6 +644,7 @@ line-height: 2;
     </style>
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="js/indicators/Indicator.js"></script>
 <script src="js/indicators/MaxSumMultipleIndicator.js"></script>
 <script src="js/indicators/MinSumIndicator.js"></script>
 <script src="js/indicators/MinSumMultipleIndicator.js"></script>
@@ -742,13 +743,17 @@ line-height: 2;
 		<div class="esri-widget title-map-dif" style="height: 10%;">
 			<span id="radarGrafic">Analisi Multicriteri</span></span><span data-value="radarGrafic" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img src="imatges/Group 92.png" alt=""></span><span data-value="radarGrafic" class="opened" onclick="popup(this.getAttribute('data-value'))"><img src="imatges/Rectangle 138.png" alt=""></span><span class="map--selected"></span>
 		</div>
-		<canvas class="divgrafics" id="marksChart"></canvas>
+		<div id="radarGraficContainer">
+			<canvas class="divgrafics" id="marksChart"></canvas>
+		</div>
 	</div>	
 	<div class="divgrafics" id="histogramGrafic">
 		<div class="esri-widget title-map-dif" style="height: 10%;">
 			<span id="histogramGrafic">Valors de les dimensions</span></span><span data-value="histogramGrafic" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img src="imatges/Group 92.png" alt=""></span><span data-value="histogramGrafic" class="opened" onclick="popup(this.getAttribute('data-value'))"><img src="imatges/Rectangle 138.png" alt=""></span><span class="map--selected"></span>
 		</div>
-		<canvas class="divgrafics" id="histoChart"></canvas>
+		<div id="histoGraficContainer">
+			<canvas class="divgrafics" id="histoChart"></canvas>
+		</div>
 	</div>
   </body>
   <script>
@@ -761,7 +766,6 @@ line-height: 2;
 		var total_progress = total*5;
 		document.getElementById("myBar").style.height = total_progress+"px";
 		if (total > maxPuntuation) {
-			alert("La puntuació no pot ser més gran de 100.");
 			document.getElementById("myBar").style.height = 500+"px";
 			document.getElementById(range).value = maxPuntuation - (total - document.getElementById(range).value)
 		} else {
@@ -789,11 +793,6 @@ line-height: 2;
             total += parseInt(document.getElementById(ranges[x]).value);
         }
 		document.getElementById("TotalRanges").innerHTML = total;
-		/*if (!checkRanges()) {
-			document.getElementById("TotalRanges").style.color = "#ff0000";
-		} else {
-			document.getElementById("TotalRanges").style.color = "#00ff00";
-		}*/
     }
 
 	function getTotalValues()
