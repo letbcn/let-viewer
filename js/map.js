@@ -1654,11 +1654,19 @@
 			
         // Add the map to a MapView
 
+		const defaultZoom = 10;
+    	const minZoom = 10;
+    	const maxZoom = 18;
+
         view = new MapView({
           center: [2.125369, 41.5007585],
-          zoom: 10,
+          zoom: defaultZoom,
           container: "viewDiv",
-          map: map
+          map: map,
+		  constraints: {
+			  minZoom: minZoom,
+			  maxZoom: maxZoom,
+		  }
         });
         
         
