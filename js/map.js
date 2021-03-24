@@ -1493,8 +1493,16 @@
           center: [2.125369, 41.5007585],
           zoom: 10,
           container: "viewDiv",
-          map: map
+          map: map,
+		  constraints: {
+            minZoom: 10,
+            maxZoom: 14
+          }
         });
+
+		view.surface.addEventListener("wheel", function(event) {   
+			event.stopImmediatePropagation();  
+		}, true);
         
         
 		//view.popup.defaultPopupTemplateEnabled = true;
