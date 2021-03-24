@@ -1914,7 +1914,7 @@
         });
         view.ui.add(homeBtn, "top-left");
 
-      /*  // Add the expand instance to the ui
+      /// Add the expand instance to the ui
 		var element = document.createElement('div');
         element.className = "esri-icon-left-arrow esri-widget--button esri-widget esri-interactive";
         element.addEventListener('click', function(evt){
@@ -1926,7 +1926,7 @@
 		  this.classList.toggle("esri-icon-right-arrow");
         })
         view.ui.add(element, "top-left");
-*/
+
 		//cerca
 		var searchExpand = new Expand({
 			view: view,
@@ -2221,20 +2221,23 @@
 						title: layerName ,
 						content: contingut
 					  };
-				 /* if (layerName === "Unitats geològiques" && geologicLayer.visible) {
+
+				 	  if (layerName === "Unitats geològiques" && geologicLayer.visible) {
 					  feature.popupTemplate = {
 						// autocasts as new PopupTemplate()
 						title: layerName + ": {CODI_CAS}",
 						content: contingut
 					  };
 					   identifyElements.push(feature);
+
 				   } else if (layerName === 'Soil Taxonomy' && edafoSTLayer.visible) {
 						feature.popupTemplate = { // autocasts as new PopupTemplate()
-						  title: layerName + ": {CODI_CAS}",
+						  title: layerName ,
 						  content: "<b>{SOIL_ST}</b>" 
 						
 						};
 						 identifyElements.push(feature);
+
 				  } else if (layerName === 'Mapa_250K_WRB_20190300' && edafologicLayer.visible) {
 						feature.popupTemplate = { // autocasts as new PopupTemplate()
 						  title: layerName + ": {CODI_CAS}",
@@ -2242,10 +2245,43 @@
 						
 						};
 						 identifyElements.push(feature);
-				  }*/
-				 
-				});
-			  })
+
+				/*}else if (usos07Layer.visible) {
+							feature.popupTemplate = { // autocasts as new PopupTemplate()
+								title: "Ús del sòl al 2007",
+								content:  "Pixel Value is : " +  "{Pixel Value}"
+							  
+							  };
+							   identifyElements.push(feature);
+
+				  	}else if (cob56Layer.visible) {
+					feature.popupTemplate = { // autocasts as new PopupTemplate()
+						title: layerName,
+						content: "<b>{cat_niv3}</b>" 
+					  
+					  };
+					   identifyElements.push(feature);
+				*/
+			  }
+
+			  if (cob56Layer.visible) {
+				feature.popupTemplate = {
+				  // autocasts as new PopupTemplate()
+				  title: layerName + ": {CODI_CAS}",
+				  content: "<b>{cat_niv3}</b>" 
+				};
+				 identifyElements.push(feature);
+
+				} else if (cob15Layer.visible) {
+					feature.popupTemplate = { // autocasts as new PopupTemplate()
+					  title: layerName + ": {CODI_CAS}",
+					  content: "<b>{cat_niv_5}</b>" 
+					
+					};
+					 identifyElements.push(feature);
+				}
+			});
+		})
 			  showPopup(identifyElements);
 			});
 
@@ -2263,14 +2299,17 @@
         }
 		
 		
+	});
+});
+
+		
+		
 		//FI IDENTIFY
 		
 		
 	
 		
-        });
-      });
-
+      
       
       function distanceMeasurement() {
           const type = view.type;
