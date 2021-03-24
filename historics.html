@@ -401,7 +401,7 @@
         var canvas = document.createElement('canvas');
         canvas.width=350;
         const queryUsosTask = new QueryTask({
-                url: "https://openlab.uab.cat:6443/arcgis/rest/services/dinamiques_query/cobertes_v_"+any+"_mun/FeatureServer/0"
+                url: "https://openlab.uab.cat:6443/arcgis/rest/services/dinamiques_query/Cobertes del sòl_v_"+any+"_mun/FeatureServer/0"
                 });
             // Generage stats for the count and types of private schools that intersect the state with average enrollment
             const areaCount = new StatisticDefinition({
@@ -751,6 +751,9 @@
 			
 				</div>
 		</nav>
+	<header style="color:grey;text-align:center;font-size:12px;font-family:Arial,sans-serif;">
+		Si selecciona un mapa de cobertes del sòl podrà seleccionar un municipi i veure un gràfic amb la distribució municipal de les cobertes del sòl per aquell any.
+	</header>
    <div id="div1">		
     <div id="viewDiv1"></div>
 		<div id="infoDiv1" class="esri-widget" style="padding: 3px;">
@@ -767,7 +770,7 @@
 
 		</div>
 		<div id="infoDiv1_1" class="esri-widget" style="padding: 3px;">
-			Cobertes
+			Cobertes del sòl
 			  <select id="field-select-us1" class="esri-widget" onchange="canviUs(this.value,map1,'field-select-orto1',legend1)">
 				<option value="-1" ></option>
 				<option value="1956">1956</option>
@@ -794,7 +797,7 @@
 			</select>
 		</div>
 		<div id="infoDiv2_1" class="esri-widget" style="padding: 3px;">
-			Cobertes
+			Cobertes del sòl
 			  <select id="field-select-us2" class="esri-widget" onchange="canviUs(this.value,map2,'field-select-orto2',legend2)">
 				<option value="-1" ></option>
 				<option value="1956">1956</option>
@@ -821,7 +824,7 @@
 				</select>
 			</div>
 			<div id="infoDiv3_1" class="esri-widget" style="padding: 3px;">
-				Cobertes
+				Cobertes del sòl
 			  <select id="field-select-us3" class="esri-widget" onchange="canviUs(this.value,map3,'field-select-orto3',legend3)">
 				<option value="-1" ></option>
 				<option value="1956">1956</option>
@@ -849,7 +852,7 @@
 				</select>
 			</div>
 			<div id="infoDiv4_1" class="esri-widget" style="padding: 3px;">
-				Cobertes
+				Cobertes del sòl
 			  <select id="field-select-us4" class="esri-widget" onchange="canviUs(this.value,map4,'field-select-orto4',legend4)">
 				<option value="-1" ></option>
 				<option value="1956">1956</option>
