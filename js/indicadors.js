@@ -667,7 +667,7 @@
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
           field: "d1_c_0",
           legendOptions: {
-            title: "Canvi climàtic (t/ha)"
+            title: "Canvi climàtic (t CO₂ eq/ha)"
           },
           defaultSymbol: {
             type: "simple-fill", 
@@ -1446,9 +1446,11 @@
 				renderer_max_A1.legendOptions = renderer_A1.legendOptions;
 				renderer_dif_A1.valueExpression = document.getElementById("arcadeB").text + " getValue(fieldsA1,[" + weightListIndicators + "]) - $feature.a1a_c_0";
 				renderer_max_A1.valueExpression = document.getElementById("arcadeB").text + " getValue(fieldsA1,[" + weightListIndicators + "]);";
+				renderer_dif_A1.legendOptions.title = "Diferencia entre l'escenari actual i l'escenari optimitzat (EFEROI)";
 				layer4.renderer = renderer_dif_A1;
 				layer3.renderer = renderer_max_A1;
 				renderer_dif_A1.valueExpression = document.getElementById("arcadeB").text + " getValue(fieldsA1,[" + weightListIndicators + "]) - $feature.a1a_c_1";
+				renderer_dif_A1.legendOptions.title = "Diferencia entre l'escenari tendencial i l'escenari optimitzat (EFEROI)";
 				layerDiferenciaEscenariTendencial.renderer = renderer_dif_A1;
 				break;
 			case "A2":
@@ -1482,9 +1484,11 @@
 				renderer_max_A2.legendOptions = renderer_A2.legendOptions;
 				renderer_dif_A2.valueExpression= document.getElementById("arcadeB").text + " $feature.a1b_c_0" + " - getValue(fieldsA2,[" + weightListIndicators + "]);";
 				renderer_max_A2.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsA2,[" + weightListIndicators + "]);";
+				renderer_dif_A2.legendOptions.title = "Diferencia entre l'escenari actual i l'escenari optimitzat (ETR)";
 				layer4.renderer = renderer_dif_A2;
 				layer3.renderer = renderer_max_A2;
 				renderer_dif_A2.valueExpression= document.getElementById("arcadeB").text + " $feature.a1b_c_1" + " - getValue(fieldsA2,[" + weightListIndicators + "]);";
+				renderer_dif_A2.legendOptions.title = "Diferencia entre l'escenari tendencial i l'escenari optimitzat (ETR)";
 				layerDiferenciaEscenariTendencial.renderer = renderer_dif_A2;
 				break;
 			case "A3":
@@ -1518,9 +1522,11 @@
 				renderer_max_A3.legendOptions = renderer_A3.legendOptions;
 				renderer_dif_A3.valueExpression= document.getElementById("arcadeB").text + " $feature.a1c_c_0" + " - getValue(fieldsA3,[" + weightListIndicators + "]);";
 				renderer_max_A3.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsA3,[" + weightListIndicators + "]);";
+				renderer_dif_A3.legendOptions.title = "Diferencia entre l'escenari actual i l'escenari optimitzat (HANPPact)";
 				layer4.renderer = renderer_dif_A3;
 				layer3.renderer = renderer_max_A3;
 				renderer_dif_A3.valueExpression= document.getElementById("arcadeB").text + " $feature.a1c_c_1" + " - getValue(fieldsA3,[" + weightListIndicators + "]);";
+				renderer_dif_A3.legendOptions.title = "Diferencia entre l'escenari tendencial i l'escenari optimitzat (HANPPact)";
 				layerDiferenciaEscenariTendencial.renderer = renderer_dif_A3;
 				break;
 			case "B": 
@@ -1555,9 +1561,11 @@
 				renderer_max_B.legendOptions = renderer_B.legendOptions;
 				renderer_dif_B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsB,[" + weightListIndicators + "]) - $feature.b1_c_0;";
 				renderer_max_B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsB,[" + weightListIndicators + "]);";
+				renderer_dif_B.legendOptions.title = "Diferencia entre l'escenari actual i l'escenari optimitzat (ELIA)";
 				layer4.renderer = renderer_dif_B;
 				layer3.renderer = renderer_max_B;
 				renderer_dif_B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsB,[" + weightListIndicators + "]) - $feature.b1_c_1;";
+				renderer_dif_B.legendOptions.title = "Diferencia entre l'escenari tendencial i l'escenari optimitzat (ELIA)";
 				layerDiferenciaEscenariTendencial.renderer = renderer_dif_B;
 				break;
 			case "C": 
@@ -1587,9 +1595,11 @@
 				renderer_max_C.legendOptions = renderer_C.legendOptions;				
 				renderer_dif_C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsC,[" + weightListIndicators + "]) - $feature.c1_c_0;";
 				renderer_max_C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsC,[" + weightListIndicators + "]);";
+				renderer_dif_C.legendOptions.title = "Diferencia entre l'escenari actual i l'escenari optimitzat (Le)";
 				layer4.renderer = renderer_dif_C;
 				layer3.renderer = renderer_max_C;	
 				renderer_dif_C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsC,[" + weightListIndicators + "]) - $feature.c1_c_1;";
+				renderer_dif_C.legendOptions.title = "Diferencia entre l'escenari tendencial i l'escenari optimitzat (Le)";
 				layerDiferenciaEscenariTendencial.renderer = renderer_dif_C;			
 				break;
 			case "D": 
@@ -1621,9 +1631,11 @@
 				renderer_max_D.legendOptions = renderer_D.legendOptions;
 				renderer_dif_D.valueExpression= document.getElementById("arcadeB").text + "$feature.d1_c_0 - getValue(fieldsD,[" + weightListIndicators + "]);";
 				renderer_max_D.valueExpression= document.getElementById("arcadeB").text + "getValue(fieldsD,[" + weightListIndicators + "]);";
+				renderer_dif_D.legendOptions.title = "Diferencia entre l'escenari actual i l'escenari optimitzat (t CO₂ eq/ha)";
 				layer4.renderer = renderer_dif_D;
 				layer3.renderer = renderer_max_D;
 				renderer_dif_D.valueExpression= document.getElementById("arcadeB").text + "$feature.d1_c_1 - getValue(fieldsD,[" + weightListIndicators + "]);";
+				renderer_dif_D.legendOptions.title = "Diferencia entre l'escenari tendencial i l'escenari optimitzat (t CO₂ eq/ha)";
 				layerDiferenciaEscenariTendencial.renderer = renderer_dif_D;
 				break;
 			case "E1A": 
@@ -1660,9 +1672,11 @@
 				renderer_max_E1A.legendOptions = renderer_E1A.legendOptions;
 				renderer_dif_E1A.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1A,[" + weightListIndicators + "]) - $feature.e1a_c_0;";
 				renderer_max_E1A.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1A,[" + weightListIndicators + "]) * " + weightListIndicators[6];
+				renderer_dif_E1A.legendOptions.title = "Diferencia entre l'escenari actual i l'escenari optimitzat (% rP)";
 				layer4.renderer = renderer_dif_E1A;
 				layer3.renderer = renderer_max_E1A;
 				renderer_dif_E1A.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1A,[" + weightListIndicators + "]) - $feature.e1a_c_1;";
+				renderer_dif_E1A.legendOptions.title = "Diferencia entre l'escenari tendencial i l'escenari optimitzat (% rP)";
 				layerDiferenciaEscenariTendencial.renderer = renderer_dif_E1A;
 				break;
 			case "E1B": 
@@ -1692,9 +1706,11 @@
 				renderer_max_E1B.legendOptions = renderer_E1B.legendOptions;
 				renderer_dif_E1B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1B,[" + weightListIndicators + "]) - $feature.e1b_c_0;";
 				renderer_max_E1B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1B,[" + weightListIndicators + "]);";
+				renderer_dif_E1B.legendOptions.title = "Diferencia entre l'escenari actual i l'escenari optimitzat (t C)";
 				layer4.renderer = renderer_dif_E1B;
 				layer3.renderer = renderer_max_E1B;
 				renderer_dif_E1B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1B,[" + weightListIndicators + "]) - $feature.e1b_c_1;";
+				renderer_dif_E1B.legendOptions.title = "Diferencia entre l'escenari tendencial i l'escenari optimitzat (t C)";
 				layerDiferenciaEscenariTendencial.renderer = renderer_dif_E1B;
 				break;
 			case "E1C": 
@@ -1730,9 +1746,11 @@
 				renderer_max_E1C.legendOptions = renderer_E1C.legendOptions;
 				renderer_dif_E1C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1C,[" + weightListIndicators + "]) - $feature.e1c_c_0;";
 				renderer_max_E1C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1C,[" + weightListIndicators + "]);";
+				renderer_dif_E1C.legendOptions.title = "Diferencia entre l'escenari actual i l'escenari optimitzat (kg ms)";
 				layer4.renderer = renderer_dif_E1C;
 				layer3.renderer = renderer_max_E1C;
 				renderer_dif_E1C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1C,[" + weightListIndicators + "]) - $feature.e1c_c_1;";
+				renderer_dif_E1C.legendOptions.title = "Diferencia entre l'escenari tendencial i l'escenari optimitzat (kg ms)";
 				layerDiferenciaEscenariTendencial.renderer = renderer_dif_E1C;
 				break;
 			case "F": 
@@ -1769,9 +1787,11 @@
 				renderer_max_F.legendOptions = renderer_F.legendOptions;
 				renderer_dif_F.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsF,[" + weightListIndicators + "]) - $feature.f1_c_0;";
 				renderer_max_F.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsF,[" + weightListIndicators + "])";
+				renderer_dif_F.legendOptions.title = "Diferencia entre l'escenari actual i l'escenari optimitzat (UTA)";
 				layer4.renderer = renderer_dif_F;
 				layer3.renderer = renderer_max_F;
 				renderer_dif_F.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsF,[" + weightListIndicators + "]) - $feature.f1_c_1;";
+				renderer_dif_F.legendOptions.title = "Diferencia entre l'escenari tendencial i l'escenari optimitzat (UTA)";
 				layerDiferenciaEscenariTendencial.renderer = renderer_dif_F;
 				break;
 		}
@@ -2261,6 +2281,23 @@
 					},
 					legend: {
 						position: 'bottom'
+					},
+					scales: {
+						yAxes: [{
+							ticks: {
+								min: 0,
+								max: 1,
+								callback: function(value, index, values) {
+									if (value == 1) {
+										return 'max';
+									}
+									if (value == 0) {
+										return 'min';
+									}
+									return '';
+								}
+							}
+						}]
 					}
 				}
 			});

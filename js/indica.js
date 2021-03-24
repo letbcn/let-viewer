@@ -244,7 +244,7 @@
 		  style: "classic"
         });
 		legendDif = new Legend({
-          view: viewDifActual,
+      view: viewDifActual,
 		  layerInfos: [{
 			layer: layer4,
 			title: ""
@@ -262,27 +262,27 @@
 		var bgExpand1 = new Expand({
           view: viewOptimitzation,
           content: legend1,
-		  expanded:false
+		      expanded:false
         });
 		var bgExpand2 = new Expand({
           view: viewActual,
           content: legend2,
-		  expanded:false
+		      expanded:false
         });
     var bgExpand2Tendencial = new Expand({
           view: viewTendencial,
           content: legend2Tendencial,
-		  expanded:false
+		      expanded:false
         });
 		var bgExpandDif = new Expand({
           view: viewDifActual,
           content: legendDif,
-		  expanded:false
+		      expanded:false
         });
     var bgExpandDifTendencial = new Expand({
           view: viewDifTendencial,
           content: legendDifTendencial,
-		  expanded:false
+		      expanded:false
         });
 		
     var homeBtnOptimitzation = new Home({
