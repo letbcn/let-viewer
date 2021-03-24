@@ -1,6 +1,7 @@
-class MinSumMultipleIndicator {
-    constructor(minValues1, minValues2, actualValues1, actualValues2, tendencialValues1, tendencialValues2, optimitzationValues1, optimitzationValues2) 
+class MinSumMultipleIndicator extends Indicator {
+    constructor(name, units, decimals, minValues1, minValues2, actualValues1, actualValues2, tendencialValues1, tendencialValues2, optimitzationValues1, optimitzationValues2) 
     {
+        super(name, units, decimals);
         this.arrSum = arr => arr.reduce((a,b) => a + b, 0);
         this.minValue1 = this.arrSum(minValues1);
         this.minValue2 = this.arrSum(minValues2);
@@ -56,7 +57,7 @@ class MinSumMultipleIndicator {
 
     actualAbsoluteValue() 
     {
-        return (this.optimitzationValue1 / this.optimitzationValue2) * this.factor;
+        return (this.actualValue1 / this.actualValue2) * this.factor;
     }
 
     tendencialAbsoluteValue()

@@ -500,7 +500,7 @@
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
           field: "a1b_c_0",
           legendOptions: {
-            title: "Consum d'aigua"
+            title: "Consum d'aigua (ETR)"
           },
           defaultSymbol: {
             type: "simple-fill", 
@@ -538,7 +538,7 @@
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
           field: "a1c_c_0",
           legendOptions: {
-            title: "Apropiació de la producció primària neta"
+            title: "Apropiació de biomassa (HANPPact)"
           },
           defaultSymbol: {
             type: "simple-fill", 
@@ -582,7 +582,7 @@
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
           field: "b1_c_0",
           legendOptions: {
-            title: "Integració energia-paisatge (ELIA)"
+            title: "Conservació de la biodiversitat (ELIA)"
           },
           defaultSymbol: {
             type: "simple-fill", 
@@ -626,7 +626,7 @@
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
           field: "c1_c_0",
           legendOptions: {
-            title: "Complexitat paisatgística (Le)"
+            title: "Funcionament del paisatge (Le)"
           },
           defaultSymbol: {
             type: "simple-fill", 
@@ -667,7 +667,7 @@
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
           field: "d1_c_0",
           legendOptions: {
-            title: "Emissions de gasos d'efecte hivernacle (MJ)"
+            title: "Canvi climàtic (t/ha)"
           },
           defaultSymbol: {
             type: "simple-fill", 
@@ -749,7 +749,7 @@
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
           field: "e1b_c_0",
           legendOptions: {
-            title: "Embornal de carboni (t C)"
+            title: "Estoc de carboni (t C)"
           },
           defaultSymbol: {
             type: "simple-fill", 
@@ -788,7 +788,7 @@
           type: "class-breaks", // autocasts as new ClassBreaksRenderer()
           field: "e1c_c_0",
           legendOptions: {
-            title: "Producció d'aliments (kg ms)"
+            title: "Producció agrícola (kg ms)"
           },
           defaultSymbol: {
             type: "simple-fill", 
@@ -1390,6 +1390,11 @@
 			for(var i = 0; i<cbs.length; i++){
 				cbs[i].checked = false;
 			}
+
+			var cajaLateral = document.getElementById("control-panel") ;
+			cajaLateral.classList.toggle("slided");
+			var cajaviewDiv = document.getElementById("divMainMap") ;
+			cajaviewDiv.classList.toggle("slided");
 			
 			if(value == null){
 				value = "A1";
@@ -1438,7 +1443,8 @@
 				layerEscenariTendencial.renderer = renderer_A1;
 				renderer_max_A1 = {type: "class-breaks"};
 				renderer_max_A1.classBreakInfos = renderer_A1.classBreakInfos;
-				renderer_dif_A1.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsA1,[" + weightListIndicators + "]) - $feature.a1a_c_0";
+				renderer_max_A1.legendOptions = renderer_A1.legendOptions;
+				renderer_dif_A1.valueExpression = document.getElementById("arcadeB").text + " getValue(fieldsA1,[" + weightListIndicators + "]) - $feature.a1a_c_0";
 				renderer_max_A1.valueExpression = document.getElementById("arcadeB").text + " getValue(fieldsA1,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_A1;
 				layer3.renderer = renderer_max_A1;
@@ -1473,6 +1479,7 @@
 				layerEscenariTendencial.renderer = renderer_A2;
 				renderer_max_A2 = {type: "class-breaks"};
 				renderer_max_A2.classBreakInfos = renderer_A2.classBreakInfos;
+				renderer_max_A2.legendOptions = renderer_A2.legendOptions;
 				renderer_dif_A2.valueExpression= document.getElementById("arcadeB").text + " $feature.a1b_c_0" + " - getValue(fieldsA2,[" + weightListIndicators + "]);";
 				renderer_max_A2.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsA2,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_A2;
@@ -1508,6 +1515,7 @@
 				layerEscenariTendencial.renderer = renderer_A3;
 				renderer_max_A3 = {type: "class-breaks"};
 				renderer_max_A3.classBreakInfos = renderer_A3.classBreakInfos;
+				renderer_max_A3.legendOptions = renderer_A3.legendOptions;
 				renderer_dif_A3.valueExpression= document.getElementById("arcadeB").text + " $feature.a1c_c_0" + " - getValue(fieldsA3,[" + weightListIndicators + "]);";
 				renderer_max_A3.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsA3,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_A3;
@@ -1544,6 +1552,7 @@
 				layerEscenariTendencial.renderer = renderer_B;			
 				renderer_max_B = {type: "class-breaks"};
 				renderer_max_B.classBreakInfos = renderer_B.classBreakInfos;
+				renderer_max_B.legendOptions = renderer_B.legendOptions;
 				renderer_dif_B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsB,[" + weightListIndicators + "]) - $feature.b1_c_0;";
 				renderer_max_B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsB,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_B;
@@ -1574,7 +1583,8 @@
 				renderer_C.field ="c1_c_1";
 				layerEscenariTendencial.renderer = renderer_C;
 				renderer_max_C = {type: "class-breaks"};
-				renderer_max_C.classBreakInfos = renderer_C.classBreakInfos;				
+				renderer_max_C.classBreakInfos = renderer_C.classBreakInfos;
+				renderer_max_C.legendOptions = renderer_C.legendOptions;				
 				renderer_dif_C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsC,[" + weightListIndicators + "]) - $feature.c1_c_0;";
 				renderer_max_C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsC,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_C;
@@ -1608,6 +1618,7 @@
 				layerEscenariTendencial.renderer = renderer_D;
 				renderer_max_D = {type: "class-breaks"};
 				renderer_max_D.classBreakInfos = renderer_D.classBreakInfos;
+				renderer_max_D.legendOptions = renderer_D.legendOptions;
 				renderer_dif_D.valueExpression= document.getElementById("arcadeB").text + "$feature.d1_c_0 - getValue(fieldsD,[" + weightListIndicators + "]);";
 				renderer_max_D.valueExpression= document.getElementById("arcadeB").text + "getValue(fieldsD,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_D;
@@ -1646,6 +1657,7 @@
 				layerEscenariTendencial.renderer = renderer_E1A;
 				renderer_max_E1A = {type: "class-breaks"};
 				renderer_max_E1A.classBreakInfos = renderer_E1A.classBreakInfos;
+				renderer_max_E1A.legendOptions = renderer_E1A.legendOptions;
 				renderer_dif_E1A.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1A,[" + weightListIndicators + "]) - $feature.e1a_c_0;";
 				renderer_max_E1A.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1A,[" + weightListIndicators + "]) * " + weightListIndicators[6];
 				layer4.renderer = renderer_dif_E1A;
@@ -1677,6 +1689,7 @@
 				layerEscenariTendencial.renderer = renderer_E1B;
 				renderer_max_E1B = {type: "class-breaks"};
 				renderer_max_E1B.classBreakInfos = renderer_E1B.classBreakInfos;
+				renderer_max_E1B.legendOptions = renderer_E1B.legendOptions;
 				renderer_dif_E1B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1B,[" + weightListIndicators + "]) - $feature.e1b_c_0;";
 				renderer_max_E1B.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1B,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_E1B;
@@ -1714,6 +1727,7 @@
 				layerEscenariTendencial.renderer = renderer_E1C;
 				renderer_max_E1C = {type: "class-breaks"};
 				renderer_max_E1C.classBreakInfos = renderer_E1C.classBreakInfos;
+				renderer_max_E1C.legendOptions = renderer_E1C.legendOptions;
 				renderer_dif_E1C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1C,[" + weightListIndicators + "]) - $feature.e1c_c_0;";
 				renderer_max_E1C.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsE1C,[" + weightListIndicators + "]);";
 				layer4.renderer = renderer_dif_E1C;
@@ -1752,6 +1766,7 @@
 				layerEscenariTendencial.renderer = renderer_F;
 				renderer_max_F = {type: "class-breaks"};
 				renderer_max_F.classBreakInfos = renderer_F.classBreakInfos;
+				renderer_max_F.legendOptions = renderer_F.legendOptions;
 				renderer_dif_F.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsF,[" + weightListIndicators + "]) - $feature.f1_c_0;";
 				renderer_max_F.valueExpression= document.getElementById("arcadeB").text + " getValue(fieldsF,[" + weightListIndicators + "])";
 				layer4.renderer = renderer_dif_F;
@@ -2060,18 +2075,6 @@
 				arrSum = arr => arr.reduce((a,b) => a + b, 0);
 				arrAvg = arr => arr.reduce((a,b) => a + b, 0) / arr.length;
 
-				
-				let indicatorA1Obj = new MaxSumMultipleIndicator(valorsMaxA1, valorsMaxA1_2, valorsA1_actual, valorsA1_2_actual, valorsA1_tend, valorsA1_2_tend, valorsOptA1, valorsOptA1_2);
-				let indicatorA2Obj = new MinSumIndicator(valorsMinA2, valorsA2_actual, valorsA2_tend, valorsOptA2);
-				let indicatorA3Obj = new MinSumMultipleIndicator(valorsMinA3, valorsMinA3_2, valorsA3_actual, valorsA3_2_actual, valorsA3_tend, valorsA3_2_tend, valorsOptA3, valorsOptA3_2);
-				let indicatorBObj = new MaxAvgIndicator(valorsMaxB, valorsB_actual, valorsB_tend, valorsOptB);
-				let indicatorCObj = new MaxAvgIndicator(valorsMaxC, valorsC_actual, valorsC_tend, valorsOptC);
-				let indicatorDObj = new MinSumIndicator(valorsMinD1, valorsD_actual, valorsD_tend, valorsOptD1);
-				let indicatorE1AObj = new MaxSumMultipleIndicator(valorsMaxE1A1, valorsMaxE1A2, valorsE1A1_actual, valorsE1A2_actual, valorsE1A1_tend, valorsE1A2_tend, valorsOptE1A1, valorsOptE1A2);
-				let indicatorE1BObj = new MaxSumIndicator(valorsMaxE1B, valorsE1B_actual, valorsE1B_tend, valorsOptE1B);
-				let indicatorE1CObj = new MaxSumIndicator(valorsMaxE1C1, valorsE1C_actual, valorsE1C_tend, valorsOptE1C1);
-				let indicatorFObj = new MaxSumIndicator(valorsMaxF1, valorsF_actual, valorsF_tend, valorsOptF1);
-
 				/*
 				// Escenari optimitzat
 				indicador_A1_max = ((arrSum(valorsOptA1)  / arrSum(valorsOptA1_2))) / (arrSum(valorsMaxA1)/ arrSum(valorsMaxA1_2));
@@ -2115,28 +2118,50 @@
 					
 					aranya2(indicador_A1,indicador_A2,indicador_A3,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,"rgba(200,0,0,0.6)","Escenari tendencial");
 				}*/
-				var categories = ["Eficiència energètica (A1A)", "Consum d’aigua (A1B)","Apropiació de biomassa (A1C)","Conservació de la biodiversitat (B1)", "Funcionament del paisatge (C1)", "Canvi climàtic (D1)", "Recirculació de nutrients (E1A)", "Estoc de carboni (E1B)","Producció agrícola (E1C)","Llocs de treball (F1)"];
+
+				let indicatorA1Obj = new MaxSumMultipleIndicator("Eficiència energètica (A1A)", "ràtio entre l’energia produïda pels cultius i l’energia que consumeixen", 2, valorsMaxA1, valorsMaxA1_2, valorsA1_actual, valorsA1_2_actual, valorsA1_tend, valorsA1_2_tend, valorsOptA1, valorsOptA1_2);
+				let indicatorA2Obj = new MinSumIndicator("Consum d’aigua (A1B)", "hm³", 0, valorsMinA2, valorsA2_actual, valorsA2_tend, valorsOptA2);
+				indicatorA2Obj.setFactor(0.001);
+				let indicatorA3Obj = new MinSumMultipleIndicator("Apropiació de biomassa (A1C)", "% de HANPP", 0, valorsMinA3, valorsMinA3_2, valorsA3_actual, valorsA3_2_actual, valorsA3_tend, valorsA3_2_tend, valorsOptA3, valorsOptA3_2);
+				indicatorA3Obj.setFactor(100);
+				let indicatorBObj = new MaxAvgIndicator("Conservació de la biodiversitat (B1)", "index de relació energia-informació-paisatge", 2, valorsMaxB, valorsB_actual, valorsB_tend, valorsOptB);
+				let indicatorCObj = new MaxAvgIndicator("Funcionament del paisatge (C1)", "index de complexitat paisatgística", 2, valorsMaxC, valorsC_actual, valorsC_tend, valorsOptC);
+				let indicatorDObj = new MinSumIndicator("Canvi climàtic (D1)", "milers de tones de CO₂ eq/ha", 2, valorsMinD1, valorsD_actual, valorsD_tend, valorsOptD1);
+				indicatorDObj.setFactor(0.001);
+				let indicatorE1AObj = new MaxSumMultipleIndicator("Recirculació de nutrients (E1A)", "% de recirculació de fòsfor", 0, valorsMaxE1A1, valorsMaxE1A2, valorsE1A1_actual, valorsE1A2_actual, valorsE1A1_tend, valorsE1A2_tend, valorsOptE1A1, valorsOptE1A2);
+				indicatorE1AObj.setFactor(100);
+				let indicatorE1BObj = new MaxSumIndicator("Estoc de carboni (E1B)", "milions de tones de carboni", 3, valorsMaxE1B, valorsE1B_actual, valorsE1B_tend, valorsOptE1B);
+				indicatorE1BObj.setFactor(0.000001);
+				let indicatorE1CObj = new MaxSumIndicator("Producció agrícola (E1C)", "milers de tones de materia seca", 0, valorsMaxE1C1, valorsE1C_actual, valorsE1C_tend, valorsOptE1C1);
+				indicatorE1CObj.setFactor(0.000000001);
+				let indicatorFObj = new MaxSumIndicator("Llocs de treball (F1)", "UTAs", 0, valorsMaxF1, valorsF_actual, valorsF_tend, valorsOptF1);
+
+				//var categories = ["Eficiència energètica (A1A)", "Consum d’aigua (A1B)","Apropiació de biomassa (A1C)","Conservació de la biodiversitat (B1)", "Funcionament del paisatge (C1)", "Canvi climàtic (D1)", "Recirculació de nutrients (E1A)", "Estoc de carboni (E1B)","Producció agrícola (E1C)","Llocs de treball (F1)"];
 				var data = [indicatorA1Obj, indicatorA2Obj, indicatorA3Obj, indicatorBObj, indicatorCObj, indicatorDObj, indicatorE1AObj, indicatorE1BObj, indicatorE1CObj, indicatorFObj];
-				var units = ["", "hm3", "% de HANPP", "", "", "milers de tones de CO2 eq", "% de recirculació de fòsfor", "milers de tones de carboni", "milers de tones de matèria seca", "UTAs"];
-				histogramChart(categories, data, units);
-				aranya(categories, data);
+				//var units = ["ràtio entre l’energia produïda pels cultius i l’energia que consumeixen", "hm3", "% de HANPP", "", "", "milers de tones de CO2 eq", "% de recirculació de fòsfor", "milions de tones de carboni", "milers de tones de matèria seca", "UTAs"];
+				histogramChart(data);
+				aranya(data);
 			});
 		}
 		
-		function aranya(categories, data)
+		function aranya(data)
 		{
+			document.getElementById("radarGraficContainer").innerHTML = '&nbsp;';
+			document.getElementById("radarGraficContainer").innerHTML = '<canvas class="divgrafics" id="marksChart"></canvas>';
 			var ctx = document.getElementById("marksChart");
 			var chart = new Chart(ctx, {
 				type: 'radar',
 				data: {
-					labels: categories,
+					labels: data.map(function (indicator) {
+						return indicator.getName();
+					}),
 					datasets: [{
 						data: data.map(function (indicator) {
 							return indicator.actualRelativeValue();
 						}),
 						label: "Escenari actual",
 						borderWidth: 1,
-						borderColor: '#3377FF',
+						borderColor: '#93D4EB',
 						fill: false
 					},
 					{
@@ -2145,7 +2170,7 @@
 						}),
 						label: "Escenari tendencial",
 						borderWidth: 1,
-						borderColor: '#FF3333',
+						borderColor: '#F8E8A0',
 						fill: false
 					},
 					{
@@ -2154,7 +2179,7 @@
 						}),
 						label: "Escenari optimitzat",
 						borderWidth: 1,
-						borderColor: '#00FF00',
+						borderColor: '#F1BFBE',
 						fill: false
 					}]
 				},
@@ -2174,118 +2199,49 @@
 					}
 				}
 			});
-			chart.update();
-		}
-		/*
-		function aranya2(indicador_A1 ,indicador_A2 ,indicador_A3 ,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F,color,titol){
-			var options = {
-				chart: {
-					height: 350,
-					type: 'radar',
-				},
-				series: [{
-					name: titol,
-					data: [indicador_A1 ,indicador_A2 ,indicador_A3 ,indicador_B,indicador_C,indicador_D,indicador_E1A,indicador_E1B,indicador_E1C,indicador_F],
-				},{
-					name: "Escenari optimitzat",
-					data: [indicador_A1_max ,indicador_A2_max ,indicador_A3_max ,indicador_B_max,indicador_C_max,indicador_D_max,indicador_E1A_max,indicador_E1B_max,indicador_E1C_max,indicador_F_max],
-				}],
-				labels:  ["Eficiència energètica (A1A)", "Consum d’aigua (A1B)","Apropiació de biomassa (A1C)","Conservació de la biodiversitat (B1)", "Funcionament del paisatge (C1)", "Canvi climàtic (D1)", "Recirculació de nutrients (E1A)", "Estoc de carboni (E1B)","Producció agrícola (E1C)","Llocs de treball (F1)"],
-				plotOptions: {
-					radar: {
-						size: 140,
-						polygons: {
-							strokeColor: '#e9e9e9',
-							fill: {
-								colors: []
-							}
-						}
-					}
-				},
-				
-				colors: ['#AAAAAA','#00FF00'],
-				fill:{type: 'gsolid',opacity:0 },
-				stroke: {
-					  show: true,
-					  width: 2,
-					  colors: ['#AAAAAA','#00FF00'],
-					  dashArray: 0
-					}
-				  ,
-				markers: {
-					size: 2,
-					strokeColors: ['#AAAAAA','#00FF00'],
-					strokeWidth: 2,
-				},
-				tooltip: {
-					y: {
-						formatter: function(val) {
-							return val.toFixed(2);
-						}   
-					}
-				},
-				yaxis: {
-					tickAmount: 10,
-					min:0,
-					max:1,
-					decimalsInFloat: 3,
-					forceNiceScale: false,
-					labels: {
-						formatter: function(val, i) {
-							if(i % 2 === 0) {
-								return val.toFixed(1);
-							} else {
-								return ''
-							}
-						}
-					}
-				}
-			}
-			document.getElementById("marksChart").innerHTML = "<div id='marksChart'></div>";
-			chart = new ApexCharts(
-				document.querySelector("#marksChart"),
-				options
-			);
-
 			chart.render();
-		}*/
+		}
 
-		function histogramChart(categories, data, units) {
+		function histogramChart(indicators) {
+			document.getElementById("histoGraficContainer").innerHTML = '&nbsp;';
+			document.getElementById("histoGraficContainer").innerHTML = '<canvas class="divgrafics" id="histoChart"></canvas>';
 			var ctx = document.getElementById("histoChart");
 			var chart = new Chart(ctx, {
 				type: 'bar',
 				data: {
-					labels: categories,
+					labels: indicators.map(function (indicator) {
+						return indicator.getName();
+					}),
 					datasets: [{
-						data: data.map(function (indicator) {
+						data: indicators.map(function (indicator) {
 							return indicator.actualHistogramValue();
 						}),
 						label: "Escenari actual",
 						borderWidth: 1,
-						backgroundColor: '#3377FF',
-						indicatorsValues: data.map(function (indicator) {
+						backgroundColor: '#93D4EB',
+						indicatorsValues: indicators.map(function (indicator) {
 							return indicator.actualAbsoluteValue();
 						})
 					},
 					{
-						data: data.map(function (indicator) {
+						data: indicators.map(function (indicator) {
 							return indicator.tendencialHistogramValue();
 						}),
 						label: "Escenari tendencial",
 						borderWidth: 1,
-						backgroundColor: '#FF3333',
-						indicatorsValues: data.map(function (indicator) {
+						backgroundColor: '#F8E8A0',
+						indicatorsValues: indicators.map(function (indicator) {
 							return indicator.tendencialAbsoluteValue();
 						})
 					},
 					{
-						data: data.map(function (indicator) {
+						data: indicators.map(function (indicator) {
 							return indicator.optimitzationHistogramValue();
 						}),
 						label: "Escenari optimitzat",
 						borderWidth: 1,
-						backgroundColor: '#00FF00',
-						indicatorsValues: data.map(function (indicator) {
+						backgroundColor: '#F1BFBE',
+						indicatorsValues: indicators.map(function (indicator) {
 							return indicator.optimitzationAbsoluteValue();
 						}) 
 					}]
@@ -2293,12 +2249,13 @@
 				options: {
 					tooltips: {
 						position: 'nearest',
+						useHTML: true,
 						callbacks: {
 							title: function(tooltipItems, data) {
 								return data.datasets[tooltipItems[0].datasetIndex].label;
 							},
 							label: function(tooltipItem, data) {
-								return categories[tooltipItem.index] + ": " + data.datasets[tooltipItem.datasetIndex].indicatorsValues[tooltipItem.index].toFixed(2) + " " + units[tooltipItem.index];
+								return indicators[tooltipItem.index].getName() + ": " + data.datasets[tooltipItem.datasetIndex].indicatorsValues[tooltipItem.index].toFixed(indicators[tooltipItem.index].getDecimals()) + " " + indicators[tooltipItem.index].getUnits();
 							}
 						}
 					},
@@ -2310,13 +2267,13 @@
 			chart.update();
 		}
 
-			function popup(id){
-				var div = document.getElementById(id);
-				div.classList.add("popup");
+		function popup(id){
+			var div = document.getElementById(id);
+			div.classList.add("popup");
 
-			}
-			function closePopup(id){
-				var div = document.getElementById(id);
-				div.classList.remove("popup");
-				
-			}
+		}
+		function closePopup(id){
+			var div = document.getElementById(id);
+			div.classList.remove("popup");
+			
+		}

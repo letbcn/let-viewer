@@ -1,6 +1,7 @@
-class MinSumIndicator {
-    constructor(minValues, actualValues, tendencialValues, optimitzationValues) 
+class MinSumIndicator extends Indicator {
+    constructor(name, units, decimals, minValues, actualValues, tendencialValues, optimitzationValues) 
     {
+        super(name, units, decimals);
         this.arrSum = arr => arr.reduce((a,b) => a + b, 0);
         this.minValue = arrSum(minValues);
         this.actualValue = arrSum(actualValues);

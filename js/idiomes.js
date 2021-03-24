@@ -140,9 +140,35 @@ var lretorn500;
 var lriscgeo;
 //Dinàmiques Socioeconòmiques
 var gSocio;
+var gAmbsoci;
+var gAmbestsoci;
+var gAmbestrbaix;
+var gAmbestrint;
+var gAmbestralt;
+var gAmbestvulne;
+var gAmbestmajors;
+var gAmbestestrang;
 var lenvell;
 var limmi;
 var lrenda;
+var lrendab15;
+var lrendab16;
+var lrendab17;
+var lrendai15;
+var lrendai16;
+var lrendai17;
+var lrendaa15;
+var lrendaa16;
+var lrendaa17;
+var lvulne15;
+var lvulne16;
+var lvulne17;
+var lmajors15;
+var lmajors16;
+var lmajors17;
+var lest15;
+var lest16;
+var lest17;
 var lpobresa;
 var lformacio;
 var latur;
@@ -242,10 +268,10 @@ var laccesh;
 	gAnom= "Anomalies climàtiques";
 	lAnomp17= "Anomalia precipitació 2017";
 	lAnomp18= "Anomalia precipitació 2018";
-	lAnomp19= "Anomalia precipitació 2019";
+	lAnomp19= "Anomalia precipitació";
 	lAnomt17= "Anomalia temperatura 2017";
 	lAnomt18= "Anomalia temperatura 2018";
-	lAnomt19= "Anomalia temperatura 2019";
+	lAnomt19= "Anomalia temperatura";
 	//Cobertes del sol
 	gCobertesSol="Cobertes del sòl";
 	gCobertes="Cobertes del sòl";
@@ -265,16 +291,17 @@ var laccesh;
 	lusos17="Usos del sòl 2017";
 	//Espai natural
 	gNatural="Espai natural";
+	gNdvi= "Índex Vegetació (NDVI)";
 	lhic="Hàbitats d'interès comunitari";
 	lhab="Hàbitats";
 	lboscoss="Boscos singulars";
-	lndvi17="NDVI 2017";
-	lndvi18="NDVI 2018";
-	lndvi19 ="NDVI 2019";
+	lndvi17="2017";
+	lndvi18="2018";
+	lndvi19 ="2019";
 	//Espai urbà
 	gUrba="Espai urbà";
-	lpoligons="Polígons industrials (RMB)";
-	lteixit="Teixits urbans (AMB)";
+	lpoligons="Polígons industrials";
+	lteixit="Teixits urbans";
 	//Espai agrari
 	gAgrari= "Espai agrari";
 	lAgricultura="Agricultura (DAN 2019)";
@@ -283,33 +310,59 @@ var laccesh;
 	//Vectors ambientals
 	gAmbientals= "Vectors ambientals";
 	gEstatAigua="Estat de les masses d'aigua";
-	lEscostaneres="Estat aigües costaneres (RMB)";
-	lEsembass="Estat embassaments (RMB)";
-	lEsrius="Estat rius (RMB)";
-	lEssubt="Estat aigües subterrànies (RMB)";
-	lEshumides="Estat zones humides (RMB)";
+	lEscostaneres="Estat aigües costaneres";
+	lEsembass="Estat dels embassaments";
+	lEsrius="Estat ecològic dels rius";
+	lEssubt="Estat ecològic aigües subterrànies";
+	lEshumides="Estat zones humides";
 	//Riscos territorials
 	gRiscos= "Riscos territorials";	
+	gIncendis="Incendis forestals";
 	lriscgeo="Mapa per a la Prevenció de Riscos Geològics 1:25.000";
-	lperim= "Incendis forestals 1986-2019"
-	gIncendis="Risc d'incendis forestals"
+	lperim= "Incendis forestals 1986-2019";
 	lvincend= "Vulnerabilitat incendis";
 	lpincend= "Perill bàsic d'incendi"
 	linfla= "Model d'inflamabilitat";
 	gInundabilitat="Inundabilitat";
-	lretorn10="Zona inundable amb retorn 10 anys";
-	lretorn100="Zona inundable amb retorn 100 anys";
-	lretorn500="Zona inundable amb retorn 500 anys";
+	lretorn10="Zona inundable retorn 10 anys";
+	lretorn100="Zona inundable retorn 100 anys";
+	lretorn500="Zona inundable retorn 500 anys";
 	//Dinàmiques Socioeconòmiques
 	gSocio="Dinàmiques socioeconòmiques";
-	lenvell="Envelliment vulnerable (AMB)";
-	limmi="Inmigració estrangera (AMB)";
-	lrenda="Renda (AMB)";
-	lpobresa="Pobresa (AMB)";
-	lformacio="Població poc qualificada (AMB)";
-	latur="Atur (AMB)";
-	lestath="Estat de conservació d'habitatges (AMB)";
-	laccesh="Accessibilitat a l’habitatge (AMB)";
+	gAmbsoci= "Àrea Metropolitana (AMB)";
+	gAmbestsoci= "Àmbits estadístics metropolitans"; 
+	gAmbestrbaix= "Renda baixa";
+	gAmbestrint= "Renda intermèdia";
+	gAmbestralt= "Renda alta";
+	gAmbestvulne= "Índex vulnerabilitat urbana";
+	gAmbestmajors= "Població major 75 anys sola";
+	gAmbestestrang="Estrangers de països en desenvolupament"
+	lenvell="Envelliment vulnerable";
+	limmi="Inmigració estrangera";
+	lrenda="Renda";
+	lpobresa="Pobresa";
+	lformacio="Població poc qualificada";
+	latur="Atur";
+	lestath="Estat de conservació d'habitatges";
+	laccesh="Accessibilitat a l’habitatge";
+	lrendab15= "2015";
+	lrendab16= "2016";
+	lrendab17= "2017";
+	lrendai15= "2015";
+	lrendai16= "2016";
+	lrendai17= "2017";
+	lrendaa15="2015";
+	lrendaa16="2016";
+	lrendaa17="2017";
+	lvulne15= "2015";
+	lvulne16= "2016";
+	lvulne17= "2017";
+	lmajors15= "2015";
+	lmajors16= "2016";
+	lmajors17= "2017";
+	lest15="2015";
+	lest16="2016";
+	lest17="2017";
 	
   } else if (document.documentElement.lang=='es') {
    //CONTINGUT Info
