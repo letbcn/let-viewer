@@ -2115,13 +2115,13 @@
 				}*/
 
 				let indicatorA1Obj = new MaxSumMultipleIndicator("Eficiència energètica (A1A)", "ràtio entre l’energia produïda pels cultius i l’energia que consumeixen", 2, valorsMaxA1, valorsMaxA1_2, valorsA1_actual, valorsA1_2_actual, valorsA1_tend, valorsA1_2_tend, valorsOptA1, valorsOptA1_2);
-				let indicatorA2Obj = new MinSumIndicator("Consum d’aigua (A1B)", "hm3", 0, valorsMinA2, valorsA2_actual, valorsA2_tend, valorsOptA2);
+				let indicatorA2Obj = new MinSumIndicator("Consum d’aigua (A1B)", "hm³", 0, valorsMinA2, valorsA2_actual, valorsA2_tend, valorsOptA2);
 				indicatorA2Obj.setFactor(0.001);
 				let indicatorA3Obj = new MinSumMultipleIndicator("Apropiació de biomassa (A1C)", "% de HANPP", 0, valorsMinA3, valorsMinA3_2, valorsA3_actual, valorsA3_2_actual, valorsA3_tend, valorsA3_2_tend, valorsOptA3, valorsOptA3_2);
 				indicatorA3Obj.setFactor(100);
 				let indicatorBObj = new MaxAvgIndicator("Conservació de la biodiversitat (B1)", "index de relació energia-informació-paisatge", 2, valorsMaxB, valorsB_actual, valorsB_tend, valorsOptB);
 				let indicatorCObj = new MaxAvgIndicator("Funcionament del paisatge (C1)", "index de complexitat paisatgística", 2, valorsMaxC, valorsC_actual, valorsC_tend, valorsOptC);
-				let indicatorDObj = new MinSumIndicator("Canvi climàtic (D1)", "milers de tones de CO2 eq", 2, valorsMinD1, valorsD_actual, valorsD_tend, valorsOptD1);
+				let indicatorDObj = new MinSumIndicator("Canvi climàtic (D1)", "milers de tones de CO₂ eq/ha", 2, valorsMinD1, valorsD_actual, valorsD_tend, valorsOptD1);
 				indicatorDObj.setFactor(0.001);
 				let indicatorE1AObj = new MaxSumMultipleIndicator("Recirculació de nutrients (E1A)", "% de recirculació de fòsfor", 0, valorsMaxE1A1, valorsMaxE1A2, valorsE1A1_actual, valorsE1A2_actual, valorsE1A1_tend, valorsE1A2_tend, valorsOptE1A1, valorsOptE1A2);
 				indicatorE1AObj.setFactor(100);
@@ -2244,6 +2244,7 @@
 				options: {
 					tooltips: {
 						position: 'nearest',
+						useHTML: true,
 						callbacks: {
 							title: function(tooltipItems, data) {
 								return data.datasets[tooltipItems[0].datasetIndex].label;
