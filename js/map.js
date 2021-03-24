@@ -2091,62 +2091,6 @@
 			}
 		});
 
-		// cercador de capes
-
-	/*	var searchWidget1 = new Search({
-			view: view,
-			container: document.createElement("div"),
-			allPlaceholder: "Cerca per etiquetes",
-			includeDefaultSources: false,
-			sources: [
-
-				{
-					layer: municipisLayer,
-					searchFields: [""],
-					displayField: "",
-					exactMatch: false,
-					outFields: [""],
-					name: "Cobertes",
-					zoomScale:25000,
-					placeholder: ""
-				  },
-				  {
-					layer: comarquesLayer,
-					searchFields: ["nomcomar"],
-					displayField: "nomcomar",
-					exactMatch: false,
-					outFields: ["nomcomar"],
-					name: "Precipitació",
-					zoomScale:25000,
-					placeholder: "example: radiació"
-				  },
-				  {
-					layer: comarquesLayer,
-					searchFields: ["nomcomar"],
-					displayField: "nomcomar",
-					exactMatch: false,
-					outFields: ["nomcomar"],
-					name: "Incendis",
-					zoomScale:25000,
-					placeholder: "example: incendis"
-				  }
-				]
-
-			  });
-			  */
-			 
-			 /* var searchExpand = new Expand({
-				view: view,
-				content: searchWidget,
-				expandTooltip: fCerca,
-				collapseTooltip:fTanca
-			  });
-	  */
-	  
-			  // Add the expand instance to the ui
-	  
-			  view.ui.add(searchWidget1, "top-right");
-
 		//AFEGIR BOTÓ AJUDA
 		const instructionsExpand = new Expand({
           expandIconClass: "esri-icon-description",
