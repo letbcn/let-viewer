@@ -1660,7 +1660,7 @@
           container: "viewDiv",
           map: map,
 		  constraints: {
-            minZoom: 10,
+            minZoom: 11,
             maxZoom: 14
           }
         });
