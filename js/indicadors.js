@@ -2181,7 +2181,7 @@
 						}),
 						label: "Escenari actual",
 						borderWidth: 1,
-						borderColor: '#93D4EB',
+						borderColor: '#60C5E9',
 						fill: false
 					},
 					{
@@ -2190,7 +2190,7 @@
 						}),
 						label: "Escenari tendencial",
 						borderWidth: 1,
-						borderColor: '#F8E8A0',
+						borderColor: '#F4D95D',
 						fill: false
 					},
 					{
@@ -2199,7 +2199,7 @@
 						}),
 						label: "Escenari optimitzat",
 						borderWidth: 1,
-						borderColor: '#F1BFBE',
+						borderColor: '#F09696',
 						fill: false
 					}]
 				},
