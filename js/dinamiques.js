@@ -548,7 +548,7 @@
 
 		var no2Layer = new MapImageLayer({
 			portalItem: {  
-			  id: "736553aabf154e06913692394d414b69"
+			  id: "5a462b1cfc844cbda4ea2372e8a03d9e"
 			},
 			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
 			visible: false,
@@ -559,7 +559,7 @@
 
 		  var pm10Layer = new MapImageLayer({
 			portalItem: {  
-			  id: "736553aabf154e06913692394d414b69"
+			  id: "67330ca65a95430f99e02ef8dc2cb9ee"
 			},
 			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
 			visible: false,
