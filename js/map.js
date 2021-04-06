@@ -9,6 +9,7 @@
 		"esri/widgets/LayerList",
 		"esri/widgets/Measurement",
 		"esri/widgets/Legend",
+		"esri/widgets/ScaleBar",
 		"esri/config",
 		"esri/widgets/Expand",
 		"esri/widgets/Search",
@@ -27,7 +28,7 @@
       "dojo/dom",
       "dojo/promise/all",
       "dojo/domReady!"
-      ], function(Map, MapView, SceneView, GroupLayer, MapImageLayer, FeatureLayer, WMSLayer, LayerList, Measurement, Legend, esriConfig, 
+      ], function(Map, MapView, SceneView, GroupLayer, MapImageLayer, FeatureLayer, WMSLayer, LayerList, Measurement, Legend, ScaleBar, esriConfig, 
 	  Expand, Search,Home,BasemapGallery,GeometryService,ProjectParameters,Bookmarks, Portal,PortalBasemapsSource,IdentifyTask,IdentifyParameters, arrayUtils, domConstruct,on, dom, all) {
         
 		
@@ -81,37 +82,6 @@
 		  });
 		
 		
-		/**var AMBLayer = new MapImageLayer({
-		  portalItem: { 
-			id: "9e1f6c2e9df642eaaa743b370d8eebd3"
-		  },
-		  id:"AMB",
-		  visible: false,
-		  title:'AMB',
-		  listMode: "hide-children"
-		});
-		
-		var RMBLayer = new MapImageLayer({
-		  portalItem: { 
-			id: "eb1713a7606b414084bd1497020a3173"
-		  },
-		  id:"RMB",
-		  visible: true,
-		  title:'RMB',
-		  listMode: "hide-children"
-		});
-		
-		
-		var B30Layer = new MapImageLayer({
-		  portalItem: { 
-			id: "2a492a6f71a544e2b994a1228423a4e2"
-		  },
-		  id:"B30",
-		  visible: false,
-		  title:'B30',
-		  listMode: "hide-children"
-		});
-	**/
 		//Grup de capes limits
 		var regionsGroupLayer = new GroupLayer({
           visible: true,
@@ -759,25 +729,6 @@
         });
 		//capes.push(tempMitjMaxLayer);
 
-		var anompp17Layer = new MapImageLayer({
-			portalItem: { 
-			  id: "fc8676ebbd8d4e84b6b1a7baf38f9a3a" 
-			},
-			id:"", //modificar
-			visible: false,
-			title: lAnomp17,
-			listMode: "hide-children"
-		  });
-		
-		var anompp18Layer = new MapImageLayer({
-			portalItem: { 
-			  id: "fd3b66281d8440939af2f294cea5a991" 
-			},
-			id:"", //modificar
-			visible: false,
-			title: lAnomp18,
-			listMode: "hide-children"
-		  });
 		
 		var anompp19Layer = new MapImageLayer({
 			portalItem: { 
@@ -786,36 +737,6 @@
 			id:"", //modificar
 			visible: false,
 			title: lAnomp19,
-			listMode: "hide-children"
-		  });
-
-		  var anomtmp16Layer = new MapImageLayer({
-			portalItem: { 
-			  id: "ca88fbf252f04c4ebd960565bb08ce37"
-			},
-			id:"", //modificar
-			visible: false,
-			title: 'Anomalies de temperatura 2016', //lAnomt16,
-			listMode: "hide-children"
-		  });
-		  
-		  var anomtmp17Layer = new MapImageLayer({
-			portalItem: { 
-			  id: "3f9fd56c17b94f29bc615936ab77609c"
-			},
-			id:"", //modificar
-			visible: false,
-			title: lAnomt17,
-			listMode: "hide-children"
-		  });
-
-		  var anomtmp18Layer = new MapImageLayer({
-			portalItem: { 
-			  id: "e2723367c3d64836ab4825f32bb5b3fd"
-			},
-			id:"34b0da19e3e74aa88fc1f26f1bf763f3", 
-			visible: false,
-			title: lAnomt18,
 			listMode: "hide-children"
 		  });
 
@@ -829,20 +750,13 @@
 			listMode: "hide-children"
 		  });
 		
-		  var anomclimaGroupLayer = new GroupLayer({
-			title: gAnom,
-			visible: true,
-			visibilityMode: "independent",
-			layers: [anomtmp19Layer, anomtmp18Layer, anomtmp17Layer, anomtmp16Layer, anompp19Layer, anompp18Layer, anompp17Layer],
-			opacity: 1
-		  });
-
+		
 		//grup de capes
 		var climaGroupLayer = new GroupLayer({
           title: gClima,
           visible: true,
           visibilityMode: "independent",
-          layers: [anomclimaGroupLayer,radiacioLayer, tempMitjMaxLayer, tempMitjMinLayer,tempMitjLayer, precipitacioLayer],
+          layers: [radiacioLayer, tempMitjMaxLayer, tempMitjMinLayer,anomtmp19Layer, tempMitjLayer, anompp19Layer,precipitacioLayer],
           opacity: 1
         });
 		
@@ -1407,20 +1321,261 @@
 		});
 		capes.push(rendaLayer);
 		
-	
-		
-		/* Encara falta
-		var pobresaLayer = new MapImageLayer({
-		  portalItem: {  
-			id: ""
-		  },
-		  id:'',
-		  visible: false,
-		  title: lpobresa,
-		  listMode: "hide-children"
-		});
-		capes.push(pobresaLayer);*/
-		
+		var rendabaixa15Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "6dc97c6445d24082aa4996143b49a333"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lrendab15,
+			listMode: "hide-children"
+		  });
+		  capes.push(rendabaixa15Layer);
+
+		  var rendabaixa16Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "88ecb060f60742868f8f29f450fe49ff"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lrendab16,
+			listMode: "hide-children"
+		  });
+		  capes.push(rendabaixa16Layer);
+
+		  var rendabaixa17Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "16b3bb1ac4f349e8984367e6bb2cedcf"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lrendab17,
+			listMode: "hide-children"
+		  });
+		  capes.push(rendabaixa17Layer);
+
+		  var rendaint15Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "fd8a6a88e957452c9cd0e889c0626023"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lrendai15,
+			listMode: "hide-children"
+		  });
+		  capes.push(rendaint15Layer);
+
+		  var rendaint16Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "d5c02f45edef4ab8a66fe5755f7f5ca7"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lrendai16,
+			listMode: "hide-children"
+		  });
+		  capes.push(rendaint16Layer);
+
+		  var rendaint17Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "d9b3aaba771c4c8d9c292b350452e7a2"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lrendai17,
+			listMode: "hide-children"
+		  });
+		  capes.push(rendaint17Layer);
+
+		  var rendaalt15Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "addce5b2838943378d0befdde05de915"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lrendaa15,
+			listMode: "hide-children"
+		  });
+		  capes.push(rendaalt15Layer);
+
+		  var rendaalt16Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "5e69b24c717243f286dabf456dc7473e"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lrendaa16,
+			listMode: "hide-children"
+		  });
+		  capes.push(rendaalt16Layer);
+
+		  var rendaalt17Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "eb7558761663409d95e2c13ac8a8a427"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lrendaa17,
+			listMode: "hide-children"
+		  });
+		  capes.push(rendaalt17Layer);
+
+		  var ambest_rbaixaGroupLayer = new GroupLayer({
+			title: gAmbestrbaix,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [rendabaixa17Layer, rendabaixa16Layer,rendabaixa15Layer],
+			opacity: 1
+		  });
+
+		  var ambest_rintGroupLayer = new GroupLayer({
+			title: gAmbestrint,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [rendaint17Layer, rendaint16Layer, rendaint15Layer],
+			opacity: 1
+		  });
+
+		  var ambest_raltGroupLayer = new GroupLayer({
+			title: gAmbestralt,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [rendaalt17Layer,rendaalt16Layer, rendaalt15Layer],
+			opacity: 1
+		  });
+
+
+		  var vulne15Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "bf4cde5b54214c8093658e6f7701b293"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lvulne15,
+			listMode: "hide-children"
+		  });
+		  capes.push(vulne15Layer);
+
+		  var vulne16Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "0ecb128dae6545dcb1311bf5f736b04e"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lvulne16,
+			listMode: "hide-children"
+		  });
+		  capes.push(vulne16Layer);
+
+		  var vulne17Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "ab7f57f97b0d4f97bcc87bc5621daa14"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lvulne17,
+			listMode: "hide-children"
+		  });
+		  capes.push(vulne17Layer);
+
+		  var ambest_rvulneGroupLayer = new GroupLayer({
+			title: gAmbestvulne,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [vulne17Layer, vulne16Layer, vulne15Layer],
+			opacity: 1
+		  });
+
+		  var majors15Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "b5dd9f9e662c4cd2b2224d4db2256f05"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lmajors15,
+			listMode: "hide-children"
+		  });
+		  capes.push(majors15Layer);
+
+		  var majors16Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "f28564d047124690b544884aa4f0c440"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lmajors16,
+			listMode: "hide-children"
+		  });
+		  capes.push(majors16Layer);
+
+		  var majors17Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "d81005164bce4c0da3c0aaac69c51554"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lmajors17,
+			listMode: "hide-children"
+		  });
+		  capes.push(majors17Layer);
+
+		  var ambest_majorsGroupLayer = new GroupLayer({
+			title: gAmbestmajors,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [majors17Layer, majors16Layer, majors15Layer],
+			opacity: 1
+		  });
+
+		  var estrang15Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "b5f9bbde0d8348a4b3b766f67e2e0be3"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lest15,
+			listMode: "hide-children"
+		  });
+		  capes.push(estrang15Layer);
+
+		  var estrang16Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "c5631302c73e40e9ad35de701337d301"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lest16,
+			listMode: "hide-children"
+		  });
+		  capes.push(estrang16Layer);
+		 
+		  var estrang17Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "736553aabf154e06913692394d414b69"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lest17,
+			listMode: "hide-children"
+		  });
+		  capes.push(estrang17Layer);
+
+		  var ambest_estrangGroupLayer = new GroupLayer({
+			title: gAmbestestrang,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [estrang17Layer, estrang16Layer, estrang15Layer],
+			opacity: 1
+		  });
+
+		var ambestGroupLayer = new GroupLayer({
+			title: gAmbestsoci,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [ambest_estrangGroupLayer, ambest_majorsGroupLayer, ambest_rvulneGroupLayer, ambest_raltGroupLayer, ambest_rintGroupLayer, ambest_rbaixaGroupLayer],
+			opacity: 1
+		  });
+
 		var formacioLayer = new MapImageLayer({
 		  portalItem: {  
 			id: "75315adceb2b489da4660a2c570adf33"
@@ -1464,13 +1619,23 @@
 		  listMode: "hide-children"
 		});
 		capes.push(acceshLayer);
+
+	
+
+		  var ambGroupLayer = new GroupLayer({
+			title: gAmbsoci,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [acceshLayer,estathLayer,aturLayer,formacioLayer,rendaLayer,immiLayer,envellLayer],
+			opacity: 1
+		  });
 		
 		//grup de capes
 		var socioGroupLayer = new GroupLayer({
           title: gSocio,
           visible: true,
           visibilityMode: "independent",
-          layers: [acceshLayer,estathLayer,aturLayer,formacioLayer,rendaLayer,immiLayer,envellLayer],
+          layers: [ambGroupLayer, ambestGroupLayer],
           opacity: 1
         });
 		
@@ -1489,17 +1654,43 @@
 			
         // Add the map to a MapView
 
+		const defaultZoom = 10;
+    	const minZoom = 10;
+    	const maxZoom = 18;
+
         view = new MapView({
           center: [2.125369, 41.5007585],
-          zoom: 10,
+          zoom: defaultZoom,
           container: "viewDiv",
-          map: map
+          map: map,
+		  constraints: {
+			  minZoom: minZoom,
+			  maxZoom: maxZoom,
+		  }
         });
+
+				// Add the expand instance to the ui
+				var element = document.createElement('div');
+				element.className = "esri-icon-left-arrow esri-widget--button esri-widget esri-interactive";
+				element.addEventListener('click', function(evt){
+				  var cajaLateral = document.getElementById("lateral") ;
+				  cajaLateral.classList.toggle("slided");
+				  var cajaviewDiv = document.getElementById("viewDiv") ;
+				  cajaviewDiv.classList.toggle("slided");
+				  this.classList.toggle("esri-icon-left-arrow");
+				  this.classList.toggle("esri-icon-right-arrow");
+				})
+				view.ui.add(element, "top-left");
+
+		view.surface.addEventListener("wheel", function(event) {   
+			event.stopImmediatePropagation();  
+		}, true);
+
         
         
 		//view.popup.defaultPopupTemplateEnabled = true;
 
-		
+
         // Creates actions in the LayerList.
 
         function defineActions(event) {
@@ -1671,6 +1862,17 @@
             }
           });
 		  
+		  	//add scalebar
+		var scaleBar = new ScaleBar({
+			view: view,
+			unit: "metric" // The scale bar displays both metric and non-metric units.
+		  });
+  
+		  // Add the widget to the bottom left corner of the view
+		  view.ui.add(scaleBar, {
+			position: "bottom-left"
+		  });
+	
 		// Create an Expand instance and set the content
         // property to the DOM node of the basemap gallery widget
         // Use an Esri icon font to represent the content inside
@@ -1729,20 +1931,29 @@
           tooltip: fMesures
         });
         view.ui.add(homeBtn, "top-left");
-   
-   		
+
+      /// Add the expand instance to the ui
+		var element = document.createElement('div');
+        element.className = "esri-icon-left-arrow esri-widget--button esri-widget esri-interactive";
+        element.addEventListener('click', function(evt){
+          var cajaLateral = document.getElementById("lateral") ;
+		  cajaLateral.classList.toggle("slided");
+		  var cajaviewDiv = document.getElementById("viewDiv") ;
+		  cajaviewDiv.classList.toggle("slided");
+		  this.classList.toggle("esri-icon-left-arrow");
+		  this.classList.toggle("esri-icon-right-arrow");
+        })
+        view.ui.add(element, "top-left");
+
 		//cerca
 		var searchExpand = new Expand({
-          view: view,
-          content: searchWidget,
-		  expandTooltip: fCerca,
-		  collapseTooltip:fTanca
-        });
-        view.ui.add(searchExpand, "top-left");
-		
+			view: view,
+			content: searchWidget,
+			expandTooltip: fCerca,
+			collapseTooltip:fTanca
+		  });
 
-		
-   		
+        view.ui.add(searchExpand, "top-left");
    		
 	   let portalEsri = new Portal({
 		  url: "https://www.arcgis.com" // First instance
@@ -1759,7 +1970,7 @@
 		  source: source,
 		  container: document.createElement("div")
 		});
-
+		/*
 		var handle = map.watch('basemap.title', function(newValue, oldValue, property, object) {
 				if (newValue != undefined) {
 				 document.getElementById("mapabaseInput").checked=true;
@@ -1769,7 +1980,7 @@
 						  "<br>Watched property: ", property,  // In this example this value will always be "basemap.title"
 						  "<br>Watched object: ", object);     // In this example this value will always be the map object
 			});
-			
+			*/
 		// Create an Expand instance and set the content
 		// property to the DOM node of the basemap gallery widget
 
@@ -1784,6 +1995,7 @@
 
 		view.ui.add(bgExpand, "top-left");
 		
+
 	
 	//Mesures
 
@@ -1870,13 +2082,13 @@
         const bkExpand = new Expand({
           view: view,
           content: bookmarks,
-          expanded: false,
+          expanded: true,
 		  expandTooltip:fObrebookmarks,
 		  collapseTooltip:fTanca
         });
 
-        // Add the widget to the top-right corner of the view
-        view.ui.add(bkExpand, "top-right");
+        // Add the widget to the bottom-right corner of the view
+        view.ui.add(bkExpand, "bottom-right");
 		
 		bookmarks.on("select-bookmark", function(event){
 			bkExpand.expanded = false;
@@ -1896,62 +2108,6 @@
 				B30Layer.visible = true;
 			}
 		});
-
-		// cercador de capes
-
-	/*	var searchWidget1 = new Search({
-			view: view,
-			container: document.createElement("div"),
-			allPlaceholder: "Cerca per etiquetes",
-			includeDefaultSources: false,
-			sources: [
-
-				{
-					layer: municipisLayer,
-					searchFields: [""],
-					displayField: "",
-					exactMatch: false,
-					outFields: [""],
-					name: "Cobertes",
-					zoomScale:25000,
-					placeholder: ""
-				  },
-				  {
-					layer: comarquesLayer,
-					searchFields: ["nomcomar"],
-					displayField: "nomcomar",
-					exactMatch: false,
-					outFields: ["nomcomar"],
-					name: "Precipitació",
-					zoomScale:25000,
-					placeholder: "example: radiació"
-				  },
-				  {
-					layer: comarquesLayer,
-					searchFields: ["nomcomar"],
-					displayField: "nomcomar",
-					exactMatch: false,
-					outFields: ["nomcomar"],
-					name: "Incendis",
-					zoomScale:25000,
-					placeholder: "example: incendis"
-				  }
-				]
-
-			  });
-			  */
-			 
-			 /* var searchExpand = new Expand({
-				view: view,
-				content: searchWidget,
-				expandTooltip: fCerca,
-				collapseTooltip:fTanca
-			  });
-	  */
-	  
-			  // Add the expand instance to the ui
-	  
-			  view.ui.add(searchWidget1, "top-right");
 
 		//AFEGIR BOTÓ AJUDA
 		const instructionsExpand = new Expand({
@@ -2083,20 +2239,23 @@
 						title: layerName ,
 						content: contingut
 					  };
-				 /* if (layerName === "Unitats geològiques" && geologicLayer.visible) {
+
+				 	  if (layerName === "Unitats geològiques" && geologicLayer.visible) {
 					  feature.popupTemplate = {
 						// autocasts as new PopupTemplate()
 						title: layerName + ": {CODI_CAS}",
 						content: contingut
 					  };
 					   identifyElements.push(feature);
+
 				   } else if (layerName === 'Soil Taxonomy' && edafoSTLayer.visible) {
 						feature.popupTemplate = { // autocasts as new PopupTemplate()
-						  title: layerName + ": {CODI_CAS}",
+						  title: layerName ,
 						  content: "<b>{SOIL_ST}</b>" 
 						
 						};
 						 identifyElements.push(feature);
+
 				  } else if (layerName === 'Mapa_250K_WRB_20190300' && edafologicLayer.visible) {
 						feature.popupTemplate = { // autocasts as new PopupTemplate()
 						  title: layerName + ": {CODI_CAS}",
@@ -2104,10 +2263,43 @@
 						
 						};
 						 identifyElements.push(feature);
-				  }*/
-				 
-				});
-			  })
+
+				/*}else if (usos07Layer.visible) {
+							feature.popupTemplate = { // autocasts as new PopupTemplate()
+								title: "Ús del sòl al 2007",
+								content:  "Pixel Value is : " +  "{Pixel Value}"
+							  
+							  };
+							   identifyElements.push(feature);
+
+				  	}else if (cob56Layer.visible) {
+					feature.popupTemplate = { // autocasts as new PopupTemplate()
+						title: layerName,
+						content: "<b>{cat_niv3}</b>" 
+					  
+					  };
+					   identifyElements.push(feature);
+				*/
+			  }
+
+			  if (cob56Layer.visible) {
+				feature.popupTemplate = {
+				  // autocasts as new PopupTemplate()
+				  title: layerName + ": {CODI_CAS}",
+				  content: "<b>{cat_niv3}</b>" 
+				};
+				 identifyElements.push(feature);
+
+				} else if (cob15Layer.visible) {
+					feature.popupTemplate = { // autocasts as new PopupTemplate()
+					  title: layerName + ": {CODI_CAS}",
+					  content: "<b>{cat_niv_5}</b>" 
+					
+					};
+					 identifyElements.push(feature);
+				}
+			});
+		})
 			  showPopup(identifyElements);
 			});
 
@@ -2125,14 +2317,17 @@
         }
 		
 		
+	});
+});
+
+		
+		
 		//FI IDENTIFY
 		
 		
 	
 		
-        });
-      });
-
+      
       
       function distanceMeasurement() {
           const type = view.type;
