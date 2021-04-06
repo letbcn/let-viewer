@@ -57,18 +57,35 @@ var lndvi19;
 //Variables arbrat
 var gVarbrat;
 var lbiofol;
+var lbiotot;
+var lhmitja;
 //Estructura paisatge
-var gEstict
-var lict
+var gEstict;
+var lict;
+var lice;
+//Biodiversitat
+var gBiodiv;
+var lbiodsing;
 //Estat ecològic
 var gEco;
 var gEcorius;
 var lecorius07;
 var lecorius13;
+var gEcosub;
+var lecosub07;
+var lecosub13;
+//Riscos territorials
+var gRisc;
+var lincend;
+var linund10;
+var linund100;
+var linund500;
 //Contaminació atmosferica
 var gContm;
 var lno2;
 var lpm10;
+//Indicadors Socioecologics
+var gIndSocEco
 //Dinàmiques Socioeconòmiques
 var gSocio;
 var gAmbsoci;
@@ -170,20 +187,38 @@ var lteixits;
 	//Variables arbrat
 	gVarbrat= "Variables biofísiques del arbrat";
 	lbiofol= "Biomassa foliar";
+	lbiotot= "Biomassa aèria total";
+	lhmitja= "Alçada mitjana";
 	//Estructura paisatge
 	gEstict="Estructura del paisatge"
-	lict= "Índex Connectivitat Terrestre"
+	lict= "Índex Connectivitat Terrestre";
+	lice= "Índex Connectivitat Ecològica dels Espais Oberts";
+	//Biodiversitat 
+	gBiodiv= "Estat biodiversitat";
+	lbiodsing= "Biodiversitat singular";
 	//Estat ecològic
-	gEco= "Masses d'aigüa";
-	gEcorius= "Estat ecològic dels rius"
+	gEco= "Estat ecològic de les masses d'aigüa";
+	gEcorius= "Rius"
 	lecorius07= "2007-2012";
 	lecorius13= "2013-2017";
+	gEcosub= "Aigües subterrànies";
+	lecosub07= "2007-2012";
+	lecosub13= "2013-2017";
+	//Riscos territorials
+	gRisc= "Riscos territorials";
+	gInund= "Inundabilitat"
+	lincend= "Incendis";
+	linund10= "Retorn 10 anys";
+	linund100= "Retorn 100 anys";
+	linund500= "Retorn 500 anys";
 	//Contaminació atmosferica
 	gContm= "Contaminació atmosfèrica";
 	lno2= "No2";
 	lpm10= "Pm10";
+	//Indicadors socioecològics
+	gIndSocEco= "Indicadors socioecològics";
 	//Dinàmiques Socioeconòmiques
-	gSocio="Dinàmiques socioeconòmiques";
+	gSocio="Indicadors socioeconòmics";
 	gAmbsoci= "Àrea Metropolitana (AMB)";
 	gAmbestsoci= "Àmbits estadístics metropolitans"; 
 	gAmbestrbaix= "Renda baixa";
