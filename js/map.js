@@ -1654,15 +1654,19 @@
 			
         // Add the map to a MapView
 
+		const defaultZoom = 10;
+    	const minZoom = 10;
+    	const maxZoom = 18;
+
         view = new MapView({
           center: [2.125369, 41.5007585],
-          zoom: 10,
+          zoom: defaultZoom,
           container: "viewDiv",
           map: map,
 		  constraints: {
-            minZoom: 11,
-            maxZoom: 14
-          }
+			  minZoom: minZoom,
+			  maxZoom: maxZoom,
+		  }
         });
 
 				// Add the expand instance to the ui
@@ -1681,6 +1685,7 @@
 		view.surface.addEventListener("wheel", function(event) {   
 			event.stopImmediatePropagation();  
 		}, true);
+
         
         
 		//view.popup.defaultPopupTemplateEnabled = true;
@@ -1927,7 +1932,7 @@
         });
         view.ui.add(homeBtn, "top-left");
 
-      /*  // Add the expand instance to the ui
+      /// Add the expand instance to the ui
 		var element = document.createElement('div');
         element.className = "esri-icon-left-arrow esri-widget--button esri-widget esri-interactive";
         element.addEventListener('click', function(evt){
@@ -1939,7 +1944,7 @@
 		  this.classList.toggle("esri-icon-right-arrow");
         })
         view.ui.add(element, "top-left");
-*/
+
 		//cerca
 		var searchExpand = new Expand({
 			view: view,
@@ -2104,62 +2109,6 @@
 			}
 		});
 
-		// cercador de capes
-
-	/*	var searchWidget1 = new Search({
-			view: view,
-			container: document.createElement("div"),
-			allPlaceholder: "Cerca per etiquetes",
-			includeDefaultSources: false,
-			sources: [
-
-				{
-					layer: municipisLayer,
-					searchFields: [""],
-					displayField: "",
-					exactMatch: false,
-					outFields: [""],
-					name: "Cobertes",
-					zoomScale:25000,
-					placeholder: ""
-				  },
-				  {
-					layer: comarquesLayer,
-					searchFields: ["nomcomar"],
-					displayField: "nomcomar",
-					exactMatch: false,
-					outFields: ["nomcomar"],
-					name: "Precipitació",
-					zoomScale:25000,
-					placeholder: "example: radiació"
-				  },
-				  {
-					layer: comarquesLayer,
-					searchFields: ["nomcomar"],
-					displayField: "nomcomar",
-					exactMatch: false,
-					outFields: ["nomcomar"],
-					name: "Incendis",
-					zoomScale:25000,
-					placeholder: "example: incendis"
-				  }
-				]
-
-			  });
-			  */
-			 
-			 /* var searchExpand = new Expand({
-				view: view,
-				content: searchWidget,
-				expandTooltip: fCerca,
-				collapseTooltip:fTanca
-			  });
-	  */
-	  
-			  // Add the expand instance to the ui
-	  
-			  view.ui.add(searchWidget1, "top-right");
-
 		//AFEGIR BOTÓ AJUDA
 		const instructionsExpand = new Expand({
           expandIconClass: "esri-icon-description",
@@ -2290,20 +2239,23 @@
 						title: layerName ,
 						content: contingut
 					  };
-				 /* if (layerName === "Unitats geològiques" && geologicLayer.visible) {
+
+				 	  if (layerName === "Unitats geològiques" && geologicLayer.visible) {
 					  feature.popupTemplate = {
 						// autocasts as new PopupTemplate()
 						title: layerName + ": {CODI_CAS}",
 						content: contingut
 					  };
 					   identifyElements.push(feature);
+
 				   } else if (layerName === 'Soil Taxonomy' && edafoSTLayer.visible) {
 						feature.popupTemplate = { // autocasts as new PopupTemplate()
-						  title: layerName + ": {CODI_CAS}",
+						  title: layerName ,
 						  content: "<b>{SOIL_ST}</b>" 
 						
 						};
 						 identifyElements.push(feature);
+
 				  } else if (layerName === 'Mapa_250K_WRB_20190300' && edafologicLayer.visible) {
 						feature.popupTemplate = { // autocasts as new PopupTemplate()
 						  title: layerName + ": {CODI_CAS}",
@@ -2311,10 +2263,43 @@
 						
 						};
 						 identifyElements.push(feature);
-				  }*/
-				 
-				});
-			  })
+
+				/*}else if (usos07Layer.visible) {
+							feature.popupTemplate = { // autocasts as new PopupTemplate()
+								title: "Ús del sòl al 2007",
+								content:  "Pixel Value is : " +  "{Pixel Value}"
+							  
+							  };
+							   identifyElements.push(feature);
+
+				  	}else if (cob56Layer.visible) {
+					feature.popupTemplate = { // autocasts as new PopupTemplate()
+						title: layerName,
+						content: "<b>{cat_niv3}</b>" 
+					  
+					  };
+					   identifyElements.push(feature);
+				*/
+			  }
+
+			  if (cob56Layer.visible) {
+				feature.popupTemplate = {
+				  // autocasts as new PopupTemplate()
+				  title: layerName + ": {CODI_CAS}",
+				  content: "<b>{cat_niv3}</b>" 
+				};
+				 identifyElements.push(feature);
+
+				} else if (cob15Layer.visible) {
+					feature.popupTemplate = { // autocasts as new PopupTemplate()
+					  title: layerName + ": {CODI_CAS}",
+					  content: "<b>{cat_niv_5}</b>" 
+					
+					};
+					 identifyElements.push(feature);
+				}
+			});
+		})
 			  showPopup(identifyElements);
 			});
 
@@ -2332,14 +2317,17 @@
         }
 		
 		
+	});
+});
+
+		
+		
 		//FI IDENTIFY
 		
 		
 	
 		
-        });
-      });
-
+      
       
       function distanceMeasurement() {
           const type = view.type;
