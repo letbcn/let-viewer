@@ -242,16 +242,16 @@
     display: flex;
     flex-wrap: wrap;
 }
-	.mapSmallBox.popup #open{
+	.mapSmallBox.popup #open, .divgrafics.popup #open{
 		display: none;
 	}
-	.mapSmallBox #closed{
+	.mapSmallBox #closed, .divgrafics #closed{
 		display: none;
 	}
-	.mapSmallBox #open{
+	.mapSmallBox #open, .divgrafics #open{
 		display: block;
 	}
-	.mapSmallBox.popup #closed{
+	.mapSmallBox.popup #closed, .divgrafics.popup #closed{
 		display: block;
 	}
 	  #infoDiv,#escenariDiv, .title-map-dif {
@@ -290,7 +290,7 @@
 	padding: 0 !important;
 	border-bottom: 1px solid black !important;
 	margin: 0 !important;
-	font-size: 18px !important;
+	font-size: 15px !important;
 	height: 50px !important;
 	display: flex !important;
 	align-items: center !important;
@@ -441,7 +441,7 @@ float: left;
     box-shadow: none;
     text-shadow: none;
     border-top: 1px solid black;
-    font-size: 25px;
+    font-size: 18px;
     margin: 0px;
 	border-radius: 0px !important;
 	height: 100%;
@@ -776,8 +776,7 @@ h3 {
 
   <body style="font-family: 'Avenir Next W00','Helvetica Neue',Helvetica,Arial,sans-serif;" onload="canvi(valuesRanges());">
 	<div id="control-panel">
-		<h3 class="title_control-panel" style="text-align: center;padding: 20px;border-bottom: 1px solid black;margin: 0;font-size: 18px; height: 10%;">PRIORITZA LES DIMENSIONS 
-			QUE VOLS OPTIMITZAR</h3>
+		<h3 class="title_control-panel" style="text-align: center;padding: 20px;border-bottom: 1px solid black;margin: 0;font-size: 18px; height: 10%;">Prioritza les dimensions que vols optimitzar</h3>
 		<div style="height: calc(100% - 129px); overflow-y: auto; padding-top: 15px;">
 			<div class="formRanges">
 			<div class="formRange"><div class="label"><label for="ARange">Eficiència energètica</label></div><div class="rangediv"><span class="resultRange" id="A1RangeValue"></span><input type="range" name="A1Range" id="A1Range" min="0" max="100" step="1" onchange="showVal('A1RangeValue', this.value)" oninput="showVal('A1RangeValue', this.value)"></div></div>
@@ -800,18 +799,18 @@ h3 {
 	</div>
 	<div class="buttons">
 		<button class="button" id="buttonAplicar" style="border-right:1px solid black;" onclick="restaurar()">RESTAURA</button>
-		<button class="button" id="buttonAplicar" onclick="if(checkRanges()) { canvi(valuesRanges())} else { alert('La suma dels pesos ha de ser exactament 100'); }">Aplicar</button>
+		<button class="button" id="buttonAplicar" onclick="if(checkRanges()) { canvi(valuesRanges())} else { alert('La suma dels pesos ha de ser exactament 100'); }">Aplica</button>
 		
 
 	</div>
 	</div>
 	<div id="divMainMap">
     	<div id="viewDiv" class="viewMap" style="height:calc(100% - 80px)"></div>
-		<div style="height:80px; width:100%; border:1px solid black; background-color: #D1F3FF;display: flex;align-items: center;border-left: 0px !important;border-right: 0px !important;"><h2 style="max-width: max-content; margin: 0 auto; padding: 15px; text-transform: uppercase;">Escenari Optimitzat</h2></div>
+		<div style="height:80px; width:100%; border:1px solid black; background-color: #D1F3FF;display: flex;align-items: center;border-left: 0px !important;border-right: 0px !important;"><h2 style="max-width: max-content; margin: 0 auto; padding: 15px; text-transform: uppercase;font-size: 18px;">Escenari Optimitzat</h2></div>
 	</div>
 	<div style="width: 100%; height: auto; float: left; background: linear-gradient(302.95deg, #FFFFFF 29.23%, #F6EEE8 50.8%, rgba(252, 240, 188, 0.3) 64.96%, #B0DBBF 87.51%);">
 		<div id="escenariDiv" class="esri-widget" style="background-color: transparent !important;">
-			<h3 style="font-family: 'Roboto' !important;font-weight: lighter;font-size: 20px;margin-left: 10px; color:#323232">Visualitza l'efecte de la teva priorització en cada dimensió</h3>
+			<h3 style="font-family: 'Roboto' !important;font-weight: lighter;font-size: 16px;margin-left: 10px; color:#323232">Visualitza l'efecte de la teva priorització en cada dimensió</h3>
 			<div class="cbsdiv">
 			<label id="labelA1" for="A1"><input type="checkbox" class="cbs" name="A1" id="A1" value="A1" onclick="canvi(valuesRanges(),this.value)" checked>Eficiència energètica</label>
 			<label id="labelA2" for="A2"><input type="checkbox" class="cbs" name="A2" id="A2" value="A2" onclick="canvi(valuesRanges(),this.value)">Consum d’aigua</label>
@@ -827,14 +826,14 @@ h3 {
 		</div>
 	</div>
 	<div style="width: 100%; height: auto; float: left;border-top: 1px solid black;">
-		<h3 style="width: 70%; text-align: center; margin: 50px auto;font-family: 'Roboto' !important;font-weight: lighter;font-size: 20px; color:#323232">El Sistema de Suport a la Planificació (LET’s SSP) mostra l’estat socioecològic actual dels espais oberts de l’àrea metropolitana de Barcelona, i permet generar escenaris futurs en canviar tant les cobertes del sòl com el tipus de metabolisme que caracteritzen la infraestructura verda metropolitana. Us presentem una prova pilot en que pots optimitzar els possibles escenaris futurs segons les prioritzacions que li donaries a les polítiques públiques. </h3>
+		<h3 style="width: 70%; text-align: center; margin: 50px auto;font-family: 'Roboto' !important;font-weight: lighter;font-size: 16px; color:#323232">El Sistema de Suport a la Planificació (LET’s SSP) mostra l’estat socioecològic actual dels espais oberts de l’àrea metropolitana de Barcelona, i permet generar escenaris futurs en canviar tant les cobertes del sòl com el tipus de metabolisme que caracteritzen la infraestructura verda metropolitana. Us presentem una prova pilot en que pots optimitzar els possibles escenaris futurs segons les prioritzacions que li donaries a les polítiques públiques. </h3>
 	</div>
 	
 	<div id="divMapActual" class="mapSmallBox">
 		<div  class="esri-widget title-map-dif" style="height: 10%;">
 		<span>Escenari actual</span></span><span data-value="divMapActual" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img id="closed" src="imatges/Group 92.png" alt=""></span><span data-value="divMapActual" class="opened" onclick="popup(this.getAttribute('data-value'))"><img id="open" src="imatges/fullscreen-svg.png" width="23px" alt=""></span><span class="map--selected"></span>
 		</div>
-		<div id="viewDivActual"  class="viewMap" style="height: 90%; width: 100%;"></div>
+		<div id="viewDivActual"  class="viewMap" style="height: 90%; width: 100%; border-right: 1px solid black;"></div>
 		
 	</div>
 	<div id="divMapDifActual" class="mapSmallBox">
@@ -848,7 +847,7 @@ h3 {
 		<div  class="esri-widget title-map-dif" style="height: 10%;">
 			<span id="divMapTendencial">Escenari tendencial</span></span><span data-value="divMapTendencial" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img id="closed" src="imatges/Group 92.png" alt=""></span><span data-value="divMapTendencial" class="opened" onclick="popup(this.getAttribute('data-value'))"><img id="open" src="imatges/fullscreen-svg.png" width="23px" alt=""></span><span class="map--selected"></span>
 		</div>
-		<div id="viewDivTendencial"  class="viewMap" style="height: 90%; width: 100%;"></div>
+		<div id="viewDivTendencial"  class="viewMap" style="height: 90%; width: 100%; border-right: 1px solid black;"></div>
 		
 	</div>
 	<div id="divMapDiftendencial" class="mapSmallBox">
@@ -862,7 +861,7 @@ h3 {
 		<div class="esri-widget title-map-dif" style="height: 10%;">
 			<span id="radarGrafic">Analisi Multicriteri</span></span><span data-value="radarGrafic" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img id="closed" src="imatges/Group 92.png" alt=""></span><span data-value="radarGrafic" class="opened" onclick="popup(this.getAttribute('data-value'))"><img id="open" src="imatges/fullscreen-svg.png" width="23px" alt=""></span><span class="map--selected"></span>
 		</div>
-		<div id="radarGraficContainer">
+		<div id="radarGraficContainer"  style="border-right: 1px solid black;">
 			<canvas class="divgrafics" id="marksChart"></canvas>
 		</div>
 	</div>	
