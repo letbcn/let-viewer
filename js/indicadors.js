@@ -2306,6 +2306,11 @@
 									return '';
 								}
 							}
+						}],
+						xAxes: [{
+							ticks: {
+								fontSize: 15
+							}
 						}]
 					}
 				}
