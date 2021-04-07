@@ -2177,27 +2177,33 @@
 							return indicator.actualRelativeValue();
 						}),
 						label: "Escenari actual",
-						borderWidth: 1,
+						borderWidth: 3,
 						borderColor: '#60C5E9',
-						fill: false
+						fill: false,
+						pointRadius: 5,
+						pointBackgroundColor: '#60C5E9'
 					},
 					{
 						data: data.map(function (indicator) {
 							return indicator.tendentialRelativeValue();
 						}),
 						label: "Escenari tendencial",
-						borderWidth: 1,
+						borderWidth: 3,
 						borderColor: '#F4D95D',
-						fill: false
+						fill: false,
+						pointRadius: 5,
+						pointBackgroundColor: '#F4D95D'
 					},
 					{
 						data: data.map(function (indicator) {
 							return indicator.optimitzationRelativeValue();
 						}),
 						label: "Escenari optimitzat",
-						borderWidth: 1,
+						borderWidth: 3,
 						borderColor: '#F09696',
-						fill: false
+						fill: false,
+						pointRadius: 5,
+						pointBackgroundColor: '#F09696'
 					}]
 				},
 				options: {
@@ -2212,6 +2218,12 @@
 							label: function(tooltipItem, data) {
 								return tooltipItem.yLabel.toFixed(2);
 							}
+						}
+					},
+					scale: {
+						pointLabels: {
+							fontSize: 15,
+							color: '#000000'
 						}
 					}
 				}
