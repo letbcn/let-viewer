@@ -12,7 +12,6 @@
 	<link rel="stylesheet" href="css/templatemo-style.css">
 	<link rel="stylesheet" href="css/style_let.css">
     <script src="https://js.arcgis.com/4.13/"></script>
-	
 
     <style>
       html,
@@ -66,23 +65,44 @@ select{
 
     </style>
 
+	<script>
+		const options = {
+			// tell Dojo where to load other packages
+			dojoConfig: {
+				async: true,
+			packages: [
+				{
+					location: 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js',
+					name: 'Chart'
+				}
+			]
+			}
+		};
+	</script>
+
     <script>
 		
       require([
-        "esri/Map",
-        "esri/views/MapView",
-        "esri/layers/FeatureLayer",
-		"esri/layers/MapImageLayer",
-        "esri/widgets/Legend",
-       "esri/core/watchUtils",
-	   "esri/widgets/Expand",
-	   "esri/widgets/Home",
-	   "esri/renderers/smartMapping/creators/univariateColorSize",
-	   "esri/layers/WMSLayer",
-	   "esri/config",
-	   "esri/layers/support/Field"
-      ], function(Map, MapView, FeatureLayer, MapImageLayer, Legend,watchUtils,Expand,Home,colorAndSizeRendererCreator,WMSLayer,esriConfig,Field) {
-			
+      "esri/Map",
+      "esri/views/MapView",
+      "esri/layers/FeatureLayer",
+      "esri/layers/MapImageLayer",
+      "esri/widgets/Legend",
+      "esri/core/watchUtils",
+      "esri/widgets/Expand",
+      "esri/widgets/Home",
+      "esri/layers/WMSLayer",
+      "esri/config",
+      "esri/layers/support/Field",
+      "esri/tasks/support/Query",
+      "esri/tasks/QueryTask",
+      "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js",
+      "dojo/dom",
+      "dojo/dom-construct",
+      "dojo/dom-attr",
+      "esri/tasks/support/StatisticDefinition",
+      ], function(Map, MapView, FeatureLayer, MapImageLayer, Legend,watchUtils,Expand,Home,WMSLayer,esriConfig,Field,Query,QueryTask,Chart,dom, domConstruct, domAttr,StatisticDefinition) {
+				
 			esriConfig.portalUrl = "https://uab.maps.arcgis.com"
 			esriConfig.request.proxyUrl = "proxy.jsp";
 			
@@ -177,7 +197,42 @@ select{
 		  listMode: "hide-children"
         });
 		
-		
+		template1 = {
+		title: " {nommuni}",
+		content: createPopup1
+	};
+	template2 = {
+			title: " {nommuni}",
+			content: createPopup2
+		};
+	template3= {
+			title: " {nommuni}",
+			content: createPopup3
+		};
+	template4 = {
+			title: " {nommuni}",
+			content: createPopup4
+		};
+		featureLayer1 = new FeatureLayer({
+			url: "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
+			outFields: ["*"],
+			popupTemplate: template1
+		});
+	featureLayer2 = new FeatureLayer({
+			url: "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
+			outFields: ["*"],
+			popupTemplate: template2
+		});
+	featureLayer3 = new FeatureLayer({
+			url: "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
+			outFields: ["*"],
+			popupTemplate: template3
+		});
+	featureLayer4 = new FeatureLayer({
+			url: "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
+			outFields: ["*"],
+			popupTemplate: template4
+		});
 		
 
         map1 = new Map({
@@ -204,28 +259,60 @@ select{
           container: "viewDiv1",
           map: map1,
           center: [2.13, 41.40],
-          zoom: 10
+          zoom: 10,
+          popup: {
+            dockEnabled: true,
+            dockOptions: {
+              buttonEnabled: true,
+              breakpoint: false,
+              position: "bottom-left"
+            }
+          }
         });
 		
         view2 = new MapView({
           container: "viewDiv2",
           map: map2,
           center: [2.13, 41.40],
-          zoom: 10
+          zoom: 10,
+          popup: {
+            dockEnabled: true,
+            dockOptions: {
+              buttonEnabled: true,
+              breakpoint: false,
+              position: "bottom-left"
+            }
+          }
         });
 
 		view3 = new MapView({
           container: "viewDiv3",
           map: map3,
           center: [2.13, 41.40],
-          zoom: 10
+          zoom: 10,
+          popup: {
+            dockEnabled: true,
+            dockOptions: {
+              buttonEnabled: true,
+              breakpoint: false,
+              position: "bottom-left"
+            }
+          }
         });
 		
 		view4 = new MapView({
           container: "viewDiv4",
           map: map4,
           center: [2.13, 41.40],
-          zoom: 10
+          zoom: 10,
+          popup: {
+            dockEnabled: true,
+            dockOptions: {
+              buttonEnabled: true,
+              breakpoint: false,
+              position: "bottom-left"
+            }
+          }
         });
 
         /******************************************************************
@@ -310,6 +397,205 @@ select{
 	 view3.ui.add(bgExpand3, "bottom-right");
 	 view4.ui.add(bgExpand4, "bottom-right");
 	
+	 function createPopup1(event,graphic) {
+    grafic1= dadesAny(document.getElementById("field-select-us1").value,event);
+     return grafic1;       
+  }
+  function createPopup2(event,graphic) {
+    grafic1= dadesAny(document.getElementById("field-select-us2").value,event);
+     return grafic1;       
+  }
+  function createPopup3(event,graphic) {
+    grafic1= dadesAny(document.getElementById("field-select-us3").value,event);
+     return grafic1;       
+  }
+  function createPopup4(event,graphic) {
+    grafic1= dadesAny(document.getElementById("field-select-us4").value,event);
+     return grafic1;       
+  }
+  function dadesAny (any,event){
+        var canvas = document.createElement('canvas');
+        canvas.width=350;
+        const queryUsosTask = new QueryTask({
+                url: "https://openlab.uab.cat:6443/arcgis/rest/services/dinamiques_query/Cobertes del sòl_v_"+any+"_mun/FeatureServer/0"
+                });
+            // Generage stats for the count and types of private schools that intersect the state with average enrollment
+            const areaCount = new StatisticDefinition({
+              statisticType: "sum",
+              onStatisticField: "st_area(shape) / 10000",
+              outStatisticFieldName: "area"
+            });
+            
+
+            const query = new Query({
+              where: "nommuni ='" + event.graphic.attributes.nommuni.replace("'","''") + "'",
+              groupByFieldsForStatistics: ["cat_niv_2"],
+              outFields: ["*"],
+              outStatistics: [areaCount]
+            });
+
+            // Execute the QueryTask
+            return queryUsosTask.execute(query).then(function (result) {
+              // Returns the entire result, need to filter based on LEVEL_
+              const featureAttributes = result.features.map(function (item, i) {
+                return item.attributes;
+              });
+              
+              var dades= new Array();
+              var dades_per= new Array();
+              var etiquetes = new Array();
+              var myColors = [];
+              featureAttributes.sort((a,b) => (a.area< b.area) ? 1 : ((b.area < a.area) ? -1 : 0))
+              var total = 0;
+              featureAttributes.forEach( function(valor, indice, array) {
+                    total = total + parseFloat(valor.area);
+                });
+              featureAttributes.forEach( function(valor, indice, array) {
+                    dades.push(Math.round(valor.area));
+                    dades_per.push(( (parseFloat(valor.area) / total)  * 100).toFixed(2));
+                    etiquetes.push(valor.cat_niv_2);
+                });
+                etiquetes.forEach( function (value, index,array) {
+                  switch (value){
+                    case "Boscos densos (no de ribera)": myColors[index] = "#689010"; break;
+                    case "Boscos densos de ribera": myColors[index] = "#00ff00"; break;
+                    case "Plantacions de pollancres": myColors[index] = "#005a00"; break;
+                    case "Plantacions de platans": myColors[index] = "#c3ff00"; break;
+                    case "Boscos clars (no de ribera)": myColors[index] = "#a0ffa0"; break;
+                    case "Boscos clars de ribera": myColors[index] = "#00c800"; break;
+                    case "Matollars": myColors[index] = "#c0c09c"; break;
+                    case "Aiguamolls": myColors[index] = "#80ffff"; break;
+                    case "Prats i herbassars": myColors[index] = "#ffff82"; break;
+                    case "Zones cremades": myColors[index] = "#ff0000"; break;
+                    case "Roquissars": myColors[index] = "#797979"; break;
+                    case "Tarteres": myColors[index] = "#ebebeb"; break;
+                    case "Sols nus forestals": myColors[index] = "#ff8610"; break;
+                    case "Platges": myColors[index] = "#f5df78"; break;
+                    case "Glaceres i congestes": myColors[index] = "#d7fff5"; break;
+                    case "Aigues continentals": myColors[index] = "#0000ff"; break;
+                    case "Mar": myColors[index] = "#000080"; break;
+                    case "Zones urbanitzades": myColors[index] = "#ffa4e2"; break;
+                    case "Basses urbanes": myColors[index] = "#5fa083"; break;
+                    case "Vies de comunicacio": myColors[index] = "#ff00ff"; break;
+                    case "Zones esportives i ludiques": myColors[index] = "#a244ff"; break;
+                    case "Zones d'extraccio minera": myColors[index] = "#408080"; break;
+                    case "Sols nus urbans": myColors[index] = "#b5c9cc"; break;
+                    case "Conreus":myColors[index] = "#7f4219";break;
+                  }
+                });
+
+                var chart = new Chart(canvas, {
+                    // The type of chart we want to create
+                    type: 'doughnut',
+
+                    // The data for our dataset
+                    data: {
+                        labels: etiquetes,
+                        datasets: [{
+                        backgroundColor: myColors,
+                        borderColor: "rgb(0, 0, 0, 0, 1)",
+                        borderWidth: 0.5,
+                        data: dades
+                        }]
+                    },
+
+                    // Configuration options go here
+                    options: {
+                        legend: {
+                        display: false
+                        },
+                        title: {
+                        display: false
+                        },
+                        circumference: Math.PI,
+                        rotation:-Math.PI,
+                        tooltips: {
+                            // Disable the on-canvas tooltip
+                            enabled: false,
+
+                            custom: function(tooltipModel) {
+                                // Tooltip Element
+                                var tooltipEl = document.getElementById('chartjs-tooltip');
+
+                                // Create element on first render
+                                if (!tooltipEl) {
+                                    tooltipEl = document.createElement('div');
+                                    tooltipEl.id = 'chartjs-tooltip';
+                                    tooltipEl.innerHTML = '<table style="background:black;color:white"></table>';
+                                    document.body.appendChild(tooltipEl);
+                                }
+
+                                // Hide if no tooltip
+                                if (tooltipModel.opacity === 0) {
+                                    tooltipEl.style.opacity = 0;
+                                    return;
+                                }
+
+                                // Set caret Position
+                               /* tooltipEl.classList.remove('above', 'below', 'no-transform');
+                                if (tooltipModel.yAlign) {
+                                    tooltipEl.classList.add(tooltipModel.yAlign);
+                                } else {
+                                    tooltipEl.classList.add('no-transform');
+                                }*/
+
+                                function getBody(bodyItem) {
+                                    return bodyItem.lines;
+                                }
+
+                                // Set Text
+                                if (tooltipModel.body) {
+                                    var titleLines = tooltipModel.title || [];
+                                    var bodyLines = tooltipModel.body.map(getBody);
+
+                                    var innerHtml = '<thead>';
+
+                                    titleLines.forEach(function(title) {
+                                        innerHtml += '<tr><th>' + title + '</th></tr>';
+                                    });
+                                    innerHtml += '</thead><tbody>';
+
+                                    bodyLines.forEach(function(body, i) {
+                                        var colors = tooltipModel.labelColors[i];
+                                        var style = 'background: black'; // + colors.backgroundColor;
+                                        style += '; border-color:' + colors.borderColor;
+                      
+                                        style += '; border-width: 2px';
+                                        var span = '<span style="' + style + '"></span>';
+                                        innerHtml += '<tr><td style="text-align: center;">' + span + body[0].split(":")[0] + '</td></tr>';
+                                        innerHtml += '<tr><td>' + span + body[0].split(":")[1] + ' ha ('+ dades_per[etiquetes.indexOf(body[0].split(":")[0])] + ' %)</td></tr>';
+
+                                    });
+                                    innerHtml += '</tbody>';
+
+                                    var tableRoot = tooltipEl.querySelector('table');
+                                    tableRoot.innerHTML = innerHtml;
+                                }
+
+                                // `this` will be the overall tooltip
+                                var position = this._chart.canvas.getBoundingClientRect();
+
+                                // Display, position, and set styles for font
+                                tooltipEl.style.opacity = 1;
+                                tooltipEl.style.position = 'absolute';
+                                tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX + 'px';
+                                tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY + 'px';
+                                tooltipEl.style.fontFamily = tooltipModel._bodyFontFamily;
+                                tooltipEl.style.fontSize = tooltipModel.bodyFontSize + 'px';
+                                tooltipEl.style.fontStyle = tooltipModel._bodyFontStyle;
+                                tooltipEl.style.padding = tooltipModel.yPadding + 'px ' + tooltipModel.xPadding + 'px';
+                                tooltipEl.style.pointerEvents = 'none';
+                            }
+                        }
+
+                    }
+                    
+                });
+              
+              return canvas;
+        });
+
+}
 
 		
 	
@@ -413,7 +699,7 @@ select{
         synchronizeViews([view1, view2, view3, view4]);
 });
 	  
-	 function canvi(anual,mapa,identificador) {
+function canvi(anual,mapa,identificador) {
 	  switch(anual){
 		case "1956": mapa.removeAll();mapa.add(orto1956);break;
 		case "1994": mapa.removeAll();mapa.add(orto1994);break;
@@ -435,6 +721,13 @@ select{
 	  }
 	  mapa.removeAll();
 	  mapa.add(capa);
+    
+    switch(identificador){
+      case "field-select-orto1": mapa.add(featureLayer1);view1.popup.close();break;
+      case "field-select-orto2": mapa.add(featureLayer2);view2.popup.close();break;
+      case "field-select-orto3": mapa.add(featureLayer3);view3.popup.close();break;
+      case "field-select-orto4": mapa.add(featureLayer4);view4.popup.close();break;
+    }
 	  llegenda.layerInfos[0].layer =capa;
 	  document.getElementById(identificador).value = -1
 	 }
