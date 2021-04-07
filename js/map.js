@@ -1,105 +1,105 @@
-require([
-	"esri/Map",
-	"esri/views/MapView",
-	"esri/views/SceneView",
-	"esri/layers/GroupLayer",
-	"esri/layers/MapImageLayer",
-	"esri/layers/FeatureLayer",
-	"esri/layers/WMSLayer",
-	"esri/widgets/LayerList",
-	"esri/widgets/Measurement",
-	"esri/widgets/Legend",
-	"esri/widgets/ScaleBar",
-	"esri/config",
-	"esri/widgets/Expand",
-	"esri/widgets/Search",
-	"esri/widgets/Home",
-	"esri/widgets/BasemapGallery",
-	"esri/tasks/GeometryService",
-	"esri/tasks/support/ProjectParameters",
-	"esri/widgets/Bookmarks",
-	"esri/portal/Portal",
-	"esri/widgets/BasemapGallery/support/PortalBasemapsSource",
-	"esri/tasks/IdentifyTask",
-	"esri/tasks/support/IdentifyParameters",
-	"dojo/_base/array",
-	"dojo/dom-construct",
-	"dojo/on",
-	"dojo/dom",
-	"dojo/promise/all",
-	"dojo/domReady!"
-], function (Map, MapView, SceneView, GroupLayer, MapImageLayer, FeatureLayer, WMSLayer, LayerList, Measurement, Legend, ScaleBar, esriConfig,
-	Expand, Search, Home, BasemapGallery, GeometryService, ProjectParameters, Bookmarks, Portal, PortalBasemapsSource, IdentifyTask, IdentifyParameters, arrayUtils, domConstruct, on, dom, all) {
+ require([
+        "esri/Map",
+        "esri/views/MapView",
+		"esri/views/SceneView",
+        "esri/layers/GroupLayer",
+        "esri/layers/MapImageLayer",
+		"esri/layers/FeatureLayer",
+		"esri/layers/WMSLayer",
+		"esri/widgets/LayerList",
+		"esri/widgets/Measurement",
+		"esri/widgets/Legend",
+		"esri/widgets/ScaleBar",
+		"esri/config",
+		"esri/widgets/Expand",
+		"esri/widgets/Search",
+		"esri/widgets/Home",
+		 "esri/widgets/BasemapGallery",
+		 "esri/tasks/GeometryService",
+      "esri/tasks/support/ProjectParameters",
+	  "esri/widgets/Bookmarks",
+	  "esri/portal/Portal",
+	  "esri/widgets/BasemapGallery/support/PortalBasemapsSource",
+	  "esri/tasks/IdentifyTask",
+       "esri/tasks/support/IdentifyParameters",
+	   "dojo/_base/array",
+	   "dojo/dom-construct",
+      "dojo/on",
+      "dojo/dom",
+      "dojo/promise/all",
+      "dojo/domReady!"
+      ], function(Map, MapView, SceneView, GroupLayer, MapImageLayer, FeatureLayer, WMSLayer, LayerList, Measurement, Legend, ScaleBar, esriConfig,
+	  Expand, Search,Home,BasemapGallery,GeometryService,ProjectParameters,Bookmarks, Portal,PortalBasemapsSource,IdentifyTask,IdentifyParameters, arrayUtils, domConstruct,on, dom, all) {
 
 
 
-	//configuració portal
-	esriConfig.portalUrl = "https://uab.maps.arcgis.com";
-	esriConfig.request.proxyUrl = "proxy.jsp";
+		//configuració portal
+		esriConfig.portalUrl = "https://uab.maps.arcgis.com";
+		esriConfig.request.proxyUrl = "proxy.jsp";
 
-	capes = [];
-	//capes d'àmbits Regions
+		capes = [];
+		//capes d'àmbits Regions
 
-	const sym = {
-		type: "simple", // autocasts as new SimpleRenderer()
-		symbol: {
-			type: "simple-fill", // autocasts as new SimpleFillSymbol()
-			color: [255, 255, 255, 0.8],
-			outline: { color: [255, 255, 255, 0] }
-		}
-	};
-
-
-
-	var AMBLayer = new FeatureLayer({
-		url:
-			"https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/cat/FeatureServer/0",
-		renderer: sym,
-		title: 'AMB',
-		id: "AMB",
-		visible: false,
-		definitionExpression: "amb = 0"
-
-	});
-	var RMBLayer = new FeatureLayer({
-		url:
-			"https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/cat/FeatureServer/0",
-		renderer: sym,
-		title: 'RMB',
-		visible: true,
-		id: "RMB",
-		definitionExpression: "rmb = 0"
-	});
-
-	var B30Layer = new FeatureLayer({
-		url:
-			"https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/cat/FeatureServer/0",
-		renderer: sym,
-		title: 'B30',
-		visible: false,
-		id: "B30",
-		definitionExpression: "b30 = 0"
-	});
-
-
-	//Grup de capes limits
-	var regionsGroupLayer = new GroupLayer({
-		visible: true,
-		title: gAmbits,
-		visibilityMode: "independent",
-		layers: [B30Layer, AMBLayer, RMBLayer],
-		opacity: 0.90,
-		listMode: "hide"
-	});
+		const sym = {
+          type: "simple", // autocasts as new SimpleRenderer()
+          symbol: {
+            type: "simple-fill", // autocasts as new SimpleFillSymbol()
+            color: [255, 255, 255, 0.8],
+			outline:{color: [255, 255, 255, 0]}
+          }
+        };
 
 
 
+		var AMBLayer = new FeatureLayer({
+			url:
+			  "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/cat/FeatureServer/0",
+			renderer: sym,
+			title: 'AMB',
+			id:"AMB",
+			visible:false,
+			definitionExpression: "amb = 0"
 
-	//**********Limits Administratius ***********//
-	//capes limits
+		  });
+		var RMBLayer = new FeatureLayer({
+			url:
+			  "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/cat/FeatureServer/0",
+			renderer: sym,
+			title: 'RMB',
+			visible:true,
+			id:"RMB",
+			definitionExpression: "rmb = 0"
+		  });
 
-	var comarquesLayer = new FeatureLayer({
-		portalItem: {
+		  var B30Layer = new FeatureLayer({
+			url:
+			  "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/cat/FeatureServer/0",
+			renderer: sym,
+			title: 'B30',
+			visible:false,
+			id:"B30",
+			definitionExpression: "b30 = 0"
+		  });
+
+
+		//Grup de capes limits
+		var regionsGroupLayer = new GroupLayer({
+          visible: true,
+		  title:gAmbits,
+          visibilityMode: "independent",
+          layers: [B30Layer,AMBLayer,RMBLayer],
+          opacity: 0.90,
+		  listMode:"hide"
+        });
+
+
+
+
+		//**********Limits Administratius ***********//
+		//capes limits
+
+		var comarquesLayer = new FeatureLayer({
+		  portalItem: {
 			id: "b1cb0e81815b4557b977d9772dc52289"
 		},
 		id: "dff564bae81b4746a1b862a295261149",
@@ -1669,24 +1669,23 @@ require([
 		}
 	});
 
-	
-			// Add the expand instance to the ui
-			var element = document.createElement('div');
-			element.className = "esri-icon-left-arrow esri-widget--button esri-widget esri-interactive";
-			element.addEventListener('click', function(evt){
-			  var cajaLateral = document.getElementById("lateral") ;
-			  cajaLateral.classList.toggle("slided");
-			  var cajaviewDiv = document.getElementById("viewDiv") ;
-			  cajaviewDiv.classList.toggle("slided");
-			  this.classList.toggle("esri-icon-left-arrow");
-			  this.classList.toggle("esri-icon-right-arrow");
-			})
-			view.ui.add(element, "top-left");
-	
+
+	// Add the expand instance to the ui
+	var element = document.createElement('div');
+	element.className = "esri-icon-left-arrow esri-widget--button esri-widget esri-interactive";
+	element.addEventListener('click', function (evt) {
+		var cajaLateral = document.getElementById("lateral");
+		cajaLateral.classList.toggle("slided");
+		var cajaviewDiv = document.getElementById("viewDiv");
+		cajaviewDiv.classList.toggle("slided");
+		this.classList.toggle("esri-icon-left-arrow");
+		this.classList.toggle("esri-icon-right-arrow");
+	})
+	view.ui.add(element, "top-left");
+
 	view.surface.addEventListener("wheel", function (event) {
 		event.stopImmediatePropagation();
 	}, true);
-	
 
 
 
@@ -2345,3 +2344,4 @@ function clearMeasurements() {
 	areaButton.classList.remove("active");
 	measurement.clear();
 }
+
