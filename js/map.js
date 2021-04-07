@@ -1,3 +1,4 @@
+
  require([
         "esri/Map",
         "esri/views/MapView",
@@ -1668,7 +1669,6 @@
 			  maxZoom: maxZoom,
 		  }
         });
-
 		/*
 				// Add the expand instance to the ui
 				var element = document.createElement('div');
@@ -1687,7 +1687,6 @@
 			event.stopImmediatePropagation();  
 		}, true);
 		
-
         
         
 		//view.popup.defaultPopupTemplateEnabled = true;
@@ -2352,4 +2351,3 @@
           distanceButton.classList.remove("active");
           areaButton.classList.remove("active");
           measurement.clear();
-   		}
