@@ -2272,10 +2272,11 @@
 				};
 				 identifyElements.push(feature);
 
-				} else if (cob15Layer.visible) {
+				} 
+				if (ndvi17Layer.visible) {
 					feature.popupTemplate = { // autocasts as new PopupTemplate()
-					  title: layerName + ": {CODI_CAS}",
-					  content: "<b>{cat_niv_5}</b>" 
+					  title: "Normalized Difference Value Index 2017",
+					  content: "Valor:"+ " <b>{Pixel Value}<b>"
 					
 					};
 					 identifyElements.push(feature);
