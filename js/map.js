@@ -1669,7 +1669,7 @@
 		}
 	});
 
-
+	/*
 	// Add the expand instance to the ui
 	var element = document.createElement('div');
 	element.className = "esri-icon-left-arrow esri-widget--button esri-widget esri-interactive";
@@ -1681,7 +1681,7 @@
 		this.classList.toggle("esri-icon-left-arrow");
 		this.classList.toggle("esri-icon-right-arrow");
 	})
-	view.ui.add(element, "top-left");
+	view.ui.add(element, "top-left");*/
 
 	view.surface.addEventListener("wheel", function (event) {
 		event.stopImmediatePropagation();
