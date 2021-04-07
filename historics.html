@@ -719,6 +719,41 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-default templatemo-nav" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+				<a class="navbar-brand" style="padding:12px 0px 0px 0px !important;" href="https://iermb.uab.cat/ca/let-bcn/" target="_blank">
+                  <img src="imatges/logo-iermb_sm-creaf.png" alt="Logo" style="width:175px;">
+                </a>
+			
+				
+				<a class="navbar-brand" style="padding:0px 0px 0px 30px !important;" href="http://www.amb.cat/" target="_blank">
+                  <img src="imatges/AMB_logo_1_sm.png" alt="Logo" style="width:60px;float:right;padding:0px 0px 0px 30px !important;">
+                </a>
+				<a class="navbar-brand" style="padding:50px 0px 0px 50px !important;" href="http://www.creaf.cat/ca" target="_blank" >
+                  <img src="imatges/logo-creaf_sm.png" alt="Logo" style="width:60px;float:right;padding:0px 0px 0px 30px !important;">
+                </a>
+				<a class="navbar-brand" style="padding:12px 0px 0px 50px !important;" href="https://iermb.uab.cat/ca/" target="_blank" style="vertical-align:bottom;">
+                  <img src="imatges/Logo-IERMB-sense-nom_sm.jpg" alt="Logo" style="width:60px;float:right;padding:0px 0px 0px 30px !important;">
+                </a>
+				<a class="navbar-brand" style="padding:12px 0px 0px 50px !important;" href="https://www.uab.cat/" target="_blank">
+                  <img src="imatges/uab_2_sm.jpg" alt="Logo" style="width:60px;float:right;padding:0px 0px 0px 30px !important;">
+                </a>
+				<a class="navbar-brand"  href="https://www.uab.cat/open-labs/" target="_blank">
+                  <img src="imatges/logoUABopenLABStrans.png" alt="Logo" style="width:90px;float:right;padding:0px 0px 0px 20px !important;">
+                </a>
+				<!--idiomes-->
+				<a style="font-size:12px; font-weight:bold; padding:12px 0px 0px 400px !important;  cursor: pointer" hreflang="ca" href="indicadors.html">Català | </a>
+				<a  style="font-size:12px;padding:12px 0px 0px 5px !important;  cursor: pointer" hreflang="es" href="indicadors_es.html">Castellano | </a>
+				<a  style="font-size:12px;padding:12px 0px 0px 5px !important;  cursor: pointer" hreflang="en" href="indicadors_en.html">English</a>
+			
+				</div>
+			
+				</div>
+		</nav>
+	<header style="color:grey;text-align:center;font-size:12px;font-family:Arial,sans-serif;">
+		Si selecciona un mapa de cobertes del sòl podrà seleccionar un municipi i veure un gràfic amb la distribució municipal de les cobertes del sòl per aquell any.
+	</header>
    <div id="div1">		
     <div id="viewDiv1"></div>
 		<div id="infoDiv1" class="esri-widget" style="padding: 3px;">
@@ -728,14 +763,13 @@
 				<option value="1956" selected>1956</option>
 				<option value="1994" >1994</option>
 				<option value="2000">2000</option>
-				<option value="2005">2005</option>
 				<option value="2009">2009</option>
 				<option value="2015">2015</option>
 			</select>
 
 		</div>
 		<div id="infoDiv1_1" class="esri-widget" style="padding: 3px;">
-			Cobertes
+			Cobertes del sòl
 			  <select id="field-select-us1" class="esri-widget" onchange="canviUs(this.value,map1,'field-select-orto1',legend1)">
 				<option value="-1" ></option>
 				<option value="1956">1956</option>
@@ -756,13 +790,12 @@
 				<option value="1956" >1956</option>
 				<option value="1994" selected>1994</option>
 				<option value="2000">2000</option>
-				<option value="2005">2005</option>
 				<option value="2009">2009</option>
 				<option value="2015">2015</option>
 			</select>
 		</div>
 		<div id="infoDiv2_1" class="esri-widget" style="padding: 3px;">
-			Cobertes
+			Cobertes del sòl
 			  <select id="field-select-us2" class="esri-widget" onchange="canviUs(this.value,map2,'field-select-orto2',legend2)">
 				<option value="-1" ></option>
 				<option value="1956">1956</option>
@@ -783,13 +816,12 @@
 					<option value="1956" >1956</option>
 					<option value="1994" >1994</option>
 					<option value="2000" selected >2000</option>
-					<option value="2005">2005</option>
 					<option value="2009">2009</option>
 					<option value="2015">2015</option>
 				</select>
 			</div>
 			<div id="infoDiv3_1" class="esri-widget" style="padding: 3px;">
-				Cobertes
+				Cobertes del sòl
 			  <select id="field-select-us3" class="esri-widget" onchange="canviUs(this.value,map3,'field-select-orto3',legend3)">
 				<option value="-1" ></option>
 				<option value="1956">1956</option>
@@ -811,13 +843,12 @@
 					<option value="1956" >1956</option>
 					<option value="1994" >1994</option>
 					<option value="2000" >2000</option>
-					<option value="2005" selected>2005</option>
-					<option value="2009">2009</option>
+					<option value="2009" selected>2009</option>
 					<option value="2015">2015</option>
 				</select>
 			</div>
 			<div id="infoDiv4_1" class="esri-widget" style="padding: 3px;">
-				Cobertes
+				Cobertes del sòl
 			  <select id="field-select-us4" class="esri-widget" onchange="canviUs(this.value,map4,'field-select-orto4',legend4)">
 				<option value="-1" ></option>
 				<option value="1956">1956</option>

@@ -226,6 +226,7 @@
     <script src="https://js.arcgis.com/4.13/"></script>
 
     <style>
+		
       html,
       body,
       .viewMap {
@@ -237,6 +238,22 @@
 		font-family: "Avenir Next W00","Helvetica Neue",Helvetica,Arial,sans-serif;
       }
 
+	  body {
+    display: flex;
+    flex-wrap: wrap;
+}
+	.mapSmallBox.popup #open, .divgrafics.popup #open{
+		display: none;
+	}
+	.mapSmallBox #closed, .divgrafics #closed{
+		display: none;
+	}
+	.mapSmallBox #open, .divgrafics #open{
+		display: block;
+	}
+	.mapSmallBox.popup #closed, .divgrafics.popup #closed{
+		display: block;
+	}
 	  #infoDiv,#escenariDiv, .title-map-dif {
         padding: 8px;
       }
@@ -246,38 +263,63 @@
 		color: #323232;
 	  }
 	  #divMainMap {
-		padding: 0;
-        margin: 0;
-        height: 85%;
-        width: 75%;
-		float:left;
-		border-color: black;
-	  }
+    padding: 0;
+    margin: 0;
+    height: 800px;
+    width: 75%;
+    float: left;
+    border-color: black;
+}
 	  #divMainMap.slided {
         width: 100%;
 	  }
 	  #control-panel {
-		padding: 0;
-        margin: 0;
-        height: 85%;
-        width: 25%;
-		float:left;
-		background-color: #B0DBBF;
-		border: 1px solid black;
-		box-sizing: border-box;
-	  }
+    padding: 0;
+    margin: 0;
+    height: 800px;
+    width: 25%;
+    float: left;
+    background-color: #B0DBBF;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    box-sizing: border-box;
+	}
+
+	.title_control-panel{
+		text-align: center !important;
+	padding: 0 !important;
+	border-bottom: 1px solid black !important;
+	margin: 0 !important;
+	font-size: 15px !important;
+	height: 50px !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	}
+
+
 	  #control-panel.slided {
-		display: none;
+		visibility: hidden;
+width: 0px;
+border: 0px;
 	  }
 	  .divgrafics, .mapSmallBox{
         padding: 0;
         margin: 0;
-        height: 41%;
+        height: 450px;
         width: 50%;
 		float:left;
 		border-color: coral;
 		background-color: white;
       }
+
+	  .mapSmallBox:nth-child(even) .title-map-dif, .divgrafics:nth-child(even) .title-map-dif {
+    border-right: 0px !important;
+    border-left: 0px !important;
+}
+.mapSmallBox:nth-child(odd) .title-map-dif, .divgrafics:nth-child(odd) .title-map-dif {
+    border-left: 0px !important;
+}
 	  #descripcio {
 		width:100%;
 		border: none;
@@ -387,7 +429,7 @@ float: left;
 }
 
 .buttons{
-	height: 10%;
+	height: 80px;
 }
 #buttonAplicar {
     width: 50%;
@@ -399,7 +441,7 @@ float: left;
     box-shadow: none;
     text-shadow: none;
     border-top: 1px solid black;
-    font-size: 25px;
+    font-size: 18px;
     margin: 0px;
 	border-radius: 0px !important;
 	height: 100%;
@@ -460,6 +502,8 @@ input[type="range"]::-moz-range-thumb{
     font-size: 18px;
     border: 1px solid black;
 	cursor:pointer;
+	height: 60px !important;
+	padding-top: 18px;
 }
 
 .title-map-dif:hover {
@@ -467,6 +511,10 @@ input[type="range"]::-moz-range-thumb{
 background-color: rgba(244, 186, 201, 0.67);
 
 }
+.mapSmallBox > .viewMap {
+    height: calc(100% - 60px) !important;
+}
+
 
 .popup{
 	position: fixed;
@@ -501,20 +549,36 @@ line-height: 2;
 }
 
 @media screen and (max-width:1259px){
+
+	.formRanges {
+    width: 70%;
+    float: left;
+    overflow-y: auto;
+}
+
+	h2, button{
+		font-size: 18px !important;
+	}
+
+	h3{
+		font-size: 18px !important;
+	}
+
 	#control-panel {
     padding: 0;
     margin: 0;
-    height: auto;
+    height: 800px;
     width: 40%;
     float: left;
     background-color: #B0DBBF;
-    border: 1px solid black;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
     box-sizing: border-box;
 	}
 	#divMainMap {
     padding: 0;
     margin: 0;
-    height: 85%;
+    height: 800px;
     width: 60%;
     float: left;
     border-color: black;
@@ -524,37 +588,7 @@ line-height: 2;
 
 
 
-@media screen and (max-width:790px){
-	.cbsdiv label {
-    width: 33%;
-    padding: 10px;
-    display: flex;
-	font-size: 15px;
-	align-items: center;
-}
-	#control-panel {
-    padding: 0;
-    margin: 0;
-    height: 85%;
-    width: 60%;
-    float: left;
-    background-color: #B0DBBF;
-    border: 1px solid black;
-    box-sizing: border-box;
-	}
-	#divMainMap {
-    padding: 0;
-    margin: 0;
-    height: 85%;
-    width: 40%;
-    float: left;
-    border-color: black;
-}
 
-#divMainMap h2{
-	font-size: 25px;
-}
-}
 
 @media screen and (max-width:590px){
 	.cbsdiv label {
@@ -572,10 +606,21 @@ line-height: 2;
     font-size: 12px;
     cursor: pointer;
     height: 60px !important;
+	padding-top: 8px !important;
 }
 .mapSmallBox .viewMap{
 	height: 360px !important;
 }
+
+.mapSmallBox.popup{
+	width: 100% !important;
+	height: 100% !important;
+}
+.mapSmallBox.popup .viewMap{
+	width: 100% !important;
+	height: calc(100% - 60px) !important;
+}
+
 .map--selected {
     float: left;
     font-size: 12px;
@@ -596,21 +641,45 @@ line-height: 2;
 
 
 @media screen and (max-width:790px){
+	.cbsdiv label {
+    width: 33%;
+    padding: 10px;
+    display: flex;
+	font-size: 15px;
+	align-items: center;
+}
 	#control-panel {
     padding: 0;
     margin: 0;
-    height:auto;
-    width: 100%;
+    height: 700px;
+    width: 60%;
     float: left;
     background-color: #B0DBBF;
-    border: 1px solid black;
+		border: 0px 0px 1px 1px solid black;
     box-sizing: border-box;
 	}
+
+	.title_control-panel {
+    text-align: center !important;
+    padding: 0 !important;
+    border-bottom: 1px solid black !important;
+    margin: 0 !important;
+    font-size: 15px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+h2, button{
+	
+    font-size: 15px !important;
+}
 	#divMainMap {
     padding: 0;
     margin: 0;
-    height: 85%;
-    width: 0%;
+    height: 700px;
+    width: 40%;
     float: left;
     border-color: black;
 }
@@ -618,29 +687,80 @@ line-height: 2;
 #divMainMap h2{
 	font-size: 25px;
 }
+
 .title-map-dif {
     text-transform: uppercase;
     font-size: 12px;
+	border: 0px;
+    border-top: 1px solid black;
+	border-bottom: 1px solid black;
     cursor: pointer;
     height: 60px !important;
+	padding-top: 10px;
+}
+
+h3 {
+    font-size: 15px !important;
 }
 
 .divgrafics, .mapSmallBox {
     padding: 0;
     margin: 0;
-    height: 360px;
+    height: auto !important;
     width: 100%;
     float: left;
-    border-color: coral;
     background-color: white;
+}
+
+.mapSmallBox.popup {
+    padding: 0;
+    margin: 0;
+    height: 100% !important;
+    width: 100%;
+    float: left;
+    background-color: white;
+}
+
+.mapSmallBox.popup .viewMap{
+	height: calc(100% - 60px) !important;
 }
 
 .mapSmallBox .viewMap {
     height: 300px !important;
 }
+
+
 }
 
+#radarGraficContainer canvas, #histoGraficContainer canvas{
+	padding: 20px;
+}
 
+@media screen and (max-width:550px){
+
+	
+
+	#control-panel {
+    padding: 0;
+    margin: 0;
+    height: 300px;
+    width: 100%;
+    float: left;
+    background-color: #B0DBBF;
+		border: 0px 0px 1px 1px solid black;
+    box-sizing: border-box;
+	}
+
+		#divMainMap {
+    padding: 0;
+    margin: 0;
+    height: 700px;
+    width: 100%;
+    float: left;
+    border-color: black;
+}
+
+}
     </style>
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -657,10 +777,9 @@ line-height: 2;
 
   <body style="font-family: 'Avenir Next W00','Helvetica Neue',Helvetica,Arial,sans-serif;" onload="canvi(valuesRanges());">
 	<div id="control-panel">
-		<h3 style="text-align: center;padding: 20px;border-bottom: 1px solid black;margin: 0;font-size: 18px; height: 10%;">PRIORITZA LES DIMENSIONS 
-			QUE VOLS OPTIMITZAR</h3>
-		<div style="padding-top: 10px; height: 80%;">
-			<div class="formRanges" style="height: 81.5%;">
+		<h3 class="title_control-panel" style="text-align: center;padding: 20px;border-bottom: 1px solid black;margin: 0;font-size: 18px; height: 10%;">Prioritza les dimensions que vols optimitzar</h3>
+		<div style="height: calc(100% - 129px); overflow-y: auto; padding-top: 15px;">
+			<div class="formRanges">
 			<div class="formRange"><div class="label"><label for="ARange">Eficiència energètica</label></div><div class="rangediv"><span class="resultRange" id="A1RangeValue"></span><input type="range" name="A1Range" id="A1Range" min="0" max="100" step="1" onchange="showVal('A1RangeValue', this.value)" oninput="showVal('A1RangeValue', this.value)"></div></div>
 			<div class="formRange"><div class="label"><label for="ARange">Consum d’aigua</label></div><div class="rangediv"><span class="resultRange" id="A2RangeValue"></span><input type="range" name="A2Range" id="A2Range" min="0" max="100" step="1" onchange="showVal('A2RangeValue', this.value)" oninput="showVal('A2RangeValue', this.value)"></div></div>
 			<div class="formRange"><div class="label"><label for="ARange">Apropiació de biomassa</label></div><div class="rangediv"><span class="resultRange" id="A3RangeValue"></span><input type="range" name="A3Range" id="A3Range" min="0" max="100" step="1" onchange="showVal('A3RangeValue', this.value)" oninput="showVal('A3RangeValue', this.value)"></div></div>
@@ -681,18 +800,18 @@ line-height: 2;
 	</div>
 	<div class="buttons">
 		<button class="button" id="buttonAplicar" style="border-right:1px solid black;" onclick="restaurar()">RESTAURA</button>
-		<button class="button" id="buttonAplicar" onclick="if(checkRanges()) { canvi(valuesRanges())} else { alert('La suma dels pesos ha de ser exactament 100'); }">Aplicar</button>
+		<button class="button" id="buttonAplicar" onclick="if(checkRanges()) { canvi(valuesRanges())} else { alert('La suma dels pesos ha de ser exactament 100'); }">Aplica</button>
 		
 
 	</div>
 	</div>
 	<div id="divMainMap">
-    	<div id="viewDiv" class="viewMap" style="height:90%"></div>
-		<div style="height:10%; width:100%; border:1px solid black; background-color: #D1F3FF;"><h2 style="max-width: max-content; margin: 0 auto; padding: 15px; text-transform: uppercase;">Escenari Optimitzat</h2></div>
+    	<div id="viewDiv" class="viewMap" style="height:calc(100% - 80px)"></div>
+		<div style="height:80px; width:100%; border:1px solid black; background-color: #D1F3FF;display: flex;align-items: center;border-left: 0px !important;border-right: 0px !important;"><h2 style="max-width: max-content; margin: 0 auto; padding: 15px; text-transform: uppercase;font-size: 18px;">Escenari Optimitzat</h2></div>
 	</div>
 	<div style="width: 100%; height: auto; float: left; background: linear-gradient(302.95deg, #FFFFFF 29.23%, #F6EEE8 50.8%, rgba(252, 240, 188, 0.3) 64.96%, #B0DBBF 87.51%);">
 		<div id="escenariDiv" class="esri-widget" style="background-color: transparent !important;">
-			<h3>Visualitza l'efecte de la teva priorització en cada dimensió</h3>
+			<h3 style="font-family: 'Roboto' !important;font-weight: lighter;font-size: 16px;margin-left: 10px; color:#323232">Visualitza l'efecte de la teva priorització en cada dimensió</h3>
 			<div class="cbsdiv">
 			<label id="labelA1" for="A1"><input type="checkbox" class="cbs" name="A1" id="A1" value="A1" onclick="canvi(valuesRanges(),this.value)" checked>Eficiència energètica</label>
 			<label id="labelA2" for="A2"><input type="checkbox" class="cbs" name="A2" id="A2" value="A2" onclick="canvi(valuesRanges(),this.value)">Consum d’aigua</label>
@@ -708,48 +827,48 @@ line-height: 2;
 		</div>
 	</div>
 	<div style="width: 100%; height: auto; float: left;border-top: 1px solid black;">
-		<h3 style="width: 70%; text-align: center; margin: 50px auto;">El Sistema de Suport a la Planificació (LET’s SSP) mostra l’estat socioecològic actual dels espais oberts de l’àrea metropolitana de Barcelona, i permet generar escenaris futurs en canviar tant les cobertes del sòl com el tipus de metabolisme que caracteritzen la infraestructura verda metropolitana. Us presentem una prova pilot en que pots optimitzar els possibles escenaris futurs segons les prioritzacions que li donaries a les polítiques públiques. </h3>
+		<h3 style="width: 70%; text-align: center; margin: 50px auto;font-family: 'Roboto' !important;font-weight: lighter;font-size: 16px; color:#323232">El Sistema de Suport a la Planificació (LET’s SSP) mostra l’estat socioecològic actual dels espais oberts de l’àrea metropolitana de Barcelona, i permet generar escenaris futurs en canviar tant les cobertes del sòl com el tipus de metabolisme que caracteritzen la infraestructura verda metropolitana. Us presentem una prova pilot en que pots optimitzar els possibles escenaris futurs segons les prioritzacions que li donaries a les polítiques públiques. </h3>
 	</div>
 	
 	<div id="divMapActual" class="mapSmallBox">
 		<div  class="esri-widget title-map-dif" style="height: 10%;">
-		<span>Escenari actual</span></span><span data-value="divMapActual" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img src="imatges/Group 92.png" alt=""></span><span data-value="divMapActual" class="opened" onclick="popup(this.getAttribute('data-value'))"><img src="imatges/Rectangle 138.png" alt=""></span><span class="map--selected"></span>
+		<span>Escenari actual</span></span><span data-value="divMapActual" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img id="closed" src="imatges/Group 92.png" alt=""></span><span data-value="divMapActual" class="opened" onclick="popup(this.getAttribute('data-value'))"><img id="open" src="imatges/fullscreen-svg.png" width="23px" alt=""></span><span class="map--selected"></span>
 		</div>
-		<div id="viewDivActual"  class="viewMap" style="height: 90%; width: 100%;"></div>
+		<div id="viewDivActual"  class="viewMap" style="height: 90%; width: 100%; border-right: 1px solid black;"></div>
 		
 	</div>
 	<div id="divMapDifActual" class="mapSmallBox">
 		<div  class="esri-widget title-map-dif" style="height: 10%;">
-			<span id="divMapDifActual">Diferència entre escenari actual i optimitzat</span></span><span data-value="divMapDifActual" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img src="imatges/Group 92.png" alt=""></span><span data-value="divMapDifActual" class="opened" onclick="popup(this.getAttribute('data-value'))"><img src="imatges/Rectangle 138.png" alt=""></span><span class="map--selected"></span>
+			<span id="divMapDifActual">Diferència entre escenari actual i optimitzat</span></span><span data-value="divMapDifActual" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img id="closed" src="imatges/Group 92.png" alt=""></span><span data-value="divMapDifActual" class="opened" onclick="popup(this.getAttribute('data-value'))"><img id="open" src="imatges/fullscreen-svg.png" width="23px" alt=""></span><span class="map--selected"></span>
 		</div>
 		<div id="viewDivDifActual"  class="viewMap" style="height: 90%; width: 100%;"></div>
 		
 	</div>
 	<div id="divMapTendencial" class="mapSmallBox">
 		<div  class="esri-widget title-map-dif" style="height: 10%;">
-			<span id="divMapTendencial">Escenari tendencial</span></span><span data-value="divMapTendencial" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img src="imatges/Group 92.png" alt=""></span><span data-value="divMapTendencial" class="opened" onclick="popup(this.getAttribute('data-value'))"><img src="imatges/Rectangle 138.png" alt=""></span><span class="map--selected"></span>
+			<span id="divMapTendencial">Escenari tendencial</span></span><span data-value="divMapTendencial" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img id="closed" src="imatges/Group 92.png" alt=""></span><span data-value="divMapTendencial" class="opened" onclick="popup(this.getAttribute('data-value'))"><img id="open" src="imatges/fullscreen-svg.png" width="23px" alt=""></span><span class="map--selected"></span>
 		</div>
-		<div id="viewDivTendencial"  class="viewMap" style="height: 90%; width: 100%;"></div>
+		<div id="viewDivTendencial"  class="viewMap" style="height: 90%; width: 100%; border-right: 1px solid black;"></div>
 		
 	</div>
 	<div id="divMapDiftendencial" class="mapSmallBox">
 		<div class="esri-widget title-map-dif" style="height: 10%;">
-			<span id="divMapDiftendencial">Diferència entre escenari tendencial i optimitzat</span></span><span data-value="divMapDiftendencial" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img src="imatges/Group 92.png" alt=""></span><span data-value="divMapDiftendencial" class="opened" onclick="popup(this.getAttribute('data-value'))"><img src="imatges/Rectangle 138.png" alt=""></span><span class="map--selected"></span>
+			<span id="divMapDiftendencial">Diferència entre escenari tendencial i optimitzat</span></span><span data-value="divMapDiftendencial" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img id="closed" src="imatges/Group 92.png" alt=""></span><span data-value="divMapDiftendencial" class="opened" onclick="popup(this.getAttribute('data-value'))"><img id="open" src="imatges/fullscreen-svg.png" width="23px" alt=""></span><span class="map--selected"></span>
 		</div>
 		<div id="viewDivDifTendencial"  class="viewMap" style="height: 90%; width: 100%;"></div>
 		
 	</div>
 	<div class="divgrafics" id="radarGrafic">
 		<div class="esri-widget title-map-dif" style="height: 10%;">
-			<span id="radarGrafic">Analisi Multicriteri</span></span><span data-value="radarGrafic" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img src="imatges/Group 92.png" alt=""></span><span data-value="radarGrafic" class="opened" onclick="popup(this.getAttribute('data-value'))"><img src="imatges/Rectangle 138.png" alt=""></span><span class="map--selected"></span>
+			<span id="radarGrafic">Analisi Multicriteri</span></span><span data-value="radarGrafic" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img id="closed" src="imatges/Group 92.png" alt=""></span><span data-value="radarGrafic" class="opened" onclick="popup(this.getAttribute('data-value'))"><img id="open" src="imatges/fullscreen-svg.png" width="23px" alt=""></span><span class="map--selected"></span>
 		</div>
-		<div id="radarGraficContainer">
+		<div id="radarGraficContainer"  style="border-right: 1px solid black;">
 			<canvas class="divgrafics" id="marksChart"></canvas>
 		</div>
 	</div>	
 	<div class="divgrafics" id="histogramGrafic">
 		<div class="esri-widget title-map-dif" style="height: 10%;">
-			<span id="histogramGrafic">Valors de les dimensions</span></span><span data-value="histogramGrafic" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img src="imatges/Group 92.png" alt=""></span><span data-value="histogramGrafic" class="opened" onclick="popup(this.getAttribute('data-value'))"><img src="imatges/Rectangle 138.png" alt=""></span><span class="map--selected"></span>
+			<span id="histogramGrafic">Valors de les dimensions</span></span><span data-value="histogramGrafic" class="opened" onclick="closePopup(this.getAttribute('data-value'))"><img id="closed" src="imatges/Group 92.png" alt=""></span><span data-value="histogramGrafic" class="opened" onclick="popup(this.getAttribute('data-value'))"><img id="open" src="imatges/fullscreen-svg.png" width="23px" alt=""></span><span class="map--selected"></span>
 		</div>
 		<div id="histoGraficContainer">
 			<canvas class="divgrafics" id="histoChart"></canvas>

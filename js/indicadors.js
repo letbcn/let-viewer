@@ -1391,10 +1391,7 @@
 				cbs[i].checked = false;
 			}
 
-			var cajaLateral = document.getElementById("control-panel") ;
-			cajaLateral.classList.toggle("slided");
-			var cajaviewDiv = document.getElementById("divMainMap") ;
-			cajaviewDiv.classList.toggle("slided");
+			
 			
 			if(value == null){
 				value = "A1";

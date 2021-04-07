@@ -1,3 +1,4 @@
+
  require([
         "esri/Map",
         "esri/views/MapView",
@@ -2332,4 +2333,3 @@
           distanceButton.classList.remove("active");
           areaButton.classList.remove("active");
           measurement.clear();
-   		}
