@@ -1,3 +1,4 @@
+
  require([
         "esri/Map",
         "esri/views/MapView",
@@ -1668,24 +1669,6 @@
 			  maxZoom: maxZoom,
 		  }
         });
-
-				// Add the expand instance to the ui
-				var element = document.createElement('div');
-				element.className = "esri-icon-left-arrow esri-widget--button esri-widget esri-interactive";
-				element.addEventListener('click', function(evt){
-				  var cajaLateral = document.getElementById("lateral") ;
-				  cajaLateral.classList.toggle("slided");
-				  var cajaviewDiv = document.getElementById("viewDiv") ;
-				  cajaviewDiv.classList.toggle("slided");
-				  this.classList.toggle("esri-icon-left-arrow");
-				  this.classList.toggle("esri-icon-right-arrow");
-				})
-				view.ui.add(element, "top-left");
-
-		view.surface.addEventListener("wheel", function(event) {   
-			event.stopImmediatePropagation();  
-		}, true);
-
         
         
 		//view.popup.defaultPopupTemplateEnabled = true;
@@ -2290,10 +2273,11 @@
 				};
 				 identifyElements.push(feature);
 
-				} else if (cob15Layer.visible) {
+				} 
+				if (ndvi17Layer.visible) {
 					feature.popupTemplate = { // autocasts as new PopupTemplate()
-					  title: layerName + ": {CODI_CAS}",
-					  content: "<b>{cat_niv_5}</b>" 
+					  title: "Normalized Difference Value Index 2017",
+					  content: "Valor:"+ " <b>{Pixel Value}<b>"
 					
 					};
 					 identifyElements.push(feature);
@@ -2349,4 +2333,3 @@
           distanceButton.classList.remove("active");
           areaButton.classList.remove("active");
           measurement.clear();
-   		}
