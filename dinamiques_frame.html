@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, maximum-scale=1,user-scalable=no"
+    />
+
+    <title>LET's GIS</title>
+
+    <style>
+
+body span, body b {
+    color: black !important;
+}
+
+     html,
+      body {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+      #viewDiv {
+         float: left;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 80%;
+        transition: 1s;
+      }
+	  #lateral {
+        float: left;
+        width: 20%;
+        height: 100%;
+        background-color: #B0DBBF;
+		position:  relative;
+    transition: 1s;
+      }
+    #lateral.slided{
+      width:0%;
+      transition: 1s;
+    }
+    #viewDiv.slided{
+      width: 100%;
+      transition: 1s;
+    }
+	  #divCapes {
+	
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+		position:  absolute;
+    background-color: #B0DBBF;
+    border-right: 0.86px solid black;
+      }
+	  
+	 
+	  #divImatges {
+        bottom: 0;
+        width: 100%;
+        height: 15%;
+        padding: 1em;
+		position:  absolute;
+      }
+	   #mapabaseDiv {
+       
+        padding: 12px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+	
+      }
+	   #divEnllaços {
+		bottom:150px;
+        width: 100%;
+        height: 10%;
+        padding: 1em;
+		position:  absolute;
+      }
+
+		.button {
+		box-shadow:inset 0px 1px 3px 0px #91b8b3;
+		background:linear-gradient(to bottom, #c00000 5%, #c43b3b 100%);
+		background-color:#c00000;
+		border-radius:5px;
+		display:inline-block;
+		cursor:pointer;
+		color: white !important;
+		text-align: center;
+		font-family: "Avenir Next W00","Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-size:12px;
+		margin: 7px 2px;
+		padding: 7px 5px ;
+		text-decoration:none;
+		text-shadow:0px -1px 0px #2b665e;
+		width: 90%;
+			}
+		.button:hover {
+			background:linear-gradient(to bottom, #c43b3b 5%, #c00000 100%);
+			background-color:#c43b3b;
+		}
+		.button:active {
+			position:relative;
+			top:1px;
+		}
+		
+		.esri-popup .esri-popup-header .esri-title {
+        font-size: 17px;
+        font-weight: bolder;
+      }
+
+      .esri-popup .esri-popup-body .esri-popup-content {
+        font-size: 14px;
+      }
+
+      .esri-layer-list__item{
+        background-color: transparent !important;
+        padding: 5px !important;
+        border-bottom: none !important;
+        margin:0px !important;
+        margin-left: 15px !important; 
+      }
+	
+      .esri-icon-right-triangle-arrow::before {
+    color: inherit;
+
+    
+}
+li[aria-selected="true"] .esri-icon-right-triangle-arrow::before{
+    color: inherit;
+}
+
+.esri-widget, .esri-widget--button{
+  
+  background-color: #B0DBBF !important;
+}
+.esri-attribution{
+	display: none !important;
+}
+
+.esri-layer-list__item--has-children > .esri-layer-list__item-container {
+    padding-left: 23px;
+}
+
+.esri-layer-list__item-title {
+    flex: 1;
+    padding-left: 15px;
+    padding-right: 5px;
+    line-height: 1.1em !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    transition: color 125ms ease-in-out;
+    font-size: 15px;
+
+}
+
+.esri-layer-list__list{
+  margin: 15px 0px 0px 0px !important
+}
+
+.esri-layer-list__item-label{
+  padding-left: 10px !important;
+}
+.esri-layer-list__child-toggle [class*="esri-icon"] {
+    line-height: 1.2em !important;
+}
+
+@media screen and (max-width:1024px){
+  #lateral {
+    float: left;
+    width: 30%;
+    height: 100%;
+    background-color: #B0DBBF;
+    position: relative;
+    transition: 1s;
+}
+  #viewDiv {
+      float: left;
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 70%;
+      transition: 1s;
+  }
+}
+
+@media screen and (max-width:700px){
+  #lateral {
+    float: left;
+    width: 40%;
+    height: 100%;
+    background-color: #B0DBBF;
+    position: relative;
+    transition: 1s;
+}
+  #viewDiv {
+      float: left;
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 60%;
+      transition: 1s;
+  }
+}
+
+@media screen and (max-width:500px){
+  #lateral {
+    float: left;
+    width: 60%;
+    height: 100%;
+    background-color: #B0DBBF;
+    position: relative;
+    transition: 1s;
+}
+  #viewDiv {
+      float: left;
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 40%;
+      transition: 1s;
+  }
+}
+    </style>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.13/esri/themes/light/main.css"/>
+	<link rel="stylesheet" href="css/templatemo-style.css">
+	<link rel="stylesheet" href="css/style_let.css">
+    <script src="https://js.arcgis.com/4.13/"></script>
+	<script src="js/idiomes_dinamiques.js"></script>
+    <script src="js/dinamiques.js"></script>
+	
+  </head>
+
+ <body>
+		<div id="lateral" class="esri-widget">
+			<div id="divCapes" class="esri-widget" ><b style="font-size: 15px;padding: 15px;padding-left: 20px !important;">Consulta les dinàmiques territorials</b><hr style=" display: block;height: 1px;border: 0;border-top: 1px solid black;margin:0px;padding: 0;"></div>
+			<!--<div id="divEnllaços">Eines del Let's GIS: <br>
+				<a href="historics_frame.html" target="_blank" class="button">Visualització de mapes històrics</a>
+			</div>
+      <div id="divImatges">Projecte cofinançat per:<br>
+          <img src="imatges/FEDER_senselema.jpg" alt="Logo" style="width:200px;float:bottom;padding:10px 0px 10px 10px !important;">
+          <img src="imatges/scunirec_h2.jpg" alt="Logo" style="width:200px;float:bottom;padding:5px 0px 0px 10px !important;">
+        </div>-->
+			
+		</div>
+    <div id="viewDiv"></div>
+  </body>
+</html>
