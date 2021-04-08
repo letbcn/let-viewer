@@ -737,7 +737,29 @@
 		  });
 
 		//Dinàmiques Socioeconòmiques
-		
+
+		//Demografia
+
+		var poblacio19Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "6dc97c6445d24082aa4996143b49a333"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lpobla19,
+			listMode: "hide-children"
+		  });
+		  capes.push(poblacio19Layer);
+
+		  var demoGroupLayer = new GroupLayer({
+			title: gDemo,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [ poblacio19Layer],
+			opacity: 1
+		  });
+		  
+		//Renda
 		var rendabaixa15Layer = new MapImageLayer({
 			portalItem: {  
 			  id: "6dc97c6445d24082aa4996143b49a333"
@@ -1154,7 +1176,7 @@
           visible: true,
           visibilityMode: "independent",
           layers: [sociopatentsGroupLayer,formacioGroupLayer, habitatgeGroupLayer, migraGroupLayer, envellimentGroupLayer, 
-			ambest_rvulneGroupLayer, aturGroupLayer, ambest_rendaGroupLayer],
+			ambest_rvulneGroupLayer, aturGroupLayer, ambest_rendaGroupLayer, demoGroupLayer],
           opacity: 1
         });
 		

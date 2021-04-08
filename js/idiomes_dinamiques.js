@@ -105,6 +105,9 @@ var gAmbestsoci;
 var gAmbestrbaix;
 var gAmbestrint;
 var gAmbestralt;
+//Demografia
+var gDemo;
+var lpobla19;
 //Renda
 var lrendab15;
 var lrendab16;
@@ -256,6 +259,9 @@ var lpatents;
 	gIndSocEco= "Indicadors socioecològics";
 	//Dinàmiques Socioeconòmiques
 	gSocio="Indicadors socioeconòmics";
+	//Demografia
+	gDemo="Població total";
+	lpobla19= "2019";
 	//Renda
 	gAmbestrenda= "Renda"
 	gAmbestrbaix= "Renda baixa";
