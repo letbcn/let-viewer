@@ -260,7 +260,7 @@ var lpatents;
 	//Dinàmiques Socioeconòmiques
 	gSocio="Indicadors socioeconòmics";
 	//Demografia
-	gDemo="Població total";
+	gDemo="Població";
 	lpobla19= "2019";
 	//Renda
 	gAmbestrenda= "Renda"
