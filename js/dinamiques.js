@@ -138,49 +138,6 @@
           opacity: 1
 		});
 		
-		//**********Espais protecció ambiental**************/
-		
-		var peinLayer = new MapImageLayer({
-			portalItem: { 
-			  id: "388d5989dda04adfb76e448418ccfee6"
-			},
-			id:"50cde7b5dce14ec79b93c44cd1c6f303",
-			visible: false,
-			title: lpein,
-			listMode: "hide-children"
-		  });
-		  capes.push(peinLayer);
-		  
-		  var xnaturaLayer = new MapImageLayer({
-			portalItem: { 
-			  id: "14d9d9210b094d819c58407117eef3e5"
-			},
-			id:"aa66ecbfb48842f9bc9b29ffe5e3a6ae",
-			visible: false,
-			title: lxnatura,
-			listMode: "hide-children"
-		  });
-		  capes.push(xnaturaLayer);
-		  
-		  var enpeLayer = new MapImageLayer({
-			portalItem: { 
-			  id: "1193889d142f4fbfba681c2e59d95ff4"
-			},
-			id:"aaa4b25c28c64b8e909ae1ff976bc7b6",
-			visible: false,
-			title: lenpe,
-			listMode: "hide-children"
-		  });
-		  capes.push(enpeLayer);
-  
-		  var proteccioGroupLayer = new GroupLayer({
-			  title: gProtecc,
-			  visible: true,
-			  visibilityMode: "independent",
-			  layers: [enpeLayer,xnaturaLayer,peinLayer],
-			  opacity: 1
-			});
-	
 		
 		//**********Clima***********//
 		//anomalies precipitació
@@ -612,8 +569,104 @@
 			opacity: 1
 		  });
 
-		  //Riscos territorials
+		  //Consum aigüa
 
+		  var aigua06Layer = new MapImageLayer({
+			portalItem: {  
+			  id: ""
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: laigua06,
+			listMode: "hide-children"
+		  });
+		  capes.push(aigua06Layer);
+
+		  var consumAiguaGroupLayer = new GroupLayer({
+			title: gConaigua,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [aigua06Layer],
+			opacity: 1
+		  });
+
+
+		  //Consum energia	 
+		 
+		  var energ11Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "7e5c96c9674e442d89414df6e9baac15"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lenerg11,
+			listMode: "hide-children"
+		  });
+		  capes.push(energ11Layer);
+		  
+		  var energ12Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "ef7c39e7a977499a87e3d1c8e1ebbeb6"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lenerg12,
+			listMode: "hide-children"
+		  });
+		  capes.push(energ12Layer);
+		 
+		  var energ13Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "3697a88053574abab246d1ec96d3b137"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lenerg13,
+			listMode: "hide-children"
+		  });
+		  capes.push(energ13Layer); 
+		 
+		  var energ14Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "fe9179dd88304d46a5a08a26ac69a9ff"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lenerg14,
+			listMode: "hide-children"
+		  });
+		  capes.push(energ14Layer);
+		 
+		  var energ15Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "c7836456662b475199c809a42b96996c"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lenerg15,
+			listMode: "hide-children"
+		  });
+		  capes.push(energ15Layer);
+
+		  var consumEnergGroupLayer = new GroupLayer({
+			title: gConenerg,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [energ15Layer,energ14Layer, energ13Layer, energ12Layer, energ11Layer],
+			opacity: 1
+		  });
+
+		  var sostenibilitatGroupLayer = new GroupLayer({
+			title: gSostUrb,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [ consumEnergGroupLayer, consumAiguaGroupLayer],
+			opacity: 1
+		  });
+
+		  
+
+		  //Riscos territorials
 		var incendisLayer = new MapImageLayer({
 			portalItem: {  
 			  id: "0f08c9232808457fa2bc3e0c385fd9b6"
@@ -678,7 +731,7 @@
 			title: gIndSocEco,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [riscGroupLayer, contmGroupLayer, ecoGroupLayer, biodivGroupLayer, estructuraGroupLayer, variarbratGroupLayer, ndviGroupLayer, 
+			layers: [riscGroupLayer, sostenibilitatGroupLayer, contmGroupLayer, ecoGroupLayer, biodivGroupLayer, estructuraGroupLayer, variarbratGroupLayer, ndviGroupLayer, 
 				usosGroupLayer, climaGroupLayer],
 			opacity: 1
 		  });
@@ -808,6 +861,59 @@
 			opacity: 1
 		  });
 
+		  var ambest_rendaGroupLayer = new GroupLayer({
+			title: gAmbestrenda,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [ambest_raltGroupLayer, ambest_rintGroupLayer, ambest_rbaixaGroupLayer],
+			opacity: 1
+		  });
+
+		  //Atur
+
+		  var atur17Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "bf4cde5b54214c8093658e6f7701b293"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: latur17,
+			listMode: "hide-children"
+		  });
+		  capes.push(atur17Layer);
+
+		  var atur18Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "bf4cde5b54214c8093658e6f7701b293"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: latur18,
+			listMode: "hide-children"
+		  });
+		  capes.push(atur18Layer);
+
+		  var atur19Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "bf4cde5b54214c8093658e6f7701b293"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: latur19,
+			listMode: "hide-children"
+		  });
+		  capes.push(atur19Layer);
+
+
+		  var aturGroupLayer = new GroupLayer({
+			title: gAtur,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [atur19Layer, atur18Layer, atur17Layer],
+			opacity: 1
+		  });
+
+		  //Index vulnerabilitat
 
 		  var vulne15Layer = new MapImageLayer({
 			portalItem: {  
@@ -847,6 +953,38 @@
 			visible: true,
 			visibilityMode: "independent",
 			layers: [vulne17Layer, vulne16Layer, vulne15Layer],
+			opacity: 1
+		  });
+
+		  //Envelliment
+
+		  var enve18Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "e25a05976efd47828e27c2b8635de459"
+			},
+			id:'', //modificar
+			visible: false,
+			title: lenve18,
+			listMode: "hide-children"
+		  });
+		  capes.push(enve18Layer);
+
+		  var enve19Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "aaee11c680f44a60bd4d06155e2ad976"
+			},
+			id:'', //modificar
+			visible: false,
+			title: lenve19,
+			listMode: "hide-children"
+		  });
+		  capes.push(enve19Layer);
+
+		  var index_enveGroupLayer = new GroupLayer({
+			title: gAIndexEnve,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [enve19Layer, enve18Layer],
 			opacity: 1
 		  });
 
@@ -891,6 +1029,15 @@
 			opacity: 1
 		  });
 
+		  var envellimentGroupLayer = new GroupLayer({
+			title: gEnvelliment,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [ambest_majorsGroupLayer, index_enveGroupLayer],
+			opacity: 1
+		  });
+
+		//Estrangers
 		  var estrang15Layer = new MapImageLayer({
 			portalItem: {  
 			  id: "b5f9bbde0d8348a4b3b766f67e2e0be3"
@@ -932,6 +1079,48 @@
 			opacity: 1
 		  });
 
+		  //Habitatges
+		  var esforçhabit18Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "736553aabf154e06913692394d414b69"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lesfhabit18,
+			listMode: "hide-children"
+		  });
+		  capes.push(esforçhabit18Layer);
+
+			var habitatgeGroupLayer = new GroupLayer({
+			title: gHabitatge,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [esforçhabit18Layer],
+			opacity: 1
+		  });
+
+		  //Formació
+		  var formacio18Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "736553aabf154e06913692394d414b69"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lforma18,
+			listMode: "hide-children"
+		  });
+		  capes.push(formacio18Layer);
+
+			var formacioGroupLayer = new GroupLayer({
+			title: gForma,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [formacio18Layer],
+			opacity: 1
+		  });
+
+
+		  //Patents
 		  var patentsLayer = new MapImageLayer({
 			portalItem: {  
 			  id: "736553aabf154e06913692394d414b69"
@@ -956,49 +1145,17 @@
           title: gSocio,
           visible: true,
           visibilityMode: "independent",
-          layers: [sociopatentsGroupLayer, ambest_estrangGroupLayer, ambest_majorsGroupLayer, 
-			ambest_rvulneGroupLayer, ambest_raltGroupLayer, ambest_rintGroupLayer, ambest_rbaixaGroupLayer],
+          layers: [sociopatentsGroupLayer,formacioGroupLayer, habitatgeGroupLayer, ambest_estrangGroupLayer, envellimentGroupLayer, 
+			ambest_rvulneGroupLayer, aturGroupLayer, ambest_rendaGroupLayer],
           opacity: 1
         });
 		
-		//Indicadors territorials
-
-		var poligonsLayer = new MapImageLayer({
-			portalItem: {  
-			  id: "bf87263bae8f4463be88812065780ec3"
-			},
-			id:'d36cd02e881c4f53a5b963e5bb2adc31', 
-			visible: false,
-			title: lpoligons,
-			listMode: "hide-children"
-		  });
-		  capes.push(poligonsLayer);
-
-		  var teixitsLayer = new MapImageLayer({
-			portalItem: {  
-			  id: "a0d62d94dfba4e17b12dd8616b9ce2b0"
-			},
-			id:'91d47bc8f0514fc1a7486498ba4c8a6c', 
-			visible: false,
-			title: lteixits,
-			listMode: "hide-children"
-		  });
-		  capes.push(teixitsLayer);
-
-		  var indicadorsterrGroupLayer = new GroupLayer({
-			title: gTerritori,
-			visible: true,
-			visibilityMode: "independent",
-			layers: [teixitsLayer, poligonsLayer],
-			opacity: 1
-		  });
-
-
+	
         // Create a map and add the group layer to it
 
        map = new Map({
           basemap: "topo",
-		 layers: [indicadorsterrGroupLayer, socioGroupLayer,indsocioecoGroupLayer,proteccioGroupLayer,limitsGroupLayer,regionsGroupLayer]
+		 layers: [socioGroupLayer,indsocioecoGroupLayer, regionsGroupLayer, limitsGroupLayer]
         });
 		
 		
@@ -1156,12 +1313,13 @@
 			
           });
 
-		  var bgExpand = new Expand({
+		  //Expand del layerlist a la part superior dreta
+		 /* var bgExpand = new Expand({
 			view: view,
 			content: layerList
 		  });
 
-		  view.ui.add(bgExpand, "top-right");
+		  view.ui.add(bgExpand, "top-right");*/
 
           // Event listener that fires each time an action is triggered
 
@@ -1273,7 +1431,7 @@
         });
         view.ui.add(homeBtn, "top-left");
 
-      /*  // Add the expand instance to the ui
+        // Add the expand instance to the ui
 		var element = document.createElement('div');
         element.className = "esri-icon-left-arrow esri-widget--button esri-widget esri-interactive";
         element.addEventListener('click', function(evt){
@@ -1285,7 +1443,7 @@
 		  this.classList.toggle("esri-icon-right-arrow");
         })
         view.ui.add(element, "top-left");
-*/
+
 		//cerca
 		var searchExpand = new Expand({
 			view: view,
@@ -1422,13 +1580,13 @@
         const bkExpand = new Expand({
           view: view,
           content: bookmarks,
-          expanded: false,
+          expanded: true,
 		  expandTooltip:fObrebookmarks,
 		  collapseTooltip:fTanca
         });
 
         // Add the widget to the bottom-right corner of the view
-        view.ui.add(bkExpand, "top-right");
+        view.ui.add(bkExpand, "bottom-right");
 		
 		bookmarks.on("select-bookmark", function(event){
 			bkExpand.expanded = false;
@@ -1452,7 +1610,7 @@
 	
 
 		//AFEGIR BOTÓ AJUDA
-		const instructionsExpand = new Expand({
+	/*	const instructionsExpand = new Expand({
           expandIconClass: "esri-icon-description",
           expandTooltip: tooltipInfo,
           view: view,
@@ -1461,7 +1619,7 @@
   
             
         });
-        view.ui.add(instructionsExpand, "top-left");
+        view.ui.add(instructionsExpand, "top-left");*/
         // Close the 'help' popup when view is focused
         view.watch("focused", function(isFocused) {
           if (isFocused) {

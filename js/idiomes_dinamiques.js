@@ -74,6 +74,18 @@ var lecorius13;
 var gEcosub;
 var lecosub07;
 var lecosub13;
+//Consum aigua
+var gConaigua;
+var laigua06;
+//Sostenibilitat urbana
+var gSostUrb;
+//Consum energia
+var gConenerg;
+var lenerg11;
+var lenerg12;
+var lenerg13;
+var lenerg14;
+var lenerg15;
 //Riscos territorials
 var gRisc;
 var lincend;
@@ -93,10 +105,7 @@ var gAmbestsoci;
 var gAmbestrbaix;
 var gAmbestrint;
 var gAmbestralt;
-var gAmbestvulne;
-var gAmbestmajors;
-var gAmbestestrang;
-var gSociopatents;
+//Renda
 var lrendab15;
 var lrendab16;
 var lrendab17;
@@ -106,25 +115,40 @@ var lrendai17;
 var lrendaa15;
 var lrendaa16;
 var lrendaa17;
+//Formacio
+var gForma;
+var lforma18;
+//Atur
+var gAtur;
+var latur17;
+var latur18;
+var latur19;
+//Index vulnerabilitat
+var gAmbestvulne;
 var lvulne15;
 var lvulne16;
 var lvulne17;
+//Envelliment
+var gEnvelliment;
+var gAIndexEnve;
+var lenve18;
+var lenve19;
+var gAmbestmajors;
 var lmajors15;
 var lmajors16;
 var lmajors17;
+//Habitatge
+var gHabitatge;
+var lesfhabit18;
+//Estrangers
+var gAmbestestrang;
 var lest15;
 var lest16;
 var lest17;
-var lpobresa;
-var lformacio;
 var latur;
-var lestath;
-var laccesh;
+//Patents
+var gSociopatents;
 var lpatents;
-//Indicadors territorials
-var gTerritori;
-var lpoligons;
-var lteixits;
 
   if (document.documentElement.lang=='ca'){
   //CONTINGUT Info
@@ -204,6 +228,18 @@ var lteixits;
 	gEcosub= "Aigües subterrànies";
 	lecosub07= "2007-2012";
 	lecosub13= "2013-2017";
+	//Consum aigua
+	gConaigua= "Consum aigüa";
+	laigua06= "2006";
+	//Consum energia
+	gConenerg= "Consum d'energia";
+	lenerg11= "2011";
+	lenerg12= "2012";
+	lenerg13= "2013";
+	lenerg14= "2014";
+	lenerg15= "2015";
+	//Sostenibilitat urbana
+	gSostUrb= "Sostenibilitat urbana";
 	//Riscos territorials
 	gRisc= "Riscos territorials";
 	gInund= "Inundabilitat"
@@ -219,15 +255,11 @@ var lteixits;
 	gIndSocEco= "Indicadors socioecològics";
 	//Dinàmiques Socioeconòmiques
 	gSocio="Indicadors socioeconòmics";
-	gAmbsoci= "Àrea Metropolitana (AMB)";
-	gAmbestsoci= "Àmbits estadístics metropolitans"; 
+	//Renda
+	gAmbestrenda= "Renda"
 	gAmbestrbaix= "Renda baixa";
 	gAmbestrint= "Renda intermèdia";
 	gAmbestralt= "Renda alta";
-	gAmbestvulne= "Índex vulnerabilitat urbana";
-	gAmbestmajors= "Població major 75 anys sola";
-	gAmbestestrang="Estrangers de països en desenvolupament"
-	gSociopatents= "Patents europees";
 	lrendab15= "2015";
 	lrendab16= "2016";
 	lrendab17= "2017";
@@ -237,19 +269,38 @@ var lteixits;
 	lrendaa15="2015";
 	lrendaa16="2016";
 	lrendaa17="2017";
+	//Formacio
+	gForma= "Formació";
+	lforma18= "2018";
+	//Atur
+ 	gAtur= "Atur";
+	latur17="2017";
+	latur18= "2018";
+	latur19= "2019";
+	//Index vulnerabilitat
+	gAmbestvulne= "Índex vulnerabilitat urbana";
 	lvulne15= "2015";
 	lvulne16= "2016";
 	lvulne17= "2017";
+	//Envelliment
+	gEnvelliment= "Envelliment";
+	gAIndexEnve="Índex d'Envelliment";
+	lenve18= "2018";
+	lenve19= "2019";
+	gAmbestmajors= "Població major 75 anys sola";
 	lmajors15= "2015";
 	lmajors16= "2016";
 	lmajors17= "2017";
+	//Habitatge
+	gHabitatge="Habitatge";
+	lesfhabit18="2018";
+	//Estrangers
+	gAmbestestrang="Estrangers de països en desenvolupament";
 	lest15="2015";
 	lest16="2016";
 	lest17="2017";
-	//Indicadors territorials
-	gTerritori= "Indicadors territorials";
-	lpoligons= "Poligons industrials";
-	lteixits="Tipologia teixits urbans";
+	//Patents
+	gSociopatents= "Patents europees";
 	
   } else if (document.documentElement.lang=='es') {
    //CONTINGUT Info
