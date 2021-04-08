@@ -1037,7 +1037,7 @@
 			opacity: 1
 		  });
 
-		//Estrangers
+		//Moviments migratoris
 		  var estrang15Layer = new MapImageLayer({
 			portalItem: {  
 			  id: "b5f9bbde0d8348a4b3b766f67e2e0be3"
@@ -1076,6 +1076,14 @@
 			visible: true,
 			visibilityMode: "independent",
 			layers: [estrang17Layer, estrang16Layer, estrang15Layer],
+			opacity: 1
+		  });
+
+		  var migraGroupLayer = new GroupLayer({
+			title: gMigra,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [ambest_estrangGroupLayer],
 			opacity: 1
 		  });
 
@@ -1145,7 +1153,7 @@
           title: gSocio,
           visible: true,
           visibilityMode: "independent",
-          layers: [sociopatentsGroupLayer,formacioGroupLayer, habitatgeGroupLayer, ambest_estrangGroupLayer, envellimentGroupLayer, 
+          layers: [sociopatentsGroupLayer,formacioGroupLayer, habitatgeGroupLayer, migraGroupLayer, envellimentGroupLayer, 
 			ambest_rvulneGroupLayer, aturGroupLayer, ambest_rendaGroupLayer],
           opacity: 1
         });

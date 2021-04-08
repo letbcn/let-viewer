@@ -141,6 +141,7 @@ var lmajors17;
 var gHabitatge;
 var lesfhabit18;
 //Estrangers
+var gMigra;
 var gAmbestestrang;
 var lest15;
 var lest16;
@@ -295,6 +296,7 @@ var lpatents;
 	gHabitatge="Habitatge";
 	lesfhabit18="2018";
 	//Estrangers
+	gMigra= "Migracions";
 	gAmbestestrang="Estrangers de països en desenvolupament";
 	lest15="2015";
 	lest16="2016";
