@@ -1200,6 +1200,10 @@
           map: map
         });
 		let layerView;
+
+		view.surface.addEventListener("wheel", function(event) {   
+			event.stopImmediatePropagation();  
+		}, true);
         
         
 		/*const TimeSlider1 = new TimeSlider({
