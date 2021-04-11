@@ -740,22 +740,52 @@
 
 		//Demografia
 
-		var poblacio19Layer = new MapImageLayer({
+		var poblacio15Layer = new MapImageLayer({
 			portalItem: {  
-			  id: "6dc97c6445d24082aa4996143b49a333"
+			  id: "b7eb8a73c9ec41b895cb92cbc2004e8e"
 			},
 			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
 			visible: false,
-			title: lpobla19,
+			title: lpobla15,
 			listMode: "hide-children"
 		  });
-		  capes.push(poblacio19Layer);
+		  capes.push(poblacio15Layer);
+		
+		var poblacio20Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "9bb5c44018ed4fb48877f80cf4c67787"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lpobla20,
+			listMode: "hide-children"
+		  });
+		  capes.push(poblacio20Layer);
+
+		  var densitat15Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "555d8b1013cb4323923fe0bdaecd1293"
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: ldensitat15,
+			listMode: "hide-children"
+		  });
+		  capes.push(densitat15Layer);
+
+		  var densiGroupLayer = new GroupLayer({
+			title: gDensig,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [densitat15Layer],
+			opacity: 1
+		  });
 
 		  var demoGroupLayer = new GroupLayer({
 			title: gDemo,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [ poblacio19Layer],
+			layers: [densiGroupLayer, poblacio20Layer, poblacio15Layer],
 			opacity: 1
 		  });
 		  
@@ -1060,6 +1090,26 @@
 		  });
 
 		//Moviments migratoris
+
+		var migrants20Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "ff1d17ed5c2f4b09b1c0374ab9d57602"
+			},
+			id:'', //modificar
+			visible: false,
+			title: lmigra20,
+			listMode: "hide-children"
+		  });
+		  capes.push(migrants20Layer);
+
+		  var inmigracioGroupLayer = new GroupLayer({
+			title: gMigrants,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [migrants20Layer],
+			opacity: 1
+		  });
+
 		  var estrang15Layer = new MapImageLayer({
 			portalItem: {  
 			  id: "b5f9bbde0d8348a4b3b766f67e2e0be3"
@@ -1105,7 +1155,7 @@
 			title: gMigra,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [ambest_estrangGroupLayer],
+			layers: [ambest_estrangGroupLayer, inmigracioGroupLayer],
 			opacity: 1
 		  });
 
@@ -1199,9 +1249,11 @@
           container: "viewDiv",
           map: map
         });
-		let layerView;
+		
         
-        
+        view.surface.addEventListener("wheel", function (event) {
+			event.stopImmediatePropagation();
+		}, true);
 		/*const TimeSlider1 = new TimeSlider({
 			container: "sliderDiv",
 			
@@ -1343,14 +1395,7 @@
 			
           });
 
-		  //Expand del layerlist a la part superior dreta
-		 /* var bgExpand = new Expand({
-			view: view,
-			content: layerList
-		  });
-
-		  view.ui.add(bgExpand, "top-right");*/
-
+		  
           // Event listener that fires each time an action is triggered
 
           layerList.on("trigger-action", function(event) {
@@ -1461,6 +1506,7 @@
         });
         view.ui.add(homeBtn, "top-left");
 
+		
         // Add the expand instance to the ui
 		var element = document.createElement('div');
         element.className = "esri-icon-left-arrow esri-widget--button esri-widget esri-interactive";
@@ -1472,8 +1518,9 @@
 		  this.classList.toggle("esri-icon-left-arrow");
 		  this.classList.toggle("esri-icon-right-arrow");
         })
-        view.ui.add(element, "top-left");
+        view.ui.add(element, "top-left"); 
 
+		
 		//cerca
 		var searchExpand = new Expand({
 			view: view,
@@ -1828,6 +1875,9 @@
 
 //FI IDENTIFY
       
+	
+
+
       function distanceMeasurement() {
           const type = view.type;
           measurement.activeTool =
