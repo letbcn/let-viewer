@@ -197,7 +197,7 @@ var laccesh;
 	fCerca="Cerca";
 	fObregaleria="Galeria de mapes base";
 	fTanca="Tanca";
-	fObrebookmarks="Obre selector d'Ambits";
+	fObrebookmarks="Selector d'Ambits";
 	fMesures="Mesures";
 	//CAPES
 	capes= "Capes";
@@ -212,7 +212,7 @@ var laccesh;
 	lenpe="Espais naturals de protecció especial (ENPE)";
 	//cartografia de base
 	gCartob= "Cartografia de base";
-	ltopo25="Topogràfic 1:25.000 (RMB)";
+	ltopo25="Topogràfic 1:25.000";
 	gTopo25="Topogràfic";
 	lsupurb="Superfície urbanitzada 1:25.000",
 	lvies="Vies de comunicació 1:25.000",
@@ -221,11 +221,11 @@ var laccesh;
 	//Imatges aèries
 	gImg= "Imatges aèries";
 	gActuals="Actual";
-	lorto25m="Ortofoto de Catalunya 1:25.000 (RMB)";
-	lorto5m="Ortofoto de Catalunya 1:5.000 (RMB)";
-	lorto25c="Ortofoto de Catalunya 1:2.500 (RMB)";
-	lorto10c="Ortofoto de Catalunya 1:1.000 (RMB)";
-	lsat250m="Imatge satèl·lit de Catalunya 1:250.000 (RMB)";
+	lorto25m="Ortofoto de Catalunya 1:25.000";
+	lorto5m="Ortofoto de Catalunya 1:5.000";
+	lorto25c="Ortofoto de Catalunya 1:2.500";
+	lorto10c="Ortofoto de Catalunya 1:1.000";
+	lsat250m="Imatge satèl·lit de Catalunya 1:250.000";
 	gHistoric="Històric";
 	lorto10m45="Ortofoto de Catalunya 1:10.000 1945";
 	lorto5m56="Ortofoto de Catalunya 1:5.000 1956";
@@ -240,14 +240,14 @@ var laccesh;
 	lorto5m18="Ortofoto de Catalunya 1:5.000 2018";
 	//Topografia
 	gTopo= "Topografia";
-	lmde="Model Digital d'Elevacions (RMB)";
-	lpendent="Pendent (RMB)";
-	lorient="Orientació (RMB)";
+	lmde="Model Digital d'Elevacions";
+	lpendent="Pendent";
+	lorient="Orientació";
 	//Geologia
 	gGeo= "Geologia";
-	lgeolo="Geològic 1:50.000 (RMB)";
-	ledafo="Edafològic (WRB) 1:250.000 (RMB)";
-	lsoil="Edafològic (ST) 1:250.000 (RMB)";
+	lgeolo="Geològic 1:50.000";
+	ledafo="Edafològic (WRB) 1:250.000";
+	lsoil="Edafològic (ST) 1:250.000";
 	//Hidrologia
 	gHidro= "Hidrologia";
 	lHidrogeo="Hidrogeològic 1:250.000";
@@ -255,9 +255,9 @@ var laccesh;
 	lAqupro="Aqüífers protegits";
 	gConques="Conques";
 	lXarxa0="Xarxa hidrogràfica principal 1:50.000";
-	lXarxahidro="Xarxa hidrogràfica (RMB)";
-	lCanals="Xarxa de conduccions i canalitzacions (RMB)";
-	lConques="Conques elementals de Catalunya 1:50.000 (RMB)";
+	lXarxahidro="Xarxa hidrogràfica";
+	lCanals="Xarxa de conduccions i canalitzacions";
+	lConques="Conques elementals de Catalunya 1:50.000";
 	//Clima
 	gClima= "Clima";
 	lRadiacio="Radiació solar potencial";
@@ -310,11 +310,11 @@ var laccesh;
 	//Vectors ambientals
 	gAmbientals= "Vectors ambientals";
 	gEstatAigua="Estat de les masses d'aigua";
-	lEscostaneres="Estat aigües costaneres";
-	lEsembass="Estat dels embassaments";
+	lEscostaneres="Aigües costaneres";
+	lEsembass="Embassaments";
 	lEsrius="Estat ecològic dels rius";
 	lEssubt="Estat ecològic aigües subterrànies";
-	lEshumides="Estat zones humides";
+	lEshumides="Zones humides";
 	//Riscos territorials
 	gRiscos= "Riscos territorials";	
 	gIncendis="Incendis forestals";
@@ -328,7 +328,7 @@ var laccesh;
 	lretorn100="Zona inundable retorn 100 anys";
 	lretorn500="Zona inundable retorn 500 anys";
 	//Dinàmiques Socioeconòmiques
-	gSocio="Dinàmiques socioeconòmiques";
+	gSocio="Dades socioeconòmiques";
 	gAmbsoci= "Àrea Metropolitana (AMB)";
 	gAmbestsoci= "Àmbits estadístics metropolitans"; 
 	gAmbestrbaix= "Renda baixa";
@@ -399,26 +399,25 @@ var laccesh;
 	gCartob= "Cartografía de base";
 	ltopo25="Topográfico 1:25.000 (RMB)";
 	gTopo25="Topográfico";
-	lsupurb="Superficie urbanizada 1:25.000 (RMB)",
-	lvies="Vías de comunicación 1:25.000 (RMB)",
-	lalti="Altimetría 1:25.000 (RMB)",
-	lveget="Vegetación 1:25.000 (RMB)",
+	lsupurb="Superficie urbanizada 1:25.000",
+	lvies="Vías de comunicación 1:25.000",
+	lveget="Vegetación 1:25.000",
 	//Imatges aèries
 	gImg= "Imágenes aérias";
 	gActuals="Actual";
-	lorto25m="Ortofoto de Cataluña 1:25.000 (RMB)";
-	lorto5m="Ortofoto de Cataluña 1:5.000 (RMB)";
-	lorto25c="Ortofoto de Cataluña 1:2.500 (RMB)";
-	lorto10c="Ortofoto de Cataluña 1:1.000 (RMB)";
-	lsat250m="Imagen satélite de Cataluña 1:250.000 (RMB)";
+	lorto25m="Ortofoto de Cataluña 1:25.000";
+	lorto5m="Ortofoto de Cataluña 1:5.000";
+	lorto25c="Ortofoto de Cataluña 1:2.500";
+	lorto10c="Ortofoto de Cataluña 1:1.000";
+	lsat250m="Imagen satélite de Cataluña 1:250.000";
 	gHistoric="Histórico";
 	lorto10m45="Ortofoto de Cataluña 1:10.000 1945";
-	lorto5m56="Ortofoto de Cataluña 1:5.000 1956 (RMB)";
-	lorto5m87="Ortofoto de Cataluña 1:5.000 1987 (RMB)";
-	lorto5m94="Ortofoto de Cataluña 1:5.000 1994 (RMB)";
-	lorto5m00="Ortofoto de Cataluña 1:5.000 2000 (RMB)";
+	lorto5m56="Ortofoto de Cataluña 1:5.000 1956";
+	lorto5m87="Ortofoto de Cataluña 1:5.000 1987";
+	lorto5m94="Ortofoto de Cataluña 1:5.000 1994";
+	lorto5m00="Ortofoto de Cataluña 1:5.000 2000";
 	lorto5m04="Ortofoto de Cataluña 1:5.000 2004";
-	lorto5m06="Ortofoto de Cataluña 1:5.000 2005 (RMB)";
+	lorto5m06="Ortofoto de Cataluña 1:5.000 2006";
 	lorto5m09="Ortofoto de Cataluña 1:5.000 2009 (RMB)";
 	lorto5m12="Ortofoto de Cataluña 1:5.000 2012 (RMB)";
 	lorto5m15="Ortofoto de Cataluña 1:5.000 2015 (RMB)";
