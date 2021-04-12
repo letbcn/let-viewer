@@ -2,22 +2,9 @@ require([
       "esri/Map",
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
-      "esri/layers/MapImageLayer",
-      "esri/widgets/Legend",
-      "esri/core/watchUtils",
-      "esri/widgets/Expand",
-      "esri/widgets/Home",
-      "esri/layers/WMSLayer",
-      "esri/config",
-      "esri/layers/support/Field",
-      "esri/tasks/support/Query",
-      "esri/tasks/QueryTask",
-      "dojo/dom",
-      "dojo/dom-construct",
-      "dojo/dom-attr",
-      "esri/tasks/support/StatisticDefinition",
+      "esri/widgets/Zoom"
 ],
-      function (Map, MapView, FeatureLayer, MapImageLayer, Legend, watchUtils, Expand, Home, WMSLayer, esriConfig, Field, Query, QueryTask, Chart, dom, domConstruct, domAttr, StatisticDefinition) {
+      function (Map, MapView, FeatureLayer, Zoom) {
 
             //configuració portal
             //esriConfig.portalUrl = "https://uab.maps.arcgis.com";
@@ -42,27 +29,7 @@ require([
 
             var layer = new FeatureLayer({
                   url: "https://openlab.uab.cat:6443/arcgis/rest/services/colaboradors_let/FeatureServer/0",
-                  outFields: ["country", "institutio", "num"],
-                  renderer: sym,
-                  popupTemplate: {
-                        title: "{conutry}, {num}",
-                        content: "{institutio}"
-                  }
-                  /*
-                  renderer: {
-                        type: "class-breaks",
-                        field: "a1a_c_0",
-                        legendOptions: {
-                              title: "Eficiència energètica (EFEROI)"
-                        },
-                        defaultSymbol: {
-                              type: "simple-fill",
-                              style: "none",
-                              outline: {
-                                    width: 0
-                              }
-                        }
-                  }*/
+                  renderer: sym
             });
 
             const map = new Map({
@@ -74,9 +41,16 @@ require([
                   container: "viewDiv",
                   map: map,
                   center: defaultPosition,
-                  zoom: 5
+                  zoom: 3,
+                  constraints: {
+                        minZoom: 3,
+                        maxZoom: 7
+                  }
             });
 
-            //view.ui._removeComponents(["attribution"]);
+            var zoom = new Zoom({
+                  view: view
+            });
 
+            view.ui.add(zoom, "top-left");
       });
