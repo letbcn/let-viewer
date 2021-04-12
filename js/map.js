@@ -1807,8 +1807,6 @@
 
 		layerList.on("trigger-action", function (event) {
 
-
-
 			var activeLayer = event.item.layer;
 
 			// Capture the action id.
