@@ -145,6 +145,9 @@ var lmajors16;
 var lmajors17;
 //Habitatge
 var gHabitatge;
+var gDemandhabitatge;
+var ldehabit19;
+var ldehabit20;
 var lesfhabit18;
 //Estrangers
 var gMigra;
@@ -308,6 +311,9 @@ var lpatents;
 	lmajors17= "2017";
 	//Habitatge
 	gHabitatge="Habitatge";
+	gDemandhabitatge="Demanda d'habitatge";
+	ldehabit19= "2019";
+	ldehabit20= "2020";
 	lesfhabit18="2018";
 	//Estrangers
 	gMigra= "Migracions";
@@ -318,7 +324,9 @@ var lpatents;
 	lest16="2016";
 	lest17="2017";
 	//Patents
-	gSociopatents= "Patents europees";
+	gSociopatents= "Innovació";
+	lpatents= "Patents europees";
+
 	
   } else if (document.documentElement.lang=='es') {
    //CONTINGUT Info
