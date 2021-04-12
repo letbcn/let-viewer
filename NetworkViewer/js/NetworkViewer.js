@@ -22,14 +22,47 @@ require([
                               width: 0.5,
                               color: "black"
                         }
+                  },
+                  popupTemplate: {
+                        title: "Hola",
+                        /*content: "{state_name}"*/
                   }
             };
 
             const defaultPosition = [2.13, 41.40];
 
+            var popupInfo = {
+                  title: "{country}",
+                  content:
+                        "Institut: {institutio}"
+            };
+
             var layer = new FeatureLayer({
                   url: "https://openlab.uab.cat:6443/arcgis/rest/services/colaboradors_let/FeatureServer/0",
-                  renderer: sym
+                  renderer: sym,
+                  outFields: ["*"],
+                  popupTemplate: popupInfo,
+                  visualVariables: [
+                        {
+                              type: "size",
+                              field: "num",
+                              normalizationField: "num",
+                              stops: [
+                                    {
+                                          value: 5,
+                                          size: 12
+                                    },
+                                    {
+                                          value: 15,
+                                          size: 15
+                                    },
+                                    {
+                                          value: 30,
+                                          size: 18
+                                    }
+                              ]
+                        }
+                  ]
             });
 
             const map = new Map({
@@ -47,10 +80,4 @@ require([
                         maxZoom: 7
                   }
             });
-
-            var zoom = new Zoom({
-                  view: view
-            });
-
-            view.ui.add(zoom, "top-left");
       });
