@@ -107,7 +107,10 @@ var gAmbestrint;
 var gAmbestralt;
 //Demografia
 var gDemo;
-var lpobla19;
+var gDensig;
+var lpobla15;
+var lpobla20;
+var ldensitat15;
 //Renda
 var lrendab15;
 var lrendab16;
@@ -145,6 +148,8 @@ var gHabitatge;
 var lesfhabit18;
 //Estrangers
 var gMigra;
+var gMigrants;
+var lmigra20;
 var gAmbestestrang;
 var lest15;
 var lest16;
@@ -261,7 +266,10 @@ var lpatents;
 	gSocio="Indicadors socioeconòmics";
 	//Demografia
 	gDemo="Població";
-	lpobla19= "2019";
+	gDensig= "Densitat";
+	lpobla15= "2015";
+	lpobla20= "2020";
+	ldensitat15= "2015";
 	//Renda
 	gAmbestrenda= "Renda"
 	gAmbestrbaix= "Renda baixa";
@@ -303,6 +311,8 @@ var lpatents;
 	lesfhabit18="2018";
 	//Estrangers
 	gMigra= "Migracions";
+	gMigrants= "Població estrangera";
+	lmigra20= "2020";
 	gAmbestestrang="Estrangers de països en desenvolupament";
 	lest15="2015";
 	lest16="2016";
