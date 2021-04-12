@@ -396,6 +396,19 @@ select{
 	 view2.ui.add(bgExpand2, "bottom-right");
 	 view3.ui.add(bgExpand3, "bottom-right");
 	 view4.ui.add(bgExpand4, "bottom-right");
+
+   view1.surface.addEventListener("wheel", function(event) {   
+      event.stopImmediatePropagation();  
+  }, true);
+  view2.surface.addEventListener("wheel", function(event) {   
+      event.stopImmediatePropagation();  
+  }, true);
+  view3.surface.addEventListener("wheel", function(event) {   
+      event.stopImmediatePropagation();  
+  }, true);
+  view4.surface.addEventListener("wheel", function(event) {   
+      event.stopImmediatePropagation();  
+  }, true);
 	
 	 function createPopup1(event,graphic) {
     grafic1= dadesAny(document.getElementById("field-select-us1").value,event);

@@ -1249,8 +1249,7 @@
           container: "viewDiv",
           map: map
         });
-		
-        
+   
         view.surface.addEventListener("wheel", function (event) {
 			event.stopImmediatePropagation();
 		}, true);
