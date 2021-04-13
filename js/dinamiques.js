@@ -794,7 +794,7 @@
 			portalItem: {  
 			  id: "6dc97c6445d24082aa4996143b49a333"
 			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			id:'', //modificar
 			visible: false,
 			title: lrendab15,
 			listMode: "hide-children"
@@ -805,7 +805,7 @@
 			portalItem: {  
 			  id: "88ecb060f60742868f8f29f450fe49ff"
 			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			id:'', //modificar
 			visible: false,
 			title: lrendab16,
 			listMode: "hide-children"
@@ -816,7 +816,7 @@
 			portalItem: {  
 			  id: "16b3bb1ac4f349e8984367e6bb2cedcf"
 			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			id:'', //modificar
 			visible: false,
 			title: lrendab17,
 			listMode: "hide-children"
@@ -827,7 +827,7 @@
 			portalItem: {  
 			  id: "fd8a6a88e957452c9cd0e889c0626023"
 			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			id:'', //modificar
 			visible: false,
 			title: lrendai15,
 			listMode: "hide-children"
@@ -838,7 +838,7 @@
 			portalItem: {  
 			  id: "d5c02f45edef4ab8a66fe5755f7f5ca7"
 			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			id:'', //modificar
 			visible: false,
 			title: lrendai16,
 			listMode: "hide-children"
@@ -849,7 +849,7 @@
 			portalItem: {  
 			  id: "d9b3aaba771c4c8d9c292b350452e7a2"
 			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			id:'', //modificar
 			visible: false,
 			title: lrendai17,
 			listMode: "hide-children"
@@ -860,7 +860,7 @@
 			portalItem: {  
 			  id: "addce5b2838943378d0befdde05de915"
 			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			id:'', //modificar
 			visible: false,
 			title: lrendaa15,
 			listMode: "hide-children"
@@ -871,7 +871,7 @@
 			portalItem: {  
 			  id: "5e69b24c717243f286dabf456dc7473e"
 			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			id:'', //modificar
 			visible: false,
 			title: lrendaa16,
 			listMode: "hide-children"
@@ -1244,15 +1244,16 @@
 
 
 		  //Patents
-		  var patentsLayer = new FeatureLayer({
+		  var patentsLayer = new MapImageLayer({
 			portalItem: {  
-				id: "8b09cca17e9b486785ac9b8c9dd261c8"
+				id: "26d0b5e3c1584c22ba6f706c79b8d149"
 			  },
 			  id:"",
 			  visible: false,
 			  title: "Patents europees",
-			  layerID: 0
+			  listMode: "hide-children"
 			});
+		  capes.push(patentsLayer);
 
 		  var sociopatentsGroupLayer = new GroupLayer({
 			title: gSociopatents,
@@ -1740,16 +1741,17 @@
         });
         view.ui.add(instructionsExpand, "top-left");*/
         // Close the 'help' popup when view is focused
-        view.watch("focused", function(isFocused) {
+      /*  view.watch("focused", function(isFocused) {
           if (isFocused) {
             instructionsExpand.expanded = false;
           }
         });
-		
+		*/
 		
 	
 		 view.when(function() {
 			//MAPA BASE
+			view.on("click", executeIdentifyTask);
 			  document
 				.getElementById("mapabaseInput")
 				.addEventListener("change", updateMapabase);
@@ -1800,7 +1802,7 @@
 			 
 			  
 			  // executeIdentifyTask() is called each time the view is clicked
-			  view.on("click", executeIdentifyTask);
+			
         });
 		
 		
@@ -1850,13 +1852,14 @@
 				  for (var i in feature.attributes) {
 					   if (i != "FID" && i != "layerName" && i != "Shape") contingut += i + "</b>: " +feature.attributes[i]+" <br><b>";
 					}
-					 identifyElements.push(feature);
+					 
 				 feature.popupTemplate = {
 						// autocasts as new PopupTemplate()
 						title: layerName ,
 						content: contingut
 					  };
-
+					  identifyElements.push(feature);
+/*
 				  if (majors15Layer.visible) {
 					  feature.popupTemplate = {
 						// autocasts as new PopupTemplate()
@@ -1890,7 +1893,7 @@
 						};
 						 identifyElements.push(feature);
 					}
-
+*/
 				});
 			  })
 			  showPopup(identifyElements);
