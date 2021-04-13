@@ -6,11 +6,6 @@ require([
     ],
     function(Map, MapView, FeatureLayer, Zoom) {
 
-        //configuració portal
-        //esriConfig.portalUrl = "https://uab.maps.arcgis.com";
-        //esriConfig.request.proxyUrl = "proxy.jsp";
-
-
         const renderer = {
             type: "simple", // autocasts as new SimpleRenderer()
             symbol: {
@@ -46,7 +41,7 @@ require([
 
         var popupInfo = {
             title: "{country}",
-            content: "Institut: {institutio}"
+            content: "Institució: {institutio}"
         };
 
         var layer = new FeatureLayer({
