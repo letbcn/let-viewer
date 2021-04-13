@@ -1159,6 +1159,19 @@
 			opacity: 1
 		  });
 
+		  //Saldo migratorio
+
+		/*  var saldom19Layer = new MapImageLayer({
+			portalItem: {  
+			  id: ""
+			},
+			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			visible: false,
+			title: lsaldomig19,
+			listMode: "hide-children"
+		  });
+		  capes.push(saldom19Layer); */
+
 		  //Habitatges
 		  var esforçhabit18Layer = new MapImageLayer({
 			portalItem: {  
@@ -1171,11 +1184,41 @@
 		  });
 		  capes.push(esforçhabit18Layer);
 
+		  var demandahabit19Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "09d1b9ad8417420e8b55d67f883c4804"
+			},
+			id:'', //modificar
+			visible: false,
+			title: ldehabit19,
+			listMode: "hide-children"
+		  });
+		  capes.push(demandahabit19Layer);
+
+		  var demandahabit20Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "4e810c8fb76e4a9db42e7ae8768a5305"
+			},
+			id:'', //modificar
+			visible: false,
+			title: ldehabit20,
+			listMode: "hide-children"
+		  });
+		  capes.push(demandahabit20Layer);
+
+		  var demandahabGroupLayer = new GroupLayer({
+			title: gDemandhabitatge,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [demandahabit20Layer ],
+			opacity: 1
+		  });
+
 			var habitatgeGroupLayer = new GroupLayer({
 			title: gHabitatge,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [esforçhabit18Layer],
+			layers: [demandahabGroupLayer, esforçhabit18Layer],
 			opacity: 1
 		  });
 
@@ -1201,16 +1244,15 @@
 
 
 		  //Patents
-		  var patentsLayer = new MapImageLayer({
+		  var patentsLayer = new FeatureLayer({
 			portalItem: {  
-			  id: "736553aabf154e06913692394d414b69"
-			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
-			visible: false,
-			title: lpatents,
-			listMode: "hide-children"
-		  });
-		  capes.push(patentsLayer);
+				id: "8b09cca17e9b486785ac9b8c9dd261c8"
+			  },
+			  id:"",
+			  visible: false,
+			  title: "Patents europees",
+			  layerID: 0
+			});
 
 		  var sociopatentsGroupLayer = new GroupLayer({
 			title: gSociopatents,
@@ -1249,7 +1291,8 @@
           container: "viewDiv",
           map: map
         });
-   
+		
+        
         view.surface.addEventListener("wheel", function (event) {
 			event.stopImmediatePropagation();
 		}, true);
