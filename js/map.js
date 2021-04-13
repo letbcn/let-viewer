@@ -1807,8 +1807,6 @@
 
 		layerList.on("trigger-action", function (event) {
 
-
-
 			var activeLayer = event.item.layer;
 
 			// Capture the action id.
@@ -2289,7 +2287,7 @@
 								title: layerName + ": {CODI_CAS}",
 								content: "<b>{cat_niv3}</b>"
 							};
-							identifyElements.push(feature);
+							//identifyElements.push(feature);
 
 						}
 						if (ndvi17Layer.visible) {

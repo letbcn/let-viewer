@@ -242,7 +242,7 @@ var lpatents;
 	lecosub13= "2013-2017";
 	//Consum aigua
 	gConaigua= "Consum aigüa";
-	laigua06= "2006";
+	//laigua06= "2006";
 	//Consum energia
 	gConenerg= "Consum d'energia";
 	lenerg11= "2011";
