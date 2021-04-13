@@ -106,6 +106,15 @@
       z-index: 10;
       opacity: 0.5;
     }
+
+    .loading img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
   </style>
 
   <script>
@@ -832,7 +841,7 @@
 </head>
 
 <body>
-  <div id="loadingDiv" class="loading">Carregant-se... </div>
+  <div id="loadingDiv" class="loading"><img id="loadingImg" src="images/loading.gif" class="loadingImg" /> </div>
   <div id="div1">
     <div id="viewDiv1">
     </div>
