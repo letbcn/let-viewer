@@ -17,17 +17,22 @@ var tCapes;
 var gAmbits;
 //limits administratius
 var gLimits;
+var lcomarca;
+var lmunicipis;
 var lseccions;
-//Limits protecció ambiental
-var gProtecc;
-var lpein;
-var lxnatura;
-var lenpe;
-//Topografia
-var gTopo;
-var lmde;
-var lpendent;
-var lorient;
+//Imatges històriques
+var gHistoric;
+var lorto10m45;
+var lorto5m56;
+var lorto5m86;
+var lorto5m94;
+var lorto5m00;
+var lorto5m04;
+var lorto5m06;
+var lorto5m09;
+var lorto5m12;
+var lorto5m15;
+var lorto5m18;
 //Clima
 var gClima;
 var gAnompp;
@@ -188,12 +193,22 @@ var lpatents;
 	gAmbits="Àmbits";
 	//limits administratius
 	gLimits= "Límits administratius";
-	lseccions ="Seccions Censals"
-	//límits protecció ambiental
-	gProtecc= "Límits protecció ambiental"
-	lpein="Pla d'espais d'interès natural (PEIN)";
-	lxnatura="Xarxa natura 2000";
-	lenpe="Espais naturals de protecció especial (ENPE)";
+	lcomarca= "Comarques";
+	lmunicipis= "Municipis";
+	lseccions ="Seccions Censals";
+	//Imatges històriques
+	gHistoric="Imatges aèries";
+	lorto10m45="Ortofoto 1:10.000 1945";
+	lorto5m56="Ortofoto 1:5.000 1956";
+	lorto5m86="Ortofoto 1:5.000 1986";
+	lorto5m94="Ortofoto 1:5.000 1994";
+	lorto5m00="Ortofoto 1:5.000 2000";
+	lorto5m04="Ortofoto 1:5.000 2004";
+	lorto5m06="Ortofoto 1:5.000 2006";
+	lorto5m09="Ortofoto 1:5.000 2009";
+	lorto5m12="Ortofoto 1:5.000 2012";
+	lorto5m15="Ortofoto 1:5.000 2015";
+	lorto5m18="Ortofoto 1:5.000 2018";
 	//Clima
 	gClima= "Variabilitat climàtica";
 	gAnompp= "Anomalies en precipitació";
@@ -242,7 +257,7 @@ var lpatents;
 	lecosub13= "2013-2017";
 	//Consum aigua
 	gConaigua= "Consum aigüa";
-	//laigua06= "2006";
+	laigua06= "2006";
 	//Consum energia
 	gConenerg= "Consum d'energia";
 	lenerg11= "2011";

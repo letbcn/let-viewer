@@ -98,25 +98,27 @@
 		//**********Limits Administratius ***********//
 		//capes limits
 			
-		var comarquesLayer = new FeatureLayer({
-		  portalItem: {  
-			id: "b1cb0e81815b4557b977d9772dc52289"
-		  },
-		  id:"dff564bae81b4746a1b862a295261149",
-		  visible: false,
-		  title: "Comarques",
-		  layerID: 0
-		});
-
-		var municipisLayer = new FeatureLayer({
-		  portalItem: {  
-			id: "3f51bf9674064661ace82a71da68de78"
-		  },
-		  id:"2b35430f24ca44f9806026d89a8c647c",
-		  visible: true,
-		  title: "Municipis",
-		  layerID: 0
-		});
+		var comarquesLayer = new MapImageLayer({
+			portalItem: {
+				id: "b628d29242aa4591b986a4c293f8edda"
+			},
+			id: "",
+			visible: false,
+			title: lcomarca,
+			listMode: "hide-children"
+			});
+			capes.push(comarquesLayer);
+		
+		var municipisLayer = new MapImageLayer({
+				portalItem: {
+					id: "859bf95613ab4057b021b6a0deeef203"
+				},
+				id: "",
+				visible: true,
+				title: lmunicipis,
+				listMode: "hide-children"
+			});
+			capes.push(municipisLayer);
 
 		var seccionsLayer = new MapImageLayer({
 		  portalItem: { 
@@ -139,6 +141,161 @@
 		});
 		
 		
+		//Imatges aeries
+		var orto10m45Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto10m45,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "ovaa10m" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+
+		var orto5m56Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m56,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "ovab5m" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var orto5m86Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m86,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "orto5m1986" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var orto5m94Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m94,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "orto5m1994" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var orto5m00Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m00,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "orto5m2000" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var orto5m04Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m04,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "orto5m2004" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var orto5m06Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m06,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "orto5m2006" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var orto5m09Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m09,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "orto5m2009" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var orto5m12Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m12,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "orto5m2012" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var orto5m15Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m15,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "orto5m2015" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var orto5m18Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m18,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "orto25c2018" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var imatgesHistoricGroupLayer = new GroupLayer({
+			title: gHistoric,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [orto5m18Layer, orto5m15Layer, orto5m12Layer, orto5m09Layer, orto5m06Layer, orto5m04Layer, orto5m00Layer, orto5m94Layer, orto5m86Layer, orto5m56Layer, orto10m45Layer],
+	
+			opacity: 1
+		});
+
+
+
 		//**********Clima***********//
 		//anomalies precipitació
 
@@ -1278,7 +1435,7 @@
 
        map = new Map({
           basemap: "topo",
-		 layers: [socioGroupLayer,indsocioecoGroupLayer, regionsGroupLayer, limitsGroupLayer]
+		 layers: [socioGroupLayer,indsocioecoGroupLayer, regionsGroupLayer,imatgesHistoricGroupLayer, limitsGroupLayer]
         });
 		
 		

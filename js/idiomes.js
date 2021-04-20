@@ -33,24 +33,11 @@ var lsupurb;
 var lvies;
 //Imatges aèries
 var gImg;
-var gActuals;
 var lorto25m;
 var lorto5m;
 var lorto25c;
 var lorto10c;
 var lsat250m;
-var gHistoric;
-var lorto10m45;
-var lorto5m56;
-var lorto5m86;
-var lorto5m94;
-var lorto5m00;
-var lorto5m04;
-var lorto5m06;
-var lorto5m09;
-var lorto5m12;
-var lorto5m15;
-var lorto5m18;
 //Topografia
 var gTopo;
 var lmde;
@@ -104,11 +91,8 @@ var lusos17;
 var gNatural;
 var lhic;
 var lhab;
-var gNdvi;
 var lboscoss;
 var lbiodsing;
-var lndvi17;
-var lndvi18;
 var lndvi19;
 //Espai urbà
 var gUrba;
@@ -138,15 +122,16 @@ var lretorn10;
 var lretorn100;
 var lretorn500;
 var lriscgeo;
-//Dinàmiques Socioeconòmiques
-var gSocio;
 //Societat
 var gSocietat;
 //Economia
 var gEco;
+var latur;
+var lformacio;
 var lenvell;
-var limmi;
+
 //renda
+var gRenda;
 var gAmbestrbaix;
 var gAmbestrint;
 var gAmbestralt;
@@ -174,9 +159,10 @@ var gAmbestestrang;
 var lest15;
 var lest16;
 var lest17;
+var gMigrac;
+var limmi;
 var lpobresa;
-var lformacio;
-var latur;
+
 //Habitatge
 var gHabitat;
 var lestath;
@@ -235,18 +221,6 @@ var laccesh;
 	lorto25c="Ortofoto de Catalunya 1:2.500";
 	lorto10c="Ortofoto de Catalunya 1:1.000";
 	lsat250m="Imatge satèl·lit de Catalunya 1:250.000";
-	gHistoric="Històriques";
-	lorto10m45="Ortofoto de Catalunya 1:10.000 1945";
-	lorto5m56="Ortofoto de Catalunya 1:5.000 1956";
-	lorto5m86="Ortofoto de Catalunya 1:5.000 1986";
-	lorto5m94="Ortofoto de Catalunya 1:5.000 1994";
-	lorto5m00="Ortofoto de Catalunya 1:5.000 2000";
-	lorto5m04="Ortofoto de Catalunya 1:5.000 2004";
-	lorto5m06="Ortofoto de Catalunya 1:5.000 2006";
-	lorto5m09="Ortofoto de Catalunya 1:5.000 2009";
-	lorto5m12="Ortofoto de Catalunya 1:5.000 2012";
-	lorto5m15="Ortofoto de Catalunya 1:5.000 2015";
-	lorto5m18="Ortofoto de Catalunya 1:5.000 2018";
 	//Topografia
 	gTopo= "Topografia";
 	lmde="Model Digital Elevacions";
@@ -295,14 +269,11 @@ var laccesh;
 	lusos17="2017";
 	//Espai natural
 	gNatural="Espai natural";
-	gNdvi= "Índex Vegetació (NDVI)";
 	lhic="Hàbitats d'interès comunitari";
 	lhab="Hàbitats";
 	lboscoss="Boscos singulars";
 	lbiodsing= "Biodiversitat singular";
-	lndvi17="2017";
-	lndvi18="2018";
-	lndvi19 ="2019";
+	lndvi19 ="Índex Vegetació (NDVI) 2019";
 	//Espai urbà
 	gUrba="Espai urbà";
 	lpoligons="Polígons industrials";
@@ -332,13 +303,12 @@ var laccesh;
 	lretorn10="Zona inundable retorn 10 anys";
 	lretorn100="Zona inundable retorn 100 anys";
 	lretorn500="Zona inundable retorn 500 anys";
-	//Dinàmiques Socioeconòmiques
-	gSocio="Dades socioeconòmiques";
 	//Societat
 	gSocietat= "Societat";
 	//Economia
 	gEco= "Economia";
 	//Renda
+	gRenda= "Renda";
 	gAmbestrbaix= "Renda baixa";
 	gAmbestrint= "Renda intermèdia";
 	gAmbestralt= "Renda alta";
@@ -364,15 +334,17 @@ var laccesh;
 	lmajors17= "2017";
 	lenvell="Envelliment vulnerable";
 	//Estrangers
+	gMigrac= "Migracions";
 	gAmbestestrang="Estrangers de països en desenvolupament"
 	lest15="2015";
 	lest16="2016";
 	lest17="2017";
+	limmi="Inmigració estrangera";
 	//Habitatge
 	gHabitat= "Habitatge";
 	lestath="Estat de conservació d'habitatges";
 	laccesh="Accessibilitat a l’habitatge";
-	limmi="Inmigració estrangera";
+	
 	lpobresa="Pobresa";
 	lformacio="Població poc qualificada";
 	latur="Atur";
@@ -427,18 +399,6 @@ var laccesh;
 	lorto25c="Ortofoto de Cataluña 1:2.500";
 	lorto10c="Ortofoto de Cataluña 1:1.000";
 	lsat250m="Imagen satélite de Cataluña 1:250.000";
-	gHistoric="Histórico";
-	lorto10m45="Ortofoto de Cataluña 1:10.000 1945";
-	lorto5m56="Ortofoto de Cataluña 1:5.000 1956";
-	lorto5m87="Ortofoto de Cataluña 1:5.000 1987";
-	lorto5m94="Ortofoto de Cataluña 1:5.000 1994";
-	lorto5m00="Ortofoto de Cataluña 1:5.000 2000";
-	lorto5m04="Ortofoto de Cataluña 1:5.000 2004";
-	lorto5m06="Ortofoto de Cataluña 1:5.000 2006";
-	lorto5m09="Ortofoto de Cataluña 1:5.000 2009";
-	lorto5m12="Ortofoto de Cataluña 1:5.000 2012";
-	lorto5m15="Ortofoto de Cataluña 1:5.000 2015";
-	lorto5m18="Ortofoto de Cataluña 1:5.000 2016";
 	//Topografia
 	gTopo= "Topografía";
 	lmde="Modelo Digital de Elevaciones";
@@ -520,7 +480,6 @@ var laccesh;
 	lEshumides="Estado zonas húmedas (RMB)";
 	//Riscos territorials
 	gRiscos= "Riesgos territoriales";
-	lriscgeo="Mapa para la Prevención de Riesgos Geológicos 1: 25.000 (RMB)";
 	lperim= "Incendios forestales 1986-2019";
 	gIncendis="Risc d'incendis forestals"
 	lincend= "Vulnerabilidad a incendios";
@@ -578,8 +537,6 @@ var laccesh;
 	gTopo25="Topgraphic";
 	lsupurb="Urbanized surface 1:25.000 (RMB)",
 	lvies="Communication channels 1:25.000 (RMB)",
-	lalti="Altimetry 1:25.000 (RMB)",
-	lveget="Vegetation 1:25.000 (RMB)",
 	//Imatges aèries
 	gImg= "Aerial imagery";
 	gActuals="Current";
@@ -588,18 +545,6 @@ var laccesh;
 	lorto25c="Orthophoto of Catalonia 1:2.500 (RMB)";
 	lorto10c="Orthophoto of Catalonia 1:1.000 (RMB)";
 	lsat250m="Satellite image of Catalonia 1:250.000 (RMB)";
-	gHistoric="Historical";
-	lorto10m45="Orthophoto of Catalonia 1:10.000 1945";
-	lorto5m56="Orthophoto of Catalonia 1:5.000 1956";
-	lorto5m87="Orthophoto of Catalonia 1:5.000 1987";
-	lorto5m94="Orthophoto of Catalonia 1:5.000 1994 (RMB)";
-	lorto5m00="Orthophoto of Catalonia 1:5.000 2000 (RMB)";
-	lorto5m04="Orthophoto of Catalonia 1:5.000 2004";
-	lorto5m06="Orthophoto of Catalonia 1:5.000 2007 (RMB)";
-	lorto5m09="Orthophoto of Catalonia 1:5.000 2009 (RMB)";
-	lorto5m12="Orthophoto of Catalonia 1:5.000 2012 (RMB)";
-	lorto5m15="Orthophoto of Catalonia 1:5.000 2015 (RMB)";
-	lorto5m18="Orthophoto of Catalonia 1:5.000 2016 (RMB)";
 	//Topografia
 	gTopo= "Topography";
 	lmde="Digital Elevations Model (RMB)";
@@ -613,13 +558,12 @@ var laccesh;
 	//Hidrologia
 	gHidro= "Hidrology";
 	lHidrogeo="Hydrogeology 1:250.000 (RMB)";
-	lAquifers="Aquifers (RMB)";
-	lAqupro="Protected aquifers (RMB)";
-	gConques="Basins";
-	lXarxa0="Main hydrographic network 1:50.000 (RMB)";
-	lXarxahidro="Hydrographic network (RMB)";
-	lCanals="Driving and channeling network (RMB)";
-	lConques="Elemental basins of Catalonia 1:50.000 (RMB)";
+	lAquifers="Aquifers";
+	lAqupro="Protected aquifers";
+	lXarxa0="Main hydrographic network 1:50.000";
+	lXarxahidro="Hydrographic network";
+	lCanals="Driving and channeling network";
+	lConques="Elemental basins of Catalonia 1:50.000";
 	//Clima
 	gClima= "Clima";
 	lRadiacio="Solar radiation";
