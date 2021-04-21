@@ -1,10 +1,9 @@
 require([
         "esri/Map",
         "esri/views/MapView",
-        "esri/layers/FeatureLayer",
-        "esri/widgets/Zoom"
+        "esri/layers/FeatureLayer"
     ],
-    function(Map, MapView, FeatureLayer, Zoom) {
+    function(Map, MapView, FeatureLayer) {
 
         const renderer = {
             type: "simple", // autocasts as new SimpleRenderer()
@@ -39,9 +38,15 @@ require([
 
         const defaultPosition = [2.13, 41.40];
 
+        function contentByCountryPopup(feature) {
+            return "Institucions: " + institutions[feature.graphic.attributes.cntr_id].reduce(function(previous, current) {
+                return previous + "<br>" + current;
+            }, "");
+        }
+
         var popupInfo = {
             title: "{country}",
-            content: "Institució: {institutio}"
+            content: contentByCountryPopup
         };
 
         var layer = new FeatureLayer({
