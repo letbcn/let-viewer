@@ -45,7 +45,15 @@ var lAnomt17;
 var lAnomt18;
 var lAnomt19;
 //Cobertes del sòl
+var gCobusos
+var gCob;
 var gUsos;
+var lcob56;
+var lcob93;
+var lcob00;
+var lcob05;
+var lcob09;
+var lcob15;
 var lusos87;
 var lusos92;
 var lusos97;
@@ -221,7 +229,15 @@ var lpatents;
 	lAnomt18= "2018";
 	lAnomt19= "2019";
 	//Cobertes del sol
-	gUsos="Usos del sòl";
+	gCobusos= "Cobertes i usos del sòl";
+	gCob= "Cobertes";
+	gUsos= "Usos";
+	lcob56="1956";
+	lcob93="1993";
+	lcob00="2000";
+	lcob05="2005";
+	lcob09= "2009";
+	lcob15= "2015";
 	lusos87="1987";
 	lusos92="1992";
 	lusos97="1997";

@@ -72,20 +72,8 @@ var lAnomt18;
 var lAnomt19;
 //Cobertes del sòl
 var gCobertesSol;
-var gCobertes;
-var lcob56;
-var lcob93;
-var lcob00;
-var lcob05;
 var lcob09;
 var lcob15;
-var gUsos;
-var lusos87;
-var lusos92;
-var lusos97;
-var lusos02;
-var lusos07;
-var lusos12;
 var lusos17;
 //Espai Natural
 var gNatural;
@@ -129,42 +117,22 @@ var gEco;
 var latur;
 var lformacio;
 var lenvell;
-
 //renda
 var gRenda;
-var gAmbestrbaix;
-var gAmbestrint;
-var gAmbestralt;
-var lrendab15;
-var lrendab16;
+var lrendam17;
 var lrendab17;
-var lrendai15;
-var lrendai16;
 var lrendai17;
-var lrendaa15;
-var lrendaa16;
 var lrendaa17;
 //vulnerabilitat
-var gAmbestvulne;
-var lvulne15;
-var lvulne16;
 var lvulne17;
 //majors
-var gAmbestmajors;
-var lmajors15;
-var lmajors16;
 var lmajors17;
 //estrangers
-var gAmbestestrang;
-var lest15;
-var lest16;
+var lmigra20;
 var lest17;
 var gMigrac;
-var limmi;
 var lpobresa;
-
 //Habitatge
-var gHabitat;
 var lestath;
 var laccesh;
 
@@ -253,20 +221,10 @@ var laccesh;
 	//Cobertes del sol
 	gCobertesSol="Cobertes del sòl";
 	gCobertes="Cobertes del sòl";
-	lcob56="1956";
-	lcob93="1993";
-	lcob00="2000";
-	lcob05="2005";
-	lcob09="2009";
-	lcob15="2015 (AMB)";
+	lcob09="Cobertes del sòl 2009";
+	lcob15="Cobertes del sól 2015 (AMB)";
 	gUsos="Usos del sòl";
-	lusos87="1987";
-	lusos92="1992";
-	lusos97="1997";
-	lusos02="2002";
-	lusos07="2007";
-	lusos12="2012";
-	lusos17="2017";
+	lusos17="Usos i cobertes del sòl 2017";
 	//Espai natural
 	gNatural="Espai natural";
 	lhic="Hàbitats d'interès comunitari";
@@ -308,38 +266,18 @@ var laccesh;
 	//Economia
 	gEco= "Economia";
 	//Renda
-	gRenda= "Renda";
-	gAmbestrbaix= "Renda baixa";
-	gAmbestrint= "Renda intermèdia";
-	gAmbestralt= "Renda alta";
-	lrendab15= "2015";
-	lrendab16= "2016";
-	lrendab17= "2017";
-	lrendai15= "2015";
-	lrendai16= "2016";
-	lrendai17= "2017";
-	lrendaa15="2015";
-	lrendaa16="2016";
-	lrendaa17="2017";
+	lrendam17= "Renda familiar mitjana";
+	lrendab17= "Renda baixa";
+	lrendai17= "Renda intermèdia";
+	lrendaa17="Renda alta";
 	//Vulnerabilitat
-	gAmbestvulne= "Índex vulnerabilitat urbana";
-	lvulne15= "2015";
-	lvulne16= "2016";
-	lvulne17= "2017";
+	lvulne17= "Índex vulnerabilitat urbana";
 	//Envelliment
-	gEnvell= "Envelliment";
-	gAmbestmajors= "Població major 75 anys sola";
-	lmajors15= "2015";
-	lmajors16= "2016";
-	lmajors17= "2017";
+	lmajors17= "Població major 75 anys sola 2017";
 	lenvell="Envelliment vulnerable";
 	//Estrangers
-	gMigrac= "Migracions";
-	gAmbestestrang="Estrangers de països en desenvolupament"
-	lest15="2015";
-	lest16="2016";
-	lest17="2017";
-	limmi="Inmigració estrangera";
+	lmigra20="Població estrangera 2020";
+	lest17="Estrangers de països en desenvolupament 2017";
 	//Habitatge
 	gHabitat= "Habitatge";
 	lestath="Estat de conservació d'habitatges";

@@ -98,27 +98,25 @@
 		//**********Limits Administratius ***********//
 		//capes limits
 			
-		var comarquesLayer = new MapImageLayer({
-			portalItem: {
-				id: "b628d29242aa4591b986a4c293f8edda"
-			},
-			id: "",
-			visible: false,
-			title: lcomarca,
-			listMode: "hide-children"
-			});
-			capes.push(comarquesLayer);
-		
-		var municipisLayer = new MapImageLayer({
-				portalItem: {
-					id: "859bf95613ab4057b021b6a0deeef203"
-				},
-				id: "",
-				visible: true,
-				title: lmunicipis,
-				listMode: "hide-children"
-			});
-			capes.push(municipisLayer);
+		var comarquesLayer = new FeatureLayer({
+		  portalItem: {  
+			id: "b1cb0e81815b4557b977d9772dc52289"
+		  },
+		  id:"dff564bae81b4746a1b862a295261149",
+		  visible: false,
+		  title: "Comarques",
+		  layerID: 0
+		});
+
+		var municipisLayer = new FeatureLayer({
+		  portalItem: {  
+			id: "3f51bf9674064661ace82a71da68de78"
+		  },
+		  id:"2b35430f24ca44f9806026d89a8c647c",
+		  visible: true,
+		  title: "Municipis",
+		  layerID: 0
+		});
 
 		var seccionsLayer = new MapImageLayer({
 		  portalItem: { 
@@ -139,9 +137,10 @@
           layers: [comarquesLayer, municipisLayer, seccionsLayer],
           opacity: 1
 		});
-		
-		
-		//Imatges aeries
+
+
+		//Imatges historiques
+
 		var orto10m45Layer = new WMSLayer({
 			portalItem: {
 				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
@@ -154,7 +153,7 @@
 				//legendUrl: // url to the legend
 			}]
 		});
-
+	
 		var orto5m56Layer = new WMSLayer({
 			portalItem: {
 				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
@@ -293,9 +292,9 @@
 	
 			opacity: 1
 		});
-
-
-
+	
+		
+		
 		//**********Clima***********//
 		//anomalies precipitació
 
@@ -398,7 +397,72 @@
           opacity: 1
         });
 		
-		
+		//***************Cobertes del sòl*****************//
+		var cob56Layer = new MapImageLayer({
+		portalItem: {
+			id: "040679a9fcee4e35a8808bea01cd71d9"
+		},
+		id: "271503d302a24e3c92ef806e53925b98",
+		visible: false,
+		title: lcob56,
+		listMode: "hide-children"
+	});
+	capes.push(cob56Layer);
+
+		var cob93Layer = new MapImageLayer({
+		portalItem: {
+			id: "f2f124803baa4d86bb779cef346fc33b"
+		},
+		id: "27b6d833c83f4ff5a76ce4fefcd3971a",
+		visible: false,
+		title: lcob93,
+		listMode: "hide-children"
+	});
+	capes.push(cob93Layer);
+
+		var cob00Layer = new MapImageLayer({
+		portalItem: {
+			id: "aea3bd0f2c8e4a1493699fdff988bac1"
+		},
+		id: "9ddbf3ad865445929d37291afa9e0a5b",
+		visible: false,
+		title: lcob00,
+		listMode: "hide-children"
+	});
+	capes.push(cob00Layer);
+
+		var cob05Layer = new MapImageLayer({
+		portalItem: {
+			id: "254f367be0684692a05a54b073ac121c"
+		},
+		id: "3549108ac10b4ab7b60c5623cd0f5cda",
+		visible: false,
+		title: lcob05,
+		listMode: "hide-children"
+	});
+	capes.push(cob05Layer);
+
+		var cob09Layer = new MapImageLayer({
+		portalItem: {
+			id: "9f942705cbdc4561a21b1c802b7f798b"
+		},
+		id: "c468a6a45ed84aafa7cb835565162d27",
+		visible: false,
+		title: lcob09,
+		listMode: "hide-children"
+	});
+	capes.push(cob09Layer);
+
+		var cob15Layer = new MapImageLayer({
+		portalItem: {
+			id: "57b1be06d3554ed6a2c4a7c0ed0cbe28"
+		},
+		id: "d44522da5c584825b4b370d13053056a",
+		visible: false,
+		title: lcob15,
+		listMode: "hide-children"
+	});
+	capes.push(cob15Layer);
 
 		
 		//capes d'usos
@@ -480,11 +544,28 @@
 		capes.push(usos17Layer);
 
 		//grup de capes
-		var usosGroupLayer = new GroupLayer({
-          title: gUsos,
+
+		var CobGroupLayer = new GroupLayer({
+			title: gCob,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [cob15Layer,cob09Layer,cob05Layer,cob00Layer,cob93Layer,cob56Layer],
+			opacity: 1
+		  });
+
+		  var UsGroupLayer = new GroupLayer({
+			title: gUsos,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [usos17Layer,usos12Layer,usos07Layer,usos02Layer,usos97Layer,usos92Layer,usos87Layer],
+			opacity: 1
+		  });
+
+		var cobusosGroupLayer = new GroupLayer({
+          title: gCobusos,
           visible: true,
           visibilityMode: "independent",
-          layers: [usos17Layer,usos12Layer,usos07Layer,usos02Layer,usos97Layer,usos92Layer,usos87Layer],
+          layers: [UsGroupLayer, CobGroupLayer],
           opacity: 1
         });
 		
@@ -889,7 +970,7 @@
 			visible: true,
 			visibilityMode: "independent",
 			layers: [riscGroupLayer, sostenibilitatGroupLayer, contmGroupLayer, ecoGroupLayer, biodivGroupLayer, estructuraGroupLayer, variarbratGroupLayer, ndviGroupLayer, 
-				usosGroupLayer, climaGroupLayer],
+				cobusosGroupLayer, climaGroupLayer],
 			opacity: 1
 		  });
 
@@ -1435,7 +1516,7 @@
 
        map = new Map({
           basemap: "topo",
-		 layers: [socioGroupLayer,indsocioecoGroupLayer, regionsGroupLayer,imatgesHistoricGroupLayer, limitsGroupLayer]
+		 layers: [socioGroupLayer,indsocioecoGroupLayer, imatgesHistoricGroupLayer, limitsGroupLayer]
         });
 		
 		
