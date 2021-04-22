@@ -39,9 +39,9 @@ require([
         const defaultPosition = [2.13, 41.40];
 
         function contentByCountryPopup(feature) {
-            return "Institucions: " + institutions[feature.graphic.attributes.cntr_id].reduce(function(previous, current) {
-                return previous + "<br>" + current;
-            }, "");
+            return "Institucions: <br><ul>" + institutions[feature.graphic.attributes.cntr_id].reduce(function(previous, current) {
+                return previous + "<li>" + current + "</li>";
+            }, "") + "</ul>";
         }
 
         var popupInfo = {
