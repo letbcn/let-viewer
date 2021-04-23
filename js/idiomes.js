@@ -189,6 +189,7 @@ var laccesh;
 	lorto25c="Ortofoto de Catalunya 1:2.500";
 	lorto10c="Ortofoto de Catalunya 1:1.000";
 	lsat250m="Imatge satèl·lit de Catalunya 1:250.000";
+
 	//Topografia
 	gTopo= "Topografia";
 	lmde="Model Digital Elevacions";
@@ -198,6 +199,7 @@ var laccesh;
 	gGeo= "Geologia";
 	lgeolo="Geològic 1:50.000";
 	lHidrogeo="Hidrogeològic 1:250.000";
+
 	ledafo="Edafològic (WRB) 1:250.000";
 	lsoil="Edafològic (ST) 1:250.000";
 	//Hidrologia
@@ -261,6 +263,7 @@ var laccesh;
 	lretorn10="Zona inundable retorn 10 anys";
 	lretorn100="Zona inundable retorn 100 anys";
 	lretorn500="Zona inundable retorn 500 anys";
+
 	//Societat
 	gSocietat= "Societat";
 	//Economia
@@ -274,6 +277,7 @@ var laccesh;
 	lvulne17= "Índex vulnerabilitat urbana";
 	//Envelliment
 	lmajors17= "Població major 75 anys sola 2017";
+
 	lenvell="Envelliment vulnerable";
 	//Estrangers
 	lmigra20="Població estrangera 2020";
@@ -327,8 +331,10 @@ var laccesh;
 	gCartob= "Cartografía de base";
 	ltopo25="Topográfico 1:25.000 (RMB)";
 	gTopo25="Topográfico";
+
 	lsupurb="Superficie urbanizada 1:25.000";
 	lvies="Vías de comunicación 1:25.000";
+
 	//Imatges aèries
 	gImg= "Imágenes aérias";
 	gActuals="Actual";
@@ -337,6 +343,7 @@ var laccesh;
 	lorto25c="Ortofoto de Cataluña 1:2.500";
 	lorto10c="Ortofoto de Cataluña 1:1.000";
 	lsat250m="Imagen satélite de Cataluña 1:250.000";
+
 	//Topografia
 	gTopo= "Topografía";
 	lmde="Modelo Digital de Elevaciones";
