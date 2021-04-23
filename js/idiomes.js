@@ -17,6 +17,8 @@ var tCapes;
 var gAmbits;
 //limits administratius
 var gLimits;
+var lcomarca;
+var lmunicipis;
 var lseccions;
 //Limits protecció ambiental
 var gProtecc;
@@ -29,28 +31,13 @@ var ltopo25;
 var gTopo25;
 var lsupurb;
 var lvies;
-var lalti;
-var lveget;
 //Imatges aèries
 var gImg;
-var gActuals;
 var lorto25m;
 var lorto5m;
 var lorto25c;
 var lorto10c;
 var lsat250m;
-var gHistoric;
-var lorto10m45;
-var lorto5m56;
-var lorto5m86;
-var lorto5m94;
-var lorto5m00;
-var lorto5m04;
-var lorto5m06;
-var lorto5m09;
-var lorto5m12;
-var lorto5m15;
-var lorto5m18;
 //Topografia
 var gTopo;
 var lmde;
@@ -58,14 +45,13 @@ var lpendent;
 var lorient;
 //Geologia
 var gGeo;
+var lHidrogeo;
 var lgeolo;
 var ledafo;
 //Hidrologia
 var gHidro;
-var lHidrogeo;
 var lAquifers;
 var lAqupro;
-var gConques;
 var lXarxa0;
 var lXarxahidro;
 var lCanals;
@@ -86,29 +72,15 @@ var lAnomt18;
 var lAnomt19;
 //Cobertes del sòl
 var gCobertesSol;
-var gCobertes;
-var lcob56;
-var lcob93;
-var lcob00;
-var lcob05;
 var lcob09;
 var lcob15;
-var gUsos;
-var lusos87;
-var lusos92;
-var lusos97;
-var lusos02;
-var lusos07;
-var lusos12;
 var lusos17;
 //Espai Natural
 var gNatural;
 var lhic;
 var lhab;
-var gNdvi;
 var lboscoss;
-var lndvi17;
-var lndvi18;
+var lbiodsing;
 var lndvi19;
 //Espai urbà
 var gUrba;
@@ -138,40 +110,29 @@ var lretorn10;
 var lretorn100;
 var lretorn500;
 var lriscgeo;
-//Dinàmiques Socioeconòmiques
-var gSocio;
-var gAmbsoci;
-var gAmbestsoci;
-var gAmbestrbaix;
-var gAmbestrint;
-var gAmbestralt;
-var gAmbestvulne;
-var gAmbestmajors;
-var gAmbestestrang;
-var lenvell;
-var limmi;
-var lrenda;
-var lrendab15;
-var lrendab16;
-var lrendab17;
-var lrendai15;
-var lrendai16;
-var lrendai17;
-var lrendaa15;
-var lrendaa16;
-var lrendaa17;
-var lvulne15;
-var lvulne16;
-var lvulne17;
-var lmajors15;
-var lmajors16;
-var lmajors17;
-var lest15;
-var lest16;
-var lest17;
-var lpobresa;
-var lformacio;
+//Societat
+var gSocietat;
+//Economia
+var gEco;
 var latur;
+var lformacio;
+var lenvell;
+//renda
+var gRenda;
+var lrendam17;
+var lrendab17;
+var lrendai17;
+var lrendaa17;
+//vulnerabilitat
+var lvulne17;
+//majors
+var lmajors17;
+//estrangers
+var lmigra20;
+var lest17;
+var gMigrac;
+var lpobresa;
+//Habitatge
 var lestath;
 var laccesh;
 
@@ -204,9 +165,11 @@ var laccesh;
 	gAmbits="Àmbits";
 	//limits administratius
 	gLimits= "Límits administratius";
-	lseccions ="Seccions Censals"
+	lcomarca= "Comarques";
+	lmunicipis= "Municipis";
+	lseccions ="Seccions Censals";
 	//límits protecció ambiental
-	gProtecc= "Límits protecció ambiental"
+	gProtecc= "Límits protecció ambiental";
 	lpein="Pla d'espais d'interès natural (PEIN)";
 	lxnatura="Xarxa natura 2000";
 	lenpe="Espais naturals de protecció especial (ENPE)";
@@ -220,40 +183,29 @@ var laccesh;
 	lveget="Vegetació 1:25.000",
 	//Imatges aèries
 	gImg= "Imatges aèries";
-	gActuals="Actual";
+	gActuals="Actuals";
 	lorto25m="Ortofoto de Catalunya 1:25.000";
 	lorto5m="Ortofoto de Catalunya 1:5.000";
 	lorto25c="Ortofoto de Catalunya 1:2.500";
 	lorto10c="Ortofoto de Catalunya 1:1.000";
 	lsat250m="Imatge satèl·lit de Catalunya 1:250.000";
-	gHistoric="Històric";
-	lorto10m45="Ortofoto de Catalunya 1:10.000 1945";
-	lorto5m56="Ortofoto de Catalunya 1:5.000 1956";
-	lorto5m86="Ortofoto de Catalunya 1:5.000 1986";
-	lorto5m94="Ortofoto de Catalunya 1:5.000 1994";
-	lorto5m00="Ortofoto de Catalunya 1:5.000 2000";
-	lorto5m04="Ortofoto de Catalunya 1:5.000 2004";
-	lorto5m06="Ortofoto de Catalunya 1:5.000 2006";
-	lorto5m09="Ortofoto de Catalunya 1:5.000 2009";
-	lorto5m12="Ortofoto de Catalunya 1:5.000 2012";
-	lorto5m15="Ortofoto de Catalunya 1:5.000 2015";
-	lorto5m18="Ortofoto de Catalunya 1:5.000 2018";
+
 	//Topografia
 	gTopo= "Topografia";
-	lmde="Model Digital d'Elevacions";
-	lpendent="Pendent";
-	lorient="Orientació";
+	lmde="Model Digital Elevacions";
+	lpendent="Pendents";
+	lorient="Orientacions";
 	//Geologia
 	gGeo= "Geologia";
 	lgeolo="Geològic 1:50.000";
+	lHidrogeo="Hidrogeològic 1:250.000";
+
 	ledafo="Edafològic (WRB) 1:250.000";
 	lsoil="Edafològic (ST) 1:250.000";
 	//Hidrologia
 	gHidro= "Hidrologia";
-	lHidrogeo="Hidrogeològic 1:250.000";
 	lAquifers="Aqüífers";
 	lAqupro="Aqüífers protegits";
-	gConques="Conques";
 	lXarxa0="Xarxa hidrogràfica principal 1:50.000";
 	lXarxahidro="Xarxa hidrogràfica";
 	lCanals="Xarxa de conduccions i canalitzacions";
@@ -266,38 +218,22 @@ var laccesh;
 	lTempmit="Temperatura mitjana";
 	lTempmax="Temperatures màximes";
 	gAnom= "Anomalies climàtiques";
-	lAnomp17= "Anomalia precipitació 2017";
-	lAnomp18= "Anomalia precipitació 2018";
-	lAnomp19= "Anomalia precipitació";
-	lAnomt17= "Anomalia temperatura 2017";
-	lAnomt18= "Anomalia temperatura 2018";
-	lAnomt19= "Anomalia temperatura";
+	lAnomp19= "Anomalia precipitació 2019";
+	lAnomt19= "Anomalia temperatura 2019";
 	//Cobertes del sol
 	gCobertesSol="Cobertes del sòl";
 	gCobertes="Cobertes del sòl";
-	lcob56="Cobertes del sòl 1956";
-	lcob93="Cobertes del sòl 1993";
-	lcob00="Cobertes del sòl 2000";
-	lcob05="Cobertes del sòl 2005";
 	lcob09="Cobertes del sòl 2009";
-	lcob15="Cobertes del sòl 2015 (AMB)";
+	lcob15="Cobertes del sól 2015 (AMB)";
 	gUsos="Usos del sòl";
-	lusos87="Usos del sòl 1987";
-	lusos92="Usos del sòl 1992";
-	lusos97="Usos del sòl 1997";
-	lusos02="Usos del sòl 2002";
-	lusos07="Usos del sòl 2007";
-	lusos12="Usos del sòl 2012";
-	lusos17="Usos del sòl 2017";
+	lusos17="Usos i cobertes del sòl 2017";
 	//Espai natural
 	gNatural="Espai natural";
-	gNdvi= "Índex Vegetació (NDVI)";
 	lhic="Hàbitats d'interès comunitari";
 	lhab="Hàbitats";
 	lboscoss="Boscos singulars";
-	lndvi17="2017";
-	lndvi18="2018";
-	lndvi19 ="2019";
+	lbiodsing= "Biodiversitat singular";
+	lndvi19 ="Índex Vegetació (NDVI) 2019";
 	//Espai urbà
 	gUrba="Espai urbà";
 	lpoligons="Polígons industrials";
@@ -327,42 +263,38 @@ var laccesh;
 	lretorn10="Zona inundable retorn 10 anys";
 	lretorn100="Zona inundable retorn 100 anys";
 	lretorn500="Zona inundable retorn 500 anys";
-	//Dinàmiques Socioeconòmiques
-	gSocio="Dades socioeconòmiques";
-	gAmbsoci= "Àrea Metropolitana (AMB)";
-	gAmbestsoci= "Àmbits estadístics metropolitans"; 
-	gAmbestrbaix= "Renda baixa";
-	gAmbestrint= "Renda intermèdia";
-	gAmbestralt= "Renda alta";
-	gAmbestvulne= "Índex vulnerabilitat urbana";
-	gAmbestmajors= "Població major 75 anys sola";
-	gAmbestestrang="Estrangers de països en desenvolupament"
+
+	//Societat
+	gSocietat= "Societat";
+	//Economia
+	gEco= "Economia";
+	//Renda
+	lrendam17= "Renda familiar mitjana";
+	lrendab17= "Renda baixa";
+	lrendai17= "Renda intermèdia";
+	lrendaa17="Renda alta";
+	//Vulnerabilitat
+	lvulne17= "Índex vulnerabilitat urbana";
+	//Envelliment
+	lmajors17= "Població major 75 anys sola 2017";
+
 	lenvell="Envelliment vulnerable";
-	limmi="Inmigració estrangera";
-	lrenda="Renda";
+	//Estrangers
+	lmigra20="Població estrangera 2020";
+	lest17="Estrangers de països en desenvolupament 2017";
+	//Habitatge
+	gHabitat= "Habitatge";
+	lestath="Estat de conservació d'habitatges";
+	laccesh="Accessibilitat a l’habitatge";
+	
 	lpobresa="Pobresa";
 	lformacio="Població poc qualificada";
 	latur="Atur";
-	lestath="Estat de conservació d'habitatges";
-	laccesh="Accessibilitat a l’habitatge";
-	lrendab15= "2015";
-	lrendab16= "2016";
-	lrendab17= "2017";
-	lrendai15= "2015";
-	lrendai16= "2016";
-	lrendai17= "2017";
-	lrendaa15="2015";
-	lrendaa16="2016";
-	lrendaa17="2017";
-	lvulne15= "2015";
-	lvulne16= "2016";
-	lvulne17= "2017";
-	lmajors15= "2015";
-	lmajors16= "2016";
-	lmajors17= "2017";
-	lest15="2015";
-	lest16="2016";
-	lest17="2017";
+	
+	
+	
+	
+
 	
   } else if (document.documentElement.lang=='es') {
    //CONTINGUT Info
@@ -399,9 +331,10 @@ var laccesh;
 	gCartob= "Cartografía de base";
 	ltopo25="Topográfico 1:25.000 (RMB)";
 	gTopo25="Topográfico";
-	lsupurb="Superficie urbanizada 1:25.000",
-	lvies="Vías de comunicación 1:25.000",
-	lveget="Vegetación 1:25.000",
+
+	lsupurb="Superficie urbanizada 1:25.000";
+	lvies="Vías de comunicación 1:25.000";
+
 	//Imatges aèries
 	gImg= "Imágenes aérias";
 	gActuals="Actual";
@@ -410,23 +343,12 @@ var laccesh;
 	lorto25c="Ortofoto de Cataluña 1:2.500";
 	lorto10c="Ortofoto de Cataluña 1:1.000";
 	lsat250m="Imagen satélite de Cataluña 1:250.000";
-	gHistoric="Histórico";
-	lorto10m45="Ortofoto de Cataluña 1:10.000 1945";
-	lorto5m56="Ortofoto de Cataluña 1:5.000 1956";
-	lorto5m87="Ortofoto de Cataluña 1:5.000 1987";
-	lorto5m94="Ortofoto de Cataluña 1:5.000 1994";
-	lorto5m00="Ortofoto de Cataluña 1:5.000 2000";
-	lorto5m04="Ortofoto de Cataluña 1:5.000 2004";
-	lorto5m06="Ortofoto de Cataluña 1:5.000 2006";
-	lorto5m09="Ortofoto de Cataluña 1:5.000 2009 (RMB)";
-	lorto5m12="Ortofoto de Cataluña 1:5.000 2012 (RMB)";
-	lorto5m15="Ortofoto de Cataluña 1:5.000 2015 (RMB)";
-	lorto5m18="Ortofoto de Cataluña 1:5.000 2016 (RMB)";
+
 	//Topografia
 	gTopo= "Topografía";
-	lmde="Modelo Digital de Elevaciones (RMB)";
-	lpendent="Pendiente (RMB)";
-	lorient="Orientación (RMB)";
+	lmde="Modelo Digital de Elevaciones";
+	lpendent="Pendientes";
+	lorient="Orientaciones";
 	//Geologia
 	gGeo= "Geología";
 	lgeolo="Geològic 1:50.000 (RMB)";
@@ -436,9 +358,8 @@ var laccesh;
 	gHidro= "Hidrología";
 	gMaigua="Hidrología";
 	lHidrogeo="Hidrogeología 1:250.000 (RMB)";
-	lAquifers="Acuíferos (RMB)";
-	lAqupro="Acuíferos protegidos (RMB)";
-	gConques="Cuencas";
+	lAquifers="Acuíferos";
+	lAqupro="Acuíferos protegidos";
 	lXarxa0="Red hidrográfica principal 1:50.000 (RMB)";
 	lXarxahidro="Red hidrográfica";
 	lCanals="Red de conducciones y canalizaciones (RMB)";
@@ -504,7 +425,6 @@ var laccesh;
 	lEshumides="Estado zonas húmedas (RMB)";
 	//Riscos territorials
 	gRiscos= "Riesgos territoriales";
-	lriscgeo="Mapa para la Prevención de Riesgos Geológicos 1: 25.000 (RMB)";
 	lperim= "Incendios forestales 1986-2019";
 	gIncendis="Risc d'incendis forestals"
 	lincend= "Vulnerabilidad a incendios";
@@ -562,8 +482,6 @@ var laccesh;
 	gTopo25="Topgraphic";
 	lsupurb="Urbanized surface 1:25.000 (RMB)",
 	lvies="Communication channels 1:25.000 (RMB)",
-	lalti="Altimetry 1:25.000 (RMB)",
-	lveget="Vegetation 1:25.000 (RMB)",
 	//Imatges aèries
 	gImg= "Aerial imagery";
 	gActuals="Current";
@@ -572,18 +490,6 @@ var laccesh;
 	lorto25c="Orthophoto of Catalonia 1:2.500 (RMB)";
 	lorto10c="Orthophoto of Catalonia 1:1.000 (RMB)";
 	lsat250m="Satellite image of Catalonia 1:250.000 (RMB)";
-	gHistoric="Historical";
-	lorto10m45="Orthophoto of Catalonia 1:10.000 1945";
-	lorto5m56="Orthophoto of Catalonia 1:5.000 1956";
-	lorto5m87="Orthophoto of Catalonia 1:5.000 1987";
-	lorto5m94="Orthophoto of Catalonia 1:5.000 1994 (RMB)";
-	lorto5m00="Orthophoto of Catalonia 1:5.000 2000 (RMB)";
-	lorto5m04="Orthophoto of Catalonia 1:5.000 2004";
-	lorto5m06="Orthophoto of Catalonia 1:5.000 2007 (RMB)";
-	lorto5m09="Orthophoto of Catalonia 1:5.000 2009 (RMB)";
-	lorto5m12="Orthophoto of Catalonia 1:5.000 2012 (RMB)";
-	lorto5m15="Orthophoto of Catalonia 1:5.000 2015 (RMB)";
-	lorto5m18="Orthophoto of Catalonia 1:5.000 2016 (RMB)";
 	//Topografia
 	gTopo= "Topography";
 	lmde="Digital Elevations Model (RMB)";
@@ -597,13 +503,12 @@ var laccesh;
 	//Hidrologia
 	gHidro= "Hidrology";
 	lHidrogeo="Hydrogeology 1:250.000 (RMB)";
-	lAquifers="Aquifers (RMB)";
-	lAqupro="Protected aquifers (RMB)";
-	gConques="Basins";
-	lXarxa0="Main hydrographic network 1:50.000 (RMB)";
-	lXarxahidro="Hydrographic network (RMB)";
-	lCanals="Driving and channeling network (RMB)";
-	lConques="Elemental basins of Catalonia 1:50.000 (RMB)";
+	lAquifers="Aquifers";
+	lAqupro="Protected aquifers";
+	lXarxa0="Main hydrographic network 1:50.000";
+	lXarxahidro="Hydrographic network";
+	lCanals="Driving and channeling network";
+	lConques="Elemental basins of Catalonia 1:50.000";
 	//Clima
 	gClima= "Clima";
 	lRadiacio="Solar radiation";
