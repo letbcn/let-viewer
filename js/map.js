@@ -825,12 +825,135 @@
 		opacity: 1
 	});
 
+	//Energia i canvi climatic
+
+	//Energia electrica per sector
+	var electrsectorLayer = new MapImageLayer({
+		portalItem: {
+			id: "2d158fb2f57345fb821789bd8570dcc2"
+		},
+		id: "59c43fa5e3964e3d9a600b67cf74f367",
+		visible: false,
+		title: lElectrsect,
+		listMode: "hide-children"
+	});
+	capes.push(electrsectorLayer);
+
+	var electrdomhabLayer = new MapImageLayer({
+		portalItem: {
+			id: "4349fa2388c84099937f52504dff6df4"
+		},
+		id: "",
+		visible: false,
+		title: lElectrhab,
+		listMode: "hide-children"
+	});
+	capes.push(electrdomhabLayer);
+
+ 	//Gas natural
+	var gassectorLayer = new MapImageLayer({
+		portalItem: {
+			id: "81976b32bc804af8aab29eea1f116699"
+		},
+		id: "59c43fa5e3964e3d9a600b67cf74f367",
+		visible: false,
+		title: lGassect,
+		listMode: "hide-children"
+	});
+	capes.push(gassectorLayer);
+
+	var gasdomesticLayer = new MapImageLayer({
+		portalItem: {
+			id: "2f57ddf9cf6541ee91fa1544bdb750f6"
+		},
+		id: "59c43fa5e3964e3d9a600b67cf74f367",
+		visible: false,
+		title: lGasdom,
+		listMode: "hide-children"
+	});
+	capes.push(gasdomesticLayer);
+
+	var gashabitantLayer = new MapImageLayer({
+		portalItem: {
+			id: "06b57b59f1e046719b02f3d747b834a5"
+		},
+		id: "59c43fa5e3964e3d9a600b67cf74f367",
+		visible: false,
+		title: lGashab,
+		listMode: "hide-children"
+	});
+	capes.push(gashabitantLayer);
+
+
+	var energiaGroupLayer = new GroupLayer({
+		title: gEnergia,
+		visible: true,
+		visibilityMode: "independent",
+		layers: [gashabitantLayer, gasdomesticLayer, gassectorLayer, electrdomhabLayer, electrsectorLayer],
+		opacity: 1
+	});
+
+
+	//cicle del aigua
+
+	var aiguadomLayer = new MapImageLayer({
+		portalItem: {
+			id: "fa6018400075409f929cae17df38b53b"
+		},
+		id: "",
+		visible: false,
+		title: lAiguadom,
+		listMode: "hide-children"
+	});
+	capes.push(aiguadomLayer);
+
+	var aiguasectorsLayer = new MapImageLayer({
+		portalItem: {
+			id: "a6129db1d352409d812cb60b55430d60"
+		},
+		id: "",
+		visible: false,
+		title: lAiguasect,
+		listMode: "hide-children"
+	});
+	capes.push(aiguasectorsLayer);
+
+
+	var cicleaiguaGroupLayer = new GroupLayer({
+		title: gCicleaigua,
+		visible: true,
+		visibilityMode: "independent",
+		layers: [aiguasectorsLayer, aiguadomLayer],
+		opacity: 1
+	});
+
+	//Gestio residus
+	var genresidusmuniLayer = new MapImageLayer({
+		portalItem: {
+			id: "a6129db1d352409d812cb60b55430d60"
+		},
+		id: "",
+		visible: false,
+		title: lgeneresidumuni,
+		listMode: "hide-children"
+	});
+	capes.push(genresidusmuniLayer);
+
+
+	var gestioresidusGroupLayer = new GroupLayer({
+		title: gGestioresidus,
+		visible: true,
+		visibilityMode: "independent",
+		layers: [genresidusmuniLayer],
+		opacity: 1
+	});
+
 
 	var vectorsAmbientalsGroupLayer = new GroupLayer({
 		title: gAmbientals,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [estasMassesGroupLayer],
+		layers: [gestioresidusGroupLayer, cicleaiguaGroupLayer, energiaGroupLayer, estasMassesGroupLayer],
 		opacity: 1
 	});
 
@@ -944,9 +1067,7 @@
 	});
 
 
-	//Dinàmiques Socioeconòmiques
-
-	//capes
+	//Societat i economia
 
 	//index vulnerabilitat urbana
 	var vulne17Layer = new MapImageLayer({
