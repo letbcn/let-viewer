@@ -17,17 +17,22 @@ var tCapes;
 var gAmbits;
 //limits administratius
 var gLimits;
+var lcomarca;
+var lmunicipis;
 var lseccions;
-//Limits protecció ambiental
-var gProtecc;
-var lpein;
-var lxnatura;
-var lenpe;
-//Topografia
-var gTopo;
-var lmde;
-var lpendent;
-var lorient;
+//Imatges històriques
+var gHistoric;
+var lorto10m45;
+var lorto5m56;
+var lorto5m86;
+var lorto5m94;
+var lorto5m00;
+var lorto5m04;
+var lorto5m06;
+var lorto5m09;
+var lorto5m12;
+var lorto5m15;
+var lorto5m18;
 //Clima
 var gClima;
 var gAnompp;
@@ -40,7 +45,15 @@ var lAnomt17;
 var lAnomt18;
 var lAnomt19;
 //Cobertes del sòl
+var gCobusos
+var gCob;
 var gUsos;
+var lcob56;
+var lcob93;
+var lcob00;
+var lcob05;
+var lcob09;
+var lcob15;
 var lusos87;
 var lusos92;
 var lusos97;
@@ -188,12 +201,22 @@ var lpatents;
 	gAmbits="Àmbits";
 	//limits administratius
 	gLimits= "Límits administratius";
-	lseccions ="Seccions Censals"
-	//límits protecció ambiental
-	gProtecc= "Límits protecció ambiental"
-	lpein="Pla d'espais d'interès natural (PEIN)";
-	lxnatura="Xarxa natura 2000";
-	lenpe="Espais naturals de protecció especial (ENPE)";
+	lcomarca= "Comarques";
+	lmunicipis= "Municipis";
+	lseccions ="Seccions Censals";
+	//Imatges històriques
+	gHistoric="Imatges aèries";
+	lorto10m45="Ortofoto 1:10.000 1945";
+	lorto5m56="Ortofoto 1:5.000 1956";
+	lorto5m86="Ortofoto 1:5.000 1986";
+	lorto5m94="Ortofoto 1:5.000 1994";
+	lorto5m00="Ortofoto 1:5.000 2000";
+	lorto5m04="Ortofoto 1:5.000 2004";
+	lorto5m06="Ortofoto 1:5.000 2006";
+	lorto5m09="Ortofoto 1:5.000 2009";
+	lorto5m12="Ortofoto 1:5.000 2012";
+	lorto5m15="Ortofoto 1:5.000 2015";
+	lorto5m18="Ortofoto 1:5.000 2018";
 	//Clima
 	gClima= "Variabilitat climàtica";
 	gAnompp= "Anomalies en precipitació";
@@ -206,7 +229,15 @@ var lpatents;
 	lAnomt18= "2018";
 	lAnomt19= "2019";
 	//Cobertes del sol
-	gUsos="Usos del sòl";
+	gCobusos= "Cobertes i usos del sòl";
+	gCob= "Cobertes";
+	gUsos= "Usos";
+	lcob56="1956";
+	lcob93="1993";
+	lcob00="2000";
+	lcob05="2005";
+	lcob09= "2009";
+	lcob15= "2015";
 	lusos87="1987";
 	lusos92="1992";
 	lusos97="1997";

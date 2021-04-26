@@ -137,6 +137,162 @@
           layers: [comarquesLayer, municipisLayer, seccionsLayer],
           opacity: 1
 		});
+
+
+		//Imatges historiques
+
+		var orto10m45Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto10m45,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "ovaa10m" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var orto5m56Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m56,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "ovab5m" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var orto5m86Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m86,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "orto5m1986" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var orto5m94Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m94,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "orto5m1994" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var orto5m00Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m00,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "orto5m2000" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var orto5m04Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m04,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "orto5m2004" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var orto5m06Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m06,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "orto5m2006" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var orto5m09Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m09,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "orto5m2009" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var orto5m12Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m12,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "orto5m2012" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var orto5m15Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m15,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "orto5m2015" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var orto5m18Layer = new WMSLayer({
+			portalItem: {
+				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
+			},
+			visible: false,
+			title: lorto5m18,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "orto25c2018" // name of the sublayer,
+				//legendUrl: // url to the legend
+			}]
+		});
+	
+		var imatgesHistoricGroupLayer = new GroupLayer({
+			title: gHistoric,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [orto5m18Layer, orto5m15Layer, orto5m12Layer, orto5m09Layer, orto5m06Layer, orto5m04Layer, orto5m00Layer, orto5m94Layer, orto5m86Layer, orto5m56Layer, orto10m45Layer],
+	
+			opacity: 1
+		});
+	
 		
 		
 		//**********Clima***********//
@@ -241,7 +397,72 @@
           opacity: 1
         });
 		
-		
+		//***************Cobertes del sòl*****************//
+		var cob56Layer = new MapImageLayer({
+		portalItem: {
+			id: "040679a9fcee4e35a8808bea01cd71d9"
+		},
+		id: "271503d302a24e3c92ef806e53925b98",
+		visible: false,
+		title: lcob56,
+		listMode: "hide-children"
+	});
+	capes.push(cob56Layer);
+
+		var cob93Layer = new MapImageLayer({
+		portalItem: {
+			id: "f2f124803baa4d86bb779cef346fc33b"
+		},
+		id: "27b6d833c83f4ff5a76ce4fefcd3971a",
+		visible: false,
+		title: lcob93,
+		listMode: "hide-children"
+	});
+	capes.push(cob93Layer);
+
+		var cob00Layer = new MapImageLayer({
+		portalItem: {
+			id: "aea3bd0f2c8e4a1493699fdff988bac1"
+		},
+		id: "9ddbf3ad865445929d37291afa9e0a5b",
+		visible: false,
+		title: lcob00,
+		listMode: "hide-children"
+	});
+	capes.push(cob00Layer);
+
+		var cob05Layer = new MapImageLayer({
+		portalItem: {
+			id: "254f367be0684692a05a54b073ac121c"
+		},
+		id: "3549108ac10b4ab7b60c5623cd0f5cda",
+		visible: false,
+		title: lcob05,
+		listMode: "hide-children"
+	});
+	capes.push(cob05Layer);
+
+		var cob09Layer = new MapImageLayer({
+		portalItem: {
+			id: "9f942705cbdc4561a21b1c802b7f798b"
+		},
+		id: "c468a6a45ed84aafa7cb835565162d27",
+		visible: false,
+		title: lcob09,
+		listMode: "hide-children"
+	});
+	capes.push(cob09Layer);
+
+		var cob15Layer = new MapImageLayer({
+		portalItem: {
+			id: "57b1be06d3554ed6a2c4a7c0ed0cbe28"
+		},
+		id: "d44522da5c584825b4b370d13053056a",
+		visible: false,
+		title: lcob15,
+		listMode: "hide-children"
+	});
+	capes.push(cob15Layer);
 
 		
 		//capes d'usos
@@ -323,11 +544,28 @@
 		capes.push(usos17Layer);
 
 		//grup de capes
-		var usosGroupLayer = new GroupLayer({
-          title: gUsos,
+
+		var CobGroupLayer = new GroupLayer({
+			title: gCob,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [cob15Layer,cob09Layer,cob05Layer,cob00Layer,cob93Layer,cob56Layer],
+			opacity: 1
+		  });
+
+		  var UsGroupLayer = new GroupLayer({
+			title: gUsos,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [usos17Layer,usos12Layer,usos07Layer,usos02Layer,usos97Layer,usos92Layer,usos87Layer],
+			opacity: 1
+		  });
+
+		var cobusosGroupLayer = new GroupLayer({
+          title: gCobusos,
           visible: true,
           visibilityMode: "independent",
-          layers: [usos17Layer,usos12Layer,usos07Layer,usos02Layer,usos97Layer,usos92Layer,usos87Layer],
+          layers: [UsGroupLayer, CobGroupLayer],
           opacity: 1
         });
 		
@@ -732,7 +970,7 @@
 			visible: true,
 			visibilityMode: "independent",
 			layers: [riscGroupLayer, sostenibilitatGroupLayer, contmGroupLayer, ecoGroupLayer, biodivGroupLayer, estructuraGroupLayer, variarbratGroupLayer, ndviGroupLayer, 
-				usosGroupLayer, climaGroupLayer],
+				cobusosGroupLayer, climaGroupLayer],
 			opacity: 1
 		  });
 
@@ -1278,7 +1516,7 @@
 
        map = new Map({
           basemap: "topo",
-		 layers: [socioGroupLayer,indsocioecoGroupLayer, regionsGroupLayer, limitsGroupLayer]
+		 layers: [socioGroupLayer,indsocioecoGroupLayer, imatgesHistoricGroupLayer, limitsGroupLayer]
         });
 		
 		
