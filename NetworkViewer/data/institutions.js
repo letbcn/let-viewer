@@ -3,7 +3,7 @@ var institutions = {
         "Department of Economic History and Institutions, University of Barcelona",
         "Department of Economic Structure, University of Valencia",
         "Terrestrial Ecology Group, Animal Biology and Ecology Department, University of Granada",
-        "Catalan Butterfly Monitoring Scheme, Museu de Ci?¿ncies Naturals de Granollers",
+        "Catalan Butterfly Monitoring Scheme, Museu de Ciències Naturals de Granollers",
         "Animal Biology Area, Environmental Sciences Department, University of Girona",
         "Barcelona Regional",
         "Basque Centre for Climate Change (BC3)",
@@ -25,7 +25,7 @@ var institutions = {
         "Ecotoxicology of Air Pollution, Centro de Investigaciones Energ?®ticas, Medioambientales",
         "Geography Department, University of Girona",
         "Institute of Environmental Assessment and Water Research, Centro Superior de Investigaciones Científicas",
-        "Institució Catalana de Recerca i Estudis Avan?ºats, Universitat Autònoma de Barcelona",
+        "Institució Catalana de Recerca i Estudis Avançats, Universitat Autònoma de Barcelona",
         "Institut de Ciència i Tecnologia Ambientals, Universitat Autònoma de Barcelona",
         "Centre de la Propietat Forestal",
         "Department of Geography, University of the Basque Country",
@@ -40,11 +40,11 @@ var institutions = {
     "DE": ["Institute for World Forestry, University of Hamburg",
         "Department Ecosystem Services, Helmholtz Center for Environmental Research",
         "Institute of Ecology, Friedrich Schiller University Jena",
-        "Institute of Geography, Humboldt Universit?ñt zu Berlin",
+        "Institute of Geography, Humboldt Universität zu Berlin",
         "German Center for integrative Bioidversity Research",
-        "Sustainable Urban and Infrastructure Planning, HafenCity Universit?ñt",
-        "Section of Engineering Hydrology and Water Management, Technische Universit?ñt Darmstadt",
-        "Integrative Research Institute on Transformations of Human-Environment Systems, Humboldt-Universit?ñt",
+        "Sustainable Urban and Infrastructure Planning, HafenCity Universität",
+        "Section of Engineering Hydrology and Water Management, Technische Universität Darmstadt",
+        "Integrative Research Institute on Transformations of Human-Environment Systems, Humboldt-Universität",
         "Population Ecology Group, Department of Animal Ecology, University of Bayreuth"
     ],
     "UK": ["Information and Computational Sciences Group, The James Hutton Institute",
@@ -58,10 +58,10 @@ var institutions = {
     ],
     "CA": ["Department of Biology, McGill University",
         "Faculty of Arts, University of Prince Edward Island",
-        "D?®partement de g?®ographie, Universit?® de Montr?®al",
+        "Département de géographie, Université de Montréal",
         "Department of History, College of Arts & Science, University of Saskatchewan",
         "Quebec Center for Biodiversity Science",
-        "Institut des Sciences de la For?¬t Temp?®r?®e, Universit?® du Qu?®bec"
+        "Institut des Sciences de la Forêt Tempérée, Université du Québec"
     ],
     "US": ["Science Exchange Sea Turtle Internship Program, San Diego State University",
         "Institute for Social Research, University of Michigan",
@@ -79,13 +79,13 @@ var institutions = {
         "Department of Earth and Environmental Sciences, Catholic University of Leuven",
         "Research Institute for Nature and Forest"
     ],
-    "CL": ["Instituto de Geograf?¡a, Pontificia Universidad Cat??lica de Chile",
-        "Department of Geography, Architecture, Urbanism, University of Concepci??n",
-        "Departamento de Planificaci??n Territorial, Universidad de Concepci??n"
+    "CL": ["Instituto de Geografía, Pontificia Universidad Católica de Chile",
+        "Department of Geography, Architecture, Urbanism, University of Concepción",
+        "Departamento de Planificación Territorial, Universidad de Concepción"
     ],
-    "FR": ["National Institute for Environmental Science and Research, Universit?® Grenoble Alpes",
+    "FR": ["National Institute for Environmental Science and Research, Université Grenoble Alpes",
         "Institute for Agricultural and Environmental Engineering Research",
-        "Institut de G?®nomique Fonctionnelle"
+        "Institut de Génomique Fonctionnelle"
     ],
     "HU": ["Environmental Social Science Research Group",
         "Department of Decision Science, Corvinus University of Budapest",
@@ -96,7 +96,7 @@ var institutions = {
         "Department of Systems Ecology, Stockholm University"
     ],
     "AT": ["Department of Geography and Geology, University of Salzburg",
-        "Institute of Social Ecology,  Alpen-Adria Universit?ñt Klagenfurt"
+        "Institute of Social Ecology, Alpen-Adria Universität Klagenfurt"
     ],
     "EE": ["Institute of Agricultural and Environmental Sciences, Estonian University of Life Sciences",
         "Institute of Ecology and Earth Sciences, University of Tartu"
@@ -117,12 +117,12 @@ var institutions = {
         "Centre for Applied Ecology, University of Lisbon"
     ],
     "SK": ["Institute of Landscape Ecology of the Slovak Academy of Sciences"],
-    "AR": ["Programa de Postgrado de Antropolog?¡a Social, Universidad Nacional de Misiones"],
+    "AR": ["Programa de Postgrado de Antropología Social, Universidad Nacional de Misiones"],
     "CH": ["Swiss Federal Institute for Forest, Snow and Landscape Research"],
     "EC": ["Facultad Latinoamericana de Ciencias Sociales en Ecuador"],
     "ET": ["College of Agriculture and Veterinary Medicine, Jimma University"],
     "IE": ["School of Spatial Planning Dublin, Institute of Technology"],
     "PR": ["Department of Biology, University of Puerto Rico"],
     "RO": ["Department of Systems Ecology and Sustainability, University of Bucharest"],
-    "IR": ["Iran"]
+    "IR": ["Department of Environmental Planning and Design - Shahid Beheshti University"]
 };
