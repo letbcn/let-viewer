@@ -1,9 +1,10 @@
 require([
         "esri/Map",
         "esri/views/MapView",
-        "esri/layers/FeatureLayer"
+        "esri/layers/FeatureLayer",
+        "esri/widgets/Home"
     ],
-    function(Map, MapView, FeatureLayer) {
+    function(Map, MapView, FeatureLayer, Home) {
 
         const defaultPosition = [2.13, 41.40];
 
@@ -40,6 +41,12 @@ require([
                 maxZoom: 7
             }
         });
+
+        var homeBtn = new Home({
+            view: view
+        });
+
+        view.ui.add(homeBtn, "top-left");
 
         view.surface.addEventListener("wheel", function(event) {
             event.stopImmediatePropagation();
