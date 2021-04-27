@@ -118,6 +118,9 @@ var lrendai17;
 var lrendaa15;
 var lrendaa16;
 var lrendaa17;
+//PIB
+var gPib;
+var	lpibm18;
 //Formacio
 var gForma;
 var lforma18;
@@ -142,10 +145,12 @@ var lmajors16;
 var lmajors17;
 //Habitatge
 var gHabitatge;
+var gEsforshab;
+var lesfhabit17;
+var lesfhabit18;
 var gDemandhabitatge;
 var ldehabit19;
 var ldehabit20;
-var lesfhabit18;
 //Estrangers
 var gMigra;
 var gMigrants;
@@ -283,6 +288,9 @@ var lpatents;
 	lrendaa15="2015";
 	lrendaa16="2016";
 	lrendaa17="2017";
+	//PIB
+	gPib= "PIB";
+	lpibm18= "2018";
 	//Formacio
 	gForma= "Formació";
 	lforma18= "2018";
@@ -307,10 +315,12 @@ var lpatents;
 	lmajors17= "2017";
 	//Habitatge
 	gHabitatge="Habitatge";
+	gEsforshab= "Esforç accés a l'habitatge";
+	lesfhabit17= "2017";
+	lesfhabit18= "2018";
 	gDemandhabitatge="Demanda d'habitatge";
 	ldehabit19= "2019";
 	ldehabit20= "2020";
-	lesfhabit18="2018";
 	//Estrangers
 	gMigra= "Migracions";
 	gMigrants= "Població estrangera";

@@ -929,9 +929,9 @@
 	//Emissions CO2
 	var co2electricsectorLayer = new MapImageLayer({
 		portalItem: {
-			id: "06b57b59f1e046719b02f3d747b834a5"
+			id: "646196c94e794193b5b8c14d36a26b89"
 		},
-		id: "59c43fa5e3964e3d9a600b67cf74f367",
+		id: "",
 		visible: false,
 		title: lCo2electsect,
 		listMode: "hide-children"
@@ -940,9 +940,9 @@
 
 	var co2electrichabLayer = new MapImageLayer({
 		portalItem: {
-			id: "06b57b59f1e046719b02f3d747b834a5"
+			id: "9c25e43cda644a888d2810189a48c4da"
 		},
-		id: "59c43fa5e3964e3d9a600b67cf74f367",
+		id: "",
 		visible: false,
 		title: lCo2electhab,
 		listMode: "hide-children"
@@ -951,9 +951,9 @@
 
 	var co2gassectorLayer = new MapImageLayer({
 		portalItem: {
-			id: "06b57b59f1e046719b02f3d747b834a5"
+			id: "d6f4217ac14343e1a0f75f4b900d18ae"
 		},
-		id: "59c43fa5e3964e3d9a600b67cf74f367",
+		id: "",
 		visible: false,
 		title: lCo2gassect,
 		listMode: "hide-children"
@@ -962,7 +962,7 @@
 
 	var co2gashabLayer = new MapImageLayer({
 		portalItem: {
-			id: "06b57b59f1e046719b02f3d747b834a5"
+			id: "c688787eab1140e8a524c10bc84c28c5"
 		},
 		id: "",
 		visible: false,
@@ -989,7 +989,6 @@
 
 
 	//cicle del aigua
-
 	var aiguadomLayer = new MapImageLayer({
 		portalItem: {
 			id: "fa6018400075409f929cae17df38b53b"
@@ -1012,19 +1011,30 @@
 	});
 	capes.push(aiguasectorsLayer);
 
+	var freatiquesLayer = new MapImageLayer({
+		portalItem: {
+			id: "eba744ce00c84b8e9c99796d05697b07"
+		},
+		id: "",
+		visible: false,
+		title: lFreatiques,
+		listMode: "hide-children"
+	});
+	capes.push(freatiquesLayer);
+
 
 	var cicleaiguaGroupLayer = new GroupLayer({
 		title: gCicleaigua,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [aiguasectorsLayer, aiguadomLayer],
+		layers: [freatiquesLayer, aiguasectorsLayer, aiguadomLayer],
 		opacity: 1
 	});
 
 	//Gestio residus
 	var genresidusmuniLayer = new MapImageLayer({
 		portalItem: {
-			id: "a6129db1d352409d812cb60b55430d60"
+			id: "3add515e9ab24961bff139aeaec6b0cd"
 		},
 		id: "",
 		visible: false,
@@ -1035,7 +1045,7 @@
 
 	var genresidushabiLayer = new MapImageLayer({
 		portalItem: {
-			id: "a6129db1d352409d812cb60b55430d60"
+			id: "c5d1976b3e4841f1abdc7084f364904e"
 		},
 		id: "",
 		visible: false,
@@ -1046,7 +1056,7 @@
 
 	var recollidaselectivaLayer = new MapImageLayer({
 		portalItem: {
-			id: "a6129db1d352409d812cb60b55430d60"
+			id: "bdc62112a58f4d02a5062a62ab239f50"
 		},
 		id: "",
 		visible: false,
@@ -1057,7 +1067,7 @@
 
 	var residusindustLayer = new MapImageLayer({
 		portalItem: {
-			id: "a6129db1d352409d812cb60b55430d60"
+			id: "32b2300845aa4f5aab91a8ea858e0e73"
 		},
 		id: "",
 		visible: false,
@@ -1068,7 +1078,7 @@
 
 	var residusindustempLayer = new MapImageLayer({
 		portalItem: {
-			id: "a6129db1d352409d812cb60b55430d60"
+			id: "c84ce0bf37d14c4aaf397c55b97ae377"
 		},
 		id: "",
 		visible: false,
@@ -1429,12 +1439,36 @@
 	});
 	capes.push(rendaalt17Layer);
 
+	var pibmunicipalLayer = new MapImageLayer({
+		portalItem: {
+			id: "abe816f4ecb8438dbf090d3d42988906"
+		},
+		id: '', //modificar
+		visible: false,
+		title: lpibm,
+		listMode: "hide-children"
+	});
+	capes.push(pibmunicipalLayer);
+
+	//Innovacio
+	//Patents
+	var patentsLayer = new MapImageLayer({
+		portalItem: {  
+			id: "26d0b5e3c1584c22ba6f706c79b8d149"
+		  },
+		  id:"",
+		  visible: false,
+		  title: lpatents,
+		  listMode: "hide-children"
+		});
+	  capes.push(patentsLayer);
+
 
 	var economiaGroupLayer = new GroupLayer({
 		title: gEco,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [rendaalt17Layer, rendaint17Layer, rendabaixa17Layer, rendamitjanaLayer, formacioLayer, aturLayer],
+		layers: [patentsLayer, pibmunicipalLayer, rendaalt17Layer, rendaint17Layer, rendabaixa17Layer, rendamitjanaLayer, formacioLayer, aturLayer],
 		opacity: 1
 	});
 

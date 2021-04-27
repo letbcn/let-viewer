@@ -117,6 +117,7 @@ var lCo2gashab;
 var gCicleaigua;
 var lAiguadom;
 var lAiguasect;
+var lFreatiques;
 //Gestio residus
 var gGestioresidus;
 var lgeneresidumuni;
@@ -169,7 +170,8 @@ var lpobresa;
 //Habitatge
 var lestath;
 var laccesh;
-
+//Innovacio
+var lpatents;
 
 
 
@@ -250,8 +252,8 @@ var laccesh;
 	lTempmit="Temperatura mitjana";
 	lTempmax="Temperatures màximes";
 	gAnom= "Anomalies climàtiques";
-	lAnomp19= "Anomalia precipitació 2019";
-	lAnomt19= "Anomalia temperatura 2019";
+	lAnomp19= "Anomalia precipitació";
+	lAnomt19= "Anomalia temperatura";
 	//Cobertes del sol
 	gCobertesSol="Cobertes del sòl";
 	gCobertes="Cobertes del sòl";
@@ -299,6 +301,7 @@ var laccesh;
 	gCicleaigua= "Cicle del aigua";
 	lAiguadom= "Consum domèstic aigua per habitant";
 	lAiguasect= "Consum d'aigua per sector";
+	lFreatiques= "Ús d'aigua freàtica per usos municipals";
 	//gestio residus
 	gGestioresidus= "Gestió de residus";
 	lgeneresidumuni= "Generació residus municipals";
@@ -343,10 +346,11 @@ var laccesh;
 	lrendab17= "Renda baixa";
 	lrendai17= "Renda intermèdia";
 	lrendaa17="Renda alta";
+	lpibm= "PIB per habitant";
 	//Vulnerabilitat
 	lvulne17= "Índex vulnerabilitat urbana";
 	//Envelliment
-	lmajors17= "Població major 75 anys sola 2017";
+	lmajors17= "Població major 75 anys sola";
 	lenvell="Envelliment vulnerable";
 	//Estrangers
 	lmigra20="Població estrangera";
@@ -355,7 +359,8 @@ var laccesh;
 	gHabitat= "Habitatge";
 	lestath="Estat de conservació d'habitatges";
 	laccesh="Accessibilitat a l’habitatge";
-	
+	//Innovacio
+	lpatents= "Patents europees";
 	lpobresa="Pobresa";
 	lformacio="Població poc qualificada";
 	latur="Atur";
