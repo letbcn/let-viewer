@@ -8,6 +8,9 @@ require([
         const defaultPosition = [2.13, 41.40];
 
         function studyCasesPopup(feature) {
+            if (cases[feature.graphic.attributes.name_2] == null) {
+                return cases["Qazvín (Iran)"]
+            }
             return cases[feature.graphic.attributes.name_2];
         }
 
