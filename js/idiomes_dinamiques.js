@@ -45,15 +45,7 @@ var lAnomt17;
 var lAnomt18;
 var lAnomt19;
 //Cobertes del sòl
-var gCobusos
-var gCob;
 var gUsos;
-var lcob56;
-var lcob93;
-var lcob00;
-var lcob05;
-var lcob09;
-var lcob15;
 var lusos87;
 var lusos92;
 var lusos97;
@@ -61,24 +53,24 @@ var lusos02;
 var lusos07;
 var lusos12;
 var lusos17;
+//Activitat vegetació
+var gActvegeta;
 //NDVI
 var gNatural;
 var gNdvi;
 var lndvi17;
 var lndvi18;
 var lndvi19;
-//Variables arbrat
-var gVarbrat;
-var lbiofol;
-var lbiotot;
-var lhmitja;
-//Estructura paisatge
-var gEstict;
-var lict;
-var lice;
-//Biodiversitat
-var gBiodiv;
-var lbiodsing;
+//Incendis forestals
+var gIncend;
+var lincend;
+//Funcionalitat paisatge
+var gFuncio;
+var gConnect;
+var lice56;
+var lice93;
+var lice09;
+var lice15;
 //Estat ecològic
 var gEco;
 var gEcorius;
@@ -90,8 +82,6 @@ var lecosub13;
 //Consum aigua
 var gConaigua;
 var laigua06;
-//Sostenibilitat urbana
-var gSostUrb;
 //Consum energia
 var gConenerg;
 var lenerg11;
@@ -99,16 +89,10 @@ var lenerg12;
 var lenerg13;
 var lenerg14;
 var lenerg15;
-//Riscos territorials
-var gRisc;
-var lincend;
-var linund10;
-var linund100;
-var linund500;
-//Contaminació atmosferica
-var gContm;
-var lno2;
-var lpm10;
+//Generacio residus
+var gGeneracioresidus;
+var lgeneresidumuni;
+var lgeneresiduhabi;
 //Indicadors Socioecologics
 var gIndSocEco
 //Dinàmiques Socioeconòmiques
@@ -228,16 +212,8 @@ var lpatents;
 	lAnomt17= "2017";
 	lAnomt18= "2018";
 	lAnomt19= "2019";
-	//Cobertes del sol
-	gCobusos= "Cobertes i usos del sòl";
-	gCob= "Cobertes";
-	gUsos= "Usos";
-	lcob56="1956";
-	lcob93="1993";
-	lcob00="2000";
-	lcob05="2005";
-	lcob09= "2009";
-	lcob15= "2015";
+	//Usos i Cobertes del sol
+	gUsos="Usos del sòl";
 	lusos87="1987";
 	lusos92="1992";
 	lusos97="1997";
@@ -246,25 +222,23 @@ var lpatents;
 	lusos12="2012";
 	lusos17="2017";
 	//Espai natural
-	gNatural="Espai natural";
+	gActvegeta= "Activitat de la vegetació";
 	gNdvi= "Índex Vegetació (NDVI)";
 	lndvi17="2017";
 	lndvi18="2018";
 	lndvi19 ="2019";
-	//Variables arbrat
-	gVarbrat= "Variables biofísiques del arbrat";
-	lbiofol= "Biomassa foliar";
-	lbiotot= "Biomassa aèria total";
-	lhmitja= "Alçada mitjana";
-	//Estructura paisatge
-	gEstict="Estructura del paisatge"
-	lict= "Índex Connectivitat Terrestre";
-	lice= "Índex Connectivitat Ecològica dels Espais Oberts";
-	//Biodiversitat 
-	gBiodiv= "Estat biodiversitat";
-	lbiodsing= "Biodiversitat singular";
+	//Incendis forestals
+	gIncend= "Incendis forestals";
+	lincend= "1986-2019";
+	//Funcionalitat paisatge
+	gFuncio="Funcionalitat del paisatge"
+	gConnect=  "Índex Connectivitat Ecològica dels Espais Oberts";
+	lice56= "1956";
+	lice93= "1993";
+	lice09= "2009";
+	lice15= "2015";
 	//Estat ecològic
-	gEco= "Estat ecològic de les masses d'aigüa";
+	gEco= "Qualitat de l'aigüa";
 	gEcorius= "Rius"
 	lecorius07= "2007-2012";
 	lecorius13= "2013-2017";
@@ -281,19 +255,10 @@ var lpatents;
 	lenerg13= "2013";
 	lenerg14= "2014";
 	lenerg15= "2015";
-	//Sostenibilitat urbana
-	gSostUrb= "Sostenibilitat urbana";
-	//Riscos territorials
-	gRisc= "Riscos territorials";
-	gInund= "Inundabilitat"
-	lincend= "Incendis";
-	linund10= "Retorn 10 anys";
-	linund100= "Retorn 100 anys";
-	linund500= "Retorn 500 anys";
-	//Contaminació atmosferica
-	gContm= "Contaminació atmosfèrica";
-	lno2= "No2";
-	lpm10= "Pm10";
+	//Generacio residus
+	gGeneracioresidus= "Generació de residus";
+	lgeneresidumuni ="Municipals";
+	lgeneresiduhabi = "Per habitants";
 	//Indicadors socioecològics
 	gIndSocEco= "Indicadors socioecològics";
 	//Dinàmiques Socioeconòmiques

@@ -77,6 +77,11 @@ var lhab;
 var lboscoss;
 var lbiodsing;
 var lndvi19;
+//Variables arbrat
+var gVarbrat;
+var lbiofol;
+var lbiotot;
+var lhmitja;
 //Espai urbà
 var gUrba;
 var lpoligons;
@@ -102,13 +107,32 @@ var lElectrhab;
 var lGassect;
 var lGasdom;
 var lGashab;
+//Emissions CO2
+var gEmissions;
+var lCo2electsect;
+var lCo2electhab;
+var lCo2gassect;
+var lCo2gashab;
 //Cicle aigua
 var gCicleaigua;
 var lAiguadom;
 var lAiguasect;
 //Gestio residus
 var gGestioresidus;
-var lgeneresidumuni
+var lgeneresidumuni;
+var lgeneresiduhabi;
+var lrecollida;
+var lresidusind;
+var lresidusindemp;
+//Qualitat aire
+var gQualiair;
+//xarxa control contaminants
+var gxarxContm;
+var lxarxno2;
+//Contaminació atmosfèrica
+var gContm;
+var lno2;
+var lpm10;
 //Riscos territorials
 var gRiscos;
 var lperim;
@@ -242,6 +266,11 @@ var laccesh;
 	lboscoss="Boscos singulars";
 	lbiodsing= "Biodiversitat singular";
 	lndvi19 ="Índex Vegetació (NDVI) 2019";
+	//Variables arbrat
+	gVarbrat= "Variables biofísiques del arbrat";
+	lbiofol= "Biomassa foliar";
+	lbiotot= "Biomassa aèria total";
+	lhmitja= "Alçada mitjana";
 	//Espai urbà
 	gUrba="Espai urbà";
 	lpoligons="Polígons industrials";
@@ -260,13 +289,23 @@ var laccesh;
 	lGassect= "Consum gas natural per sector";
 	lGasdom= "Consum domèstic gas natural ";
 	lGashab= "Consum gas natural per habitant";
+	//Emissions
+	gEmissions= "Emissions CO2";
+	lCo2electsect= "Emissions CO2 del consum elèctric per sector";
+	lCo2electhab="Emissions CO2 del consum elèctric per habitant";
+	lCo2gassect= "Emissions CO2 del consum de gas natural per sector";
+	lCo2gashab= "Emissions CO2 del consum de gas natural per habitant";
 	//cicle aigua
 	gCicleaigua= "Cicle del aigua";
 	lAiguadom= "Consum domèstic aigua per habitant";
 	lAiguasect= "Consum d'aigua per sector";
 	//gestio residus
-	gGestioresidus= "Gestió residus";
+	gGestioresidus= "Gestió de residus";
 	lgeneresidumuni= "Generació residus municipals";
+	lgeneresiduhabi= "Generació residus per habitant";
+	lrecollida= "Recollida selectiva de residus";
+	lresidusind= "Residus industrials";
+	lresidusindemp= "Residus industrials per empresa";
 	//estat masses aigues
 	gEstatAigua="Estat de les masses d'aigua";
 	lEscostaneres="Aigües costaneres";
@@ -274,6 +313,15 @@ var laccesh;
 	lEsrius="Estat ecològic dels rius";
 	lEssubt="Estat ecològic aigües subterrànies";
 	lEshumides="Zones humides";
+	//Qualitat aire
+	gQualiair= "Qualitat del aire";
+	//Xarxa control contaminants
+	gxarxContm= "Xarxa control contaminants";
+	lxarxno2= "NO2";
+	//Contaminació atmosfèrica
+	gContm= "Contaminació atmosfèrica";
+	lno2= "NO2";
+	lpm10="PM10";
 	//Riscos territorials
 	gRiscos= "Riscos territorials";	
 	gIncendis="Incendis forestals";
@@ -301,8 +349,8 @@ var laccesh;
 	lmajors17= "Població major 75 anys sola 2017";
 	lenvell="Envelliment vulnerable";
 	//Estrangers
-	lmigra20="Població estrangera 2020";
-	lest17="Estrangers de països en desenvolupament 2017";
+	lmigra20="Població estrangera";
+	lest17="Estrangers de països en desenvolupament";
 	//Habitatge
 	gHabitat= "Habitatge";
 	lestath="Estat de conservació d'habitatges";

@@ -670,12 +670,54 @@
 	  });
 	  capes.push(biodivsingLayer);
 
+	//Variables biofisiques arbrat
+	var biomassafoliarLayer = new MapImageLayer({
+		portalItem: {  
+		  id: "ab1c9082a5ef45ebaea40dbcdd75fe8b"
+		},
+		id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+		visible: false,
+		title: lbiofol,
+		listMode: "hide-children"
+	  });
+	  capes.push(biomassafoliarLayer);
+
+	  var biomassatotalLayer = new MapImageLayer({
+		portalItem: {  
+		  id: "bccc5bb1c60c42b39289b9a77f98457b"
+		},
+		id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+		visible: false,
+		title: lbiotot,
+		listMode: "hide-children"
+	  });
+	  capes.push(biomassatotalLayer);
+
+	  var hmitjaLayer = new MapImageLayer({
+		portalItem: {  
+		  id: "bccc5bb1c60c42b39289b9a77f98457b"
+		},
+		id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+		visible: false,
+		title: lhmitja,
+		listMode: "hide-children"
+	  });
+	  capes.push(hmitjaLayer);
+
+	var variarbratGroupLayer = new GroupLayer({
+		title: gVarbrat,
+		visible: true,
+		visibilityMode: "independent",
+		layers: [hmitjaLayer, biomassatotalLayer, biomassafoliarLayer],
+		opacity: 1
+	  }); 
+
 
 	var espaiNaturalGroupLayer = new GroupLayer({
 		title: gNatural,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [ndvi19Layer, biodivsingLayer, hicLayer, habLayer, boscossLayer],
+		layers: [variarbratGroupLayer, ndvi19Layer, biodivsingLayer, hicLayer, habLayer, boscossLayer],
 		opacity: 1
 	});
 
@@ -884,12 +926,64 @@
 	});
 	capes.push(gashabitantLayer);
 
+	//Emissions CO2
+	var co2electricsectorLayer = new MapImageLayer({
+		portalItem: {
+			id: "06b57b59f1e046719b02f3d747b834a5"
+		},
+		id: "59c43fa5e3964e3d9a600b67cf74f367",
+		visible: false,
+		title: lCo2electsect,
+		listMode: "hide-children"
+	});
+	capes.push(co2electricsectorLayer);
+
+	var co2electrichabLayer = new MapImageLayer({
+		portalItem: {
+			id: "06b57b59f1e046719b02f3d747b834a5"
+		},
+		id: "59c43fa5e3964e3d9a600b67cf74f367",
+		visible: false,
+		title: lCo2electhab,
+		listMode: "hide-children"
+	});
+	capes.push(co2electrichabLayer);
+
+	var co2gassectorLayer = new MapImageLayer({
+		portalItem: {
+			id: "06b57b59f1e046719b02f3d747b834a5"
+		},
+		id: "59c43fa5e3964e3d9a600b67cf74f367",
+		visible: false,
+		title: lCo2gassect,
+		listMode: "hide-children"
+	});
+	capes.push(co2gassectorLayer);
+
+	var co2gashabLayer = new MapImageLayer({
+		portalItem: {
+			id: "06b57b59f1e046719b02f3d747b834a5"
+		},
+		id: "",
+		visible: false,
+		title: lCo2gashab,
+		listMode: "hide-children"
+	});
+	capes.push(co2gashabLayer);
+
+	var emissionsGroupLayer = new GroupLayer({
+		title: gEmissions,
+		visible: true,
+		visibilityMode: "independent",
+		layers: [co2gashabLayer, co2gassectorLayer, co2electrichabLayer, co2electricsectorLayer],
+		opacity: 1
+	});
 
 	var energiaGroupLayer = new GroupLayer({
 		title: gEnergia,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [gashabitantLayer, gasdomesticLayer, gassectorLayer, electrdomhabLayer, electrsectorLayer],
+		layers: [emissionsGroupLayer, gashabitantLayer, gasdomesticLayer, gassectorLayer, electrdomhabLayer, electrsectorLayer],
 		opacity: 1
 	});
 
@@ -939,21 +1033,124 @@
 	});
 	capes.push(genresidusmuniLayer);
 
+	var genresidushabiLayer = new MapImageLayer({
+		portalItem: {
+			id: "a6129db1d352409d812cb60b55430d60"
+		},
+		id: "",
+		visible: false,
+		title: lgeneresiduhabi,
+		listMode: "hide-children"
+	});
+	capes.push(genresidushabiLayer);
+
+	var recollidaselectivaLayer = new MapImageLayer({
+		portalItem: {
+			id: "a6129db1d352409d812cb60b55430d60"
+		},
+		id: "",
+		visible: false,
+		title: lrecollida,
+		listMode: "hide-children"
+	});
+	capes.push(recollidaselectivaLayer);
+
+	var residusindustLayer = new MapImageLayer({
+		portalItem: {
+			id: "a6129db1d352409d812cb60b55430d60"
+		},
+		id: "",
+		visible: false,
+		title: lresidusind,
+		listMode: "hide-children"
+	});
+	capes.push(residusindustLayer);
+
+	var residusindustempLayer = new MapImageLayer({
+		portalItem: {
+			id: "a6129db1d352409d812cb60b55430d60"
+		},
+		id: "",
+		visible: false,
+		title: lresidusindemp,
+		listMode: "hide-children"
+	});
+	capes.push(residusindustempLayer);
 
 	var gestioresidusGroupLayer = new GroupLayer({
 		title: gGestioresidus,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [genresidusmuniLayer],
+		layers: [residusindustempLayer, residusindustLayer, recollidaselectivaLayer, genresidushabiLayer, genresidusmuniLayer],
 		opacity: 1
 	});
 
+	//Qualitat aire
 
+	var xarxno2Layer = new MapImageLayer({
+		portalItem: {  
+		  id: "5a462b1cfc844cbda4ea2372e8a03d9e"
+		},
+		id:'', //modificar
+		visible: false,
+		title: lxarxno2,
+		listMode: "hide-children"
+	  });
+	  capes.push(xarxno2Layer);
+
+	var xarxacontmGroupLayer = new GroupLayer({
+		title: gxarxContm,
+		visible: true,
+		visibilityMode: "independent",
+		layers: [xarxno2Layer],
+		opacity: 1
+	  });
+
+	//Contaminació atmosfèrica
+	var no2Layer = new MapImageLayer({
+		portalItem: {  
+		  id: "5a462b1cfc844cbda4ea2372e8a03d9e"
+		},
+		id:'', //modificar
+		visible: false,
+		title: lno2,
+		listMode: "hide-children"
+	  });
+	  capes.push(no2Layer);
+
+	  var pm10Layer = new MapImageLayer({
+		portalItem: {  
+		  id: "67330ca65a95430f99e02ef8dc2cb9ee"
+		},
+		id:'', //modificar
+		visible: false,
+		title: lpm10,
+		listMode: "hide-children"
+	  });
+	  capes.push(pm10Layer);
+
+	  var contmGroupLayer = new GroupLayer({
+		title: gContm,
+		visible: true,
+		visibilityMode: "independent",
+		layers: [pm10Layer, no2Layer],
+		opacity: 1
+	  });
+	
+	  var qualitataireGroupLayer = new GroupLayer({
+		title: gQualiair,
+		visible: true,
+		visibilityMode: "independent",
+		layers: [contmGroupLayer, xarxacontmGroupLayer],
+		opacity: 1
+	  });
+	  
+	  //Grup dels vectors ambientals
 	var vectorsAmbientalsGroupLayer = new GroupLayer({
 		title: gAmbientals,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [gestioresidusGroupLayer, cicleaiguaGroupLayer, energiaGroupLayer, estasMassesGroupLayer],
+		layers: [qualitataireGroupLayer, gestioresidusGroupLayer, cicleaiguaGroupLayer, energiaGroupLayer, estasMassesGroupLayer],
 		opacity: 1
 	});
 

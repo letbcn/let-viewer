@@ -98,25 +98,27 @@
 		//**********Limits Administratius ***********//
 		//capes limits
 			
-		var comarquesLayer = new FeatureLayer({
-		  portalItem: {  
-			id: "b1cb0e81815b4557b977d9772dc52289"
-		  },
-		  id:"dff564bae81b4746a1b862a295261149",
-		  visible: false,
-		  title: "Comarques",
-		  layerID: 0
-		});
-
-		var municipisLayer = new FeatureLayer({
-		  portalItem: {  
-			id: "3f51bf9674064661ace82a71da68de78"
-		  },
-		  id:"2b35430f24ca44f9806026d89a8c647c",
-		  visible: true,
-		  title: "Municipis",
-		  layerID: 0
-		});
+		var comarquesLayer = new MapImageLayer({
+			portalItem: {
+				id: "b628d29242aa4591b986a4c293f8edda"
+			},
+			id: "",
+			visible: false,
+			title: lcomarca,
+			listMode: "hide-children"
+			});
+			capes.push(comarquesLayer);
+		
+		var municipisLayer = new MapImageLayer({
+				portalItem: {
+					id: "859bf95613ab4057b021b6a0deeef203"
+				},
+				id: "",
+				visible: true,
+				title: lmunicipis,
+				listMode: "hide-children"
+			});
+			capes.push(municipisLayer);
 
 		var seccionsLayer = new MapImageLayer({
 		  portalItem: { 
@@ -137,10 +139,9 @@
           layers: [comarquesLayer, municipisLayer, seccionsLayer],
           opacity: 1
 		});
-
-
-		//Imatges historiques
-
+		
+		
+		//Imatges aeries
 		var orto10m45Layer = new WMSLayer({
 			portalItem: {
 				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
@@ -153,7 +154,7 @@
 				//legendUrl: // url to the legend
 			}]
 		});
-	
+
 		var orto5m56Layer = new WMSLayer({
 			portalItem: {
 				id: "052bd1b6ba404a68be5ed6d06a8e4eaf"
@@ -292,9 +293,9 @@
 	
 			opacity: 1
 		});
-	
-		
-		
+
+
+
 		//**********Clima***********//
 		//anomalies precipitació
 
@@ -379,7 +380,6 @@
 		  
 		    // adds the layer to the map
 		
-		
 		  var anomtempGroupLayer = new GroupLayer({
 			title: gAnomtemp,
 			visible: true,
@@ -397,74 +397,8 @@
           opacity: 1
         });
 		
-		//***************Cobertes del sòl*****************//
-		var cob56Layer = new MapImageLayer({
-		portalItem: {
-			id: "040679a9fcee4e35a8808bea01cd71d9"
-		},
-		id: "271503d302a24e3c92ef806e53925b98",
-		visible: false,
-		title: lcob56,
-		listMode: "hide-children"
-	});
-	capes.push(cob56Layer);
-
-		var cob93Layer = new MapImageLayer({
-		portalItem: {
-			id: "f2f124803baa4d86bb779cef346fc33b"
-		},
-		id: "27b6d833c83f4ff5a76ce4fefcd3971a",
-		visible: false,
-		title: lcob93,
-		listMode: "hide-children"
-	});
-	capes.push(cob93Layer);
-
-		var cob00Layer = new MapImageLayer({
-		portalItem: {
-			id: "aea3bd0f2c8e4a1493699fdff988bac1"
-		},
-		id: "9ddbf3ad865445929d37291afa9e0a5b",
-		visible: false,
-		title: lcob00,
-		listMode: "hide-children"
-	});
-	capes.push(cob00Layer);
-
-		var cob05Layer = new MapImageLayer({
-		portalItem: {
-			id: "254f367be0684692a05a54b073ac121c"
-		},
-		id: "3549108ac10b4ab7b60c5623cd0f5cda",
-		visible: false,
-		title: lcob05,
-		listMode: "hide-children"
-	});
-	capes.push(cob05Layer);
-
-		var cob09Layer = new MapImageLayer({
-		portalItem: {
-			id: "9f942705cbdc4561a21b1c802b7f798b"
-		},
-		id: "c468a6a45ed84aafa7cb835565162d27",
-		visible: false,
-		title: lcob09,
-		listMode: "hide-children"
-	});
-	capes.push(cob09Layer);
-
-		var cob15Layer = new MapImageLayer({
-		portalItem: {
-			id: "57b1be06d3554ed6a2c4a7c0ed0cbe28"
-		},
-		id: "d44522da5c584825b4b370d13053056a",
-		visible: false,
-		title: lcob15,
-		listMode: "hide-children"
-	});
-	capes.push(cob15Layer);
-
 		
+
 		//capes d'usos
 		var usos87Layer = new MapImageLayer({
           portalItem: { 
@@ -544,31 +478,16 @@
 		capes.push(usos17Layer);
 
 		//grup de capes
-
-		var CobGroupLayer = new GroupLayer({
-			title: gCob,
-			visible: true,
-			visibilityMode: "independent",
-			layers: [cob15Layer,cob09Layer,cob05Layer,cob00Layer,cob93Layer,cob56Layer],
-			opacity: 1
-		  });
-
-		  var UsGroupLayer = new GroupLayer({
-			title: gUsos,
-			visible: true,
-			visibilityMode: "independent",
-			layers: [usos17Layer,usos12Layer,usos07Layer,usos02Layer,usos97Layer,usos92Layer,usos87Layer],
-			opacity: 1
-		  });
-
-		var cobusosGroupLayer = new GroupLayer({
-          title: gCobusos,
+		var usosGroupLayer = new GroupLayer({
+          title: gUsos,
           visible: true,
           visibilityMode: "independent",
-          layers: [UsGroupLayer, CobGroupLayer],
+          layers: [usos17Layer,usos12Layer,usos07Layer,usos02Layer,usos97Layer,usos92Layer,usos87Layer],
           opacity: 1
         });
 		
+
+		//Activitat vegetació
 		//Índex Vegetació
 
 		var ndvi17Layer = new MapImageLayer({
@@ -612,98 +531,94 @@
           layers: [ndvi19Layer,ndvi18Layer,ndvi17Layer],
           opacity: 1
         });
-		
-		// Variables biofisiques arbrat
-		var biomassafoliarLayer = new MapImageLayer({
-			portalItem: {  
-			  id: "ab1c9082a5ef45ebaea40dbcdd75fe8b"
-			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
-			visible: false,
-			title: lbiofol,
-			listMode: "hide-children"
-		  });
-		  capes.push(biomassafoliarLayer);
 
-		  var biomassatotalLayer = new MapImageLayer({
-			portalItem: {  
-			  id: "bccc5bb1c60c42b39289b9a77f98457b"
-			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
-			visible: false,
-			title: lbiotot,
-			listMode: "hide-children"
-		  });
-		  capes.push(biomassatotalLayer);
-
-		  var hmitjaLayer = new MapImageLayer({
-			portalItem: {  
-			  id: "bccc5bb1c60c42b39289b9a77f98457b"
-			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
-			visible: false,
-			title: lhmitja,
-			listMode: "hide-children"
-		  });
-		  capes.push(hmitjaLayer);
-
-		var variarbratGroupLayer = new GroupLayer({
-			title: gVarbrat,
+		var actvegetacGroupLayer = new GroupLayer({
+			title: gActvegeta,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [hmitjaLayer, biomassatotalLayer, biomassafoliarLayer],
+			layers: [ndviGroupLayer],
 			opacity: 1
 		  });
-		 
 
-		// Estructura del paisatge	
-		var ictLayer = new MapImageLayer({
+		//Incendis forestals
+		var incendisLayer = new MapImageLayer({
 			portalItem: {  
-			  id: "b4a9c35ac42d4e31b056dc970fe88923"
+			  id: "0f08c9232808457fa2bc3e0c385fd9b6"
 			},
 			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
 			visible: false,
-			title: lict,
+			title: lincend,
 			listMode: "hide-children"
 		  });
-		  capes.push(ictLayer);
+		  capes.push(incendisLayer);
 
-		  var icecoLayer = new MapImageLayer({
+		  var incendGroupLayer = new GroupLayer({
+			title: gIncend,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [incendisLayer],
+			opacity: 1
+		  });
+		
+		
+		// Funcionalitat del paisatge	
+		  var ice56Layer = new MapImageLayer({
 			portalItem: {  
 			  id: "c2cefa471cac464fbd2a81aa4aa55f2f"
 			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			id:'', //modificar
 			visible: false,
-			title: lice,
+			title: lice56,
 			listMode: "hide-children"
 		  });
-		  capes.push(icecoLayer);
+		  capes.push(ice56Layer);
 
-		  var estructuraGroupLayer = new GroupLayer({
-			title: gEstict,
+		  var ice93Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "c2cefa471cac464fbd2a81aa4aa55f2f"
+			},
+			id:'', //modificar
+			visible: false,
+			title: lice93,
+			listMode: "hide-children"
+		  });
+		  capes.push(ice93Layer);
+
+		  var ice09Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "c2cefa471cac464fbd2a81aa4aa55f2f"
+			},
+			id:'', //modificar
+			visible: false,
+			title: lice09,
+			listMode: "hide-children"
+		  });
+		  capes.push(ice09Layer);
+
+		  var ice15Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "c2cefa471cac464fbd2a81aa4aa55f2f"
+			},
+			id:'', //modificar
+			visible: false,
+			title: lice15,
+			listMode: "hide-children"
+		  });
+		  capes.push(ice15Layer);
+
+		  var connectGroupLayer = new GroupLayer({
+			title: gConnect,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [ictLayer, icecoLayer],
+			layers: [ice15Layer, ice09Layer, ice93Layer, ice56Layer],
 			opacity: 1
 		  });
 
-		  	// Estat biodiversitat
-		  var biodivsingLayer = new MapImageLayer({
-			portalItem: {  
-			  id: "0d53d67b5643450b9fb287127f318167"
-			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
-			visible: false,
-			title: lbiodsing,
-			listMode: "hide-children"
-		  });
-		  capes.push(biodivsingLayer);
-
-		  var biodivGroupLayer = new GroupLayer({
-			title: gBiodiv,
+		  var funcionalitatGroupLayer = new GroupLayer({
+			title: gFuncio,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [biodivsingLayer],
+			layers: [connectGroupLayer],
 			opacity: 1
 		  });
 
@@ -776,36 +691,6 @@
 			opacity: 1
 		  });
 
-		//Contaminació atmosferica
-		var no2Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "5a462b1cfc844cbda4ea2372e8a03d9e"
-			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
-			visible: false,
-			title: lno2,
-			listMode: "hide-children"
-		  });
-		  capes.push(no2Layer);
-
-		  var pm10Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "67330ca65a95430f99e02ef8dc2cb9ee"
-			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
-			visible: false,
-			title: lpm10,
-			listMode: "hide-children"
-		  });
-		  capes.push(pm10Layer);
-
-		  var contmGroupLayer = new GroupLayer({
-			title: gContm,
-			visible: true,
-			visibilityMode: "independent",
-			layers: [pm10Layer, no2Layer],
-			opacity: 1
-		  });
 
 		  //Consum aigüa
 
@@ -894,83 +779,46 @@
 			opacity: 1
 		  });
 
-		  var sostenibilitatGroupLayer = new GroupLayer({
-			title: gSostUrb,
+		 
+		  //Generacio residus
+
+		  var genresidusmuniLayer = new MapImageLayer({
+			portalItem: {
+				id: "a6129db1d352409d812cb60b55430d60"
+			},
+			id: "",
+			visible: false,
+			title: lgeneresidumuni,
+			listMode: "hide-children"
+		});
+		capes.push(genresidusmuniLayer);
+	
+		var genresidushabiLayer = new MapImageLayer({
+			portalItem: {
+				id: "a6129db1d352409d812cb60b55430d60"
+			},
+			id: "",
+			visible: false,
+			title: lgeneresiduhabi,
+			listMode: "hide-children"
+		});
+		capes.push(genresidushabiLayer);
+
+		var generacioresidusGroupLayer = new GroupLayer({
+			title: gGeneracioresidus,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [ consumEnergGroupLayer, consumAiguaGroupLayer],
+			layers: [genresidushabiLayer, genresidusmuniLayer],
 			opacity: 1
-		  });
+		});
 
-		  
-
-		  //Riscos territorials
-		var incendisLayer = new MapImageLayer({
-			portalItem: {  
-			  id: "0f08c9232808457fa2bc3e0c385fd9b6"
-			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
-			visible: false,
-			title: lincend,
-			listMode: "hide-children"
-		  });
-		  capes.push(incendisLayer);
-
-		  var inund10Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "475589b7528c402db168280205110097"
-			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
-			visible: false,
-			title: linund10,
-			listMode: "hide-children"
-		  });
-		  capes.push(inund10Layer);
-
-		  var inund100Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "06d690a272ec4774aa7a9e7cd9bb1c11"
-			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
-			visible: false,
-			title: linund100,
-			listMode: "hide-children"
-		  });
-		  capes.push(inund100Layer);
-
-		  var inund500Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "33d39287a50c4085ba5e89d400de68af"
-			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
-			visible: false,
-			title: linund500,
-			listMode: "hide-children"
-		  });
-		  capes.push(inund500Layer);
-
-		  var inundGroupLayer = new GroupLayer({
-			title: gInund,
-			visible: true,
-			visibilityMode: "independent",
-			layers: [inund500Layer, inund100Layer, inund10Layer],
-			opacity: 1
-		  });
-
-		  var riscGroupLayer = new GroupLayer({
-			title: gRisc,
-			visible: true,
-			visibilityMode: "independent",
-			layers: [inundGroupLayer, incendisLayer],
-			opacity: 1
-		  });
-
+		  //indicadors socioecologics grup
 		  var indsocioecoGroupLayer = new GroupLayer({
 			title: gIndSocEco,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [riscGroupLayer, sostenibilitatGroupLayer, contmGroupLayer, ecoGroupLayer, biodivGroupLayer, estructuraGroupLayer, variarbratGroupLayer, ndviGroupLayer, 
-				cobusosGroupLayer, climaGroupLayer],
+			layers: [generacioresidusGroupLayer, consumAiguaGroupLayer, consumEnergGroupLayer, ecoGroupLayer, funcionalitatGroupLayer,incendGroupLayer, actvegetacGroupLayer, 
+				usosGroupLayer, climaGroupLayer],
 			opacity: 1
 		  });
 
@@ -1516,7 +1364,7 @@
 
        map = new Map({
           basemap: "topo",
-		 layers: [socioGroupLayer,indsocioecoGroupLayer, imatgesHistoricGroupLayer, limitsGroupLayer]
+		 layers: [socioGroupLayer,indsocioecoGroupLayer, regionsGroupLayer,imatgesHistoricGroupLayer, limitsGroupLayer]
         });
 		
 		
@@ -1681,7 +1529,8 @@
 
           layerList.on("trigger-action", function(event) {
 		  
-		
+		//prova desplegables
+
    
            var activeLayer = event.item.layer;
 
