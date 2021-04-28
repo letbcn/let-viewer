@@ -63,12 +63,7 @@ var lPrecipitacio;
 var lTempmin;
 var lTempmit;
 var lTempmax;
-var gAnom;
-var lAnomp17;
-var lAnomp18;
 var lAnomp19;
-var lAnomt17;
-var lAnomt18;
 var lAnomt19;
 //Cobertes del sòl
 var gCobertesSol;
@@ -82,6 +77,11 @@ var lhab;
 var lboscoss;
 var lbiodsing;
 var lndvi19;
+//Variables arbrat
+var gVarbrat;
+var lbiofol;
+var lbiotot;
+var lhmitja;
 //Espai urbà
 var gUrba;
 var lpoligons;
@@ -92,6 +92,7 @@ var lAgricultura;
 var lhortsp09;
 var lhortsp15;
 // Vectors ambientals
+//Masses aigua
 var gAmbientals;
 var gEstatAigua;
 var lEscostaneres;
@@ -99,6 +100,40 @@ var lEsembass;
 var lEsrius;
 var lEssubt;
 var lEshumides;
+//Energia i canvi climatic
+var gEnergia;
+var lElectrsect;
+var lElectrhab;
+var lGassect;
+var lGasdom;
+var lGashab;
+//Emissions CO2
+var gEmissions;
+var lCo2electsect;
+var lCo2electhab;
+var lCo2gassect;
+var lCo2gashab;
+//Cicle aigua
+var gCicleaigua;
+var lAiguadom;
+var lAiguasect;
+var lFreatiques;
+//Gestio residus
+var gGestioresidus;
+var lgeneresidumuni;
+var lgeneresiduhabi;
+var lrecollida;
+var lresidusind;
+var lresidusindemp;
+//Qualitat aire
+var gQualiair;
+//xarxa control contaminants
+var gxarxContm;
+var lxarxno2;
+//Contaminació atmosfèrica
+var gContm;
+var lno2;
+var lpm10;
 //Riscos territorials
 var gRiscos;
 var lperim;
@@ -135,7 +170,8 @@ var lpobresa;
 //Habitatge
 var lestath;
 var laccesh;
-
+//Innovacio
+var lpatents;
 
 
 
@@ -189,7 +225,6 @@ var laccesh;
 	lorto25c="Ortofoto de Catalunya 1:2.500";
 	lorto10c="Ortofoto de Catalunya 1:1.000";
 	lsat250m="Imatge satèl·lit de Catalunya 1:250.000";
-
 	//Topografia
 	gTopo= "Topografia";
 	lmde="Model Digital Elevacions";
@@ -199,7 +234,6 @@ var laccesh;
 	gGeo= "Geologia";
 	lgeolo="Geològic 1:50.000";
 	lHidrogeo="Hidrogeològic 1:250.000";
-
 	ledafo="Edafològic (WRB) 1:250.000";
 	lsoil="Edafològic (ST) 1:250.000";
 	//Hidrologia
@@ -218,8 +252,8 @@ var laccesh;
 	lTempmit="Temperatura mitjana";
 	lTempmax="Temperatures màximes";
 	gAnom= "Anomalies climàtiques";
-	lAnomp19= "Anomalia precipitació 2019";
-	lAnomt19= "Anomalia temperatura 2019";
+	lAnomp19= "Anomalia precipitació";
+	lAnomt19= "Anomalia temperatura";
 	//Cobertes del sol
 	gCobertesSol="Cobertes del sòl";
 	gCobertes="Cobertes del sòl";
@@ -234,6 +268,11 @@ var laccesh;
 	lboscoss="Boscos singulars";
 	lbiodsing= "Biodiversitat singular";
 	lndvi19 ="Índex Vegetació (NDVI) 2019";
+	//Variables arbrat
+	gVarbrat= "Variables biofísiques del arbrat";
+	lbiofol= "Biomassa foliar";
+	lbiotot= "Biomassa aèria total";
+	lhmitja= "Alçada mitjana";
 	//Espai urbà
 	gUrba="Espai urbà";
 	lpoligons="Polígons industrials";
@@ -245,12 +284,47 @@ var laccesh;
 	lhortsp15="Horts precaris 2015";
 	//Vectors ambientals
 	gAmbientals= "Vectors ambientals";
+	//Energia i canvi climatic
+	gEnergia= "Energia i canvi climàtic";
+	lElectrsect= "Consum energia elèctrica per sector";
+	lElectrhab= "Consum domèstic energia elèctrica per habitant";
+	lGassect= "Consum gas natural per sector";
+	lGasdom= "Consum domèstic gas natural ";
+	lGashab= "Consum gas natural per habitant";
+	//Emissions
+	gEmissions= "Emissions CO2";
+	lCo2electsect= "Emissions CO2 del consum elèctric per sector";
+	lCo2electhab="Emissions CO2 del consum elèctric per habitant";
+	lCo2gassect= "Emissions CO2 del consum de gas natural per sector";
+	lCo2gashab= "Emissions CO2 del consum de gas natural per habitant";
+	//cicle aigua
+	gCicleaigua= "Cicle del aigua";
+	lAiguadom= "Consum domèstic aigua per habitant";
+	lAiguasect= "Consum d'aigua per sector";
+	lFreatiques= "Ús d'aigua freàtica per usos municipals";
+	//gestio residus
+	gGestioresidus= "Gestió de residus";
+	lgeneresidumuni= "Generació residus municipals";
+	lgeneresiduhabi= "Generació residus per habitant";
+	lrecollida= "Recollida selectiva de residus";
+	lresidusind= "Residus industrials";
+	lresidusindemp= "Residus industrials per empresa";
+	//estat masses aigues
 	gEstatAigua="Estat de les masses d'aigua";
 	lEscostaneres="Aigües costaneres";
 	lEsembass="Embassaments";
 	lEsrius="Estat ecològic dels rius";
 	lEssubt="Estat ecològic aigües subterrànies";
 	lEshumides="Zones humides";
+	//Qualitat aire
+	gQualiair= "Qualitat del aire";
+	//Xarxa control contaminants
+	gxarxContm= "Xarxa control contaminants";
+	lxarxno2= "NO2";
+	//Contaminació atmosfèrica
+	gContm= "Contaminació atmosfèrica";
+	lno2= "NO2";
+	lpm10="PM10";
 	//Riscos territorials
 	gRiscos= "Riscos territorials";	
 	gIncendis="Incendis forestals";
@@ -263,7 +337,6 @@ var laccesh;
 	lretorn10="Zona inundable retorn 10 anys";
 	lretorn100="Zona inundable retorn 100 anys";
 	lretorn500="Zona inundable retorn 500 anys";
-
 	//Societat
 	gSocietat= "Societat";
 	//Economia
@@ -273,20 +346,21 @@ var laccesh;
 	lrendab17= "Renda baixa";
 	lrendai17= "Renda intermèdia";
 	lrendaa17="Renda alta";
+	lpibm= "PIB per habitant";
 	//Vulnerabilitat
 	lvulne17= "Índex vulnerabilitat urbana";
 	//Envelliment
-	lmajors17= "Població major 75 anys sola 2017";
-
+	lmajors17= "Població major 75 anys sola";
 	lenvell="Envelliment vulnerable";
 	//Estrangers
-	lmigra20="Població estrangera 2020";
-	lest17="Estrangers de països en desenvolupament 2017";
+	lmigra20="Població estrangera";
+	lest17="Estrangers de països en desenvolupament";
 	//Habitatge
 	gHabitat= "Habitatge";
 	lestath="Estat de conservació d'habitatges";
 	laccesh="Accessibilitat a l’habitatge";
-	
+	//Innovacio
+	lpatents= "Patents europees";
 	lpobresa="Pobresa";
 	lformacio="Població poc qualificada";
 	latur="Atur";
@@ -331,10 +405,8 @@ var laccesh;
 	gCartob= "Cartografía de base";
 	ltopo25="Topográfico 1:25.000 (RMB)";
 	gTopo25="Topográfico";
-
 	lsupurb="Superficie urbanizada 1:25.000";
 	lvies="Vías de comunicación 1:25.000";
-
 	//Imatges aèries
 	gImg= "Imágenes aérias";
 	gActuals="Actual";
@@ -343,7 +415,6 @@ var laccesh;
 	lorto25c="Ortofoto de Cataluña 1:2.500";
 	lorto10c="Ortofoto de Cataluña 1:1.000";
 	lsat250m="Imagen satélite de Cataluña 1:250.000";
-
 	//Topografia
 	gTopo= "Topografía";
 	lmde="Modelo Digital de Elevaciones";
