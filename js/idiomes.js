@@ -107,6 +107,9 @@ var lElectrhab;
 var lGassect;
 var lGasdom;
 var lGashab;
+//Emissions gasos hivernacle
+var gEmissionsgasos;
+var lEmissioogasos;
 //Emissions CO2
 var gEmissions;
 var lCo2electsect;
@@ -130,6 +133,8 @@ var gQualiair;
 //xarxa control contaminants
 var gxarxContm;
 var lxarxno2;
+var lxarxpm10;
+var lxarxpm25;
 //Contaminació atmosfèrica
 var gContm;
 var lno2;
@@ -285,12 +290,15 @@ var lpatents;
 	//Vectors ambientals
 	gAmbientals= "Vectors ambientals";
 	//Energia i canvi climatic
-	gEnergia= "Energia i canvi climàtic";
-	lElectrsect= "Consum energia elèctrica per sector";
+	gEnergia= "Consum d'energia";
+	lElectrsect= "Energia elèctrica per sector";
 	lElectrhab= "Consum domèstic energia elèctrica per habitant";
-	lGassect= "Consum gas natural per sector";
+	lGassect= "Gas natural per sector";
 	lGasdom= "Consum domèstic gas natural ";
-	lGashab= "Consum gas natural per habitant";
+	lGashab= "Gas natural per habitant";
+	//Emissions gasos hivernacle
+	gEmissionsgasos= "Emissions gasos efecte hivernacle";
+	lEmissioogasos= "Emissions 2015";
 	//Emissions
 	gEmissions= "Emissions CO2";
 	lCo2electsect= "Emissions CO2 del consum elèctric per sector";
@@ -298,14 +306,14 @@ var lpatents;
 	lCo2gassect= "Emissions CO2 del consum de gas natural per sector";
 	lCo2gashab= "Emissions CO2 del consum de gas natural per habitant";
 	//cicle aigua
-	gCicleaigua= "Cicle del aigua";
+	gCicleaigua= "Consum d'aigua";
 	lAiguadom= "Consum domèstic aigua per habitant";
 	lAiguasect= "Consum d'aigua per sector";
 	lFreatiques= "Ús d'aigua freàtica per usos municipals";
 	//gestio residus
-	gGestioresidus= "Gestió de residus";
-	lgeneresidumuni= "Generació residus municipals";
-	lgeneresiduhabi= "Generació residus per habitant";
+	gGestioresidus= "Generació de residus";
+	lgeneresidumuni= "Residus municipals";
+	lgeneresiduhabi= "Residus per habitant";
 	lrecollida= "Recollida selectiva de residus";
 	lresidusind= "Residus industrials";
 	lresidusindemp= "Residus industrials per empresa";
@@ -321,6 +329,8 @@ var lpatents;
 	//Xarxa control contaminants
 	gxarxContm= "Xarxa control contaminants";
 	lxarxno2= "NO2";
+	lxarxpm10= "PM10";
+	lxarxpm25= "PM2,5";
 	//Contaminació atmosfèrica
 	gContm= "Contaminació atmosfèrica";
 	lno2= "NO2";

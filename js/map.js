@@ -988,6 +988,28 @@
 	});
 
 
+	//Emissions
+
+	var emissiogasosLayer = new MapImageLayer({
+		portalItem: {
+			id: "3cac90515186450e8590567c9ad73be4"
+		},
+		id: "",
+		visible: false,
+		title: lEmissioogasos,
+		listMode: "hide-children"
+	});
+	capes.push(emissiogasosLayer);
+
+	var emissionsgasosGroupLayer = new GroupLayer({
+		title: gEmissionsgasos,
+		visible: true,
+		visibilityMode: "independent",
+		layers: [emissiogasosLayer],
+		opacity: 1
+	});
+
+
 	//cicle del aigua
 	var aiguadomLayer = new MapImageLayer({
 		portalItem: {
@@ -1099,7 +1121,7 @@
 
 	var xarxno2Layer = new MapImageLayer({
 		portalItem: {  
-		  id: "5a462b1cfc844cbda4ea2372e8a03d9e"
+		  id: "136f1a3a0d924b43b2c307f6dcc21b0e"
 		},
 		id:'', //modificar
 		visible: false,
@@ -1108,11 +1130,33 @@
 	  });
 	  capes.push(xarxno2Layer);
 
+	  var xarxpm10Layer = new MapImageLayer({
+		portalItem: {  
+		  id: "5d9bdcc2b93c475aafcf6a72d6a14321"
+		},
+		id:'', //modificar
+		visible: false,
+		title: lxarxpm10,
+		listMode: "hide-children"
+	  });
+	  capes.push(xarxpm10Layer);
+
+	  var xarxpm25Layer = new MapImageLayer({
+		portalItem: {  
+		  id: "96598f80945349c381694ab996973a38"
+		},
+		id:'', //modificar
+		visible: false,
+		title: lxarxpm25,
+		listMode: "hide-children"
+	  });
+	  capes.push(xarxpm25Layer);
+
 	var xarxacontmGroupLayer = new GroupLayer({
 		title: gxarxContm,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [xarxno2Layer],
+		layers: [ xarxpm25Layer, xarxpm10Layer, xarxno2Layer],
 		opacity: 1
 	  });
 
@@ -1160,7 +1204,7 @@
 		title: gAmbientals,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [qualitataireGroupLayer, gestioresidusGroupLayer, cicleaiguaGroupLayer, energiaGroupLayer, estasMassesGroupLayer],
+		layers: [qualitataireGroupLayer, gestioresidusGroupLayer, estasMassesGroupLayer, cicleaiguaGroupLayer, emissionsgasosGroupLayer, energiaGroupLayer],
 		opacity: 1
 	});
 
@@ -1479,7 +1523,8 @@
 	map = new Map({
 		basemap: "satellite",
 		// layers: [geologiaGroupLayer,proteccioAmbientalGroupLayer, climaGroupLayer, hidrologiaGroupLayer, imatgesAeriesGroupLayer]
-		layers: [economiaGroupLayer, societatGroupLayer, riscosGeologicsGroupLayer, vectorsAmbientalsGroupLayer, espaiAgrariGroupLayer, espaiUrbaGroupLayer, espaiNaturalGroupLayer, cobertesSolGroupLayer, climaGroupLayer, hidrologiaGroupLayer, geologiaGroupLayer, topografiaGroupLayer, imatgesAeriesGroupLayer, cartografiaDeBaseGroupLayer, proteccioGroupLayer, limitsGroupLayer, regionsGroupLayer]
+		layers: [economiaGroupLayer, societatGroupLayer, riscosGeologicsGroupLayer, qualitataireGroupLayer, gestioresidusGroupLayer, estasMassesGroupLayer, cicleaiguaGroupLayer, emissionsgasosGroupLayer, energiaGroupLayer,
+			 espaiAgrariGroupLayer, espaiUrbaGroupLayer, espaiNaturalGroupLayer, cobertesSolGroupLayer, climaGroupLayer, hidrologiaGroupLayer, geologiaGroupLayer, topografiaGroupLayer, imatgesAeriesGroupLayer, cartografiaDeBaseGroupLayer, proteccioGroupLayer, limitsGroupLayer, regionsGroupLayer]
 	});
 
 
