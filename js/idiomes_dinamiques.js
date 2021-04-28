@@ -45,6 +45,14 @@ var lAnomt17;
 var lAnomt18;
 var lAnomt19;
 //Cobertes del sòl
+var gCobusos;
+var gCob;
+var lcob56;
+var lcob93;
+var lcob00;
+var lcob05;
+var lcob09;
+var lcob15;
 var gUsos;
 var lusos87;
 var lusos92;
@@ -81,7 +89,11 @@ var lecosub07;
 var lecosub13;
 //Consum aigua
 var gConaigua;
-var laigua06;
+var laigua11;
+var laigua12;
+var laigua13;
+var laigua14;
+var laigua15;
 //Consum energia
 var gConenerg;
 var lenerg11;
@@ -91,8 +103,19 @@ var lenerg14;
 var lenerg15;
 //Generacio residus
 var gGeneracioresidus;
-var lgeneresidumuni;
-var lgeneresiduhabi;
+var gResidusmuni;
+var lresidumuni10;
+var lresidumuni11;
+var lresidumuni12;
+var lresidumuni13;
+var lresidumuni14;
+var lresidumuni15;
+var lresidumuni16;
+var gResidushabi;
+var lgeneresiduhabi13;
+var lgeneresiduhabi14;
+var lgeneresiduhabi15;
+var lgeneresiduhabi16;
 //Indicadors Socioecologics
 var gIndSocEco
 //Dinàmiques Socioeconòmiques
@@ -104,10 +127,10 @@ var gAmbestrint;
 var gAmbestralt;
 //Demografia
 var gDemo;
-var gDensig;
 var lpobla15;
-var lpobla20;
 var ldensitat15;
+var lpobla20;
+var ldensitat20;
 //Renda
 var lrendab15;
 var lrendab16;
@@ -120,6 +143,8 @@ var lrendaa16;
 var lrendaa17;
 //PIB
 var gPib;
+var lpibm16;
+var lpibm17;
 var	lpibm18;
 //Formacio
 var gForma;
@@ -154,6 +179,7 @@ var ldehabit20;
 //Estrangers
 var gMigra;
 var gMigrants;
+var lmigra15;
 var lmigra20;
 var gAmbestestrang;
 var lest15;
@@ -218,7 +244,15 @@ var lpatents;
 	lAnomt18= "2018";
 	lAnomt19= "2019";
 	//Usos i Cobertes del sol
-	gUsos="Usos del sòl";
+	gCobusos= "Canvi dels usos del sòl";
+	gCob= "Cobertes";
+	lcob56= "1956";
+	lcob93= "1993";
+	lcob00= "2000";
+	lcob05= "2005";
+	lcob09= "2009";
+	lcob15= "2015";
+	gUsos="Usos";
 	lusos87="1987";
 	lusos92="1992";
 	lusos97="1997";
@@ -251,8 +285,12 @@ var lpatents;
 	lecosub07= "2007-2012";
 	lecosub13= "2013-2017";
 	//Consum aigua
-	gConaigua= "Consum aigüa";
-	laigua06= "2006";
+	gConaigua= "Consum d'aigüa";
+	laigua11= "2011";
+	laigua12= "2012";
+	laigua13= "2013";
+	laigua14= "2014";
+	laigua15= "2015";
 	//Consum energia
 	gConenerg= "Consum d'energia";
 	lenerg11= "2011";
@@ -262,18 +300,29 @@ var lpatents;
 	lenerg15= "2015";
 	//Generacio residus
 	gGeneracioresidus= "Generació de residus";
-	lgeneresidumuni ="Municipals";
-	lgeneresiduhabi = "Per habitants";
+	gResidusmuni= "Municipals";
+	lresidumuni10= "2010";
+	lresidumuni11= "2011";
+	lresidumuni12= "2012";
+	lresidumuni13= "2013";
+	lresidumuni14= "2014";
+	lresidumuni15= "2015";
+	lresidumuni16= "2016";
+	gResidushabi= "Per habitants";
+	lgeneresiduhabi13= "2013";
+	lgeneresiduhabi14= "2014";
+	lgeneresiduhabi15= "2015";
+	lgeneresiduhabi16= "2016";
 	//Indicadors socioecològics
 	gIndSocEco= "Indicadors socioecològics";
 	//Dinàmiques Socioeconòmiques
 	gSocio="Indicadors socioeconòmics";
 	//Demografia
 	gDemo="Població";
-	gDensig= "Densitat";
 	lpobla15= "2015";
+	ldensitat15= "Densitat 2015";
 	lpobla20= "2020";
-	ldensitat15= "2015";
+	ldensitat20= "Densitat 2020";
 	//Renda
 	gAmbestrenda= "Renda"
 	gAmbestrbaix= "Renda baixa";
@@ -289,7 +338,9 @@ var lpatents;
 	lrendaa16="2016";
 	lrendaa17="2017";
 	//PIB
-	gPib= "PIB";
+	gPib= "Producte Interior Brut";
+	lpibm16= "2016";
+	lpibm17= "2017";
 	lpibm18= "2018";
 	//Formacio
 	gForma= "Formació";
@@ -324,6 +375,7 @@ var lpatents;
 	//Estrangers
 	gMigra= "Migracions";
 	gMigrants= "Població estrangera";
+	lmigra15= "2015";
 	lmigra20= "2020";
 	gAmbestestrang="Estrangers de països en desenvolupament";
 	lest15="2015";
