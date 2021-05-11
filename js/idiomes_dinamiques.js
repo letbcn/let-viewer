@@ -69,9 +69,17 @@ var gNdvi;
 var lndvi17;
 var lndvi18;
 var lndvi19;
+var lndvi20;
 //Incendis forestals
 var gIncend;
-var lincend;
+var lincend86;
+var lincend88;
+var lincend89;
+var lincend90;
+var lincend91;
+var lincend92;
+var lincend93;
+var lincend94;
 //Funcionalitat paisatge
 var gFuncio;
 var gConnect;
@@ -132,6 +140,19 @@ var ldensitat15;
 var lpobla20;
 var ldensitat20;
 //Renda
+//origen renda
+var gOrigenrenda;
+var lorigenrenda15;
+var lorigenrenda16;
+var lorigenrenda17;
+var lorigenrenda18;
+//Gini
+var gIndexgini;
+var lgini15;
+var lgini16;
+var lgini17;
+var lgini18;
+//Nivells renda
 var lrendab15;
 var lrendab16;
 var lrendab17;
@@ -148,17 +169,26 @@ var lpibm17;
 var	lpibm18;
 //Formacio
 var gForma;
-var lforma18;
+var gbaixaq;
+var lbaixaq15;
+var lbaixaq16;
+var lbaixaq17;
+var lbaixaq18;
+var ljoves15;
+var ljoves16;
+var ljoves17;
+var ljoves18;
 //Atur
 var gAtur;
 var latur17;
 var latur18;
 var latur19;
 //Index vulnerabilitat
-var gAmbestvulne;
-var lvulne15;
-var lvulne16;
-var lvulne17;
+var gist;
+var list15;
+var list16;
+var list17;
+var list18;
 //Envelliment
 var gEnvelliment;
 var gAIndexEnve;
@@ -188,7 +218,18 @@ var lest17;
 var latur;
 //Patents
 var gSociopatents;
-var lpatents;
+var gpatents;
+var lpatents05;
+var lpatents06;
+var lpatents07;
+var lpatents08;
+var lpatents09;
+var lpatents10;
+var lpatents11;
+var lpatents12;
+var lpatents13;
+var lpatents14;
+var lpatents15;
 
   if (document.documentElement.lang=='ca'){
   //CONTINGUT Info
@@ -266,9 +307,17 @@ var lpatents;
 	lndvi17="2017";
 	lndvi18="2018";
 	lndvi19 ="2019";
+	lndvi20 ="2020";
 	//Incendis forestals
 	gIncend= "Incendis forestals";
-	lincend= "1986-2019";
+	lincend86= "1986";
+	lincend88= "1988";
+	lincend89= "1989";
+	lincend90= "1990";
+	lincend91= "1991";
+	lincend92= "1992";
+	lincend93= "1993";
+	lincend94= "1994";
 	//Funcionalitat paisatge
 	gFuncio="Funcionalitat del paisatge"
 	gConnect=  "Índex Connectivitat Ecològica dels Espais Oberts";
@@ -325,6 +374,19 @@ var lpatents;
 	ldensitat20= "Densitat 2020";
 	//Renda
 	gAmbestrenda= "Renda"
+	//origen renda
+	gOrigenrenda= "Origen de la renda";
+	lorigenrenda15= "2015";
+	lorigenrenda16= "2016";
+	lorigenrenda17= "2017";
+	lorigenrenda18= "2018";
+	//Index Gini
+	gIndexgini="Índex de Gini";
+	lgini15="2015";
+	lgini16="2016";
+	lgini17="2017";
+	lgini18="2018";
+	//Nivells renda
 	gAmbestrbaix= "Renda baixa";
 	gAmbestrint= "Renda intermèdia";
 	gAmbestralt= "Renda alta";
@@ -344,17 +406,27 @@ var lpatents;
 	lpibm18= "2018";
 	//Formacio
 	gForma= "Formació";
-	lforma18= "2018";
+	gbaixaq= "Treballadors de baixa qualificació";
+	lbaixaq15= "2015";
+	lbaixaq16= "2016";
+	lbaixaq17= "2017";
+	lbaixaq18= "2018";
+	gjovesfor= "Població jove sense estudis postobligatoris";
+	ljoves15= "2015";
+	ljoves16= "2016";
+	ljoves17= "2017";
+	ljoves18= "2018";
 	//Atur
  	gAtur= "Atur";
 	latur17="2017";
 	latur18= "2018";
 	latur19= "2019";
-	//Index vulnerabilitat
-	gAmbestvulne= "Índex vulnerabilitat urbana";
-	lvulne15= "2015";
-	lvulne16= "2016";
-	lvulne17= "2017";
+	//IST
+	gist= "Índex socioeconòmic territorial (IST)";
+	list15= "2015";
+	list16= "2016";
+	list17= "2017";
+	list18="2018";
 	//Envelliment
 	gEnvelliment= "Envelliment";
 	gAIndexEnve="Índex d'Envelliment";
@@ -383,7 +455,18 @@ var lpatents;
 	lest17="2017";
 	//Patents
 	gSociopatents= "Innovació";
-	lpatents= "Patents europees";
+	gpatents= "Patents europees";
+	lpatents05= "2005";
+	lpatents06= "2006";
+	lpatents07= "2007";
+	lpatents08= "2008";
+	lpatents09= "2009";
+	lpatents10= "2010";
+	lpatents11= "2011";
+	lpatents12= "2012";
+	lpatents13= "2013";
+	lpatents14= "2014";
+	lpatents15= "2015";
 
 	
   } else if (document.documentElement.lang=='es') {

@@ -637,16 +637,16 @@
 	});
 	capes.push(habLayer);
 
-	var ndvi19Layer = new MapImageLayer({
+	var ndvi20Layer = new MapImageLayer({
 		portalItem: {
-			id: "a8c82853a3044cdbac883617c7117d1a"
+			id: "1e41f8068df84a2ebaaef04dce0e006b"
 		},
-		id: "c2a55bb4593b41ea9598be0f7786e11c",
+		id: "",
 		visible: false,
-		title: lndvi19,
+		title: lndvi20,
 		listMode: "hide-children"
 	});
-	capes.push(ndvi19Layer);
+	capes.push(ndvi20Layer);
 
 	var boscossLayer = new MapImageLayer({
 		portalItem: {
@@ -717,7 +717,7 @@
 		title: gNatural,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [variarbratGroupLayer, ndvi19Layer, biodivsingLayer, hicLayer, habLayer, boscossLayer],
+		layers: [variarbratGroupLayer, ndvi20Layer, biodivsingLayer, hicLayer, habLayer, boscossLayer],
 		opacity: 1
 	});
 
@@ -816,9 +816,9 @@
 
 	var estatEmbassamentsLayer = new MapImageLayer({
 		portalItem: {
-			id: "e963bd24ab524fbaa1fc2bcfb3892315"
+			id: "5a02f8a892db494b91d21e6750a7fa5e"
 		},
-		id: "6acc2ab70906496dbb9bd2360ac12e4d",
+		id: "",
 		visible: false,
 		title: lEsembass,
 		listMode: "hide-children"
@@ -827,9 +827,9 @@
 
 	var estatAiguaRiusLayer = new MapImageLayer({
 		portalItem: {
-			id: "9ee6a5209cdc467ca1804fefb4779ccf"
+			id: "de68ab285e3e4424b9026716e7f916d3"
 		},
-		id: "b401db079cfd4ffd9be0554382544aec",
+		id: "",
 		visible: false,
 		title: lEsrius,
 		listMode: "hide-children"
@@ -838,7 +838,7 @@
 
 	var estatSubterraniesLayer = new MapImageLayer({
 		portalItem: {
-			id: "4bf1730854fb4c94bacb7cff6232227d"
+			id: "6c43eadd3f7946369b767912e9531fcb"
 		},
 		id: "3be8d1197d934cd19c255895cb7932ce",
 		visible: false,
@@ -849,7 +849,7 @@
 
 	var estatZonesHumidesLayer = new MapImageLayer({
 		portalItem: {
-			id: "6b8123ae8ecd402596e95dacabf2f9cf"
+			id: "c22f70e6b318495688d5796c3059a545"
 		},
 		id: "59c43fa5e3964e3d9a600b67cf74f367",
 		visible: false,
@@ -863,7 +863,7 @@
 		title: gEstatAigua,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [estatZonesHumidesLayer, estatSubterraniesLayer, estatAiguaRiusLayer, estatEmbassamentsLayer, estatCostaneresLayer],
+		layers: [estatZonesHumidesLayer, estatEmbassamentsLayer, estatCostaneresLayer, estatSubterraniesLayer, estatAiguaRiusLayer],
 		opacity: 1
 	});
 
@@ -971,19 +971,11 @@
 	});
 	capes.push(co2gashabLayer);
 
-	var emissionsGroupLayer = new GroupLayer({
-		title: gEmissions,
-		visible: true,
-		visibilityMode: "independent",
-		layers: [co2gashabLayer, co2gassectorLayer, co2electrichabLayer, co2electricsectorLayer],
-		opacity: 1
-	});
-
 	var energiaGroupLayer = new GroupLayer({
 		title: gEnergia,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [emissionsGroupLayer, gashabitantLayer, gasdomesticLayer, gassectorLayer, electrdomhabLayer, electrsectorLayer],
+		layers: [gashabitantLayer, gasdomesticLayer, gassectorLayer, electrdomhabLayer, electrsectorLayer],
 		opacity: 1
 	});
 
@@ -1005,7 +997,7 @@
 		title: gEmissionsgasos,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [emissiogasosLayer],
+		layers: [co2gashabLayer, co2gassectorLayer, co2electrichabLayer, co2electricsectorLayer, emissiogasosLayer],
 		opacity: 1
 	});
 
@@ -1321,16 +1313,38 @@
 	//Societat i economia
 
 	//index vulnerabilitat urbana
-	var vulne17Layer = new MapImageLayer({
+	var ist18Layer = new MapImageLayer({
 		portalItem: {
-			id: "ab7f57f97b0d4f97bcc87bc5621daa14"
+			id: "f70a42eb4803493aab5b7e4a3dbd3b28"
 		},
-		id: 'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+		id: '', //modificar
 		visible: false,
-		title: lvulne17,
+		title: list18,
 		listMode: "hide-children"
 	});
-	capes.push(vulne17Layer);
+	capes.push(ist18Layer);
+
+	var baixaq18Layer = new MapImageLayer({
+		portalItem: {
+			id: "90f6d67a9ff648b890bf1d105a26486d"
+		},
+		id: '',
+		visible: false,
+		title: lbaixaq18,
+		listMode: "hide-children"
+	});
+	capes.push(baixaq18Layer);
+
+	var joves18Layer = new MapImageLayer({
+		portalItem: {
+			id: "22ab084c04e34d2382cd4bb8f04c3d95"
+		},
+		id: '',
+		visible: false,
+		title: ljoves18,
+		listMode: "hide-children"
+	});
+	capes.push(joves18Layer);
 
 	//migracions
 	var migrants20Layer = new MapImageLayer({
@@ -1411,7 +1425,7 @@
 		visible: true,
 		visibilityMode: "independent",
 		layers: [estathLayer, acceshLayer, majors17Layer, envellLayer, 
-			estrang17Layer, migrants20Layer, vulne17Layer],
+			estrang17Layer, migrants20Layer, joves18Layer, baixaq18Layer, ist18Layer],
 		opacity: 1
 	});
 
@@ -1427,16 +1441,6 @@
 	});
 	capes.push(aturLayer);
 
-	var formacioLayer = new MapImageLayer({
-		portalItem: {
-			id: "75315adceb2b489da4660a2c570adf33"
-		},
-		id: '918019553b994875bce87a7bdadacbbc',
-		visible: false,
-		title: lformacio,
-		listMode: "hide-children"
-	});
-	capes.push(formacioLayer);
 
 	var rendamitjanaLayer = new MapImageLayer({
 		portalItem: {
@@ -1448,6 +1452,18 @@
 		listMode: "hide-children"
 	});
 	capes.push(rendamitjanaLayer);
+
+
+	var origenrendaLayer = new MapImageLayer({
+		portalItem: {
+			id: "656e255781764a7894ee1cfb61d81868"
+		},
+		id: '', 
+		visible: false,
+		title: lorirenda,
+		listMode: "hide-children"
+	});
+	capes.push(origenrendaLayer);
 
 	var rendabaixa17Layer = new MapImageLayer({
 		portalItem: {
@@ -1483,6 +1499,17 @@
 	});
 	capes.push(rendaalt17Layer);
 
+	var gini18Layer = new MapImageLayer({
+		portalItem: {
+			id: "4c5c6ba04c254112aa52d673f9c8019e"
+		},
+		id: '', //modificar
+		visible: false,
+		title: lgini18,
+		listMode: "hide-children"
+	});
+	capes.push(gini18Layer);
+
 	var pibmunicipalLayer = new MapImageLayer({
 		portalItem: {
 			id: "abe816f4ecb8438dbf090d3d42988906"
@@ -1494,11 +1521,11 @@
 	});
 	capes.push(pibmunicipalLayer);
 
-	//Innovacio
+	//Innovació
 	//Patents
 	var patentsLayer = new MapImageLayer({
 		portalItem: {  
-			id: "26d0b5e3c1584c22ba6f706c79b8d149"
+			id: "57b447983c8744b8aafc2cb1bfad705e"
 		  },
 		  id:"",
 		  visible: false,
@@ -1507,12 +1534,22 @@
 		});
 	  capes.push(patentsLayer);
 
+	  var patentsverdesLayer = new MapImageLayer({
+		portalItem: {  
+			id: "bfb0ce0313344c1e98c0b36c366060fc"
+		  },
+		  id:"",
+		  visible: false,
+		  title: lpatentsv,
+		  listMode: "hide-children"
+		});
+	  capes.push(patentsverdesLayer);
 
 	var economiaGroupLayer = new GroupLayer({
 		title: gEco,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [patentsLayer, pibmunicipalLayer, rendaalt17Layer, rendaint17Layer, rendabaixa17Layer, rendamitjanaLayer, formacioLayer, aturLayer],
+		layers: [patentsverdesLayer, patentsLayer, pibmunicipalLayer, gini18Layer, rendaalt17Layer, rendaint17Layer, rendabaixa17Layer,origenrendaLayer, rendamitjanaLayer,  aturLayer],
 		opacity: 1
 	});
 
