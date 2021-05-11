@@ -76,7 +76,7 @@ var lhic;
 var lhab;
 var lboscoss;
 var lbiodsing;
-var lndvi19;
+var lndvi20;
 //Variables arbrat
 var gVarbrat;
 var lbiofol;
@@ -111,7 +111,6 @@ var lGashab;
 var gEmissionsgasos;
 var lEmissioogasos;
 //Emissions CO2
-var gEmissions;
 var lCo2electsect;
 var lCo2electhab;
 var lCo2gassect;
@@ -155,16 +154,19 @@ var gSocietat;
 //Economia
 var gEco;
 var latur;
-var lformacio;
+var lbaixaq18;
+var ljoves18;
 var lenvell;
 //renda
 var gRenda;
 var lrendam17;
+var lorirenda;
 var lrendab17;
 var lrendai17;
 var lrendaa17;
+var lgini18;
 //vulnerabilitat
-var lvulne17;
+var list18;
 //majors
 var lmajors17;
 //estrangers
@@ -177,6 +179,7 @@ var lestath;
 var laccesh;
 //Innovacio
 var lpatents;
+var lpatentsv;
 
 
 
@@ -272,7 +275,7 @@ var lpatents;
 	lhab="Hàbitats";
 	lboscoss="Boscos singulars";
 	lbiodsing= "Biodiversitat singular";
-	lndvi19 ="Índex Vegetació (NDVI) 2019";
+	lndvi20 ="Índex Vegetació (NDVI)";
 	//Variables arbrat
 	gVarbrat= "Variables biofísiques del arbrat";
 	lbiofol= "Biomassa foliar";
@@ -298,9 +301,8 @@ var lpatents;
 	lGashab= "Gas natural per habitant";
 	//Emissions gasos hivernacle
 	gEmissionsgasos= "Emissions gasos efecte hivernacle";
-	lEmissioogasos= "Emissions 2015";
+	lEmissioogasos= "Gasos efecte hivernacle";
 	//Emissions
-	gEmissions= "Emissions CO2";
 	lCo2electsect= "Emissions CO2 del consum elèctric per sector";
 	lCo2electhab="Emissions CO2 del consum elèctric per habitant";
 	lCo2gassect= "Emissions CO2 del consum de gas natural per sector";
@@ -321,8 +323,8 @@ var lpatents;
 	gEstatAigua="Estat de les masses d'aigua";
 	lEscostaneres="Aigües costaneres";
 	lEsembass="Embassaments";
-	lEsrius="Estat ecològic dels rius";
-	lEssubt="Estat ecològic aigües subterrànies";
+	lEsrius="Rius";
+	lEssubt="Aigües subterrànies";
 	lEshumides="Zones humides";
 	//Qualitat aire
 	gQualiair= "Qualitat del aire";
@@ -339,7 +341,7 @@ var lpatents;
 	gRiscos= "Riscos territorials";	
 	gIncendis="Incendis forestals";
 	lriscgeo="Mapa per a la Prevenció de Riscos Geològics 1:25.000";
-	lperim= "Incendis forestals 1986-2019";
+	lperim= "Incendis forestals";
 	lvincend= "Vulnerabilitat incendis";
 	lpincend= "Perill bàsic d'incendi"
 	linfla= "Model d'inflamabilitat";
@@ -351,14 +353,18 @@ var lpatents;
 	gSocietat= "Societat";
 	//Economia
 	gEco= "Economia";
+	lbaixaq18="Treballadors de baixa qualificació";
+	ljoves18= "Població jove sense estudis postobligatoris";
 	//Renda
 	lrendam17= "Renda familiar mitjana";
+	lorirenda= "Origen renda";
 	lrendab17= "Renda baixa";
 	lrendai17= "Renda intermèdia";
 	lrendaa17="Renda alta";
+	lgini18= "Índex Gini";
 	lpibm= "PIB per habitant";
 	//Vulnerabilitat
-	lvulne17= "Índex vulnerabilitat urbana";
+	list18= "Índex socioeconòmic territorial (IST)";
 	//Envelliment
 	lmajors17= "Població major 75 anys sola";
 	lenvell="Envelliment vulnerable";
@@ -371,8 +377,9 @@ var lpatents;
 	laccesh="Accessibilitat a l’habitatge";
 	//Innovacio
 	lpatents= "Patents europees";
+	lpatentsv= "Patents verdes";
+	
 	lpobresa="Pobresa";
-	lformacio="Població poc qualificada";
 	latur="Atur";
 	
 	
