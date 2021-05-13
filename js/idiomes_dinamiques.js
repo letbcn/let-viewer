@@ -40,10 +40,12 @@ var gAnomtemp;
 var lAnomp17;
 var lAnomp18;
 var lAnomp19;
+var lAnomp20;
 var lAnomt16;
 var lAnomt17;
 var lAnomt18;
 var lAnomt19;
+var lAnomt20;
 //Cobertes del sòl
 var gCobusos;
 var gCob;
@@ -80,6 +82,13 @@ var lincend91;
 var lincend92;
 var lincend93;
 var lincend94;
+var lincend95;
+var lincend97;
+var lincend98;
+var lincend99;
+var lincend00;
+var lincend01;
+var lincend02;
 //Funcionalitat paisatge
 var gFuncio;
 var gConnect;
@@ -124,6 +133,37 @@ var lgeneresiduhabi13;
 var lgeneresiduhabi14;
 var lgeneresiduhabi15;
 var lgeneresiduhabi16;
+//Contaminació
+var gxarxContm;
+var gxarxno2;
+var lxarxno213;
+var lxarxno214;
+var lxarxno215;
+var lxarxno216;
+var gxarxpm10;
+var lxarxpm1012;
+var lxarxpm1013;
+var lxarxpm1014;
+var lxarxpm1015;
+var lxarxpm1016;
+var gxarxpm25;
+var lxarxpm2512;
+var lxarxpm2513;
+var lxarxpm2514;
+var lxarxpm2515;
+var lxarxpm2516;
+//Gasos efecte hivernacle
+var gGasos;
+var gco2electricsec;
+var lCo2electsect16;
+var gco2electrichab;
+var lCo2electhab16;
+var gco2electric;
+var lCo2gassect16;
+var gco2gassec;
+var lCo2gashab16;
+var gco2gashab;
+var gco2gasnat;
 //Indicadors Socioecologics
 var gIndSocEco
 //Dinàmiques Socioeconòmiques
@@ -183,7 +223,10 @@ var gAtur;
 var latur17;
 var latur18;
 var latur19;
-//Index vulnerabilitat
+//Desigualtat
+var gdesig;
+var ldesig18;
+//Index socioeconomic territorial
 var gist;
 var list15;
 var list16;
@@ -280,10 +323,12 @@ var lpatents15;
 	lAnomp17= "2017";
 	lAnomp18= "2018";
 	lAnomp19= "2019";
+	lAnomp20= "2020";
 	lAnomt16= "2016";
 	lAnomt17= "2017";
 	lAnomt18= "2018";
 	lAnomt19= "2019";
+	lAnomt20= "2020";
 	//Usos i Cobertes del sol
 	gCobusos= "Canvi dels usos del sòl";
 	gCob= "Cobertes";
@@ -318,6 +363,13 @@ var lpatents15;
 	lincend92= "1992";
 	lincend93= "1993";
 	lincend94= "1994";
+	lincend95= "1995";
+	lincend97= "1997";
+	lincend98= "1998";
+	lincend99= "1999";
+	lincend00= "2000";
+	lincend01= "2001";
+	lincend02= "2002";
 	//Funcionalitat paisatge
 	gFuncio="Funcionalitat del paisatge"
 	gConnect=  "Índex Connectivitat Ecològica dels Espais Oberts";
@@ -362,6 +414,36 @@ var lpatents15;
 	lgeneresiduhabi14= "2014";
 	lgeneresiduhabi15= "2015";
 	lgeneresiduhabi16= "2016";
+	//Contaminació atmosfèrica
+	gxarxContm= "Contaminació atmosfèrica";
+	gxarxno2= "NO2";
+	lxarxno213="2013";
+	lxarxno214= "2014";
+	lxarxno215="2015";
+	lxarxno216= "2016";
+	gxarxpm10= "PM10";
+	lxarxpm1012="2012";
+	lxarxpm1013= "2013";
+	lxarxpm1014= "2014";
+	lxarxpm1015="2015";
+	lxarxpm1016= "2016";
+	gxarxpm25= "PM2,5";
+	lxarxpm2512= "2012";
+	lxarxpm2513= "2013";
+	lxarxpm2514= "2014";
+	lxarxpm2515= "2015";
+	lxarxpm2516= "2016";
+	gGasos= "Gasos efecte hivernacle";
+	gco2electricsec="Per sector";
+	lCo2electsect16= "2016";
+	lCo2electhab16= "2016";
+	gco2electrichab= "Per habitant";
+	gco2electric= "Consum elèctric";
+	lCo2gassect16= "2016";
+	gco2gassec= "Per sector";
+	lCo2gashab16= "2016";
+	gco2gashab= "Per habitant";
+	gco2gasnat= "Consum gas natural";
 	//Indicadors socioecològics
 	gIndSocEco= "Indicadors socioecològics";
 	//Dinàmiques Socioeconòmiques
@@ -421,8 +503,11 @@ var lpatents15;
 	latur17="2017";
 	latur18= "2018";
 	latur19= "2019";
+	//Desigualtat
+	gdesig= "Desigualtat";
+	ldesig18= "2018";
 	//IST
-	gist= "Índex socioeconòmic territorial (IST)";
+	gist= "Índex socioeconòmic territorial";
 	list15= "2015";
 	list16= "2016";
 	list17= "2017";

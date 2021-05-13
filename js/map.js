@@ -145,36 +145,33 @@
 
 	var peinLayer = new MapImageLayer({
 		portalItem: {
-			id: "388d5989dda04adfb76e448418ccfee6"
+			id: "e9db72a5c2b34ca28fe8515c3abdda83"
 		},
 		id: "50cde7b5dce14ec79b93c44cd1c6f303",
 		visible: false,
 		title: lpein,
 		listMode: "hide-children"
 	});
-	capes.push(peinLayer);
 
 	var xnaturaLayer = new MapImageLayer({
 		portalItem: {
-			id: "14d9d9210b094d819c58407117eef3e5"
+			id: "922dd1f7ca704199828e08323befe91e"
 		},
 		id: "aa66ecbfb48842f9bc9b29ffe5e3a6ae",
 		visible: false,
 		title: lxnatura,
 		listMode: "hide-children"
 	});
-	capes.push(xnaturaLayer);
 
 	var enpeLayer = new MapImageLayer({
 		portalItem: {
-			id: "1193889d142f4fbfba681c2e59d95ff4"
+			id: "7fa7ef08dc10444c9c30c5954850ef22"
 		},
 		id: "aaa4b25c28c64b8e909ae1ff976bc7b6",
 		visible: false,
 		title: lenpe,
 		listMode: "hide-children"
 	});
-	capes.push(enpeLayer);
 
 	var proteccioGroupLayer = new GroupLayer({
 		title: gProtecc,
@@ -538,23 +535,24 @@
 	//capes.push(tempMitjMaxLayer);
 
 
-	var anompp19Layer = new MapImageLayer({
+	var anompp20Layer = new MapImageLayer({
 		portalItem: {
-			id: "ef969e48f1d9490289df93d7ec012db9"
+			id: "82d819e071514e8582c77e671f686877"
 		},
 		id: "", //modificar
 		visible: false,
-		title: lAnomp19,
+		title: lAnomp20,
 		listMode: "hide-children"
 	});
+	
 
-	var anomtmp19Layer = new MapImageLayer({
+	var anomtmp20Layer = new MapImageLayer({
 		portalItem: {
-			id: "02f5aebf03b843d2a1f4e68bab29c3bb"
+			id: "117e130c0f0a49bb8622b52e4baa72be"
 		},
-		id: "78cca7bd8cb84eb887d20ed9ed3f3092",
+		id: "",
 		visible: false,
-		title: lAnomt19,
+		title: lAnomt20,
 		listMode: "hide-children"
 	});
 
@@ -564,7 +562,7 @@
 		title: gClima,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [radiacioLayer, tempMitjMaxLayer, tempMitjMinLayer, anomtmp19Layer, tempMitjLayer, anompp19Layer, precipitacioLayer],
+		layers: [radiacioLayer, tempMitjMaxLayer, tempMitjMinLayer, anomtmp20Layer, tempMitjLayer, anompp20Layer, precipitacioLayer],
 		opacity: 1
 	});
 
@@ -1240,7 +1238,7 @@
 
 	var perimetresLayer = new MapImageLayer({
 		portalItem: {
-			id: "0f08c9232808457fa2bc3e0c385fd9b6"
+			id: "36de5215519b42a5b21d7b45c8ff0092"
 		},
 		id: "",
 		visible: false,
@@ -1249,6 +1247,7 @@
 	});
 	capes.push(perimetresLayer);
 
+	//Inundabilitat
 	var inundable10Layer = new MapImageLayer({
 		portalItem: {
 			id: "475589b7528c402db168280205110097"

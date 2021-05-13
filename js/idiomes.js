@@ -63,8 +63,8 @@ var lPrecipitacio;
 var lTempmin;
 var lTempmit;
 var lTempmax;
-var lAnomp19;
-var lAnomt19;
+var lAnomp20;
+var lAnomt20;
 //Cobertes del sòl
 var gCobertesSol;
 var lcob09;
@@ -260,8 +260,8 @@ var lpatentsv;
 	lTempmit="Temperatura mitjana";
 	lTempmax="Temperatures màximes";
 	gAnom= "Anomalies climàtiques";
-	lAnomp19= "Anomalia precipitació";
-	lAnomt19= "Anomalia temperatura";
+	lAnomp20= "Anomalia precipitació";
+	lAnomt20= "Anomalia temperatura";
 	//Cobertes del sol
 	gCobertesSol="Cobertes del sòl";
 	gCobertes="Cobertes del sòl";
@@ -361,7 +361,7 @@ var lpatentsv;
 	lrendab17= "Renda baixa";
 	lrendai17= "Renda intermèdia";
 	lrendaa17="Renda alta";
-	lgini18= "Índex Gini";
+	lgini18= "Desigualtat (Índex Gini)";
 	lpibm= "PIB per habitant";
 	//Vulnerabilitat
 	list18= "Índex socioeconòmic territorial (IST)";
