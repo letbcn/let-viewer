@@ -9,19 +9,19 @@ require([
         const defaultPosition = [2.13, 41.40];
 
         function studyCasesPopup(feature) {
-            if (cases[feature.graphic.attributes.Name_2] == null) {
+            if (cases[feature.graphic.attributes.name_2] == null) {
                 return cases["Qazvín (Iran)"]
             }
-            return cases[feature.graphic.attributes.Name_2];
+            return cases[feature.graphic.attributes.name_2];
         }
 
         var popupInfo = {
-            title: "{Name_2}",
+            title: "{name_2}",
             content: studyCasesPopup
         };
 
         var layer = new FeatureLayer({
-            url: "https://openlab.uab.cat:6443/arcgis/rest/services/webmaps/estudis_publicacions_v2/FeatureServer/0",
+            url: "https://openlab.uab.cat:6443/arcgis/rest/services/webmaps/estudis_publicacions/FeatureServer/0",
             outFields: ["*"],
             popupTemplate: popupInfo
         });
