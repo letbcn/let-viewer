@@ -577,60 +577,260 @@ var lpatents15;
 	//CAPES
 	capes= "Capas";
 	gAmbits="Ámbitos";
-	//limits administratius
 	gLimits= "Límites administrativos";
-	lseccions ="Secciones Censales"
-	//límites protección ambiental
-	gProtecc= "Límites protección ambiental"
-	lpein="Plan de espacios de interés natural (PEIN)";
-	lxnatura="Red natura 2000";
-	lenpe="Espacios naturales de protección especial (ENPE)";
+	lcomarca= "Comarcas";
+	lmunicipis= "Municipios";
+	lseccions ="Secciones Censales";
+	//Imatges històriques
+	gHistoric="Imágenes aéreas";
+	lorto10m45="Ortofoto 1:10.000 1945";
+	lorto5m56="Ortofoto 1:5.000 1956";
+	lorto5m86="Ortofoto 1:5.000 1986";
+	lorto5m94="Ortofoto 1:5.000 1994";
+	lorto5m00="Ortofoto 1:5.000 2000";
+	lorto5m04="Ortofoto 1:5.000 2004";
+	lorto5m06="Ortofoto 1:5.000 2006";
+	lorto5m09="Ortofoto 1:5.000 2009";
+	lorto5m12="Ortofoto 1:5.000 2012";
+	lorto5m15="Ortofoto 1:5.000 2015";
+	lorto5m18="Ortofoto 1:5.000 2018";
 	//Clima
-	gClima= "Clima";
-	gAnom= "Anomalias climáticas";
-	lAnomp17= "Anomalía precipitación 2017";
-	lAnomp18= "Anomalía precipitación 2018";
-	lAnomp19= "Anomalía precipitación 2019";
-	lAnomt17= "Anomalía temperatura 2017";
-	lAnomt18= "Anomalía temperatura 2018";
-	lAnomt19= "Anomalía temperatura 2019";
-	//Cobertes del sol
-	gCobertesSol="Cubiertas del suelo";
-	gCobertes="Cubiertas del suelo";
-	gUsos="Usos del suelo";
-	lusos87="Usos del suelo 1987 (RMB)";
-	lusos92="Usos del suelo 1992 (RMB)";
-	lusos97="Usos del suelo 1997 (RMB)";
-	lusos02="Usos del suelo 2002 (RMB)";
-	lusos07="Usos del suelo 2007 (RMB)";
-	lusos12="Usos del suelo 2012 (RMB)";
-	lusos17="Usos del suelo 2017 (AMB)";
+	gClima= "Variabilidad climática";
+	gAnompp= "Anomalías en precipitación";
+	gAnomtemp= "Anomalías en temperatura";
+	lAnomp17= "2017";
+	lAnomp18= "2018";
+	lAnomp19= "2019";
+	lAnomp20= "2020";
+	lAnomt16= "2016";
+	lAnomt17= "2017";
+	lAnomt18= "2018";
+	lAnomt19= "2019";
+	lAnomt20= "2020";
+	//Usos i Cobertes del sol
+	gCobusos= "Cambio de usos del suelo";
+	gCob= "Cubiertas";
+	lcob56= "1956";
+	lcob93= "1993";
+	lcob00= "2000";
+	lcob05= "2005";
+	lcob09= "2009";
+	lcob15= "2015";
+	gUsos="Usos";
+	lusos87="1987";
+	lusos92="1992";
+	lusos97="1997";
+	lusos02="2002";
+	lusos07="2007";
+	lusos12="2012";
+	lusos17="2017";
 	//Espai natural
-	//Espai urbà
-	gUrba="Espacio urbano";
-	lpoligons="Polígonos industriales (RMB)";
-	lteixit="Tejidos Urbanos(AMB)";
-	//Riscos territorials
-	gRiscos= "Riesgos territoriales";
-	lriscgeo="Mapa para la Prevención de Riesgos Geológicos 1: 25.000 (RMB)";
-	lperim= "Incendios forestales 1986-2019";
-	gIncendis="Risc d'incendis forestals"
-	lincend= "Vulnerabilidad a incendios";
-	linfla= "Modelo de inflamabilidad";
-	gInundabilitat="Inundabilidad";
-	lretorn10="Zona inundable periodo de retorno 10 años (RMB)(RMB)";
-	lretorn100="Zona inundable periodo de retorno 100 años(RMB)";
-	lretorn500="Zona inundable periodo de retorno 500 años (RMB)";
+	gActvegeta= "Actividad de la vegetación";
+	gNdvi= "Índice Vegetación (NDVI)";
+	lndvi17="2017";
+	lndvi18="2018";
+	lndvi19 ="2019";
+	lndvi20 ="2020";
+	//Incendis forestals
+	gIncend= "Incendios forestales";
+	lincend86= "1986";
+	lincend88= "1988";
+	lincend89= "1989";
+	lincend90= "1990";
+	lincend91= "1991";
+	lincend92= "1992";
+	lincend93= "1993";
+	lincend94= "1994";
+	lincend95= "1995";
+	lincend97= "1997";
+	lincend98= "1998";
+	lincend99= "1999";
+	lincend00= "2000";
+	lincend01= "2001";
+	lincend02= "2002";
+	//Funcionalitat paisatge
+	gFuncio="Funcionalidad del paisaje"
+	gConnect=  "Índice Conectividad Ecológica de los Espacios Abiertos";
+	lice56= "1956";
+	lice93= "1993";
+	lice09= "2009";
+	lice15= "2015";
+	//Estat ecològic
+	gEco= "Calidad del agua";
+	gEcorius= "Ríos"
+	lecorius07= "2007-2012";
+	lecorius13= "2013-2017";
+	gEcosub= "Aguas subterráneas";
+	lecosub07= "2007-2012";
+	lecosub13= "2013-2017";
+	//Consum aigua
+	gConaigua= "Consumo de agua";
+	laigua11= "2011";
+	laigua12= "2012";
+	laigua13= "2013";
+	laigua14= "2014";
+	laigua15= "2015";
+	//Consum energia
+	gConenerg= "Consumo de energía";
+	lenerg11= "2011";
+	lenerg12= "2012";
+	lenerg13= "2013";
+	lenerg14= "2014";
+	lenerg15= "2015";
+	//Generacio residus
+	gGeneracioresidus= "Generación de residuos";
+	gResidusmuni= "Municipales";
+	lresidumuni10= "2010";
+	lresidumuni11= "2011";
+	lresidumuni12= "2012";
+	lresidumuni13= "2013";
+	lresidumuni14= "2014";
+	lresidumuni15= "2015";
+	lresidumuni16= "2016";
+	gResidushabi= "Por habitante";
+	lgeneresiduhabi13= "2013";
+	lgeneresiduhabi14= "2014";
+	lgeneresiduhabi15= "2015";
+	lgeneresiduhabi16= "2016";
+	//Contaminació atmosfèrica
+	gxarxContm= "Contaminación atmosférica";
+	gxarxno2= "NO2";
+	lxarxno213="2013";
+	lxarxno214= "2014";
+	lxarxno215="2015";
+	lxarxno216= "2016";
+	gxarxpm10= "PM10";
+	lxarxpm1012="2012";
+	lxarxpm1013= "2013";
+	lxarxpm1014= "2014";
+	lxarxpm1015="2015";
+	lxarxpm1016= "2016";
+	gxarxpm25= "PM2,5";
+	lxarxpm2512= "2012";
+	lxarxpm2513= "2013";
+	lxarxpm2514= "2014";
+	lxarxpm2515= "2015";
+	lxarxpm2516= "2016";
+	gGasos= "Gases efecto invernadero";
+	gco2electricsec="Por sector";
+	lCo2electsect16= "2016";
+	lCo2electhab16= "2016";
+	gco2electrichab= "Por habitante";
+	gco2electric= "Consumo eléctrico";
+	lCo2gassect16= "2016";
+	gco2gassec= "Por sector";
+	lCo2gashab16= "2016";
+	gco2gashab= "Por habitante";
+	gco2gasnat= "Consumo gas natural";
+	//Indicadors socioecològics
+	gIndSocEco= "Indicadores socioecológicos";
 	//Dinàmiques Socioeconòmiques
-	gSocio="Dinámicas socioeconómicas";
-	lenvell="Envejecimiento vulnerable (AMB)";
-	limmi="Inmigración extranjera (AMB)";
-	lrenda="Renta (AMB)";
-	lpobresa="Pobreza (AMB)";
-	lformacio="Población poco cualificada (AMB)";
-	latur="Paro (AMB)";
-	lestath="Estado de conservación de las viviendas (AMB)";
-	laccesh="Accesibilidad a la vivienda (AMB)";
+	gSocio="Indicadores socioeconómicos";
+	//Demografia
+	gDemo="Población";
+	lpobla15= "2015";
+	ldensitat15= "Densidad 2015";
+	lpobla20= "2020";
+	ldensitat20= "Densidad 2020";
+	//Renda
+	gAmbestrenda= "Renta"
+	//origen renda
+	gOrigenrenda= "Origen de la renta";
+	lorigenrenda15= "2015";
+	lorigenrenda16= "2016";
+	lorigenrenda17= "2017";
+	lorigenrenda18= "2018";
+	//Index Gini
+	gIndexgini="Índice de Gini";
+	lgini15="2015";
+	lgini16="2016";
+	lgini17="2017";
+	lgini18="2018";
+	//Nivells renda
+	gAmbestrbaix= "Renta baja";
+	gAmbestrint= "Renta intermedia";
+	gAmbestralt= "Renta alta";
+	lrendab15= "2015";
+	lrendab16= "2016";
+	lrendab17= "2017";
+	lrendai15= "2015";
+	lrendai16= "2016";
+	lrendai17= "2017";
+	lrendaa15="2015";
+	lrendaa16="2016";
+	lrendaa17="2017";
+	//PIB
+	gPib= "Producto Interior Bruto";
+	lpibm16= "2016";
+	lpibm17= "2017";
+	lpibm18= "2018";
+	//Formacio
+	gForma= "Formación";
+	gbaixaq= "Trabajadores de baja cualificación";
+	lbaixaq15= "2015";
+	lbaixaq16= "2016";
+	lbaixaq17= "2017";
+	lbaixaq18= "2018";
+	gjovesfor= "Población joven sin estudios postobligatorios";
+	ljoves15= "2015";
+	ljoves16= "2016";
+	ljoves17= "2017";
+	ljoves18= "2018";
+	//Atur
+ 	gAtur= "Desempleo";
+	latur17="2017";
+	latur18= "2018";
+	latur19= "2019";
+	//Desigualtat
+	gdesig= "Desigualdad";
+	ldesig18= "2018";
+	//IST
+	gist= "Índice socioeconómico territorial";
+	list15= "2015";
+	list16= "2016";
+	list17= "2017";
+	list18="2018";
+	//Envelliment
+	gEnvelliment= "Envejecimiento";
+	gAIndexEnve="Índice de Envejecimiento";
+	lenve18= "2018";
+	lenve19= "2019";
+	gAmbestmajors= "Población mayor 75 años sola";
+	lmajors15= "2015";
+	lmajors16= "2016";
+	lmajors17= "2017";
+	//Habitatge
+	gHabitatge="Vivienda";
+	gEsforshab= "Esfuerzo acceso a la vivienda";
+	lesfhabit17= "2017";
+	lesfhabit18= "2018";
+	gDemandhabitatge="Demanda de vivienda";
+	ldehabit19= "2019";
+	ldehabit20= "2020";
+	//Estrangers
+	gMigra= "Migraciones";
+	gMigrants= "Población extranjera";
+	lmigra15= "2015";
+	lmigra20= "2020";
+	gAmbestestrang="Extranjeros de países en desarrollo";
+	lest15="2015";
+	lest16="2016";
+	lest17="2017";
+	//Patents
+	gSociopatents= "Innovación";
+	gpatents= "Patentes europeas";
+	lpatents05= "2005";
+	lpatents06= "2006";
+	lpatents07= "2007";
+	lpatents08= "2008";
+	lpatents09= "2009";
+	lpatents10= "2010";
+	lpatents11= "2011";
+	lpatents12= "2012";
+	lpatents13= "2013";
+	lpatents14= "2014";
+	lpatents15= "2015";
+	
 	
   } else if (document.documentElement.lang=='en') {
 	//CONTINGUT Info
@@ -654,141 +854,264 @@ var lpatents15;
 	fObrebookmarks="Bookmark selector";
 	fMesures="Measure";
 	//CAPES
-	capes= "Capas";
-	gAmbits="Ámbitos";
-	//limits administratius
+	capes= "Maps";
+	gAmbits="Areas";
 	gLimits= "Administrative limits";
-	lseccions ="Census Sections"
-	//límites protección ambiental
-	gProtecc= "Environmental Protection Limits"
-	lpein="Natural Interest Spaces Plan(PEIN)";
-	lxnatura="Red Natura 2000";
-	lenpe="Natural Special Protection Spaces(ENPE)";
-	//cartografia de base
-	gCartob= "Cartographical base";
-	ltopo25="Topgraphic 1:25.000 (RMB)";
-	gTopo25="Topgraphic";
-	lsupurb="Urbanized surface 1:25.000 (RMB)",
-	lvies="Communication channels 1:25.000 (RMB)",
-	lalti="Altimetry 1:25.000 (RMB)",
-	lveget="Vegetation 1:25.000 (RMB)",
-	//Imatges aèries
-	gImg= "Aerial imagery";
-	gActuals="Current";
-	lorto25m="Orthophoto of Catalonia 1:25.000 (RMB)";
-	lorto5m="Orthophoto of Catalonia 1:5.000 (RMB)";
-	lorto25c="Orthophoto of Catalonia 1:2.500 (RMB)";
-	lorto10c="Orthophoto of Catalonia 1:1.000 (RMB)";
-	lsat250m="Satellite image of Catalonia 1:250.000 (RMB)";
-	gHistoric="Historical";
-	lorto10m45="Orthophoto of Catalonia 1:10.000 1945";
-	lorto5m56="Orthophoto of Catalonia 1:5.000 1956";
-	lorto5m87="Orthophoto of Catalonia 1:5.000 1987";
-	lorto5m94="Orthophoto of Catalonia 1:5.000 1994 (RMB)";
-	lorto5m00="Orthophoto of Catalonia 1:5.000 2000 (RMB)";
-	lorto5m04="Orthophoto of Catalonia 1:5.000 2004";
-	lorto5m06="Orthophoto of Catalonia 1:5.000 2007 (RMB)";
-	lorto5m09="Orthophoto of Catalonia 1:5.000 2009 (RMB)";
-	lorto5m12="Orthophoto of Catalonia 1:5.000 2012 (RMB)";
-	lorto5m15="Orthophoto of Catalonia 1:5.000 2015 (RMB)";
-	lorto5m18="Orthophoto of Catalonia 1:5.000 2016 (RMB)";
-	//Topografia
-	gTopo= "Topography";
-	lmde="Digital Elevations Model (RMB)";
-	lpendent="Slope (RMB)";
-	lorient="Hillshade (RMB)";
-	//Geologia
-	gGeo= "Geology";
-	lgeolo="Geologic 1:50.000 (RMB)";
-	ledafo="Soils (WRB) 1:250.000 (RMB)";
-	lsoil="Soils (ST) 1:250.000 (RMB)";
-	//Hidrologia
-	gHidro= "Hidrology";
-	lHidrogeo="Hydrogeology 1:250.000 (RMB)";
-	lAquifers="Aquifers (RMB)";
-	lAqupro="Protected aquifers (RMB)";
-	gConques="Basins";
-	lXarxa0="Main hydrographic network 1:50.000 (RMB)";
-	lXarxahidro="Hydrographic network (RMB)";
-	lCanals="Driving and channeling network (RMB)";
-	lConques="Elemental basins of Catalonia 1:50.000 (RMB)";
+	lcomarca= "Region";
+	lmunicipis= "Municipality";
+	lseccions ="Census Sections";
+	//Imatges històriques
+	gHistoric="Aerial imagery";
+	lorto10m45="Orthophoto 1:10.000 1945";
+	lorto5m56="Orthophoto 1:5.000 1956";
+	lorto5m86="Orthophoto 1:5.000 1986";
+	lorto5m94="Orthophoto 1:5.000 1994";
+	lorto5m00="Orthophoto 1:5.000 2000";
+	lorto5m04="Orthophoto 1:5.000 2004";
+	lorto5m06="Orthophoto 1:5.000 2006";
+	lorto5m09="Orthophoto 1:5.000 2009";
+	lorto5m12="Orthophoto 1:5.000 2012";
+	lorto5m15="Orthophoto 1:5.000 2015";
+	lorto5m18="Orthophoto 1:5.000 2018";
 	//Clima
-	gClima= "Clima";
-	lRadiacio="Solar radiation";
-	lPrecipitacio="Precipitations";
-	lTempmin="Minimum average temperature";
-	lTempmit="Average temperature";
-	lTempmax="Maximum average temperature";
-	gAnom= "Climate anomaly";
-	lAnomp17= "Rain anomaly 2017";
-	lAnomp18= "Rain anomaly 2018";
-	lAnomp19= "Rain anomaly 2019";
-	lAnomt17= "Temperature anomaly 2017";
-	lAnomt18= "Temperature anomaly 2018";
-	lAnomt19= "Temperature anomaly 2019";
-	//Cobertes del sol
-	gCobertesSol="Land cover";
-	gCobertes="Land cover";
-	lcob56="Land cover 1956 (RMB)";
-	lcob93="Land cover 1993 (RMB)";
-	lcob00="Land cover 2000 (RMB)";
-	lcob05="Land cover 2005 (RMB)";
-	lcob09="Land cover 2009 (RMB)";
-	lcob15="Land cover 2015 (AMB)";
-	//usos dels sòl
+	gClima= "Climate anomaly";
+	gAnompp= "Rain anomaly";
+	gAnomtemp= "Temperature anomaly";
+	lAnomp17= "2017";
+	lAnomp18= "2018";
+	lAnomp19= "2019";
+	lAnomp20= "2020";
+	lAnomt16= "2016";
+	lAnomt17= "2017";
+	lAnomt18= "2018";
+	lAnomt19= "2019";
+	lAnomt20= "2020";
+	//Usos i Cobertes del sol
+	gCobusos= "Land cover";
+	gCob= "Land cover";
+	lcob56= "1956";
+	lcob93= "1993";
+	lcob00= "2000";
+	lcob05= "2005";
+	lcob09= "2009";
+	lcob15= "2015";
 	gUsos="Land uses";
-	lusos87="Land uses 1987 (RMB)";
-	lusos92="Land uses 1992 (RMB)";
-	lusos97="Land uses 1997 (RMB)";
-	lusos02="Land uses 2002 (RMB)";
-	lusos07="Land uses 2007 (RMB)";
-	lusos12="Land uses 2012 (RMB)";
-	lusos17="Land uses 2017 (RMB)";
+	lusos87="1987";
+	lusos92="1992";
+	lusos97="1997";
+	lusos02="2002";
+	lusos07="2007";
+	lusos12="2012";
+	lusos17="2017";
 	//Espai natural
-	gNatural="Natural spaces";
-	lhic="Habitat of priority Community interest.  (RMB)";
-	lhab="Habitat (RMB)";
-	lboscoss="Singular forests";
-	lndvi17="NDVI 2017 (RMB)";
-	lndvi18="NDVI 2018 (RMB)";
-	lndvi19 ="NDVI 2019 (RMB)";
-	//Espai urbà
-	gUrba="Urban spaces";
-	lpoligons="Industrial polygons (RMB)";
-	lteixit="Urban fabric(AMB)";
-	//Espai agrari
-	gAgrari= "Agrarian Spaces";
-	lAgricultura="Agriculture (RMB)";
-	lhortsp09= "Precary Orchards 2009";
-	lhortsp15="Precary Orchards 2015";
-	//Vectors ambientals
-	gAmbientals= "Environmental vectors";
-	gEstatAigua="State of water bodies";
-	lEscostaneres="State of coastal waters (RMB)";
-	lEsembass="State of reservoirs (RMB)";
-	lEsrius="State of rivers (RMB)";
-	lEssubt="State of groundwater (RMB)";
-	lEshumides="State of wetlands (RMB)";
-	//Riscos territorials
-	gRiscos= "Territorial hazards";
-	lriscgeo="Map for the Prevention of Geological Hazards 1: 25,000 (RMB)";
-	lperim="Forest Fires 1986-2019"
-	gIncendis="Forest fire risk"
-	lincend= "Fire vulnerability";
-	linfla= "Flammability model";
-	gInundabilitat="Flooding";
-	lretorn10="Flood zone return period 10 years (RMB)";
-	lretorn100="Flood zone return period 100 years(RMB)";
-	lretorn500="Flood zone return period 500 years (RMB)";
+	gActvegeta= "Vegetation activity";
+	gNdvi= "Normalized Difference Vegetation Index (NDVI)";
+	lndvi17="2017";
+	lndvi18="2018";
+	lndvi19 ="2019";
+	lndvi20 ="2020";
+	//Incendis forestals
+	gIncend= "Forest Fires";
+	lincend86= "1986";
+	lincend88= "1988";
+	lincend89= "1989";
+	lincend90= "1990";
+	lincend91= "1991";
+	lincend92= "1992";
+	lincend93= "1993";
+	lincend94= "1994";
+	lincend95= "1995";
+	lincend97= "1997";
+	lincend98= "1998";
+	lincend99= "1999";
+	lincend00= "2000";
+	lincend01= "2001";
+	lincend02= "2002";
+	//Funcionalitat paisatge
+	gFuncio="Landscape functionality"
+	gConnect=  "Ecological Connectivity Index of Open Spaces";
+	lice56= "1956";
+	lice93= "1993";
+	lice09= "2009";
+	lice15= "2015";
+	//Estat ecològic
+	gEco= "Water quality";
+	gEcorius= "Rivers"
+	lecorius07= "2007-2012";
+	lecorius13= "2013-2017";
+	gEcosub= "Groundwater";
+	lecosub07= "2007-2012";
+	lecosub13= "2013-2017";
+	//Consum aigua
+	gConaigua= "Water consumption";
+	laigua11= "2011";
+	laigua12= "2012";
+	laigua13= "2013";
+	laigua14= "2014";
+	laigua15= "2015";
+	//Consum energia
+	gConenerg= "Energy consumption";
+	lenerg11= "2011";
+	lenerg12= "2012";
+	lenerg13= "2013";
+	lenerg14= "2014";
+	lenerg15= "2015";
+	//Generacio residus
+	gGeneracioresidus= "Waste generation";
+	gResidusmuni= "Municipal";
+	lresidumuni10= "2010";
+	lresidumuni11= "2011";
+	lresidumuni12= "2012";
+	lresidumuni13= "2013";
+	lresidumuni14= "2014";
+	lresidumuni15= "2015";
+	lresidumuni16= "2016";
+	gResidushabi= "Per capita";
+	lgeneresiduhabi13= "2013";
+	lgeneresiduhabi14= "2014";
+	lgeneresiduhabi15= "2015";
+	lgeneresiduhabi16= "2016";
+	//Contaminació atmosfèrica
+	gxarxContm= "Atmospheric contamination";
+	gxarxno2= "NO2";
+	lxarxno213="2013";
+	lxarxno214= "2014";
+	lxarxno215="2015";
+	lxarxno216= "2016";
+	gxarxpm10= "PM10";
+	lxarxpm1012="2012";
+	lxarxpm1013= "2013";
+	lxarxpm1014= "2014";
+	lxarxpm1015="2015";
+	lxarxpm1016= "2016";
+	gxarxpm25= "PM2,5";
+	lxarxpm2512= "2012";
+	lxarxpm2513= "2013";
+	lxarxpm2514= "2014";
+	lxarxpm2515= "2015";
+	lxarxpm2516= "2016";
+	gGasos= "Greenhouse gases";
+	gco2electricsec="Per sector";
+	lCo2electsect16= "2016";
+	lCo2electhab16= "2016";
+	gco2electrichab= "Per capita";
+	gco2electric= "electricity consumption";
+	lCo2gassect16= "2016";
+	gco2gassec= "Per sector";
+	lCo2gashab16= "2016";
+	gco2gashab= "Per capita";
+	gco2gasnat= "Natural gas consumption";
+	//Indicadors socioecològics
+	gIndSocEco= "Socio-ecological indicators";
 	//Dinàmiques Socioeconòmiques
-	gSocio="Socioeconomic dinamics";
-	lenvell="Vulnerable elderly (AMB)";
-	limmi="Foreign immigration (AMB)";
-	lrenda="Income(AMB)";
-	lpobresa="Poverty (AMB)";
-	lformacio="Low education population (AMB)";
-	latur="Unenployment (AMB)";
-	lestath="Housing conservation state (AMB)";
-	laccesh="Housing accesibility (AMB)";
+	gSocio="Socio-economic indicators";
+	//Demografia
+	gDemo="Population";
+	lpobla15= "2015";
+	ldensitat15= "Density 2015";
+	lpobla20= "2020";
+	ldensitat20= "Density 2020";
+	//Renda
+	gAmbestrenda= "Income"
+	//origen renda
+	gOrigenrenda= "Origin of income";
+	lorigenrenda15= "2015";
+	lorigenrenda16= "2016";
+	lorigenrenda17= "2017";
+	lorigenrenda18= "2018";
+	//Index Gini
+	gIndexgini="Gini Index";
+	lgini15="2015";
+	lgini16="2016";
+	lgini17="2017";
+	lgini18="2018";
+	//Nivells renda
+	gAmbestrbaix= "Low income";
+	gAmbestrint= "Middle income";
+	gAmbestralt= "High income";
+	lrendab15= "2015";
+	lrendab16= "2016";
+	lrendab17= "2017";
+	lrendai15= "2015";
+	lrendai16= "2016";
+	lrendai17= "2017";
+	lrendaa15="2015";
+	lrendaa16="2016";
+	lrendaa17="2017";
+	//PIB
+	gPib= "Gross domestic product";
+	lpibm16= "2016";
+	lpibm17= "2017";
+	lpibm18= "2018";
+	//Formacio
+	gForma= "Qualification";
+	gbaixaq= "Low qualification workers";
+	lbaixaq15= "2015";
+	lbaixaq16= "2016";
+	lbaixaq17= "2017";
+	lbaixaq18= "2018";
+	gjovesfor= "Young population without post-compulsory studies";
+	ljoves15= "2015";
+	ljoves16= "2016";
+	ljoves17= "2017";
+	ljoves18= "2018";
+	//Atur
+ 	gAtur= "Unemployement";
+	latur17="2017";
+	latur18= "2018";
+	latur19= "2019";
+	//Desigualtat
+	gdesig= "Inequality";
+	ldesig18= "2018";
+	//IST
+	gist= "Territorial socioeconomic index";
+	list15= "2015";
+	list16= "2016";
+	list17= "2017";
+	list18="2018";
+	//Envelliment
+	gEnvelliment= "Aging";
+	gAIndexEnve="Aging Index";
+	lenve18= "2018";
+	lenve19= "2019";
+	gAmbestmajors= "Population older than 75 years living alone";
+	lmajors15= "2015";
+	lmajors16= "2016";
+	lmajors17= "2017";
+	//Habitatge
+	gHabitatge="Living place";
+	gEsforshab= "Effort accessing to housing";
+	lesfhabit17= "2017";
+	lesfhabit18= "2018";
+	gDemandhabitatge="Demand for housing";
+	ldehabit19= "2019";
+	ldehabit20= "2020";
+	//Estrangers
+	gMigra= "Migrations";
+	gMigrants= "Foreign population";
+	lmigra15= "2015";
+	lmigra20= "2020";
+	gAmbestestrang="Foreigners from developing countries";
+	lest15="2015";
+	lest16="2016";
+	lest17="2017";
+	//Patents
+	gSociopatents= "Innovation";
+	gpatents= "European patents";
+	lpatents05= "2005";
+	lpatents06= "2006";
+	lpatents07= "2007";
+	lpatents08= "2008";
+	lpatents09= "2009";
+	lpatents10= "2010";
+	lpatents11= "2011";
+	lpatents12= "2012";
+	lpatents13= "2013";
+	lpatents14= "2014";
+	lpatents15= "2015";
+	
+	
+	
+	
 
   }
