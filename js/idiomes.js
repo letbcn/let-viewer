@@ -28,7 +28,6 @@ var lenpe;
 //cartografia de base
 var gCartob;
 var ltopo25;
-var gTopo25;
 var lsupurb;
 var lvies;
 //Imatges aèries
@@ -36,7 +35,6 @@ var gImg;
 var lorto25m;
 var lorto5m;
 var lorto25c;
-var lorto10c;
 var lsat250m;
 //Topografia
 var gTopo;
@@ -220,18 +218,14 @@ var lpatentsv;
 	//cartografia de base
 	gCartob= "Cartografia de base";
 	ltopo25="Topogràfic 1:25.000";
-	gTopo25="Topogràfic";
 	lsupurb="Superfície urbanitzada 1:25.000",
 	lvies="Vies de comunicació 1:25.000",
-	lalti="Altimetria 1:25.000",
-	lveget="Vegetació 1:25.000",
 	//Imatges aèries
 	gImg= "Imatges aèries";
 	gActuals="Actuals";
 	lorto25m="Ortofoto de Catalunya 1:25.000";
 	lorto5m="Ortofoto de Catalunya 1:5.000";
 	lorto25c="Ortofoto de Catalunya 1:2.500";
-	lorto10c="Ortofoto de Catalunya 1:1.000";
 	lsat250m="Imatge satèl·lit de Catalunya 1:250.000";
 	//Topografia
 	gTopo= "Topografia";
@@ -391,11 +385,11 @@ var lpatentsv;
    //CONTINGUT Info
 	tooltipInfo="Información sobre el LET's GIS";
 	contingutInfo="<div style='width:400px; padding:10px; background-color:white'>" + 
-	"<p>El Sistema d’Informació Geogràfica del LET (LET’s GIS), parteix de l’idea d’elaborar un sistema de suport a la planificació" + 
-	" i la gestió del territori, com un dels elements clau del model d’avaluació socioecològica de la metròpoli. " + 
-	"Aquesta eina pretén fer possible la visualització, consulta, descarrega i anàlisi de la informació geogràfica " + 
-	"referent a variables socioecològiques a l’àmbit metropolità i regional de Barcelona. El següent enllaç permet accedir a la web " + 
-	"del projecte <a href='https://iermb.uab.cat/ca/let-bcn/' target='_blank' rel='noopener noreferrer'>LET</a>.</p></div>";
+	"<p>El Sistema de Información Geográfica del LET (LET’s GIS), parte de la idea de elaborar un sistema de apoyo a la planificación" + 
+	" y la gestión del territorio, como uno de los elementos clave del modelo de evaluación socioecológica de la metrópoli. " + 
+	"Esta herramienta pretende hacer posible la visualización, consulta, descarga y análisis de la información geográfica " + 
+	"en lo referente a variables socioecológicas al ámbito metropolitano y regional de Barcelona. El siguiente enlace permite acceder en la web " + 
+	"del proyecto <a href='https://iermb.uab.cat/es/let-bcn/' target='_blank' rel='noopener noreferrer'>LET</a>.</p></div>";
   //FUNCIONSMAPA
 	fFullextent="Zoom a toda la extensión";
 	fInfo="Información";
@@ -410,9 +404,11 @@ var lpatentsv;
 	//CAPES
 	capes= "Capas";
 	gAmbits="Ámbitos";
-	//limits administratius
+	//limites administratius
 	gLimits= "Límites administrativos";
-	lseccions ="Secciones Censales"
+	lcomarca= "Comarcas";
+	lmunicipis= "Municipios";
+	lseccions ="Secciones Censales";
 	//límites protección ambiental
 	gProtecc= "Límites protección ambiental"
 	lpein="Plan de espacios de interés natural (PEIN)";
@@ -420,17 +416,14 @@ var lpatentsv;
 	lenpe="Espacios naturales de protección especial (ENPE)";
 	//cartografia de base
 	gCartob= "Cartografía de base";
-	ltopo25="Topográfico 1:25.000 (RMB)";
-	gTopo25="Topográfico";
+	ltopo25="Topográfico 1:25.000";
 	lsupurb="Superficie urbanizada 1:25.000";
 	lvies="Vías de comunicación 1:25.000";
 	//Imatges aèries
-	gImg= "Imágenes aérias";
-	gActuals="Actual";
+	gImg= "Imágenes aéreas";
 	lorto25m="Ortofoto de Cataluña 1:25.000";
 	lorto5m="Ortofoto de Cataluña 1:5.000";
 	lorto25c="Ortofoto de Cataluña 1:2.500";
-	lorto10c="Ortofoto de Cataluña 1:1.000";
 	lsat250m="Imagen satélite de Cataluña 1:250.000";
 	//Topografia
 	gTopo= "Topografía";
@@ -439,108 +432,155 @@ var lpatentsv;
 	lorient="Orientaciones";
 	//Geologia
 	gGeo= "Geología";
-	lgeolo="Geològic 1:50.000 (RMB)";
-	ledafo="Edafológico (WRB) 1:250.000 (RMB)";
-	lsoil="Edafológico (ST) 1:250.000 (RMB)";
+	lgeolo="Geológico 1:50.000";
+	ledafo="Edafológico (WRB) 1:250.000";
+	lsoil="Edafológico (ST) 1:250.000";
 	//Hidrologia
 	gHidro= "Hidrología";
-	gMaigua="Hidrología";
-	lHidrogeo="Hidrogeología 1:250.000 (RMB)";
 	lAquifers="Acuíferos";
 	lAqupro="Acuíferos protegidos";
-	lXarxa0="Red hidrográfica principal 1:50.000 (RMB)";
+	lXarxa0="Red hidrográfica principal 1:50.000";
 	lXarxahidro="Red hidrográfica";
-	lCanals="Red de conducciones y canalizaciones (RMB)";
-	lConques="Cuencas elementales de Cataluña 1:50.000 (RMB)";
+	lCanals="Red de conducciones y canalizaciones";
+	lConques="Cuencas elementales de Cataluña 1:50.000";
 	//Clima
 	gClima= "Clima";
-	lRadiacio="Radiación solar (RMB)";
-	lPrecipitacio="Precipitaciones (RMB)";
-	lTempmin="Temperatura media mínimas (RMB)";
-	lTempmit="Temperatura media (RMB)";
-	lTempmax="Temperatura media máximas (RMB)";
+	lRadiacio="Radiación solar";
+	lPrecipitacio="Precipitaciones";
+	lTempmin="Temperatura media mínima";
+	lTempmit="Temperatura media";
+	lTempmax="Temperatura media máxima";
 	gAnom= "Anomalias climáticas";
-	lAnomp17= "Anomalía precipitación 2017";
-	lAnomp18= "Anomalía precipitación 2018";
-	lAnomp19= "Anomalía precipitación 2019";
-	lAnomt17= "Anomalía temperatura 2017";
-	lAnomt18= "Anomalía temperatura 2018";
-	lAnomt19= "Anomalía temperatura 2019";
-	//Cobertes del sol
+	lAnomp20= "Anomalía precipitación";
+	lAnomt20= "Anomalía temperatura";
+	//Cubiertas del suelo
 	gCobertesSol="Cubiertas del suelo";
 	gCobertes="Cubiertas del suelo";
-	lcob56="Cubiertas del suelo 1956 (RMB)";
-	lcob93="Cubiertas del suelo 1993 (RMB)";
-	lcob00="Cubiertas del suelo 2000 (RMB)";
-	lcob05="Cubiertas del suelo 2005 (RMB)";
-	lcob09="Cubiertas del suelo 2009 (RMB)";
-	lcob15="Cubiertas del suelo 2015 (RMB)";
+	lcob09="Cubiertas del suelo 2009";
+	lcob15="Cubiertas del suelo 2015 (AMB)";
 	gUsos="Usos del suelo";
-	lusos87="Usos del suelo 1987 (RMB)";
-	lusos92="Usos del suelo 1992 (RMB)";
-	lusos97="Usos del suelo 1997 (RMB)";
-	lusos02="Usos del suelo 2002 (RMB)";
-	lusos07="Usos del suelo 2007 (RMB)";
-	lusos12="Usos del suelo 2012 (RMB)";
-	lusos17="Usos del suelo 2017 (AMB)";
-	//Espai natural
+	lusos17="Usos y cubiertas del suelo 2017";
+	//Espacio natural
 	gNatural="Espacio natural";
-	lpein="Plan de espacios de interés natural (PEIN) (RMB)";
-	lxnatura="Red Natura 2000 (RMB)";
-	lenpe="Espacios Naturales de Proteccción Especial (ENPE) (RMB)";
-	lhic="Hábitats de interés comunitario (RMB)";
-	lhab="Hábitats (RMB)";
-	lndvi17="NDVI 2017 (RMB)";
-	lndvi18="NDVI 2018 (RMB)";
-	lndvi19 ="NDVI 2019 (RMB)";
-	lboscoss="Bosques singulares (RMB)";
-	//Espai urbà
+	lhic="Hábitats de interés comunitario";
+	lhab="Hábitats";
+	lboscoss="Bosques singulares";
+	lbiodsing= "Biodiversidad singular";
+	lndvi20 ="Índice Vegetación (NDVI)";
+	//Variables arbrado
+	gVarbrat= "Variables biofísicas del arbrado";
+	lbiofol= "Biomasa foliar";
+	lbiotot= "Biomasa aérea total";
+	lhmitja= "Altura media";
+	//Espacio urbano
 	gUrba="Espacio urbano";
-	lpoligons="Polígonos industriales (RMB)";
+	lpoligons="Polígonos industriales";
 	lteixit="Tejidos Urbanos(AMB)";
-	//Espai agrari
+	//Espacio agrario
 	gAgrari= "Espacio agrario";
-	lAgricultura="Agricultura (RMB)";
+	lAgricultura="Agricultura (DAN 2019)";
 	lhortsp09= "Huertos precarios 2009";
 	lhortsp15="Huertos precarios 2015";
-	//Vectors ambientals
+	//Vectores ambientales
 	gAmbientals= "Vectores ambientales";
-	gEstatAigua="Estado de los cuerpos de agua";
-	lEscostaneres="Estado aguas costeras (RMB)";
-	lEsembass="Estado embalses (RMB)";
-	lEsrius="Estado ríos (RMB)";
-	lEssubt="Estado aguas subterráneas (RMB)";
-	lEshumides="Estado zonas húmedas (RMB)";
+	//Energia y cambio climático
+	gEnergia= "Consumo de energía";
+	lElectrsect= "Energía eléctrica por sector";
+	lElectrhab= "Consumo doméstico energía eléctrica por habitante";
+	lGassect= "Gas natural por sector";
+	lGasdom= "Consumo doméstico gas natural ";
+	lGashab= "Gas natural por habitante";
+	//Emissions gasos hivernacle
+	gEmissionsgasos= "Emisiones gases efecto invernadero";
+	lEmissioogasos= "Gases efecto invernadero";
+	//Emissions
+	lCo2electsect= "Emisiones CO2 del consumo eléctrico por sector";
+	lCo2electhab="Emisiones CO2 del consumo eléctrico por habitante";
+	lCo2gassect= "Emisiones CO2 del consumo de gas natural por sector";
+	lCo2gashab= "Emisiones CO2 del consumo de gas natural por habitante";
+	//cicle aigua
+	gCicleaigua= "Consumo de agua";
+	lAiguadom= "Consumo doméstic agua por habitante";
+	lAiguasect= "Consumo de agua por sector";
+	lFreatiques= "Uso de agua freatica por usos municipales";
+	//gestio residus
+	gGestioresidus= "Generación de residuos";
+	lgeneresidumuni= "Residuos municipales";
+	lgeneresiduhabi= "Residuos por habitante";
+	lrecollida= "Recogida selectiva de residuos";
+	lresidusind= "Residuos industriales";
+	lresidusindemp= "Residuos industriales por empresa";
+	//estat masses aigues
+	gEstatAigua="Estado de las masas de agua";
+	lEscostaneres="Aguas costeras";
+	lEsembass="Embalses";
+	lEsrius="Ríos";
+	lEssubt="Aguas subteranias";
+	lEshumides="Zonas húmidas";
+	//Qualitat aire
+	gQualiair= "Calidad del aire";
+	//Xarxa control contaminants
+	gxarxContm= "Red control contaminantes";
+	lxarxno2= "NO2";
+	lxarxpm10= "PM10";
+	lxarxpm25= "PM2,5";
+	//Contaminación atmosfèrica
+	gContm= "Contaminación atmosférica";
+	lno2= "NO2";
+	lpm10="PM10";
 	//Riscos territorials
-	gRiscos= "Riesgos territoriales";
-	lperim= "Incendios forestales 1986-2019";
-	gIncendis="Risc d'incendis forestals"
-	lincend= "Vulnerabilidad a incendios";
-	linfla= "Modelo de inflamabilidad";
+	gRiscos= "Riesgos territoriales";	
+	gIncendis="Incendios forestales";
+	lperim= "Incendis forestales";
+	lvincend= "Vulnerabilidad incendios";
+	lpincend= "Peligro básico incendio";
+	linfla= "Modelo inflamabilidad";
 	gInundabilitat="Inundabilidad";
-	lretorn10="Zona inundable periodo de retorno 10 años (RMB)(RMB)";
-	lretorn100="Zona inundable periodo de retorno 100 años(RMB)";
-	lretorn500="Zona inundable periodo de retorno 500 años (RMB)";
-	//Dinàmiques Socioeconòmiques
-	gSocio="Dinámicas socioeconómicas";
-	lenvell="Envejecimiento vulnerable (AMB)";
-	limmi="Inmigración extranjera (AMB)";
-	lrenda="Renta (AMB)";
-	lpobresa="Pobreza (AMB)";
-	lformacio="Población poco cualificada (AMB)";
-	latur="Paro (AMB)";
-	lestath="Estado de conservación de las viviendas (AMB)";
-	laccesh="Accesibilidad a la vivienda (AMB)";
+	lretorn10="Zona inundable retorno 10 años";
+	lretorn100="Zona inundable retorno 100 años";
+	lretorn500="Zona inundable retorno 500 años";
+	//Societat
+	gSocietat= "Sociedad";
+	//Economia
+	gEco= "Economía";
+	lbaixaq18="Trabajadores de baja cualificación";
+	ljoves18= "Población joven sin estudios postobligatorios";
+	//Renda
+	lrendam17= "Renta familiar media";
+	lorirenda= "Origen renta";
+	lrendab17= "Renta baja";
+	lrendai17= "Renta intermedia";
+	lrendaa17="Rentaa alta";
+	lgini18= "Desigualdad (Índice Gini)";
+	lpibm= "PIB por habitante";
+	//Vulnerabilitat
+	list18= "Índice socioeconómico territorial (IST)";
+	//Envelliment
+	lmajors17= "Población mayor 75 años sola";
+	lenvell="Envejecimiento vulnerable";
+	//Estrangers
+	lmigra20="Población extranjera";
+	lest17="Extranjeros de paísos en desarrollo"
+	//Habitatge
+	gHabitat= "Vivienda";
+	lestath="Estada conservación vivienda";
+	laccesh="Accesibilidad a la vivienda";
+	//Innovacio
+	lpatents= "Patentes europeas";
+	lpatentsv= "Patentes verdes";
+	
+	lpobresa="Pobresa";
+	latur="Desempleo";
 	
   } else if (document.documentElement.lang=='en') {
 	//CONTINGUT Info
 	tooltipInfo="LET's GIS Information";
 	contingutInfo="<div style='width:400px; padding:10px; background-color:white'>" + 
-	"<p>El Sistema d’Informació Geogràfica del LET (LET’s GIS), parteix de l’idea d’elaborar un sistema de suport a la planificació" + 
-	" i la gestió del territori, com un dels elements clau del model d’avaluació socioecològica de la metròpoli. " + 
-	"Aquesta eina pretén fer possible la visualització, consulta, descarrega i anàlisi de la informació geogràfica " + 
-	"referent a variables socioecològiques a l’àmbit metropolità i regional de Barcelona. El següent enllaç permet accedir a la web " + 
-	"del projecte <a href='https://iermb.uab.cat/ca/let-bcn/' target='_blank' rel='noopener noreferrer'>LET</a>.</p></div>";
+	"<p>The LET Geographic Information System (LET’s GIS), based on the idea of ​​developing a planning support system" + 
+	"and land management, as one of the key elements of the metropolis ’socio-ecological assessment model. " + 
+	"This tool aims to make possible the visualization, consultation, download and analysis of geographical information " + 
+	"egarding socio-ecological variables in the metropolitan and regional area of ​​Barcelona. The following link allows access to the web " + 
+	"of the project <a href='https://iermb.uab.cat/en/let-bcn/' target='_blank' rel='noopener noreferrer'>LET</a>.</p></div>";
   
 	//FUNCIONSMAPA
 	fFullextent="Go to full extent";
@@ -554,10 +594,12 @@ var lpatentsv;
 	fObrebookmarks="Bookmark selector";
 	fMesures="Measure";
 	//CAPES
-	capes= "Capas";
-	gAmbits="Ámbitos";
+	capes= "Maps";
+	gAmbits="Areas";
 	//limits administratius
 	gLimits= "Administrative limits";
+	lcomarca= "Region";
+	lmunicipis= "Municipality";
 	lseccions ="Census Sections"
 	//límites protección ambiental
 	gProtecc= "Environmental Protection Limits"
@@ -566,31 +608,27 @@ var lpatentsv;
 	lenpe="Natural Special Protection Spaces(ENPE)";
 	//cartografia de base
 	gCartob= "Cartographical base";
-	ltopo25="Topgraphic 1:25.000 (RMB)";
-	gTopo25="Topgraphic";
-	lsupurb="Urbanized surface 1:25.000 (RMB)",
-	lvies="Communication channels 1:25.000 (RMB)",
+	ltopo25="Topgraphic 1:25.000";
+	lsupurb="Urbanized surface 1:25.000",
+	lvies="Communication channels 1:25.000",
 	//Imatges aèries
 	gImg= "Aerial imagery";
-	gActuals="Current";
-	lorto25m="Orthophoto of Catalonia 1:25.000 (RMB)";
-	lorto5m="Orthophoto of Catalonia 1:5.000 (RMB)";
-	lorto25c="Orthophoto of Catalonia 1:2.500 (RMB)";
-	lorto10c="Orthophoto of Catalonia 1:1.000 (RMB)";
-	lsat250m="Satellite image of Catalonia 1:250.000 (RMB)";
+	lorto25m="Orthophoto of Catalonia 1:25.000";
+	lorto5m="Orthophoto of Catalonia 1:5.000";
+	lorto25c="Orthophoto of Catalonia 1:2.500";
+	lsat250m="Satellite image of Catalonia 1:250.000";
 	//Topografia
 	gTopo= "Topography";
-	lmde="Digital Elevations Model (RMB)";
-	lpendent="Slope (RMB)";
-	lorient="Hillshade (RMB)";
+	lmde="Digital Elevations Model";
+	lpendent="Slope";
+	lorient="Hillshade";
 	//Geologia
 	gGeo= "Geology";
-	lgeolo="Geologic 1:50.000 (RMB)";
-	ledafo="Soils (WRB) 1:250.000 (RMB)";
-	lsoil="Soils (ST) 1:250.000 (RMB)";
+	lgeolo="Geologic 1:50.000";
+	ledafo="Soils (WRB) 1:250.000";
+	lsoil="Soils (ST) 1:250.000";
 	//Hidrologia
 	gHidro= "Hidrology";
-	lHidrogeo="Hydrogeology 1:250.000 (RMB)";
 	lAquifers="Aquifers";
 	lAqupro="Protected aquifers";
 	lXarxa0="Main hydrographic network 1:50.000";
@@ -598,82 +636,133 @@ var lpatentsv;
 	lCanals="Driving and channeling network";
 	lConques="Elemental basins of Catalonia 1:50.000";
 	//Clima
-	gClima= "Clima";
+	gClima= "Climate";
 	lRadiacio="Solar radiation";
 	lPrecipitacio="Precipitations";
 	lTempmin="Minimum average temperature";
 	lTempmit="Average temperature";
 	lTempmax="Maximum average temperature";
 	gAnom= "Climate anomaly";
-	lAnomp17= "Rain anomaly 2017";
-	lAnomp18= "Rain anomaly 2018";
-	lAnomp19= "Rain anomaly 2019";
-	lAnomt17= "Temperature anomaly 2017";
-	lAnomt18= "Temperature anomaly 2018";
-	lAnomt19= "Temperature anomaly 2019";
+	lAnomp20= "Rain anomaly";
+	lAnomt20= "Temperature anomaly";
 	//Cobertes del sol
 	gCobertesSol="Land cover";
 	gCobertes="Land cover";
-	lcob56="Land cover 1956 (RMB)";
-	lcob93="Land cover 1993 (RMB)";
-	lcob00="Land cover 2000 (RMB)";
-	lcob05="Land cover 2005 (RMB)";
-	lcob09="Land cover 2009 (RMB)";
+	lcob09="Land cover 2009";
 	lcob15="Land cover 2015 (AMB)";
 	//usos dels sòl
 	gUsos="Land uses";
-	lusos87="Land uses 1987 (RMB)";
-	lusos92="Land uses 1992 (RMB)";
-	lusos97="Land uses 1997 (RMB)";
-	lusos02="Land uses 2002 (RMB)";
-	lusos07="Land uses 2007 (RMB)";
-	lusos12="Land uses 2012 (RMB)";
-	lusos17="Land uses 2017 (RMB)";
+	lusos17="Land uses 2017";
 	//Espai natural
 	gNatural="Natural spaces";
-	lhic="Habitat of priority Community interest.  (RMB)";
-	lhab="Habitat (RMB)";
+	lhic="Habitat of priority Community interest";
+	lhab="Habitat";
 	lboscoss="Singular forests";
-	lndvi17="NDVI 2017 (RMB)";
-	lndvi18="NDVI 2018 (RMB)";
-	lndvi19 ="NDVI 2019 (RMB)";
+	lbiodsing= "Singular biodiversity";
+	lndvi20 ="Normalized Difference Vegetation Index (NDVI)";
+	//Variables arbrat
+	gVarbrat= "Woodland biophysical variables";
+	lbiofol= "Foliar biomass";
+	lbiotot= "Biomassa aèria total";
+	lhmitja= "Total aerial biomass";
 	//Espai urbà
 	gUrba="Urban spaces";
-	lpoligons="Industrial polygons (RMB)";
-	lteixit="Urban fabric(AMB)";
+	lpoligons="Industrial polygons";
+	lteixit="Urban fabric";
 	//Espai agrari
 	gAgrari= "Agrarian Spaces";
-	lAgricultura="Agriculture (RMB)";
+	lAgricultura="Agriculture";
 	lhortsp09= "Precary Orchards 2009";
 	lhortsp15="Precary Orchards 2015";
 	//Vectors ambientals
 	gAmbientals= "Environmental vectors";
+	//Energia i canvi climatic
+	gEnergia= "Energy consumption";
+	lElectrsect= "Electricity by sector";
+	lElectrhab= "Domestic electricity consumption per capita";
+	lGassect= "Natural gas by sector";
+	lGasdom= "Domestic consumption of natural gas";
+	lGashab= "Natural gas per capita";
+	//Emissions gasos hivernacle
+	gEmissionsgasos= "Greenhouse gas emissions";
+	lEmissioogasos= "Greenhouse gases";
+	//Emissions
+	lCo2electsect= "CO2 emissions from electricity consumption by sector";
+	lCo2electhab="CO2 emissions from electricity consumption per capita";
+	lCo2gassect= "CO2 emissions from natural gas consumption by sector";
+	lCo2gashab= "CO2 emissions from natural gas consumption per capita";
+	//cicle aigua
+	gCicleaigua= "Water consumption";
+	lAiguadom= "Domestic water consumption per capita";
+	lAiguasect= "Water consumption by sector";
+	lFreatiques= "Use of groundwater for municipal uses";
+	//gestio residus
+	gGestioresidus= "Waste generation";
+	lgeneresidumuni= "Municipal waste";
+	lgeneresiduhabi= "Waste per capita";
+	lrecollida= "Selective waste collection";
+	lresidusind= "Industrial waste";
+	lresidusindemp= "Industrial waste by company";
+	//Water 
 	gEstatAigua="State of water bodies";
-	lEscostaneres="State of coastal waters (RMB)";
-	lEsembass="State of reservoirs (RMB)";
-	lEsrius="State of rivers (RMB)";
-	lEssubt="State of groundwater (RMB)";
-	lEshumides="State of wetlands (RMB)";
+	lEscostaneres="Coastal waters";
+	lEsembass="Reservoirs";
+	lEsrius="Rivers";
+	lEssubt="Groundwater";
+	lEshumides="Wetlands";
+	//Qualitat aire
+	gQualiair= "Air quality";
+	//Xarxa control contaminants
+	gxarxContm= "Contamination control network";
+	lxarxno2= "NO2";
+	lxarxpm10= "PM10";
+	lxarxpm25= "PM2,5";
+	//Contaminació atmosfèrica
+	gContm= "Atmospheric contamination";
+	lno2= "NO2";
+	lpm10="PM10";
 	//Riscos territorials
 	gRiscos= "Territorial hazards";
-	lriscgeo="Map for the Prevention of Geological Hazards 1: 25,000 (RMB)";
-	lperim="Forest Fires 1986-2019"
-	gIncendis="Forest fire risk"
-	lincend= "Fire vulnerability";
+	gIncendis="Forest fire risk";
+	lperim="Forest Fires"
+	lvincend= "Fire vulnerability";
+	lpincend= "Basic fire danger";
 	linfla= "Flammability model";
 	gInundabilitat="Flooding";
-	lretorn10="Flood zone return period 10 years (RMB)";
-	lretorn100="Flood zone return period 100 years(RMB)";
-	lretorn500="Flood zone return period 500 years (RMB)";
-	//Dinàmiques Socioeconòmiques
-	gSocio="Socioeconomic dinamics";
-	lenvell="Vulnerable elderly (AMB)";
-	limmi="Foreign immigration (AMB)";
-	lrenda="Income(AMB)";
-	lpobresa="Poverty (AMB)";
-	lformacio="Low education population (AMB)";
-	latur="Unenployment (AMB)";
-	lestath="Housing conservation state (AMB)";
-	laccesh="Housing accesibility (AMB)";
+	lretorn10="Flood zone return period 10 years";
+	lretorn100="Flood zone return period 100 years";
+	lretorn500="Flood zone return period 500 years";
+	//Societat
+	gSocietat= "Society";
+	//Economia
+	gEco= "Economy";
+	lbaixaq18="Low qualification workers";
+	ljoves18= "Young population without post-compulsory studies";
+	//Renda
+	lrendam17= "Family income";
+	lorirenda= "Origen renta";
+	lrendab17= "Low Income";
+	lrendai17= "Middle Income";
+	lrendaa17="High Income";
+	lgini18= "Inequality (Gini Index)";
+	lpibm= "GDP per capita";
+	//Vulnerabilitat
+	list18= "Territorial socioeconomic index (IST)";
+	//Envelliment
+	lmajors17= "Population over 75 years old living alone";
+	lenvell="Vulnerable aging";
+	//Estrangers
+	lmigra20="Foreign population";
+	lest17="Foreigners from developing countries";
+	//Habitatge
+	gHabitat= "Living place";
+	lestath="State of conservation of housing";
+	laccesh="Home accessibility";
+	//Innovacio
+	lpatents= "European patents";
+	lpatentsv= "Green patents";
+
+	lpobresa="Poverty";
+	latur="Unemployement";
 
   }
