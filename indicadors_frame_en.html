@@ -777,7 +777,7 @@ h3 {
 
   <body style="font-family: 'Avenir Next W00','Helvetica Neue',Helvetica,Arial,sans-serif;" onload="canvi(valuesRanges());">
 	<div id="control-panel">
-		<h3 class="title_control-panel" style="text-align: center;padding: 20px;border-bottom: 1px solid black;margin: 0;font-size: 18px; height: 10%;">1. Prioritize the dimensions you want to optimize</h3>
+		<h3 class="title_control-panel" style="text-align: center;padding: 20px;border-bottom: 1px solid black;margin: 0;font-size: 18px; height: 10%;">1. Prioritize the dimensions to be optimized</h3>
 		<div style="height: calc(100% - 129px); overflow-y: auto; padding-top: 15px;">
 			<div class="formRanges">
 			<div class="formRange"><div class="label"><label for="ARange">Energy efficiency</label></div><div class="rangediv"><span class="resultRange" id="A1RangeValue"></span><input type="range" name="A1Range" id="A1Range" min="0" max="100" step="1" onchange="showVal('A1RangeValue', this.value)" oninput="showVal('A1RangeValue', this.value)"></div></div>
@@ -799,8 +799,8 @@ h3 {
 		
 	</div>
 	<div class="buttons">
-		<button class="button" id="buttonAplicar" style="border-right:1px solid black;" onclick="restaurar()">RESTAURA</button>
-		<button class="button" id="buttonAplicar" onclick="if(checkRanges()) { canvi(valuesRanges())} else { alert('The sum of the weights must be exactly 100'); }">Aplica</button>
+		<button class="button" id="buttonAplicar" style="border-right:1px solid black;" onclick="restaurar()">RESET</button>
+		<button class="button" id="buttonAplicar" onclick="if(checkRanges()) { canvi(valuesRanges())} else { alert('The sum of the weights must be exactly 100'); }">APPLY</button>
 		
 
 	</div>
@@ -816,13 +816,13 @@ h3 {
 			<label id="labelA1" for="A1"><input type="checkbox" class="cbs" name="A1" id="A1" value="A1" onclick="canvi(valuesRanges(),this.value)" checked>Energy efficiency</label>
 			<label id="labelA2" for="A2"><input type="checkbox" class="cbs" name="A2" id="A2" value="A2" onclick="canvi(valuesRanges(),this.value)">Water consumption</label>
 			<label id="labelA3" for="A3"><input type="checkbox" class="cbs" name="A3" id="A3" value="A3" onclick="canvi(valuesRanges(),this.value)">Biomass appropriation </label>
-			<label id="labelB" for="B"><input type="checkbox" class="cbs" name="B" id="B" value="B" onclick="canvi(valuesRanges(),this.value)">Conservation of biodiversity</label>
-			<label id="labelC" for="C"><input type="checkbox" class="cbs" name="C" id="C" value="C" onclick="canvi(valuesRanges(),this.value)">Landscape operation</label>
+			<label id="labelB" for="B"><input type="checkbox" class="cbs" name="B" id="B" value="B" onclick="canvi(valuesRanges(),this.value)">Biodiversity conservation</label>
+			<label id="labelC" for="C"><input type="checkbox" class="cbs" name="C" id="C" value="C" onclick="canvi(valuesRanges(),this.value)">Landscape functioning</label>
 			<label id="labelD" for="D"><input type="checkbox" class="cbs" name="D" id="D" value="D" onclick="canvi(valuesRanges(),this.value)">Climate change</label>
 			<label id="labelE1A" for="E1A"><input type="checkbox" class="cbs" name="E1A" id="E1A" value="E1A" onclick="canvi(valuesRanges(),this.value)">Nutrient recirculation </label>
 			<label id="labelE1B" for="E1B"><input type="checkbox" class="cbs" name="E1B" id="E1B" value="E1B" onclick="canvi(valuesRanges(),this.value)">Carbon stock </label>
 			<label id="labelE1C" for="E1C"><input type="checkbox" class="cbs" name="E1C" id="E1C" value="E1C" onclick="canvi(valuesRanges(),this.value)">Agricultural production</label>
-			<label id="labelF" for="F"><input type="checkbox" class="cbs" name="F" id="F" value="F" onclick="canvi(valuesRanges(),this.value)">Work places</label>
+			<label id="labelF" for="F"><input type="checkbox" class="cbs" name="F" id="F" value="F" onclick="canvi(valuesRanges(),this.value)">Agricultural jobs</label>
 		</div>
 		</div>
 	</div>
