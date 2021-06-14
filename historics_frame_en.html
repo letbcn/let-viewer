@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Historical maps comparator</title>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.13/esri/themes/light/main.css" />
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <link rel="stylesheet" href="css/style_let.css">
+    <script src="https://js.arcgis.com/4.13/"></script>
+
+    <style>
+        html,
+        body,
+        #viewDiv1,
+        #viewDiv2,
+        #viewDiv3,
+        #viewDiv4 {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+        
+        #infoDiv,
+        #escenariDiv,
+        #escenariDif {
+            padding: 8px;
+        }
+        
+        #div1,
+        #div2,
+        #div3,
+        #div4 {
+            padding: 0;
+            margin: 0;
+            height: 50%;
+            width: 50%;
+            float: left;
+            border-color: coral;
+        }
+        
+        .esri-widget,
+        .esri-widget--button {
+            background-color: #B0DBBF !important;
+        }
+        
+        .esri-attribution {
+            display: none;
+        }
+        
+        select {
+            border: 0px;
+        }
+        
+        .esri-ui-top-right .esri-component {
+            margin-bottom: 0px;
+            width: 120px;
+            text-align: right;
+        }
+        
+        @media screen and (max-width:1024px) {
+            #div1,
+            #div2,
+            #div3,
+            #div4 {
+                padding: 0;
+                margin: 0;
+                height: 50%;
+                width: 100%;
+                border-bottom: 1px solid black;
+                float: left;
+            }
+        }
+        
+        .visible1 {
+            display: block !important;
+        }
+        
+        .visible2 {
+            display: block !important;
+        }
+        
+        .visible3 {
+            display: block !important;
+        }
+        
+        .visible4 {
+            display: block !important;
+        }
+        
+        .loading {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 99%;
+            height: 90%;
+            background-color: grey;
+            color: white;
+            display: none;
+            padding: 8px;
+            z-index: 10;
+            opacity: 0.5;
+        }
+        
+        .loading img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+
+    <script>
+        const options = {
+            dojoConfig: {
+                async: true,
+                packages: [{
+                    location: 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js',
+                    name: 'Chart'
+                }]
+            }
+        };
+    </script>
+
+    <script>
+        require([
+            "esri/Map",
+            "esri/views/MapView",
+            "esri/layers/FeatureLayer",
+            "esri/layers/MapImageLayer",
+            "esri/widgets/Legend",
+            "esri/core/watchUtils",
+            "esri/widgets/Expand",
+            "esri/widgets/Home",
+            "esri/layers/WMSLayer",
+            "esri/config",
+            "esri/layers/support/Field",
+            "esri/tasks/support/Query",
+            "esri/tasks/QueryTask",
+            "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js",
+            "dojo/dom",
+            "dojo/dom-construct",
+            "dojo/dom-attr",
+            "esri/tasks/support/StatisticDefinition",
+            "dojo/dom-class",
+            "dojo/domReady!"
+        ], function(Map, MapView, FeatureLayer, MapImageLayer, Legend, watchUtils, Expand, Home, WMSLayer, esriConfig, Field, Query, QueryTask, Chart, dom, domConstruct, domAttr, StatisticDefinition, domClass) {
+
+            esriConfig.portalUrl = "https://uab.maps.arcgis.com"
+            esriConfig.request.proxyUrl = "proxy.jsp";
+
+            orto1956 = new WMSLayer({
+                url: 'http://geoserveis.icgc.cat/icc_ortohistorica/wms/service?', // url to the service,
+                sublayers: [{
+                    name: 'ovab5m'
+                }]
+            });
+            orto1994 = new WMSLayer({
+                url: 'http://geoserveis.icgc.cat/icc_ortohistorica/wms/service?', // url to the service,
+                sublayers: [{
+                    name: 'orto5m1994'
+                }]
+            });
+            orto2000 = new WMSLayer({
+                url: 'http://geoserveis.icgc.cat/icc_ortohistorica/wms/service?', // url to the service,
+                sublayers: [{
+                    name: 'orto5m2000'
+                }]
+            });
+            orto2005 = new WMSLayer({
+                url: 'http://geoserveis.icgc.cat/icc_ortohistorica/wms/service?', // url to the service,
+                sublayers: [{
+                    name: 'orto5m2005'
+                }]
+            });
+            orto2009 = new WMSLayer({
+                url: 'http://geoserveis.icgc.cat/icc_ortohistorica/wms/service?', // url to the service,
+                sublayers: [{
+                    name: 'orto5m2009'
+                }]
+            });
+            orto2015 = new WMSLayer({
+                url: 'http://geoserveis.icgc.cat/icc_ortohistorica/wms/service?', // url to the service,
+                sublayers: [{
+                    name: 'orto5m2015'
+                }]
+            });
+
+            //capes cove
+            cob56Layer = new MapImageLayer({
+                portalItem: {
+                    id: "040679a9fcee4e35a8808bea01cd71d9"
+                },
+                id: "271503d302a24e3c92ef806e53925b98",
+                listMode: "hide-children"
+            });
+
+
+            cob93Layer = new MapImageLayer({
+                portalItem: {
+                    id: "f2f124803baa4d86bb779cef346fc33b"
+                },
+                id: "27b6d833c83f4ff5a76ce4fefcd3971a",
+                listMode: "hide-children"
+            });
+
+
+            cob00Layer = new MapImageLayer({
+                portalItem: {
+                    id: "aea3bd0f2c8e4a1493699fdff988bac1"
+                },
+                id: "9ddbf3ad865445929d37291afa9e0a5b",
+                listMode: "hide-children"
+            });
+
+
+            cob05Layer = new MapImageLayer({
+                portalItem: {
+                    id: "254f367be0684692a05a54b073ac121c"
+                },
+                id: "3549108ac10b4ab7b60c5623cd0f5cda",
+                listMode: "hide-children"
+            });
+
+
+            cob09Layer = new MapImageLayer({
+                portalItem: {
+                    id: "9f942705cbdc4561a21b1c802b7f798b"
+                },
+                id: "c468a6a45ed84aafa7cb835565162d27",
+                listMode: "hide-children"
+            });
+
+
+            cob15Layer = new MapImageLayer({
+                portalItem: {
+                    id: "57b1be06d3554ed6a2c4a7c0ed0cbe28"
+                },
+                id: "d44522da5c584825b4b370d13053056a",
+                listMode: "hide-children"
+            });
+
+            template1 = {
+                title: " {nommuni}",
+                content: createPopup1
+            };
+            template2 = {
+                title: " {nommuni}",
+                content: createPopup2
+            };
+            template3 = {
+                title: " {nommuni}",
+                content: createPopup3
+            };
+            template4 = {
+                title: " {nommuni}",
+                content: createPopup4
+            };
+            featureLayer1 = new FeatureLayer({
+                url: "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
+                outFields: ["*"],
+                popupTemplate: template1
+            });
+            featureLayer2 = new FeatureLayer({
+                url: "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
+                outFields: ["*"],
+                popupTemplate: template2
+            });
+            featureLayer3 = new FeatureLayer({
+                url: "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
+                outFields: ["*"],
+                popupTemplate: template3
+            });
+            featureLayer4 = new FeatureLayer({
+                url: "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
+                outFields: ["*"],
+                popupTemplate: template4
+            });
+
+
+            map1 = new Map({
+                basemap: "gray",
+                layers: [orto1956]
+            });
+
+            map2 = new Map({
+                basemap: "gray",
+                layers: [cob56Layer, featureLayer2]
+            });
+
+            map3 = new Map({
+                basemap: "gray",
+                layers: [orto2000]
+            });
+
+            map4 = new Map({
+                basemap: "gray",
+                layers: [cob00Layer, featureLayer4]
+            });
+
+            var centerMap = [2.13, 41.51];
+            var zoomDefault = 9;
+
+            view1 = new MapView({
+                container: "viewDiv1",
+                map: map1,
+                center: centerMap,
+                zoom: zoomDefault,
+                popup: {
+                    dockEnabled: true,
+                    dockOptions: {
+                        buttonEnabled: true,
+                        breakpoint: false,
+                        position: "bottom-left"
+                    }
+                }
+            });
+
+            view1.watch('updating', function(evt) {
+                if (evt === true) {
+                    domClass.add('loadingDiv', 'visible1');
+                } else {
+                    domClass.remove('loadingDiv', 'visible1');
+                }
+            });
+
+            view2 = new MapView({
+                container: "viewDiv2",
+                map: map2,
+                center: centerMap,
+                zoom: zoomDefault,
+                popup: {
+                    dockEnabled: true,
+                    dockOptions: {
+                        buttonEnabled: true,
+                        breakpoint: false,
+                        position: "bottom-left"
+                    }
+                }
+            });
+
+            view2.watch('updating', function(evt) {
+                if (evt === true) {
+                    domClass.add('loadingDiv', 'visible2');
+                } else {
+                    domClass.remove('loadingDiv', 'visible2');
+                }
+            });
+
+            view3 = new MapView({
+                container: "viewDiv3",
+                map: map3,
+                center: centerMap,
+                zoom: zoomDefault,
+                popup: {
+                    dockEnabled: true,
+                    dockOptions: {
+                        buttonEnabled: true,
+                        breakpoint: false,
+                        position: "bottom-left"
+                    }
+                }
+            });
+
+            view3.watch('updating', function(evt) {
+                if (evt === true) {
+                    domClass.add('loadingDiv', 'visible3');
+                } else {
+                    domClass.remove('loadingDiv', 'visible3');
+                }
+            });
+
+            view4 = new MapView({
+                container: "viewDiv4",
+                map: map4,
+                center: centerMap,
+                zoom: zoomDefault,
+                popup: {
+                    dockEnabled: true,
+                    dockOptions: {
+                        buttonEnabled: true,
+                        breakpoint: false,
+                        position: "bottom-left"
+                    }
+                }
+            });
+
+            view4.watch('updating', function(evt) {
+                if (evt === true) {
+                    domClass.add('loadingDiv', 'visible4');
+                } else {
+                    domClass.remove('loadingDiv', 'visible4');
+                }
+            });
+
+            /******************************************************************
+             *
+             * Add layers to layerInfos on the legend
+             *
+             ******************************************************************/
+
+
+
+            var homeBtn = new Home({
+                view: view1
+            });
+
+            // view.ui.add(legend, "bottom-right");
+            view1.ui.add(homeBtn, "top-left");
+
+            view1.ui.add("infoDiv1", "top-right");
+            view1.ui.add("infoDiv1_1", "top-right");
+            view2.ui.add("infoDiv2", "top-right");
+            view2.ui.add("infoDiv2_1", "top-right");
+            view3.ui.add("infoDiv3", "top-right");
+            view3.ui.add("infoDiv3_1", "top-right");
+            view4.ui.add("infoDiv4", "top-right");
+            view4.ui.add("infoDiv4_1", "top-right");
+
+            legend1 = new Legend({
+                view: view1,
+                layerInfos: [{
+                    layer: cob00Layer,
+                    title: ""
+                }],
+                style: "classic"
+            });
+            legend2 = new Legend({
+                view: view2,
+                layerInfos: [{
+                    layer: cob00Layer,
+                    title: ""
+                }],
+                style: "classic"
+            });
+            legend3 = new Legend({
+                view: view3,
+                layerInfos: [{
+                    layer: cob00Layer,
+                    title: ""
+                }],
+                style: "classic"
+            });
+            legend4 = new Legend({
+                view: view4,
+                layerInfos: [{
+                    layer: cob00Layer,
+                    title: ""
+                }],
+                style: "classic"
+            });
+
+            var bgExpand1 = new Expand({
+                view: view1,
+                content: legend1,
+                expanded: false
+            });
+            var bgExpand2 = new Expand({
+                view: view2,
+                content: legend2,
+                expanded: false
+            });
+            var bgExpand3 = new Expand({
+                view: view3,
+                content: legend3,
+                expanded: false
+            });
+            var bgExpand4 = new Expand({
+                view: view4,
+                content: legend4,
+                expanded: false
+            });
+            view1.ui.add(bgExpand1, "bottom-right");
+            view2.ui.add(bgExpand2, "bottom-right");
+            view3.ui.add(bgExpand3, "bottom-right");
+            view4.ui.add(bgExpand4, "bottom-right");
+
+            view1.surface.addEventListener("wheel", function(event) {
+                event.stopImmediatePropagation();
+            }, true);
+            view2.surface.addEventListener("wheel", function(event) {
+                event.stopImmediatePropagation();
+            }, true);
+            view3.surface.addEventListener("wheel", function(event) {
+                event.stopImmediatePropagation();
+            }, true);
+            view4.surface.addEventListener("wheel", function(event) {
+                event.stopImmediatePropagation();
+            }, true);
+
+            function createPopup1(event, graphic) {
+                grafic1 = dadesAny(document.getElementById("field-select-us1").value, event);
+                return grafic1;
+            }
+
+            function createPopup2(event, graphic) {
+                grafic1 = dadesAny(document.getElementById("field-select-us2").value, event);
+                return grafic1;
+            }
+
+            function createPopup3(event, graphic) {
+                grafic1 = dadesAny(document.getElementById("field-select-us3").value, event);
+                return grafic1;
+            }
+
+            function createPopup4(event, graphic) {
+                grafic1 = dadesAny(document.getElementById("field-select-us4").value, event);
+                return grafic1;
+            }
+
+            function dadesAny(any, event) {
+                var canvas = document.createElement('canvas');
+                canvas.width = 350;
+                const queryUsosTask = new QueryTask({
+                    url: "https://openlab.uab.cat:6443/arcgis/rest/services/dinamiques_query/cobertes_v_" + any + "_mun/FeatureServer/0"
+                });
+                // Generage stats for the count and types of private schools that intersect the state with average enrollment
+                const areaCount = new StatisticDefinition({
+                    statisticType: "sum",
+                    onStatisticField: "st_area(shape) / 10000",
+                    outStatisticFieldName: "area"
+                });
+
+
+                const query = new Query({
+                    where: "nommuni ='" + event.graphic.attributes.nommuni.replace("'", "''") + "'",
+                    groupByFieldsForStatistics: ["cat_niv_2"],
+                    outFields: ["*"],
+                    outStatistics: [areaCount]
+                });
+
+                // Execute the QueryTask
+                return queryUsosTask.execute(query).then(function(result) {
+                    // Returns the entire result, need to filter based on LEVEL_
+                    const featureAttributes = result.features.map(function(item, i) {
+                        return item.attributes;
+                    });
+
+                    var dades = new Array();
+                    var dades_per = new Array();
+                    var etiquetes = new Array();
+                    var myColors = [];
+                    featureAttributes.sort((a, b) => (a.area < b.area) ? 1 : ((b.area < a.area) ? -1 : 0))
+                    var total = 0;
+                    featureAttributes.forEach(function(valor, indice, array) {
+                        total = total + parseFloat(valor.area);
+                    });
+                    featureAttributes.forEach(function(valor, indice, array) {
+                        dades.push(Math.round(valor.area));
+                        dades_per.push(((parseFloat(valor.area) / total) * 100).toFixed(2));
+                        etiquetes.push(valor.cat_niv_2);
+                    });
+                    etiquetes.forEach(function(value, index, array) {
+                        switch (value) {
+                            case "Boscos densos (no de ribera)":
+                                myColors[index] = "#689010";
+                                break;
+                            case "Boscos densos de ribera":
+                                myColors[index] = "#00ff00";
+                                break;
+                            case "Plantacions de pollancres":
+                                myColors[index] = "#005a00";
+                                break;
+                            case "Plantacions de platans":
+                                myColors[index] = "#c3ff00";
+                                break;
+                            case "Boscos clars (no de ribera)":
+                                myColors[index] = "#a0ffa0";
+                                break;
+                            case "Boscos clars de ribera":
+                                myColors[index] = "#00c800";
+                                break;
+                            case "Matollars":
+                                myColors[index] = "#c0c09c";
+                                break;
+                            case "Aiguamolls":
+                                myColors[index] = "#80ffff";
+                                break;
+                            case "Prats i herbassars":
+                                myColors[index] = "#ffff82";
+                                break;
+                            case "Zones cremades":
+                                myColors[index] = "#ff0000";
+                                break;
+                            case "Roquissars":
+                                myColors[index] = "#797979";
+                                break;
+                            case "Tarteres":
+                                myColors[index] = "#ebebeb";
+                                break;
+                            case "Sols nus forestals":
+                                myColors[index] = "#ff8610";
+                                break;
+                            case "Platges":
+                                myColors[index] = "#f5df78";
+                                break;
+                            case "Glaceres i congestes":
+                                myColors[index] = "#d7fff5";
+                                break;
+                            case "Aigues continentals":
+                                myColors[index] = "#0000ff";
+                                break;
+                            case "Mar":
+                                myColors[index] = "#000080";
+                                break;
+                            case "Zones urbanitzades":
+                                myColors[index] = "#ffa4e2";
+                                break;
+                            case "Basses urbanes":
+                                myColors[index] = "#5fa083";
+                                break;
+                            case "Vies de comunicacio":
+                                myColors[index] = "#ff00ff";
+                                break;
+                            case "Zones esportives i ludiques":
+                                myColors[index] = "#a244ff";
+                                break;
+                            case "Zones d'extraccio minera":
+                                myColors[index] = "#408080";
+                                break;
+                            case "Sols nus urbans":
+                                myColors[index] = "#b5c9cc";
+                                break;
+                            case "Conreus":
+                                myColors[index] = "#7f4219";
+                                break;
+                        }
+                    });
+
+                    var chart = new Chart(canvas, {
+                        // The type of chart we want to create
+                        type: 'doughnut',
+
+                        // The data for our dataset
+                        data: {
+                            labels: etiquetes,
+                            datasets: [{
+                                backgroundColor: myColors,
+                                borderColor: "rgb(0, 0, 0, 0, 1)",
+                                borderWidth: 0.5,
+                                data: dades
+                            }]
+                        },
+
+                        // Configuration options go here
+                        options: {
+                            legend: {
+                                display: false
+                            },
+                            title: {
+                                display: false
+                            },
+                            circumference: Math.PI,
+                            rotation: -Math.PI,
+                            tooltips: {
+                                // Disable the on-canvas tooltip
+                                enabled: false,
+
+                                custom: function(tooltipModel) {
+                                    // Tooltip Element
+                                    var tooltipEl = document.getElementById('chartjs-tooltip');
+
+                                    // Create element on first render
+                                    if (!tooltipEl) {
+                                        tooltipEl = document.createElement('div');
+                                        tooltipEl.id = 'chartjs-tooltip';
+                                        tooltipEl.innerHTML = '<table style="background:black;color:white"></table>';
+                                        document.body.appendChild(tooltipEl);
+                                    }
+
+                                    // Hide if no tooltip
+                                    if (tooltipModel.opacity === 0) {
+                                        tooltipEl.style.opacity = 0;
+                                        return;
+                                    }
+
+                                    // Set caret Position
+                                    /* tooltipEl.classList.remove('above', 'below', 'no-transform');
+                                     if (tooltipModel.yAlign) {
+                                         tooltipEl.classList.add(tooltipModel.yAlign);
+                                     } else {
+                                         tooltipEl.classList.add('no-transform');
+                                     }*/
+
+                                    function getBody(bodyItem) {
+                                        return bodyItem.lines;
+                                    }
+
+                                    // Set Text
+                                    if (tooltipModel.body) {
+                                        var titleLines = tooltipModel.title || [];
+                                        var bodyLines = tooltipModel.body.map(getBody);
+
+                                        var innerHtml = '<thead>';
+
+                                        titleLines.forEach(function(title) {
+                                            innerHtml += '<tr><th>' + title + '</th></tr>';
+                                        });
+                                        innerHtml += '</thead><tbody>';
+
+                                        bodyLines.forEach(function(body, i) {
+                                            var colors = tooltipModel.labelColors[i];
+                                            var style = 'background: black'; // + colors.backgroundColor;
+                                            style += '; border-color:' + colors.borderColor;
+
+                                            style += '; border-width: 2px';
+                                            var span = '<span style="' + style + '"></span>';
+                                            innerHtml += '<tr><td style="text-align: center;">' + span + body[0].split(":")[0] + '</td></tr>';
+                                            innerHtml += '<tr><td>' + span + body[0].split(":")[1] + ' ha (' + dades_per[etiquetes.indexOf(body[0].split(":")[0])] + ' %)</td></tr>';
+
+                                        });
+                                        innerHtml += '</tbody>';
+
+                                        var tableRoot = tooltipEl.querySelector('table');
+                                        tableRoot.innerHTML = innerHtml;
+                                    }
+
+                                    // `this` will be the overall tooltip
+                                    var position = this._chart.canvas.getBoundingClientRect();
+
+                                    // Display, position, and set styles for font
+                                    tooltipEl.style.opacity = 1;
+                                    tooltipEl.style.position = 'absolute';
+                                    tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX + 'px';
+                                    tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY + 'px';
+                                    tooltipEl.style.fontFamily = tooltipModel._bodyFontFamily;
+                                    tooltipEl.style.fontSize = tooltipModel.bodyFontSize + 'px';
+                                    tooltipEl.style.fontStyle = tooltipModel._bodyFontStyle;
+                                    tooltipEl.style.padding = tooltipModel.yPadding + 'px ' + tooltipModel.xPadding + 'px';
+                                    tooltipEl.style.pointerEvents = 'none';
+                                }
+                            }
+
+                        }
+
+                    });
+
+                    return canvas;
+                });
+
+            }
+
+
+
+            /**
+             * utility method that synchronizes the viewpoint of a view to other views
+             */
+            var synchronizeView = function(view, others) {
+                others = Array.isArray(others) ? others : [others];
+
+                var viewpointWatchHandle;
+                var viewStationaryHandle;
+                var otherInteractHandlers;
+                var scheduleId;
+
+                var clear = function() {
+                    if (otherInteractHandlers) {
+                        otherInteractHandlers.forEach(function(handle) {
+                            handle.remove();
+                        });
+                    }
+                    viewpointWatchHandle && viewpointWatchHandle.remove();
+                    viewStationaryHandle && viewStationaryHandle.remove();
+                    scheduleId && clearTimeout(scheduleId);
+                    otherInteractHandlers = viewpointWatchHandle = viewStationaryHandle = scheduleId = null;
+                };
+
+                var interactWatcher = view.watch("interacting,animation", function(
+                    newValue
+                ) {
+                    if (!newValue) {
+                        return;
+                    }
+                    if (viewpointWatchHandle || scheduleId) {
+                        return;
+                    }
+
+                    // start updating the other views at the next frame
+                    scheduleId = setTimeout(function() {
+                        scheduleId = null;
+                        viewpointWatchHandle = view.watch("viewpoint", function(
+                            newValue
+                        ) {
+                            others.forEach(function(otherView) {
+                                otherView.viewpoint = newValue;
+                            });
+                        });
+                    }, 0);
+
+                    // stop as soon as another view starts interacting, like if the user starts panning
+                    otherInteractHandlers = others.map(function(otherView) {
+                        return watchUtils.watch(
+                            otherView,
+                            "interacting,animation",
+                            function(value) {
+                                if (value) {
+                                    clear();
+                                }
+                            }
+                        );
+                    });
+
+                    // or stop when the view is stationary again
+                    viewStationaryHandle = watchUtils.whenTrue(
+                        view,
+                        "stationary",
+                        clear
+                    );
+                });
+
+                return {
+                    remove: function() {
+                        this.remove = function() {};
+                        clear();
+                        interactWatcher.remove();
+                    }
+                };
+            };
+
+            /**
+             * utility method that synchronizes the viewpoints of multiple views
+             */
+            var synchronizeViews = function(views) {
+                var handles = views.map(function(view, idx, views) {
+                    var others = views.concat();
+                    others.splice(idx, 1);
+                    return synchronizeView(view, others);
+                });
+
+                return {
+                    remove: function() {
+                        this.remove = function() {};
+                        handles.forEach(function(h) {
+                            h.remove();
+                        });
+                        handles = null;
+                    }
+                };
+            };
+
+            // bind the views
+            synchronizeViews([view1, view2, view3, view4]);
+        });
+
+        function canvi(anual, mapa, identificador) {
+            switch (anual) {
+                case "1956":
+                    mapa.removeAll();
+                    mapa.add(orto1956);
+                    break;
+                case "1994":
+                    mapa.removeAll();
+                    mapa.add(orto1994);
+                    break;
+                case "2000":
+                    mapa.removeAll();
+                    mapa.add(orto2000);
+                    break;
+                case "2005":
+                    mapa.removeAll();
+                    mapa.add(orto2005);
+                    break;
+                case "2009":
+                    mapa.removeAll();
+                    mapa.add(orto2009);
+                    break;
+                case "2015":
+                    mapa.removeAll();
+                    mapa.add(orto2015);
+                    break;
+            }
+            document.getElementById(identificador).value = -1
+        }
+
+        function canviUs(anual, mapa, identificador, llegenda) {
+            switch (anual) {
+                case "1956":
+                    capa = cob56Layer;
+                    break;
+                case "1993":
+                    capa = cob93Layer;
+                    break;
+                case "2000":
+                    capa = cob00Layer;
+                    break;
+                case "2005":
+                    capa = cob05Layer;
+                    break;
+                case "2009":
+                    capa = cob09Layer;
+                    break;
+                case "2015":
+                    capa = cob15Layer;
+                    break;
+            }
+            mapa.removeAll();
+            mapa.add(capa);
+
+            switch (identificador) {
+                case "field-select-orto1":
+                    mapa.add(featureLayer1);
+                    view1.popup.close();
+                    break;
+                case "field-select-orto2":
+                    mapa.add(featureLayer2);
+                    view2.popup.close();
+                    break;
+                case "field-select-orto3":
+                    mapa.add(featureLayer3);
+                    view3.popup.close();
+                    break;
+                case "field-select-orto4":
+                    mapa.add(featureLayer4);
+                    view4.popup.close();
+                    break;
+            }
+            llegenda.layerInfos[0].layer = capa;
+            document.getElementById(identificador).value = -1
+        }
+
+        function loadingMap(viewMap) {
+            document.getElementById(viewMap).style.display = "block";
+        }
+
+        function loadedMap(viewMap) {
+            document.getElementById(viewMap).style.display = "none";
+        }
+    </script>
+</head>
+
+<body>
+    <div id="loadingDiv" class="loading"><img id="loadingImg" src="images/loading.gif" class="loadingImg" /> </div>
+    <div id="div1">
+        <div id="viewDiv1">
+        </div>
+
+        <div id="infoDiv1" class="esri-widget" style="padding: 3px;">
+            Ortofoto
+            <select id="field-select-orto1" class="esri-widget" onchange="canvi(this.value,map1,'field-select-us1',legend1)">
+        <option value="-1"></option>
+        <option value="1956" selected>1956</option>
+        <option value="1994">1994</option>
+        <option value="2000">2000</option>
+        <option value="2009">2009</option>
+        <option value="2015">2015</option>
+      </select>
+
+        </div>
+        <div id="infoDiv1_1" class="esri-widget" style="padding: 3px;">
+            Covers
+            <select id="field-select-us1" class="esri-widget" onchange="canviUs(this.value,map1,'field-select-orto1',legend1)">
+        <option value="-1"></option>
+        <option value="1956">1956</option>
+        <option value="1993">1993</option>
+        <option value="2000">2000</option>
+        <option value="2005">2005</option>
+        <option value="2009">2009</option>
+        <option value="2015">2015</option>
+      </select>
+        </div>
+    </div>
+    <div id="div2">
+        <div id="viewDiv2">
+        </div>
+        <div id="infoDiv2" class="esri-widget" style="padding: 3px;">
+            Ortofoto
+            <select id="field-select-orto2" class="esri-widget" onchange="canvi(this.value,map2,'field-select-us2',legend2)">
+        <option value="-1"></option>
+        <option value="1956">1956</option>
+        <option value="1994">1994</option>
+        <option value="2000">2000</option>
+        <option value="2009">2009</option>
+        <option value="2015">2015</option>
+      </select>
+        </div>
+        <div id="infoDiv2_1" class="esri-widget" style="padding: 3px;">
+            Covers
+            <select id="field-select-us2" class="esri-widget" onchange="canviUs(this.value,map2,'field-select-orto2',legend2)">
+        <option value="-1"></option>
+        <option value="1956" selected>1956</option>
+        <option value="1993">1993</option>
+        <option value="2000">2000</option>
+        <option value="2005">2005</option>
+        <option value="2009">2009</option>
+        <option value="2015">2015</option>
+      </select>
+        </div>
+    </div>
+    <div id="div3">
+        <div id="viewDiv3">
+        </div>
+        <div id="infoDiv3" class="esri-widget" style="padding: 3px;">
+            Ortofoto
+            <select id="field-select-orto3" class="esri-widget" onchange="canvi(this.value,map3,'field-select-us3',legend3)">
+        <option value="-1"></option>
+        <option value="1956">1956</option>
+        <option value="1994">1994</option>
+        <option value="2000" selected>2000</option>
+        <option value="2009">2009</option>
+        <option value="2015">2015</option>
+      </select>
+        </div>
+        <div id="infoDiv3_1" class="esri-widget" style="padding: 3px;">
+            Covers
+            <select id="field-select-us3" class="esri-widget" onchange="canviUs(this.value,map3,'field-select-orto3',legend3)">
+        <option value="-1"></option>
+        <option value="1956">1956</option>
+        <option value="1993">1993</option>
+        <option value="2000">2000</option>
+        <option value="2005">2005</option>
+        <option value="2009">2009</option>
+        <option value="2015">2015</option>
+      </select>
+        </div>
+    </div>
+    </div>
+    <div id="div4">
+        <div id="viewDiv4">
+        </div>
+        <div id="infoDiv4" class="esri-widget" style="padding: 3px;">
+            Ortofoto
+            <select id="field-select-orto4" class="esri-widget" onchange="canvi(this.value,map4,'field-select-us4',legend4)">
+        <option value="-1"></option>
+        <option value="1956">1956</option>
+        <option value="1994">1994</option>
+        <option value="2000">2000</option>
+        <option value="2009">2009</option>
+        <option value="2015">2015</option>
+      </select>
+        </div>
+        <div id="infoDiv4_1" class="esri-widget" style="padding: 3px;">
+            Covers
+            <select id="field-select-us4" class="esri-widget" onchange="canviUs(this.value,map4,'field-select-orto4',legend4)">
+        <option value="-1"></option>
+        <option value="1956">1956</option>
+        <option value="1993">1993</option>
+        <option value="2000" selected>2000</option>
+        <option value="2005">2005</option>
+        <option value="2009">2009</option>
+        <option value="2015">2015</option>
+      </select>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

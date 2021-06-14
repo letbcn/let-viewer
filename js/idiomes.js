@@ -381,7 +381,7 @@ var lpatentsv;
 	
 
 	
-  } else if (document.documentElement.lang=='es') {
+  } else if (document.documentElement.lang=='es-ES') {
    //CONTINGUT Info
 	tooltipInfo="Información sobre el LET's GIS";
 	contingutInfo="<div style='width:400px; padding:10px; background-color:white'>" + 
@@ -572,7 +572,7 @@ var lpatentsv;
 	lpobresa="Pobresa";
 	latur="Desempleo";
 	
-  } else if (document.documentElement.lang=='en') {
+  } else if (document.documentElement.lang=='en-US') {
 	//CONTINGUT Info
 	tooltipInfo="LET's GIS Information";
 	contingutInfo="<div style='width:400px; padding:10px; background-color:white'>" + 
