@@ -53,7 +53,7 @@
 
 		var AMBLayer = new FeatureLayer({
 			url:
-			  "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/cat/FeatureServer/0",
+			  "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/amb_cat/FeatureServer/0",
 			renderer: sym,
 			title: 'AMB',
 			id:"AMB",
@@ -63,7 +63,7 @@
 		  });
 		var RMBLayer = new FeatureLayer({
 			url:
-			  "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/cat/FeatureServer/0",
+			  "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/rmb_cat/FeatureServer/0",
 			renderer: sym,
 			title: 'RMB',
 			visible:true,
@@ -73,7 +73,7 @@
 
 		  var B30Layer = new FeatureLayer({
 			url:
-			  "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/cat/FeatureServer/0",
+			  "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/b30_cat/FeatureServer/0",
 			renderer: sym,
 			title: 'B30',
 			visible:false,
