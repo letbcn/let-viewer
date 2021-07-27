@@ -51,7 +51,7 @@ require([
         };
 
         var layer = new FeatureLayer({
-            url: "https://openlab.uab.cat:6443/arcgis/rest/services/webmaps/network_let/FeatureServer/0",
+            url: "https://openlab.uab.cat:6443/arcgis/rest/services/webmaps/let_network/FeatureServer/0",
             renderer: renderer,
             outFields: ["*"],
             popupTemplate: popupInfo
