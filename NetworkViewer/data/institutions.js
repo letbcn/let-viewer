@@ -16,7 +16,6 @@ var institutions = {
 		"Department of Chemical, Biological and Environmental Engineering, Autonomous University of Barcelona",
 		"Department of Economic History and Institutions, University of Barcelona",
 		"Department of Economic History, Institutions, Policy and World Economy at the University of Barcelona, Faculty of Economics and Business",
-		"Department of Economic History, Institutions, Policy and World Economy, University of Barcelona, Faculty of Economics and Business",
 		"Department of Economic Structure, University of Valencia",
 		"Department of Economics and Economic History, Faculty of Economics and Business, University of Granada",
 		"Department of Evolutionary Biology, Ecology and Environmental Sciences, University of Barcelona",
@@ -150,3 +149,14 @@ var institutions = {
     "RO": ["Department of Systems Ecology and Sustainability, University of Bucharest"],
     "IR": ["Department of Environmental Planning and Design - Shahid Beheshti University"]
 };
+
+function outputInstitions() {
+	
+	let output = '';
+	
+	Object.keys(institutions).forEach(key => {
+		output += key + ' ' + institutions[key].length + " elements\n";
+	});
+	
+	console.log("items\n"+output);
+}
