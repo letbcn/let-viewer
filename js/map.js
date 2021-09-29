@@ -96,6 +96,15 @@
 		//**********Limits Administratius ***********//
 		//capes limits
 
+	var comarcacercaLayer = new FeatureLayer({
+			portalItem: {  
+				id: "b1cb0e81815b4557b977d9772dc52289"
+			  },
+			  id:"",
+			  visible: true,
+			  layerID: 0
+			});
+
 	var comarquesLayer = new MapImageLayer({
 	portalItem: {
 		id: "b628d29242aa4591b986a4c293f8edda"
@@ -107,6 +116,17 @@
 	});
 	capes.push(comarquesLayer);
 
+
+	//comarques per a la cerca
+
+	var municipiscercaLayer = new FeatureLayer({
+		portalItem: {  
+			id: "3f51bf9674064661ace82a71da68de78"
+		  },
+		  id:"",
+		  visible: true,
+		  layerID: 0
+		});
 
 	var municipisLayer = new MapImageLayer({
 		portalItem: {
@@ -1815,7 +1835,7 @@
 					placeholder: "example: Cobertes 2015"
 				  },*/
 				{
-					layer: municipisLayer,
+					layer: municipiscercaLayer,
 					searchFields: ["nommuni"],
 					displayField: "nommuni",
 					exactMatch: false,
@@ -1825,7 +1845,7 @@
 					placeholder: "example: Barcelona"
 				},
 				{
-					layer: comarquesLayer,
+					layer: comarcacercaLayer,
 					searchFields: ["nomcomar"],
 					displayField: "nomcomar",
 					exactMatch: false,
