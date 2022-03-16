@@ -784,6 +784,17 @@
 	});
 	capes.push(agriculturaLayer);
 
+	var dan2021Layer = new MapImageLayer({
+		portalItem: {
+			id: "ebfd4bc512564572b031a3f2d6d0e509"
+		},
+		id: "1db6162873da4fb99a58ff48c6dae996",
+		visible: false,
+		title: lDan2021,
+		listMode: "hide-children"
+	});
+	capes.push(dan2021Layer);
+
 	var hortspr09Layer = new MapImageLayer({
 		portalItem: {
 			id: "1a5634c35cd04067bfa136075bacbad1"
@@ -813,7 +824,7 @@
 		title: gAgrari,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [hortspr15Layer, hortspr09Layer, agriculturaLayer],
+		layers: [hortspr15Layer, hortspr09Layer, dan2021Layer,agriculturaLayer],
 		opacity: 1
 	});
 
