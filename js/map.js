@@ -96,6 +96,15 @@
 		//**********Limits Administratius ***********//
 		//capes limits
 
+	var comarcacercaLayer = new FeatureLayer({
+			portalItem: {  
+				id: "b1cb0e81815b4557b977d9772dc52289"
+			  },
+			  id:"",
+			  visible: true,
+			  layerID: 0
+			});
+
 	var comarquesLayer = new MapImageLayer({
 	portalItem: {
 		id: "b628d29242aa4591b986a4c293f8edda"
@@ -107,6 +116,17 @@
 	});
 	capes.push(comarquesLayer);
 
+
+	//comarques per a la cerca
+
+	var municipiscercaLayer = new FeatureLayer({
+		portalItem: {  
+			id: "3f51bf9674064661ace82a71da68de78"
+		  },
+		  id:"",
+		  visible: true,
+		  layerID: 0
+		});
 
 	var municipisLayer = new MapImageLayer({
 		portalItem: {
@@ -764,6 +784,17 @@
 	});
 	capes.push(agriculturaLayer);
 
+	var dan2021Layer = new MapImageLayer({
+		portalItem: {
+			id: "ebfd4bc512564572b031a3f2d6d0e509"
+		},
+		id: "1db6162873da4fb99a58ff48c6dae996",
+		visible: false,
+		title: lDan2021,
+		listMode: "hide-children"
+	});
+	capes.push(dan2021Layer);
+
 	var hortspr09Layer = new MapImageLayer({
 		portalItem: {
 			id: "1a5634c35cd04067bfa136075bacbad1"
@@ -793,7 +824,7 @@
 		title: gAgrari,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [hortspr15Layer, hortspr09Layer, agriculturaLayer],
+		layers: [hortspr15Layer, hortspr09Layer, dan2021Layer,agriculturaLayer],
 		opacity: 1
 	});
 
@@ -1815,7 +1846,7 @@
 					placeholder: "example: Cobertes 2015"
 				  },*/
 				{
-					layer: municipisLayer,
+					layer: municipiscercaLayer,
 					searchFields: ["nommuni"],
 					displayField: "nommuni",
 					exactMatch: false,
@@ -1825,7 +1856,7 @@
 					placeholder: "example: Barcelona"
 				},
 				{
-					layer: comarquesLayer,
+					layer: comarcacercaLayer,
 					searchFields: ["nomcomar"],
 					displayField: "nomcomar",
 					exactMatch: false,

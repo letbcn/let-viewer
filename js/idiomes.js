@@ -86,6 +86,7 @@ var lpoligons;
 var lteixit;
 //Espai agrari
 var gAgrari;
+var lDan2021;
 var lAgricultura;
 var lhortsp09;
 var lhortsp15;
@@ -281,6 +282,7 @@ var lpatentsv;
 	lteixit="Teixits urbans";
 	//Espai agrari
 	gAgrari= "Espai agrari";
+	lDan2021="Declaració agrària 2021";
 	lAgricultura="Agricultura (DAN 2019)";
 	lhortsp09= "Horts precaris 2009";
 	lhortsp15="Horts precaris 2015";
@@ -478,6 +480,7 @@ var lpatentsv;
 	lteixit="Tejidos Urbanos(AMB)";
 	//Espacio agrario
 	gAgrari= "Espacio agrario";
+	lDan2021="Declaración agraria 2021";
 	lAgricultura="Agricultura (DAN 2019)";
 	lhortsp09= "Huertos precarios 2009";
 	lhortsp15="Huertos precarios 2015";
@@ -671,6 +674,7 @@ var lpatentsv;
 	lteixit="Urban fabric";
 	//Espai agrari
 	gAgrari= "Agrarian Spaces";
+	lDan2021="Agriculture 2021";
 	lAgricultura="Agriculture";
 	lhortsp09= "Precary Orchards 2009";
 	lhortsp15="Precary Orchards 2015";
