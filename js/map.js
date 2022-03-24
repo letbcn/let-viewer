@@ -773,16 +773,6 @@
 
 	//**********Espai agrari***********//
 	//capes
-	var agriculturaLayer = new MapImageLayer({
-		portalItem: {
-			id: "9f624cf745a048a5b1782d1c0bc88bf6"
-		},
-		id: "1db6162873da4fb99a58ff48c6dae996",
-		visible: false,
-		title: lAgricultura,
-		listMode: "hide-children"
-	});
-	capes.push(agriculturaLayer);
 
 	var dan2021Layer = new MapImageLayer({
 		portalItem: {
@@ -824,7 +814,7 @@
 		title: gAgrari,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [hortspr15Layer, hortspr09Layer, dan2021Layer,agriculturaLayer],
+		layers: [hortspr15Layer, hortspr09Layer, dan2021Layer],
 		opacity: 1
 	});
 
@@ -901,7 +891,7 @@
 	//Energia electrica per sector
 	var electrsectorLayer = new MapImageLayer({
 		portalItem: {
-			id: "2d158fb2f57345fb821789bd8570dcc2"
+			id: "503cb9d6cf7a466998133de519ac6416"
 		},
 		id: "59c43fa5e3964e3d9a600b67cf74f367",
 		visible: false,
@@ -910,23 +900,36 @@
 	});
 	capes.push(electrsectorLayer);
 
-	var electrdomhabLayer = new MapImageLayer({
+	//Energia electrica us domèstic
+	var electrdomestLayer = new MapImageLayer({
 		portalItem: {
-			id: "4349fa2388c84099937f52504dff6df4"
+			id: "543ad4cfb44b47e285eb7bbfead55d1a"
+		},
+		id: "",
+		visible: false,
+		title: lElectrdomest,
+		listMode: "hide-children"
+	});
+	capes.push(electrdomestLayer);
+
+	//Consum energia electrica per habitant
+	var electrhabLayer = new MapImageLayer({
+		portalItem: {
+			id: "099e83cbc84746b3963e1e44627082f2"
 		},
 		id: "",
 		visible: false,
 		title: lElectrhab,
 		listMode: "hide-children"
 	});
-	capes.push(electrdomhabLayer);
+	capes.push(electrhabLayer);
 
  	//Gas natural
 	var gassectorLayer = new MapImageLayer({
 		portalItem: {
-			id: "81976b32bc804af8aab29eea1f116699"
+			id: "6f76f963d48b4c94bae1cfabc900fe42"
 		},
-		id: "59c43fa5e3964e3d9a600b67cf74f367",
+		id: "",
 		visible: false,
 		title: lGassect,
 		listMode: "hide-children"
@@ -935,9 +938,9 @@
 
 	var gasdomesticLayer = new MapImageLayer({
 		portalItem: {
-			id: "2f57ddf9cf6541ee91fa1544bdb750f6"
+			id: "6c8728fa330044d1b0ceef6fc3285863"
 		},
-		id: "59c43fa5e3964e3d9a600b67cf74f367",
+		id: "",
 		visible: false,
 		title: lGasdom,
 		listMode: "hide-children"
@@ -946,9 +949,9 @@
 
 	var gashabitantLayer = new MapImageLayer({
 		portalItem: {
-			id: "06b57b59f1e046719b02f3d747b834a5"
+			id: "d48271526809495fb1907804a0538485"
 		},
-		id: "59c43fa5e3964e3d9a600b67cf74f367",
+		id: "",
 		visible: false,
 		title: lGashab,
 		listMode: "hide-children"
@@ -1004,7 +1007,7 @@
 		title: gEnergia,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [gashabitantLayer, gasdomesticLayer, gassectorLayer, electrdomhabLayer, electrsectorLayer],
+		layers: [gashabitantLayer, gasdomesticLayer, gassectorLayer, electrhabLayer, electrdomestLayer, electrsectorLayer],
 		opacity: 1
 	});
 
@@ -1031,21 +1034,21 @@
 	});
 
 
-	//cicle del aigua
-	var aiguadomLayer = new MapImageLayer({
+	//consum aigua
+	var aiguahabLayer = new MapImageLayer({
 		portalItem: {
-			id: "fa6018400075409f929cae17df38b53b"
+			id: "8a040b595a384f0b9f1a41b61e2a3b7a"
 		},
 		id: "",
 		visible: false,
-		title: lAiguadom,
+		title: lAiguahab,
 		listMode: "hide-children"
 	});
-	capes.push(aiguadomLayer);
+	capes.push(aiguahabLayer);
 
 	var aiguasectorsLayer = new MapImageLayer({
 		portalItem: {
-			id: "a6129db1d352409d812cb60b55430d60"
+			id: "93ed70c216364e9eae3be697f8d7a658"
 		},
 		id: "",
 		visible: false,
@@ -1054,41 +1057,32 @@
 	});
 	capes.push(aiguasectorsLayer);
 
-	var freatiquesLayer = new MapImageLayer({
-		portalItem: {
-			id: "eba744ce00c84b8e9c99796d05697b07"
-		},
-		id: "",
-		visible: false,
-		title: lFreatiques,
-		listMode: "hide-children"
-	});
-	capes.push(freatiquesLayer);
-
-
 	var cicleaiguaGroupLayer = new GroupLayer({
 		title: gCicleaigua,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [freatiquesLayer, aiguasectorsLayer, aiguadomLayer],
+		layers: [aiguasectorsLayer, aiguahabLayer],
 		opacity: 1
 	});
 
-	//Gestio residus
-	var genresidusmuniLayer = new MapImageLayer({
+	//Generació de residus
+
+	//Residus municipals
+	var residusmuniLayer = new MapImageLayer({
 		portalItem: {
-			id: "3add515e9ab24961bff139aeaec6b0cd"
+			id: "346c6a64a0114a5dbb1f705c62d642c0"
 		},
 		id: "",
 		visible: false,
-		title: lgeneresidumuni,
+		title: lresidumuni,
 		listMode: "hide-children"
 	});
-	capes.push(genresidusmuniLayer);
-
+	capes.push(residusmuniLayer);
+	
+	//Residus per capita
 	var genresidushabiLayer = new MapImageLayer({
 		portalItem: {
-			id: "c5d1976b3e4841f1abdc7084f364904e"
+			id: "ae0fc1f0a3ac4d9d8d515f52dfb692f9"
 		},
 		id: "",
 		visible: false,
@@ -1099,7 +1093,7 @@
 
 	var recollidaselectivaLayer = new MapImageLayer({
 		portalItem: {
-			id: "bdc62112a58f4d02a5062a62ab239f50"
+			id: "e2b0281c7c3b428382ecf3b091d9416b"
 		},
 		id: "",
 		visible: false,
@@ -1110,7 +1104,7 @@
 
 	var residusindustLayer = new MapImageLayer({
 		portalItem: {
-			id: "32b2300845aa4f5aab91a8ea858e0e73"
+			id: "b6243e03dea04ddabca32df87b354023"
 		},
 		id: "",
 		visible: false,
@@ -1121,7 +1115,7 @@
 
 	var residusindustempLayer = new MapImageLayer({
 		portalItem: {
-			id: "c84ce0bf37d14c4aaf397c55b97ae377"
+			id: "38f9f3f2c3594f9799e3db01b6859bd2"
 		},
 		id: "",
 		visible: false,
@@ -1134,7 +1128,7 @@
 		title: gGestioresidus,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [residusindustempLayer, residusindustLayer, recollidaselectivaLayer, genresidushabiLayer, genresidusmuniLayer],
+		layers: [residusindustempLayer, residusindustLayer, recollidaselectivaLayer, genresidushabiLayer, residusmuniLayer],
 		opacity: 1
 	});
 
