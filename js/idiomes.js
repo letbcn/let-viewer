@@ -87,7 +87,6 @@ var lteixit;
 //Espai agrari
 var gAgrari;
 var lDan2021;
-var lAgricultura;
 var lhortsp09;
 var lhortsp15;
 // Vectors ambientals
@@ -102,6 +101,7 @@ var lEshumides;
 //Energia i canvi climatic
 var gEnergia;
 var lElectrsect;
+var lElectrdomest;
 var lElectrhab;
 var lGassect;
 var lGasdom;
@@ -114,14 +114,13 @@ var lCo2electsect;
 var lCo2electhab;
 var lCo2gassect;
 var lCo2gashab;
-//Cicle aigua
+//Consum aigua
 var gCicleaigua;
-var lAiguadom;
+var lAiguahab;
 var lAiguasect;
-var lFreatiques;
 //Gestio residus
 var gGestioresidus;
-var lgeneresidumuni;
+var lresidumuni;
 var lgeneresiduhabi;
 var lrecollida;
 var lresidusind;
@@ -283,7 +282,6 @@ var lpatentsv;
 	//Espai agrari
 	gAgrari= "Espai agrari";
 	lDan2021="Declaració agrària 2021";
-	lAgricultura="Agricultura (DAN 2019)";
 	lhortsp09= "Horts precaris 2009";
 	lhortsp15="Horts precaris 2015";
 	//Vectors ambientals
@@ -291,7 +289,8 @@ var lpatentsv;
 	//Energia i canvi climatic
 	gEnergia= "Consum d'energia";
 	lElectrsect= "Energia elèctrica per sector";
-	lElectrhab= "Consum domèstic energia elèctrica per habitant";
+	lElectrdomest= "Consum domèstic energia elèctrica";
+	lElectrhab="Energia elèctrica per habitant";
 	lGassect= "Gas natural per sector";
 	lGasdom= "Consum domèstic gas natural ";
 	lGashab= "Gas natural per habitant";
@@ -303,16 +302,15 @@ var lpatentsv;
 	lCo2electhab="Emissions CO2 del consum elèctric per habitant";
 	lCo2gassect= "Emissions CO2 del consum de gas natural per sector";
 	lCo2gashab= "Emissions CO2 del consum de gas natural per habitant";
-	//cicle aigua
+	//consum aigua
 	gCicleaigua= "Consum d'aigua";
-	lAiguadom= "Consum domèstic aigua per habitant";
-	lAiguasect= "Consum d'aigua per sector";
-	lFreatiques= "Ús d'aigua freàtica per usos municipals";
+	lAiguahab= "Per habitant";
+	lAiguasect= "Per sector";
 	//gestio residus
 	gGestioresidus= "Generació de residus";
-	lgeneresidumuni= "Residus municipals";
+	lresidumuni= "Residus municipals";
 	lgeneresiduhabi= "Residus per habitant";
-	lrecollida= "Recollida selectiva de residus";
+	lrecollida= "Recollida selectiva";
 	lresidusind= "Residus industrials";
 	lresidusindemp= "Residus industrials per empresa";
 	//estat masses aigues
@@ -481,7 +479,6 @@ var lpatentsv;
 	//Espacio agrario
 	gAgrari= "Espacio agrario";
 	lDan2021="Declaración agraria 2021";
-	lAgricultura="Agricultura (DAN 2019)";
 	lhortsp09= "Huertos precarios 2009";
 	lhortsp15="Huertos precarios 2015";
 	//Vectores ambientales
@@ -489,7 +486,8 @@ var lpatentsv;
 	//Energia y cambio climático
 	gEnergia= "Consumo de energía";
 	lElectrsect= "Energía eléctrica por sector";
-	lElectrhab= "Consumo doméstico energía eléctrica por habitante";
+	lElectrdomest= "Consumo doméstico energía eléctrica";
+	lElectrhab="Energía eléctrica por habitante";
 	lGassect= "Gas natural por sector";
 	lGasdom= "Consumo doméstico gas natural ";
 	lGashab= "Gas natural por habitante";
@@ -501,16 +499,15 @@ var lpatentsv;
 	lCo2electhab="Emisiones CO2 del consumo eléctrico por habitante";
 	lCo2gassect= "Emisiones CO2 del consumo de gas natural por sector";
 	lCo2gashab= "Emisiones CO2 del consumo de gas natural por habitante";
-	//cicle aigua
+	//consumo agua
 	gCicleaigua= "Consumo de agua";
-	lAiguadom= "Consumo doméstic agua por habitante";
-	lAiguasect= "Consumo de agua por sector";
-	lFreatiques= "Uso de agua freatica por usos municipales";
+	lAiguahab= "Por habitante";
+	lAiguasect= "Por sector";
 	//gestio residus
 	gGestioresidus= "Generación de residuos";
-	lgeneresidumuni= "Residuos municipales";
+	lresidumuni= "Residuos municipales";
 	lgeneresiduhabi= "Residuos por habitante";
-	lrecollida= "Recogida selectiva de residuos";
+	lrecollida= "Recogida selectiva";
 	lresidusind= "Residuos industriales";
 	lresidusindemp= "Residuos industriales por empresa";
 	//estat masses aigues
@@ -675,7 +672,6 @@ var lpatentsv;
 	//Espai agrari
 	gAgrari= "Agrarian Spaces";
 	lDan2021="Agriculture 2021";
-	lAgricultura="Agriculture";
 	lhortsp09= "Precary Orchards 2009";
 	lhortsp15="Precary Orchards 2015";
 	//Vectors ambientals
@@ -683,7 +679,8 @@ var lpatentsv;
 	//Energia i canvi climatic
 	gEnergia= "Energy consumption";
 	lElectrsect= "Electricity by sector";
-	lElectrhab= "Domestic electricity consumption per capita";
+	lElectrdomest= "Domestic electricity consumption";
+	lElectrhab= "Energy consumption per capita";
 	lGassect= "Natural gas by sector";
 	lGasdom= "Domestic consumption of natural gas";
 	lGashab= "Natural gas per capita";
@@ -695,14 +692,13 @@ var lpatentsv;
 	lCo2electhab="CO2 emissions from electricity consumption per capita";
 	lCo2gassect= "CO2 emissions from natural gas consumption by sector";
 	lCo2gashab= "CO2 emissions from natural gas consumption per capita";
-	//cicle aigua
+	//consum aigua
 	gCicleaigua= "Water consumption";
-	lAiguadom= "Domestic water consumption per capita";
-	lAiguasect= "Water consumption by sector";
-	lFreatiques= "Use of groundwater for municipal uses";
+	lAiguahab= "Per capita";
+	lAiguasect= "By sector";
 	//gestio residus
 	gGestioresidus= "Waste generation";
-	lgeneresidumuni= "Municipal waste";
+	lresidumuni= "Total waste";
 	lgeneresiduhabi= "Waste per capita";
 	lrecollida= "Selective waste collection";
 	lresidusind= "Industrial waste";
