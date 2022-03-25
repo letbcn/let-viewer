@@ -165,16 +165,15 @@ var lrendaa17;
 var lgini18;
 //vulnerabilitat
 var list18;
-//majors
-var lmajors17;
+//envelliment
+
 //estrangers
 var lmigra20;
-var lest17;
 var gMigrac;
 var lpobresa;
 //Habitatge
-var lestath;
-var laccesh;
+var ldemandh;
+var lesforshab;
 //Innovacio
 var lpatents;
 var lpatentsv;
@@ -360,15 +359,12 @@ var lpatentsv;
 	//Vulnerabilitat
 	list18= "Índex socioeconòmic territorial (IST)";
 	//Envelliment
-	lmajors17= "Població major 75 anys sola";
-	lenvell="Envelliment vulnerable";
 	//Estrangers
 	lmigra20="Població estrangera";
-	lest17="Estrangers de països en desenvolupament";
 	//Habitatge
 	gHabitat= "Habitatge";
-	lestath="Estat de conservació d'habitatges";
-	laccesh="Accessibilitat a l’habitatge";
+	ldemandh="Demanda d'habitatge protegit";
+	lesforshab="Esforç d'accés habitatge";
 	//Innovacio
 	lpatents= "Patents europees";
 	lpatentsv= "Patents verdes";
@@ -556,15 +552,11 @@ var lpatentsv;
 	//Vulnerabilitat
 	list18= "Índice socioeconómico territorial (IST)";
 	//Envelliment
-	lmajors17= "Población mayor 75 años sola";
-	lenvell="Envejecimiento vulnerable";
 	//Estrangers
 	lmigra20="Población extranjera";
-	lest17="Extranjeros de paísos en desarrollo"
 	//Habitatge
-	gHabitat= "Vivienda";
-	lestath="Estada conservación vivienda";
-	laccesh="Accesibilidad a la vivienda";
+	ldemandh="Demanda de vivienda de protección social";
+	lesforshab="Esfuerzo al acceso vivienda";
 	//Innovacio
 	lpatents= "Patentes europeas";
 	lpatentsv= "Patentes verdes";
@@ -749,15 +741,11 @@ var lpatentsv;
 	//Vulnerabilitat
 	list18= "Territorial socioeconomic index (IST)";
 	//Envelliment
-	lmajors17= "Population over 75 years old living alone";
-	lenvell="Vulnerable aging";
 	//Estrangers
 	lmigra20="Foreign population";
-	lest17="Foreigners from developing countries";
 	//Habitatge
-	gHabitat= "Living place";
-	lestath="State of conservation of housing";
-	laccesh="Home accessibility";
+	ldemandh="Demand of social protected housing";
+	lesforshab= "Effort to access housing";
 	//Innovacio
 	lpatents= "European patents";
 	lpatentsv= "Green patents";

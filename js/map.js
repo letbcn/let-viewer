@@ -1136,7 +1136,7 @@
 
 	var xarxno2Layer = new MapImageLayer({
 		portalItem: {  
-		  id: "136f1a3a0d924b43b2c307f6dcc21b0e"
+		  id: "7b6a7f4cbbbe4d42b727f460db29d832"
 		},
 		id:'', //modificar
 		visible: false,
@@ -1147,7 +1147,7 @@
 
 	  var xarxpm10Layer = new MapImageLayer({
 		portalItem: {  
-		  id: "5d9bdcc2b93c475aafcf6a72d6a14321"
+		  id: "3f07093c104b4269b8ae1b50ba6e5b60"
 		},
 		id:'', //modificar
 		visible: false,
@@ -1382,74 +1382,43 @@
 	  });
 	  capes.push(migrants20Layer);
 
-	  //Estrangers païssos desenvolupament
-	var estrang17Layer = new MapImageLayer({
-		portalItem: {
-			id: "736553aabf154e06913692394d414b69"
-		},
-		id: 'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
-		visible: false,
-		title: lest17,
-		listMode: "hide-children"
-	});
-	capes.push(estrang17Layer);
+
+	//Index envelliment
 
 
-	//Envelliment vulnerable
-	var envellLayer = new MapImageLayer({
-		portalItem: {
-			id: "e01f577d228b44e380ce73934aa1e560"
-		},
-		id: '7c906313a73143d69ed527a01354319f',
-		visible: false,
-		title: lenvell,
-		listMode: "hide-children"
-	});
-	capes.push(envellLayer);
-
-	//Població major 75 sola
-
-	var majors17Layer = new MapImageLayer({
-		portalItem: {
-			id: "d81005164bce4c0da3c0aaac69c51554"
-		},
-		id: 'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
-		visible: false,
-		title: lmajors17,
-		listMode: "hide-children"
-	});
-	capes.push(majors17Layer);
 
 	//habitatge
-	var estathLayer = new MapImageLayer({
+	//demanda habitatge
+	var demandhabLayer = new MapImageLayer({
 		portalItem: {
-			id: "890f6ff1f45e478b949ff4fc7cfeba01"
+			id: "120563cfa79b485a86ed5e384d6ddaf1"
 		},
-		id: '07dc183814c04610a150345bcd18426e',
+		id: '',
 		visible: false,
-		title: lestath,
+		title: ldemandh,
 		listMode: "hide-children"
 	});
-	capes.push(estathLayer);
-
-	var acceshLayer = new MapImageLayer({
+	capes.push(demandhabLayer);
+	
+	//esforç habitatge
+	var esforshabitLayer = new MapImageLayer({
 		portalItem: {
-			id: "890f6ff1f45e478b949ff4fc7cfeba01"
+			id: "c84e4731fd614b7bb71530f0fbb58bb5"
 		},
-		id: '9bd3b7c6e6e84cbea2237fd9be8e34a3',
+		id: '',
 		visible: false,
-		title: laccesh,
+		title: lesforshab,
 		listMode: "hide-children"
 	});
-	capes.push(acceshLayer);
+	capes.push(esforshabitLayer);
 
 	//subgroups 
 	var societatGroupLayer = new GroupLayer({
 		title: gSocietat,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [estathLayer, acceshLayer, majors17Layer, envellLayer, 
-			estrang17Layer, migrants20Layer, joves18Layer, baixaq18Layer, ist18Layer],
+		layers: [demandhabLayer, esforshabitLayer, majors17Layer, envellLayer, 
+			 migrants20Layer, joves18Layer, baixaq18Layer, ist18Layer],
 		opacity: 1
 	});
 
