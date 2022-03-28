@@ -1417,7 +1417,7 @@
 		title: gSocietat,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [demandhabLayer, esforshabitLayer, majors17Layer, envellLayer, 
+		layers: [demandhabLayer, esforshabitLayer, 
 			 migrants20Layer, joves18Layer, baixaq18Layer, ist18Layer],
 		opacity: 1
 	});
