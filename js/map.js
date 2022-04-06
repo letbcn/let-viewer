@@ -629,7 +629,7 @@
 		title: gCobertesSol,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [usos17Layer, cob15Layer, cob20Layer],
+		layers: [cob20Layer,usos17Layer,cob15Layer],
 		opacity: 1
 	});
 
