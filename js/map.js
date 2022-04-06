@@ -588,16 +588,6 @@
 
 
 	//***************Cobertes del sòl*****************//
-	var cob09Layer = new MapImageLayer({
-		portalItem: {
-			id: "9f942705cbdc4561a21b1c802b7f798b"
-		},
-		id: "c468a6a45ed84aafa7cb835565162d27",
-		visible: false,
-		title: lcob09,
-		listMode: "hide-children"
-	});
-	capes.push(cob09Layer);
 
 	var cob15Layer = new MapImageLayer({
 		portalItem: {
@@ -609,6 +599,17 @@
 		listMode: "hide-children"
 	});
 	capes.push(cob15Layer);
+
+	var cob20Layer = new MapImageLayer({
+		portalItem: {
+			id: "b87e03eb704c4543b702b91b97440364"
+		},
+		id: "",
+		visible: false,
+		title: lcob20,
+		listMode: "hide-children"
+	});
+	capes.push(cob20Layer);
 
 	//capa d'usos
 	var usos17Layer = new MapImageLayer({
@@ -628,7 +629,7 @@
 		title: gCobertesSol,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [usos17Layer, cob15Layer, cob09Layer],
+		layers: [usos17Layer, cob15Layer, cob20Layer],
 		opacity: 1
 	});
 
@@ -1384,7 +1385,6 @@
 
 
 	//Index envelliment
-
 
 
 	//habitatge
