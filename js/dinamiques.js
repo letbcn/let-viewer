@@ -484,7 +484,7 @@
 
 		  var cob20Layer = new MapImageLayer({
 			portalItem: {
-				id: "b87e03eb704c4543b702b91b97440364"
+				id: "3f66422534f04a4a96a211c1ec584458"
 			},
 			id: "",
 			visible: false,
