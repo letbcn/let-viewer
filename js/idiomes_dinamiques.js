@@ -55,6 +55,7 @@ var lcob00;
 var lcob05;
 var lcob09;
 var lcob15;
+var lcob20;
 var gUsos;
 var lusos87;
 var lusos92;
@@ -338,6 +339,7 @@ var lpatents15;
 	lcob05= "2005";
 	lcob09= "2009";
 	lcob15= "2015";
+	lcob20= "2020";
 	gUsos="Usos";
 	lusos87="1987";
 	lusos92="1992";
@@ -554,7 +556,7 @@ var lpatents15;
 	lpatents15= "2015";
 
 	
-  } else if (document.documentElement.lang=='es') {
+  } else if (document.documentElement.lang=='es-ES') {
    //CONTINGUT Info
 	tooltipInfo="Información sobre el LET's GIS";
 	contingutInfo="<div style='width:400px; padding:10px; background-color:white'>" + 
@@ -616,6 +618,7 @@ var lpatents15;
 	lcob05= "2005";
 	lcob09= "2009";
 	lcob15= "2015";
+	lcob20="2020";
 	gUsos="Usos";
 	lusos87="1987";
 	lusos92="1992";
@@ -832,7 +835,7 @@ var lpatents15;
 	lpatents15= "2015";
 	
 	
-  } else if (document.documentElement.lang=='en') {
+  } else if (document.documentElement.lang=='en-US') {
 	//CONTINGUT Info
 	tooltipInfo="LET's GIS Information";
 	contingutInfo="<div style='width:400px; padding:10px; background-color:white'>" + 
@@ -895,6 +898,7 @@ var lpatents15;
 	lcob05= "2005";
 	lcob09= "2009";
 	lcob15= "2015";
+	lcob20="2020";
 	gUsos="Land uses";
 	lusos87="1987";
 	lusos92="1992";

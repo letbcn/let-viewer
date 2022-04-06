@@ -482,11 +482,22 @@
 		  });
 		  capes.push(cob15Layer);
 
+		  var cob20Layer = new MapImageLayer({
+			portalItem: {
+				id: "b87e03eb704c4543b702b91b97440364"
+			},
+			id: "",
+			visible: false,
+			title: lcob20,
+			listMode: "hide-children"
+		});
+		capes.push(cob20Layer);
+
 		  var cobGroupLayer = new GroupLayer({
 			title: gCob,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [cob56Layer, cob93Layer, cob00Layer,cob05Layer, cob09Layer, cob15Layer],
+			layers: [cob56Layer, cob93Layer, cob00Layer,cob05Layer, cob09Layer, cob15Layer, cob20Layer],
 			opacity: 1
 		  });
 
