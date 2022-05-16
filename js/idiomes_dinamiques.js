@@ -90,6 +90,7 @@ var lincend99;
 var lincend00;
 var lincend01;
 var lincend02;
+var lincend03;
 //Funcionalitat paisatge
 var gFuncio;
 var gConnect;
@@ -114,11 +115,10 @@ var laigua14;
 var laigua15;
 //Consum energia
 var gConenerg;
+var gEnergelectr;
 var lenerg11;
-var lenerg12;
-var lenerg13;
-var lenerg14;
-var lenerg15;
+var gEnergas;
+var lgas11;
 //Generacio residus
 var gGeneracioresidus;
 var gResidusmuni;
@@ -372,6 +372,7 @@ var lpatents15;
 	lincend00= "2000";
 	lincend01= "2001";
 	lincend02= "2002";
+	lincend03= "2003";
 	//Funcionalitat paisatge
 	gFuncio="Funcionalitat del paisatge"
 	gConnect=  "Índex Connectivitat Ecològica dels Espais Oberts";
@@ -396,11 +397,10 @@ var lpatents15;
 	laigua15= "2015";
 	//Consum energia
 	gConenerg= "Consum d'energia";
+	gEnergelectr= "Elèctrica";
 	lenerg11= "2011";
-	lenerg12= "2012";
-	lenerg13= "2013";
-	lenerg14= "2014";
-	lenerg15= "2015";
+	gEnergas= "Gas";
+	lgas20= "2020";
 	//Generacio residus
 	gGeneracioresidus= "Generació de residus";
 	gResidusmuni= "Municipals";

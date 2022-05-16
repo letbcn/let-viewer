@@ -810,13 +810,23 @@
 			listMode: "hide-children"
 		  });
 
+		  var incendis03Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "67f25d2fa7624c5f99b736987920b61b"
+			},
+			id:'', 
+			visible: false,
+			title: lincend03,
+			listMode: "hide-children"
+		  });
+
 		  var incendisGroupLayer = new GroupLayer({
 			title: gIncend,
 			visible: true,
 			visibilityMode: "independent",
 			layers: [incendis86Layer, incendis88Layer, incendis89Layer, incendis90Layer, incendis91Layer, incendis92Layer, incendis93Layer,
 				incendis94Layer, incendis95Layer, incendis97Layer, incendis98Layer, incendis99Layer, 
-				incendis00Layer, incendis01Layer, incendis02Layer],
+				incendis00Layer, incendis01Layer, incendis02Layer, incendis03Layer],
 			opacity: 1
 		  });
 
@@ -1032,62 +1042,46 @@
 			portalItem: {  
 			  id: "7e5c96c9674e442d89414df6e9baac15"
 			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			id:'',
 			visible: false,
 			title: lenerg11,
 			listMode: "hide-children"
 		  });
 		  capes.push(energ11Layer);
 		  
-		  var energ12Layer = new MapImageLayer({
+		  var energelectricaGroupLayer = new GroupLayer({
+			title: gEnergelectr,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [energ11Layer],
+			opacity: 1
+		});
+
+		var gas20Layer = new MapImageLayer({
 			portalItem: {  
-			  id: "ef7c39e7a977499a87e3d1c8e1ebbeb6"
+			  id: "d48271526809495fb1907804a0538485"
 			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			id:'',
 			visible: false,
-			title: lenerg12,
+			title: lgas20,
 			listMode: "hide-children"
 		  });
-		  capes.push(energ12Layer);
-		 
-		  var energ13Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "3697a88053574abab246d1ec96d3b137"
-			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
-			visible: false,
-			title: lenerg13,
-			listMode: "hide-children"
-		  });
-		  capes.push(energ13Layer); 
-		 
-		  var energ14Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "fe9179dd88304d46a5a08a26ac69a9ff"
-			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
-			visible: false,
-			title: lenerg14,
-			listMode: "hide-children"
-		  });
-		  capes.push(energ14Layer);
-		 
-		  var energ15Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "c7836456662b475199c809a42b96996c"
-			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
-			visible: false,
-			title: lenerg15,
-			listMode: "hide-children"
-		  });
-		  capes.push(energ15Layer);
+		  capes.push(gas20Layer);
+		  
+		  var energGasGroupLayer = new GroupLayer({
+			title: gEnergas,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [gas20Layer],
+			opacity: 1
+		});
+
 
 		  var consumEnergGroupLayer = new GroupLayer({
 			title: gConenerg,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [energ11Layer,energ12Layer, energ13Layer, energ14Layer, energ15Layer],
+			layers: [energGasGroupLayer, energelectricaGroupLayer],
 			opacity: 1
 		  });
 
