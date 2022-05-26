@@ -53,7 +53,7 @@
 		
 		var AMBLayer = new FeatureLayer({
 			url:
-			  "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/amb_cat/FeatureServer/0",
+			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/amb_cat/FeatureServer/0",
 			renderer: sym,
 			title: 'AMB',
 			id:"AMB",
@@ -63,7 +63,7 @@
 		  });
 		var RMBLayer = new FeatureLayer({
 			url:
-			  "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/rmb_cat/FeatureServer/0",
+			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/rmb_cat/FeatureServer/0",
 			renderer: sym,
 			title: 'RMB',
 			visible:true,
@@ -73,7 +73,7 @@
 
 		  var B30Layer = new FeatureLayer({
 			url:
-			  "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/b30_cat/FeatureServer/0",
+			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/b30_cat/FeatureServer/0",
 			renderer: sym,
 			title: 'B30',
 			visible:false,
@@ -1038,22 +1038,44 @@
 
 		  //Consum energia	 
 		 
-		  var energ11Layer = new MapImageLayer({
+		  var energ18Layer = new MapImageLayer({
 			portalItem: {  
-			  id: "7e5c96c9674e442d89414df6e9baac15"
+			  id: "8e995ce0c1034d239fe898afd60239c1"
 			},
 			id:'',
 			visible: false,
-			title: lenerg11,
+			title: lenerg18,
 			listMode: "hide-children"
 		  });
-		  capes.push(energ11Layer);
+		  capes.push(energ18Layer); 
+		 
+		  var energ19Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "8e995ce0c1034d239fe898afd60239c1"
+			},
+			id:'',
+			visible: false,
+			title: lenerg19,
+			listMode: "hide-children"
+		  });
+		  capes.push(energ19Layer); 
+		 
+		  var energ20Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "b631257580464679ab4cfd3cb5c5f854"
+			},
+			id:'',
+			visible: false,
+			title: lenerg20,
+			listMode: "hide-children"
+		  });
+		  capes.push(energ20Layer);
 		  
 		  var energelectricaGroupLayer = new GroupLayer({
 			title: gEnergelectr,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [energ11Layer],
+			layers: [energ18Layer, energ19Layer, energ20Layer],
 			opacity: 1
 		});
 
@@ -1087,62 +1109,6 @@
 
 		 
 		  //Generacio residus
-
-		  var genresidusmuni10Layer = new MapImageLayer({
-			portalItem: {
-				id: "6d28cbf1bedc4613961aed7900a274ce"
-			},
-			id: "",
-			visible: false,
-			title: lresidumuni10,
-			listMode: "hide-children"
-		});
-		capes.push(genresidusmuni10Layer);
-
-
-		  var genresidusmuni11Layer = new MapImageLayer({
-			portalItem: {
-				id: "fb3c01bd732e4894bae73c9edbdce50e"
-			},
-			id: "",
-			visible: false,
-			title: lresidumuni11,
-			listMode: "hide-children"
-		});
-		capes.push(genresidusmuni11Layer);
-		 
-		  var genresidusmuni12Layer = new MapImageLayer({
-			portalItem: {
-				id: "1b281cffbe474fefb5cb6f50bea75c78"
-			},
-			id: "",
-			visible: false,
-			title: lresidumuni12,
-			listMode: "hide-children"
-		});
-		capes.push(genresidusmuni12Layer);
-		 
-		  var genresidusmuni13Layer = new MapImageLayer({
-			portalItem: {
-				id: "a1308238fd9a409196a5aacf5ee78789"
-			},
-			id: "",
-			visible: false,
-			title: lresidumuni13,
-			listMode: "hide-children"
-		});
-		capes.push(genresidusmuni13Layer); 
-		 
-		  var genresidusmuni14Layer = new MapImageLayer({
-			portalItem: {
-				id: "a40650b3dad642a3ae6157b502ef8542"
-			},
-			id: "",
-			visible: false,
-			title: lresidumuni14,
-			listMode: "hide-children"
-		});
-		capes.push(genresidusmuni14Layer);  
 		 
 		  var genresidusmuni15Layer = new MapImageLayer({
 			portalItem: {
@@ -1155,51 +1121,20 @@
 		});
 		capes.push(genresidusmuni15Layer); 
 		 
-		  var genresidusmuni16Layer = new MapImageLayer({
-			portalItem: {
-				id: "3add515e9ab24961bff139aeaec6b0cd"
-			},
-			id: "",
-			visible: false,
-			title: lresidumuni16,
-			listMode: "hide-children"
-		});
-		capes.push(genresidusmuni16Layer);
 
 		var residusmuniGroupLayer = new GroupLayer({
 			title: gResidusmuni,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [genresidusmuni10Layer, genresidusmuni11Layer, genresidusmuni12Layer, genresidusmuni13Layer, genresidusmuni14Layer, genresidusmuni15Layer, genresidusmuni16Layer],
+			layers: [genresidusmuni15Layer],
 			opacity: 1
 		});
 	
 		//Residus per habitants
-		var genresidushabi13Layer = new MapImageLayer({
-			portalItem: {
-				id: "b6dd570b4edc4786a7b9634075aa9b31"
-			},
-			id: "",
-			visible: false,
-			title: lgeneresiduhabi13,
-			listMode: "hide-children"
-		});
-		capes.push(genresidushabi13Layer);
-		
-		var genresidushabi14Layer = new MapImageLayer({
-			portalItem: {
-				id: "063aef07167c4222839c9e0a729a7ba9"
-			},
-			id: "",
-			visible: false,
-			title: lgeneresiduhabi14,
-			listMode: "hide-children"
-		});
-		capes.push(genresidushabi14Layer);
-		
+	
 		var genresidushabi15Layer = new MapImageLayer({
 			portalItem: {
-				id: "e6d8c6dcbf3048d986f0084a5bd3088d"
+				id: "5b69ff5122324c71bacbea2bdf13b37b"
 			},
 			id: "",
 			visible: false,
@@ -1210,7 +1145,7 @@
 
 		var genresidushabi16Layer = new MapImageLayer({
 			portalItem: {
-				id: "c5d1976b3e4841f1abdc7084f364904e"
+				id: "0f2ee2fed9304c78bd626cd0bfe0a9a2"
 			},
 			id: "",
 			visible: false,
@@ -1219,11 +1154,55 @@
 		});
 		capes.push(genresidushabi16Layer);
 
+		var genresidushabi17Layer = new MapImageLayer({
+			portalItem: {
+				id: "cb2666104d4249f898d8708a9e9c4d45"
+			},
+			id: "",
+			visible: false,
+			title: lgeneresiduhabi17,
+			listMode: "hide-children"
+		});
+		capes.push(genresidushabi17Layer);
+
+		var genresidushabi18Layer = new MapImageLayer({
+			portalItem: {
+				id: "2e5eee1b624a4cce87478783c3ae0691"
+			},
+			id: "",
+			visible: false,
+			title: lgeneresiduhabi18,
+			listMode: "hide-children"
+		});
+		capes.push(genresidushabi18Layer);
+
+		var genresidushabi19Layer = new MapImageLayer({
+			portalItem: {
+				id: "967e30559faa4506a81eea71c6fc07fa"
+			},
+			id: "",
+			visible: false,
+			title: lgeneresiduhabi19,
+			listMode: "hide-children"
+		});
+		capes.push(genresidushabi19Layer);
+
+		var genresidushabi20Layer = new MapImageLayer({
+			portalItem: {
+				id: "ae0fc1f0a3ac4d9d8d515f52dfb692f9"
+			},
+			id: "",
+			visible: false,
+			title: lgeneresiduhabi20,
+			listMode: "hide-children"
+		});
+		capes.push(genresidushabi20Layer);
+
 		var residushabiGroupLayer = new GroupLayer({
 			title: gResidushabi,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [genresidushabi13Layer, genresidushabi14Layer, genresidushabi15Layer, genresidushabi16Layer],
+			layers: [genresidushabi15Layer,genresidushabi16Layer,genresidushabi17Layer,genresidushabi18Layer,genresidushabi19Layer,genresidushabi20Layer],
 			opacity: 1
 		});
 
