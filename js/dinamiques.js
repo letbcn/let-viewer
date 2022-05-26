@@ -1037,10 +1037,65 @@
 
 
 		  //Consum energia	 
+		  //Energia elèctrica
+		  var energ13Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "53fac5170b684b4b871cdf7a33789bad"
+			},
+			id:'',
+			visible: false,
+			title: lenerg13,
+			listMode: "hide-children"
+		  });
+		  capes.push(energ13Layer);   
+		 
+		  var energ14Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "e6242159aa1e469ebd9a356186aac394"
+			},
+			id:'',
+			visible: false,
+			title: lenerg14,
+			listMode: "hide-children"
+		  });
+		  capes.push(energ14Layer);   
+		 
+		  var energ15Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "90ec7d27d378428aa57a0cefeb92461f"
+			},
+			id:'',
+			visible: false,
+			title: lenerg15,
+			listMode: "hide-children"
+		  });
+		  capes.push(energ15Layer);  
+		 
+		  var energ16Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "22f3f9a7e9d84693bfba8cb9d1f0b749"
+			},
+			id:'',
+			visible: false,
+			title: lenerg16,
+			listMode: "hide-children"
+		  });
+		  capes.push(energ16Layer); 
+		 
+		  var energ17Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "f0967df93c8d43b5833af921c78507d8"
+			},
+			id:'',
+			visible: false,
+			title: lenerg17,
+			listMode: "hide-children"
+		  });
+		  capes.push(energ17Layer);  
 		 
 		  var energ18Layer = new MapImageLayer({
 			portalItem: {  
-			  id: "8e995ce0c1034d239fe898afd60239c1"
+			  id: "d654559521df4b4ba128fe4c5e4c5682"
 			},
 			id:'',
 			visible: false,
@@ -1051,7 +1106,7 @@
 		 
 		  var energ19Layer = new MapImageLayer({
 			portalItem: {  
-			  id: "8e995ce0c1034d239fe898afd60239c1"
+			  id: "3bff7c981db44a5e9782d84677d6f6ef"
 			},
 			id:'',
 			visible: false,
@@ -1075,7 +1130,7 @@
 			title: gEnergelectr,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [energ18Layer, energ19Layer, energ20Layer],
+			layers: [energ13Layer, energ14Layer, energ15Layer, energ16Layer, energ17Layer, energ18Layer, energ19Layer, energ20Layer],
 			opacity: 1
 		});
 
@@ -1110,23 +1165,23 @@
 		 
 		  //Generacio residus
 		 
-		  var genresidusmuni15Layer = new MapImageLayer({
+		  var genresidusmuni20Layer = new MapImageLayer({
 			portalItem: {
-				id: "24f5ba43c6a549e48a72dc8f0482ba5b"
+				id: "346c6a64a0114a5dbb1f705c62d642c0"
 			},
 			id: "",
 			visible: false,
-			title: lresidumuni15,
+			title: lresidumuni20,
 			listMode: "hide-children"
 		});
-		capes.push(genresidusmuni15Layer); 
+		capes.push(genresidusmuni20Layer); 
 		 
 
 		var residusmuniGroupLayer = new GroupLayer({
 			title: gResidusmuni,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [genresidusmuni15Layer],
+			layers: [genresidusmuni20Layer],
 			opacity: 1
 		});
 	

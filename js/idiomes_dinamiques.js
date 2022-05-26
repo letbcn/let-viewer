@@ -116,6 +116,11 @@ var laigua15;
 //Consum energia
 var gConenerg;
 var gEnergelectr;
+var lenerg13;
+var lenerg14;
+var lenerg15;
+var lenerg16;
+var lenerg17;
 var lenerg18;
 var lenerg19;
 var lenerg20;
@@ -124,7 +129,7 @@ var lgas11;
 //Generacio residus
 var gGeneracioresidus;
 var gResidusmuni;
-var lresidumuni15;
+var lresidumuni20;
 var gResidushabi;
 var lgeneresiduhabi15;
 var lgeneresiduhabi16;
@@ -396,6 +401,11 @@ var lpatents15;
 	//Consum energia
 	gConenerg= "Consum d'energia";
 	gEnergelectr= "Elèctrica";
+	lenerg13="2013";
+	lenerg14="2014";
+	lenerg15= "2015";
+	lenerg16= "2016";
+	lenerg17= "2017";
 	lenerg18= "2018";
 	lenerg19= "2019";
 	lenerg20= "2020";
@@ -404,7 +414,7 @@ var lpatents15;
 	//Generacio residus
 	gGeneracioresidus= "Generació de residus";
 	gResidusmuni= "Municipals";
-	lresidumuni15= "2015";
+	lresidumuni20= "2020";
 	gResidushabi= "Per habitants";
 	lgeneresiduhabi15= "2015";
 	lgeneresiduhabi16= "2016";
@@ -672,6 +682,11 @@ var lpatents15;
 	//Consumo energia
 	gConenerg= "Consumo de energía";
 	gEnergelectr= "Eléctrica";
+	lenerg13="2013";
+	lenerg14="2014";
+	lenerg15="2015";
+	lenerg16="2016";
+	lenerg17="2017";
 	lenerg18= "2018";
 	lenerg19= "2019";
 	lenerg20= "2020";
@@ -680,7 +695,7 @@ var lpatents15;
 	//Generacio residus
 	gGeneracioresidus= "Generación de residuos";
 	gResidusmuni= "Municipales";
-	lresidumuni15= "2015";
+	lresidumuni20= "2020";
 	gResidushabi= "Por habitante";
 	lgeneresiduhabi15= "2015";
 	lgeneresiduhabi16="2016";
@@ -949,6 +964,11 @@ var lpatents15;
 	//Consum energia
 	gConenerg= "Energy consumption";
 	gEnergelectr= "Electric";
+	lenerg13="2013";
+	lenerg14="2014";
+	lenerg15="2015";
+	lenerg16= "2016";
+	lenerg17="2017";
 	lenerg18= "2018";
 	lenerg19= "2019";
 	lenerg20= "2020";
@@ -957,7 +977,7 @@ var lpatents15;
 	//Generacio residus
 	gGeneracioresidus= "Waste generation";
 	gResidusmuni= "Municipal";
-	lresidumuni15= "2015";
+	lresidumuni20= "2020";
 	gResidushabi= "Per capita";
 	lgeneresiduhabi15= "2015";
 	lgeneresiduhabi16="2016";
