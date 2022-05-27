@@ -262,22 +262,22 @@
                 content: createPopup4
             };
             featureLayer1 = new FeatureLayer({
-                url: "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
+                url: "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
                 outFields: ["*"],
                 popupTemplate: template1
             });
             featureLayer2 = new FeatureLayer({
-                url: "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
+                url: "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
                 outFields: ["*"],
                 popupTemplate: template2
             });
             featureLayer3 = new FeatureLayer({
-                url: "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
+                url: "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
                 outFields: ["*"],
                 popupTemplate: template3
             });
             featureLayer4 = new FeatureLayer({
-                url: "https://openlab.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
+                url: "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/municipis/FeatureServer/0",
                 outFields: ["*"],
                 popupTemplate: template4
             });
@@ -517,7 +517,7 @@
                 var canvas = document.createElement('canvas');
                 canvas.width = 350;
                 const queryUsosTask = new QueryTask({
-                    url: "https://openlab.uab.cat:6443/arcgis/rest/services/dinamiques_query/cobertes_v_" + any + "_mun/FeatureServer/0"
+                    url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinamiques_query/cobertes_v_" + any + "_mun/FeatureServer/0"
                 });
                 // Generage stats for the count and types of private schools that intersect the state with average enrollment
                 const areaCount = new StatisticDefinition({
