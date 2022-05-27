@@ -294,8 +294,6 @@
 			opacity: 1
 		});
 
-
-
 		//**********Clima***********//
 		//anomalies precipitació
 
@@ -972,53 +970,9 @@
 
 		  //Consum aigüa
 
-		  var aigua11Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "1de02483274e4b0897b7872b124009c0"
-			},
-			id:'', //modificar
-			visible: false,
-			title: laigua11,
-			listMode: "hide-children"
-		  });
-		  capes.push(aigua11Layer);  
-		 
-		  var aigua12Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "e0d41c4b4a614cf686a2990a76d0cdb6"
-			},
-			id:'', //modificar
-			visible: false,
-			title: laigua12,
-			listMode: "hide-children"
-		  });
-		  capes.push(aigua12Layer); 
-
-		  var aigua13Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "57cca1c3bc31471a9ceab8b5c7e8d5d4"
-			},
-			id:'', //modificar
-			visible: false,
-			title: laigua13,
-			listMode: "hide-children"
-		  });
-		  capes.push(aigua13Layer);  
-		 
-		  var aigua14Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "10e3cf85c7364725864e3e744e1e9baa"
-			},
-			id:'', //modificar
-			visible: false,
-			title: laigua14,
-			listMode: "hide-children"
-		  });
-		  capes.push(aigua14Layer); 
-		 
 		  var aigua15Layer = new MapImageLayer({
 			portalItem: {  
-			  id: "3d11ff7e163442d99962fdec0f238f7c"
+			  id: ""
 			},
 			id:'', //modificar
 			visible: false,
@@ -1031,7 +985,7 @@
 			title: gConaigua,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [aigua11Layer, aigua12Layer, aigua13Layer, aigua14Layer, aigua15Layer],
+			layers: [aigua15Layer],
 			opacity: 1
 		  });
 

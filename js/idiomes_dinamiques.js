@@ -108,10 +108,6 @@ var lecosub07;
 var lecosub13;
 //Consum aigua
 var gConaigua;
-var laigua11;
-var laigua12;
-var laigua13;
-var laigua14;
 var laigua15;
 //Consum energia
 var gConenerg;
@@ -393,10 +389,6 @@ var lpatents15;
 	lecosub13= "2013-2017";
 	//Consum aigua
 	gConaigua= "Consum d'aigüa";
-	laigua11= "2011";
-	laigua12= "2012";
-	laigua13= "2013";
-	laigua14= "2014";
 	laigua15= "2015";
 	//Consum energia
 	gConenerg= "Consum d'energia";
@@ -674,10 +666,6 @@ var lpatents15;
 	lecosub13= "2013-2017";
 	//Consum aigua
 	gConaigua= "Consumo de agua";
-	laigua11= "2011";
-	laigua12= "2012";
-	laigua13= "2013";
-	laigua14= "2014";
 	laigua15= "2015";
 	//Consumo energia
 	gConenerg= "Consumo de energía";
@@ -956,10 +944,6 @@ var lpatents15;
 	lecosub13= "2013-2017";
 	//Consum aigua
 	gConaigua= "Water consumption";
-	laigua11= "2011";
-	laigua12= "2012";
-	laigua13= "2013";
-	laigua14= "2014";
 	laigua15= "2015";
 	//Consum energia
 	gConenerg= "Energy consumption";
