@@ -128,7 +128,14 @@ var lenerg18;
 var lenerg19;
 var lenerg20;
 var gEnergas;
-var lgas11;
+var lgas13;
+var lgas14;
+var lgas15;
+var lgas16;
+var lgas17;
+var lgas18;
+var lgas19;
+var lgas20
 //Generacio residus
 var gGeneracioresidus;
 var gResidusmuni;
@@ -416,6 +423,13 @@ var lpatents15;
 	lenerg19= "2019";
 	lenerg20= "2020";
 	gEnergas= "Gas";
+	lgas13="2013";
+	lgas14="2014";
+	lgas15="2015";
+	lgas16="2016";
+	lgas17="2017";
+	lgas18="2018";
+	lgas19="2019";
 	lgas20= "2020";
 	//Generacio residus
 	gGeneracioresidus= "Generació de residus";
@@ -700,6 +714,13 @@ var lpatents15;
 	lenerg19= "2019";
 	lenerg20= "2020";
 	gEnergas= "Gas";
+	lgas13="2013";
+	lgas14="2014";
+	lgas15="2015";
+	lgas16="2016";
+	lgas17="2017";
+	lgas18="2018";
+	lgas19="2019";
 	lgas20= "2020";
 	//Generacio residus
 	gGeneracioresidus= "Generación de residuos";
@@ -984,6 +1005,13 @@ var lpatents15;
 	lenerg19= "2019";
 	lenerg20= "2020";
 	gEnergas= "Gas";
+	lgas13="2013";
+	lgas14="2014";
+	lgas15="2015";
+	lgas16="2016";
+	lgas17="2017";
+	lgas18="2018";
+	lgas19="2019";
 	lgas20= "2020";
 	//Generacio residus
 	gGeneracioresidus= "Waste generation";

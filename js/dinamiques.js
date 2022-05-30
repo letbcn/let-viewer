@@ -969,8 +969,7 @@
 
 
 		  //Consum aigüa
-		 
-		  var aigua13Layer = new MapImageLayer({
+		   var aigua13Layer = new MapImageLayer({
 			portalItem: {  
 			  id: "30c83b3a49344183a43cd3bf9e0a7900"
 			},
@@ -1165,9 +1164,88 @@
 			opacity: 1
 		});
 
+		//Gas natural
+
+		var gas13Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "f6646d1c5e544ce3adef75feb0519f88"
+			},
+			id:'',
+			visible: false,
+			title: lgas13,
+			listMode: "hide-children"
+		  });
+		  capes.push(gas13Layer);
+
+		var gas14Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "2cd89eb0ce8941079118767879115886"
+			},
+			id:'',
+			visible: false,
+			title: lgas14,
+			listMode: "hide-children"
+		  });
+		  capes.push(gas14Layer);
+		
+		var gas15Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "20df05d666c141c48e231880233d39a8"
+			},
+			id:'',
+			visible: false,
+			title: lgas15,
+			listMode: "hide-children"
+		  });
+		  capes.push(gas15Layer);
+		
+		var gas16Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "b0d3cb6ff44247e0a84a099bd438c14e"
+			},
+			id:'',
+			visible: false,
+			title: lgas16,
+			listMode: "hide-children"
+		  });
+		  capes.push(gas16Layer);
+		
+		var gas17Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "73fdfd5fd7124b1baa8529c6899bfc7c"
+			},
+			id:'',
+			visible: false,
+			title: lgas17,
+			listMode: "hide-children"
+		  });
+		  capes.push(gas17Layer);
+		
+		var gas18Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "731962ad332d4e2ebf9e2cf50e503c55"
+			},
+			id:'',
+			visible: false,
+			title: lgas18,
+			listMode: "hide-children"
+		  });
+		  capes.push(gas18Layer);
+		
+		var gas19Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "dd3581d4421548e4b61395c7f3ded479"
+			},
+			id:'',
+			visible: false,
+			title: lgas19,
+			listMode: "hide-children"
+		  });
+		  capes.push(gas19Layer);
+
 		var gas20Layer = new MapImageLayer({
 			portalItem: {  
-			  id: "d48271526809495fb1907804a0538485"
+			  id: "eaaf3555da2846c0a53df3f67961bfa8"
 			},
 			id:'',
 			visible: false,
@@ -1180,7 +1258,7 @@
 			title: gEnergas,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [gas20Layer],
+			layers: [gas13Layer, gas14Layer, gas15Layer, gas16Layer, gas17Layer, gas18Layer, gas19Layer, gas20Layer],
 			opacity: 1
 		});
 
