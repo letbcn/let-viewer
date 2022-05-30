@@ -970,6 +970,28 @@
 
 		  //Consum aigüa
 		 
+		  var aigua13Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "30c83b3a49344183a43cd3bf9e0a7900"
+			},
+			id:'', //modificar
+			visible: false,
+			title: laigua13,
+			listMode: "hide-children"
+		  });
+		  capes.push(aigua13Layer);  
+		 
+		  var aigua14Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "cfb554bbf0fa4d7fbd76dd238d14a2c3"
+			},
+			id:'', //modificar
+			visible: false,
+			title: laigua14,
+			listMode: "hide-children"
+		  });
+		  capes.push(aigua14Layer);  
+		 
 		  var aigua15Layer = new MapImageLayer({
 			portalItem: {  
 			  id: "4cfbff7dc21343bd87154302370189dd"
@@ -1040,7 +1062,7 @@
 			title: gConaigua,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [aigua15Layer,aigua16Layer,aigua17Layer,aigua18Layer,aigua19Layer,aigua20Layer],
+			layers: [aigua13Layer,aigua14Layer,aigua15Layer,aigua16Layer,aigua17Layer,aigua18Layer,aigua19Layer,aigua20Layer],
 			opacity: 1
 		  });
 
