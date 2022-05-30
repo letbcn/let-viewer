@@ -43,7 +43,6 @@ var lpendent;
 var lorient;
 //Geologia
 var gGeo;
-var lHidrogeo;
 var lgeolo;
 var ledafo;
 //Hidrologia
@@ -102,10 +101,8 @@ var lEshumides;
 var gEnergia;
 var lElectrsect;
 var lElectrdomest;
-var lElectrhab;
 var lGassect;
 var lGasdom;
-var lGashab;
 //Emissions gasos hivernacle
 var gEmissionsgasos;
 var lEmissioogasos;
@@ -288,10 +285,8 @@ var lpatentsv;
 	gEnergia= "Consum d'energia";
 	lElectrsect= "Energia elèctrica per sector";
 	lElectrdomest= "Consum domèstic energia elèctrica";
-	lElectrhab="Energia elèctrica per habitant";
 	lGassect= "Gas natural per sector";
 	lGasdom= "Consum domèstic gas natural ";
-	lGashab= "Gas natural per habitant";
 	//Emissions gasos hivernacle
 	gEmissionsgasos= "Emissions gasos efecte hivernacle";
 	lEmissioogasos= "Gasos efecte hivernacle";
@@ -481,10 +476,8 @@ var lpatentsv;
 	gEnergia= "Consumo de energía";
 	lElectrsect= "Energía eléctrica por sector";
 	lElectrdomest= "Consumo doméstico energía eléctrica";
-	lElectrhab="Energía eléctrica por habitante";
 	lGassect= "Gas natural por sector";
 	lGasdom= "Consumo doméstico gas natural ";
-	lGashab= "Gas natural por habitante";
 	//Emissions gasos hivernacle
 	gEmissionsgasos= "Emisiones gases efecto invernadero";
 	lEmissioogasos= "Gases efecto invernadero";
@@ -670,10 +663,8 @@ var lpatentsv;
 	gEnergia= "Energy consumption";
 	lElectrsect= "Electricity by sector";
 	lElectrdomest= "Domestic electricity consumption";
-	lElectrhab= "Energy consumption per capita";
 	lGassect= "Natural gas by sector";
 	lGasdom= "Domestic consumption of natural gas";
-	lGashab= "Natural gas per capita";
 	//Emissions gasos hivernacle
 	gEmissionsgasos= "Greenhouse gas emissions";
 	lEmissioogasos= "Greenhouse gases";

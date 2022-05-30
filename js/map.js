@@ -106,14 +106,14 @@
 			});
 
 	var comarquesLayer = new MapImageLayer({
-	portalItem: {
-		id: "b628d29242aa4591b986a4c293f8edda"
-	},
-	id: "",
-	visible: false,
-	title: lcomarca,
-	listMode: "hide-children"
-	});
+		portalItem: {
+			id: "b628d29242aa4591b986a4c293f8edda"
+		},
+		id: "",
+		visible: false,
+		title: lcomarca,
+		listMode: "hide-children"
+		});
 	capes.push(comarquesLayer);
 
 
@@ -393,23 +393,12 @@
 	});
 	capes.push(geologicLayer);
 
-	var hidrogeologicLayer = new MapImageLayer({
-		portalItem: {
-			id: "2be8985a6a6441dcb46637c234b4d653"
-		},
-		id: "8d612012e9eb4449a9f16613ef71db21",
-		visible: false,
-		title: lHidrogeo,
-		listMode: "hide-children"
-	});
-	capes.push(hidrogeologicLayer);
-
 	//grup de capes
 	var geologiaGroupLayer = new GroupLayer({
 		title: gGeo,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [hidrogeologicLayer, edafologicLayer, edafoSTLayer, geologicLayer],
+		layers: [ edafologicLayer, edafoSTLayer, geologicLayer],
 		opacity: 1
 
 	});
@@ -904,7 +893,7 @@
 	//Energia electrica us domèstic
 	var electrdomestLayer = new MapImageLayer({
 		portalItem: {
-			id: "543ad4cfb44b47e285eb7bbfead55d1a"
+			id: "b631257580464679ab4cfd3cb5c5f854"
 		},
 		id: "",
 		visible: false,
@@ -912,18 +901,6 @@
 		listMode: "hide-children"
 	});
 	capes.push(electrdomestLayer);
-
-	//Consum energia electrica per habitant
-	var electrhabLayer = new MapImageLayer({
-		portalItem: {
-			id: "099e83cbc84746b3963e1e44627082f2"
-		},
-		id: "",
-		visible: false,
-		title: lElectrhab,
-		listMode: "hide-children"
-	});
-	capes.push(electrhabLayer);
 
  	//Gas natural
 	var gassectorLayer = new MapImageLayer({
@@ -939,7 +916,7 @@
 
 	var gasdomesticLayer = new MapImageLayer({
 		portalItem: {
-			id: "6c8728fa330044d1b0ceef6fc3285863"
+			id: "eaaf3555da2846c0a53df3f67961bfa8"
 		},
 		id: "",
 		visible: false,
@@ -947,17 +924,6 @@
 		listMode: "hide-children"
 	});
 	capes.push(gasdomesticLayer);
-
-	var gashabitantLayer = new MapImageLayer({
-		portalItem: {
-			id: "d48271526809495fb1907804a0538485"
-		},
-		id: "",
-		visible: false,
-		title: lGashab,
-		listMode: "hide-children"
-	});
-	capes.push(gashabitantLayer);
 
 	//Emissions CO2
 	var co2electricsectorLayer = new MapImageLayer({
@@ -973,7 +939,7 @@
 
 	var co2electrichabLayer = new MapImageLayer({
 		portalItem: {
-			id: "9c25e43cda644a888d2810189a48c4da"
+			id: "b631257580464679ab4cfd3cb5c5f854"
 		},
 		id: "",
 		visible: false,
@@ -1008,7 +974,7 @@
 		title: gEnergia,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [gashabitantLayer, gasdomesticLayer, gassectorLayer, electrhabLayer, electrdomestLayer, electrsectorLayer],
+		layers: [gasdomesticLayer, gassectorLayer, electrdomestLayer, electrsectorLayer],
 		opacity: 1
 	});
 
