@@ -337,11 +337,21 @@
 			listMode: "hide-children"
 		  });
 
+		  var anompp21Layer = new MapImageLayer({
+			portalItem: { 
+			  id: "" 
+			},
+			id:"", //modificar
+			visible: false,
+			title: lAnomp21,
+			listMode: "hide-children"
+		  });
+
 		  var anomppGroupLayer = new GroupLayer({
 			title: gAnompp,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [anompp17Layer, anompp18Layer, anompp19Layer, anompp20Layer],
+			layers: [anompp17Layer, anompp18Layer, anompp19Layer, anompp20Layer, anompp21Layer],
 			opacity: 1
 		  });
 
@@ -396,11 +406,21 @@
 			listMode: "hide-children"
 		  });
 
+		  var anomtmp21Layer = new MapImageLayer({
+			portalItem: { 
+			  id: "83c83f9da3814595887b7a7a23889f8c"
+			},
+			id:"",
+			visible: false,
+			title: lAnomt21,
+			listMode: "hide-children"
+		  });
+
 		  var anomtempGroupLayer = new GroupLayer({
 			title: gAnomtemp,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [anomtmp16Layer, anomtmp17Layer, anomtmp18Layer, anomtmp19Layer, anomtmp20Layer],
+			layers: [anomtmp16Layer, anomtmp17Layer, anomtmp18Layer, anomtmp19Layer, anomtmp20Layer,anomtmp21Layer],
 			opacity: 1
 		  });
 
