@@ -60,8 +60,8 @@ var lPrecipitacio;
 var lTempmin;
 var lTempmit;
 var lTempmax;
-var lAnomp20;
-var lAnomt20;
+var lAnomp21;
+var lAnomt21;
 //Cobertes del sòl
 var gCobertesSol;
 var lcob15;
@@ -250,8 +250,8 @@ var lpatentsv;
 	lTempmit="Temperatura mitjana";
 	lTempmax="Temperatures màximes";
 	gAnom= "Anomalies climàtiques";
-	lAnomp20= "Anomalia precipitació";
-	lAnomt20= "Anomalia temperatura";
+	lAnomp21= "Anomalia precipitació";
+	lAnomt21= "Anomalia temperatura";
 	//Cobertes del sol
 	gCobertesSol="Cobertes del sòl";
 	lcob15="Cobertes del sól 2015 (AMB)";
@@ -441,8 +441,8 @@ var lpatentsv;
 	lTempmit="Temperatura media";
 	lTempmax="Temperatura media máxima";
 	gAnom= "Anomalias climáticas";
-	lAnomp20= "Anomalía precipitación";
-	lAnomt20= "Anomalía temperatura";
+	lAnomp21= "Anomalía precipitación";
+	lAnomt21= "Anomalía temperatura";
 	//Cubiertas del suelo
 	gCobertesSol="Cubiertas del suelo";
 	lcob15="Cubiertas del suelo 2015 (AMB)";
@@ -626,8 +626,8 @@ var lpatentsv;
 	lTempmit="Average temperature";
 	lTempmax="Maximum average temperature";
 	gAnom= "Climate anomaly";
-	lAnomp20= "Rain anomaly";
-	lAnomt20= "Temperature anomaly";
+	lAnomp21= "Rain anomaly";
+	lAnomt21= "Temperature anomaly";
 	//Cobertes del sol
 	gCobertesSol="Land cover";
 	gCobertes="Land cover";

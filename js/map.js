@@ -530,7 +530,6 @@
 		title: lTempmit,
 		listMode: "hide-children"
 	});
-	//capes.push(tempMitjLayer);
 
 	var tempMitjMaxLayer = new MapImageLayer({
 		portalItem: {
@@ -541,29 +540,28 @@
 		title: lTempmax,
 		listMode: "hide-children"
 	});
-	//capes.push(tempMitjMaxLayer);
 
 
-	var anompp20Layer = new MapImageLayer({
-		portalItem: {
-			id: "82d819e071514e8582c77e671f686877"
+	var anompp21Layer = new MapImageLayer({
+		portalItem: { 
+		  id: "2b64dcf8713b4fccb295d0d06c1b773d" 
 		},
-		id: "", //modificar
+		id:"", //modificar
 		visible: false,
-		title: lAnomp20,
+		title: lAnomp21,
 		listMode: "hide-children"
-	});
+	  });
 	
 
-	var anomtmp20Layer = new MapImageLayer({
-		portalItem: {
-			id: "117e130c0f0a49bb8622b52e4baa72be"
+	var anomtmp21Layer = new MapImageLayer({
+		portalItem: { 
+		  id: "83c83f9da3814595887b7a7a23889f8c"
 		},
-		id: "",
+		id:"",
 		visible: false,
-		title: lAnomt20,
+		title: lAnomt21,
 		listMode: "hide-children"
-	});
+	  });
 
 
 	//grup de capes
@@ -571,7 +569,7 @@
 		title: gClima,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [radiacioLayer, tempMitjMaxLayer, tempMitjMinLayer, anomtmp20Layer, tempMitjLayer, anompp20Layer, precipitacioLayer],
+		layers: [radiacioLayer, tempMitjMaxLayer, tempMitjMinLayer, anomtmp21Layer, tempMitjLayer, anompp21Layer, precipitacioLayer],
 		opacity: 1
 	});
 
