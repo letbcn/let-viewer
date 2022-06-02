@@ -208,16 +208,6 @@ var lgini15;
 var lgini16;
 var lgini17;
 var lgini18;
-//Nivells renda
-var lrendab15;
-var lrendab16;
-var lrendab17;
-var lrendai15;
-var lrendai16;
-var lrendai17;
-var lrendaa15;
-var lrendaa16;
-var lrendaa17;
 //PIB
 var gPib;
 var lpibm16;
@@ -500,19 +490,6 @@ var lpatents15;
 	lgini16="2016";
 	lgini17="2017";
 	lgini18="2018";
-	//Nivells renda
-	gAmbestrbaix= "Renda baixa";
-	gAmbestrint= "Renda intermèdia";
-	gAmbestralt= "Renda alta";
-	lrendab15= "2015";
-	lrendab16= "2016";
-	lrendab17= "2017";
-	lrendai15= "2015";
-	lrendai16= "2016";
-	lrendai17= "2017";
-	lrendaa15="2015";
-	lrendaa16="2016";
-	lrendaa17="2017";
 	//PIB
 	gPib= "Producte Interior Brut";
 	lpibm16= "2016";
@@ -793,19 +770,6 @@ var lpatents15;
 	lgini16="2016";
 	lgini17="2017";
 	lgini18="2018";
-	//Nivells renda
-	gAmbestrbaix= "Renta baja";
-	gAmbestrint= "Renta intermedia";
-	gAmbestralt= "Renta alta";
-	lrendab15= "2015";
-	lrendab16= "2016";
-	lrendab17= "2017";
-	lrendai15= "2015";
-	lrendai16= "2016";
-	lrendai17= "2017";
-	lrendaa15="2015";
-	lrendaa16="2016";
-	lrendaa17="2017";
 	//PIB
 	gPib= "Producto Interior Bruto";
 	lpibm16= "2016";
@@ -1085,19 +1049,6 @@ var lpatents15;
 	lgini16="2016";
 	lgini17="2017";
 	lgini18="2018";
-	//Nivells renda
-	gAmbestrbaix= "Low income";
-	gAmbestrint= "Middle income";
-	gAmbestralt= "High income";
-	lrendab15= "2015";
-	lrendab16= "2016";
-	lrendab17= "2017";
-	lrendai15= "2015";
-	lrendai16= "2016";
-	lrendai17= "2017";
-	lrendaa15="2015";
-	lrendaa16="2016";
-	lrendaa17="2017";
 	//PIB
 	gPib= "Gross domestic product";
 	lpibm16= "2016";
