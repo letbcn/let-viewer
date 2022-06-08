@@ -21,7 +21,7 @@ require([
         };
 
         var layer = new FeatureLayer({
-            url: "https://openlab.uab.cat:6443/arcgis/rest/services/webmaps/estudis_publicacions/FeatureServer/0",
+            url: "https://lablet.uab.cat:6443/arcgis/rest/services/webmaps/estudis_publicacions/FeatureServer/0",
             outFields: ["*"],
             popupTemplate: popupInfo
         });
