@@ -1294,9 +1294,59 @@
 		 
 		  //Recollida selectiva
 		 
+		  var recollida15Layer = new MapImageLayer({
+			portalItem: {
+				id: "96d4bec769404f3abf9e4d1141669806"
+			},
+			id: "",
+			visible: false,
+			title: lrecollida15,
+			listMode: "hide-children"
+		});   
+		 
+		  var recollida16Layer = new MapImageLayer({
+			portalItem: {
+				id: "208c49ad6e604870b8a2015b2a274f3a"
+			},
+			id: "",
+			visible: false,
+			title: lrecollida16,
+			listMode: "hide-children"
+		});  
+		 
+		  var recollida17Layer = new MapImageLayer({
+			portalItem: {
+				id: "19e4b92c01c541f381db51b293dd7490"
+			},
+			id: "",
+			visible: false,
+			title: lrecollida17,
+			listMode: "hide-children"
+		});  
+		 
+		  var recollida18Layer = new MapImageLayer({
+			portalItem: {
+				id: "cb9c5e6dc9a349c0a28744e9c6ca1fd3"
+			},
+			id: "",
+			visible: false,
+			title: lrecollida18,
+			listMode: "hide-children"
+		}); 
+		 
+		  var recollida19Layer = new MapImageLayer({
+			portalItem: {
+				id: "ff32c140fb314a598806c18c327d4b52"
+			},
+			id: "",
+			visible: false,
+			title: lrecollida19,
+			listMode: "hide-children"
+		});
+		 
 		  var recollida20Layer = new MapImageLayer({
 			portalItem: {
-				id: "346c6a64a0114a5dbb1f705c62d642c0"
+				id: "df59da0a66844ac6bf7c381750eb80e2"
 			},
 			id: "",
 			visible: false,
@@ -1308,7 +1358,7 @@
 			title: gRecollida,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [recollida20Layer],
+			layers: [recollida15Layer,recollida16Layer,recollida17Layer,recollida18Layer,recollida19Layer,recollida20Layer],
 			opacity: 1
 		});
 	
@@ -1397,108 +1447,36 @@
 		});
 
 		//Contaminació atmosfèrica 
-		//xarxa contaminants
-
-		var xarxno213Layer = new MapImageLayer({
+		//xarxa contaminants - NO2
+	
+		var xarxno22021Layer = new MapImageLayer({
 			portalItem: {  
-			  id: "fe525dd9e178429cbb754d1becca21a6"
+			  id: "7b6a7f4cbbbe4d42b727f460db29d832"
 			},
 			id:'', //modificar
 			visible: false,
-			title: lxarxno213,
+			title: lxarxno22021,
 			listMode: "hide-children"
 		  });
-		  capes.push(xarxno213Layer);
-		
-		var xarxno214Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "c6367e982c444752944af45affe321d6"
-			},
-			id:'', //modificar
-			visible: false,
-			title: lxarxno214,
-			listMode: "hide-children"
-		  });
-		  capes.push(xarxno214Layer);
-		
-		var xarxno215Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "bdc8e0ef42a64de798b7ca07bb23837f"
-			},
-			id:'', //modificar
-			visible: false,
-			title: lxarxno215,
-			listMode: "hide-children"
-		  });
-		  capes.push(xarxno215Layer);
-		
-		var xarxno216Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "136f1a3a0d924b43b2c307f6dcc21b0e"
-			},
-			id:'', //modificar
-			visible: false,
-			title: lxarxno216,
-			listMode: "hide-children"
-		  });
-		  capes.push(xarxno216Layer);
+		  capes.push(xarxno22021Layer);
 
 		  var xarxano2GroupLayer = new GroupLayer({
 			title: gxarxno2,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [xarxno213Layer, xarxno214Layer, xarxno215Layer, xarxno216Layer],
+			layers: [xarxno22021Layer],
 			opacity: 1
 		  });
 
 		  //PM10
-		  var xarxpm1012Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "a97b6c611a08479fa4ddf804b7d577b9"
-			},
-			id:'', //modificar
-			visible: false,
-			title: lxarxpm1012,
-			listMode: "hide-children"
-		  });   
 		 
-		  var xarxpm1013Layer = new MapImageLayer({
+		  var xarxpm102021Layer = new MapImageLayer({
 			portalItem: {  
-			  id: "e7b4cc88f1bd44fe8e14f9caf6ef16a5"
+			  id: "3f07093c104b4269b8ae1b50ba6e5b60"
 			},
 			id:'', //modificar
 			visible: false,
-			title: lxarxpm1013,
-			listMode: "hide-children"
-		  });  
-		 
-		  var xarxpm1014Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "41cf4790a830488db7394da51610e6db"
-			},
-			id:'', //modificar
-			visible: false,
-			title: lxarxpm1014,
-			listMode: "hide-children"
-		  }); 
-		 
-		  var xarxpm1015Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "e530f52d3c784ea9b0d9242d6cac3b57"
-			},
-			id:'', //modificar
-			visible: false,
-			title: lxarxpm1015,
-			listMode: "hide-children"
-		  });
-
-		  var xarxpm1016Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "5d9bdcc2b93c475aafcf6a72d6a14321"
-			},
-			id:'', //modificar
-			visible: false,
-			title: lxarxpm1016,
+			title: lxarxpm102021,
 			listMode: "hide-children"
 		  });
 
@@ -1506,51 +1484,12 @@
 			title: gxarxpm10,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [xarxpm1012Layer, xarxpm1013Layer, xarxpm1014Layer, xarxpm1015Layer, xarxpm1016Layer],
+			layers: [xarxpm102021Layer],
 			opacity: 1
 		  });
 
 	//PM2.5
-		var xarxpm2512Layer = new MapImageLayer({
-		portalItem: {  
-		  id: "bb9614ce90c44ff2bea0cd16431b9172"
-		},
-		id:'', //modificar
-		visible: false,
-		title: lxarxpm2512,
-		listMode: "hide-children"
-	 	 });
-	  
-	
-	var xarxpm2513Layer = new MapImageLayer({
-		portalItem: {  
-		  id: "8d17f5cdb38e4d5b9416cf82d217999e"
-		},
-		id:'', //modificar
-		visible: false,
-		title: lxarxpm2513,
-		listMode: "hide-children"
-	  });
-	
-	var xarxpm2514Layer = new MapImageLayer({
-		portalItem: {  
-		  id: "2f0ec565311349cb828fc040c434e004"
-		},
-		id:'', //modificar
-		visible: false,
-		title: lxarxpm2514,
-		listMode: "hide-children"
-	  });
-	 	
-		var xarxpm2515Layer = new MapImageLayer({
-		portalItem: {  
-		  id: "069963530fe04afa912edf1b0f21d8b8"
-		},
-		id:'', //modificar
-		visible: false,
-		title: lxarxpm2515,
-		listMode: "hide-children"
-	  });
+
 	  
 		var xarxpm2516Layer = new MapImageLayer({
 			portalItem: {  
@@ -1566,7 +1505,7 @@
 			title: gxarxpm25,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [xarxpm2512Layer, xarxpm2513Layer, xarxpm2514Layer, xarxpm2515Layer, xarxpm2516Layer],
+			layers: [xarxpm2516Layer],
 			opacity: 1
 		  });
 	
