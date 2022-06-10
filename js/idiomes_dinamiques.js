@@ -139,9 +139,9 @@ var lgas18;
 var lgas19;
 var lgas20
 //Generacio residus
-var gGeneracioresidus;
-var gResidusmuni;
-var lresidumuni20;
+var gResidus;
+var gRecollida;
+var lrecollida20;
 var gResidushabi;
 var lgeneresiduhabi15;
 var lgeneresiduhabi16;
@@ -426,10 +426,10 @@ var lpatents15;
 	lgas19="2019";
 	lgas20= "2020";
 	//Generacio residus
-	gGeneracioresidus= "Generació de residus";
-	gResidusmuni= "Municipals";
-	lresidumuni20= "2020";
-	gResidushabi= "Per habitants";
+	gResidus= "Residus";
+	gRecollida= "Recollida selectiva";
+	lrecollida20= "2020";
+	gResidushabi= "Generació residus per habitants";
 	lgeneresiduhabi15= "2015";
 	lgeneresiduhabi16= "2016";
 	lgeneresiduhabi17= "2017";
@@ -705,18 +705,18 @@ var lpatents15;
 	lgas18="2018";
 	lgas19="2019";
 	lgas20= "2020";
-	//Generacio residus
-	gGeneracioresidus= "Generación de residuos";
-	gResidusmuni= "Municipales";
-	lresidumuni20= "2020";
-	gResidushabi= "Por habitante";
+	//Residuos
+	gResidus= "Residuos";
+	gRecollida= "Recogida selectiva";
+	lrecollida20= "2020";
+	gResidushabi= "Generación residuos por habitante";
 	lgeneresiduhabi15= "2015";
 	lgeneresiduhabi16="2016";
 	lgeneresiduhabi17= "2017";
 	lgeneresiduhabi18="2018";
 	lgeneresiduhabi19="2019";
 	lgeneresiduhabi20= "2020";
-	//Contaminació atmosfèrica
+	//Contaminación atmosférica
 	gxarxContm= "Contaminación atmosférica";
 	gxarxno2= "NO2";
 	lxarxno213="2013";
@@ -986,10 +986,10 @@ var lpatents15;
 	lgas19="2019";
 	lgas20= "2020";
 	//Generacio residus
-	gGeneracioresidus= "Waste generation";
-	gResidusmuni= "Municipal";
-	lresidumuni20= "2020";
-	gResidushabi= "Per capita";
+	gResidus= "Waster";
+	gRecollida= "Recycling";
+	lrecollida20= "2020";
+	gResidushabi= "Waste per capita";
 	lgeneresiduhabi15= "2015";
 	lgeneresiduhabi16="2016";
 	lgeneresiduhabi17="2017";

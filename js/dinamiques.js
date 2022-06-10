@@ -92,8 +92,8 @@
 		  listMode:"hide"
         });
 		
-
-
+		
+		
 		
 		//**********Limits Administratius ***********//
 		//capes limits
@@ -339,7 +339,7 @@
 
 		  var anompp21Layer = new MapImageLayer({
 			portalItem: { 
-			  id: "" 
+			  id: "2b64dcf8713b4fccb295d0d06c1b773d" 
 			},
 			id:"", //modificar
 			visible: false,
@@ -1292,25 +1292,23 @@
 		  });
 
 		 
-		  //Generacio residus
+		  //Recollida selectiva
 		 
-		  var genresidusmuni20Layer = new MapImageLayer({
+		  var recollida20Layer = new MapImageLayer({
 			portalItem: {
 				id: "346c6a64a0114a5dbb1f705c62d642c0"
 			},
 			id: "",
 			visible: false,
-			title: lresidumuni20,
+			title: lrecollida20,
 			listMode: "hide-children"
 		});
-		capes.push(genresidusmuni20Layer); 
 		 
-
-		var residusmuniGroupLayer = new GroupLayer({
-			title: gResidusmuni,
+		var recollidaselecGroupLayer = new GroupLayer({
+			title: gRecollida,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [genresidusmuni20Layer],
+			layers: [recollida20Layer],
 			opacity: 1
 		});
 	
@@ -1390,11 +1388,11 @@
 			opacity: 1
 		});
 
-		var generacioresidusGroupLayer = new GroupLayer({
-			title: gGeneracioresidus,
+		var residusGroupLayer = new GroupLayer({
+			title: gResidus,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [residushabiGroupLayer, residusmuniGroupLayer],
+			layers: [recollidaselecGroupLayer, residushabiGroupLayer],
 			opacity: 1
 		});
 
@@ -1692,7 +1690,7 @@
 			title: gIndSocEco,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [gasosGroupLayer, xarxacontmGroupLayer, generacioresidusGroupLayer, consumAiguaGroupLayer, consumEnergGroupLayer, ecoGroupLayer, funcionalitatGroupLayer, actvegetacGroupLayer, 
+			layers: [gasosGroupLayer, xarxacontmGroupLayer, residusGroupLayer, consumAiguaGroupLayer, consumEnergGroupLayer, ecoGroupLayer, funcionalitatGroupLayer, actvegetacGroupLayer, 
 				cobusosGroupLayer, climaGroupLayer],
 			opacity: 1
 		  });
@@ -2597,7 +2595,7 @@
 		  
 			if (item.layer.id =="AMB" || item.layer.id =="RMB" || item.layer.id =="CAT"){
 				return;
-			}
+			}			
 		
 			if (item.layer.type != "group") {
 			  // don't show legend twice
@@ -2605,7 +2603,7 @@
 				content: "legend",
 				open: false
 			  };
-			}
+			} 
 
 
          if (item.layer.type != "group") {
@@ -3212,145 +3210,4 @@
 				}
 			}
 		});
-
-
- // Graphs beneath map
-
- 	const csvFile = "data/municipis.csv";
-
-	window.onload = function() {
-		loadMunicipis();
-		loadGraph('graph1');
-		loadGraph('graph2');
-		createMunicipiSelector('municipi1');
-		createMunicipiSelector('municipi2');
-		createIndicadorSelector('indicador1');
-		createIndicadorSelector('indicador2');
-	}
-
-	function loadMunicipis() {
-		var results = Papa.parse(csvFile, {
-			header: true,
-			download: true,
-			complete: function(results) {
-				console.log(results);
-			},
-		});
-
-	}
-
-      function loadGraph(element) {
-		  var ctx = document.getElementById(element).getContext('2d');
-		  var myChart = new Chart(ctx, {
-			  type: 'line',
-			  data: {
-				  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-				  datasets: [{
-					  label: '# of Votes',
-					  data: [12, 19, 3, 5, 2, 3],
-					  backgroundColor: [
-						  'rgba(255, 99, 132, 0.2)',
-						  'rgba(54, 162, 235, 0.2)',
-						  'rgba(255, 206, 86, 0.2)',
-						  'rgba(75, 192, 192, 0.2)',
-						  'rgba(153, 102, 255, 0.2)',
-						  'rgba(255, 159, 64, 0.2)'
-					  ],
-					  borderColor: [
-						  'rgba(255, 99, 132, 1)',
-						  'rgba(54, 162, 235, 1)',
-						  'rgba(255, 206, 86, 1)',
-						  'rgba(75, 192, 192, 1)',
-						  'rgba(153, 102, 255, 1)',
-						  'rgba(255, 159, 64, 1)'
-					  ],
-					  borderWidth: 1
-				  }]
-			  },
-			  options: {
-				  inputs : {
-					  min: 20,
-					  max: 80,
-					  count: 8,
-					  decimals: 2,
-					  continuity: 1
-				  },
-				  scales: {
-					  y: {
-						  stacked: true
-					  }
-				  },
-				  plugins: {
-					  filler: {
-						  propagate: false
-					  },
-					  'samples-filler-analyser': {
-						  target: 'chart-analyser'
-					  }
-				  },
-				  interaction: {
-					  intersect: false,
-				  },
-			  },
-		  });
-	  }
-
-	  function createSelector(idElement, items, execMethod, selected){
-		  var select = document.createElement( 'select' );
-
-		  items.forEach(function( item ) {
-
-		  	  var option = document.createElement( 'option' );
-			  option.value = item[0];
-			  option.textContent =  item[1];
-
-			  if(typeof selected !== 'undefined' && selected === option.value) {
-				  option.selected =  item[1];
-			  }
-
-			  select.appendChild( option );
-		  });
-
-		  var output = document.getElementById(idElement);
-
-		  if(typeof execMethod !== 'undefined') {
-			  select.addEventListener("change", execMethod);
-		  }
-
-		  output.appendChild( select );
-	  }
-
-	  function createMunicipiSelector(idElement) {
-      	const municipis = [
-			  ['80018','Abrera'],
-			  ['80039','Alella'],
-			  ['80057','Ametlla del VallÞs'],
-			  ['80060','Arenys de Mar'],
-			  ['80076','Arenys de Munt'],
-			  ['80095','Argentona'],
-			  ['80137','Avinyonet del PenedÞs'],
-			  ['80142','Aiguafreda'],
-			  ['80155','Badalona'],
-			  ['80193','Barcelona'],
-			  ['80207','Begues'],
-			  ['80235','Bigues i Riells'],
-			  ['80272','les Cabanyes'],
-			  ['80291','Cabrera de Mar'],
-			  ['80305','Cabrils'],
-		  ];
-		  createSelector(idElement, municipis,selectMunicipi)
-
-	  }
-
- function createIndicadorSelector(idElement) {
-	 const indicators  = [
-		 ['1','NDVI'],
-		 ['2','Variació dinàmica - anomalies de precipitació'],
-	 ];
-	 createSelector(idElement, indicators);
- }
-
- function selectMunicipi(ev) {
-		console.log(ev)
-
- }
+	   
