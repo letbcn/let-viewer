@@ -688,17 +688,6 @@
 	  });
 	  capes.push(biomassafoliarLayer);
 
-	  var biomassatotalLayer = new MapImageLayer({
-		portalItem: {  
-		  id: "bccc5bb1c60c42b39289b9a77f98457b"
-		},
-		id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
-		visible: false,
-		title: lbiotot,
-		listMode: "hide-children"
-	  });
-	  capes.push(biomassatotalLayer);
-
 	  var hmitjaLayer = new MapImageLayer({
 		portalItem: {  
 		  id: "bccc5bb1c60c42b39289b9a77f98457b"
@@ -714,7 +703,7 @@
 		title: gVarbrat,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [hmitjaLayer, biomassatotalLayer, biomassafoliarLayer],
+		layers: [hmitjaLayer, biomassafoliarLayer],
 		opacity: 1
 	  }); 
 

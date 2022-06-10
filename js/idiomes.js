@@ -77,7 +77,6 @@ var lndvi20;
 //Variables arbrat
 var gVarbrat;
 var lbiofol;
-var lbiotot;
 var lhmitja;
 //Espai urbà
 var gUrba;
@@ -268,7 +267,6 @@ var lpatentsv;
 	//Variables arbrat
 	gVarbrat= "Variables biofísiques del arbrat";
 	lbiofol= "Biomassa foliar";
-	lbiotot= "Biomassa aèria total";
 	lhmitja= "Alçada mitjana";
 	//Espai urbà
 	gUrba="Espai urbà";
@@ -459,7 +457,6 @@ var lpatentsv;
 	//Variables arbrado
 	gVarbrat= "Variables biofísicas del arbrado";
 	lbiofol= "Biomasa foliar";
-	lbiotot= "Biomasa aérea total";
 	lhmitja= "Altura media";
 	//Espacio urbano
 	gUrba="Espacio urbano";
@@ -587,7 +584,7 @@ var lpatentsv;
 	//límites protección ambiental
 	gProtecc= "Environmental Protection Limits"
 	lpein="Natural Interest Spaces Plan(PEIN)";
-	lxnatura="Red Natura 2000";
+	lxnatura="Natura 2000";
 	lenpe="Natural Special Protection Spaces(ENPE)";
 	//cartografia de base
 	gCartob= "Cartographical base";
@@ -638,15 +635,14 @@ var lpatentsv;
 	lusos17="Land uses 2017";
 	//Espai natural
 	gNatural="Natural spaces";
-	lhic="Habitat of priority Community interest";
-	lhab="Habitat";
+	lhic="Habitats of priority Community interest";
+	lhab="Habitats";
 	lboscoss="Singular forests";
 	lbiodsing= "Singular biodiversity";
 	lndvi20 ="Normalized Difference Vegetation Index (NDVI)";
 	//Variables arbrat
 	gVarbrat= "Woodland biophysical variables";
 	lbiofol= "Foliar biomass";
-	lbiotot= "Biomassa aèria total";
 	lhmitja= "Total aerial biomass";
 	//Espai urbà
 	gUrba="Urban spaces";
