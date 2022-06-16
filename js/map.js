@@ -98,7 +98,7 @@
 
 	var comarcacercaLayer = new FeatureLayer({
 			portalItem: {  
-				id: "b1cb0e81815b4557b977d9772dc52289"
+				id: "a5fea4e24c124394be4658bef5ddf3da"
 			  },
 			  id:"",
 			  visible: true,
@@ -114,14 +114,12 @@
 		title: lcomarca,
 		listMode: "hide-children"
 		});
-	capes.push(comarquesLayer);
-
 
 	//comarques per a la cerca
 
 	var municipiscercaLayer = new FeatureLayer({
 		portalItem: {  
-			id: "3f51bf9674064661ace82a71da68de78"
+			id: "3db378fe1bfb49b8b0fc2c859c69da03"
 		  },
 		  id:"",
 		  visible: true,
@@ -200,8 +198,6 @@
 		layers: [enpeLayer, xnaturaLayer, peinLayer],
 		opacity: 1
 	});
-
-
 
 	//**********Cartografia de base topogràfica***********//
 	//capes
