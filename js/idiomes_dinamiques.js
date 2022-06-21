@@ -157,6 +157,12 @@ var lgeneresiduhabi20;
 //Contaminació
 var gxarxContm;
 var gxarxno2;
+var lxarxno22015;
+var lxarxno22016;
+var lxarxno22017;
+var lxarxno22018;
+var lxarxno22019;
+var lxarxno22020;
 var lxarxno22021;
 var gxarxpm10;
 var lxarxpm102021;
@@ -438,6 +444,12 @@ var lpatents15;
 	//Contaminació atmosfèrica
 	gxarxContm= "Contaminació atmosfèrica";
 	gxarxno2= "NO2";
+	lxarxno22015="2015";
+	lxarxno22016="2016";
+	lxarxno22017="2017";
+	lxarxno22018="2018";
+	lxarxno22019="2019";
+	lxarxno22020="2020";
 	lxarxno22021="2021";
 	gxarxpm10= "PM10";
 	lxarxpm102021= "2021";

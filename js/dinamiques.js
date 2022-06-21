@@ -1467,6 +1467,66 @@
 		//Contaminació atmosfèrica 
 		//xarxa contaminants - NO2
 	
+		var xarxno22015Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "7b6a7f4cbbbe4d42b727f460db29d832"
+			},
+			id:'', //modificar
+			visible: false,
+			title: lxarxno22015,
+			listMode: "hide-children"
+		  });
+		
+		var xarxno22016Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "7b6a7f4cbbbe4d42b727f460db29d832"
+			},
+			id:'', //modificar
+			visible: false,
+			title: lxarxno22016,
+			listMode: "hide-children"
+		  });
+		
+		var xarxno22017Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "7b6a7f4cbbbe4d42b727f460db29d832"
+			},
+			id:'', //modificar
+			visible: false,
+			title: lxarxno22017,
+			listMode: "hide-children"
+		  });
+		 
+		var xarxno22018Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "7b6a7f4cbbbe4d42b727f460db29d832"
+			},
+			id:'', //modificar
+			visible: false,
+			title: lxarxno22018,
+			listMode: "hide-children"
+		  });
+		
+		var xarxno22019Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "7b6a7f4cbbbe4d42b727f460db29d832"
+			},
+			id:'', //modificar
+			visible: false,
+			title: lxarxno22019,
+			listMode: "hide-children"
+		  });
+		
+		var xarxno22020Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "7b6a7f4cbbbe4d42b727f460db29d832"
+			},
+			id:'', //modificar
+			visible: false,
+			title: lxarxno22020,
+			listMode: "hide-children"
+		  });
+		
 		var xarxno22021Layer = new MapImageLayer({
 			portalItem: {  
 			  id: "7b6a7f4cbbbe4d42b727f460db29d832"
@@ -1476,13 +1536,12 @@
 			title: lxarxno22021,
 			listMode: "hide-children"
 		  });
-		  capes.push(xarxno22021Layer);
 
 		  var xarxano2GroupLayer = new GroupLayer({
 			title: gxarxno2,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [xarxno22021Layer],
+			layers: [xarxno22015Layer,xarxno22016Layer,xarxno22017Layer,xarxno22018Layer,xarxno22019Layer,xarxno22020Layer,xarxno22021Layer],
 			opacity: 1
 		  });
 
