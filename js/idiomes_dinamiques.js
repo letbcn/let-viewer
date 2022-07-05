@@ -338,7 +338,7 @@ var lpatents15;
 	lAnomt20= "2020";
 	lAnomt21="2021";
 	//Usos i Cobertes del sol
-	gCobusos= "Canvi dels usos del sòl";
+	gCobusos= "Cobertes del sòl";
 	gCob= "Cobertes";
 	lcob56= "1956";
 	lcob93= "1993";
@@ -455,7 +455,7 @@ var lpatents15;
 	lxarxpm102021= "2021";
 	gxarxpm25= "PM2,5";
 	lxarxpm2516= "2016";
-	gGasos= "Gasos efecte hivernacle";
+	gGasos= "Gasos d'efecte hivernacle";
 	gco2electricsec="Per sector";
 	lCo2electsect16= "2016";
 	lCo2electhab16= "2016";
@@ -477,7 +477,7 @@ var lpatents15;
 	lpobla20= "2020";
 	ldensitat20= "Densitat 2020";
 	//Renda
-	gAmbestrenda= "Renda"
+	gAmbestrenda= "Nivell de renda"
 	//origen renda
 	gOrigenrenda= "Origen de la renda";
 	lorigenrenda15= "2015";
@@ -491,7 +491,7 @@ var lpatents15;
 	lgini17="2017";
 	lgini18="2018";
 	//PIB
-	gPib= "Producte Interior Brut";
+	gPib= "Productivitat";
 	lpibm16= "2016";
 	lpibm17= "2017";
 	lpibm18= "2018";
@@ -516,7 +516,7 @@ var lpatents15;
 	gdesig= "Desigualtat";
 	ldesig18= "2018";
 	//IST
-	gist= "Índex socioeconòmic territorial";
+	gist= "Nivell socioeconòmic";
 	list15= "2015";
 	list16= "2016";
 	list17= "2017";
