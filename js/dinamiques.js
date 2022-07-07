@@ -1715,11 +1715,44 @@
 
 		//Demografia
 
+		var poblacio00Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "714099c4913144c493b6fe79187e481d"
+			},
+			id:'', 
+			visible: false,
+			title: lpobla00,
+			listMode: "hide-children"
+		  });
+		  capes.push(poblacio00Layer);
+		
+		var poblacio05Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "5c495ff2b81749abb2373fcf41aa63f1"
+			},
+			id:'', 
+			visible: false,
+			title: lpobla05,
+			listMode: "hide-children"
+		  });
+		  capes.push(poblacio05Layer);
+		
+		var poblacio10Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "6d4a64d32d5843528e74315c01d3e3ea"
+			},
+			id:'', 
+			visible: false,
+			title: lpobla10,
+			listMode: "hide-children"
+		  });
+		  capes.push(poblacio10Layer);
+		
 		var poblacio15Layer = new MapImageLayer({
 			portalItem: {  
 			  id: "b7eb8a73c9ec41b895cb92cbc2004e8e"
 			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			id:'',
 			visible: false,
 			title: lpobla15,
 			listMode: "hide-children"
@@ -1730,13 +1763,46 @@
 			portalItem: {  
 			  id: "9bb5c44018ed4fb48877f80cf4c67787"
 			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			id:'', 
 			visible: false,
 			title: lpobla20,
 			listMode: "hide-children"
 		  });
 		  capes.push(poblacio20Layer);
 
+		  var densitat00Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "76ef927b9dd94bd8ab86c53f19d7106e"
+			},
+			id:'',
+			visible: false,
+			title: ldensitat00,
+			listMode: "hide-children"
+		  });
+		  capes.push(densitat00Layer); 
+		 
+		  var densitat05Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "20b9e2987f3b495ba59acf52edecfe42"
+			},
+			id:'',
+			visible: false,
+			title: ldensitat05,
+			listMode: "hide-children"
+		  });
+		  capes.push(densitat05Layer); 
+		 
+		  var densitat10Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "0f1ae1716c224cf6bfb382b35569655f"
+			},
+			id:'',
+			visible: false,
+			title: ldensitat10,
+			listMode: "hide-children"
+		  });
+		  capes.push(densitat10Layer);
+		 
 		  var densitat15Layer = new MapImageLayer({
 			portalItem: {  
 			  id: "555d8b1013cb4323923fe0bdaecd1293"
@@ -1844,7 +1910,8 @@
 			title: gDemo,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [envellimentGroupLayer, densitat15Layer, densitat20Layer, poblacio15Layer, poblacio20Layer],
+			layers: [envellimentGroupLayer,densitat00Layer, densitat05Layer, densitat10Layer, densitat15Layer, densitat20Layer,
+				poblacio00Layer, poblacio05Layer, poblacio10Layer, poblacio15Layer, poblacio20Layer],
 			opacity: 1
 		  });
 		  
@@ -1914,45 +1981,56 @@
 
 		  //Atur
 
-		  var atur17Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "bf4cde5b54214c8093658e6f7701b293"
-			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
-			visible: false,
-			title: latur17,
-			listMode: "hide-children"
-		  });
-		  capes.push(atur17Layer);
-
 		  var atur18Layer = new MapImageLayer({
 			portalItem: {  
-			  id: "bf4cde5b54214c8093658e6f7701b293"
+			  id: "b304ab3db90c45afb17fb6dbaab174f0"
 			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			id:'', 
 			visible: false,
 			title: latur18,
 			listMode: "hide-children"
 		  });
-		  capes.push(atur18Layer);
-
+		  capes.push(atur18Layer); 
+		 
 		  var atur19Layer = new MapImageLayer({
 			portalItem: {  
-			  id: "bf4cde5b54214c8093658e6f7701b293"
+			  id: "122de07fd3d04b3a8edad0e830a07895"
 			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			id:'', 
 			visible: false,
 			title: latur19,
 			listMode: "hide-children"
 		  });
 		  capes.push(atur19Layer);
 
+		  var atur20Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "6d66063236044426b6728ef9b2570c31"
+			},
+			id:'', 
+			visible: false,
+			title: latur20,
+			listMode: "hide-children"
+		  });
+		  capes.push(atur20Layer);
+
+		  var atur21Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "82960599c53d46cea8e1a065115cdd13"
+			},
+			id:'', 
+			visible: false,
+			title: latur21,
+			listMode: "hide-children"
+		  });
+		  capes.push(atur21Layer);
+
 
 		  var aturGroupLayer = new GroupLayer({
 			title: gAtur,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [atur17Layer, atur18Layer, atur19Layer],
+			layers: [atur18Layer, atur19Layer, atur20Layer, atur21Layer],
 			opacity: 1
 		  });
 

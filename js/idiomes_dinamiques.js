@@ -191,9 +191,15 @@ var gAmbestrint;
 var gAmbestralt;
 //Demografia
 var gDemo;
+var lpobla00;
+var lpobla05;
+var lpobla10;
 var lpobla15;
-var ldensitat15;
 var lpobla20;
+var ldensitat00;
+var ldensitat05;
+var ldensitat10;
+var ldensitat15;
 var ldensitat20;
 //Renda
 //origen renda
@@ -226,9 +232,10 @@ var ljoves17;
 var ljoves18;
 //Atur
 var gAtur;
-var latur17;
 var latur18;
 var latur19;
+var latur20;
+var latur21;
 //Desigualtat
 var gdesig;
 var ldesig18;
@@ -472,9 +479,15 @@ var lpatents15;
 	gSocio="Indicadors socioeconòmics";
 	//Demografia
 	gDemo="Població";
+	lpobla00="2000";
+	lpobla05="2005";
+	lpobla10="2010";
 	lpobla15= "2015";
-	ldensitat15= "Densitat 2015";
 	lpobla20= "2020";
+	ldensitat00="Densitat 2000";
+	ldensitat05="Densitat 2005";
+	ldensitat10="Densitat 2010";
+	ldensitat15= "Densitat 2015";
 	ldensitat20= "Densitat 2020";
 	//Renda
 	gAmbestrenda= "Nivell de renda"
@@ -509,9 +522,10 @@ var lpatents15;
 	ljoves18= "2018";
 	//Atur
  	gAtur= "Atur";
-	latur17="2017";
-	latur18= "2018";
-	latur19= "2019";
+	latur18="2018";
+	latur19="2019";
+	latur20= "2020";
+	latur21= "2021";
 	//Desigualtat
 	gdesig= "Desigualtat";
 	ldesig18= "2018";
@@ -746,9 +760,15 @@ var lpatents15;
 	gSocio="Indicadores socioeconómicos";
 	//Demografia
 	gDemo="Población";
+	lpobla00="2000";
+	lpobla05="2005";
+	lpobla10="2010";
 	lpobla15= "2015";
-	ldensitat15= "Densidad 2015";
 	lpobla20= "2020";
+	ldensitat00="Densidad 2000";
+	ldensitat05="Densidad 2005";
+	ldensitat10="Densidad 2010";
+	ldensitat15= "Densidad 2015";
 	ldensitat20= "Densidad 2020";
 	//Renda
 	gAmbestrenda= "Renta"
@@ -783,9 +803,10 @@ var lpatents15;
 	ljoves18= "2018";
 	//Atur
  	gAtur= "Desempleo";
-	latur17="2017";
-	latur18= "2018";
-	latur19= "2019";
+	latur18="2018";
+	latur19="2019";
+	latur20= "2020";
+	latur21= "2021";
 	//Desigualtat
 	gdesig= "Desigualdad";
 	ldesig18= "2018";
@@ -1019,9 +1040,15 @@ var lpatents15;
 	gSocio="Socio-economic indicators";
 	//Demografia
 	gDemo="Population";
+	lpobla00="2000";
+	lpobla05="2005";
+	lpobla10="2010";
 	lpobla15= "2015";
-	ldensitat15= "Density 2015";
 	lpobla20= "2020";
+	ldensitat00="Density 2000";
+	ldensitat05="Density 2005";
+	ldensitat10="Density 2010";
+	ldensitat15= "Density 2015";
 	ldensitat20= "Density 2020";
 	//Renda
 	gAmbestrenda= "Income"
@@ -1056,9 +1083,10 @@ var lpatents15;
 	ljoves18= "2018";
 	//Atur
  	gAtur= "Unemployement";
-	latur17="2017";
-	latur18= "2018";
-	latur19= "2019";
+	latur18="2018";
+	latur19="2019";
+	latur20= "2020";
+	latur21= "2021";
 	//Desigualtat
 	gdesig= "Inequality";
 	ldesig18= "2018";
