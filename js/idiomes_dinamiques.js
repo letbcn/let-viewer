@@ -215,10 +215,13 @@ var lgini16;
 var lgini17;
 var lgini18;
 //PIB
+var gProduct;
 var gPib;
-var lpibm16;
-var lpibm17;
-var	lpibm18;
+var	lpib15;
+var	lpib16;
+var	lpib17;
+var	lpib18;
+var	lpib19;
 //Formacio
 var gForma;
 var gbaixaq;
@@ -265,6 +268,9 @@ var ldehabit20;
 //Estrangers
 var gMigra;
 var gMigrants;
+var lmigra00;
+var lmigra05;
+var lmigra10;
 var lmigra15;
 var lmigra20;
 var gAmbestestrang;
@@ -504,10 +510,13 @@ var lpatents15;
 	lgini17="2017";
 	lgini18="2018";
 	//PIB
-	gPib= "Productivitat";
-	lpibm16= "2016";
-	lpibm17= "2017";
-	lpibm18= "2018";
+	gProduct="Productivitat"
+	gPib= "Producte Interior Brut Territorial";
+	lpib15="2015";
+	lpib16="2016";
+	lpib17="2017";
+	lpib18= "2018";
+	lpib19= "2019";
 	//Formacio
 	gForma= "Formació";
 	gbaixaq= "Treballadors de baixa qualificació";
@@ -555,6 +564,9 @@ var lpatents15;
 	//Estrangers
 	gMigra= "Migracions";
 	gMigrants= "Població estrangera";
+	lmigra00= "2000";
+	lmigra05= "2005";
+	lmigra10= "2010";
 	lmigra15= "2015";
 	lmigra20= "2020";
 	gAmbestestrang="Estrangers de països en desenvolupament";
@@ -785,10 +797,13 @@ var lpatents15;
 	lgini17="2017";
 	lgini18="2018";
 	//PIB
-	gPib= "Producto Interior Bruto";
-	lpibm16= "2016";
-	lpibm17= "2017";
-	lpibm18= "2018";
+	gProduct="Productividad"
+	gPib= "Producto Interior Bruto Territorial";
+	lpib15="2015";
+	lpib16="2016";
+	lpib17="2017";
+	lpib18= "2018";
+	lpib19= "2019";
 	//Formacio
 	gForma= "Formación";
 	gbaixaq= "Trabajadores de baja cualificación";
@@ -836,6 +851,9 @@ var lpatents15;
 	//Estrangers
 	gMigra= "Migraciones";
 	gMigrants= "Población extranjera";
+	lmigra00= "2000";
+	lmigra05= "2005";
+	lmigra10= "2010";
 	lmigra15= "2015";
 	lmigra20= "2020";
 	gAmbestestrang="Extranjeros de países en desarrollo";
@@ -1065,10 +1083,13 @@ var lpatents15;
 	lgini17="2017";
 	lgini18="2018";
 	//PIB
-	gPib= "Gross domestic product";
-	lpibm16= "2016";
-	lpibm17= "2017";
-	lpibm18= "2018";
+	gProduct="Productivity"
+	gPib= "Territorial Gross domestic product";
+	lpib15="2015";
+	lpib16="2016";
+	lpib17="2017";
+	lpib18= "2018";
+	lpib19= "2019";
 	//Formacio
 	gForma= "Qualification";
 	gbaixaq= "Low qualification workers";
@@ -1116,6 +1137,9 @@ var lpatents15;
 	//Estrangers
 	gMigra= "Migrations";
 	gMigrants= "Foreign population";
+	lmigra00= "2000";
+	lmigra05= "2005";
+	lmigra10= "2010";
 	lmigra15= "2015";
 	lmigra20= "2020";
 	gAmbestestrang="Foreigners from developing countries";

@@ -1807,7 +1807,7 @@
 			portalItem: {  
 			  id: "555d8b1013cb4323923fe0bdaecd1293"
 			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			id:'', 
 			visible: false,
 			title: ldensitat15,
 			listMode: "hide-children"
@@ -1818,7 +1818,7 @@
 			portalItem: {  
 			  id: "1314acf155df4c428bcb9a9511c0a7b7"
 			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			id:'', 
 			visible: false,
 			title: ldensitat20,
 			listMode: "hide-children"
@@ -1830,7 +1830,7 @@
 			portalItem: {  
 			  id: "e25a05976efd47828e27c2b8635de459"
 			},
-			id:'', //modificar
+			id:'', 
 			visible: false,
 			title: lenve18,
 			listMode: "hide-children"
@@ -1860,7 +1860,7 @@
 			portalItem: {  
 			  id: "b5dd9f9e662c4cd2b2224d4db2256f05"
 			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			id:'', 
 			visible: false,
 			title: lmajors15,
 			listMode: "hide-children"
@@ -1871,7 +1871,7 @@
 			portalItem: {  
 			  id: "f28564d047124690b544884aa4f0c440"
 			},
-			id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+			id:'', 
 			visible: false,
 			title: lmajors16,
 			listMode: "hide-children"
@@ -2152,33 +2152,61 @@
 
 		//Moviments migratoris
 
+		var migrants00Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "f9828c554e4d479faa3e3296fe8a398c"
+			},
+			id:'', 
+			visible: false,
+			title: lmigra00,
+			listMode: "hide-children"
+		  });
+		
+		var migrants05Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "af135b037a4b4906b75781df438cd208"
+			},
+			id:'', 
+			visible: false,
+			title: lmigra05,
+			listMode: "hide-children"
+		  });
+		
+		var migrants10Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "af621908e2d84203b574ab7f21ea4d54"
+			},
+			id:'', 
+			visible: false,
+			title: lmigra10,
+			listMode: "hide-children"
+		  });
+		
 		var migrants15Layer = new MapImageLayer({
 			portalItem: {  
-			  id: "ff1d17ed5c2f4b09b1c0374ab9d57602"
+			  id: "72963c1517e4489bbd30d48d3e11d54e"
 			},
-			id:'', //modificar
+			id:'', 
 			visible: false,
 			title: lmigra15,
 			listMode: "hide-children"
 		  });
-		  capes.push(migrants15Layer);
 		
 		var migrants20Layer = new MapImageLayer({
 			portalItem: {  
-			  id: "ff1d17ed5c2f4b09b1c0374ab9d57602"
+			  id: "0d06b721c1ff44a892f5a8e60f944723"
 			},
-			id:'', //modificar
+			id:'', 
 			visible: false,
 			title: lmigra20,
 			listMode: "hide-children"
 		  });
-		  capes.push(migrants20Layer);
 
 		  var inmigracioGroupLayer = new GroupLayer({
 			title: gMigrants,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [migrants15Layer, migrants20Layer],
+			layers: [migrants00Layer, migrants05Layer, migrants10Layer, migrants15Layer, migrants20Layer],
 			opacity: 1
 		  });
 
@@ -2421,46 +2449,71 @@
 			opacity: 1
 		  });
 
-		//PIB 
+		//Productivitat
+		
+		var pibmunicipal15Layer = new MapImageLayer({
+			portalItem: {
+				id: "2356492ef5594f5a931ed897c9c20fcb"
+			},
+			id: '', //modificar
+			visible: false,
+			title: lpib15,
+			listMode: "hide-children"
+		});
 		
 		var pibmunicipal16Layer = new MapImageLayer({
 			portalItem: {
-				id: "85215b6458c442a3a5029db40b5fad2f"
+				id: "3c5ae2987f75468689bbacb456a86c6d"
 			},
 			id: '', //modificar
 			visible: false,
-			title: lpibm16,
+			title: lpib16,
 			listMode: "hide-children"
 		});
-		capes.push(pibmunicipal16Layer);
 		
 		var pibmunicipal17Layer = new MapImageLayer({
 			portalItem: {
-				id: "c4af54e62eec45cc95d835d70140d6aa"
+				id: "d6d4e0d1b2dd4303858caffd0e177a4c"
 			},
 			id: '', //modificar
 			visible: false,
-			title: lpibm17,
+			title: lpib17,
 			listMode: "hide-children"
 		});
-		capes.push(pibmunicipal17Layer);
 		
 		var pibmunicipal18Layer = new MapImageLayer({
 			portalItem: {
-				id: "abe816f4ecb8438dbf090d3d42988906"
+				id: "2bbf3238c70e4e9d9c0d9254fb76508e"
 			},
 			id: '', //modificar
 			visible: false,
-			title: lpibm18,
+			title: lpib18,
 			listMode: "hide-children"
 		});
-		capes.push(pibmunicipal18Layer);
+		
+		var pibmunicipal19Layer = new MapImageLayer({
+			portalItem: {
+				id: "4ddc9c3132124d5ab787006fc4f00371"
+			},
+			id: '', //modificar
+			visible: false,
+			title: lpib19,
+			listMode: "hide-children"
+		});
 
 		var pibGroupLayer = new GroupLayer({
 			title: gPib,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [pibmunicipal16Layer, pibmunicipal17Layer, pibmunicipal18Layer],
+			layers: [pibmunicipal15Layer, pibmunicipal16Layer, pibmunicipal17Layer, pibmunicipal18Layer, pibmunicipal19Layer],
+			opacity: 1
+		  });
+
+		  var productiviGroupLayer = new GroupLayer({
+			title: gProduct,
+			visible: true,
+			visibilityMode: "independent",
+			layers: [pibGroupLayer],
 			opacity: 1
 		  });
 
@@ -2609,7 +2662,7 @@
           visible: true,
           visibilityMode: "independent",
           layers: [sociopatentsGroupLayer, formacioGroupLayer, habitatgeGroupLayer, 
-			istGroupLayer, migraGroupLayer, desigGroupLayer, aturGroupLayer, pibGroupLayer, ambest_rendaGroupLayer, demoGroupLayer],
+			istGroupLayer, migraGroupLayer, desigGroupLayer, aturGroupLayer, productiviGroupLayer, ambest_rendaGroupLayer, demoGroupLayer],
           opacity: 1
         });
 		
