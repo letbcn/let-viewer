@@ -414,16 +414,6 @@
 	});
 	capes.push(xarxariusLayer);
 
-	var xarxahidroLayer = new MapImageLayer({
-		portalItem: {
-			id: "4baaa3d59eab4ab193ab3497e2c49652"
-		},
-		id: "1513f52c7bb842d6a15fb0641c43dee6",
-		visible: false,
-		title: lXarxahidro,
-		listMode: "hide-children"
-	});
-	capes.push(xarxahidroLayer);
 
 	var canalsLayer = new MapImageLayer({
 		portalItem: {
@@ -476,7 +466,7 @@
 		title: gHidro,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [conquesLayer, canalsLayer, xarxahidroLayer, xarxariusLayer, aquifersprotLayer, aquifersLayer],
+		layers: [conquesLayer, canalsLayer, xarxariusLayer, aquifersprotLayer, aquifersLayer],
 		opacity: 1
 	});
 
@@ -492,8 +482,6 @@
 		title: lRadiacio,
 		listMode: "hide-children"
 	});
-	//capes.push(radiacioLayer);
-
 
 	var precipitacioLayer = new MapImageLayer({
 		portalItem: {
@@ -504,7 +492,6 @@
 		title: lPrecipitacio,
 		listMode: "hide-children"
 	});
-	//capes.push(precipitacioLayer);
 
 	var tempMitjMinLayer = new MapImageLayer({
 		portalItem: {
@@ -515,7 +502,6 @@
 		title: lTempmin,
 		listMode: "hide-children"
 	});
-	//capes.push(tempMitjMinLayer);
 
 	var tempMitjLayer = new MapImageLayer({
 		portalItem: {
@@ -537,7 +523,6 @@
 		listMode: "hide-children"
 	});
 
-
 	var anompp21Layer = new MapImageLayer({
 		portalItem: { 
 		  id: "2b64dcf8713b4fccb295d0d06c1b773d" 
@@ -548,7 +533,6 @@
 		listMode: "hide-children"
 	  });
 	
-
 	var anomtmp21Layer = new MapImageLayer({
 		portalItem: { 
 		  id: "83c83f9da3814595887b7a7a23889f8c"
@@ -677,7 +661,7 @@
 		portalItem: {  
 		  id: "ab1c9082a5ef45ebaea40dbcdd75fe8b"
 		},
-		id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+		id:'',
 		visible: false,
 		title: lbiofol,
 		listMode: "hide-children"
@@ -688,7 +672,7 @@
 		portalItem: {  
 		  id: "bccc5bb1c60c42b39289b9a77f98457b"
 		},
-		id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+		id:'',
 		visible: false,
 		title: lhmitja,
 		listMode: "hide-children"
@@ -745,7 +729,6 @@
 	});
 
 	//**********Espai agrari***********//
-	//capes
 
 	var dan2021Layer = new MapImageLayer({
 		portalItem: {
@@ -768,8 +751,6 @@
 		listMode: "hide-children"
 	});
 
-	capes.push(hortspr09Layer);
-
 	var hortspr15Layer = new MapImageLayer({
 		portalItem: {
 			id: "ec429664031b4057ae8ba8a0628197a8"
@@ -779,8 +760,6 @@
 		title: lhortsp15,
 		listMode: "hide-children"
 	});
-
-	capes.push(hortspr15Layer);
 
 	//grup de capes
 	var espaiAgrariGroupLayer = new GroupLayer({
@@ -1323,7 +1302,7 @@
 	//migracions
 	var migrants20Layer = new MapImageLayer({
 		portalItem: {  
-		  id: "ff1d17ed5c2f4b09b1c0374ab9d57602"
+		  id: "0d06b721c1ff44a892f5a8e60f944723"
 		},
 		id:'', //modificar
 		visible: false,

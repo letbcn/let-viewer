@@ -50,7 +50,6 @@ var gHidro;
 var lAquifers;
 var lAqupro;
 var lXarxa0;
-var lXarxahidro;
 var lCanals;
 var lConques;
 //Clima
@@ -238,7 +237,6 @@ var lpatentsv;
 	lAquifers="Aqüífers";
 	lAqupro="Aqüífers protegits";
 	lXarxa0="Xarxa hidrogràfica principal 1:50.000";
-	lXarxahidro="Xarxa hidrogràfica";
 	lCanals="Xarxa de conduccions i canalitzacions";
 	lConques="Conques elementals de Catalunya 1:50.000";
 	//Clima
@@ -428,7 +426,6 @@ var lpatentsv;
 	lAquifers="Acuíferos";
 	lAqupro="Acuíferos protegidos";
 	lXarxa0="Red hidrográfica principal 1:50.000";
-	lXarxahidro="Red hidrográfica";
 	lCanals="Red de conducciones y canalizaciones";
 	lConques="Cuencas elementales de Cataluña 1:50.000";
 	//Clima
@@ -612,7 +609,6 @@ var lpatentsv;
 	lAquifers="Aquifers";
 	lAqupro="Protected aquifers";
 	lXarxa0="Main hydrographic network 1:50.000";
-	lXarxahidro="Hydrographic network";
 	lCanals="Driving and channeling network";
 	lConques="Elemental basins of Catalonia 1:50.000";
 	//Clima
