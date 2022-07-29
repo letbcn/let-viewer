@@ -906,7 +906,7 @@
 
 	var emissiogasosLayer = new MapImageLayer({
 		portalItem: {
-			id: "3cac90515186450e8590567c9ad73be4"
+			id: "cc8a6eb5cb244ae89b6baca0c3484c7a"
 		},
 		id: "",
 		visible: false,

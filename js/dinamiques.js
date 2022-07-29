@@ -1595,112 +1595,41 @@
 		  });
 
 		  //Gasos efecte hivernacle
-		  //Consum electric
-		  var co2electricsector16Layer = new MapImageLayer({
-			portalItem: {
-				id: "646196c94e794193b5b8c14d36a26b89"
-			},
-			id: "",
-			visible: false,
-			title: lCo2electsect16,
-			listMode: "hide-children"
-		});
-
-		var co2electricsectorGroupLayer = new GroupLayer({
-			title: gco2electricsec,
-			visible: true,
-			visibilityMode: "independent",
-			layers: [co2electricsector16Layer],
-			opacity: 1
-		  });
-	
-		var co2electrichab16Layer = new MapImageLayer({
-			portalItem: {
-				id: "9c25e43cda644a888d2810189a48c4da"
-			},
-			id: "",
-			visible: false,
-			title: lCo2electhab16,
-			listMode: "hide-children"
-		});
-		capes.push(co2electrichab16Layer);
-
-		var co2electrichabGroupLayer = new GroupLayer({
-			title: gco2electrichab,
-			visible: true,
-			visibilityMode: "independent",
-			layers: [co2electrichab16Layer],
-			opacity: 1
-		  });
-
-		var co2electricGroupLayer = new GroupLayer({
-			title: gco2electric,
-			visible: true,
-			visibilityMode: "independent",
-			layers: [co2electrichabGroupLayer, co2electricsectorGroupLayer],
-			opacity: 1
-		  });
-
-		//Consum gas natural
-	//per sector
-		var co2gassector16Layer = new MapImageLayer({
-			portalItem: {
-				id: "d6f4217ac14343e1a0f75f4b900d18ae"
-			},
-			id: "",
-			visible: false,
-			title: lCo2gassect16,
-			listMode: "hide-children"
-		});
-		capes.push(co2gassector16Layer);
-
-		var co2gassectorGroupLayer = new GroupLayer({
-			title: gco2gassec,
-			visible: true,
-			visibilityMode: "independent",
-			layers: [co2gassector16Layer],
-			opacity: 1
-		  });
-
-	//per habitant
-		var co2gashab16Layer = new MapImageLayer({
-			portalItem: {
-				id: "c688787eab1140e8a524c10bc84c28c5"
-			},
-			id: "",
-			visible: false,
-			title: lCo2gashab16,
-			listMode: "hide-children"
-		});
-
-		var co2gashabGroupLayer = new GroupLayer({
-			title: gco2gashab,
-			visible: true,
-			visibilityMode: "independent",
-			layers: [co2gashab16Layer],
-			opacity: 1
-		  });
-
-		var co2gasnatGroupLayer = new GroupLayer({
-			title: gco2gasnat,
-			visible: true,
-			visibilityMode: "independent",
-			layers: [co2gashabGroupLayer, co2gassectorGroupLayer],
-			opacity: 1
-		  });
+		  
+		
 
 
 	//grup global gassos efecte hivernacle
+
+		var emissiogasos16Layer = new MapImageLayer({
+		portalItem: {
+			id: "3a81902d059f4da998f4e3d3797e0b62"
+		},
+		id: "",
+		visible: false,
+		title: lEmissioogasos2016,
+		listMode: "hide-children"
+		});
+
+		var emissiogasos17Layer = new MapImageLayer({
+		portalItem: {
+			id: "cc8a6eb5cb244ae89b6baca0c3484c7a"
+		},
+		id: "",
+		visible: false,
+		title: lEmissioogasos2017,
+		listMode: "hide-children"
+		});
+
 		var gasosGroupLayer = new GroupLayer({
 			title: gGasos,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [co2gasnatGroupLayer, co2electricGroupLayer],
+			layers: [emissiogasos17Layer, emissiogasos16Layer],
 			opacity: 1
 		});
 	
 
-		  
 		  //indicadors socioecologics grup
 		  var indsocioecoGroupLayer = new GroupLayer({
 			title: gIndSocEco,

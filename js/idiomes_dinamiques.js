@@ -170,16 +170,8 @@ var gxarxpm25;
 var lxarxpm2516;
 //Gasos efecte hivernacle
 var gGasos;
-var gco2electricsec;
-var lCo2electsect16;
-var gco2electrichab;
-var lCo2electhab16;
-var gco2electric;
-var lCo2gassect16;
-var gco2gassec;
-var lCo2gashab16;
-var gco2gashab;
-var gco2gasnat;
+var lEmissioogasos2016;
+var lEmissioogasos2017;
 //Indicadors Socioecologics
 var gIndSocEco
 //Dinàmiques Socioeconòmiques
@@ -469,16 +461,8 @@ var lpatents15;
 	gxarxpm25= "PM2,5";
 	lxarxpm2516= "2016";
 	gGasos= "Gasos d'efecte hivernacle";
-	gco2electricsec="Per sector";
-	lCo2electsect16= "2016";
-	lCo2electhab16= "2016";
-	gco2electrichab= "Per habitant";
-	gco2electric= "Consum elèctric";
-	lCo2gassect16= "2016";
-	gco2gassec= "Per sector";
-	lCo2gashab16= "2016";
-	gco2gashab= "Per habitant";
-	gco2gasnat= "Consum gas natural";
+	lEmissioogasos2016="2016";
+	lEmissioogasos2017="2017";
 	//Indicadors socioecològics
 	gIndSocEco= "Indicadors socioecològics";
 	//Dinàmiques Socioeconòmiques
@@ -756,16 +740,8 @@ var lpatents15;
 	gxarxpm25= "PM2,5";
 	lxarxpm2516= "2016";
 	gGasos= "Gases efecto invernadero";
-	gco2electricsec="Por sector";
-	lCo2electsect16= "2016";
-	lCo2electhab16= "2016";
-	gco2electrichab= "Por habitante";
-	gco2electric= "Consumo eléctrico";
-	lCo2gassect16= "2016";
-	gco2gassec= "Por sector";
-	lCo2gashab16= "2016";
-	gco2gashab= "Por habitante";
-	gco2gasnat= "Consumo gas natural";
+	lEmissioogasos2016="2016";
+	lEmissioogasos2017="2017";
 	//Indicadors socioecològics
 	gIndSocEco= "Indicadores socioecológicos";
 	//Dinàmiques Socioeconòmiques
@@ -1042,16 +1018,8 @@ var lpatents15;
 	gxarxpm25= "PM2,5";
 	lxarxpm2516= "2016";
 	gGasos= "Greenhouse gases";
-	gco2electricsec="Per sector";
-	lCo2electsect16= "2016";
-	lCo2electhab16= "2016";
-	gco2electrichab= "Per capita";
-	gco2electric= "electricity consumption";
-	lCo2gassect16= "2016";
-	gco2gassec= "Per sector";
-	lCo2gashab16= "2016";
-	gco2gashab= "Per capita";
-	gco2gasnat= "Natural gas consumption";
+	lEmissioogasos2016="2016";
+	lEmissioogasos2017="2017";
 	//Indicadors socioecològics
 	gIndSocEco= "Socio-ecological indicators";
 	//Dinàmiques Socioeconòmiques
