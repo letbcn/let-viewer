@@ -320,7 +320,6 @@
 		title: lpendent,
 		listMode: "hide-children"
 	});
-	//capes.push(pendentsLayer);
 
 	var orientacionsLayer = new MapImageLayer({
 		portalItem: {
@@ -331,7 +330,6 @@
 		title: lorient,
 		listMode: "hide-children"
 	});
-	//capes.push(orientacionsLayer);
 
 	var mdeLayer = new MapImageLayer({
 		portalItem: {
@@ -342,7 +340,6 @@
 		title: lmde,
 		listMode: "hide-children"
 	});
-	//capes.push(mdeLayer);
 
 	//grup de capes
 	var topografiaGroupLayer = new GroupLayer({
@@ -412,8 +409,6 @@
 		title: lXarxa0,
 		listMode: "hide-children"
 	});
-	capes.push(xarxariusLayer);
-
 
 	var canalsLayer = new MapImageLayer({
 		portalItem: {
@@ -424,7 +419,6 @@
 		title: lCanals,
 		listMode: "hide-children"
 	});
-	capes.push(canalsLayer);
 
 	var conquesLayer = new MapImageLayer({
 		portalItem: {
@@ -435,8 +429,6 @@
 		title: lConques,
 		listMode: "hide-children"
 	});
-	capes.push(conquesLayer);
-
 
 	var aquifersprotLayer = new MapImageLayer({
 		portalItem: {
@@ -447,7 +439,6 @@
 		title: lAqupro,
 		listMode: "hide-children"
 	});
-	capes.push(aquifersprotLayer);
 
 	var aquifersLayer = new MapImageLayer({
 		portalItem: {
@@ -458,7 +449,6 @@
 		title: lAquifers,
 		listMode: "hide-children"
 	});
-	capes.push(aquifersLayer);
 
 	//grup de capes
 
@@ -543,7 +533,6 @@
 		listMode: "hide-children"
 	  });
 
-
 	//grup de capes
 	var climaGroupLayer = new GroupLayer({
 		title: gClima,
@@ -552,7 +541,6 @@
 		layers: [radiacioLayer, tempMitjMaxLayer, tempMitjMinLayer, anomtmp21Layer, tempMitjLayer, anompp21Layer, precipitacioLayer],
 		opacity: 1
 	});
-
 
 	//***************Cobertes del sòl*****************//
 
@@ -565,7 +553,6 @@
 		title: lcob15,
 		listMode: "hide-children"
 	});
-	capes.push(cob15Layer);
 
 	var cob20Layer = new MapImageLayer({
 		portalItem: {
@@ -576,7 +563,6 @@
 		title: lcob20,
 		listMode: "hide-children"
 	});
-	capes.push(cob20Layer);
 
 	//capa d'usos
 	var usos17Layer = new MapImageLayer({
@@ -588,8 +574,6 @@
 		title: lusos17,
 		listMode: "hide-children"
 	});
-	capes.push(usos17Layer);
-
 
 	//grup de capes
 	var cobertesSolGroupLayer = new GroupLayer({
@@ -610,7 +594,6 @@
 		title: lhic,
 		listMode: "hide-children"
 	});
-	capes.push(hicLayer);
 
 	var habLayer = new MapImageLayer({
 		portalItem: {
@@ -621,7 +604,6 @@
 		title: lhab,
 		listMode: "hide-children"
 	});
-	capes.push(habLayer);
 
 	var ndvi20Layer = new MapImageLayer({
 		portalItem: {
@@ -632,7 +614,6 @@
 		title: lndvi20,
 		listMode: "hide-children"
 	});
-	capes.push(ndvi20Layer);
 
 	var boscossLayer = new MapImageLayer({
 		portalItem: {
@@ -643,18 +624,16 @@
 		title: lboscoss,
 		listMode: "hide-children"
 	});
-	capes.push(boscossLayer);
 
 	var biodivsingLayer = new MapImageLayer({
 		portalItem: {  
 		  id: "0d53d67b5643450b9fb287127f318167"
 		},
-		id:'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+		id:'',
 		visible: false,
 		title: lbiodsing,
 		listMode: "hide-children"
 	  });
-	  capes.push(biodivsingLayer);
 
 	//Variables biofisiques arbrat
 	var biomassafoliarLayer = new MapImageLayer({
@@ -666,7 +645,6 @@
 		title: lbiofol,
 		listMode: "hide-children"
 	  });
-	  capes.push(biomassafoliarLayer);
 
 	  var hmitjaLayer = new MapImageLayer({
 		portalItem: {  
@@ -677,7 +655,6 @@
 		title: lhmitja,
 		listMode: "hide-children"
 	  });
-	  capes.push(hmitjaLayer);
 
 	var variarbratGroupLayer = new GroupLayer({
 		title: gVarbrat,
@@ -707,7 +684,6 @@
 		title: lpoligons,
 		listMode: "hide-children"
 	});
-	capes.push(poligonsLayer);
 
 	var teixitLayer = new MapImageLayer({
 		portalItem: {
@@ -718,7 +694,6 @@
 		title: lteixit,
 		listMode: "hide-children"
 	});
-	capes.push(teixitLayer);
 
 	var espaiUrbaGroupLayer = new GroupLayer({
 		title: gUrba,
@@ -732,14 +707,13 @@
 
 	var dan2021Layer = new MapImageLayer({
 		portalItem: {
-			id: "ebfd4bc512564572b031a3f2d6d0e509"
+			id: "171774df785e45e6b432600dc8be8c96"
 		},
-		id: "1db6162873da4fb99a58ff48c6dae996",
+		id: "610bd38d56ad4005b256d017a4a7d1f1", //actualitzat JA
 		visible: false,
 		title: lDan2021,
 		listMode: "hide-children"
 	});
-	capes.push(dan2021Layer);
 
 	var hortspr09Layer = new MapImageLayer({
 		portalItem: {
@@ -783,7 +757,6 @@
 		title: lEscostaneres,
 		listMode: "hide-children"
 	});
-	capes.push(estatCostaneresLayer);
 
 	var estatEmbassamentsLayer = new MapImageLayer({
 		portalItem: {
@@ -794,7 +767,6 @@
 		title: lEsembass,
 		listMode: "hide-children"
 	});
-	capes.push(estatEmbassamentsLayer);
 
 	var estatAiguaRiusLayer = new MapImageLayer({
 		portalItem: {
@@ -805,7 +777,6 @@
 		title: lEsrius,
 		listMode: "hide-children"
 	});
-	capes.push(estatAiguaRiusLayer);
 
 	var estatSubterraniesLayer = new MapImageLayer({
 		portalItem: {
@@ -816,7 +787,6 @@
 		title: lEssubt,
 		listMode: "hide-children"
 	});
-	capes.push(estatSubterraniesLayer);
 
 	var estatZonesHumidesLayer = new MapImageLayer({
 		portalItem: {
@@ -827,7 +797,6 @@
 		title: lEshumides,
 		listMode: "hide-children"
 	});
-	capes.push(estatZonesHumidesLayer);
 
 	//grup de capes
 	var estasMassesGroupLayer = new GroupLayer({
@@ -845,24 +814,22 @@
 		portalItem: {
 			id: "503cb9d6cf7a466998133de519ac6416"
 		},
-		id: "59c43fa5e3964e3d9a600b67cf74f367",
+		id: "25a8f7aaf70f4816a507136a54c3df10", //ACTUALITZAT
 		visible: false,
 		title: lElectrsect,
 		listMode: "hide-children"
 	});
-	capes.push(electrsectorLayer);
 
 	//Energia electrica us domèstic
 	var electrdomestLayer = new MapImageLayer({
 		portalItem: {
 			id: "b631257580464679ab4cfd3cb5c5f854"
 		},
-		id: "",
+		id: "25a8f7aaf70f4816a507136a54c3df10", //ACTUALITZAT"
 		visible: false,
 		title: lElectrdomest,
 		listMode: "hide-children"
 	});
-	capes.push(electrdomestLayer);
 
  	//Gas natural
 	var gassectorLayer = new MapImageLayer({
@@ -874,18 +841,16 @@
 		title: lGassect,
 		listMode: "hide-children"
 	});
-	capes.push(gassectorLayer);
 
 	var gasdomesticLayer = new MapImageLayer({
 		portalItem: {
 			id: "eaaf3555da2846c0a53df3f67961bfa8"
 		},
-		id: "",
+		id: "5e9f91a43e2d4d898634926bb0b86456", //ACTUALITZAT"
 		visible: false,
 		title: lGasdom,
 		listMode: "hide-children"
 	});
-	capes.push(gasdomesticLayer);
 
 	//Emissions CO2
 	var co2electricsectorLayer = new MapImageLayer({
@@ -897,7 +862,6 @@
 		title: lCo2electsect,
 		listMode: "hide-children"
 	});
-	capes.push(co2electricsectorLayer);
 
 	var co2electrichabLayer = new MapImageLayer({
 		portalItem: {
@@ -908,7 +872,6 @@
 		title: lCo2electhab,
 		listMode: "hide-children"
 	});
-	capes.push(co2electrichabLayer);
 
 	var co2gassectorLayer = new MapImageLayer({
 		portalItem: {
@@ -919,7 +882,6 @@
 		title: lCo2gassect,
 		listMode: "hide-children"
 	});
-	capes.push(co2gassectorLayer);
 
 	var co2gashabLayer = new MapImageLayer({
 		portalItem: {
@@ -930,7 +892,6 @@
 		title: lCo2gashab,
 		listMode: "hide-children"
 	});
-	capes.push(co2gashabLayer);
 
 	var energiaGroupLayer = new GroupLayer({
 		title: gEnergia,
@@ -952,7 +913,6 @@
 		title: lEmissioogasos,
 		listMode: "hide-children"
 	});
-	capes.push(emissiogasosLayer);
 
 	var emissionsgasosGroupLayer = new GroupLayer({
 		title: gEmissionsgasos,
@@ -968,12 +928,11 @@
 		portalItem: {
 			id: "8a040b595a384f0b9f1a41b61e2a3b7a"
 		},
-		id: "",
+		id: "e497921bdf7343a699cea2a99d2ac9c7", //ACTUALITZAT
 		visible: false,
 		title: lAiguahab,
 		listMode: "hide-children"
 	});
-	capes.push(aiguahabLayer);
 
 	var aiguasectorsLayer = new MapImageLayer({
 		portalItem: {
@@ -984,7 +943,6 @@
 		title: lAiguasect,
 		listMode: "hide-children"
 	});
-	capes.push(aiguasectorsLayer);
 
 	var cicleaiguaGroupLayer = new GroupLayer({
 		title: gCicleaigua,
@@ -1006,7 +964,6 @@
 		title: lresidumuni,
 		listMode: "hide-children"
 	});
-	capes.push(residusmuniLayer);
 	
 	//Residus per capita
 	var genresidushabiLayer = new MapImageLayer({
@@ -1018,7 +975,6 @@
 		title: lgeneresiduhabi,
 		listMode: "hide-children"
 	});
-	capes.push(genresidushabiLayer);
 
 	var recollidaselectivaLayer = new MapImageLayer({
 		portalItem: {
@@ -1029,7 +985,6 @@
 		title: lrecollida,
 		listMode: "hide-children"
 	});
-	capes.push(recollidaselectivaLayer);
 
 	var residusindustLayer = new MapImageLayer({
 		portalItem: {
@@ -1040,7 +995,6 @@
 		title: lresidusind,
 		listMode: "hide-children"
 	});
-	capes.push(residusindustLayer);
 
 	var residusindustempLayer = new MapImageLayer({
 		portalItem: {
@@ -1051,7 +1005,6 @@
 		title: lresidusindemp,
 		listMode: "hide-children"
 	});
-	capes.push(residusindustempLayer);
 
 	var gestioresidusGroupLayer = new GroupLayer({
 		title: gGestioresidus,
@@ -1067,34 +1020,31 @@
 		portalItem: {  
 		  id: "7b6a7f4cbbbe4d42b727f460db29d832"
 		},
-		id:'', //modificar
+		id:'',
 		visible: false,
 		title: lxarxno2,
 		listMode: "hide-children"
 	  });
-	  capes.push(xarxno2Layer);
 
 	  var xarxpm10Layer = new MapImageLayer({
 		portalItem: {  
 		  id: "3f07093c104b4269b8ae1b50ba6e5b60"
 		},
-		id:'', //modificar
+		id:'', 
 		visible: false,
 		title: lxarxpm10,
 		listMode: "hide-children"
 	  });
-	  capes.push(xarxpm10Layer);
 
 	  var xarxpm25Layer = new MapImageLayer({
 		portalItem: {  
 		  id: "96598f80945349c381694ab996973a38"
 		},
-		id:'', //modificar
+		id:'', 
 		visible: false,
 		title: lxarxpm25,
 		listMode: "hide-children"
 	  });
-	  capes.push(xarxpm25Layer);
 
 	var xarxacontmGroupLayer = new GroupLayer({
 		title: gxarxContm,
@@ -1109,12 +1059,11 @@
 		portalItem: {  
 		  id: "5a462b1cfc844cbda4ea2372e8a03d9e"
 		},
-		id:'', //modificar
+		id:'',
 		visible: false,
 		title: lno2,
 		listMode: "hide-children"
 	  });
-	  capes.push(no2Layer);
 
 	  var pm10Layer = new MapImageLayer({
 		portalItem: {  
@@ -1125,7 +1074,6 @@
 		title: lpm10,
 		listMode: "hide-children"
 	  });
-	  capes.push(pm10Layer);
 
 	  var contmGroupLayer = new GroupLayer({
 		title: gContm,
@@ -1166,7 +1114,6 @@
 		title: lvincend,
 		listMode: "hide-children"
 	});
-	capes.push(vulnincendisLayer);
 
 	var perillincendisLayer = new MapImageLayer({
 		portalItem: {
@@ -1177,7 +1124,6 @@
 		title: lpincend,
 		listMode: "hide-children"
 	});
-	capes.push(perillincendisLayer);
 
 	var inflamabilitatLayer = new MapImageLayer({
 		portalItem: {
@@ -1188,7 +1134,6 @@
 		title: linfla,
 		listMode: "hide-children"
 	});
-	capes.push(inflamabilitatLayer);
 
 	var perimetresLayer = new MapImageLayer({
 		portalItem: {
@@ -1199,7 +1144,6 @@
 		title: lperim,
 		listMode: "hide-children"
 	});
-	capes.push(perimetresLayer);
 
 	//Inundabilitat
 	var inundable10Layer = new MapImageLayer({
@@ -1211,7 +1155,6 @@
 		title: lretorn10,
 		listMode: "hide-children"
 	});
-	capes.push(inundable10Layer);
 
 	var inundable100Layer = new MapImageLayer({
 		portalItem: {
@@ -1222,7 +1165,6 @@
 		title: lretorn100,
 		listMode: "hide-children"
 	});
-	capes.push(inundable100Layer);
 
 	var inundable500Layer = new MapImageLayer({
 		portalItem: {
@@ -1233,7 +1175,6 @@
 		title: lretorn500,
 		listMode: "hide-children"
 	});
-	capes.push(inundable500Layer);
 
 	//grup de capes
 
@@ -1262,7 +1203,6 @@
 		opacity: 1
 	});
 
-
 	//Societat i economia
 
 	//index vulnerabilitat urbana
@@ -1270,12 +1210,11 @@
 		portalItem: {
 			id: "f70a42eb4803493aab5b7e4a3dbd3b28"
 		},
-		id: '', //modificar
+		id: '', 
 		visible: false,
 		title: list18,
 		listMode: "hide-children"
 	});
-	capes.push(ist18Layer);
 
 	var baixaq18Layer = new MapImageLayer({
 		portalItem: {
@@ -1286,7 +1225,6 @@
 		title: lbaixaq18,
 		listMode: "hide-children"
 	});
-	capes.push(baixaq18Layer);
 
 	var joves18Layer = new MapImageLayer({
 		portalItem: {
@@ -1297,23 +1235,19 @@
 		title: ljoves18,
 		listMode: "hide-children"
 	});
-	capes.push(joves18Layer);
 
 	//migracions
 	var migrants20Layer = new MapImageLayer({
 		portalItem: {  
 		  id: "0d06b721c1ff44a892f5a8e60f944723"
 		},
-		id:'', //modificar
+		id:'', 
 		visible: false,
 		title: lmigra20,
 		listMode: "hide-children"
 	  });
-	  capes.push(migrants20Layer);
-
 
 	//Index envelliment
-
 
 	//habitatge
 	//demanda habitatge
@@ -1326,7 +1260,6 @@
 		title: ldemandh,
 		listMode: "hide-children"
 	});
-	capes.push(demandhabLayer);
 	
 	//esforç habitatge
 	var esforshabitLayer = new MapImageLayer({
@@ -1338,7 +1271,6 @@
 		title: lesforshab,
 		listMode: "hide-children"
 	});
-	capes.push(esforshabitLayer);
 
 	//subgroups 
 	var societatGroupLayer = new GroupLayer({
@@ -1360,20 +1292,16 @@
 		title: latur,
 		listMode: "hide-children"
 	});
-	capes.push(aturLayer);
-
 
 	var rendamitjanaLayer = new MapImageLayer({
 		portalItem: {
 			id: "e52903fcb9a748bdb8ed345ea14cf214"
 		},
-		id: '', //modificar
+		id: '',
 		visible: false,
 		title: lrendam17,
 		listMode: "hide-children"
 	});
-	capes.push(rendamitjanaLayer);
-
 
 	var origenrendaLayer = new MapImageLayer({
 		portalItem: {
@@ -1384,63 +1312,56 @@
 		title: lorirenda,
 		listMode: "hide-children"
 	});
-	capes.push(origenrendaLayer);
 
 	var rendabaixa17Layer = new MapImageLayer({
 		portalItem: {
 			id: "16b3bb1ac4f349e8984367e6bb2cedcf"
 		},
-		id: 'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+		id: '',
 		visible: false,
 		title: lrendab17,
 		listMode: "hide-children"
 	});
-	capes.push(rendabaixa17Layer);
 
 	var rendaint17Layer = new MapImageLayer({
 		portalItem: {
 			id: "d9b3aaba771c4c8d9c292b350452e7a2"
 		},
-		id: 'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+		id: '', 
 		visible: false,
 		title: lrendai17,
 		listMode: "hide-children"
 	});
-	capes.push(rendaint17Layer);
-
 
 	var rendaalt17Layer = new MapImageLayer({
 		portalItem: {
 			id: "eb7558761663409d95e2c13ac8a8a427"
 		},
-		id: 'cad9baf21ebe4d16ae8a0e7e114595ac', //modificar
+		id: '',
 		visible: false,
 		title: lrendaa17,
 		listMode: "hide-children"
 	});
-	capes.push(rendaalt17Layer);
 
 	var gini18Layer = new MapImageLayer({
 		portalItem: {
 			id: "4c5c6ba04c254112aa52d673f9c8019e"
 		},
-		id: '', //modificar
+		id: '',
 		visible: false,
 		title: lgini18,
 		listMode: "hide-children"
 	});
-	capes.push(gini18Layer);
 
 	var pibmunicipalLayer = new MapImageLayer({
 		portalItem: {
 			id: "abe816f4ecb8438dbf090d3d42988906"
 		},
-		id: '', //modificar
+		id: '',
 		visible: false,
 		title: lpibm,
 		listMode: "hide-children"
 	});
-	capes.push(pibmunicipalLayer);
 
 	//Innovació
 	//Patents
@@ -1453,7 +1374,6 @@
 		  title: lpatents,
 		  listMode: "hide-children"
 		});
-	  capes.push(patentsLayer);
 
 	  var patentsverdesLayer = new MapImageLayer({
 		portalItem: {  
@@ -1464,7 +1384,6 @@
 		  title: lpatentsv,
 		  listMode: "hide-children"
 		});
-	  capes.push(patentsverdesLayer);
 
 	var economiaGroupLayer = new GroupLayer({
 		title: gEco,
