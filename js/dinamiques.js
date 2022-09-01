@@ -1601,7 +1601,87 @@
 
 	//grup global gassos efecte hivernacle
 
-		var emissiogasos16Layer = new MapImageLayer({
+	var emissiogasos08Layer = new MapImageLayer({
+		portalItem: {
+			id: "c863f2f7acae4f4fa75951ee0203f821"
+		},
+		id: "",
+		visible: false,
+		title: lEmissioogasos2008,
+		listMode: "hide-children"
+		});	
+	
+	var emissiogasos09Layer = new MapImageLayer({
+		portalItem: {
+			id: "c71482453f994f5fbfe39d5a56597172"
+		},
+		id: "",
+		visible: false,
+		title: lEmissioogasos2009,
+		listMode: "hide-children"
+		});	
+	
+	var emissiogasos10Layer = new MapImageLayer({
+		portalItem: {
+			id: "754570ead82d4d63b32f46dcd25ae226"
+		},
+		id: "",
+		visible: false,
+		title: lEmissioogasos2010,
+		listMode: "hide-children"
+		});	
+	
+	var emissiogasos11Layer = new MapImageLayer({
+		portalItem: {
+			id: "982d4c7ba51e42c4a0f71f8ad96f6274"
+		},
+		id: "",
+		visible: false,
+		title: lEmissioogasos2011,
+		listMode: "hide-children"
+		});	
+	
+	var emissiogasos12Layer = new MapImageLayer({
+		portalItem: {
+			id: "38eb047e505e44d18498cb37122a4962"
+		},
+		id: "",
+		visible: false,
+		title: lEmissioogasos2012,
+		listMode: "hide-children"
+		});	
+	
+	var emissiogasos13Layer = new MapImageLayer({
+		portalItem: {
+			id: "2dddfb8665024ec49726e1b011715e03"
+		},
+		id: "",
+		visible: false,
+		title: lEmissioogasos2013,
+		listMode: "hide-children"
+		});	
+	
+	var emissiogasos14Layer = new MapImageLayer({
+		portalItem: {
+			id: "ede2999048d94a3f9d52129310463cd9"
+		},
+		id: "",
+		visible: false,
+		title: lEmissioogasos2014,
+		listMode: "hide-children"
+		});	
+	
+	var emissiogasos15Layer = new MapImageLayer({
+		portalItem: {
+			id: "ca82e341e6b1452aad69d97b0a1644b9"
+		},
+		id: "",
+		visible: false,
+		title: lEmissioogasos2015,
+		listMode: "hide-children"
+		});	
+	
+	var emissiogasos16Layer = new MapImageLayer({
 		portalItem: {
 			id: "3a81902d059f4da998f4e3d3797e0b62"
 		},
@@ -1625,7 +1705,8 @@
 			title: gGasos,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [emissiogasos17Layer, emissiogasos16Layer],
+			layers: [emissiogasos08Layer, emissiogasos09Layer, emissiogasos10Layer, emissiogasos11Layer, emissiogasos12Layer, emissiogasos13Layer, 
+				emissiogasos14Layer, emissiogasos15Layer, emissiogasos16Layer, emissiogasos17Layer],
 			opacity: 1
 		});
 	
