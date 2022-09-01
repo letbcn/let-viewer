@@ -33,6 +33,7 @@ var lorto5m09;
 var lorto5m12;
 var lorto5m15;
 var lorto5m18;
+var lortoact;
 //Clima
 var gClima;
 var gAnompp;
@@ -334,7 +335,8 @@ var lpatents15;
 	lorto5m09="Ortofoto 1:5.000 2009";
 	lorto5m12="Ortofoto 1:5.000 2012";
 	lorto5m15="Ortofoto 1:5.000 2015";
-	lorto5m18="Ortofoto 1:5.000 2018";
+	lorto5m18="Ortofoto 1:2.5000 2018";
+	lortoact="Ortofoto 1:2.500 vigent";
 	//Clima
 	gClima= "Variabilitat climàtica";
 	gAnompp= "Anomalies en precipitació";

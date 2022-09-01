@@ -168,8 +168,7 @@
 			title: lorto10m45,
 			listMode: "hide-children",
 			sublayers: [{
-				name: "ovaa10m" // name of the sublayer,
-				//legendUrl: // url to the legend
+				name: "ovaa10m"
 			}]
 		});
 
@@ -181,8 +180,7 @@
 			title: lorto5m56,
 			listMode: "hide-children",
 			sublayers: [{
-				name: "ovab5m" // name of the sublayer,
-				//legendUrl: // url to the legend
+				name: "ovab5m"
 			}]
 		});
 	
@@ -194,8 +192,7 @@
 			title: lorto5m86,
 			listMode: "hide-children",
 			sublayers: [{
-				name: "orto5m1986" // name of the sublayer,
-				//legendUrl: // url to the legend
+				name: "orto5m1986"
 			}]
 		});
 	
@@ -207,8 +204,7 @@
 			title: lorto5m94,
 			listMode: "hide-children",
 			sublayers: [{
-				name: "orto5m1994" // name of the sublayer,
-				//legendUrl: // url to the legend
+				name: "orto5m1994"
 			}]
 		});
 	
@@ -220,8 +216,7 @@
 			title: lorto5m00,
 			listMode: "hide-children",
 			sublayers: [{
-				name: "orto5m2000" // name of the sublayer,
-				//legendUrl: // url to the legend
+				name: "orto5m2000"
 			}]
 		});
 	
@@ -233,8 +228,7 @@
 			title: lorto5m04,
 			listMode: "hide-children",
 			sublayers: [{
-				name: "orto5m2004" // name of the sublayer,
-				//legendUrl: // url to the legend
+				name: "orto5m2004"
 			}]
 		});
 	
@@ -246,8 +240,7 @@
 			title: lorto5m06,
 			listMode: "hide-children",
 			sublayers: [{
-				name: "orto5m2006" // name of the sublayer,
-				//legendUrl: // url to the legend
+				name: "orto5m2006"
 			}]
 		});
 	
@@ -259,8 +252,7 @@
 			title: lorto5m09,
 			listMode: "hide-children",
 			sublayers: [{
-				name: "orto5m2009" // name of the sublayer,
-				//legendUrl: // url to the legend
+				name: "orto5m2009"
 			}]
 		});
 	
@@ -272,8 +264,7 @@
 			title: lorto5m12,
 			listMode: "hide-children",
 			sublayers: [{
-				name: "orto5m2012" // name of the sublayer,
-				//legendUrl: // url to the legend
+				name: "orto5m2012"
 			}]
 		});
 	
@@ -285,8 +276,7 @@
 			title: lorto5m15,
 			listMode: "hide-children",
 			sublayers: [{
-				name: "orto5m2015" // name of the sublayer,
-				//legendUrl: // url to the legend
+				name: "orto5m2015"
 			}]
 		});
 	
@@ -298,8 +288,21 @@
 			title: lorto5m18,
 			listMode: "hide-children",
 			sublayers: [{
-				name: "orto25c2018" // name of the sublayer,
-				//legendUrl: // url to the legend
+				name: "orto25c2018"
+				
+			}]
+		});
+
+		var orto5cactualLayer = new WMSLayer({
+			portalItem: {
+				id: "e6d7098789934688be76822f066f7e4c"
+			},
+			visible: false,
+			title: lortoact,
+			listMode: "hide-children",
+			sublayers: [{
+				name: "orto25c"
+				
 			}]
 		});
 	
@@ -307,8 +310,8 @@
 			title: gHistoric,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [orto5m18Layer, orto5m15Layer, orto5m12Layer, orto5m09Layer, orto5m06Layer, orto5m04Layer, orto5m00Layer, orto5m94Layer, orto5m86Layer, orto5m56Layer, orto10m45Layer],
-	
+			layers: [ orto10m45Layer, orto5m56Layer, orto5m86Layer, orto5m94Layer, orto5m00Layer,
+				orto5m04Layer,  orto5m06Layer, orto5m09Layer, orto5m12Layer, orto5m15Layer, orto5m18Layer, orto5cactualLayer],
 			opacity: 1
 		});
 
