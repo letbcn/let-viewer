@@ -580,7 +580,7 @@
 		title: gCobertesSol,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [cob20Layer,usos17Layer,cob15Layer],
+		layers: [usos17Layer,cob15Layer, cob20Layer],
 		opacity: 1
 	});
 
@@ -629,7 +629,7 @@
 		portalItem: {  
 		  id: "0d53d67b5643450b9fb287127f318167"
 		},
-		id:'',
+		id:'e3d47c617b6549d9b8986197631e28c3',
 		visible: false,
 		title: lbiodsing,
 		listMode: "hide-children"
