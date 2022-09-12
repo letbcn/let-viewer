@@ -636,11 +636,22 @@
 	  });
 
 	//Variables biofisiques arbrat
+	
+	var biomassaereaLayer = new MapImageLayer({
+		portalItem: {  
+		  id: "b71aadeddd604198a0411ad48b6edf6a"
+		},
+		id:'2d907599fddc414aa4cc552da99b6da1',
+		visible: false,
+		title: lbiomassarea,
+		listMode: "hide-children"
+	  });
+	
 	var biomassafoliarLayer = new MapImageLayer({
 		portalItem: {  
-		  id: "ab1c9082a5ef45ebaea40dbcdd75fe8b"
+		  id: "d243db5358ab4e24a0ea49d8bf68eb1f"
 		},
-		id:'',
+		id:'95f3b7533c3d4e7bb88e5a5cdb569695',
 		visible: false,
 		title: lbiofol,
 		listMode: "hide-children"
@@ -648,11 +659,41 @@
 
 	  var hmitjaLayer = new MapImageLayer({
 		portalItem: {  
-		  id: "bccc5bb1c60c42b39289b9a77f98457b"
+		  id: "dadfe72d9e6543178cae1d0af2505831"
 		},
-		id:'',
+		id:'7f6e79087580411f94988bdbcc4fcc4e',
 		visible: false,
 		title: lhmitja,
+		listMode: "hide-children"
+	  });
+
+	  var carboniLayer = new MapImageLayer({
+		portalItem: {  
+		  id: "1856e98893ba4efdb23a41e8bfbfbad7"
+		},
+		id:'80b70c8ae14946dda76b71011a506ba1',
+		visible: false,
+		title: lcarboni,
+		listMode: "hide-children"
+	  });
+
+	  var diametreLayer = new MapImageLayer({
+		portalItem: {  
+		  id: "a2d0b4eb7d5047878bbe5b1979482bf0"
+		},
+		id:'7713413929c947199a8acfef7b61c373',
+		visible: false,
+		title: ldiametre,
+		listMode: "hide-children"
+	  });
+
+	  var fccLayer = new MapImageLayer({
+		portalItem: {  
+		  id: "ca89abe21e104184baf0619750ff6db0"
+		},
+		id:'429128bccbee4a848d82d2a50a356a74',
+		visible: false,
+		title: lfcc,
 		listMode: "hide-children"
 	  });
 
@@ -660,7 +701,7 @@
 		title: gVarbrat,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [hmitjaLayer, biomassafoliarLayer],
+		layers: [fccLayer, diametreLayer, hmitjaLayer, carboniLayer, biomassafoliarLayer, biomassaereaLayer],
 		opacity: 1
 	  }); 
 

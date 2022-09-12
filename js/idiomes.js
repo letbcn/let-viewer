@@ -75,8 +75,12 @@ var lbiodsing;
 var lndvi20;
 //Variables arbrat
 var gVarbrat;
+var lbiomassarea;
 var lbiofol;
+var lcarboni;
 var lhmitja;
+var ldiametre;
+var lfcc;
 //Espai urbà
 var gUrba;
 var lpoligons;
@@ -264,8 +268,12 @@ var lpatentsv;
 	lndvi20 ="Índex Vegetació (NDVI)";
 	//Variables arbrat
 	gVarbrat= "Variables biofísiques del arbrat";
+	lbiomassarea="Biomassa aèria total";
 	lbiofol= "Biomassa foliar";
+	lcarboni="Carboni aèri total";
 	lhmitja= "Alçada mitjana";
+	ldiametre="Diàmetre normal mitjà";
+	lfcc="Fracció de cabuda coberta";
 	//Espai urbà
 	gUrba="Espai urbà";
 	lpoligons="Polígons industrials";
@@ -453,8 +461,12 @@ var lpatentsv;
 	lndvi20 ="Índice Vegetación (NDVI)";
 	//Variables arbrado
 	gVarbrat= "Variables biofísicas del arbrado";
+	lbiomassarea="Biomasa aérea total";
 	lbiofol= "Biomasa foliar";
+	lcarboni="Carbono aéreo total";
 	lhmitja= "Altura media";
+	ldiametre="Diámetro normal medio";
+	lfcc="Fracción de cabida cubierta";
 	//Espacio urbano
 	gUrba="Espacio urbano";
 	lpoligons="Polígonos industriales";
@@ -638,8 +650,11 @@ var lpatentsv;
 	lndvi20 ="Normalized Difference Vegetation Index (NDVI)";
 	//Variables arbrat
 	gVarbrat= "Woodland biophysical variables";
+	lbiomassarea="Total aerial biomass";
 	lbiofol= "Foliar biomass";
-	lhmitja= "Total aerial biomass";
+	lcarboni="Total aerial carbon";
+	lhmitja= "Maxim heigh";
+	ldiametre="Average diameter";
 	//Espai urbà
 	gUrba="Urban spaces";
 	lpoligons="Industrial polygons";
