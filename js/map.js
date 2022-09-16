@@ -718,21 +718,21 @@
 
 	var poligonsLayer = new MapImageLayer({
 		portalItem: {
-			id: "bf87263bae8f4463be88812065780ec3"
+			id: "918c64ee3297442786c0ad4bddd8e79e"
 		},
-		id: "d36cd02e881c4f53a5b963e5bb2adc31",
+		id: "c0dfe62a964744858ea8292f8cf61c52",
 		visible: false,
 		title: lpoligons,
 		listMode: "hide-children"
 	});
 
-	var teixitLayer = new MapImageLayer({
+	var urbanisticLayer = new MapImageLayer({
 		portalItem: {
-			id: "a0d62d94dfba4e17b12dd8616b9ce2b0"
+			id: "c9d4fd59742045e28567f8f70cad8c76"
 		},
-		id: "91d47bc8f0514fc1a7486498ba4c8a6c",
+		id: "",
 		visible: false,
-		title: lteixit,
+		title: lurban,
 		listMode: "hide-children"
 	});
 
@@ -740,7 +740,7 @@
 		title: gUrba,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [teixitLayer, poligonsLayer],
+		layers: [urbanisticLayer, poligonsLayer],
 		opacity: 1
 	});
 
@@ -750,7 +750,7 @@
 		portalItem: {
 			id: "171774df785e45e6b432600dc8be8c96"
 		},
-		id: "610bd38d56ad4005b256d017a4a7d1f1", //actualitzat JA
+		id: "610bd38d56ad4005b256d017a4a7d1f1", 
 		visible: false,
 		title: lDan2021,
 		listMode: "hide-children"
@@ -866,7 +866,7 @@
 		portalItem: {
 			id: "b631257580464679ab4cfd3cb5c5f854"
 		},
-		id: "25a8f7aaf70f4816a507136a54c3df10", //ACTUALITZAT"
+		id: "",
 		visible: false,
 		title: lElectrdomest,
 		listMode: "hide-children"

@@ -84,7 +84,7 @@ var lfcc;
 //Espai urbà
 var gUrba;
 var lpoligons;
-var lteixit;
+var lurban;
 //Espai agrari
 var gAgrari;
 var lDan2021;
@@ -277,7 +277,7 @@ var lpatentsv;
 	//Espai urbà
 	gUrba="Espai urbà";
 	lpoligons="Polígons industrials";
-	lteixit="Teixits urbans";
+	lurban="Classificació urbana";
 	//Espai agrari
 	gAgrari= "Espai agrari";
 	lDan2021="Declaració agrària 2021";
@@ -470,7 +470,7 @@ var lpatentsv;
 	//Espacio urbano
 	gUrba="Espacio urbano";
 	lpoligons="Polígonos industriales";
-	lteixit="Tejidos Urbanos(AMB)";
+	lurban="Clasificación urbana";
 	//Espacio agrario
 	gAgrari= "Espacio agrario";
 	lDan2021="Declaración agraria 2021";
@@ -658,7 +658,7 @@ var lpatentsv;
 	//Espai urbà
 	gUrba="Urban spaces";
 	lpoligons="Industrial polygons";
-	lteixit="Urban fabric";
+	lurban="Urban classification";
 	//Espai agrari
 	gAgrari= "Agrarian Spaces";
 	lDan2021="Agriculture 2021";
