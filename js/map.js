@@ -730,7 +730,7 @@
 		portalItem: {
 			id: "c9d4fd59742045e28567f8f70cad8c76"
 		},
-		id: "",
+		id: "a496a5c644644700931e4193ade88a84",
 		visible: false,
 		title: lurban,
 		listMode: "hide-children"
@@ -1178,7 +1178,7 @@
 
 	var perimetresLayer = new MapImageLayer({
 		portalItem: {
-			id: "36de5215519b42a5b21d7b45c8ff0092"
+			id: "9f59e1260a3b46b7ba1dc7d531c2545f"
 		},
 		id: "",
 		visible: false,
