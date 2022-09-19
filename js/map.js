@@ -736,11 +736,21 @@
 		listMode: "hide-children"
 	});
 
+	var equipamentsLayer = new MapImageLayer({
+		portalItem: {
+			id: "1b64545517d24c039f0700fc5d62860c"
+		},
+		id: "f29b863984b944b092b9abb69ade1e12",
+		visible: false,
+		title: lequipaments,
+		listMode: "hide-children"
+	});
+
 	var espaiUrbaGroupLayer = new GroupLayer({
 		title: gUrba,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [urbanisticLayer, poligonsLayer],
+		layers: [equipamentsLayer, urbanisticLayer, poligonsLayer],
 		opacity: 1
 	});
 
@@ -1061,7 +1071,7 @@
 		portalItem: {  
 		  id: "7b6a7f4cbbbe4d42b727f460db29d832"
 		},
-		id:'',
+		id:'d57fc03d72fb4b9a817b6c8785d45e7a',
 		visible: false,
 		title: lxarxno2,
 		listMode: "hide-children"
@@ -1071,19 +1081,9 @@
 		portalItem: {  
 		  id: "3f07093c104b4269b8ae1b50ba6e5b60"
 		},
-		id:'', 
+		id:'0a6b722171344bb2bfeb5e657af918a1', 
 		visible: false,
 		title: lxarxpm10,
-		listMode: "hide-children"
-	  });
-
-	  var xarxpm25Layer = new MapImageLayer({
-		portalItem: {  
-		  id: "96598f80945349c381694ab996973a38"
-		},
-		id:'', 
-		visible: false,
-		title: lxarxpm25,
 		listMode: "hide-children"
 	  });
 
@@ -1091,7 +1091,7 @@
 		title: gxarxContm,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [ xarxpm25Layer, xarxpm10Layer, xarxno2Layer],
+		layers: [xarxpm10Layer, xarxno2Layer],
 		opacity: 1
 	  });
 
@@ -1160,7 +1160,7 @@
 		portalItem: {
 			id: "b1116a5559e24a638a4c2efe67b5c327"
 		},
-		id: "29baedf71bff4b35ad49e3076d1d9ccf", //modificar
+		id: "",
 		visible: false,
 		title: lpincend,
 		listMode: "hide-children"
@@ -1180,7 +1180,7 @@
 		portalItem: {
 			id: "9f59e1260a3b46b7ba1dc7d531c2545f"
 		},
-		id: "",
+		id: "be98a0e7a084409b822d72e1febd54d8",
 		visible: false,
 		title: lperim,
 		listMode: "hide-children"

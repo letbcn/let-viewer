@@ -85,6 +85,7 @@ var lfcc;
 var gUrba;
 var lpoligons;
 var lurban;
+var lequipaments;
 //Espai agrari
 var gAgrari;
 var lDan2021;
@@ -130,7 +131,6 @@ var gQualiair;
 var gxarxContm;
 var lxarxno2;
 var lxarxpm10;
-var lxarxpm25;
 //Contaminació atmosfèrica
 var gContm;
 var lno2;
@@ -278,6 +278,7 @@ var lpatentsv;
 	gUrba="Espai urbà";
 	lpoligons="Polígons industrials";
 	lurban="Classificació urbana";
+	lequipaments="Equipaments a l'AMB";
 	//Espai agrari
 	gAgrari= "Espai agrari";
 	lDan2021="Declaració agrària 2021";
@@ -323,7 +324,6 @@ var lpatentsv;
 	gxarxContm= "Xarxa control contaminants";
 	lxarxno2= "NO2";
 	lxarxpm10= "PM10";
-	lxarxpm25= "PM2,5";
 	//Contaminació atmosfèrica
 	gContm= "Contaminació atmosfèrica";
 	lno2= "NO2";
@@ -516,7 +516,6 @@ var lpatentsv;
 	gxarxContm= "Red control contaminantes";
 	lxarxno2= "NO2";
 	lxarxpm10= "PM10";
-	lxarxpm25= "PM2,5";
 	//Contaminación atmosfèrica
 	gContm= "Contaminación atmosférica";
 	lno2= "NO2";
@@ -704,7 +703,6 @@ var lpatentsv;
 	gxarxContm= "Contamination control network";
 	lxarxno2= "NO2";
 	lxarxpm10= "PM10";
-	lxarxpm25= "PM2,5";
 	//Contaminació atmosfèrica
 	gContm= "Atmospheric contamination";
 	lno2= "NO2";
