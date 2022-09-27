@@ -903,47 +903,6 @@
 		listMode: "hide-children"
 	});
 
-	//Emissions CO2
-	var co2electricsectorLayer = new MapImageLayer({
-		portalItem: {
-			id: "646196c94e794193b5b8c14d36a26b89"
-		},
-		id: "",
-		visible: false,
-		title: lCo2electsect,
-		listMode: "hide-children"
-	});
-
-	var co2electrichabLayer = new MapImageLayer({
-		portalItem: {
-			id: "b631257580464679ab4cfd3cb5c5f854"
-		},
-		id: "",
-		visible: false,
-		title: lCo2electhab,
-		listMode: "hide-children"
-	});
-
-	var co2gassectorLayer = new MapImageLayer({
-		portalItem: {
-			id: "d6f4217ac14343e1a0f75f4b900d18ae"
-		},
-		id: "",
-		visible: false,
-		title: lCo2gassect,
-		listMode: "hide-children"
-	});
-
-	var co2gashabLayer = new MapImageLayer({
-		portalItem: {
-			id: "c688787eab1140e8a524c10bc84c28c5"
-		},
-		id: "",
-		visible: false,
-		title: lCo2gashab,
-		listMode: "hide-children"
-	});
-
 	var energiaGroupLayer = new GroupLayer({
 		title: gEnergia,
 		visible: true,
@@ -965,11 +924,21 @@
 		listMode: "hide-children"
 	});
 
+	var emissioxarxaurbLayer = new MapImageLayer({
+		portalItem: {
+			id: "7729f52abeb646b69611822cca9b8fb3"
+		},
+		id: "",
+		visible: false,
+		title: lEmissioxarxaurb,
+		listMode: "hide-children"
+	});
+
 	var emissionsgasosGroupLayer = new GroupLayer({
 		title: gEmissionsgasos,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [co2gashabLayer, co2gassectorLayer, co2electrichabLayer, co2electricsectorLayer, emissiogasosLayer],
+		layers: [emissioxarxaurbLayer, emissiogasosLayer],
 		opacity: 1
 	});
 
@@ -979,7 +948,7 @@
 		portalItem: {
 			id: "8a040b595a384f0b9f1a41b61e2a3b7a"
 		},
-		id: "e497921bdf7343a699cea2a99d2ac9c7", //ACTUALITZAT
+		id: "e497921bdf7343a699cea2a99d2ac9c7",
 		visible: false,
 		title: lAiguahab,
 		listMode: "hide-children"
@@ -989,7 +958,7 @@
 		portalItem: {
 			id: "93ed70c216364e9eae3be697f8d7a658"
 		},
-		id: "",
+		id: "7ea11c3d5e3b4008904918d7ecf4f16e",
 		visible: false,
 		title: lAiguasect,
 		listMode: "hide-children"

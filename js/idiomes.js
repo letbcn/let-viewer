@@ -109,11 +109,7 @@ var lGasdom;
 //Emissions gasos hivernacle
 var gEmissionsgasos;
 var lEmissioogasos;
-//Emissions CO2
-var lCo2electsect;
-var lCo2electhab;
-var lCo2gassect;
-var lCo2gashab;
+var lEmissioxarxaurb;
 //Consum aigua
 var gCicleaigua;
 var lAiguahab;
@@ -295,11 +291,7 @@ var lpatentsv;
 	//Emissions gasos hivernacle
 	gEmissionsgasos= "Emissions gasos efecte hivernacle";
 	lEmissioogasos= "Gasos efecte hivernacle";
-	//Emissions
-	lCo2electsect= "Emissions CO2 del consum elèctric per sector";
-	lCo2electhab="Emissions CO2 del consum elèctric per habitant";
-	lCo2gassect= "Emissions CO2 del consum de gas natural per sector";
-	lCo2gashab= "Emissions CO2 del consum de gas natural per habitant";
+	lEmissioxarxaurb="Emissions CO xarxa urbana";
 	//consum aigua
 	gCicleaigua= "Consum d'aigua";
 	lAiguahab= "Per habitant";
@@ -487,11 +479,7 @@ var lpatentsv;
 	//Emissions gasos hivernacle
 	gEmissionsgasos= "Emisiones gases efecto invernadero";
 	lEmissioogasos= "Gases efecto invernadero";
-	//Emissions
-	lCo2electsect= "Emisiones CO2 del consumo eléctrico por sector";
-	lCo2electhab="Emisiones CO2 del consumo eléctrico por habitante";
-	lCo2gassect= "Emisiones CO2 del consumo de gas natural por sector";
-	lCo2gashab= "Emisiones CO2 del consumo de gas natural por habitante";
+	lEmissioxarxaurb="Emisiones CO red urbana";
 	//consumo agua
 	gCicleaigua= "Consumo de agua";
 	lAiguahab= "Por habitante";
@@ -674,11 +662,7 @@ var lpatentsv;
 	//Emissions gasos hivernacle
 	gEmissionsgasos= "Greenhouse gas emissions";
 	lEmissioogasos= "Greenhouse gases";
-	//Emissions
-	lCo2electsect= "CO2 emissions from electricity consumption by sector";
-	lCo2electhab="CO2 emissions from electricity consumption per capita";
-	lCo2gassect= "CO2 emissions from natural gas consumption by sector";
-	lCo2gashab= "CO2 emissions from natural gas consumption per capita";
+	lEmissioxarxaurb="CO urban emissions";
 	//consum aigua
 	gCicleaigua= "Water consumption";
 	lAiguahab= "Per capita";

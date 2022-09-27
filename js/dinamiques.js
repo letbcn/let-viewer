@@ -1598,9 +1598,6 @@
 		  });
 
 		  //Gasos efecte hivernacle
-		  
-		
-
 
 	//grup global gassos efecte hivernacle
 
