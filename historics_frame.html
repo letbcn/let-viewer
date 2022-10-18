@@ -132,6 +132,7 @@
             "esri/Map",
             "esri/views/MapView",
             "esri/layers/FeatureLayer",
+            "esri/layers/TileLayer",
             "esri/layers/MapImageLayer",
             "esri/widgets/Legend",
             "esri/core/watchUtils",
@@ -149,7 +150,7 @@
             "esri/tasks/support/StatisticDefinition",
             "dojo/dom-class",
             "dojo/domReady!"
-        ], function(Map, MapView, FeatureLayer, MapImageLayer, Legend, watchUtils, Expand, Home, WMSLayer, esriConfig, Field, Query, QueryTask, Chart, dom, domConstruct, domAttr, StatisticDefinition, domClass) {
+        ], function(Map, MapView, FeatureLayer, TileLayer,MapImageLayer, Legend, watchUtils, Expand, Home, WMSLayer, esriConfig, Field, Query, QueryTask, Chart, dom, domConstruct, domAttr, StatisticDefinition, domClass) {
 
             esriConfig.portalUrl = "https://uab.maps.arcgis.com"
             esriConfig.request.proxyUrl = "proxy.jsp";
@@ -192,59 +193,73 @@
             });
 
             //capes cove
-            cob56Layer = new MapImageLayer({
+            /*cob56Layer = new MapImageLayer({
                 portalItem: {
                     id: "040679a9fcee4e35a8808bea01cd71d9"
                 },
                 id: "271503d302a24e3c92ef806e53925b98",
                 listMode: "hide-children"
+            });*/
+
+            cob56Layer = new TileLayer({
+                url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_1956_tiles/MapServer"
             });
-
-
-            cob93Layer = new MapImageLayer({
+           /*cob93Layer = new MapImageLayer({
                 portalItem: {
                     id: "f2f124803baa4d86bb779cef346fc33b"
                 },
                 id: "27b6d833c83f4ff5a76ce4fefcd3971a",
                 listMode: "hide-children"
+            });*/
+
+            cob93Layer = new TileLayer({
+                url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_1993_tiles/MapServer"
             });
-
-
-            cob00Layer = new MapImageLayer({
+            /*cob00Layer = new MapImageLayer({
                 portalItem: {
                     id: "aea3bd0f2c8e4a1493699fdff988bac1"
                 },
                 id: "9ddbf3ad865445929d37291afa9e0a5b",
                 listMode: "hide-children"
+            });*/
+            cob00Layer = new TileLayer({
+                url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2000_tiles/MapServer"
             });
 
-
-            cob05Layer = new MapImageLayer({
+           /* cob05Layer = new MapImageLayer({
                 portalItem: {
                     id: "254f367be0684692a05a54b073ac121c"
                 },
                 id: "3549108ac10b4ab7b60c5623cd0f5cda",
                 listMode: "hide-children"
+            });*/
+            cob05Layer = new TileLayer({
+                url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2005_tiles/MapServer"
             });
 
-
-            cob09Layer = new MapImageLayer({
+            /*cob09Layer = new MapImageLayer({
                 portalItem: {
                     id: "9f942705cbdc4561a21b1c802b7f798b"
                 },
                 id: "c468a6a45ed84aafa7cb835565162d27",
                 listMode: "hide-children"
+            });*/
+            cob09Layer = new TileLayer({
+                url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2009_tiles/MapServer"
             });
 
-
-            cob15Layer = new MapImageLayer({
+            /*cob15Layer = new MapImageLayer({
                 portalItem: {
                     id: "57b1be06d3554ed6a2c4a7c0ed0cbe28"
                 },
                 id: "d44522da5c584825b4b370d13053056a",
                 listMode: "hide-children"
+            });*/
+            cob15Layer = new TileLayer({
+                url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2015_tiles/MapServer"
             });
 
+            
             template1 = {
                 title: " {nommuni}",
                 content: createPopup1
