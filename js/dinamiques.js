@@ -457,31 +457,20 @@
 		//Cobertes
 		var cob56Layer = new MapImageLayer({
 			portalItem: { 
-			  id: "040679a9fcee4e35a8808bea01cd71d9"
+			  id: "fd6676d3933a4453ac460c6b138fb25c"
 			},
-			id:"271503d302a24e3c92ef806e53925b98",
+			id:"",
 			visible: false,
 			title: lcob56,
 			listMode: "hide-children"
 		  });
 		  capes.push(cob56Layer);
 
-		  var cob93Layer = new MapImageLayer({
-			portalItem: { 
-			  id: "f2f124803baa4d86bb779cef346fc33b"
-			},
-			id:"27b6d833c83f4ff5a76ce4fefcd3971a",
-			visible: false,
-			title: lcob93,
-			listMode: "hide-children"
-		  });
-		  capes.push(cob93Layer);
-
 		  var cob00Layer = new MapImageLayer({
 			portalItem: { 
-			  id: "aea3bd0f2c8e4a1493699fdff988bac1"
+			  id: "908a6272be7b4a9990269de1e99f9e87"
 			},
-			id:"9ddbf3ad865445929d37291afa9e0a5b",
+			id:"",
 			visible: false,
 			title: lcob00,
 			listMode: "hide-children"
@@ -490,9 +479,9 @@
 
 		  var cob05Layer = new MapImageLayer({
 			portalItem: { 
-			  id: "254f367be0684692a05a54b073ac121c"
+			  id: "0c4e5db4edc34ab7865abffe30d2f347"
 			},
-			id:"3549108ac10b4ab7b60c5623cd0f5cda",
+			id:"",
 			visible: false,
 			title: lcob05,
 			listMode: "hide-children"
@@ -501,9 +490,9 @@
 
 		  var cob09Layer = new MapImageLayer({
 			portalItem: { 
-			  id: "9f942705cbdc4561a21b1c802b7f798b"
+			  id: "e6641663140245d7a2836b8883279e74"
 			},
-			id:"c468a6a45ed84aafa7cb835565162d27",
+			id:"",
 			visible: false,
 			title: lcob09,
 			listMode: "hide-children"
@@ -512,9 +501,9 @@
 
 		  var cob15Layer = new MapImageLayer({
 			portalItem: { 
-			  id: "57b1be06d3554ed6a2c4a7c0ed0cbe28"
+			  id: "5503f6895b424d738a0eae35438508aa"
 			},
-			id:"d44522da5c584825b4b370d13053056a",
+			id:"",
 			visible: false,
 			title: lcob15,
 			listMode: "hide-children"
@@ -523,7 +512,7 @@
 
 		  var cob20Layer = new MapImageLayer({
 			portalItem: {
-				id: "3f66422534f04a4a96a211c1ec584458"
+				id: "426a62b5e045463b8da4dc06f3b5afb4"
 			},
 			id: "",
 			visible: false,
@@ -536,7 +525,7 @@
 			title: gCob,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [cob56Layer, cob93Layer, cob00Layer,cob05Layer, cob09Layer, cob15Layer, cob20Layer],
+			layers: [cob56Layer, cob00Layer,cob05Layer, cob09Layer, cob15Layer, cob20Layer],
 			opacity: 1
 		  });
 

@@ -546,9 +546,9 @@
 
 	var cob15Layer = new MapImageLayer({
 		portalItem: {
-			id: "57b1be06d3554ed6a2c4a7c0ed0cbe28"
+			id: "5503f6895b424d738a0eae35438508aa"
 		},
-		id: "d44522da5c584825b4b370d13053056a",
+		id: "",
 		visible: false,
 		title: lcob15,
 		listMode: "hide-children"
@@ -556,7 +556,7 @@
 
 	var cob20Layer = new MapImageLayer({
 		portalItem: {
-			id: "3f66422534f04a4a96a211c1ec584458"
+			id: "426a62b5e045463b8da4dc06f3b5afb4"
 		},
 		id: "",
 		visible: false,
@@ -605,13 +605,13 @@
 		listMode: "hide-children"
 	});
 
-	var ndvi20Layer = new MapImageLayer({
+	var ndvi21Layer = new MapImageLayer({
 		portalItem: {
-			id: "1e41f8068df84a2ebaaef04dce0e006b"
+			id: "00ec911500834262b30eca83be06361d"
 		},
 		id: "",
 		visible: false,
-		title: lndvi20,
+		title: lndvi21,
 		listMode: "hide-children"
 	});
 
@@ -710,7 +710,7 @@
 		title: gNatural,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [variarbratGroupLayer, ndvi20Layer, biodivsingLayer, hicLayer, habLayer, boscossLayer],
+		layers: [variarbratGroupLayer, ndvi21Layer, biodivsingLayer, hicLayer, habLayer, boscossLayer],
 		opacity: 1
 	});
 
