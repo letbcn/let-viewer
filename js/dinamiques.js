@@ -3386,13 +3386,35 @@
           areaButton.classList.remove("active");
           measurement.clear();
    		}
-
-		   window.addEventListener("load", function() {
+		
+		window.addEventListener("load", function() {
+			openElements();					
+		});
+		
+		function openElements() {
+			
+			const selectedItems = [
+				'Indicadors socioecològics',
+				'Indicadors socioeconòmics',
+				'Indicadores socioecológicos',
+				'Indicadores socioeconómicos',
+				'Socio-ecological indicators',
+				'Socio-economic indicators',
+			]
+			
 			var itemsList = document.getElementsByClassName("esri-layer-list__child-toggle");
+			
+			if(1 > itemsList.length) {
+				setTimeout(function(){
+					openElements();
+				}, 2000);
+				return;
+			}
+			
 			for (var i = 0; i < itemsList.length; i++) {
-				if (itemsList[i]["data-item"].title == "Indicadors socioecològics" || itemsList[i]["data-item"].title == "Indicadors socioeconòmics") {
+				if (selectedItems.includes(itemsList[i]["data-item"].title)){
 					itemsList[i]["data-item"].open = true;
 				}
 			}
-		});
+		}
 	   
