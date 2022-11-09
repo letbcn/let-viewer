@@ -144,13 +144,14 @@
             "esri/tasks/support/Query",
             "esri/tasks/QueryTask",
             "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js",
+            "esri/widgets/Bookmarks",
             "dojo/dom",
             "dojo/dom-construct",
             "dojo/dom-attr",
             "esri/tasks/support/StatisticDefinition",
             "dojo/dom-class",
             "dojo/domReady!"
-        ], function(Map, MapView, FeatureLayer, TileLayer, MapImageLayer, Legend, watchUtils, Expand, Home, WMSLayer, esriConfig, Field, Query, QueryTask, Chart, dom, domConstruct, domAttr, StatisticDefinition, domClass) {
+        ], function(Map, MapView, FeatureLayer, TileLayer, MapImageLayer, Legend, watchUtils, Expand, Home, WMSLayer, esriConfig, Field, Query, QueryTask, Chart,Bookmarks, dom, domConstruct, domAttr, StatisticDefinition, domClass) {
 
             esriConfig.portalUrl = "https://uab.maps.arcgis.com"
             esriConfig.request.proxyUrl = "proxy.jsp";
@@ -159,12 +160,6 @@
                 url: 'http://geoserveis.icgc.cat/icc_ortohistorica/wms/service?', // url to the service,
                 sublayers: [{
                     name: 'ovab5m'
-                }]
-            });
-            orto1994 = new WMSLayer({
-                url: 'http://geoserveis.icgc.cat/icc_ortohistorica/wms/service?', // url to the service,
-                sublayers: [{
-                    name: 'orto5m1994'
                 }]
             });
             orto2000 = new WMSLayer({
@@ -191,74 +186,152 @@
                     name: 'orto5m2015'
                 }]
             });
+            orto2020 = new WMSLayer({
+                url: 'http://geoserveis.icgc.cat/servei/catalunya/orto-territorial/wms', // url to the service,
+                sublayers: [{
+                    name: 'ortofoto_color_2020'
+                }]
+            });
 
             //capes cove
-             /*cob56Layer = new MapImageLayer({
-                portalItem: {
-                    id: "040679a9fcee4e35a8808bea01cd71d9"
-                },
-                id: "271503d302a24e3c92ef806e53925b98",
-                listMode: "hide-children"
-            });*/
-
             cob56Layer = new TileLayer({
-                url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_1956_tiles/MapServer"
+                url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_1956_tiles_v2/MapServer"
             });
-           /*cob93Layer = new MapImageLayer({
-                portalItem: {
-                    id: "f2f124803baa4d86bb779cef346fc33b"
-                },
-                id: "27b6d833c83f4ff5a76ce4fefcd3971a",
-                listMode: "hide-children"
-            });*/
 
-            cob93Layer = new TileLayer({
-                url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_1993_tiles/MapServer"
-            });
-            /*cob00Layer = new MapImageLayer({
-                portalItem: {
-                    id: "aea3bd0f2c8e4a1493699fdff988bac1"
-                },
-                id: "9ddbf3ad865445929d37291afa9e0a5b",
-                listMode: "hide-children"
-            });*/
             cob00Layer = new TileLayer({
-                url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2000_tiles/MapServer"
+                url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2000_tiles_v2/MapServer"
             });
 
-           /* cob05Layer = new MapImageLayer({
-                portalItem: {
-                    id: "254f367be0684692a05a54b073ac121c"
-                },
-                id: "3549108ac10b4ab7b60c5623cd0f5cda",
-                listMode: "hide-children"
-            });*/
             cob05Layer = new TileLayer({
-                url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2005_tiles/MapServer"
+                url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2005_tiles_v2/MapServer"
             });
 
-            /*cob09Layer = new MapImageLayer({
-                portalItem: {
-                    id: "9f942705cbdc4561a21b1c802b7f798b"
-                },
-                id: "c468a6a45ed84aafa7cb835565162d27",
-                listMode: "hide-children"
-            });*/
             cob09Layer = new TileLayer({
-                url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2009_tiles/MapServer"
+                url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2009_tiles_v2/MapServer"
             });
 
-            /*cob15Layer = new MapImageLayer({
-                portalItem: {
-                    id: "57b1be06d3554ed6a2c4a7c0ed0cbe28"
-                },
-                id: "d44522da5c584825b4b370d13053056a",
-                listMode: "hide-children"
-            });*/
             cob15Layer = new TileLayer({
-                url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2015_tiles/MapServer"
+                url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2015_tiles_v2/MapServer"
+            });
+            cob20Layer = new TileLayer({
+                url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2020_tiles_v2/MapServer"
             });
 
+            /** capes àmbits **/
+            const sym = {
+          type: "simple", // autocasts as new SimpleRenderer()
+          symbol: {
+            type: "simple-fill", // autocasts as new SimpleFillSymbol()
+            color: [255, 255, 255, 0.8],
+			outline:{color: [255, 255, 255, 0]}
+          }
+        };
+             AMBLayer1 = new FeatureLayer({
+			url:
+			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/amb_cat/FeatureServer/0",
+			renderer: sym,
+			definitionExpression: "amb = 0"
+		  });
+           AMBLayer2 = new FeatureLayer({
+			url:
+			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/amb_cat/FeatureServer/0",
+			renderer: sym,
+			definitionExpression: "amb = 0"
+
+		  });
+           AMBLayer3 = new FeatureLayer({
+			url:
+			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/amb_cat/FeatureServer/0",
+			renderer: sym,
+			definitionExpression: "amb = 0"
+
+		  });
+           AMBLayer4 = new FeatureLayer({
+			url:
+			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/amb_cat/FeatureServer/0",
+			renderer: sym,
+			definitionExpression: "amb = 0"
+    
+
+		  });
+
+		   B30Layer1 = new FeatureLayer({
+			url:
+			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/b30_cat/FeatureServer/0",
+			renderer: sym,
+			definitionExpression: "b30 = 0",
+            visible:false
+		  });
+           B30Layer2 = new FeatureLayer({
+			url:
+			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/b30_cat/FeatureServer/0",
+			renderer: sym,
+			definitionExpression: "b30 = 0",
+            visible:false
+		  });
+           B30Layer3 = new FeatureLayer({
+			url:
+			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/b30_cat/FeatureServer/0",
+			renderer: sym,
+			definitionExpression: "b30 = 0",
+            visible:false
+		  });
+           B30Layer4 = new FeatureLayer({
+			url:
+			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/b30_cat/FeatureServer/0",
+			renderer: sym,
+			definitionExpression: "b30 = 0",
+            visible:false
+		  });
+
+
+          var ambits = [
+			{
+				"name": "(BMR) Barcelona Metropolitan Region (164 municipalities)",
+				"id": "RMB",
+				"extent": {
+					"xmin": 1.473162,
+					"ymin": 41.192715,
+					"xmax": 2.777576,
+					"ymax": 41.808802,
+					"spatialReference": {
+						"wkid": 4326
+					}
+				},
+				"thumbnail": "imatges/ambit_rmb.jpg"
+			},
+			{
+				"name": "(BMA) Barcelona Metropolitan Area (36 municipalities)",
+				"id": "AMB",
+				"extent": {
+					"xmin": 197414.0207403185,
+					"ymin": 5059350.4748958545,
+					"xmax": 264143.54643318744,
+					"ymax": 5080676.405787391,
+					"spatialReference": {
+						"wkid": 102100
+					}
+				},
+				"thumbnail": "imatges/ambit_amb.jpg"
+			},
+			{
+				"name": "(B30)  B30 Scope (23 municipalities)",
+				"id": "B30",
+				"extent": {
+					"xmin": 1.889904,
+					"ymin": 41.414954,
+					"xmax": 2.382878,
+					"ymax": 41.666569,
+					"spatialReference": {
+						"wkid": 4326
+					}
+				},
+				"thumbnail": "imatges/ambit_b30.jpg"
+			}
+		]
+
+		
+            
             template1 = {
                 title: " {nommuni}",
                 content: createPopup1
@@ -297,28 +370,29 @@
             });
 
 
+            featureLayer1.definitionExpression="amb = 1";
             map1 = new Map({
                 basemap: "gray",
-                layers: [orto1956]
+                layers: [orto1956,AMBLayer1,B30Layer1]
             });
-
+            featureLayer2.definitionExpression="amb = 1";
             map2 = new Map({
                 basemap: "gray",
-                layers: [cob56Layer, featureLayer2]
+                layers: [cob56Layer, featureLayer2,AMBLayer2,B30Layer2]
             });
-
+            featureLayer3.definitionExpression="amb = 1";
             map3 = new Map({
                 basemap: "gray",
-                layers: [orto2000]
+                layers: [orto2000,AMBLayer3,B30Layer3]
             });
-
+            featureLayer4.definitionExpression="amb = 1";
             map4 = new Map({
                 basemap: "gray",
-                layers: [cob00Layer, featureLayer4]
+                layers: [cob00Layer, featureLayer4,AMBLayer4,B30Layer4]
             });
 
-            var centerMap = [2.13, 41.51];
-            var zoomDefault = 9;
+            var centerMap = [2.0731210854649156, 41.389835254243316];
+            var zoomDefault = 11;
 
             view1 = new MapView({
                 container: "viewDiv1",
@@ -447,7 +521,7 @@
             legend2 = new Legend({
                 view: view2,
                 layerInfos: [{
-                    layer: cob00Layer,
+                    layer: cob56Layer,
                     title: ""
                 }],
                 style: "classic"
@@ -506,6 +580,73 @@
             view4.surface.addEventListener("wheel", function(event) {
                 event.stopImmediatePropagation();
             }, true);
+
+
+            const bookmarks = new Bookmarks({
+			view: view1,
+			// allows bookmarks to be added, edited, or deleted
+			editingEnabled: false,
+			bookmarks: ambits
+		});
+
+		const bkExpand = new Expand({
+			view: view1,
+            expandIconClass: "esri-icon-globe",
+			content: bookmarks,
+			expanded: true,
+			expandTooltip: "",
+			collapseTooltip: "Tanca"
+		});
+
+        bookmarks.on("select-bookmark", function (event) {
+			bkExpand.expanded = false;
+			//intentaré que es carreguin les capes corresponents
+			if (event.bookmark.id == "RMB") {
+				featureLayer1.definitionExpression = "rmb = 1";
+                featureLayer2.definitionExpression = "rmb = 1"
+                featureLayer3.definitionExpression = "rmb = 1"
+                featureLayer4.definitionExpression = "rmb = 1"
+                B30Layer1.visible = false;
+                B30Layer2.visible = false;
+                B30Layer3.visible = false;
+                B30Layer4.visible = false;
+				AMBLayer1.visible = false;
+                AMBLayer2.visible = false;
+                AMBLayer3.visible = false;
+                AMBLayer4.visible = false;
+			} else if (event.bookmark.id == "AMB") {
+				featureLayer1.definitionExpression = "amb = 1";
+                featureLayer2.definitionExpression = "amb = 1";
+                featureLayer3.definitionExpression = "amb = 1";
+                featureLayer4.definitionExpression = "amb = 1";
+                B30Layer1.visible = false;
+                B30Layer2.visible = false;
+                B30Layer3.visible = false;
+                B30Layer4.visible = false;
+				AMBLayer1.visible = true;
+                AMBLayer2.visible = true;
+                AMBLayer3.visible = true;
+                AMBLayer4.visible = true;
+			} else if (event.bookmark.id == "B30") {
+				featureLayer1.definitionExpression = "b30 = 1";
+                featureLayer2.definitionExpression = "b30 = 1";
+                featureLayer3.definitionExpression = "b30 = 1";
+                featureLayer4.definitionExpression = "b30 = 1";
+                B30Layer1.visible = true;
+                B30Layer2.visible = true;
+                B30Layer3.visible = true;
+                B30Layer4.visible = true;
+				AMBLayer1.visible = false;
+                AMBLayer2.visible = false;
+                AMBLayer3.visible = false;
+                AMBLayer4.visible = false;
+			}
+		});
+
+
+		// Add the widget to the bottom-right corner of the view
+		view1.ui.add(bkExpand, "bottom-right");
+
 
             function createPopup1(event, graphic) {
                 grafic1 = dadesAny(document.getElementById("field-select-us1").value, event);
@@ -596,13 +737,13 @@
                                 myColors[index] = "#80ffff";
                                 break;
                             case "Prats i herbassars":
-                                myColors[index] = "#ffff82";
+                                myColors[index] = "#06ba15";
                                 break;
                             case "Zones cremades":
-                                myColors[index] = "#ff0000";
+                                myColors[index] = "#a60303";
                                 break;
                             case "Roquissars":
-                                myColors[index] = "#797979";
+                                myColors[index] = "#95989D";
                                 break;
                             case "Tarteres":
                                 myColors[index] = "#ebebeb";
@@ -623,13 +764,13 @@
                                 myColors[index] = "#000080";
                                 break;
                             case "Zones urbanitzades":
-                                myColors[index] = "#ffa4e2";
+                                myColors[index] = "#e82c1e";
                                 break;
                             case "Basses urbanes":
                                 myColors[index] = "#5fa083";
                                 break;
                             case "Vies de comunicacio":
-                                myColors[index] = "#ff00ff";
+                                myColors[index] = "#95989D";
                                 break;
                             case "Zones esportives i ludiques":
                                 myColors[index] = "#a244ff";
@@ -641,7 +782,7 @@
                                 myColors[index] = "#b5c9cc";
                                 break;
                             case "Conreus":
-                                myColors[index] = "#7f4219";
+                                myColors[index] = "#dbca2e";
                                 break;
                         }
                     });
@@ -867,10 +1008,6 @@
                     mapa.removeAll();
                     mapa.add(orto1956);
                     break;
-                case "1994":
-                    mapa.removeAll();
-                    mapa.add(orto1994);
-                    break;
                 case "2000":
                     mapa.removeAll();
                     mapa.add(orto2000);
@@ -887,6 +1024,33 @@
                     mapa.removeAll();
                     mapa.add(orto2015);
                     break;
+                case "2020":
+                    mapa.removeAll();
+                    mapa.add(orto2020);
+                    break;
+            }
+            switch (identificador) {
+                
+                case "field-select-us1":
+                    mapa.add(AMBLayer1);
+                    mapa.add(B30Layer1);
+                    view1.popup.close();
+                    break;
+                case "field-select-us2":
+                    mapa.add(AMBLayer2);
+                    mapa.add(B30Layer2);
+                    view2.popup.close();
+                    break;
+                case "field-select-us3":
+                    mapa.add(AMBLayer3);
+                    mapa.add(B30Layer3);
+                    view3.popup.close();
+                    break;
+                case "field-select-uso4":
+                    mapa.add(AMBLayer4);
+                    mapa.add(B30Layer4);
+                    view4.popup.close();
+                    break;
             }
             document.getElementById(identificador).value = -1
         }
@@ -895,9 +1059,6 @@
             switch (anual) {
                 case "1956":
                     capa = cob56Layer;
-                    break;
-                case "1993":
-                    capa = cob93Layer;
                     break;
                 case "2000":
                     capa = cob00Layer;
@@ -911,25 +1072,38 @@
                 case "2015":
                     capa = cob15Layer;
                     break;
+                case "2020":
+                    capa = cob20Layer;
+                    break;
             }
             mapa.removeAll();
             mapa.add(capa);
 
             switch (identificador) {
+                
                 case "field-select-orto1":
+                    
                     mapa.add(featureLayer1);
+                    mapa.add(AMBLayer1);
+                    mapa.add(B30Layer1);
                     view1.popup.close();
                     break;
                 case "field-select-orto2":
                     mapa.add(featureLayer2);
+                    mapa.add(AMBLayer2);
+                    mapa.add(B30Layer2);
                     view2.popup.close();
                     break;
                 case "field-select-orto3":
                     mapa.add(featureLayer3);
+                    mapa.add(AMBLayer3);
+                    mapa.add(B30Layer3);
                     view3.popup.close();
                     break;
                 case "field-select-orto4":
                     mapa.add(featureLayer4);
+                    mapa.add(AMBLayer4);
+                    mapa.add(B30Layer4);
                     view4.popup.close();
                     break;
             }
@@ -954,27 +1128,27 @@
         </div>
 
         <div id="infoDiv1" class="esri-widget" style="padding: 3px;">
-            Ortofoto
+            Ortophoto
             <select id="field-select-orto1" class="esri-widget" onchange="canvi(this.value,map1,'field-select-us1',legend1)">
         <option value="-1"></option>
         <option value="1956" selected>1956</option>
-        <option value="1994">1994</option>
         <option value="2000">2000</option>
         <option value="2009">2009</option>
         <option value="2015">2015</option>
+        <option value="2020">2020</option>
       </select>
 
         </div>
         <div id="infoDiv1_1" class="esri-widget" style="padding: 3px;">
-            Covers
+            Cover
             <select id="field-select-us1" class="esri-widget" onchange="canviUs(this.value,map1,'field-select-orto1',legend1)">
         <option value="-1"></option>
         <option value="1956">1956</option>
-        <option value="1993">1993</option>
         <option value="2000">2000</option>
         <option value="2005">2005</option>
         <option value="2009">2009</option>
         <option value="2015">2015</option>
+        <option value="2020">2020</option>
       </select>
         </div>
     </div>
@@ -982,26 +1156,26 @@
         <div id="viewDiv2">
         </div>
         <div id="infoDiv2" class="esri-widget" style="padding: 3px;">
-            Ortofoto
+            Ortophoto
             <select id="field-select-orto2" class="esri-widget" onchange="canvi(this.value,map2,'field-select-us2',legend2)">
         <option value="-1"></option>
         <option value="1956">1956</option>
-        <option value="1994">1994</option>
         <option value="2000">2000</option>
         <option value="2009">2009</option>
         <option value="2015">2015</option>
+        <option value="2020">2020</option>
       </select>
         </div>
         <div id="infoDiv2_1" class="esri-widget" style="padding: 3px;">
-            Covers
+            Cover
             <select id="field-select-us2" class="esri-widget" onchange="canviUs(this.value,map2,'field-select-orto2',legend2)">
         <option value="-1"></option>
         <option value="1956" selected>1956</option>
-        <option value="1993">1993</option>
         <option value="2000">2000</option>
         <option value="2005">2005</option>
         <option value="2009">2009</option>
         <option value="2015">2015</option>
+        <option value="2020">2020</option>
       </select>
         </div>
     </div>
@@ -1009,26 +1183,26 @@
         <div id="viewDiv3">
         </div>
         <div id="infoDiv3" class="esri-widget" style="padding: 3px;">
-            Ortofoto
+            Ortophoto
             <select id="field-select-orto3" class="esri-widget" onchange="canvi(this.value,map3,'field-select-us3',legend3)">
         <option value="-1"></option>
         <option value="1956">1956</option>
-        <option value="1994">1994</option>
-        <option value="2000" selected>2000</option>
-        <option value="2009">2009</option>
+        <option value="2000">2000</option>
+        <option value="2009"selected>2009</option>
         <option value="2015">2015</option>
+        <option value="2020">2020</option>
       </select>
         </div>
         <div id="infoDiv3_1" class="esri-widget" style="padding: 3px;">
-            Covers
+            Cover
             <select id="field-select-us3" class="esri-widget" onchange="canviUs(this.value,map3,'field-select-orto3',legend3)">
         <option value="-1"></option>
         <option value="1956">1956</option>
-        <option value="1993">1993</option>
         <option value="2000">2000</option>
         <option value="2005">2005</option>
         <option value="2009">2009</option>
         <option value="2015">2015</option>
+        <option value="2020">2020</option>
       </select>
         </div>
     </div>
@@ -1037,26 +1211,26 @@
         <div id="viewDiv4">
         </div>
         <div id="infoDiv4" class="esri-widget" style="padding: 3px;">
-            Ortofoto
+            Ortophoto
             <select id="field-select-orto4" class="esri-widget" onchange="canvi(this.value,map4,'field-select-us4',legend4)">
         <option value="-1"></option>
         <option value="1956">1956</option>
-        <option value="1994">1994</option>
         <option value="2000">2000</option>
         <option value="2009">2009</option>
         <option value="2015">2015</option>
+        <option value="2020">2020</option>
       </select>
         </div>
         <div id="infoDiv4_1" class="esri-widget" style="padding: 3px;">
-            Covers
+            Cover
             <select id="field-select-us4" class="esri-widget" onchange="canviUs(this.value,map4,'field-select-orto4',legend4)">
         <option value="-1"></option>
         <option value="1956">1956</option>
-        <option value="1993">1993</option>
-        <option value="2000" selected>2000</option>
+        <option value="2000">2000</option>
         <option value="2005">2005</option>
-        <option value="2009">2009</option>
+        <option value="2009"selected>2009</option>
         <option value="2015">2015</option>
+        <option value="2020">2020</option>
       </select>
         </div>
     </div>

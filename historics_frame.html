@@ -588,8 +588,9 @@
 
 		const bkExpand = new Expand({
 			view: view1,
+            expandIconClass: "esri-icon-globe",
 			content: bookmarks,
-			expanded: false,
+			expanded: true,
 			expandTooltip: "",
 			collapseTooltip: "Tanca"
 		});
@@ -638,6 +639,8 @@
                 AMBLayer4.visible = false;
 			}
 		});
+
+
 		// Add the widget to the bottom-right corner of the view
 		view1.ui.add(bkExpand, "bottom-right");
 
@@ -1181,8 +1184,8 @@
             <select id="field-select-orto3" class="esri-widget" onchange="canvi(this.value,map3,'field-select-us3',legend3)">
         <option value="-1"></option>
         <option value="1956">1956</option>
-        <option value="2000" selected>2000</option>
-        <option value="2009">2009</option>
+        <option value="2000">2000</option>
+        <option value="2009"selected>2009</option>
         <option value="2015">2015</option>
         <option value="2020">2020</option>
       </select>
@@ -1220,9 +1223,9 @@
             <select id="field-select-us4" class="esri-widget" onchange="canviUs(this.value,map4,'field-select-orto4',legend4)">
         <option value="-1"></option>
         <option value="1956">1956</option>
-        <option value="2000" selected>2000</option>
+        <option value="2000">2000</option>
         <option value="2005">2005</option>
-        <option value="2009">2009</option>
+        <option value="2009"selected>2009</option>
         <option value="2015">2015</option>
         <option value="2020">2020</option>
       </select>
