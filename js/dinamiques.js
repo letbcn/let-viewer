@@ -5,6 +5,8 @@
         "esri/layers/GroupLayer",
         "esri/layers/MapImageLayer",
 		"esri/layers/FeatureLayer",
+		"esri/layers/TileLayer",
+		"esri/layers/VectorTileLayer",
 		"esri/layers/WMSLayer",
 		"esri/widgets/LayerList",
 		"esri/widgets/Measurement",
@@ -28,7 +30,7 @@
       "dojo/dom",
       "dojo/promise/all",
       "dojo/domReady!"
-      ], function(Map,MapView, SceneView, GroupLayer, MapImageLayer, FeatureLayer, WMSLayer, LayerList, Measurement, Legend, esriConfig, 
+      ], function(Map,MapView, SceneView, GroupLayer, MapImageLayer, FeatureLayer, VectorTileLayer, TileLayer, WMSLayer, LayerList, Measurement, Legend, esriConfig, 
 	  Expand, Search,Home,BasemapGallery,GeometryService,ProjectParameters,Bookmarks, TimeSlider, Portal,PortalBasemapsSource,IdentifyTask,IdentifyParameters, arrayUtils, domConstruct,on, dom, all) {
         
 		
@@ -116,10 +118,9 @@
 			title: lcomarca,
 			listMode: "hide-children"
 			});
-			capes.push(comarquesLayer);
 
-			var municipiscercaLayer = new FeatureLayer({
-				portalItem: {  
+		var municipiscercaLayer = new FeatureLayer({
+			portalItem: {  
 					id: "3db378fe1bfb49b8b0fc2c859c69da03"
 				  },
 				  id:"",
@@ -464,7 +465,6 @@
 			title: lcob56,
 			listMode: "hide-children"
 		  });
-		  capes.push(cob56Layer);
 
 		  var cob00Layer = new MapImageLayer({
 			portalItem: { 
@@ -475,7 +475,6 @@
 			title: lcob00,
 			listMode: "hide-children"
 		  });
-		  capes.push(cob00Layer);
 
 		  var cob05Layer = new MapImageLayer({
 			portalItem: { 
@@ -486,19 +485,17 @@
 			title: lcob05,
 			listMode: "hide-children"
 		  });
-		  capes.push(cob05Layer);
 
 		  var cob09Layer = new MapImageLayer({
 			portalItem: { 
-			  id: "e6641663140245d7a2836b8883279e74"
+			 id: "e6641663140245d7a2836b8883279e74"
 			},
 			id:"",
 			visible: false,
 			title: lcob09,
 			listMode: "hide-children"
 		  });
-		  capes.push(cob09Layer);
-
+	
 		  var cob15Layer = new MapImageLayer({
 			portalItem: { 
 			  id: "5503f6895b424d738a0eae35438508aa"
@@ -508,7 +505,6 @@
 			title: lcob15,
 			listMode: "hide-children"
 		  });
-		  capes.push(cob15Layer);
 
 		  var cob20Layer = new MapImageLayer({
 			portalItem: {
@@ -519,7 +515,6 @@
 			title: lcob20,
 			listMode: "hide-children"
 		});
-		capes.push(cob20Layer);
 
 		  var cobGroupLayer = new GroupLayer({
 			title: gCob,
@@ -1729,6 +1724,7 @@
 		listMode: "hide-children"
 		});
 
+	
 		var gasosGroupLayer = new GroupLayer({
 			title: gGasos,
 			visible: true,
@@ -3302,15 +3298,16 @@
 					  };
 					  identifyElements.push(feature);
 /*
-				  if (majors15Layer.visible) {
+				  if (emissiogasos17Layer.visible) {
 					  feature.popupTemplate = {
 						// autocasts as new PopupTemplate()
 						title: layerName + ": {CODI_CAS}",
 						content: contingut
 					  };
 					   identifyElements.push(feature);
+				     
 
-				  } else if (majors16Layer.visible) {
+				  } else if (emissiogasos16Layer.visible) {
 						feature.popupTemplate = { // autocasts as new PopupTemplate()
 						  title: layerName,
 						  content: contingut
@@ -3318,7 +3315,7 @@
 						};
 						 identifyElements.push(feature);
 				  }
-				 
+				 /*
 				  if (cob56Layer.visible) {
 					feature.popupTemplate = {
 					  // autocasts as new PopupTemplate()
@@ -3363,58 +3360,57 @@
 //FI IDENTIFY
       
 	
+function distanceMeasurement() {
+	const type = view.type;
+	measurement.activeTool =
+	  type.toUpperCase() === "2D" ? "distance" : "direct-line";
+	distanceButton.classList.add("active");
+	areaButton.classList.remove("active");
+  }
 
+  // Call the appropriate AreaMeasurement2D or AreaMeasurement3D
+  function areaMeasurement() {
+	measurement.activeTool = "area";
+	distanceButton.classList.remove("active");
+	areaButton.classList.add("active");
+  }
 
-      function distanceMeasurement() {
-          const type = view.type;
-          measurement.activeTool =
-            type.toUpperCase() === "2D" ? "distance" : "direct-line";
-          distanceButton.classList.add("active");
-          areaButton.classList.remove("active");
-        }
+  // Clears all measurements
+  function clearMeasurements() {
+	distanceButton.classList.remove("active");
+	areaButton.classList.remove("active");
+	measurement.clear();
+	 }
+  
+  window.addEventListener("load", function() {
+	  openElements();					
+  });
+  
+  function openElements() {
+	  
+	  const selectedItems = [
+		  'Indicadors socioecològics',
+		  'Indicadors socioeconòmics',
+		  'Indicadores socioecológicos',
+		  'Indicadores socioeconómicos',
+		  'Socio-ecological indicators',
+		  'Socio-economic indicators',
+	  ]
+	  
+	  var itemsList = document.getElementsByClassName("esri-layer-list__child-toggle");
+	  
+	  if(1 > itemsList.length) {
+		  setTimeout(function(){
+			  openElements();
+		  }, 2000);
+		  return;
+	  }
+	  
+	  for (var i = 0; i < itemsList.length; i++) {
+		  if (selectedItems.includes(itemsList[i]["data-item"].title)){
+			  itemsList[i]["data-item"].open = true;
+		  }
+	  }
+  }
 
-        // Call the appropriate AreaMeasurement2D or AreaMeasurement3D
-        function areaMeasurement() {
-          measurement.activeTool = "area";
-          distanceButton.classList.remove("active");
-          areaButton.classList.add("active");
-        }
-
-        // Clears all measurements
-        function clearMeasurements() {
-          distanceButton.classList.remove("active");
-          areaButton.classList.remove("active");
-          measurement.clear();
-   		}
-		
-		window.addEventListener("load", function() {
-			openElements();					
-		});
-		
-		function openElements() {
-			
-			const selectedItems = [
-				'Indicadors socioecològics',
-				'Indicadors socioeconòmics',
-				'Indicadores socioecológicos',
-				'Indicadores socioeconómicos',
-				'Socio-ecological indicators',
-				'Socio-economic indicators',
-			]
-			
-			var itemsList = document.getElementsByClassName("esri-layer-list__child-toggle");
-			
-			if(1 > itemsList.length) {
-				setTimeout(function(){
-					openElements();
-				}, 2000);
-				return;
-			}
-			
-			for (var i = 0; i < itemsList.length; i++) {
-				if (selectedItems.includes(itemsList[i]["data-item"].title)){
-					itemsList[i]["data-item"].open = true;
-				}
-			}
-		}
-	   
+     
