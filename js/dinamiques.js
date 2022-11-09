@@ -1550,11 +1550,71 @@
 
 		  //PM10
 		 
+		  var xarxpm102015Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "4a9d4f59a9b644099301bf26e55f3abc"
+			},
+			id:'', 
+			visible: false,
+			title: lxarxpm102015,
+			listMode: "hide-children"
+		  });  
+		 
+		  var xarxpm102016Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "64f0c7c1663c4299b16f65ffcb92281b"
+			},
+			id:'', 
+			visible: false,
+			title: lxarxpm102016,
+			listMode: "hide-children"
+		  });    
+		 
+		  var xarxpm102017Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "d20580ed63154089a58885536b1a9d7f"
+			},
+			id:'', 
+			visible: false,
+			title: lxarxpm102017,
+			listMode: "hide-children"
+		  });   
+		 
+		  var xarxpm102018Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "3d635c26a7794f9593070e870f1b0404"
+			},
+			id:'', 
+			visible: false,
+			title: lxarxpm102018,
+			listMode: "hide-children"
+		  });  
+		 
+		  var xarxpm102019Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "59163d60d0674d05a508743a02dd8cee"
+			},
+			id:'', 
+			visible: false,
+			title: lxarxpm102019,
+			listMode: "hide-children"
+		  });  
+		 
+		  var xarxpm102020Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "c3745cfbcafd4c17a30d56758ac0bc1d"
+			},
+			id:'', 
+			visible: false,
+			title: lxarxpm102020,
+			listMode: "hide-children"
+		  }); 
+		 
 		  var xarxpm102021Layer = new MapImageLayer({
 			portalItem: {  
 			  id: "3f07093c104b4269b8ae1b50ba6e5b60"
 			},
-			id:'', //modificar
+			id:'', 
 			visible: false,
 			title: lxarxpm102021,
 			listMode: "hide-children"
@@ -1564,36 +1624,15 @@
 			title: gxarxpm10,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [xarxpm102021Layer],
+			layers: [xarxpm102015Layer, xarxpm102016Layer, xarxpm102017Layer, xarxpm102018Layer, xarxpm102019Layer, xarxpm102020Layer, xarxpm102021Layer],
 			opacity: 1
 		  });
 
-	//PM2.5
-
-	  
-		var xarxpm2516Layer = new MapImageLayer({
-			portalItem: {  
-			  id: "96598f80945349c381694ab996973a38"
-			},
-			id:'', //modificar
-			visible: false,
-			title: lxarxpm2516,
-			listMode: "hide-children"
-		  });
-
-		 var xarxapm25GroupLayer = new GroupLayer({
-			title: gxarxpm25,
-			visible: true,
-			visibilityMode: "independent",
-			layers: [xarxpm2516Layer],
-			opacity: 1
-		  });
-	
 		var xarxacontmGroupLayer = new GroupLayer({
 			title: gxarxContm,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [ xarxapm25GroupLayer, xarxapm10GroupLayer, xarxano2GroupLayer],
+			layers: [xarxapm10GroupLayer, xarxano2GroupLayer],
 			opacity: 1
 		  });
 

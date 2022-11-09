@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es-ES">
+<html>
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>Comparador mapas históricos</title>
+    <title>Comparador mapes històrics</title>
 
     <link rel="stylesheet" href="https://js.arcgis.com/4.13/esri/themes/light/main.css" />
     <link rel="stylesheet" href="css/templatemo-style.css">
@@ -150,7 +150,7 @@
             "esri/tasks/support/StatisticDefinition",
             "dojo/dom-class",
             "dojo/domReady!"
-        ], function(Map, MapView, FeatureLayer, TileLayer, MapImageLayer, Legend, watchUtils, Expand, Home, WMSLayer, esriConfig, Field, Query, QueryTask, Chart, dom, domConstruct, domAttr, StatisticDefinition, domClass) {
+        ], function(Map, MapView, FeatureLayer, TileLayer,MapImageLayer, Legend, watchUtils, Expand, Home, WMSLayer, esriConfig, Field, Query, QueryTask, Chart, dom, domConstruct, domAttr, StatisticDefinition, domClass) {
 
             esriConfig.portalUrl = "https://uab.maps.arcgis.com"
             esriConfig.request.proxyUrl = "proxy.jsp";
@@ -193,7 +193,7 @@
             });
 
             //capes cove
-             /*cob56Layer = new MapImageLayer({
+            /*cob56Layer = new MapImageLayer({
                 portalItem: {
                     id: "040679a9fcee4e35a8808bea01cd71d9"
                 },
@@ -259,6 +259,7 @@
                 url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2015_tiles/MapServer"
             });
 
+            
             template1 = {
                 title: " {nommuni}",
                 content: createPopup1
@@ -966,7 +967,7 @@
 
         </div>
         <div id="infoDiv1_1" class="esri-widget" style="padding: 3px;">
-            Cubiertas
+            Cobertes
             <select id="field-select-us1" class="esri-widget" onchange="canviUs(this.value,map1,'field-select-orto1',legend1)">
         <option value="-1"></option>
         <option value="1956">1956</option>
@@ -993,7 +994,7 @@
       </select>
         </div>
         <div id="infoDiv2_1" class="esri-widget" style="padding: 3px;">
-            Cubiertas
+            Cobertes
             <select id="field-select-us2" class="esri-widget" onchange="canviUs(this.value,map2,'field-select-orto2',legend2)">
         <option value="-1"></option>
         <option value="1956" selected>1956</option>
@@ -1020,7 +1021,7 @@
       </select>
         </div>
         <div id="infoDiv3_1" class="esri-widget" style="padding: 3px;">
-            Cubiertas
+            Cobertes
             <select id="field-select-us3" class="esri-widget" onchange="canviUs(this.value,map3,'field-select-orto3',legend3)">
         <option value="-1"></option>
         <option value="1956">1956</option>
@@ -1048,7 +1049,7 @@
       </select>
         </div>
         <div id="infoDiv4_1" class="esri-widget" style="padding: 3px;">
-            Cubiertas
+            Cobertes
             <select id="field-select-us4" class="esri-widget" onchange="canviUs(this.value,map4,'field-select-orto4',legend4)">
         <option value="-1"></option>
         <option value="1956">1956</option>
