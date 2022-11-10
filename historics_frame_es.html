@@ -695,6 +695,7 @@
 
                     var dades = new Array();
                     var dades_per = new Array();
+                    var etiquetes = new Array();
                     var myColors = [];
                     featureAttributes.sort((a, b) => (a.area < b.area) ? 1 : ((b.area < a.area) ? -1 : 0))
                     var total = 0;
@@ -708,76 +709,76 @@
                     });
                     etiquetes.forEach(function(value, index, array) {
                         switch (value) {
-                            case "Bosques densos (no de ribera)":
+                            case "Boscos densos (no de ribera)":
                                 myColors[index] = "#689010";
                                 break;
-                            case "Bosques densos de ribera":
+                            case "Boscos densos de ribera":
                                 myColors[index] = "#00ff00";
                                 break;
-                            case "Plantaciones de chopos":
+                            case "Plantacions de pollancres":
                                 myColors[index] = "#005a00";
                                 break;
-                            case "Plantaciones de plátanos":
+                            case "Plantacions de platans":
                                 myColors[index] = "#c3ff00";
                                 break;
-                            case "Bosques claros (no de ribera)":
+                            case "Boscos clars (no de ribera)":
                                 myColors[index] = "#a0ffa0";
                                 break;
-                            case "Bosques claros de ribera":
+                            case "Boscos clars de ribera":
                                 myColors[index] = "#00c800";
                                 break;
-                            case "Matorrales":
+                            case "Matollars":
                                 myColors[index] = "#c0c09c";
                                 break;
-                            case "Humedales":
+                            case "Aiguamolls":
                                 myColors[index] = "#80ffff";
                                 break;
-                            case "Prados y herbazales":
+                            case "Prats i herbassars":
                                 myColors[index] = "#06ba15";
                                 break;
-                            case "Zonas quemadas":
+                            case "Zones cremades":
                                 myColors[index] = "#a60303";
                                 break;
-                            case "Roquedales":
+                            case "Roquissars":
                                 myColors[index] = "#95989D";
                                 break;
-                            case "Canchales":
+                            case "Tarteres":
                                 myColors[index] = "#ebebeb";
                                 break;
-                            case "Suelos desnudos forestales":
+                            case "Sols nus forestals":
                                 myColors[index] = "#ff8610";
                                 break;
-                            case "Playas":
+                            case "Platges":
                                 myColors[index] = "#f5df78";
                                 break;
-                            case "Glaciares y congestos":
+                            case "Glaceres i congestes":
                                 myColors[index] = "#d7fff5";
                                 break;
-                            case "Aguas continentales":
+                            case "Aigues continentals":
                                 myColors[index] = "#0000ff";
                                 break;
                             case "Mar":
                                 myColors[index] = "#000080";
                                 break;
-                            case "Zonas urbanizadas":
+                            case "Zones urbanitzades":
                                 myColors[index] = "#e82c1e";
                                 break;
-                            case "Balsas urbanas":
+                            case "Basses urbanes":
                                 myColors[index] = "#5fa083";
                                 break;
-                            case "Vías de comunicación":
+                            case "Vies de comunicacio":
                                 myColors[index] = "#95989D";
                                 break;
-                            case "Zonas deportivas y lúdicas":
+                            case "Zones esportives i ludiques":
                                 myColors[index] = "#a244ff";
                                 break;
-                            case "Zonas de extracción minera":
+                            case "Zones d'extraccio minera":
                                 myColors[index] = "#408080";
                                 break;
-                            case "Suelos desnudos urbanos":
+                            case "Sols nus urbans":
                                 myColors[index] = "#b5c9cc";
                                 break;
-                            case "Cultivos":
+                            case "Conreus":
                                 myColors[index] = "#dbca2e";
                                 break;
                         }
@@ -1136,7 +1137,7 @@
 
         </div>
         <div id="infoDiv1_1" class="esri-widget" style="padding: 3px;">
-            Cubiertas
+            Cobertes
             <select id="field-select-us1" class="esri-widget" onchange="canviUs(this.value,map1,'field-select-orto1',legend1)">
         <option value="-1"></option>
         <option value="1956">1956</option>
@@ -1163,7 +1164,7 @@
       </select>
         </div>
         <div id="infoDiv2_1" class="esri-widget" style="padding: 3px;">
-            Cubiertas
+            Cobertes
             <select id="field-select-us2" class="esri-widget" onchange="canviUs(this.value,map2,'field-select-orto2',legend2)">
         <option value="-1"></option>
         <option value="1956" selected>1956</option>
@@ -1190,7 +1191,7 @@
       </select>
         </div>
         <div id="infoDiv3_1" class="esri-widget" style="padding: 3px;">
-            Cubiertas
+            Cobertes
             <select id="field-select-us3" class="esri-widget" onchange="canviUs(this.value,map3,'field-select-orto3',legend3)">
         <option value="-1"></option>
         <option value="1956">1956</option>
@@ -1218,7 +1219,7 @@
       </select>
         </div>
         <div id="infoDiv4_1" class="esri-widget" style="padding: 3px;">
-            Cubiertas
+            Cobertes
             <select id="field-select-us4" class="esri-widget" onchange="canviUs(this.value,map4,'field-select-orto4',legend4)">
         <option value="-1"></option>
         <option value="1956">1956</option>
