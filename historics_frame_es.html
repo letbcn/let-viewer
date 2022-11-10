@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es-ES">
+<html>
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>Comparador mapas históricos</title>
+    <title>Comparador mapes històrics</title>
 
     <link rel="stylesheet" href="https://js.arcgis.com/4.13/esri/themes/light/main.css" />
     <link rel="stylesheet" href="css/templatemo-style.css">
@@ -151,7 +151,7 @@
             "esri/tasks/support/StatisticDefinition",
             "dojo/dom-class",
             "dojo/domReady!"
-        ], function(Map, MapView, FeatureLayer, TileLayer, MapImageLayer, Legend, watchUtils, Expand, Home, WMSLayer, esriConfig, Field, Query, QueryTask, Chart, Bookmarks, dom, domConstruct, domAttr, StatisticDefinition, domClass) {
+        ], function(Map, MapView, FeatureLayer, TileLayer,MapImageLayer, Legend, watchUtils, Expand, Home, WMSLayer, esriConfig, Field, Query, QueryTask, Chart, Bookmarks, dom, domConstruct, domAttr, StatisticDefinition, domClass) {
 
             esriConfig.portalUrl = "https://uab.maps.arcgis.com"
             esriConfig.request.proxyUrl = "proxy.jsp";
@@ -186,35 +186,35 @@
                     name: 'orto5m2015'
                 }]
             });
+            orto2020 = new WMSLayer({
+                url: 'http://geoserveis.icgc.cat/servei/catalunya/orto-territorial/wms', // url to the service,
+                sublayers: [{
+                    name: 'ortofoto_color_2020'
+                }]
+            });
 
-            //capes cobertes
-             
+            //capes cove
             cob56Layer = new TileLayer({
                 url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_1956_tiles_v2/MapServer"
             });
-         
             cob00Layer = new TileLayer({
                 url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2000_tiles_v2/MapServer"
             });
-
             cob05Layer = new TileLayer({
                 url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2005_tiles_v2/MapServer"
             });
-
             cob09Layer = new TileLayer({
                 url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2009_tiles_v2/MapServer"
             });
-
-
             cob15Layer = new TileLayer({
                 url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2015_tiles_v2/MapServer"
             });
-
             cob20Layer = new TileLayer({
                 url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2020_tiles_v2/MapServer"
             });
 
-               /** capes àmbits **/
+
+            /** capes àmbits **/
             const sym = {
           type: "simple", // autocasts as new SimpleRenderer()
           symbol: {
@@ -284,7 +284,7 @@
 
           var ambits = [
 			{
-				"name": "(RMB) Región Metropolitana de Barcelona (164 municipios)",
+				"name": "(RMB) Regió Metropolitana de Barcelona (164 municipis)",
 				"id": "RMB",
 				"extent": {
 					"xmin": 1.473162,
@@ -298,7 +298,7 @@
 				"thumbnail": "imatges/ambit_rmb.jpg"
 			},
 			{
-				"name": "(AMB) Área Metropolitana de Barcelona (36 municipios)",
+				"name": "(AMB) Àrea Metropolitana de Barcelona (36 municipis)",
 				"id": "AMB",
 				"extent": {
 					"xmin": 197414.0207403185,
@@ -312,7 +312,7 @@
 				"thumbnail": "imatges/ambit_amb.jpg"
 			},
 			{
-				"name": "(B30) Ámbito del eje B30 (23 municipios)",
+				"name": "(B30) Àmbit de l'eix B30 (23 municipis)",
 				"id": "B30",
 				"extent": {
 					"xmin": 1.889904,
@@ -327,7 +327,8 @@
 			}
 		]
 
-
+		
+            
             template1 = {
                 title: " {nommuni}",
                 content: createPopup1
@@ -638,6 +639,8 @@
                 AMBLayer4.visible = false;
 			}
 		});
+
+
 		// Add the widget to the bottom-right corner of the view
 		view1.ui.add(bkExpand, "bottom-right");
 
@@ -692,7 +695,6 @@
 
                     var dades = new Array();
                     var dades_per = new Array();
-                    var etiquetes = new Array();
                     var myColors = [];
                     featureAttributes.sort((a, b) => (a.area < b.area) ? 1 : ((b.area < a.area) ? -1 : 0))
                     var total = 0;
@@ -706,76 +708,76 @@
                     });
                     etiquetes.forEach(function(value, index, array) {
                         switch (value) {
-                            case "Boscos densos (no de ribera)":
+                            case "Bosques densos (no de ribera)":
                                 myColors[index] = "#689010";
                                 break;
-                            case "Boscos densos de ribera":
+                            case "Bosques densos de ribera":
                                 myColors[index] = "#00ff00";
                                 break;
-                            case "Plantacions de pollancres":
+                            case "Plantaciones de chopos":
                                 myColors[index] = "#005a00";
                                 break;
-                            case "Plantacions de platans":
+                            case "Plantaciones de plátanos":
                                 myColors[index] = "#c3ff00";
                                 break;
-                            case "Boscos clars (no de ribera)":
+                            case "Bosques claros (no de ribera)":
                                 myColors[index] = "#a0ffa0";
                                 break;
-                            case "Boscos clars de ribera":
+                            case "Bosques claros de ribera":
                                 myColors[index] = "#00c800";
                                 break;
-                            case "Matollars":
+                            case "Matorrales":
                                 myColors[index] = "#c0c09c";
                                 break;
-                            case "Aiguamolls":
+                            case "Humedales":
                                 myColors[index] = "#80ffff";
                                 break;
-                            case "Prats i herbassars":
+                            case "Prados y herbazales":
                                 myColors[index] = "#06ba15";
                                 break;
-                            case "Zones cremades":
+                            case "Zonas quemadas":
                                 myColors[index] = "#a60303";
                                 break;
-                            case "Roquissars":
+                            case "Roquedales":
                                 myColors[index] = "#95989D";
                                 break;
-                            case "Tarteres":
+                            case "Canchales":
                                 myColors[index] = "#ebebeb";
                                 break;
-                            case "Sols nus forestals":
+                            case "Suelos desnudos forestales":
                                 myColors[index] = "#ff8610";
                                 break;
-                            case "Platges":
+                            case "Playas":
                                 myColors[index] = "#f5df78";
                                 break;
-                            case "Glaceres i congestes":
+                            case "Glaciares y congestos":
                                 myColors[index] = "#d7fff5";
                                 break;
-                            case "Aigues continentals":
+                            case "Aguas continentales":
                                 myColors[index] = "#0000ff";
                                 break;
                             case "Mar":
                                 myColors[index] = "#000080";
                                 break;
-                            case "Zones urbanitzades":
+                            case "Zonas urbanizadas":
                                 myColors[index] = "#e82c1e";
                                 break;
-                            case "Basses urbanes":
+                            case "Balsas urbanas":
                                 myColors[index] = "#5fa083";
                                 break;
-                            case "Vies de comunicacio":
+                            case "Vías de comunicación":
                                 myColors[index] = "#95989D";
                                 break;
-                            case "Zones esportives i ludiques":
+                            case "Zonas deportivas y lúdicas":
                                 myColors[index] = "#a244ff";
                                 break;
-                            case "Zones d'extraccio minera":
+                            case "Zonas de extracción minera":
                                 myColors[index] = "#408080";
                                 break;
-                            case "Sols nus urbans":
+                            case "Suelos desnudos urbanos":
                                 myColors[index] = "#b5c9cc";
                                 break;
-                            case "Conreus":
+                            case "Cultivos":
                                 myColors[index] = "#dbca2e";
                                 break;
                         }
@@ -1233,4 +1235,3 @@
 </body>
 
 </html>
-           
