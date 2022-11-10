@@ -72,7 +72,7 @@ var lhic;
 var lhab;
 var lboscoss;
 var lbiodsing;
-var lndvi20;
+var lndvi21;
 //Variables arbrat
 var gVarbrat;
 var lbiomassarea;
@@ -261,7 +261,7 @@ var lpatentsv;
 	lhab="Hàbitats";
 	lboscoss="Boscos singulars";
 	lbiodsing= "Biodiversitat singular";
-	lndvi20 ="Índex Vegetació (NDVI)";
+	lndvi21 ="Índex Vegetació (NDVI)";
 	//Variables arbrat
 	gVarbrat= "Variables biofísiques del arbrat";
 	lbiomassarea="Biomassa aèria total";
@@ -450,7 +450,7 @@ var lpatentsv;
 	lhab="Hábitats";
 	lboscoss="Bosques singulares";
 	lbiodsing= "Biodiversidad singular";
-	lndvi20 ="Índice Vegetación (NDVI)";
+	lndvi21 ="Índice Vegetación (NDVI)";
 	//Variables arbrado
 	gVarbrat= "Variables biofísicas del arbrado";
 	lbiomassarea="Biomasa aérea total";
@@ -634,7 +634,7 @@ var lpatentsv;
 	lhab="Habitats";
 	lboscoss="Singular forests";
 	lbiodsing= "Singular biodiversity";
-	lndvi20 ="Normalized Difference Vegetation Index (NDVI)";
+	lndvi21 ="Normalized Difference Vegetation Index (NDVI)";
 	//Variables arbrat
 	gVarbrat= "Woodland biophysical variables";
 	lbiomassarea="Total aerial biomass";
