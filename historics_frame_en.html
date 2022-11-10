@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html>
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>Historical maps comparator</title>
+    <title>Comparador mapes històrics</title>
 
     <link rel="stylesheet" href="https://js.arcgis.com/4.13/esri/themes/light/main.css" />
     <link rel="stylesheet" href="css/templatemo-style.css">
@@ -151,7 +151,7 @@
             "esri/tasks/support/StatisticDefinition",
             "dojo/dom-class",
             "dojo/domReady!"
-        ], function(Map, MapView, FeatureLayer, TileLayer, MapImageLayer, Legend, watchUtils, Expand, Home, WMSLayer, esriConfig, Field, Query, QueryTask, Chart,Bookmarks, dom, domConstruct, domAttr, StatisticDefinition, domClass) {
+        ], function(Map, MapView, FeatureLayer, TileLayer,MapImageLayer, Legend, watchUtils, Expand, Home, WMSLayer, esriConfig, Field, Query, QueryTask, Chart, Bookmarks, dom, domConstruct, domAttr, StatisticDefinition, domClass) {
 
             esriConfig.portalUrl = "https://uab.maps.arcgis.com"
             esriConfig.request.proxyUrl = "proxy.jsp";
@@ -197,25 +197,22 @@
             cob56Layer = new TileLayer({
                 url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_1956_tiles_v2/MapServer"
             });
-
             cob00Layer = new TileLayer({
                 url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2000_tiles_v2/MapServer"
             });
-
             cob05Layer = new TileLayer({
                 url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2005_tiles_v2/MapServer"
             });
-
             cob09Layer = new TileLayer({
                 url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2009_tiles_v2/MapServer"
             });
-
             cob15Layer = new TileLayer({
                 url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2015_tiles_v2/MapServer"
             });
             cob20Layer = new TileLayer({
                 url: "https://lablet.uab.cat:6443/arcgis/rest/services/dinàmiques_territorials/cobertes_2020_tiles_v2/MapServer"
             });
+
 
             /** capes àmbits **/
             const sym = {
@@ -287,7 +284,7 @@
 
           var ambits = [
 			{
-				"name": "(BMR) Barcelona Metropolitan Region (164 municipalities)",
+				"name": "(RMB) Regió Metropolitana de Barcelona (164 municipis)",
 				"id": "RMB",
 				"extent": {
 					"xmin": 1.473162,
@@ -301,7 +298,7 @@
 				"thumbnail": "imatges/ambit_rmb.jpg"
 			},
 			{
-				"name": "(BMA) Barcelona Metropolitan Area (36 municipalities)",
+				"name": "(AMB) Àrea Metropolitana de Barcelona (36 municipis)",
 				"id": "AMB",
 				"extent": {
 					"xmin": 197414.0207403185,
@@ -315,7 +312,7 @@
 				"thumbnail": "imatges/ambit_amb.jpg"
 			},
 			{
-				"name": "(B30)  B30 Scope (23 municipalities)",
+				"name": "(B30) Àmbit de l'eix B30 (23 municipis)",
 				"id": "B30",
 				"extent": {
 					"xmin": 1.889904,
@@ -712,76 +709,76 @@
                     });
                     etiquetes.forEach(function(value, index, array) {
                         switch (value) {
-                            case "Boscos densos (no de ribera)":
+                            case "Dense forests (not riparian)":
                                 myColors[index] = "#689010";
                                 break;
-                            case "Boscos densos de ribera":
+                            case "Dense riparian forests":
                                 myColors[index] = "#00ff00";
                                 break;
-                            case "Plantacions de pollancres":
+                            case "Poplar plantations":
                                 myColors[index] = "#005a00";
                                 break;
-                            case "Plantacions de platans":
+                            case "Banana plantations":
                                 myColors[index] = "#c3ff00";
                                 break;
-                            case "Boscos clars (no de ribera)":
+                            case "Clear forests (not riparian)":
                                 myColors[index] = "#a0ffa0";
                                 break;
-                            case "Boscos clars de ribera":
+                            case "Clear riparian forests":
                                 myColors[index] = "#00c800";
                                 break;
-                            case "Matollars":
+                            case "Thickets":
                                 myColors[index] = "#c0c09c";
                                 break;
-                            case "Aiguamolls":
+                            case "Wetlands":
                                 myColors[index] = "#80ffff";
                                 break;
-                            case "Prats i herbassars":
+                            case "Meadows and grasslands":
                                 myColors[index] = "#06ba15";
                                 break;
-                            case "Zones cremades":
+                            case "Burnt areas":
                                 myColors[index] = "#a60303";
                                 break;
-                            case "Roquissars":
+                            case "Rockies":
                                 myColors[index] = "#95989D";
                                 break;
-                            case "Tarteres":
+                            case "Scree":
                                 myColors[index] = "#ebebeb";
                                 break;
-                            case "Sols nus forestals":
+                            case "Bare forest soils":
                                 myColors[index] = "#ff8610";
                                 break;
-                            case "Platges":
+                            case "Beachs":
                                 myColors[index] = "#f5df78";
                                 break;
-                            case "Glaceres i congestes":
+                            case "Glaciers and congestions":
                                 myColors[index] = "#d7fff5";
                                 break;
-                            case "Aigues continentals":
+                            case "Continental waters":
                                 myColors[index] = "#0000ff";
                                 break;
-                            case "Mar":
+                            case "Sea":
                                 myColors[index] = "#000080";
                                 break;
-                            case "Zones urbanitzades":
+                            case "Urban areas":
                                 myColors[index] = "#e82c1e";
                                 break;
-                            case "Basses urbanes":
+                            case "Urban slums":
                                 myColors[index] = "#5fa083";
                                 break;
-                            case "Vies de comunicacio":
+                            case "Transportation routes":
                                 myColors[index] = "#95989D";
                                 break;
-                            case "Zones esportives i ludiques":
+                            case "Sports and recreational areas":
                                 myColors[index] = "#a244ff";
                                 break;
-                            case "Zones d'extraccio minera":
+                            case "Mining extraction areas":
                                 myColors[index] = "#408080";
                                 break;
-                            case "Sols nus urbans":
+                            case "Urban bare soils":
                                 myColors[index] = "#b5c9cc";
                                 break;
-                            case "Conreus":
+                            case "Crops":
                                 myColors[index] = "#dbca2e";
                                 break;
                         }
@@ -1128,7 +1125,7 @@
         </div>
 
         <div id="infoDiv1" class="esri-widget" style="padding: 3px;">
-            Ortophoto
+            Ortofoto
             <select id="field-select-orto1" class="esri-widget" onchange="canvi(this.value,map1,'field-select-us1',legend1)">
         <option value="-1"></option>
         <option value="1956" selected>1956</option>
@@ -1156,7 +1153,7 @@
         <div id="viewDiv2">
         </div>
         <div id="infoDiv2" class="esri-widget" style="padding: 3px;">
-            Ortophoto
+            Ortofoto
             <select id="field-select-orto2" class="esri-widget" onchange="canvi(this.value,map2,'field-select-us2',legend2)">
         <option value="-1"></option>
         <option value="1956">1956</option>
@@ -1183,7 +1180,7 @@
         <div id="viewDiv3">
         </div>
         <div id="infoDiv3" class="esri-widget" style="padding: 3px;">
-            Ortophoto
+            Ortofoto
             <select id="field-select-orto3" class="esri-widget" onchange="canvi(this.value,map3,'field-select-us3',legend3)">
         <option value="-1"></option>
         <option value="1956">1956</option>
@@ -1211,7 +1208,7 @@
         <div id="viewDiv4">
         </div>
         <div id="infoDiv4" class="esri-widget" style="padding: 3px;">
-            Ortophoto
+            Ortofoto
             <select id="field-select-orto4" class="esri-widget" onchange="canvi(this.value,map4,'field-select-us4',legend4)">
         <option value="-1"></option>
         <option value="1956">1956</option>
@@ -1222,7 +1219,7 @@
       </select>
         </div>
         <div id="infoDiv4_1" class="esri-widget" style="padding: 3px;">
-            Cover
+         Cover
             <select id="field-select-us4" class="esri-widget" onchange="canviUs(this.value,map4,'field-select-orto4',legend4)">
         <option value="-1"></option>
         <option value="1956">1956</option>
