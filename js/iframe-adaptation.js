@@ -38,6 +38,6 @@ window.addEventListener("load", function() {
 	
 	var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight ) + 'px';
 	
-	top.postMessage('page_height', height, data_url_parent);	
+	top.postMessage(height, data_url_parent);	
 });
 
