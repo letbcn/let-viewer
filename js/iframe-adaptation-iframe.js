@@ -5,12 +5,7 @@ window.addEventListener("load", function() {
 	console.log('load');	
 	console.log('iframe...');
 	
-	var data_url_parent = document.body.dataset.url_parent;
-	
-	if (data_url_parent === undefined ) {
-		return;
-	}
-	console.log('skip if, its special iframe!')
+	var data_url_parent = 'https://iermb.uab.cat/';
 	
 	const body = document.body;
 	const html = document.documentElement;
@@ -20,7 +15,6 @@ window.addEventListener("load", function() {
 	var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight ) + 'px';
 	
 	console.log(height)
-	console.log(data_url_parent)
 	
 	top.postMessage(height, data_url_parent);	
 });
