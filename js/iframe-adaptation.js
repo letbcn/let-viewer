@@ -3,7 +3,7 @@
 
 window.addEventListener("load", function() {
 
-	var iframes = window.getElementsByClassName('iframe_full_height');
+	var iframes = document.getElementsByClassName('iframe_full_height');
 	
 	Array.prototype.filter.call(iframes, function(iframe) {
 		
