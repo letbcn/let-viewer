@@ -33,6 +33,9 @@ window.addEventListener("load", function() {
 		return;
 	}
 	
+	const body = document.body;
+	const html = document.documentElement;
+	
 	var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight ) + 'px';
 	
 	top.postMessage('page_height', height, data_url_parent);	
