@@ -1,5 +1,7 @@
 window.addEventListener("load", function() {
 	
+	setTimeout(function(){
+	
 	console.log('iframe addEventListener load');
 	console.log(document.URL);
 	
@@ -10,6 +12,9 @@ window.addEventListener("load", function() {
 	console.log('height');
 	console.log(height);
 	
-	window.top.postMessage(height, data_url_parent);	
+	window.top.postMessage(height, data_url_parent);
+
+	},5000);
+	
 });
 
