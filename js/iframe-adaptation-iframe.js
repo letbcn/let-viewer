@@ -7,12 +7,14 @@ window.addEventListener("load", function() {
 	
 	var data_url_parent = 'https://iermb.uab.cat/';
 	
-	var height = Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight ) + 'px';
+	var height = Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
 	
 	console.log('height');
 	console.log(height);
 	
-	window.top.postMessage(height, data_url_parent);
+	height += 40;
+	
+	window.top.postMessage(height + 'px', data_url_parent);
 
 	},5000);
 	
