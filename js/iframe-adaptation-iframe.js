@@ -1,6 +1,7 @@
 window.addEventListener("load", function() {
 	
 	console.log('iframe addEventListener load');
+	console.log(document.URL);
 	
 	var data_url_parent = 'https://iermb.uab.cat/';
 	
