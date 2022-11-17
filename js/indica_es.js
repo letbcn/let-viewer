@@ -19,7 +19,7 @@
 
 	
         layerEscenari = new FeatureLayer({
-          url: "https://lablet.uab.cat:6443/arcgis/rest/services/models/malla_model_15_12/FeatureServer/0",
+          url: "https://lablet.uab.cat/arcgis/rest/services/models/malla_model_15_12/FeatureServer/0",
 		  renderer: {
 					  type: "class-breaks", // autocasts as new ClassBreaksRenderer()
 					  field: "a1a_c_0",
@@ -44,7 +44,7 @@
 		
 		layer3 = new FeatureLayer({
 		  id:'optim',
-          url:"https://lablet.uab.cat:6443/arcgis/rest/services/models/malla_model_15_12/FeatureServer/0",
+          url:"https://lablet.uab.cat/arcgis/rest/services/models/malla_model_15_12/FeatureServer/0",
           renderer: {
 					  type: "class-breaks", // autocasts as new ClassBreaksRenderer()
 					  field: "a1a_c_0",
@@ -62,7 +62,7 @@
         });
 		
 		layer4 = new FeatureLayer({
-          url:"https://lablet.uab.cat:6443/arcgis/rest/services/models/malla_model_15_12/FeatureServer/0",
+          url:"https://lablet.uab.cat/arcgis/rest/services/models/malla_model_15_12/FeatureServer/0",
           renderer: {
 					  type: "class-breaks", // autocasts as new ClassBreaksRenderer()
 					  field: "a1a_c_0",
@@ -81,7 +81,7 @@
 
 
       layerEscenariTendencial = new FeatureLayer({
-          url: "https://lablet.uab.cat:6443/arcgis/rest/services/models/malla_model_15_12/FeatureServer/0",
+          url: "https://lablet.uab.cat/arcgis/rest/services/models/malla_model_15_12/FeatureServer/0",
           renderer: {
                 type: "class-breaks", // autocasts as new ClassBreaksRenderer()
                 field: "a1a_c_1",
@@ -99,7 +99,7 @@
         });
 
         layerDiferenciaEscenariTendencial = new FeatureLayer({
-          url:"https://lablet.uab.cat:6443/arcgis/rest/services/models/malla_model_15_12/FeatureServer/0",
+          url:"https://lablet.uab.cat/arcgis/rest/services/models/malla_model_15_12/FeatureServer/0",
           renderer: {
 					  type: "class-breaks", // autocasts as new ClassBreaksRenderer()
 					  field: "a1a_c_0",
