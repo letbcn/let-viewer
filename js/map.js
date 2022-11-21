@@ -53,7 +53,7 @@
 
 		var AMBLayer = new FeatureLayer({
 			url:
-			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/amb_cat/FeatureServer/0",
+			  "https://lablet.uab.cat/arcgis/rest/services/limits_administratius/amb_cat/FeatureServer/0",
 			renderer: sym,
 			title: 'AMB',
 			id:"AMB",
@@ -63,7 +63,7 @@
 		  });
 		var RMBLayer = new FeatureLayer({
 			url:
-			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/rmb_cat/FeatureServer/0",
+			  "https://lablet.uab.cat/arcgis/rest/services/limits_administratius/rmb_cat/FeatureServer/0",
 			renderer: sym,
 			title: 'RMB',
 			visible:true,
@@ -73,7 +73,7 @@
 
 		  var B30Layer = new FeatureLayer({
 			url:
-			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/b30_cat/FeatureServer/0",
+			  "https://lablet.uab.cat/arcgis/rest/services/limits_administratius/b30_cat/FeatureServer/0",
 			renderer: sym,
 			title: 'B30',
 			visible:false,
@@ -1263,7 +1263,7 @@
 	//demanda habitatge
 	var demandhabLayer = new MapImageLayer({
 		portalItem: {
-			id: "120563cfa79b485a86ed5e384d6ddaf1"
+			id: "68ea9dbe5c1b499c8d8a3374024f740d"
 		},
 		id: '',
 		visible: false,

@@ -75,6 +75,7 @@ var lndvi17;
 var lndvi18;
 var lndvi19;
 var lndvi20;
+var lndvi21;
 //Incendis forestals
 var gIncend;
 var lincend86;
@@ -269,6 +270,7 @@ var lesfhabit18;
 var gDemandhabitatge;
 var ldehabit19;
 var ldehabit20;
+var ldehabit21;
 //Estrangers
 var gMigra;
 var gMigrants;
@@ -379,6 +381,7 @@ var lpatents15;
 	lndvi18="2018";
 	lndvi19 ="2019";
 	lndvi20 ="2020";
+	lndvi21 ="2021";
 	//Incendis forestals
 	gIncend= "Incendis forestals";
 	lincend86= "1986";
@@ -569,6 +572,7 @@ var lpatents15;
 	gDemandhabitatge="Demanda d'habitatge";
 	ldehabit19= "2019";
 	ldehabit20= "2020";
+	ldehabit21= "2021";
 	//Estrangers
 	gMigra= "Migracions";
 	gMigrants= "Població estrangera";
@@ -676,6 +680,7 @@ var lpatents15;
 	lndvi18="2018";
 	lndvi19 ="2019";
 	lndvi20 ="2020";
+	lndvi21 ="2021";
 	//Incendis forestals
 	gIncend= "Incendios forestales";
 	lincend86= "1986";
@@ -859,6 +864,7 @@ var lpatents15;
 	gDemandhabitatge="Demanda de vivienda";
 	ldehabit19= "2019";
 	ldehabit20= "2020";
+	ldehabit21= "2021";
 	//Estrangers
 	gMigra= "Migraciones";
 	gMigrants= "Población extranjera";
@@ -967,6 +973,7 @@ var lpatents15;
 	lndvi18="2018";
 	lndvi19 ="2019";
 	lndvi20 ="2020";
+	lndvi21 ="2021";
 	//Incendis forestals
 	gIncend= "Forest Fires";
 	lincend86= "1986";
@@ -1148,6 +1155,7 @@ var lpatents15;
 	gDemandhabitatge="Demand for housing";
 	ldehabit19= "2019";
 	ldehabit20= "2020";
+	ldehabit21= "2021";
 	//Estrangers
 	gMigra= "Migrations";
 	gMigrants= "Foreign population";
