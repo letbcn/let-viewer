@@ -185,6 +185,8 @@ var lEmissioogasos2014;
 var lEmissioogasos2015;
 var lEmissioogasos2016;
 var lEmissioogasos2017;
+var lEmissioogasos2019;
+var lEmissioogasos2020;
 //Indicadors Socioecologics
 var gIndSocEco
 //Dinàmiques Socioeconòmiques
@@ -268,6 +270,13 @@ var gEsforshab;
 var lesfhabit17;
 var lesfhabit18;
 var gDemandhabitatge;
+var ldehabit12;
+var ldehabit13;
+var ldehabit14;
+var ldehabit15;
+var ldehabit16;
+var ldehabit17;
+var ldehabit18;
 var ldehabit19;
 var ldehabit20;
 var ldehabit21;
@@ -490,6 +499,8 @@ var lpatents15;
 	lEmissioogasos2015="2015";
 	lEmissioogasos2016="2016";
 	lEmissioogasos2017="2017";
+	lEmissioogasos2019="2019";
+	lEmissioogasos2020="2020";
 	//Indicadors socioecològics
 	gIndSocEco= "Indicadors socioecològics";
 	//Dinàmiques Socioeconòmiques
@@ -570,6 +581,13 @@ var lpatents15;
 	lesfhabit17= "2017";
 	lesfhabit18= "2018";
 	gDemandhabitatge="Demanda d'habitatge";
+	ldehabit12="2012";
+	ldehabit13="2013";
+	ldehabit14="2014";
+	ldehabit15= "2015";
+	ldehabit16="2016";
+	ldehabit17="2017";
+	ldehabit18="2018";
 	ldehabit19= "2019";
 	ldehabit20= "2020";
 	ldehabit21= "2021";
@@ -782,6 +800,8 @@ var lpatents15;
 	lEmissioogasos2015="2015";
 	lEmissioogasos2016="2016";
 	lEmissioogasos2017="2017";
+	lEmissioogasos2019="2019";
+	lEmissioogasos2020="2020";
 	//Indicadors socioecològics
 	gIndSocEco= "Indicadores socioecológicos";
 	//Dinàmiques Socioeconòmiques
@@ -862,6 +882,13 @@ var lpatents15;
 	lesfhabit17= "2017";
 	lesfhabit18= "2018";
 	gDemandhabitatge="Demanda de vivienda";
+	ldehabit12="2012";
+	ldehabit13="2013";
+	ldehabit14="2014";
+	ldehabit15= "2015";
+	ldehabit16="2016";
+	ldehabit17="2017";
+	ldehabit18="2018";
 	ldehabit19= "2019";
 	ldehabit20= "2020";
 	ldehabit21= "2021";
@@ -1073,6 +1100,8 @@ var lpatents15;
 	lEmissioogasos2015="2015";
 	lEmissioogasos2016="2016";
 	lEmissioogasos2017="2017";
+	lEmissioogasos2019="2019";
+	lEmissioogasos2020="2020";
 	//Indicadors socioecològics
 	gIndSocEco= "Socio-ecological indicators";
 	//Dinàmiques Socioeconòmiques
@@ -1153,6 +1182,13 @@ var lpatents15;
 	lesfhabit17= "2017";
 	lesfhabit18= "2018";
 	gDemandhabitatge="Demand for housing";
+	ldehabit12="2012";
+	ldehabit13="2013";
+	ldehabit14="2014";
+	ldehabit15= "2015";
+	ldehabit16="2016";
+	ldehabit17="2017";
+	ldehabit18="2018";
 	ldehabit19= "2019";
 	ldehabit20= "2020";
 	ldehabit21= "2021";
