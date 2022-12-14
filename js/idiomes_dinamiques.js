@@ -75,6 +75,7 @@ var lndvi17;
 var lndvi18;
 var lndvi19;
 var lndvi20;
+var lndvi21;
 //Incendis forestals
 var gIncend;
 var lincend86;
@@ -184,6 +185,9 @@ var lEmissioogasos2014;
 var lEmissioogasos2015;
 var lEmissioogasos2016;
 var lEmissioogasos2017;
+var lEmissioogasos2018;
+var lEmissioogasos2019;
+var lEmissioogasos2020;
 //Indicadors Socioecologics
 var gIndSocEco
 //Dinàmiques Socioeconòmiques
@@ -267,8 +271,16 @@ var gEsforshab;
 var lesfhabit17;
 var lesfhabit18;
 var gDemandhabitatge;
+var ldehabit12;
+var ldehabit13;
+var ldehabit14;
+var ldehabit15;
+var ldehabit16;
+var ldehabit17;
+var ldehabit18;
 var ldehabit19;
 var ldehabit20;
+var ldehabit21;
 //Estrangers
 var gMigra;
 var gMigrants;
@@ -379,6 +391,7 @@ var lpatents15;
 	lndvi18="2018";
 	lndvi19 ="2019";
 	lndvi20 ="2020";
+	lndvi21 ="2021";
 	//Incendis forestals
 	gIncend= "Incendis forestals";
 	lincend86= "1986";
@@ -487,6 +500,9 @@ var lpatents15;
 	lEmissioogasos2015="2015";
 	lEmissioogasos2016="2016";
 	lEmissioogasos2017="2017";
+	lEmissioogasos2018="2018";
+	lEmissioogasos2019="2019";
+	lEmissioogasos2020="2020";
 	//Indicadors socioecològics
 	gIndSocEco= "Indicadors socioecològics";
 	//Dinàmiques Socioeconòmiques
@@ -567,8 +583,16 @@ var lpatents15;
 	lesfhabit17= "2017";
 	lesfhabit18= "2018";
 	gDemandhabitatge="Demanda d'habitatge";
+	ldehabit12="2012";
+	ldehabit13="2013";
+	ldehabit14="2014";
+	ldehabit15= "2015";
+	ldehabit16="2016";
+	ldehabit17="2017";
+	ldehabit18="2018";
 	ldehabit19= "2019";
 	ldehabit20= "2020";
+	ldehabit21= "2021";
 	//Estrangers
 	gMigra= "Migracions";
 	gMigrants= "Població estrangera";
@@ -676,6 +700,7 @@ var lpatents15;
 	lndvi18="2018";
 	lndvi19 ="2019";
 	lndvi20 ="2020";
+	lndvi21 ="2021";
 	//Incendis forestals
 	gIncend= "Incendios forestales";
 	lincend86= "1986";
@@ -777,6 +802,9 @@ var lpatents15;
 	lEmissioogasos2015="2015";
 	lEmissioogasos2016="2016";
 	lEmissioogasos2017="2017";
+	lEmissioogasos2018="2018";
+	lEmissioogasos2019="2019";
+	lEmissioogasos2020="2020";
 	//Indicadors socioecològics
 	gIndSocEco= "Indicadores socioecológicos";
 	//Dinàmiques Socioeconòmiques
@@ -857,8 +885,16 @@ var lpatents15;
 	lesfhabit17= "2017";
 	lesfhabit18= "2018";
 	gDemandhabitatge="Demanda de vivienda";
+	ldehabit12="2012";
+	ldehabit13="2013";
+	ldehabit14="2014";
+	ldehabit15= "2015";
+	ldehabit16="2016";
+	ldehabit17="2017";
+	ldehabit18="2018";
 	ldehabit19= "2019";
 	ldehabit20= "2020";
+	ldehabit21= "2021";
 	//Estrangers
 	gMigra= "Migraciones";
 	gMigrants= "Población extranjera";
@@ -967,6 +1003,7 @@ var lpatents15;
 	lndvi18="2018";
 	lndvi19 ="2019";
 	lndvi20 ="2020";
+	lndvi21 ="2021";
 	//Incendis forestals
 	gIncend= "Forest Fires";
 	lincend86= "1986";
@@ -1066,6 +1103,9 @@ var lpatents15;
 	lEmissioogasos2015="2015";
 	lEmissioogasos2016="2016";
 	lEmissioogasos2017="2017";
+	lEmissioogasos2018="2018";
+	lEmissioogasos2019="2019";
+	lEmissioogasos2020="2020";
 	//Indicadors socioecològics
 	gIndSocEco= "Socio-ecological indicators";
 	//Dinàmiques Socioeconòmiques
@@ -1146,8 +1186,16 @@ var lpatents15;
 	lesfhabit17= "2017";
 	lesfhabit18= "2018";
 	gDemandhabitatge="Demand for housing";
+	ldehabit12="2012";
+	ldehabit13="2013";
+	ldehabit14="2014";
+	ldehabit15= "2015";
+	ldehabit16="2016";
+	ldehabit17="2017";
+	ldehabit18="2018";
 	ldehabit19= "2019";
 	ldehabit20= "2020";
+	ldehabit21= "2021";
 	//Estrangers
 	gMigra= "Migrations";
 	gMigrants= "Foreign population";

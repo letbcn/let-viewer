@@ -916,7 +916,7 @@
 
 	var emissiogasosLayer = new MapImageLayer({
 		portalItem: {
-			id: "cc8a6eb5cb244ae89b6baca0c3484c7a"
+			id: "67e50dbc5fd6463795dd929a15fb7e7c"
 		},
 		id: "",
 		visible: false,
@@ -1263,9 +1263,9 @@
 	//demanda habitatge
 	var demandhabLayer = new MapImageLayer({
 		portalItem: {
-			id: "120563cfa79b485a86ed5e384d6ddaf1"
+			id: "68ea9dbe5c1b499c8d8a3374024f740d"
 		},
-		id: '',
+		id: '4c12309f63ca480f8b019980d99f337d',
 		visible: false,
 		title: ldemandh,
 		listMode: "hide-children"

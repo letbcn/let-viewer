@@ -55,7 +55,7 @@
 		
 		var AMBLayer = new FeatureLayer({
 			url:
-			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/amb_cat/FeatureServer/0",
+			  "https://lablet.uab.cat/arcgis/rest/services/limits_administratius/amb_cat/FeatureServer/0",
 			renderer: sym,
 			title: 'AMB',
 			id:"AMB",
@@ -65,7 +65,7 @@
 		  });
 		var RMBLayer = new FeatureLayer({
 			url:
-			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/rmb_cat/FeatureServer/0",
+			  "https://lablet.uab.cat/arcgis/rest/services/limits_administratius/rmb_cat/FeatureServer/0",
 			renderer: sym,
 			title: 'RMB',
 			visible:true,
@@ -75,7 +75,7 @@
 
 		  var B30Layer = new FeatureLayer({
 			url:
-			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/b30_cat/FeatureServer/0",
+			  "https://lablet.uab.cat/arcgis/rest/services/limits_administratius/b30_cat/FeatureServer/0",
 			renderer: sym,
 			title: 'B30',
 			visible:false,
@@ -627,7 +627,7 @@
           portalItem: { 
 			id: "ca635e57c4f04f12b2c2aa10098d97cb"
 		  },
-		  id:"d982a6fc5923429abff4831f7a8681f5",
+		  id:"",
 		  visible: false,
           title: lndvi17,
 		  listMode: "hide-children"
@@ -638,7 +638,7 @@
           portalItem: { 
 			id: "b425b61ef3f04446bc5e4369cff4206b"
 		  },
-		  id:"387fa0d8b85746919ea28f0e16280c35",
+		  id:"",
 		  visible: false,
           title: lndvi18,
 		  listMode: "hide-children"
@@ -649,7 +649,7 @@
           portalItem: { 
 			id: "a8c82853a3044cdbac883617c7117d1a"
 		  },
-		  id:"c2a55bb4593b41ea9598be0f7786e11c",
+		  id:"",
 		  visible: false,
           title: lndvi19,
 		  listMode: "hide-children"
@@ -660,19 +660,29 @@
 			portalItem: { 
 			  id: "1e41f8068df84a2ebaaef04dce0e006b"
 			},
-			id:"c2a55bb4593b41ea9598be0f7786e11c",
+			id:'7ef80987363942f1b6cfde7765351b35',
 			visible: false,
 			title: lndvi20,
 			listMode: "hide-children"
 		  });
 		  capes.push(ndvi20Layer);
 		
-		
+		var ndvi21Layer = new MapImageLayer({
+			portalItem: {
+				id: "00ec911500834262b30eca83be06361d"
+			},
+			id: '',
+			visible: false,
+			title: lndvi21,
+			listMode: "hide-children"
+		});
+		capes.push(ndvi21Layer);
+
 		var ndviGroupLayer = new GroupLayer({
           title: gNdvi,
           visible: true,
           visibilityMode: "independent",
-          layers: [ndvi17Layer,ndvi18Layer,ndvi19Layer,ndvi20Layer ],
+          layers: [ndvi17Layer,ndvi18Layer,ndvi19Layer,ndvi20Layer,ndvi21Layer ],
           opacity: 1
         });
 
@@ -1626,7 +1636,7 @@
 
 	var emissiogasos08Layer = new MapImageLayer({
 		portalItem: {
-			id: "c863f2f7acae4f4fa75951ee0203f821"
+			id: "16ba0511742244718620107327e176fb"
 		},
 		id: "",
 		visible: false,
@@ -1636,7 +1646,7 @@
 	
 	var emissiogasos09Layer = new MapImageLayer({
 		portalItem: {
-			id: "c71482453f994f5fbfe39d5a56597172"
+			id: "1bdf05a6f4254a1e94d676ddc8d2bd11"
 		},
 		id: "",
 		visible: false,
@@ -1646,7 +1656,7 @@
 	
 	var emissiogasos10Layer = new MapImageLayer({
 		portalItem: {
-			id: "754570ead82d4d63b32f46dcd25ae226"
+			id: "3acdffcf441d431a800ebf6c2cbaf5c7"
 		},
 		id: "",
 		visible: false,
@@ -1656,7 +1666,7 @@
 	
 	var emissiogasos11Layer = new MapImageLayer({
 		portalItem: {
-			id: "982d4c7ba51e42c4a0f71f8ad96f6274"
+			id: "69bedc66d14a4fea92f590c3af4cbe54"
 		},
 		id: "",
 		visible: false,
@@ -1666,7 +1676,7 @@
 	
 	var emissiogasos12Layer = new MapImageLayer({
 		portalItem: {
-			id: "38eb047e505e44d18498cb37122a4962"
+			id: "abe1c54a116643b4ace7e52b9392d77f"
 		},
 		id: "",
 		visible: false,
@@ -1676,7 +1686,7 @@
 	
 	var emissiogasos13Layer = new MapImageLayer({
 		portalItem: {
-			id: "2dddfb8665024ec49726e1b011715e03"
+			id: "18abcabc97254a1c8ee414d74d713dd1"
 		},
 		id: "",
 		visible: false,
@@ -1686,7 +1696,7 @@
 	
 	var emissiogasos14Layer = new MapImageLayer({
 		portalItem: {
-			id: "ede2999048d94a3f9d52129310463cd9"
+			id: "43f8b94fd684457ca5548a5dc26d6b0b"
 		},
 		id: "",
 		visible: false,
@@ -1696,17 +1706,17 @@
 	
 	var emissiogasos15Layer = new MapImageLayer({
 		portalItem: {
-			id: "ca82e341e6b1452aad69d97b0a1644b9"
+			id: "e29f544212e3425fac15fb2269e5a9d6"
 		},
 		id: "",
 		visible: false,
 		title: lEmissioogasos2015,
 		listMode: "hide-children"
 		});	
-	
+
 	var emissiogasos16Layer = new MapImageLayer({
 		portalItem: {
-			id: "3a81902d059f4da998f4e3d3797e0b62"
+			id: "b8b0199b6cdb4627bbad6eb2c93a058e" 
 		},
 		id: "",
 		visible: false,
@@ -1716,7 +1726,7 @@
 
 		var emissiogasos17Layer = new MapImageLayer({
 		portalItem: {
-			id: "cc8a6eb5cb244ae89b6baca0c3484c7a"
+			id: "11e80ba8034946d5b067280ca235824f"
 		},
 		id: "",
 		visible: false,
@@ -1724,13 +1734,44 @@
 		listMode: "hide-children"
 		});
 
+		var emissiogasos18Layer = new MapImageLayer({
+			portalItem: {
+				id: "3a6bf8320bec4c29ada4be6b893f3aa4"
+		},
+		id: "",
+		visible: false,
+		title: lEmissioogasos2018,
+		listMode: "hide-children"
+		});
 	
+		var emissiogasos19Layer = new MapImageLayer({
+			portalItem: {
+				id: "b80c837497e541859921aa9fa7d7d460"
+		},
+		id: "",
+		visible: false,
+		title: lEmissioogasos2019,
+		listMode: "hide-children"
+		});
+
+		var emissiogasos20Layer = new MapImageLayer({
+			portalItem: {
+				id: "67e50dbc5fd6463795dd929a15fb7e7c"
+					},
+		id: "",
+		visible: false,
+		title: lEmissioogasos2020,
+		listMode: "hide-children"
+		});		
+
 		var gasosGroupLayer = new GroupLayer({
 			title: gGasos,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [emissiogasos08Layer, emissiogasos09Layer, emissiogasos10Layer, emissiogasos11Layer, emissiogasos12Layer, emissiogasos13Layer, 
-				emissiogasos14Layer, emissiogasos15Layer, emissiogasos16Layer, emissiogasos17Layer],
+			layers: [emissiogasos08Layer, emissiogasos09Layer, emissiogasos10Layer, emissiogasos11Layer,
+				emissiogasos12Layer, emissiogasos13Layer, 
+				emissiogasos14Layer, emissiogasos15Layer, emissiogasos16Layer, emissiogasos17Layer, emissiogasos18Layer,
+				emissiogasos19Layer, emissiogasos20Layer],
 			opacity: 1
 		});
 	
@@ -2324,34 +2365,114 @@
 			opacity: 1
 		  });
 
+		  //Demanda habitatge
 
+		  var demandahabit12Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "0a398361c0b042df81983f1481f3e0c3"
+			},
+			id:'a4165d5506bf4be5860873cfbf03a8be',
+			visible: false,
+			title: ldehabit12,
+			listMode: "hide-children"
+		  });  
+		 
+		  var demandahabit13Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "0d6206debeb747bfa5b52fcae72c2220"
+			},
+			id:'70bb151989cf4edb892c5d10a8dd6280',
+			visible: false,
+			title: ldehabit13,
+			listMode: "hide-children"
+		  });   
+		 
+		  var demandahabit14Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "893eb81d083d47b387109f3fd1dd6c6e"
+			},
+			id:'7d00086a0ce64b6cbfcd77af78489785',
+			visible: false,
+			title: ldehabit14,
+			listMode: "hide-children"
+		  });  
+
+		  var demandahabit15Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "e8d96d554a9f4120bfa67b928076fd6c"
+			},
+			id:'8002e9666ae844ea8a30ce49230edcf0',
+			visible: false,
+			title: ldehabit15,
+			listMode: "hide-children"
+		  });  
+		 
+		  var demandahabit16Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "4ad7a056d5df4f19b137ecbc55308b2a"
+			},
+			id:'dc808b39541a48e1b9da093bb197d35a',
+			visible: false,
+			title: ldehabit16,
+			listMode: "hide-children"
+		  });  
+		 
+		  var demandahabit17Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "fd62eea5f7a8414f90f2ee8010e98654"
+			},
+			id:'630e2ad990bc4659a4a2647d32d94d36',
+			visible: false,
+			title: ldehabit17,
+			listMode: "hide-children"
+		  }); 
+		 
+		  var demandahabit18Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "4c64b5290da246c1b53650006e3ea4fc"
+			},
+			id:'abd5ced82f86444cb3e57a392ad03f35',
+			visible: false,
+			title: ldehabit18,
+			listMode: "hide-children"
+		  }); 
+		 
 		  var demandahabit19Layer = new MapImageLayer({
 			portalItem: {  
-			  id: "09d1b9ad8417420e8b55d67f883c4804"
+			  id: "e1325a473c0d4cc58adc7bee0551e257"
 			},
-			id:'', //modificar
+			id:'c95e83469419432d87ba3f77e6540ed4', 
 			visible: false,
 			title: ldehabit19,
 			listMode: "hide-children"
 		  });
-		  capes.push(demandahabit19Layer);
 
 		  var demandahabit20Layer = new MapImageLayer({
 			portalItem: {  
-			  id: "4e810c8fb76e4a9db42e7ae8768a5305"
+			  id: "9e4d7e99ee57499cbbc1e1b4b7bb8759"
 			},
-			id:'', //modificar
+			id:'1b30dac353df4de0a55fd0b189cab0f0',
 			visible: false,
 			title: ldehabit20,
 			listMode: "hide-children"
 		  });
-		  capes.push(demandahabit20Layer);
+
+		  var demandahabit21Layer = new MapImageLayer({
+			portalItem: {  
+			  id: "68ea9dbe5c1b499c8d8a3374024f740d"
+			},
+			id:'4c12309f63ca480f8b019980d99f337d', 
+			visible: false,
+			title: ldehabit21,
+			listMode: "hide-children"
+		  });
 
 		  var demandahabGroupLayer = new GroupLayer({
 			title: gDemandhabitatge,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [demandahabit19Layer, demandahabit20Layer],
+			layers: [demandahabit12Layer, demandahabit13Layer, demandahabit14Layer,demandahabit15Layer, 
+				demandahabit16Layer, demandahabit17Layer, demandahabit18Layer, demandahabit19Layer, demandahabit20Layer, demandahabit21Layer],
 			opacity: 1
 		  });
 
