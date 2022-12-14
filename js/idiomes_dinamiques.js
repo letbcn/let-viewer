@@ -185,6 +185,7 @@ var lEmissioogasos2014;
 var lEmissioogasos2015;
 var lEmissioogasos2016;
 var lEmissioogasos2017;
+var lEmissioogasos2018;
 var lEmissioogasos2019;
 var lEmissioogasos2020;
 //Indicadors Socioecologics
@@ -499,6 +500,7 @@ var lpatents15;
 	lEmissioogasos2015="2015";
 	lEmissioogasos2016="2016";
 	lEmissioogasos2017="2017";
+	lEmissioogasos2018="2018";
 	lEmissioogasos2019="2019";
 	lEmissioogasos2020="2020";
 	//Indicadors socioecològics
@@ -800,6 +802,7 @@ var lpatents15;
 	lEmissioogasos2015="2015";
 	lEmissioogasos2016="2016";
 	lEmissioogasos2017="2017";
+	lEmissioogasos2018="2018";
 	lEmissioogasos2019="2019";
 	lEmissioogasos2020="2020";
 	//Indicadors socioecològics
@@ -1100,6 +1103,7 @@ var lpatents15;
 	lEmissioogasos2015="2015";
 	lEmissioogasos2016="2016";
 	lEmissioogasos2017="2017";
+	lEmissioogasos2018="2018";
 	lEmissioogasos2019="2019";
 	lEmissioogasos2020="2020";
 	//Indicadors socioecològics
