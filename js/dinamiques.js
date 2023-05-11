@@ -500,27 +500,27 @@
 			portalItem: { 
 			  id: "5503f6895b424d738a0eae35438508aa"
 			},
-			id:"",
+			id:"a4b1058268e34a5fbb5d888b90565698",
 			visible: false,
 			title: lcob15,
 			listMode: "hide-children"
 		  });
 
-		  var cob20Layer = new MapImageLayer({
+		  var cob18Layer = new MapImageLayer({
 			portalItem: {
-				id: "426a62b5e045463b8da4dc06f3b5afb4"
+				id: "24d56436f93c4885a25f15614133f335"
 			},
-			id: "",
+			id: "8fada0975a7b4876b40c0ba69b4469e0",
 			visible: false,
-			title: lcob20,
+			title: lcob18,
 			listMode: "hide-children"
 		});
-
+	
 		  var cobGroupLayer = new GroupLayer({
 			title: gCob,
 			visible: true,
 			visibilityMode: "independent",
-			layers: [cob56Layer, cob00Layer,cob05Layer, cob09Layer, cob15Layer, cob20Layer],
+			layers: [cob56Layer, cob00Layer,cob05Layer, cob09Layer, cob15Layer, cob18Layer],
 			opacity: 1
 		  });
 

@@ -64,7 +64,7 @@ var lAnomt21;
 //Cobertes del sòl
 var gCobertesSol;
 var lcob15;
-var lcob20;
+var lcob18;
 var lusos17;
 //Espai Natural
 var gNatural;
@@ -252,7 +252,7 @@ var lpatentsv;
 	//Cobertes del sol
 	gCobertesSol="Cobertes del sòl";
 	lcob15="Cobertes del sól 2015 (AMB)";
-	lcob20="Cobertes del sól 2020 (AMB)";
+	lcob18= "Cobertes del sól 2018";
 	gUsos="Usos del sòl";
 	lusos17="Usos i cobertes del sòl 2017";
 	//Espai natural
@@ -441,7 +441,7 @@ var lpatentsv;
 	//Cubiertas del suelo
 	gCobertesSol="Cubiertas del suelo";
 	lcob15="Cubiertas del suelo 2015 (AMB)";
-	lcob20="Cubiertas del suelo 2020 (AMB)";
+	lcob18="Cubiertas del suelo 2018";
 	gUsos="Usos del suelo";
 	lusos17="Usos y cubiertas del suelo 2017";
 	//Espacio natural
@@ -624,7 +624,7 @@ var lpatentsv;
 	gCobertesSol="Land cover";
 	gCobertes="Land cover";
 	lcob15="Land cover 2015 (AMB)";
-	lcob20="Land cover 2020 (AMB)";
+	lcob18="Land cover 2018 (AMB)";
 	//usos dels sòl
 	gUsos="Land uses";
 	lusos17="Land uses 2017";
