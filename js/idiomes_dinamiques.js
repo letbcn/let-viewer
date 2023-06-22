@@ -57,7 +57,7 @@ var lcob00;
 var lcob05;
 var lcob09;
 var lcob15;
-var lcob20;
+var lcob18;
 var gUsos;
 var lusos87;
 var lusos92;
@@ -76,6 +76,7 @@ var lndvi18;
 var lndvi19;
 var lndvi20;
 var lndvi21;
+var lndvi22;
 //Incendis forestals
 var gIncend;
 var lincend86;
@@ -230,6 +231,7 @@ var	lpib16;
 var	lpib17;
 var	lpib18;
 var	lpib19;
+var lpib20;
 //Formacio
 var gForma;
 var gbaixaq;
@@ -257,14 +259,6 @@ var list16;
 var list17;
 var list18;
 //Envelliment
-var gEnvelliment;
-var gAIndexEnve;
-var lenve18;
-var lenve19;
-var gAmbestmajors;
-var lmajors15;
-var lmajors16;
-var lmajors17;
 //Habitatge
 var gHabitatge;
 var gEsforshab;
@@ -392,6 +386,7 @@ var lpatents15;
 	lndvi19 ="2019";
 	lndvi20 ="2020";
 	lndvi21 ="2021";
+	lndvi22="2022";
 	//Incendis forestals
 	gIncend= "Incendis forestals";
 	lincend86= "1986";
@@ -541,6 +536,7 @@ var lpatents15;
 	lpib17="2017";
 	lpib18= "2018";
 	lpib19= "2019";
+	lpib20="2020";
 	//Formacio
 	gForma= "Formació";
 	gbaixaq= "Treballadors de baixa qualificació";
@@ -569,14 +565,6 @@ var lpatents15;
 	list17= "2017";
 	list18="2018";
 	//Envelliment
-	gEnvelliment= "Envelliment";
-	gAIndexEnve="Índex d'Envelliment";
-	lenve18= "2018";
-	lenve19= "2019";
-	gAmbestmajors= "Població major 75 anys sola";
-	lmajors15= "2015";
-	lmajors16= "2016";
-	lmajors17= "2017";
 	//Habitatge
 	gHabitatge="Habitatge";
 	gEsforshab= "Esforç accés a l'habitatge";
@@ -701,6 +689,7 @@ var lpatents15;
 	lndvi19 ="2019";
 	lndvi20 ="2020";
 	lndvi21 ="2021";
+	lndvi22="2022";
 	//Incendis forestals
 	gIncend= "Incendios forestales";
 	lincend86= "1986";
@@ -843,6 +832,7 @@ var lpatents15;
 	lpib17="2017";
 	lpib18= "2018";
 	lpib19= "2019";
+	lpib20="2020";
 	//Formacio
 	gForma= "Formación";
 	gbaixaq= "Trabajadores de baja cualificación";
@@ -871,14 +861,6 @@ var lpatents15;
 	list17= "2017";
 	list18="2018";
 	//Envelliment
-	gEnvelliment= "Envejecimiento";
-	gAIndexEnve="Índice de Envejecimiento";
-	lenve18= "2018";
-	lenve19= "2019";
-	gAmbestmajors= "Población mayor 75 años sola";
-	lmajors15= "2015";
-	lmajors16= "2016";
-	lmajors17= "2017";
 	//Habitatge
 	gHabitatge="Vivienda";
 	gEsforshab= "Esfuerzo acceso a la vivienda";
@@ -1004,6 +986,7 @@ var lpatents15;
 	lndvi19 ="2019";
 	lndvi20 ="2020";
 	lndvi21 ="2021";
+	lndvi22="2022";
 	//Incendis forestals
 	gIncend= "Forest Fires";
 	lincend86= "1986";
@@ -1144,6 +1127,7 @@ var lpatents15;
 	lpib17="2017";
 	lpib18= "2018";
 	lpib19= "2019";
+	lpib20="2020";
 	//Formacio
 	gForma= "Qualification";
 	gbaixaq= "Low qualification workers";
@@ -1172,14 +1156,6 @@ var lpatents15;
 	list17= "2017";
 	list18="2018";
 	//Envelliment
-	gEnvelliment= "Aging";
-	gAIndexEnve="Aging Index";
-	lenve18= "2018";
-	lenve19= "2019";
-	gAmbestmajors= "Population older than 75 years living alone";
-	lmajors15= "2015";
-	lmajors16= "2016";
-	lmajors17= "2017";
 	//Habitatge
 	gHabitatge="Living place";
 	gEsforshab= "Effort accessing to housing";

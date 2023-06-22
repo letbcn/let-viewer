@@ -53,7 +53,7 @@
 
 		var AMBLayer = new FeatureLayer({
 			url:
-			  "https://lablet.uab.cat/arcgis/rest/services/limits_administratius/amb_cat/FeatureServer/0",
+			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/amb_cat/FeatureServer/0",
 			renderer: sym,
 			title: 'AMB',
 			id:"AMB",
@@ -63,7 +63,7 @@
 		  });
 		var RMBLayer = new FeatureLayer({
 			url:
-			  "https://lablet.uab.cat/arcgis/rest/services/limits_administratius/rmb_cat/FeatureServer/0",
+			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/rmb_cat/FeatureServer/0",
 			renderer: sym,
 			title: 'RMB',
 			visible:true,
@@ -73,7 +73,7 @@
 
 		  var B30Layer = new FeatureLayer({
 			url:
-			  "https://lablet.uab.cat/arcgis/rest/services/limits_administratius/b30_cat/FeatureServer/0",
+			  "https://lablet.uab.cat:6443/arcgis/rest/services/limits_administratius/b30_cat/FeatureServer/0",
 			renderer: sym,
 			title: 'B30',
 			visible:false,
@@ -580,7 +580,7 @@
 		title: gCobertesSol,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [usos17Layer,cob15Layer, cob18Layer],
+		layers: [cob15Layer, usos17Layer, cob18Layer],
 		opacity: 1
 	});
 
@@ -605,13 +605,13 @@
 		listMode: "hide-children"
 	});
 
-	var ndvi21Layer = new MapImageLayer({
+	var ndvi22Layer = new MapImageLayer({
 		portalItem: {
-			id: "00ec911500834262b30eca83be06361d"
+			id: "045375aec2074aa29042a7d483103800"
 		},
-		id: "df7221be23604a028e5b39f3c4eb6460",
+		id: "4517480e956a4c9d910d56a581bf5966",
 		visible: false,
-		title: lndvi21,
+		title: lndvi22,
 		listMode: "hide-children"
 	});
 
@@ -710,7 +710,7 @@
 		title: gNatural,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [variarbratGroupLayer, ndvi21Layer, biodivsingLayer, hicLayer, habLayer, boscossLayer],
+		layers: [variarbratGroupLayer, ndvi22Layer, biodivsingLayer, hicLayer, habLayer, boscossLayer],
 		opacity: 1
 	});
 
@@ -791,7 +791,7 @@
 		title: gAgrari,
 		visible: true,
 		visibilityMode: "independent",
-		layers: [hortspr15Layer, hortspr09Layer, dan2021Layer],
+		layers: [hortspr09Layer, hortspr15Layer, dan2021Layer],
 		opacity: 1
 	});
 
@@ -1100,15 +1100,6 @@
 		layers: [contmGroupLayer, xarxacontmGroupLayer],
 		opacity: 1
 	  });
-	  
-	  //Grup dels vectors ambientals
-	var vectorsAmbientalsGroupLayer = new GroupLayer({
-		title: gAmbientals,
-		visible: true,
-		visibilityMode: "independent",
-		layers: [qualitataireGroupLayer, gestioresidusGroupLayer, estasMassesGroupLayer, cicleaiguaGroupLayer, emissionsgasosGroupLayer, energiaGroupLayer],
-		opacity: 1
-	});
 
 
 	//**********Riscos territorials ***********//
