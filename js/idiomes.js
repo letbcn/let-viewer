@@ -72,7 +72,7 @@ var lhic;
 var lhab;
 var lboscoss;
 var lbiodsing;
-var lndvi21;
+var lndvi22;
 //Variables arbrat
 var gVarbrat;
 var lbiomassarea;
@@ -93,7 +93,6 @@ var lhortsp09;
 var lhortsp15;
 // Vectors ambientals
 //Masses aigua
-var gAmbientals;
 var gEstatAigua;
 var lEscostaneres;
 var lEsembass;
@@ -280,8 +279,6 @@ var lpatentsv;
 	lDan2021="Declaració agrària 2021";
 	lhortsp09= "Horts precaris 2009";
 	lhortsp15="Horts precaris 2015";
-	//Vectors ambientals
-	gAmbientals= "Vectors ambientals";
 	//Energia i canvi climatic
 	gEnergia= "Consum d'energia";
 	lElectrsect= "Energia elèctrica per sector";
@@ -468,8 +465,6 @@ var lpatentsv;
 	lDan2021="Declaración agraria 2021";
 	lhortsp09= "Huertos precarios 2009";
 	lhortsp15="Huertos precarios 2015";
-	//Vectores ambientales
-	gAmbientals= "Vectores ambientales";
 	//Energia y cambio climático
 	gEnergia= "Consumo de energía";
 	lElectrsect= "Energía eléctrica por sector";
@@ -651,8 +646,6 @@ var lpatentsv;
 	lDan2021="Agriculture 2021";
 	lhortsp09= "Precary Orchards 2009";
 	lhortsp15="Precary Orchards 2015";
-	//Vectors ambientals
-	gAmbientals= "Environmental vectors";
 	//Energia i canvi climatic
 	gEnergia= "Energy consumption";
 	lElectrsect= "Electricity by sector";
