@@ -120,6 +120,8 @@ var laigua17;
 var laigua18;
 var laigua19;
 var laigua20;
+var laigua21;
+var laigua22;
 //Consum energia
 var gConenerg;
 var gEnergelectr;
@@ -149,6 +151,7 @@ var lrecollida17;
 var lrecollida18;
 var lrecollida19;
 var lrecollida20;
+var lrecollida21;
 var gResidushabi;
 var lgeneresiduhabi15;
 var lgeneresiduhabi16;
@@ -156,6 +159,7 @@ var lgeneresiduhabi17;
 var lgeneresiduhabi18;
 var lgeneresiduhabi19;
 var lgeneresiduhabi20;
+var lgeneresiduhabi21;
 //Contaminació
 var gxarxContm;
 var gxarxno2;
@@ -245,6 +249,10 @@ var ljoves17;
 var ljoves18;
 //Atur
 var gAtur;
+var latur14;
+var latur15;
+var latur16;
+var latur17;
 var latur18;
 var latur19;
 var latur20;
@@ -258,6 +266,7 @@ var list15;
 var list16;
 var list17;
 var list18;
+var list19;
 //Envelliment
 //Habitatge
 var gHabitatge;
@@ -430,6 +439,8 @@ var lpatents15;
 	laigua18="2018";
 	laigua19="2019";
 	laigua20= "2020";
+	laigua21= "2021";
+	laigua22= "2022";
 	//Consum energia
 	gConenerg= "Consum d'energia";
 	gEnergelectr= "Elèctrica";
@@ -457,15 +468,17 @@ var lpatents15;
 	lrecollida16="2016";
 	lrecollida17="2017";
 	lrecollida18="2018";
-	lrecollida19="2019";
-	lrecollida20= "2020";
+	lrecollida19= "2019";
+	lrecollida20="2020";
+	lrecollida21= "2021";
 	gResidushabi= "Generació per habitants";
-	lgeneresiduhabi15= "2015";
-	lgeneresiduhabi16= "2016";
-	lgeneresiduhabi17= "2017";
-	lgeneresiduhabi18="2018";
-	lgeneresiduhabi19="2019";
-	lgeneresiduhabi20= "2020";
+	lgeneresiduhabi15="2015";
+	lgeneresiduhabi16="2016";
+	lgeneresiduhabi17="2017";
+	lgeneresiduhabi18= "2018";
+	lgeneresiduhabi19= "2019";
+	lgeneresiduhabi20="2020";
+	lgeneresiduhabi21= "2021";
 	//Contaminació atmosfèrica
 	gxarxContm= "Contaminació atmosfèrica";
 	gxarxno2= "NO2";
@@ -551,6 +564,10 @@ var lpatents15;
 	ljoves18= "2018";
 	//Atur
  	gAtur= "Atur";
+	latur14="2014";
+	latur15="2015";
+	latur16="2016";
+	latur17="2017";
 	latur18="2018";
 	latur19="2019";
 	latur20= "2020";
@@ -564,6 +581,7 @@ var lpatents15;
 	list16= "2016";
 	list17= "2017";
 	list18="2018";
+	list19="2019";
 	//Envelliment
 	//Habitatge
 	gHabitatge="Habitatge";
@@ -732,6 +750,8 @@ var lpatents15;
 	laigua18="2018";
 	laigua19="2019";
 	laigua20= "2020";
+	laigua21= "2021";
+	laigua22= "2022";
 	//Consumo energia
 	gConenerg= "Consumo de energía";
 	gEnergelectr= "Eléctrica";
@@ -759,15 +779,17 @@ var lpatents15;
 	lrecollida16="2016";
 	lrecollida17="2017";
 	lrecollida18="2018";
-	lrecollida19="2019";
-	lrecollida20= "2020";
+	lrecollida19= "2019";
+	lrecollida20="2020";
+	lrecollida21= "2021";
 	gResidushabi= "Generación por habitante";
-	lgeneresiduhabi15= "2015";
+	lgeneresiduhabi15="2015";
 	lgeneresiduhabi16="2016";
-	lgeneresiduhabi17= "2017";
-	lgeneresiduhabi18="2018";
-	lgeneresiduhabi19="2019";
-	lgeneresiduhabi20= "2020";
+	lgeneresiduhabi17="2017";
+	lgeneresiduhabi18= "2018";
+	lgeneresiduhabi19= "2019";
+	lgeneresiduhabi20="2020";
+	lgeneresiduhabi21= "2021";
 	//Contaminación atmosférica
 	gxarxContm= "Contaminación atmosférica";
 	gxarxno2= "NO2";
@@ -847,6 +869,10 @@ var lpatents15;
 	ljoves18= "2018";
 	//Atur
  	gAtur= "Desempleo";
+	latur14="2014";
+	latur15="2015";
+	latur16="2016";
+	latur17="2017";
 	latur18="2018";
 	latur19="2019";
 	latur20= "2020";
@@ -860,6 +886,7 @@ var lpatents15;
 	list16= "2016";
 	list17= "2017";
 	list18="2018";
+	list19="2019";
 	//Envelliment
 	//Habitatge
 	gHabitatge="Vivienda";
@@ -1028,6 +1055,8 @@ var lpatents15;
 	laigua18="2018";
 	laigua19="2019";
 	laigua20= "2020";
+	laigua21= "2021";
+	laigua22= "2022";
 	//Consum energia
 	gConenerg= "Energy consumption";
 	gEnergelectr= "Electric";
@@ -1048,21 +1077,24 @@ var lpatents15;
 	lgas18="2018";
 	lgas19="2019";
 	lgas20= "2020";
-	//Generacio residus
+	//Residus
 	gResidus= "Waste";
 	gRecollida= "Recycling";
 	lrecollida15="2015";
 	lrecollida16="2016";
 	lrecollida17="2017";
 	lrecollida18="2018";
-	lrecollida19="2019";
-	lrecollida20= "2020";
+	lrecollida19= "2019";
+	lrecollida20="2020";
+	lrecollida21= "2021";
 	gResidushabi= "Waste per capita";
-	lgeneresiduhabi15= "2015";
+	lgeneresiduhabi15="2015";
 	lgeneresiduhabi16="2016";
 	lgeneresiduhabi17="2017";
-	lgeneresiduhabi18="2018";
-	lgeneresiduhabi20= "2020";
+	lgeneresiduhabi18= "2018";
+	lgeneresiduhabi19= "2019";
+	lgeneresiduhabi20="2020";
+	lgeneresiduhabi21= "2021";
 	//Contaminació atmosfèrica
 	gxarxContm= "Atmospheric contamination";
 	gxarxno2= "NO2";
@@ -1142,6 +1174,10 @@ var lpatents15;
 	ljoves18= "2018";
 	//Atur
  	gAtur= "Unemployement";
+	latur14="2014";
+	latur15="2015";
+	latur16="2016";
+	latur17="2017";
 	latur18="2018";
 	latur19="2019";
 	latur20= "2020";
@@ -1155,6 +1191,7 @@ var lpatents15;
 	list16= "2016";
 	list17= "2017";
 	list18="2018";
+	list19="2019";
 	//Envelliment
 	//Habitatge
 	gHabitatge="Living place";
